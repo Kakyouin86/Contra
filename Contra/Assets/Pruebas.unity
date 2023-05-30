@@ -208,7 +208,7 @@ MonoBehaviour:
   AxisPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: SetHorizontalMovement
         m_Mode: 0
@@ -790,7 +790,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24903368}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98ba246fa819940cb8f8f89f002bb088, type: 3}
   m_Name: 
@@ -1125,10 +1125,10 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.4377066}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 5.5625, y: 4.375}
+    newSize: {x: 5.5625, y: 4.375}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
@@ -1237,6 +1237,7 @@ MonoBehaviour:
   theStandingPosition: {x: 0, y: 0, z: 0}
   theCrouchingPosition: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: -1.4, z: 0}
+  inputManagerCorgi: {fileID: 0}
 --- !u!1 &27452182
 GameObject:
   m_ObjectHideFlags: 0
@@ -7033,7 +7034,7 @@ MonoBehaviour:
   AxisPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: SetVerticalMovement
         m_Mode: 0
@@ -10171,7 +10172,7 @@ MonoBehaviour:
   AxisPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: SetHorizontalMovement
         m_Mode: 0
@@ -10461,7 +10462,7 @@ MonoBehaviour:
   ButtonPressedFirstTime:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: RunButtonDown
         m_Mode: 1
@@ -10476,7 +10477,7 @@ MonoBehaviour:
   ButtonReleased:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: RunButtonUp
         m_Mode: 1
@@ -10491,7 +10492,7 @@ MonoBehaviour:
   ButtonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: RunButtonPressed
         m_Mode: 1
@@ -10780,7 +10781,7 @@ MonoBehaviour:
   ButtonPressedFirstTime:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: JumpButtonDown
         m_Mode: 1
@@ -10795,7 +10796,7 @@ MonoBehaviour:
   ButtonReleased:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: JumpButtonUp
         m_Mode: 1
@@ -10810,7 +10811,7 @@ MonoBehaviour:
   ButtonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1
@@ -13104,7 +13105,7 @@ MonoBehaviour:
   AxisPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: SetVerticalMovement
         m_Mode: 0
@@ -14248,7 +14249,7 @@ MonoBehaviour:
   ButtonPressedFirstTime:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: JetpackButtonDown
         m_Mode: 1
@@ -14263,7 +14264,7 @@ MonoBehaviour:
   ButtonReleased:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: JetpackButtonUp
         m_Mode: 1
@@ -14278,7 +14279,7 @@ MonoBehaviour:
   ButtonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: JetpackButtonPressed
         m_Mode: 1
@@ -14812,7 +14813,7 @@ MonoBehaviour:
   ButtonPressedFirstTime:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: ShootButtonDown
         m_Mode: 1
@@ -14827,7 +14828,7 @@ MonoBehaviour:
   ButtonReleased:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: ShootButtonUp
         m_Mode: 1
@@ -14842,7 +14843,7 @@ MonoBehaviour:
   ButtonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: ShootButtonPressed
         m_Mode: 1
@@ -16745,7 +16746,7 @@ MonoBehaviour:
   JoystickValue:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: SetMovement
         m_Mode: 0
@@ -18404,7 +18405,7 @@ MonoBehaviour:
   ButtonPressedFirstTime:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1966031591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: DashButtonDown
         m_Mode: 1
@@ -19682,6 +19683,7 @@ GameObject:
   - component: {fileID: 1966031593}
   - component: {fileID: 1966031592}
   - component: {fileID: 1966031591}
+  - component: {fileID: 1966031596}
   m_Layer: 0
   m_Name: UI Camera Corgi
   m_TagString: Untagged
@@ -19813,6 +19815,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1966031596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966031590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84cb1d069d7fb31409b668397ef0addf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InputDetectionActive: 1
+  ResetButtonStatesOnFocusLoss: 1
+  PlayerID: Player1
+  AutoMobileDetection: 1
+  ForcedMode: 0
+  HideMobileControlsInEditor: 0
+  MovementControl: 1
+  DelayedButtonPresses: 0
+  SmoothMovement: 1
+  Threshold: {x: 0.1, y: 0.1}
 --- !u!1 &1996378183
 GameObject:
   m_ObjectHideFlags: 0

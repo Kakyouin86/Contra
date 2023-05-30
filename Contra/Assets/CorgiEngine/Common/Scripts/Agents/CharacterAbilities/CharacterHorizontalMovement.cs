@@ -5,8 +5,8 @@ using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
 
 namespace MoreMountains.CorgiEngine
-{	
-	/// <summary>
+{
+    /// <summary>
 	/// Add this ability to a Character to have it handle horizontal movement (walk, and potentially run, crawl, etc)
 	/// Animator parameters : Speed (float), Walking (bool)
 	/// </summary>
@@ -167,7 +167,7 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// Called at Update(), handles horizontal movement
 		/// </summary>
-		protected virtual void HandleHorizontalMovement()
+		public virtual void HandleHorizontalMovement()
 		{	
 			// if we're not walking anymore, we stop our walking sound
 			if ((_movement.CurrentState != CharacterStates.MovementStates.Walking) && _startFeedbackIsPlaying)
@@ -264,14 +264,19 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			// if the character is not grounded, but currently idle or walking, we change its state to Falling
-			if (!_controller.State.IsGrounded
-			    && (
-				    (_movement.CurrentState == CharacterStates.MovementStates.Walking)
-				    || (_movement.CurrentState == CharacterStates.MovementStates.Idle)
-			    ))
-			{
-				_movement.ChangeState(CharacterStates.MovementStates.Falling);
-			}
+			if (!_controller.State.IsGrounded && ((_movement.CurrentState == CharacterStates.MovementStates.Walking) || (_movement.CurrentState == CharacterStates.MovementStates.Idle)))
+            {
+                if (_controller.State.IsFalling)//This line is "Leo Monge" made
+				{
+                    _movement.ChangeState(CharacterStates.MovementStates.Falling);//This line is "Leo Monge" made
+				}
+                else
+                {
+					_movement.ChangeState(CharacterStates.MovementStates.Jumping);//This line is "Leo Monge" made
+				}
+
+                //_movement.ChangeState(CharacterStates.MovementStates.Falling); This was the original
+            }
 
 			// we apply instant acceleration if needed
 			if (InstantAcceleration)
