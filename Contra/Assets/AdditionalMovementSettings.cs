@@ -13,7 +13,7 @@ public class AdditionalMovementSettings : MonoBehaviour
     public Player player;
     public CharacterHorizontalMovement horizontalMovementCorgi;
     public CharacterHandleWeapon handleWeaponCorgi;
-    //public CharacterDash dashCorgi;
+    public CharacterDash dashCorgi;
     public Character character;
     public InputManager inputManager;
     public Weapon weapon;
@@ -23,6 +23,8 @@ public class AdditionalMovementSettings : MonoBehaviour
     public Vector3 theCrouchingPosition;
     public Vector3 offset = new Vector3(0f, -2f, 0f);
     public InputManager inputManagerCorgi;
+
+    public CorgiController theController;
     //public bool adjustPosition = false;
 
     // Start is called before the first frame update
@@ -41,13 +43,13 @@ public class AdditionalMovementSettings : MonoBehaviour
         theStandingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y);
         theCrouchingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y + offset.y);
         inputManagerCorgi = FindObjectOfType<MoreMountains.CorgiEngine.InputManager>();
+        theController = FindObjectOfType<MoreMountains.CorgiEngine.CorgiController>();
+        theController.State.JustGotGrounded = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(player.GetButton(("HoldPosition")));
-        Debug.Log(character.MovementState.CurrentState);
         //This makes the player's firepoint go down if he's crouching.
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching)
         {
@@ -58,26 +60,38 @@ public class AdditionalMovementSettings : MonoBehaviour
             theFirepoint.gameObject.transform.localPosition = new Vector3(theStandingPosition.x, theStandingPosition.y);
         }
 
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         //This makes the Hold Position impossible to move and aim without walking.
-        if (player.GetButton(("HoldPosition")))
+        if (theController.State.IsGrounded && player.GetButton(("HoldPosition")) && !theController.State.IsJumping)
         {
-            horizontalMovementCorgi.AbilityPermitted = false;
-            //horizontalMovementCorgi.ReadInput = false;
-            ////handleWeaponCorgi.AbilityPermitted = false;
-            //horizontalMovementCorgi.WalkSpeed = 0f;
-            //inputManagerCorgi.InputDetectionActive = false;
-            //inputManagerCorgi.ResetButtonStatesOnFocusLoss = false;
+            theController.SetHorizontalForce(0);
+            theController.SetVerticalForce(0);
+            theAnimator.SetBool("Hold", true);
+            theAnimator.SetBool("Walking", false);
         }
         else
         {
             horizontalMovementCorgi.AbilityPermitted = true;
-            //horizontalMovementCorgi.ReadInput = true;
-            //handleWeaponCorgi.AbilityPermitted = true;
-            //horizontalMovementCorgi.WalkSpeed = 6f;
-            //inputManagerCorgi.InputDetectionActive = true;
-            //inputManagerCorgi.ResetButtonStatesOnFocusLoss = true;
-
+            theController.State.JustGotGrounded = true;
+            theAnimator.SetBool("Hold", false);
+            theAnimator.SetBool("Walking", false);
         }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        //This makes the Death bool to happen. Death Trigger was NOT removed from the original script.
+        if (character.ConditionState.CurrentState == CharacterStates.CharacterConditions.Dead)
+        {
+            theAnimator.SetBool("Death", true);
+            //theAnimator.SetTrigger("Death");
+        }
+        else
+        {
+            theAnimator.SetBool("Death", false);
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.Dashing)
         {
@@ -90,11 +104,16 @@ public class AdditionalMovementSettings : MonoBehaviour
             //handleWeaponCorgi.AbilityPermitted = true;
         }
 
+
+
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching && player.GetButtonDown("Jump"))
         {
             //FindObjectOfType<CharacterCrouch>().AbilityPermitted = false;
             //theAnimator.SetBool("Jumping From Crouching", true);
             //theAnimator.SetTrigger("Jumping 0");
         }
+
+        //Debug.Log(player.GetButton(("HoldPosition")));
+        //Debug.Log(character.MovementState.CurrentState);
     }
 }
