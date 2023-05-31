@@ -1,33 +1,23 @@
-using System.Linq.Expressions;
 using MoreMountains.CorgiEngine;
 using UnityEngine;
 using Rewired;
-using MoreMountains.Tools;
-using MoreMountains.Feedbacks;
-using Rewired.ComponentControls.Data;
-using UnityEngine;
 using InputManager = MoreMountains.CorgiEngine.InputManager;
 
 public class AdditionalMovementSettings : MonoBehaviour
 {
     public Player player;
-    public CharacterHorizontalMovement horizontalMovementCorgi;
-    public CharacterHandleWeapon handleWeaponCorgi;
-    public CharacterDash dashCorgi;
     public Character character;
-    public InputManager inputManager;
+    public CharacterHorizontalMovement horizontalMovementCorgi;
+    public CorgiController theController;
     public Weapon weapon;
     public Animator theAnimator;
     public GameObject theFirepoint;
     public Vector3 theStandingPosition;
     public Vector3 theCrouchingPosition;
     public Vector3 offset = new Vector3(0f, -2f, 0f);
-    public InputManager inputManagerCorgi;
 
-    public CorgiController theController;
-    //public bool adjustPosition = false;
 
-    // Start is called before the first frame update
+
     private void Awake()
     {
         player = ReInput.players.GetPlayer(0);
@@ -35,19 +25,16 @@ public class AdditionalMovementSettings : MonoBehaviour
     void Start()
     {
         horizontalMovementCorgi = GetComponent<CharacterHorizontalMovement>();
-        handleWeaponCorgi = GetComponent<CharacterHandleWeapon>();
         character = GetComponent<Character>();
-        inputManager = FindObjectOfType<MoreMountains.CorgiEngine.InputManager>();
         weapon = FindObjectOfType<MoreMountains.CorgiEngine.Weapon>();
         theAnimator = GetComponent<Animator>();
         theStandingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y);
         theCrouchingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y + offset.y);
-        inputManagerCorgi = FindObjectOfType<MoreMountains.CorgiEngine.InputManager>();
         theController = FindObjectOfType<MoreMountains.CorgiEngine.CorgiController>();
         theController.State.JustGotGrounded = true;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         //This makes the player's firepoint go down if he's crouching.
@@ -93,6 +80,7 @@ public class AdditionalMovementSettings : MonoBehaviour
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        //Useless as of now.
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.Dashing)
         {
             //inputManager.InputDetectionActive = false;
@@ -103,8 +91,6 @@ public class AdditionalMovementSettings : MonoBehaviour
             //inputManager.InputDetectionActive = true;
             //handleWeaponCorgi.AbilityPermitted = true;
         }
-
-
 
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching && player.GetButtonDown("Jump"))
         {
