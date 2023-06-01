@@ -219,8 +219,8 @@ namespace MoreMountains.CorgiEngine
 
 			if ((_inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown) || (_inputManager.ShootAxis == MMInput.ButtonStates.ButtonDown))
 			{
-				ShootStart();
-			}
+                ShootStart();
+            }
 
 			bool buttonPressed =
 				(_inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonPressed) ||
@@ -303,10 +303,17 @@ namespace MoreMountains.CorgiEngine
 				}
 			}
 
-			PlayAbilityStartFeedbacks();
-			MMCharacterEvent.Trigger(_character, MMCharacterEventTypes.HandleWeapon, MMCharacterEvent.Moments.Start);
-			CurrentWeapon.WeaponInputStart();
-		}
+            if (_movement.CurrentState == CharacterStates.MovementStates.Dashing) //Leo Monge added this line. It was just CurrentWeapon.WeaponInputStart();
+            {
+                CurrentWeapon.WeaponInputStop();//this is just Leo Monge
+            }
+            else
+            {
+				PlayAbilityStartFeedbacks(); //This and the rest of the two lines are the ones originally here
+			    MMCharacterEvent.Trigger(_character, MMCharacterEventTypes.HandleWeapon, MMCharacterEvent.Moments.Start);
+                CurrentWeapon.WeaponInputStart();
+			}
+        }
 		
 		/// <summary>
 		/// Causes the character to stop shooting
