@@ -39,7 +39,7 @@ public class AdditionalMovementSettings : MonoBehaviour
     void Update()
     {
         //This makes the player's firepoint go down if he's crouching.
-        if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching)
+        if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching && !player.GetButton(("HoldPosition")))
         {
             theFirepoint.gameObject.transform.localPosition = new Vector3(theCrouchingPosition.x, theCrouchingPosition.y);
         }
@@ -57,6 +57,7 @@ public class AdditionalMovementSettings : MonoBehaviour
             theController.SetVerticalForce(0);
             theAnimator.SetBool("Hold", true);
             theAnimator.SetBool("Walking", false);
+            theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = false;
         }
         else
         {
@@ -64,6 +65,7 @@ public class AdditionalMovementSettings : MonoBehaviour
             theController.State.JustGotGrounded = true;
             theAnimator.SetBool("Hold", false);
             theAnimator.SetBool("Walking", false);
+            theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = true;
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
