@@ -517,7 +517,7 @@ MonoBehaviour:
   AbilityStartFeedbacks: {fileID: 0}
   AbilityStopFeedbacks: {fileID: 0}
   AbilityPermitted: 1
-  BlockingMovementStates: 07000000
+  BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
   InitialWeapon: {fileID: 114000013303203308, guid: afc4c7a4c57ed5d49b059f033e81688d,
@@ -810,7 +810,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24903368}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 157b891c059034cea94ae0c9e235df50, type: 3}
   m_Name: 
