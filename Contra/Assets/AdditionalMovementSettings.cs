@@ -58,6 +58,10 @@ public class AdditionalMovementSettings : MonoBehaviour
             theAnimator.SetBool("Hold", true);
             theAnimator.SetBool("Walking", false);
             theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = false;
+            if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching)
+            {
+
+            }
         }
         else
         {
@@ -79,6 +83,14 @@ public class AdditionalMovementSettings : MonoBehaviour
         else
         {
             theAnimator.SetBool("Death", false);
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        //This makes that, when crouching, you can fire diagonally.
+        if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crawling)
+        {
+            theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = false;
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -106,12 +118,12 @@ public class AdditionalMovementSettings : MonoBehaviour
             //handleWeaponCorgi.AbilityPermitted = true;
         }
 
-        if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching && player.GetButtonDown("Jump"))
-        {
+        //if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching && player.GetButtonDown("Jump"))
+        //{
             //FindObjectOfType<CharacterCrouch>().AbilityPermitted = false;
             //theAnimator.SetBool("Jumping From Crouching", true);
             //theAnimator.SetTrigger("Jumping 0");
-        }
+        //}
 
         //Debug.Log(player.GetButton(("HoldPosition")));
         //Debug.Log(character.MovementState.CurrentState);
