@@ -1,7 +1,9 @@
 using MoreMountains.CorgiEngine;
+using MoreMountains.Tools;
 using UnityEngine;
 using Rewired;
 using InputManager = MoreMountains.CorgiEngine.InputManager;
+
 
 public class AdditionalMovementSettings : MonoBehaviour
 {
@@ -9,13 +11,13 @@ public class AdditionalMovementSettings : MonoBehaviour
     public Character character;
     public CharacterHorizontalMovement horizontalMovementCorgi;
     public CorgiController theController;
-    public Weapon weapon;
+    public InputManager theInputManager;
+    public CharacterHandleWeapon theCharacterHandleWeapon;
     public Animator theAnimator;
     public GameObject theFirepoint;
     public Vector3 theStandingPosition;
     public Vector3 theCrouchingPosition;
     public Vector3 offset = new Vector3(0f, -2f, 0f);
-
 
 
     private void Awake()
@@ -25,16 +27,15 @@ public class AdditionalMovementSettings : MonoBehaviour
     void Start()
     {
         horizontalMovementCorgi = GetComponent<CharacterHorizontalMovement>();
+        theInputManager = FindObjectOfType<InputManager>();
+        theCharacterHandleWeapon = FindObjectOfType<CharacterHandleWeapon>();
         character = GetComponent<Character>();
-        weapon = FindObjectOfType<MoreMountains.CorgiEngine.Weapon>();
         theAnimator = GetComponent<Animator>();
         theStandingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y);
         theCrouchingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y + offset.y);
         theController = FindObjectOfType<MoreMountains.CorgiEngine.CorgiController>();
         theController.State.JustGotGrounded = true;
     }
-
-
     void Update()
     {
         //This makes the player's firepoint go down if he's crouching.
@@ -81,12 +82,23 @@ public class AdditionalMovementSettings : MonoBehaviour
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //Useless as of now.
-        if (character.MovementState.CurrentState == CharacterStates.MovementStates.Dashing)
+
+        //if (theAnimator.GetCurrentAnimatorStateInfo(0).IsName("YourAnimationName"))
+        {
+            // Avoid any reload.
+        }
+        //Debug.Log(theCharacterHandleWeapon.BufferInput);
+        //if (character.ConditionState.CurrentState == CharacterStates.CharacterConditions.Dead && (theInputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown) || (theInputManager.ShootAxis == MMInput.ButtonStates.ButtonDown))
+        //{
+        //    theCharacterHandleWeapon.ShootStart();
+        //}
+
+        //if (character.MovementState.CurrentState == CharacterStates.MovementStates.Dashing)
         {
             //inputManager.InputDetectionActive = false;
             //handleWeaponCorgi.AbilityPermitted = false;
         }
-        else
+        //else
         {
             //inputManager.InputDetectionActive = true;
             //handleWeaponCorgi.AbilityPermitted = true;
@@ -101,5 +113,11 @@ public class AdditionalMovementSettings : MonoBehaviour
 
         //Debug.Log(player.GetButton(("HoldPosition")));
         //Debug.Log(character.MovementState.CurrentState);
+        //Debug.Log(MMInput.ButtonStates.ButtonDown + "Down");
+        //Debug.Log(MMInput.ButtonStates.ButtonPressed + "Pressed");
+        //Debug.Log(MMInput.ButtonStates.ButtonUp + "Up");
+        //Debug.Log(MMInput.AxisTypes.Positive);
+        //Debug.Log(MMInput.ButtonStates.ButtonPressed);
+        //Debug.Log(player.GetButtonDown(nameof(transform)));
     }
 }

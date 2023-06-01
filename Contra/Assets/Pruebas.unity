@@ -528,13 +528,13 @@ MonoBehaviour:
   ForceWeaponRotationResetOnEquip: 0
   AutomaticallyBindAnimator: 1
   AmmoDisplayID: 0
-  ContinuousPress: 0
+  ContinuousPress: 1
   GettingHitInterruptsAttack: 0
   CanShootFromLadders: 0
   FaceWeaponDirection: 0
   InvertHorizontalAimWhenWallclinging: 0
   ForceAlwaysShoot: 0
-  BufferInput: 0
+  BufferInput: 1
   NewInputExtendsBuffer: 0
   MaximumBufferDuration: 0.25
   CurrentWeapon: {fileID: 0}
@@ -906,7 +906,7 @@ MonoBehaviour:
   AbilityStopFeedbacks: {fileID: 0}
   AbilityPermitted: 1
   BlockingMovementStates: 07000000
-  BlockingConditionStates: 
+  BlockingConditionStates: 04000000
   BlockingWeaponStates: 
   WalkSpeed: 6
   MovementSpeedMultiplier: 1
@@ -1227,18 +1227,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d0d64f4fd5a0d438d119c79f2995ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalMovementCorgi: {fileID: 0}
-  handleWeaponCorgi: {fileID: 0}
   character: {fileID: 0}
-  inputManager: {fileID: 0}
-  weapon: {fileID: 0}
+  horizontalMovementCorgi: {fileID: 0}
+  theController: {fileID: 0}
+  theInputManager: {fileID: 0}
+  theCharacterHandleWeapon: {fileID: 0}
   theAnimator: {fileID: 0}
   theFirepoint: {fileID: 827186282}
   theStandingPosition: {x: 0, y: 0, z: 0}
   theCrouchingPosition: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: -1.4, z: 0}
-  inputManagerCorgi: {fileID: 0}
-  theController: {fileID: 0}
 --- !u!1 &27452182
 GameObject:
   m_ObjectHideFlags: 0
