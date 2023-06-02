@@ -18,7 +18,7 @@ public class AdditionalMovementSettings : MonoBehaviour
     public Vector3 theStandingPosition;
     public Vector3 theCrouchingPosition;
     public Vector3 offset = new Vector3(0f, -2f, 0f);
-
+    public Weapon theWeapon;
 
     private void Awake()
     {
@@ -35,6 +35,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         theCrouchingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y + offset.y);
         theController = FindObjectOfType<MoreMountains.CorgiEngine.CorgiController>();
         theController.State.JustGotGrounded = true;
+        theWeapon = FindObjectOfType<Weapon>();
     }
     void Update()
     {
@@ -58,10 +59,6 @@ public class AdditionalMovementSettings : MonoBehaviour
             theAnimator.SetBool("Hold", true);
             theAnimator.SetBool("Walking", false);
             theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = false;
-            if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching)
-            {
-
-            }
         }
         else
         {
@@ -96,6 +93,19 @@ public class AdditionalMovementSettings : MonoBehaviour
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //Useless as of now.
+        if (character.MovementState.CurrentState == CharacterStates.MovementStates.LadderClimbing)
+        {
+            horizontalMovementCorgi.AbilityPermitted = false;
+            if (theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponIdle)
+            {
+                GetComponent<CharacterLadder>().LadderClimbingSpeed = 5f;
+            }
+            else
+            {
+                GetComponent<CharacterLadder>().LadderClimbingSpeed = 0f;
+            }
+        }
+ 
 
         //if (theAnimator.GetCurrentAnimatorStateInfo(0).IsName("YourAnimationName"))
         {
@@ -127,6 +137,7 @@ public class AdditionalMovementSettings : MonoBehaviour
 
         //Debug.Log(player.GetButton(("HoldPosition")));
         //Debug.Log(character.MovementState.CurrentState);
+        //Debug.Log(theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState);
         //Debug.Log(MMInput.ButtonStates.ButtonDown + "Down");
         //Debug.Log(MMInput.ButtonStates.ButtonPressed + "Pressed");
         //Debug.Log(MMInput.ButtonStates.ButtonUp + "Up");
