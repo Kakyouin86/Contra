@@ -213,14 +213,13 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			if (ForceAlwaysShoot)
-			{
-				ShootStart();
+			{ 
+                ShootStart();
 			}
 
 			if ((_inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown) || (_inputManager.ShootAxis == MMInput.ButtonStates.ButtonDown))
 			{
-                //Debug.Log("here");//Leo Monge. Here is where the "shooting" begings.
-				ShootStart();
+                ShootStart();
             }
 
 			bool buttonPressed =
@@ -268,7 +267,7 @@ namespace MoreMountains.CorgiEngine
 			{
                 // and if our buffer is still valid, we trigger an attack
 				if (Time.time < _bufferEndsAt)
-				{
+				{ 
                     ShootStart();
 				}
 				_buffering = false;

@@ -266,7 +266,7 @@ namespace MoreMountains.CorgiEngine
 			// if the character is not grounded, but currently idle or walking, we change its state to Falling
 			if (!_controller.State.IsGrounded && ((_movement.CurrentState == CharacterStates.MovementStates.Walking) || (_movement.CurrentState == CharacterStates.MovementStates.Idle)))
             {
-                if (_controller.State.IsFalling)//This line is "Leo Monge" made
+                if (_controller.State.IsFalling)//Leo Monge. This is to detect when the character was actually falling and not jumping.
 				{
                     _movement.ChangeState(CharacterStates.MovementStates.Falling);//This line is "Leo Monge" made
 				}

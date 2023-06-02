@@ -51,7 +51,7 @@ public class AdditionalMovementSettings : MonoBehaviour
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //This makes the Hold Position impossible to move and aim without walking.
+        //This makes the Hold position impossible to move and aim without walking.
         if (theController.State.IsGrounded && player.GetButton(("HoldPosition")) && !theController.State.IsJumping)
         {
             theController.SetHorizontalForce(0);
@@ -71,7 +71,7 @@ public class AdditionalMovementSettings : MonoBehaviour
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //This makes the Death bool to happen. Death Trigger was NOT removed from the original script.
+        //This makes the Death bool to happen. Death trigger was NOT removed from the original script but I added a bool so it doesn't exit the animator.
         if (character.ConditionState.CurrentState == CharacterStates.CharacterConditions.Dead)
         {
             theAnimator.SetBool("Death", true);
@@ -92,7 +92,9 @@ public class AdditionalMovementSettings : MonoBehaviour
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //Useless as of now.
+        //This makes that, when climbing a ladder, you stop if you are shooting or not. Original climbing speed: 2. Had to modify in CharacterLadder this:
+        //_condition.ChangeState(CharacterStates.CharacterConditions.ControlledMovement)
+
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.LadderClimbing)
         {
             horizontalMovementCorgi.AbilityPermitted = false;
@@ -105,7 +107,11 @@ public class AdditionalMovementSettings : MonoBehaviour
                 GetComponent<CharacterLadder>().LadderClimbingSpeed = 0f;
             }
         }
- 
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        //Useless as of now.
+
 
         //if (theAnimator.GetCurrentAnimatorStateInfo(0).IsName("YourAnimationName"))
         {

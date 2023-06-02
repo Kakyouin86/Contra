@@ -838,7 +838,7 @@ MonoBehaviour:
   AbilityStartFeedbacks: {fileID: 0}
   AbilityStopFeedbacks: {fileID: 0}
   AbilityPermitted: 1
-  BlockingMovementStates: 0e000000
+  BlockingMovementStates: 0e00000012000000
   BlockingConditionStates: 
   BlockingWeaponStates: 
   DashDistance: 5
