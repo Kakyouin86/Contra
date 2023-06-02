@@ -2,6 +2,7 @@ using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
 using Rewired;
+using Rewired.ComponentControls.Data;
 using InputManager = MoreMountains.CorgiEngine.InputManager;
 
 
@@ -100,10 +101,18 @@ public class AdditionalMovementSettings : MonoBehaviour
             horizontalMovementCorgi.AbilityPermitted = false;
             if (theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponIdle)
             {
-                GetComponent<CharacterLadder>().LadderClimbingSpeed = 5f;
+                if (player.GetButton(("HoldPosition")))
+                {
+                    theAnimator.SetBool("Hold", true);
+                    GetComponent<CharacterLadder>().LadderClimbingSpeed = 0f;
+                }
+                else
+                { 
+                    GetComponent<CharacterLadder>().LadderClimbingSpeed = 5f;
+                }
             }
             else
-            {
+            { 
                 GetComponent<CharacterLadder>().LadderClimbingSpeed = 0f;
             }
         }

@@ -2213,7 +2213,7 @@ TextureImporter:
       name: Main Character - Legs_100
       rect:
         serializedVersion: 2
-        x: 13706
+        x: 13261
         y: 0
         width: 89
         height: 70
@@ -2226,6 +2226,48 @@ TextureImporter:
       bones: []
       spriteID: 637a5fd8b514799489212b0dfddddb7a
       internalID: 1616682810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character - Legs_101
+      rect:
+        serializedVersion: 2
+        x: 13350
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39426803311ab894691f074d9a02809d
+      internalID: -631236173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character - Legs_102
+      rect:
+        serializedVersion: 2
+        x: 14329
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e945eca2486c5942859069677287160
+      internalID: 450824677
       vertices: []
       indices: 
       edges: []
@@ -2245,6 +2287,8 @@ TextureImporter:
       Main Character - Legs_1: -1030052473
       Main Character - Legs_10: 1596482587
       Main Character - Legs_100: 1616682810
+      Main Character - Legs_101: -631236173
+      Main Character - Legs_102: 450824677
       Main Character - Legs_11: 1722662058
       Main Character - Legs_12: -1579903295
       Main Character - Legs_13: -574926511
