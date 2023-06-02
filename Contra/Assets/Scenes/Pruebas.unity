@@ -607,7 +607,7 @@ MonoBehaviour:
   LadderClimbingSpeed: 2
   ForceRightFacing: 0
   ForceAnchorToGroundOnExit: 0
-  MinimumTimeAfterLadderJump: 0.5
+  MinimumTimeAfterLadderJump: 0.1
   NoInputClimb: 0
   NoInputClimbAirOnly: 0
 --- !u!114 &24903374
@@ -878,7 +878,7 @@ MonoBehaviour:
   AbilityStartFeedbacks: {fileID: 0}
   AbilityStopFeedbacks: {fileID: 0}
   AbilityPermitted: 1
-  BlockingMovementStates: 
+  BlockingMovementStates: 12000000
   BlockingConditionStates: 
   BlockingWeaponStates: 
   CrawlAuthorized: 1
