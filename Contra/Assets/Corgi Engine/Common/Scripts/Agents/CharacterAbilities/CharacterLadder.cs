@@ -318,8 +318,17 @@ namespace MoreMountains.CorgiEngine
 
             if (CurrentLadder.CenterCharacterOnLadder)
 			{
-				_controller.SetTransformPosition(new Vector3(CurrentLadder.transform.position.x, _controller.transform.position.y, _controller.transform.position.z));
-			}
+                {
+                    if (CurrentLadder.LadderType == Ladder.LadderTypes.Horizontal)//Leo Monge. This is to set the horizontal ladders aligned with the player in Y (first sentence only).
+                    {
+                        _controller.SetTransformPosition(new Vector3(_controller.transform.position.x, CurrentLadder.transform.position.y, _controller.transform.position.z));
+                    }
+                    else
+                    {
+                        _controller.SetTransformPosition(new Vector3(CurrentLadder.transform.position.x, _controller.transform.position.y, _controller.transform.position.z));
+                    }
+                }
+            }
 		}
 
 		/// <summary>

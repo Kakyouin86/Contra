@@ -21,6 +21,9 @@ public class AdditionalMovementSettings : MonoBehaviour
     public Vector3 offset = new Vector3(0f, -2f, 0f);
     public Weapon theWeapon;
     public bool horizontalLadder = false;
+    public BoxCollider2D theBCTrigger;
+    public Vector2 theOriginalBoxCollider2DSize;
+    public Vector2 theOriginalBoxCollider2DOffset;
 
     private void Awake()
     {
@@ -40,10 +43,24 @@ public class AdditionalMovementSettings : MonoBehaviour
         theController = FindObjectOfType<MoreMountains.CorgiEngine.CorgiController>();
         theController.State.JustGotGrounded = true;
         theWeapon = FindObjectOfType<Weapon>();
+        theOriginalBoxCollider2DSize = new Vector3(theBCTrigger.size.x, theBCTrigger.size.y);
+        theOriginalBoxCollider2DOffset = new Vector3(theBCTrigger.offset.x, theBCTrigger.offset.y);
     }
 
     void Update()
     {
+        //Makes the collider smaller when jumping.
+        if (theController.State.IsJumping)
+        {
+            theBCTrigger.offset = new Vector2(0, 2);
+            theBCTrigger.size = new Vector2(1, 1.6f);
+        }
+        else
+        {
+            theBCTrigger.offset = new Vector2(theOriginalBoxCollider2DOffset.x, theOriginalBoxCollider2DOffset.y);
+            theBCTrigger.size = new Vector2(theOriginalBoxCollider2DSize.x, theOriginalBoxCollider2DSize.y);
+        }
+
         //This makes the player's firepoint go down if he's crouching.
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching &&
             !player.GetButton(("HoldPosition")))
@@ -145,8 +162,7 @@ public class AdditionalMovementSettings : MonoBehaviour
     //This will detect horizontal ladders and assign the bool to the animator.
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag == "HorizontalLadder" && character.MovementState.CurrentState ==
-            CharacterStates.MovementStates.LadderClimbing)
+        if (other.gameObject.tag == "HorizontalLadder" && character.MovementState.CurrentState == CharacterStates.MovementStates.LadderClimbing)
         {
             horizontalLadder = true;
         }
