@@ -206,7 +206,7 @@ namespace MoreMountains.CorgiEngine
 			// If the value of the horizontal axis is positive, the character must face right.
 			if (_horizontalMovement > InputThreshold)
 			{
-				_normalizedHorizontalSpeed = _horizontalMovement;
+                _normalizedHorizontalSpeed = _horizontalMovement;
 				if (!_character.IsFacingRight && canFlip && FlipCharacterToFaceDirection)
 				{
 					_character.Flip();

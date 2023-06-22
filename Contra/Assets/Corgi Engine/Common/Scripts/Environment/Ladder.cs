@@ -11,9 +11,9 @@ namespace MoreMountains.CorgiEngine
 	public class Ladder : CorgiMonoBehaviour 
 	{
 		/// the different types of ladders
-		public enum LadderTypes { Simple, BiDirectional }
+		public enum LadderTypes { Simple, BiDirectional, Horizontal }//Leo Monge: This is new. It's a new type of ladder to move the player horizontally when climbing a ladder.
 
-		[Header("Behaviour")]
+        [Header("Behaviour")]
 
 		/// determines whether this ladder is simple (vertical) or bidirectional
 		[Tooltip("determines whether this ladder is simple (vertical) or bidirectional")]

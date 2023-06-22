@@ -8,6 +8,7 @@ TagManager:
   - Music
   - Background
   - NoMask
+  - HorizontalLadder
   layers:
   - Default
   - TransparentFX

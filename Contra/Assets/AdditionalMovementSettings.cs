@@ -20,11 +20,13 @@ public class AdditionalMovementSettings : MonoBehaviour
     public Vector3 theCrouchingPosition;
     public Vector3 offset = new Vector3(0f, -2f, 0f);
     public Weapon theWeapon;
+    public bool horizontalLadder = false;
 
     private void Awake()
     {
         player = ReInput.players.GetPlayer(0);
     }
+
     void Start()
     {
         horizontalMovementCorgi = GetComponent<CharacterHorizontalMovement>();
@@ -33,17 +35,21 @@ public class AdditionalMovementSettings : MonoBehaviour
         character = GetComponent<Character>();
         theAnimator = GetComponent<Animator>();
         theStandingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y);
-        theCrouchingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y + offset.y);
+        theCrouchingPosition =
+            new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y + offset.y);
         theController = FindObjectOfType<MoreMountains.CorgiEngine.CorgiController>();
         theController.State.JustGotGrounded = true;
         theWeapon = FindObjectOfType<Weapon>();
     }
+
     void Update()
     {
         //This makes the player's firepoint go down if he's crouching.
-        if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching && !player.GetButton(("HoldPosition")))
+        if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching &&
+            !player.GetButton(("HoldPosition")))
         {
-            theFirepoint.gameObject.transform.localPosition = new Vector3(theCrouchingPosition.x, theCrouchingPosition.y);
+            theFirepoint.gameObject.transform.localPosition =
+                new Vector3(theCrouchingPosition.x, theCrouchingPosition.y);
         }
         else
         {
@@ -98,7 +104,11 @@ public class AdditionalMovementSettings : MonoBehaviour
 
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.LadderClimbing)
         {
-            horizontalMovementCorgi.AbilityPermitted = false;
+            if (!horizontalLadder)
+            {
+                horizontalMovementCorgi.AbilityPermitted = false;
+            }
+
             if (theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponIdle)
             {
                 if (player.GetButton(("HoldPosition")))
@@ -107,57 +117,85 @@ public class AdditionalMovementSettings : MonoBehaviour
                     GetComponent<CharacterLadder>().LadderClimbingSpeed = 0f;
                 }
                 else
-                { 
+                {
                     GetComponent<CharacterLadder>().LadderClimbingSpeed = 5f;
                 }
             }
             else
-            { 
+            {
                 GetComponent<CharacterLadder>().LadderClimbingSpeed = 0f;
             }
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //Useless as of now.
-
-
-        //if (theAnimator.GetCurrentAnimatorStateInfo(0).IsName("YourAnimationName"))
+        //This will detect horizontal ladders and assign the bool to the animator.
+        if (horizontalLadder)
         {
-            // Avoid any reload.
+            theAnimator.SetBool("HorizontalLadder", true);
         }
-        //Debug.Log(theCharacterHandleWeapon.BufferInput);
-        //if (character.ConditionState.CurrentState == CharacterStates.CharacterConditions.Dead && (theInputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown) || (theInputManager.ShootAxis == MMInput.ButtonStates.ButtonDown))
-        //{
-        //    theCharacterHandleWeapon.ShootStart();
-        //}
-
-        //if (character.MovementState.CurrentState == CharacterStates.MovementStates.Dashing)
+        else
         {
-            //inputManager.InputDetectionActive = false;
-            //handleWeaponCorgi.AbilityPermitted = false;
-        }
-        //else
-        {
-            //inputManager.InputDetectionActive = true;
-            //handleWeaponCorgi.AbilityPermitted = true;
+            theAnimator.SetBool("HorizontalLadder", false);
         }
 
-        //if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching && player.GetButtonDown("Jump"))
-        //{
-            //FindObjectOfType<CharacterCrouch>().AbilityPermitted = false;
-            //theAnimator.SetBool("Jumping From Crouching", true);
-            //theAnimator.SetTrigger("Jumping 0");
-        //}
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    }
 
-        //Debug.Log(player.GetButton(("HoldPosition")));
-        //Debug.Log(character.MovementState.CurrentState);
-        //Debug.Log(theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState);
-        //Debug.Log(MMInput.ButtonStates.ButtonDown + "Down");
-        //Debug.Log(MMInput.ButtonStates.ButtonPressed + "Pressed");
-        //Debug.Log(MMInput.ButtonStates.ButtonUp + "Up");
-        //Debug.Log(MMInput.AxisTypes.Positive);
-        //Debug.Log(MMInput.ButtonStates.ButtonPressed);
-        //Debug.Log(player.GetButtonDown(nameof(transform)));
+    //This will detect horizontal ladders and assign the bool to the animator.
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "HorizontalLadder" && character.MovementState.CurrentState ==
+            CharacterStates.MovementStates.LadderClimbing)
+        {
+            horizontalLadder = true;
+        }
+        else
+        {
+            horizontalLadder = false;
+        }
     }
 }
+
+
+//Useless as of now.
+
+
+    //if (theAnimator.GetCurrentAnimatorStateInfo(0).IsName("YourAnimationName"))
+    
+        // Avoid any reload.
+    
+//Debug.Log(theCharacterHandleWeapon.BufferInput);
+//if (character.ConditionState.CurrentState == CharacterStates.CharacterConditions.Dead && (theInputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown) || (theInputManager.ShootAxis == MMInput.ButtonStates.ButtonDown))
+//{
+//    theCharacterHandleWeapon.ShootStart();
+//}
+
+//if (character.MovementState.CurrentState == CharacterStates.MovementStates.Dashing)
+    
+        //inputManager.InputDetectionActive = false;
+        //handleWeaponCorgi.AbilityPermitted = false;
+    
+//else
+    
+        //inputManager.InputDetectionActive = true;
+        //handleWeaponCorgi.AbilityPermitted = true;
+    
+
+    //if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching && player.GetButtonDown("Jump"))
+    //{
+    //FindObjectOfType<CharacterCrouch>().AbilityPermitted = false;
+    //theAnimator.SetBool("Jumping From Crouching", true);
+    //theAnimator.SetTrigger("Jumping 0");
+    //}
+
+    //Debug.Log(player.GetButton(("HoldPosition")));
+    //Debug.Log(character.MovementState.CurrentState);
+    //Debug.Log(theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState);
+    //Debug.Log(MMInput.ButtonStates.ButtonDown + "Down");
+    //Debug.Log(MMInput.ButtonStates.ButtonPressed + "Pressed");
+    //Debug.Log(MMInput.ButtonStates.ButtonUp + "Up");
+    //Debug.Log(MMInput.AxisTypes.Positive);
+    //Debug.Log(MMInput.ButtonStates.ButtonPressed);
+    //Debug.Log(player.GetButtonDown(nameof(transform)));
+

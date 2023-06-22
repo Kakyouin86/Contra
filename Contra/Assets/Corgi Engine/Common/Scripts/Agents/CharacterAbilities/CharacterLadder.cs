@@ -420,7 +420,14 @@ namespace MoreMountains.CorgiEngine
 				CurrentLadderClimbingSpeed += Mathf.Abs(_verticalInput ) * (Vector2)transform.up;	
 			}
 
-		}
+            if (CurrentLadder.LadderType == Ladder.LadderTypes.Horizontal)//Leo Monge: This is new. It's a new type of ladder to move the player horizontally when climbing a ladder.
+            {
+                _controller.SetHorizontalForce(_horizontalInput * LadderClimbingSpeed);
+                // we set the climbing speed state.
+                CurrentLadderClimbingSpeed = Mathf.Abs(_horizontalInput) * transform.right;
+                _characterHorizontalMovement.AbilityPermitted = true;
+            }
+        }
 
 		/// <summary>
 		/// Resets various states so that the Character isn't climbing anymore
@@ -525,7 +532,7 @@ namespace MoreMountains.CorgiEngine
 			RegisterAnimatorParameter (_ladderClimbingUpAnimationParameterName, AnimatorControllerParameterType.Bool, out _ladderClimbingUpAnimationParameter);
 			RegisterAnimatorParameter (_ladderClimbingSpeedXAnimationParameterName, AnimatorControllerParameterType.Float, out _ladderClimbingSpeedXAnimationParameter);
 			RegisterAnimatorParameter (_ladderClimbingSpeedYpAnimationParameterName, AnimatorControllerParameterType.Float, out _ladderClimbingSpeedYAnimationParameter);
-		}
+        }
 
 		/// <summary>
 		/// At the end of each cycle, we update our animator with our various states
