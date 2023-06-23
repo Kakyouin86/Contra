@@ -52,14 +52,16 @@ public class AdditionalMovementSettings : MonoBehaviour
         //Makes the collider smaller when jumping.
         if (theController.State.IsJumping)
         {
-            theBCTrigger.offset = new Vector2(0, 2);
-            theBCTrigger.size = new Vector2(1, 1.6f);
+            theBCTrigger.offset = new Vector2(0, 1.3f);
+            theBCTrigger.size = new Vector2(1, 1.8f);
         }
         else
         {
             theBCTrigger.offset = new Vector2(theOriginalBoxCollider2DOffset.x, theOriginalBoxCollider2DOffset.y);
             theBCTrigger.size = new Vector2(theOriginalBoxCollider2DSize.x, theOriginalBoxCollider2DSize.y);
         }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //This makes the player's firepoint go down if he's crouching.
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching &&
