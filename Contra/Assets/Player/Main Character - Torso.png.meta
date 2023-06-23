@@ -2734,6 +2734,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Main Character - Torso_125
+      rect:
+        serializedVersion: 2
+        x: 14507
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa282c803120ae49bd11fffa74b9fcf
+      internalID: 946493190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character - Torso_126
+      rect:
+        serializedVersion: 2
+        x: 14596
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9533f7bbf06594744a3379563a408e10
+      internalID: -756233395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character - Torso_127
+      rect:
+        serializedVersion: 2
+        x: 14685
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55bd782178d5c504588629ab5a91dda3
+      internalID: -1307755974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character - Torso_128
+      rect:
+        serializedVersion: 2
+        x: 14774
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c0a5c8b675fe241a721eb6a2b6c167
+      internalID: -9747794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character - Torso_129
+      rect:
+        serializedVersion: 2
+        x: 14863
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0139564d6a6038499d9b316755972d8
+      internalID: -292657243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character - Torso_130
+      rect:
+        serializedVersion: 2
+        x: 14952
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a6713a0d3fdda8438fd7beabe8d0a6f
+      internalID: 508484449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -2775,7 +2901,13 @@ TextureImporter:
       Main Character - Torso_122: -1089123840
       Main Character - Torso_123: -1246120466
       Main Character - Torso_124: -1090396651
+      Main Character - Torso_125: 946493190
+      Main Character - Torso_126: -756233395
+      Main Character - Torso_127: -1307755974
+      Main Character - Torso_128: -9747794
+      Main Character - Torso_129: -292657243
       Main Character - Torso_13: -2145246336
+      Main Character - Torso_130: 508484449
       Main Character - Torso_14: 446259669
       Main Character - Torso_15: 1981919839
       Main Character - Torso_16: 946801245

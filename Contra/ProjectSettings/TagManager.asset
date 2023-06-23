@@ -9,6 +9,7 @@ TagManager:
   - Background
   - NoMask
   - HorizontalLadder
+  - LadderCollider
   layers:
   - Default
   - TransparentFX

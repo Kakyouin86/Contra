@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using MoreMountains.Tools;
+using UnityEngine.TextCore.Text;
 
 namespace MoreMountains.CorgiEngine
 {	
@@ -110,15 +111,25 @@ namespace MoreMountains.CorgiEngine
 		/// <param name="collider">Something colliding with the ladder.</param>
 		protected virtual void OnTriggerEnter2D(Collider2D collider)
 		{
-			// we check that the object colliding with the ladder is actually a corgi controller and a character
-			CharacterLadder characterLadder = collider.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterLadder>();
-			if (characterLadder==null)
-			{
-				return;					
-			}
+            // we check that the object colliding with the ladder is actually a corgi controller and a character
+            //CharacterLadder characterLadder = collider.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterLadder>(); //Leo Monge. This was originally the only sentence. Then goes to the if.
+            if (collider.gameObject.tag == "LadderCollider")
+            {
+                CharacterLadder characterLadder = collider.GetComponentInParent<Character>()?.FindAbility<CharacterLadder>();
 
-			characterLadder.AddCollidingLadder(_collider2D);
-		}
+                if (characterLadder == null)
+                {
+                    return;
+                }
+                characterLadder.AddCollidingLadder(_collider2D);
+                {
+                    if (gameObject.tag == "HorizontalLadder")
+                    {
+                        collider.GetComponentInParent<Character>().FindAbility<CharacterLadder>().NoInputClimb = true;
+                    }
+                }
+            }
+        }
 
 		/// <summary>
 		/// Triggered when something exits the ladder
@@ -127,12 +138,24 @@ namespace MoreMountains.CorgiEngine
 		protected virtual void OnTriggerExit2D(Collider2D collider)
 		{
 			// we check that the object colliding with the ladder is actually a corgi controller and a character
-			CharacterLadder characterLadder = collider.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterLadder>();
-			if (characterLadder==null)
-			{
-				return;					
-			}
-			characterLadder.RemoveCollidingLadder(_collider2D);		
-		}
+			//CharacterLadder characterLadder = collider.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterLadder>();//Leo Monge. This was originally the only sentence. Then goes to the if.
+            if (collider.gameObject.tag == "LadderCollider")
+            {
+                CharacterLadder characterLadder = collider.GetComponentInParent<Character>()?.FindAbility<CharacterLadder>();
+
+                if (characterLadder == null)
+                {
+                    return;
+                }
+
+                characterLadder.RemoveCollidingLadder(_collider2D);
+                {
+                    if (gameObject.tag == "HorizontalLadder")
+                    {
+                        collider.GetComponentInParent<Character>().FindAbility<CharacterLadder>().NoInputClimb = false;
+                    }
+                }
+            }
+        }
 	}
 }

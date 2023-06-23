@@ -56,9 +56,9 @@ namespace MoreMountains.CorgiEngine
 		const float _climbingDownInitialYTranslation = 0.1f;
 		const float _ladderTopSkinHeight = 0.01f;
 
-		protected BoxCollider2D _boxCollider;
-		protected List<Collider2D> _colliders;
-		protected CharacterHandleWeapon _characterHandleWeapon;
+		public BoxCollider2D _boxCollider;
+        public List<Collider2D> _colliders;
+        public CharacterHandleWeapon _characterHandleWeapon;
 
 		// animation parameters
 		protected const string _ladderClimbingUpAnimationParameterName = "LadderClimbing";
@@ -76,8 +76,9 @@ namespace MoreMountains.CorgiEngine
 		{
 			base.Initialization();
 			CurrentLadderClimbingSpeed = Vector2.zero;
-			_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>();
-			_colliders = new List<Collider2D>();
+            //_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>();
+            _boxCollider = GameObject.FindWithTag("LadderCollider").GetComponent<BoxCollider2D>();//Leo Monge. This add the collider of the Ladder Collider only
+            _colliders = new List<Collider2D>();
 			_characterHandleWeapon = this.gameObject.GetComponentInParent<Character>()?.FindAbility<CharacterHandleWeapon>();
 		}
 
