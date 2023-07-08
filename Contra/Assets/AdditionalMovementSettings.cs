@@ -49,6 +49,22 @@ public class AdditionalMovementSettings : MonoBehaviour
 
     void Update()
     {
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        //Just the "Hold"
+        if (player.GetButton(("HoldPosition")))
+        {
+            theAnimator.SetBool("Hold", true);
+        }
+
+        else
+        {
+            theAnimator.SetBool("Hold", false);
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
         //Makes the collider smaller when jumping.
         if (theController.State.IsJumping)
         {
@@ -82,7 +98,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         {
             theController.SetHorizontalForce(0);
             theController.SetVerticalForce(0);
-            theAnimator.SetBool("Hold", true);
+            //theAnimator.SetBool("Hold", true);
             theAnimator.SetBool("Walking", false);
             theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = false;
         }
@@ -90,7 +106,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         {
             horizontalMovementCorgi.AbilityPermitted = true;
             theController.State.JustGotGrounded = true;
-            theAnimator.SetBool("Hold", false);
+            //theAnimator.SetBool("Hold", false);
             theAnimator.SetBool("Walking", false);
             theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = true;
         }
@@ -132,7 +148,7 @@ public class AdditionalMovementSettings : MonoBehaviour
             {
                 if (player.GetButton(("HoldPosition")))
                 {
-                    theAnimator.SetBool("Hold", true);
+                    //theAnimator.SetBool("Hold", true);
                     GetComponent<CharacterLadder>().LadderClimbingSpeed = 0f;
                 }
                 else
