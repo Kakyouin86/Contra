@@ -160,6 +160,15 @@ public class AdditionalMovementSettings : MonoBehaviour
             {
                 GetComponent<CharacterLadder>().LadderClimbingSpeed = 0f;
             }
+            if (horizontalLadder && player.GetButton(("HoldPosition")))
+            {
+                character.FlipModelOnDirectionChange = false;
+            }
+            else
+            {
+                character.FlipModelOnDirectionChange = true;
+            }
+
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

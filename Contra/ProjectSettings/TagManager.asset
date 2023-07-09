@@ -40,7 +40,7 @@ TagManager:
   - MidHeightOneWayPlatforms
   - Pushables
   - Stairs
-  - 
+  - Bullet
   - 
   - 
   m_SortingLayers:

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 114000013358367172}
   - component: {fileID: 114000011140401556}
   - component: {fileID: 114000011010670250}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: SoldierMachineGunProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 4000011151709972}
   - component: {fileID: 198000013392861948}
   - component: {fileID: 199000010833749522}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5061,7 +5061,7 @@ GameObject:
   - component: {fileID: 33000012056488500}
   - component: {fileID: 23000013202125684}
   - component: {fileID: 108000013903616468}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: RedCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5206,7 +5206,7 @@ GameObject:
   - component: {fileID: 3099419970308087868}
   - component: {fileID: 8224270681363006365}
   - component: {fileID: 7111061716305422941}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: DeathFeedbacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
