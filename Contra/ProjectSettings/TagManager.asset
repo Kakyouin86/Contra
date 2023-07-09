@@ -10,6 +10,8 @@ TagManager:
   - NoMask
   - HorizontalLadder
   - LadderCollider
+  - UpwardSlope
+  - DownwardSlope
   layers:
   - Default
   - TransparentFX

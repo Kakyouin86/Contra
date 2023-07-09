@@ -182,8 +182,6 @@ public class AdditionalMovementSettings : MonoBehaviour
         {
             theAnimator.SetBool("HorizontalLadder", false);
         }
-
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
     //This will detect horizontal ladders and assign the bool to the animator.
@@ -197,6 +195,8 @@ public class AdditionalMovementSettings : MonoBehaviour
         {
             horizontalLadder = false;
         }
+
+
     }
 }
 

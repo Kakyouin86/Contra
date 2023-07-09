@@ -7713,6 +7713,9 @@ MonoBehaviour:
   MinimumTimeAfterLadderJump: 0.5
   NoInputClimb: 0
   NoInputClimbAirOnly: 0
+  _boxCollider: {fileID: 0}
+  _colliders: []
+  _characterHandleWeapon: {fileID: 0}
 --- !u!114 &7000219511355918691
 MonoBehaviour:
   m_ObjectHideFlags: 0
