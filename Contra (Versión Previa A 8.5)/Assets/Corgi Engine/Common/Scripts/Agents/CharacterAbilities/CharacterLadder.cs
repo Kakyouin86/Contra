@@ -76,8 +76,8 @@ namespace MoreMountains.CorgiEngine
 		{
 			base.Initialization();
 			CurrentLadderClimbingSpeed = Vector2.zero;
-            //_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>();
-            _boxCollider = GameObject.FindWithTag("LadderCollider").GetComponent<BoxCollider2D>();//Leo Monge. This add the collider of the Ladder Collider only
+            //_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>();//Leo Monge. 
+            _boxCollider = GameObject.FindWithTag("LadderCollider").GetComponent<BoxCollider2D>();//Leo Monge. This adds the collider of the Ladder Collider only
             _colliders = new List<Collider2D>();
 			_characterHandleWeapon = this.gameObject.GetComponentInParent<Character>()?.FindAbility<CharacterHandleWeapon>();
 		}
@@ -384,7 +384,7 @@ namespace MoreMountains.CorgiEngine
 			// we set its state to LadderClimbing
 			_movement.ChangeState(CharacterStates.MovementStates.LadderClimbing);
 			// it can't move freely anymore
-			//_condition.ChangeState(CharacterStates.CharacterConditions.ControlledMovement);//Leo Monge: This was NOT commented.
+			//_condition.ChangeState(CharacterStates.CharacterConditions.ControlledMovement);//Leo Monge. This was NOT commented.
             // we initialize the ladder climbing speed to zero
 			CurrentLadderClimbingSpeed = Vector2.zero;
 			// we make sure the controller won't move
@@ -430,7 +430,7 @@ namespace MoreMountains.CorgiEngine
 				CurrentLadderClimbingSpeed += Mathf.Abs(_verticalInput ) * (Vector2)transform.up;	
 			}
 
-            if (CurrentLadder.LadderType == Ladder.LadderTypes.Horizontal)//Leo Monge: This is new. It's a new type of ladder to move the player horizontally when climbing a ladder.
+            if (CurrentLadder.LadderType == Ladder.LadderTypes.Horizontal)//Leo Monge. This is new. It's a new type of ladder to move the player horizontally when climbing a ladder.
             {
                 _controller.SetHorizontalForce(_horizontalInput * LadderClimbingSpeed);
                 // we set the climbing speed state.
