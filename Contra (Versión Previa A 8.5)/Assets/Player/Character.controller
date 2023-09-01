@@ -1288,6 +1288,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: HorizontalLadder
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Hold
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -143854623608712045}
   m_Solo: 0
@@ -1918,6 +1921,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: HorizontalLadder
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Hold
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -143854623608712045}
   m_Solo: 0
@@ -2185,9 +2191,6 @@ AnimatorStateTransition:
     m_EventTreshold: 190
   - m_ConditionMode: 2
     m_ConditionEvent: HorizontalLadder
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Hold
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8054247822646477101}
@@ -3247,6 +3250,12 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: UpwardSlope
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: DownwardSlope
+    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Jumping
     m_EventTreshold: 0
@@ -3259,12 +3268,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: HorizontalLadder
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: UpwardSlope
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: DownwardSlope
-    m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: ySpeed
+    m_EventTreshold: 4
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7066680122050524913}
   m_Solo: 0
@@ -4674,6 +4680,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: DownwardSlope
     m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: ySpeed
+    m_EventTreshold: 4
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6346211342903250474}
   m_Solo: 0

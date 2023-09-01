@@ -5,8 +5,8 @@ using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
 
 namespace MoreMountains.CorgiEngine
-{
-    /// <summary>
+{	
+	/// <summary>
 	/// Add this ability to a Character to have it handle horizontal movement (walk, and potentially run, crawl, etc)
 	/// Animator parameters : Speed (float), Walking (bool)
 	/// </summary>
@@ -167,7 +167,7 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// Called at Update(), handles horizontal movement
 		/// </summary>
-		public virtual void HandleHorizontalMovement()
+		protected virtual void HandleHorizontalMovement()
 		{	
 			// if we're not walking anymore, we stop our walking sound
 			if ((_movement.CurrentState != CharacterStates.MovementStates.Walking) && _startFeedbackIsPlaying)
@@ -206,7 +206,7 @@ namespace MoreMountains.CorgiEngine
 			// If the value of the horizontal axis is positive, the character must face right.
 			if (_horizontalMovement > InputThreshold)
 			{
-                _normalizedHorizontalSpeed = _horizontalMovement;
+				_normalizedHorizontalSpeed = _horizontalMovement;
 				if (!_character.IsFacingRight && canFlip && FlipCharacterToFaceDirection)
 				{
 					_character.Flip();
@@ -264,19 +264,14 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			// if the character is not grounded, but currently idle or walking, we change its state to Falling
-			if (!_controller.State.IsGrounded && ((_movement.CurrentState == CharacterStates.MovementStates.Walking) || (_movement.CurrentState == CharacterStates.MovementStates.Idle)))
-            {
-                if (_controller.State.IsFalling)//Leo Monge. This is to detect when the character was actually falling and not jumping.
-				{
-                    _movement.ChangeState(CharacterStates.MovementStates.Falling);//This line is "Leo Monge" made
-				}
-                else
-                {
-					_movement.ChangeState(CharacterStates.MovementStates.Jumping);//This line is "Leo Monge" made
-				}
-
-                //_movement.ChangeState(CharacterStates.MovementStates.Falling); This was the original
-            }
+			if (!_controller.State.IsGrounded
+			    && (
+				    (_movement.CurrentState == CharacterStates.MovementStates.Walking)
+				    || (_movement.CurrentState == CharacterStates.MovementStates.Idle)
+			    ))
+			{
+				_movement.ChangeState(CharacterStates.MovementStates.Falling);
+			}
 
 			// we apply instant acceleration if needed
 			if (InstantAcceleration)

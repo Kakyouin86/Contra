@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using MoreMountains.Tools;
-using UnityEngine.TextCore.Text;
 
 namespace MoreMountains.CorgiEngine
 {	
@@ -12,9 +11,9 @@ namespace MoreMountains.CorgiEngine
 	public class Ladder : CorgiMonoBehaviour 
 	{
 		/// the different types of ladders
-		public enum LadderTypes { Simple, BiDirectional, Horizontal }//Leo Monge: This is new. It's a new type of ladder to move the player horizontally when climbing a ladder.
+		public enum LadderTypes { Simple, BiDirectional, Horizontal } //Leo Monge
 
-        [Header("Behaviour")]
+		[Header("Behaviour")]
 
 		/// determines whether this ladder is simple (vertical) or bidirectional
 		[Tooltip("determines whether this ladder is simple (vertical) or bidirectional")]
@@ -111,25 +110,15 @@ namespace MoreMountains.CorgiEngine
 		/// <param name="collider">Something colliding with the ladder.</param>
 		protected virtual void OnTriggerEnter2D(Collider2D collider)
 		{
-            // we check that the object colliding with the ladder is actually a corgi controller and a character
-            //CharacterLadder characterLadder = collider.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterLadder>(); //Leo Monge. This was originally the only sentence. Then goes to the if.
-            if (collider.gameObject.tag == "LadderCollider")
-            {
-                CharacterLadder characterLadder = collider.GetComponentInParent<Character>()?.FindAbility<CharacterLadder>();
+			// we check that the object colliding with the ladder is actually a corgi controller and a character
+			CharacterLadder characterLadder = collider.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterLadder>();
+			if (characterLadder==null)
+			{
+				return;					
+			}
 
-                if (characterLadder == null)
-                {
-                    return;
-                }
-                characterLadder.AddCollidingLadder(_collider2D);
-                {
-                    if (gameObject.tag == "HorizontalLadder")
-                    {
-                        collider.GetComponentInParent<Character>().FindAbility<CharacterLadder>().NoInputClimb = true;
-                    }
-                }
-            }
-        }
+			characterLadder.AddCollidingLadder(_collider2D);
+		}
 
 		/// <summary>
 		/// Triggered when something exits the ladder
@@ -138,24 +127,12 @@ namespace MoreMountains.CorgiEngine
 		protected virtual void OnTriggerExit2D(Collider2D collider)
 		{
 			// we check that the object colliding with the ladder is actually a corgi controller and a character
-			//CharacterLadder characterLadder = collider.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterLadder>();//Leo Monge. This was originally the only sentence. Then goes to the if.
-            if (collider.gameObject.tag == "LadderCollider")
-            {
-                CharacterLadder characterLadder = collider.GetComponentInParent<Character>()?.FindAbility<CharacterLadder>();
-
-                if (characterLadder == null)
-                {
-                    return;
-                }
-
-                characterLadder.RemoveCollidingLadder(_collider2D);
-                {
-                    if (gameObject.tag == "HorizontalLadder")
-                    {
-                        collider.GetComponentInParent<Character>().FindAbility<CharacterLadder>().NoInputClimb = false;
-                    }
-                }
-            }
-        }
+			CharacterLadder characterLadder = collider.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterLadder>();
+			if (characterLadder==null)
+			{
+				return;					
+			}
+			characterLadder.RemoveCollidingLadder(_collider2D);		
+		}
 	}
 }

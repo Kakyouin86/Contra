@@ -204,23 +204,28 @@ namespace MoreMountains.CorgiEngine
 		/// Gets input and triggers methods based on what's been pressed
 		/// </summary>
 		protected override void HandleInput ()
-		{			
+		{
+			bool shootFromLaddersAuthorized = (CanShootFromLadders &&
+			                                   (_movement.CurrentState ==
+			                                    CharacterStates.MovementStates.LadderClimbing));
+			
 			if (!AbilityAuthorized
-			    || (_condition.CurrentState != CharacterStates.CharacterConditions.Normal)
+			    || ((_condition.CurrentState != CharacterStates.CharacterConditions.Normal)
+			         && !shootFromLaddersAuthorized)
 			    || (CurrentWeapon == null))
 			{
 				return;
 			}
 
 			if (ForceAlwaysShoot)
-			{ 
-                ShootStart();
+			{
+				ShootStart();
 			}
 
 			if ((_inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown) || (_inputManager.ShootAxis == MMInput.ButtonStates.ButtonDown))
 			{
-                ShootStart();
-            }
+				ShootStart();
+			}
 
 			bool buttonPressed =
 				(_inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonPressed) ||
@@ -257,7 +262,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void HandleBuffer()
 		{
-            if (CurrentWeapon == null)
+			if (CurrentWeapon == null)
 			{
 				return;
 			}
@@ -265,10 +270,10 @@ namespace MoreMountains.CorgiEngine
 			// if we are currently buffering an input and if the weapon is now idle
 			if (_buffering && (CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponIdle))
 			{
-                // and if our buffer is still valid, we trigger an attack
+				// and if our buffer is still valid, we trigger an attack
 				if (Time.time < _bufferEndsAt)
-				{ 
-                    ShootStart();
+				{
+					ShootStart();
 				}
 				_buffering = false;
 			}
@@ -279,7 +284,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void ShootStart()
 		{
-            // if the Shoot action is enabled in the permissions, we continue, if not we do nothing.  If the player is dead we do nothing.
+			// if the Shoot action is enabled in the permissions, we continue, if not we do nothing.  If the player is dead we do nothing.
 			if ( !AbilityAuthorized
 			     || (CurrentWeapon == null)
 			     || ((_condition.CurrentState != CharacterStates.CharacterConditions.Normal) && (_condition.CurrentState != CharacterStates.CharacterConditions.ControlledMovement)))
@@ -303,17 +308,10 @@ namespace MoreMountains.CorgiEngine
 				}
 			}
 
-            if (_movement.CurrentState == CharacterStates.MovementStates.Dashing) //Leo Monge added this line. It was just CurrentWeapon.WeaponInputStart();
-            {
-                CurrentWeapon.WeaponInputStop();//this is just Leo Monge
-            }
-            else
-            {
-				PlayAbilityStartFeedbacks(); //This and the rest of the two lines are the ones originally here
-			    MMCharacterEvent.Trigger(_character, MMCharacterEventTypes.HandleWeapon, MMCharacterEvent.Moments.Start);
-                CurrentWeapon.WeaponInputStart();
-			}
-        }
+			PlayAbilityStartFeedbacks();
+			MMCharacterEvent.Trigger(_character, MMCharacterEventTypes.HandleWeapon, MMCharacterEvent.Moments.Start);
+			CurrentWeapon.WeaponInputStart();
+		}
 		
 		/// <summary>
 		/// Causes the character to stop shooting
@@ -336,7 +334,8 @@ namespace MoreMountains.CorgiEngine
 			if ((CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReload)
 			    || (CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReloadStart)
 			    || (CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReloadStop)
-			    || (CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse))
+			    || (CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse)
+			    || (CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponInCooldown))
 			{
 				return;
 			}

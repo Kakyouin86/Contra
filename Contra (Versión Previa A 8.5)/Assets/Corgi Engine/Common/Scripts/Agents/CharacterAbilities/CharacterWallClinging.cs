@@ -18,8 +18,8 @@ namespace MoreMountains.CorgiEngine
 		[Header("Wall Clinging")]
 		/// the slow factor when wall clinging
 		[Tooltip("the slow factor when wall clinging")]
-		[Range(0.0000000001f, 1)]//Leo Monge: it was 0.01f originally. With this small value, you can't detach from the wall.
-		public float WallClingingSlowFactor = 0.6f;
+        [Range(0.0000000001f, 1)]//Leo Monge: it was 0.01f originally. With this small value, you can't detach from the wall.
+        public float WallClingingSlowFactor = 0.6f;
 		/// the vertical offset to apply to raycasts for wall clinging
 		[Tooltip("the vertical offset to apply to raycasts for wall clinging")]
 		public float RaycastVerticalOffset = 0f;

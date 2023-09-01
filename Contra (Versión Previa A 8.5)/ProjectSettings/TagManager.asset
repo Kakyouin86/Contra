@@ -9,9 +9,10 @@ TagManager:
   - Background
   - NoMask
   - HorizontalLadder
-  - LadderCollider
   - UpwardSlope
   - DownwardSlope
+  - LadderCollider
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -42,7 +43,7 @@ TagManager:
   - MidHeightOneWayPlatforms
   - Pushables
   - Stairs
-  - Bullet
+  - 
   - 
   - 
   m_SortingLayers:
@@ -69,4 +70,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 3241408355
+    locked: 0
+  - name: Effects On Top
+    uniqueID: 346362833
     locked: 0

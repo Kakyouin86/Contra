@@ -56,9 +56,9 @@ namespace MoreMountains.CorgiEngine
 		const float _climbingDownInitialYTranslation = 0.1f;
 		const float _ladderTopSkinHeight = 0.01f;
 
-		public BoxCollider2D _boxCollider;
-        public List<Collider2D> _colliders;
-        public CharacterHandleWeapon _characterHandleWeapon;
+		protected BoxCollider2D _boxCollider;
+		protected List<Collider2D> _colliders;
+		protected CharacterHandleWeapon _characterHandleWeapon;
 
 		// animation parameters
 		protected const string _ladderClimbingUpAnimationParameterName = "LadderClimbing";
@@ -74,13 +74,18 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected override void Initialization()
 		{
+<<<<<<< Updated upstream:Contra (Versión Previa A 8.5)/Assets/Corgi Engine/Common/Scripts/Agents/CharacterAbilities/CharacterLadder.cs
 			base.Initialization();
 			CurrentLadderClimbingSpeed = Vector2.zero;
+=======
+            base.Initialization();
+            CurrentLadderClimbingSpeed = Vector2.zero;
+>>>>>>> Stashed changes:Contra/Assets/Corgi Engine/Common/Scripts/Agents/CharacterAbilities/CharacterLadder.cs
             //_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>();//Leo Monge. 
             _boxCollider = GameObject.FindWithTag("LadderCollider").GetComponent<BoxCollider2D>();//Leo Monge. This adds the collider of the Ladder Collider only
             _colliders = new List<Collider2D>();
-			_characterHandleWeapon = this.gameObject.GetComponentInParent<Character>()?.FindAbility<CharacterHandleWeapon>();
-		}
+            _characterHandleWeapon = this.gameObject.GetComponentInParent<Character>()?.FindAbility<CharacterHandleWeapon>();
+        }
 
 		/// <summary>
 		/// Every frame, we check if we need to do something about ladders
@@ -317,19 +322,10 @@ namespace MoreMountains.CorgiEngine
 				_characterHandleWeapon.ForceStop();
 			}
 
-            if (CurrentLadder.CenterCharacterOnLadder)
+			if (CurrentLadder.CenterCharacterOnLadder)
 			{
-                {
-                    if (CurrentLadder.LadderType == Ladder.LadderTypes.Horizontal)//Leo Monge. This is to set the horizontal ladders aligned with the player in Y (first sentence only).
-                    {
-                        _controller.SetTransformPosition(new Vector3(_controller.transform.position.x, CurrentLadder.transform.position.y, _controller.transform.position.z));
-                    }
-                    else
-                    {
-                        _controller.SetTransformPosition(new Vector3(CurrentLadder.transform.position.x, _controller.transform.position.y, _controller.transform.position.z));
-                    }
-                }
-            }
+				_controller.SetTransformPosition(new Vector3(CurrentLadder.transform.position.x, _controller.transform.position.y, _controller.transform.position.z));
+			}
 		}
 
 		/// <summary>
@@ -382,10 +378,15 @@ namespace MoreMountains.CorgiEngine
 		{
 
 			// we set its state to LadderClimbing
-			_movement.ChangeState(CharacterStates.MovementStates.LadderClimbing);
+			_movement.ChangeState(CharacterStates.MovementStates.LadderClimbing);			
 			// it can't move freely anymore
+<<<<<<< Updated upstream:Contra (Versión Previa A 8.5)/Assets/Corgi Engine/Common/Scripts/Agents/CharacterAbilities/CharacterLadder.cs
 			//_condition.ChangeState(CharacterStates.CharacterConditions.ControlledMovement);//Leo Monge. This was NOT commented.
             // we initialize the ladder climbing speed to zero
+=======
+			_condition.ChangeState(CharacterStates.CharacterConditions.ControlledMovement);
+			// we initialize the ladder climbing speed to zero
+>>>>>>> Stashed changes:Contra/Assets/Corgi Engine/Common/Scripts/Agents/CharacterAbilities/CharacterLadder.cs
 			CurrentLadderClimbingSpeed = Vector2.zero;
 			// we make sure the controller won't move
 			_controller.SetHorizontalForce(0);
@@ -430,6 +431,7 @@ namespace MoreMountains.CorgiEngine
 				CurrentLadderClimbingSpeed += Mathf.Abs(_verticalInput ) * (Vector2)transform.up;	
 			}
 
+<<<<<<< Updated upstream:Contra (Versión Previa A 8.5)/Assets/Corgi Engine/Common/Scripts/Agents/CharacterAbilities/CharacterLadder.cs
             if (CurrentLadder.LadderType == Ladder.LadderTypes.Horizontal)//Leo Monge. This is new. It's a new type of ladder to move the player horizontally when climbing a ladder.
             {
                 _controller.SetHorizontalForce(_horizontalInput * LadderClimbingSpeed);
@@ -438,6 +440,9 @@ namespace MoreMountains.CorgiEngine
                 _characterHorizontalMovement.AbilityPermitted = true;
             }
         }
+=======
+		}
+>>>>>>> Stashed changes:Contra/Assets/Corgi Engine/Common/Scripts/Agents/CharacterAbilities/CharacterLadder.cs
 
 		/// <summary>
 		/// Resets various states so that the Character isn't climbing anymore
@@ -542,7 +547,7 @@ namespace MoreMountains.CorgiEngine
 			RegisterAnimatorParameter (_ladderClimbingUpAnimationParameterName, AnimatorControllerParameterType.Bool, out _ladderClimbingUpAnimationParameter);
 			RegisterAnimatorParameter (_ladderClimbingSpeedXAnimationParameterName, AnimatorControllerParameterType.Float, out _ladderClimbingSpeedXAnimationParameter);
 			RegisterAnimatorParameter (_ladderClimbingSpeedYpAnimationParameterName, AnimatorControllerParameterType.Float, out _ladderClimbingSpeedYAnimationParameter);
-        }
+		}
 
 		/// <summary>
 		/// At the end of each cycle, we update our animator with our various states
