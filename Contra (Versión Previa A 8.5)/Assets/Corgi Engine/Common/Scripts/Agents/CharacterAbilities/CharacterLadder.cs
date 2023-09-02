@@ -75,8 +75,13 @@ namespace MoreMountains.CorgiEngine
 		protected override void Initialization()
 		{
 <<<<<<< Updated upstream:Contra (Versión Previa A 8.5)/Assets/Corgi Engine/Common/Scripts/Agents/CharacterAbilities/CharacterLadder.cs
+<<<<<<< Updated upstream:Contra (Versión Previa A 8.5)/Assets/Corgi Engine/Common/Scripts/Agents/CharacterAbilities/CharacterLadder.cs
 			base.Initialization();
 			CurrentLadderClimbingSpeed = Vector2.zero;
+=======
+            base.Initialization();
+            CurrentLadderClimbingSpeed = Vector2.zero;
+>>>>>>> Stashed changes:Contra/Assets/Corgi Engine/Common/Scripts/Agents/CharacterAbilities/CharacterLadder.cs
 =======
             base.Initialization();
             CurrentLadderClimbingSpeed = Vector2.zero;
@@ -381,8 +386,13 @@ namespace MoreMountains.CorgiEngine
 			_movement.ChangeState(CharacterStates.MovementStates.LadderClimbing);			
 			// it can't move freely anymore
 <<<<<<< Updated upstream:Contra (Versión Previa A 8.5)/Assets/Corgi Engine/Common/Scripts/Agents/CharacterAbilities/CharacterLadder.cs
+<<<<<<< Updated upstream:Contra (Versión Previa A 8.5)/Assets/Corgi Engine/Common/Scripts/Agents/CharacterAbilities/CharacterLadder.cs
 			//_condition.ChangeState(CharacterStates.CharacterConditions.ControlledMovement);//Leo Monge. This was NOT commented.
             // we initialize the ladder climbing speed to zero
+=======
+			_condition.ChangeState(CharacterStates.CharacterConditions.ControlledMovement);
+			// we initialize the ladder climbing speed to zero
+>>>>>>> Stashed changes:Contra/Assets/Corgi Engine/Common/Scripts/Agents/CharacterAbilities/CharacterLadder.cs
 =======
 			_condition.ChangeState(CharacterStates.CharacterConditions.ControlledMovement);
 			// we initialize the ladder climbing speed to zero
@@ -432,6 +442,7 @@ namespace MoreMountains.CorgiEngine
 			}
 
 <<<<<<< Updated upstream:Contra (Versión Previa A 8.5)/Assets/Corgi Engine/Common/Scripts/Agents/CharacterAbilities/CharacterLadder.cs
+<<<<<<< Updated upstream:Contra (Versión Previa A 8.5)/Assets/Corgi Engine/Common/Scripts/Agents/CharacterAbilities/CharacterLadder.cs
             if (CurrentLadder.LadderType == Ladder.LadderTypes.Horizontal)//Leo Monge. This is new. It's a new type of ladder to move the player horizontally when climbing a ladder.
             {
                 _controller.SetHorizontalForce(_horizontalInput * LadderClimbingSpeed);
@@ -440,6 +451,9 @@ namespace MoreMountains.CorgiEngine
                 _characterHorizontalMovement.AbilityPermitted = true;
             }
         }
+=======
+		}
+>>>>>>> Stashed changes:Contra/Assets/Corgi Engine/Common/Scripts/Agents/CharacterAbilities/CharacterLadder.cs
 =======
 		}
 >>>>>>> Stashed changes:Contra/Assets/Corgi Engine/Common/Scripts/Agents/CharacterAbilities/CharacterLadder.cs
