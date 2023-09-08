@@ -4441,9 +4441,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a43a75079a276c2488621adb3d614f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theSplashIntoTheWater: {fileID: 2510268270857063045, guid: 6b79dd42b59737844ad362915a1c9f47,
+  theSplashIntoTheWater: {fileID: 8782833224382486425, guid: 6fb05ac085f56fd41acb6432f09aee63,
     type: 3}
-  theSplashOutOfTheWater: {fileID: 3532721689626977203, guid: d3970de6ecd30d643921f61756fd6265,
+  theSplashOutOfTheWater: {fileID: 1454880666250781191, guid: a54d51495ea486f458a13eea069b73af,
     type: 3}
   thePosition: {x: 0, y: 0, z: 0}
   yOffset: {x: 0, y: 1.1, z: 0}
@@ -5823,9 +5823,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a43a75079a276c2488621adb3d614f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theSplashIntoTheWater: {fileID: 2510268270857063045, guid: 6b79dd42b59737844ad362915a1c9f47,
+  theSplashIntoTheWater: {fileID: 8782833224382486425, guid: 6fb05ac085f56fd41acb6432f09aee63,
     type: 3}
-  theSplashOutOfTheWater: {fileID: 3532721689626977203, guid: d3970de6ecd30d643921f61756fd6265,
+  theSplashOutOfTheWater: {fileID: 1454880666250781191, guid: a54d51495ea486f458a13eea069b73af,
     type: 3}
   thePosition: {x: 0, y: 0, z: 0}
   yOffset: {x: 0, y: 1.1, z: 0}
@@ -20918,7 +20918,7 @@ GameObject:
   - component: {fileID: 1392239209}
   - component: {fileID: 1392239208}
   m_Layer: 0
-  m_Name: Ripple Effect - 03
+  m_Name: Ripple Effect - 04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20934,7 +20934,7 @@ Animator:
   m_GameObject: {fileID: 1392239207}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 09b275a3ca5dce5449d86ec2ef22418a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 50193fc5374e0f8498fcae82f1a02ff6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -20986,12 +20986,12 @@ SpriteRenderer:
   m_SortingLayerID: -1628607475
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1032596957, guid: e8c41c2075bc5fe48ba9f2429fba6887, type: 3}
+  m_Sprite: {fileID: -1041813112, guid: 862e8412687267f4f9872527305bfa28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.125, y: 0.5}
+  m_Size: {x: 1.8125, y: 0.375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -25929,7 +25929,7 @@ GameObject:
   - component: {fileID: 1858501040}
   - component: {fileID: 1858501039}
   m_Layer: 0
-  m_Name: Ripple Effect - 03
+  m_Name: Ripple Effect - 04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25960,7 +25960,7 @@ Animator:
   m_GameObject: {fileID: 1858501037}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 09b275a3ca5dce5449d86ec2ef22418a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 50193fc5374e0f8498fcae82f1a02ff6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -26012,12 +26012,12 @@ SpriteRenderer:
   m_SortingLayerID: -1628607475
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1032596957, guid: e8c41c2075bc5fe48ba9f2429fba6887, type: 3}
+  m_Sprite: {fileID: -1041813112, guid: 862e8412687267f4f9872527305bfa28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.125, y: 0.5}
+  m_Size: {x: 1.8125, y: 0.375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

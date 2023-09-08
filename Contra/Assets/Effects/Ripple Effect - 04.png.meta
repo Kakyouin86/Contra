@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 13df638e77dc3354996e55120967b68b
+guid: 862e8412687267f4f9872527305bfa28
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ripple Effect - 03_0
+      name: Ripple Effect - 04_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 50
-        height: 8
+        width: 29
+        height: 6
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1f4f4274b1a9c84eaf380aa0f576268
-      internalID: 538193582
+      spriteID: 60b4803580779d04a895e4d7cb511725
+      internalID: -1041813112
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ripple Effect - 03_1
+      name: Ripple Effect - 04_1
       rect:
         serializedVersion: 2
-        x: 50
+        x: 29
         y: 0
-        width: 50
-        height: 8
+        width: 29
+        height: 6
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afc0ae882c8ae5b4a8aad749b1e19307
-      internalID: 1743920617
+      spriteID: b04dd05c3218a164b823e73a118fa4ff
+      internalID: -701598246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ripple Effect - 04_2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 0
+        width: 29
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8896fa7a96a8634386aa4e22bc10a5a
+      internalID: 634269901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ripple Effect - 04_3
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 0
+        width: 29
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b548e91360f655c46b4d4ed3d2ad1f46
+      internalID: -1590435718
       vertices: []
       indices: 
       edges: []
@@ -162,8 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ripple Effect - 03_0: 538193582
-      Ripple Effect - 03_1: 1743920617
+      Ripple Effect - 04_0: -1041813112
+      Ripple Effect - 04_1: -701598246
+      Ripple Effect - 04_2: 634269901
+      Ripple Effect - 04_3: -1590435718
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
