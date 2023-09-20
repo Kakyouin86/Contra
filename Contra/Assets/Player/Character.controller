@@ -2192,6 +2192,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: HorizontalLadder
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Hold
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8054247822646477101}
   m_Solo: 0

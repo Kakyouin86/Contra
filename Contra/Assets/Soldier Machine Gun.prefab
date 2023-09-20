@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 114000010799098734}
   - component: {fileID: 114868427724029488}
   m_Layer: 0
-  m_Name: Soldier Machine Gun v3
+  m_Name: Soldier Machine Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000010056848304}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -42,6 +41,7 @@ Transform:
   - {fileID: 4208105084542188012}
   - {fileID: 7123538651372058303}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114000013371614484
 MonoBehaviour:
@@ -85,13 +85,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TriggerMode: 1
-  Interruptable: 0
-  InitializeOnStart: 0
   DelayBeforeUse: 0
   DelayBeforeUseReleaseInterruption: 1
   TimeBetweenUses: 0.2
   TimeBetweenUsesReleaseInterruption: 1
-  CooldownDuration: 0
+  Interruptable: 0
+  InitializeOnStart: 0
   UseBurstMode: 0
   BurstLength: 3
   BurstTimeBetweenShots: 0.1
@@ -103,8 +102,8 @@ MonoBehaviour:
   AutoDestroyWhenEmpty: 0
   AutoDestroyWhenEmptyDelay: 1
   CurrentAmmoLoaded: 0
-  WeaponAttachmentOffset: {x: 1, y: -0.1, z: 0}
-  FlipWeaponOnCharacterFlip: 1
+  WeaponAttachmentOffset: {x: 0, y: -0.1, z: 0}
+  FlipWeaponOnCharacterFlip: 0
   FlipValue: {x: -1, y: 1, z: 1}
   LeftHandHandle: {fileID: 4000013753640436}
   RightHandHandle: {fileID: 4000010364170068}
@@ -117,8 +116,6 @@ MonoBehaviour:
   PreventHorizontalAirMovementWhileInUse: 0
   SetForceWhileInUse: 0
   ForceWhileInUse: {x: 0, y: 0}
-  DisableGravityWhileInUse: 0
-  PreventFlipWhileInUse: 0
   Animators: []
   MirrorCharacterAnimatorParameters: 0
   EquippedAnimationParameter: 
@@ -128,7 +125,6 @@ MonoBehaviour:
   SingleUseAnimationParameter: 
   UseAnimationParameter: IdleShootingStraight
   DelayBetweenUsesAnimationParameter: 
-  InCooldownAnimationParameter: 
   StopAnimationParameter: 
   ReloadStartAnimationParameter: 
   ReloadAnimationParameter: 
@@ -233,7 +229,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 1000011252756086, guid: a430beddbc4470f4a8214aa2c9a1f743,
+  GameObjectToPool: {fileID: 1000011252756086, guid: d09c56acc8aee3244b709b9924f9bea4,
     type: 3}
   PoolSize: 20
   PoolCanExpand: 1
@@ -262,13 +258,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000010747461450}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.572, y: -0.374, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4000012439199124}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33000012753552240
 MeshFilter:
@@ -344,13 +340,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000011304922582}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.746, y: -0.125, z: -0.032}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4000012439199124}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1000011550919078
 GameObject:
@@ -378,13 +374,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000011550919078}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.09822746, y: -0.700251, z: -0.700251, w: 0.09822747}
   m_LocalPosition: {x: -0.046, y: 0.089, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4000012439199124}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &198000011356990672
 ParticleSystem:
@@ -5104,13 +5100,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000013516084942}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 1.238, y: 0.021, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4000012439199124}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &198000011509874428
 ParticleSystem:
@@ -9856,13 +9852,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000013883613028}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.124, y: -0.16475534, z: -0.032}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4000012439199124}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8363607234244267995
 GameObject:
@@ -9896,13 +9892,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8363607234244267995}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 51.275864, y: 16.571524, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4000012439199124}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2111307615769862642
 MonoBehaviour:
@@ -9926,7 +9922,6 @@ MonoBehaviour:
   - {fileID: 5667850075421172561}
   - {fileID: 4387633815809130091}
   InitializationMode: 2
-  AutoInitialization: 1
   SafeMode: 3
   Direction: 0
   AutoChangeDirectionOnEnd: 0
@@ -10568,13 +10563,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8975941618749057904}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 51.275864, y: 16.571524, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4000012439199124}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3547365968525430513
 MonoBehaviour:
@@ -10591,7 +10586,6 @@ MonoBehaviour:
   Feedbacks:
   - {fileID: 506597491725876205}
   InitializationMode: 2
-  AutoInitialization: 1
   SafeMode: 3
   Direction: 0
   AutoChangeDirectionOnEnd: 0
@@ -10738,13 +10732,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9116346808406778304}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 51.275864, y: 16.571524, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4000012439199124}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7685048228660624912
 MonoBehaviour:
@@ -10761,7 +10755,6 @@ MonoBehaviour:
   Feedbacks:
   - {fileID: 5250514880579958823}
   InitializationMode: 2
-  AutoInitialization: 1
   SafeMode: 3
   Direction: 0
   AutoChangeDirectionOnEnd: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 114000010799098734}
   - component: {fileID: 114868427724029488}
   m_Layer: 0
-  m_Name: Soldier Machine Gun v3
+  m_Name: Soldier Machine Gun v4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
   ProjectileSpawnTransform: {fileID: 0}
   ProjectileSpawnOffset: {x: 0.7, y: 0, z: 0}
   ProjectilesPerShot: 1
-  Spread: {x: 0, y: 0, z: 0}
+  Spread: {x: 0, y: 0, z: 1}
   RotateWeaponOnSpread: 0
   RandomSpread: 1
   ObjectPooler: {fileID: 0}
