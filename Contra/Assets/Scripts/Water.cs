@@ -11,7 +11,8 @@ public class Water : MonoBehaviour
     public GameObject theSplashIntoTheWater;
     public GameObject theSplashOutOfTheWater;
     public Vector3 thePosition;
-    public Vector3 yOffset;
+    public Vector3 yOffsetIntoTheWater;
+    public Vector3 yOffsetOutOfTheWater;
     public GameObject theLegs;
     public GameObject theRippleEffect;
 
@@ -36,7 +37,7 @@ public class Water : MonoBehaviour
             //theRippleEffect.SetActive(true);
             thePosition = new Vector3(transform.position.x, transform.position.y,
                 other.transform.position.z);
-            Instantiate(theSplashIntoTheWater, new Vector3(thePosition.x, other.transform.position.y + yOffset.y), transform.rotation);
+            Instantiate(theSplashIntoTheWater, new Vector3(thePosition.x, other.transform.position.y + yOffsetIntoTheWater.y), transform.rotation);
         }
     }
 
@@ -48,7 +49,7 @@ public class Water : MonoBehaviour
         {
             thePosition = new Vector3(transform.position.x, transform.position.y,
                 other.transform.position.z);
-            Instantiate(theSplashOutOfTheWater, new Vector3(thePosition.x, other.transform.position.y + yOffset.y), transform.rotation);
+            Instantiate(theSplashOutOfTheWater, new Vector3(thePosition.x, other.transform.position.y + yOffsetOutOfTheWater.y), transform.rotation);
         }
     }
 }
