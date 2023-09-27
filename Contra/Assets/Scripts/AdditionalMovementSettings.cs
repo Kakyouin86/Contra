@@ -45,6 +45,7 @@ public class AdditionalMovementSettings : MonoBehaviour
     public bool isCharacterV3 = true;
     public GameObject theRippleEffect;
     public GameObject theLegs;
+    public GameObject fireIndicator;
 
     private void Awake()
     {
@@ -212,6 +213,19 @@ public class AdditionalMovementSettings : MonoBehaviour
         {
             theAnimator.SetBool("HorizontalLadder", false);
         }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        //This makes the animator stay on "shooting" if the "Fire" of the weapon is still active
+        /*fireIndicator = GameObject.FindWithTag("FireIndicator").gameObject;
+        if (theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponInCooldown)
+        {
+            theAnimator.SetBool("IsStillShooting", true);
+        }
+        else
+        {
+            theAnimator.SetBool("IsStillShooting", false);
+        }*/
     }
 
     //This will detect horizontal ladders and assign the bool to the animator.

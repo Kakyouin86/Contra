@@ -5144,7 +5144,7 @@ GameObject:
   - component: {fileID: 6673199335186818970}
   m_Layer: 0
   m_Name: Machine Gun
-  m_TagString: Untagged
+  m_TagString: FireIndicator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5188,7 +5188,7 @@ MonoBehaviour:
   TimeBetweenUses: 0.1
   TimeBetweenUsesReleaseInterruption: 1
   CooldownDuration: 0
-  UseBurstMode: 1
+  UseBurstMode: 0
   BurstLength: 3
   BurstTimeBetweenShots: 0.1
   MagazineBased: 0
@@ -5313,8 +5313,8 @@ MonoBehaviour:
   PreventAimWhileWeaponIsInUse: 0
   MinimumAngle: -180
   MaximumAngle: 180
-  IgnoreSlopeRotation: 1
-  IgnoreDownWhenGrounded: 0
+  IgnoreSlopeRotation: 0
+  IgnoreDownWhenGrounded: 1
   Reticle: {fileID: 0}
   DisplayReticle: 0
   ReticleDistance: 0

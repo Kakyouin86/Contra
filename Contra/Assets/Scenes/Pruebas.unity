@@ -1350,6 +1350,7 @@ MonoBehaviour:
   isCharacterV3: 0
   theRippleEffect: {fileID: 0}
   theLegs: {fileID: 0}
+  fireIndicator: {fileID: 0}
 --- !u!114 &24903394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13986,6 +13987,7 @@ MonoBehaviour:
   isCharacterV3: 0
   theRippleEffect: {fileID: 1392239207}
   theLegs: {fileID: 392121773}
+  fireIndicator: {fileID: 0}
 --- !u!114 &1038294705
 MonoBehaviour:
   m_ObjectHideFlags: 0
