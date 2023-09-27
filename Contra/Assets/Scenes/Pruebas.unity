@@ -14061,7 +14061,7 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  InitialWeapon: {fileID: 114000013303203308, guid: f23d7d18cb664c84d997afd6bab811f7,
+  InitialWeapon: {fileID: 1056550734304572037, guid: b1598328dff7dd94a99e5097a9b24e75,
     type: 3}
   CanPickupWeapons: 1
   WeaponAttachment: {fileID: 1724734281}
@@ -26313,7 +26313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1893266543
 BoxCollider2D:
   m_ObjectHideFlags: 0
