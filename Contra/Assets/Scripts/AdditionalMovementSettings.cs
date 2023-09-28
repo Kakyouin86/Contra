@@ -1,3 +1,4 @@
+using System.Collections;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
@@ -8,19 +9,26 @@ using InputManager = MoreMountains.CorgiEngine.InputManager;
 
 public class AdditionalMovementSettings : MonoBehaviour
 {
-    //Ladder line 14 public enum LadderTypes { Simple, BiDirectional, Horizontal } //Leo Monge
-    //CharacterLadder:
-    /* protected override void Initialization()
+    //These are the things we need to change in each script:
+
+    //Ladder: 14
+    //public enum LadderTypes { Simple, BiDirectional, Horizontal } //Leo Monge: Need to ALWAYS bring it after update.
+
+    //CharacterLadder: 75
+    /*
+     protected override void Initialization()
        {
        base.Initialization();
        CurrentLadderClimbingSpeed = Vector2.zero;
-       //_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>();//Leo Monge.
-       _boxCollider = GameObject.FindWithTag("LadderCollider").GetComponent<BoxCollider2D>();//Leo Monge. This adds the collider of the Ladder Collider only
+       //_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>();//Leo Monge: Need to ALWAYS bring it after update.
+       _boxCollider = GameObject.FindWithTag("LadderCollider").GetComponent<BoxCollider2D>();//Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only
        _colliders = new List<Collider2D>();
        _characterHandleWeapon = this.gameObject.GetComponentInParent<Character>()?.FindAbility<CharacterHandleWeapon>();
        }
      */
-    //CharacterWallClinging line 21 [Range(0.0000000001f, 1)]//Leo Monge: it was 0.01f originally. With this small value, you can't detach from the wall.
+
+    //CharacterWallClinging: 21
+    //[Range(0.0000000001f, 1)]//Leo Monge: Need to ALWAYS bring it after update. it was 0.01f originally. With this small value, you can't detach from the wall.
 
     public Player player;
     public Character character;
@@ -45,7 +53,7 @@ public class AdditionalMovementSettings : MonoBehaviour
     public bool isCharacterV3 = true;
     public GameObject theRippleEffect;
     public GameObject theLegs;
-    public GameObject fireIndicator;
+    public GameObject theBCLadder;
 
     private void Awake()
     {
@@ -68,11 +76,9 @@ public class AdditionalMovementSettings : MonoBehaviour
         theOriginalBoxCollider2DSize = new Vector3(theBCTrigger.size.x, theBCTrigger.size.y);
         theOriginalBoxCollider2DOffset = new Vector3(theBCTrigger.offset.x, theBCTrigger.offset.y);
     }
-
     void Update()
     {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
         //Just the "Hold"
         if (player.GetButton(("HoldPosition")))
         {
@@ -85,8 +91,6 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
         //Makes the collider smaller when jumping.
         if (theController.State.IsJumping)
         {
@@ -109,7 +113,6 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
         //This makes the player's firepoint go down if he's crouching.
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching &&
             !player.GetButton(("HoldPosition")))
@@ -123,7 +126,6 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
         //This makes the Hold position impossible to move and aim without walking.
         if (theController.State.IsGrounded && player.GetButton(("HoldPosition")) && !theController.State.IsJumping)
         {
@@ -143,7 +145,6 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
         //This makes the Death bool to happen. Death trigger was NOT removed from the original script but I added a bool so it doesn't exit the animator.
         if (character.ConditionState.CurrentState == CharacterStates.CharacterConditions.Dead)
         {
@@ -156,7 +157,6 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
         //This makes that, when crouching, you can fire diagonally.
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crawling)
         {
@@ -164,7 +164,6 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
         //This makes that, when climbing a ladder, you stop if you are shooting or not. Original climbing speed: 2. Had to modify in CharacterLadder this:
         //_condition.ChangeState(CharacterStates.CharacterConditions.ControlledMovement)
 
@@ -203,7 +202,6 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
         //This will detect horizontal ladders and assign the bool to the animator.
         if (horizontalLadder)
         {
@@ -214,8 +212,21 @@ public class AdditionalMovementSettings : MonoBehaviour
             theAnimator.SetBool("HorizontalLadder", false);
         }
 
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //This makes that if the player is hang and presses down and Jump, it will go through. Also, the Coroutine associated to this.
+        if ((player.GetAxis("Vertical") < 0) && (player.GetButton("Jump")) && horizontalLadder)
+        {
+            character.GetComponent<CharacterJump>().AbilityPermitted = false;
+            theBCLadder.SetActive(false);
+            StartCoroutine(ReinitializeTheBCLadder());
+        }
 
+        if (theController.State.IsGrounded)
+        {
+            character.GetComponent<CharacterJump>().AbilityPermitted = true;
+            theBCLadder.SetActive(true);
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //This makes the animator stay on "shooting" if the "Fire" of the weapon is still active
         /*fireIndicator = GameObject.FindWithTag("FireIndicator").gameObject;
         if (theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponInCooldown)
@@ -226,6 +237,13 @@ public class AdditionalMovementSettings : MonoBehaviour
         {
             theAnimator.SetBool("IsStillShooting", false);
         }*/
+    }
+    
+    IEnumerator ReinitializeTheBCLadder()
+    {
+        yield return new WaitForSeconds(0.2f);
+        theBCLadder.SetActive(true);
+        character.GetComponent<CharacterJump>().AbilityPermitted = true;
     }
 
     //This will detect horizontal ladders and assign the bool to the animator.

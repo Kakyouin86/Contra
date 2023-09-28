@@ -1350,7 +1350,7 @@ MonoBehaviour:
   isCharacterV3: 0
   theRippleEffect: {fileID: 0}
   theLegs: {fileID: 0}
-  fireIndicator: {fileID: 0}
+  theBCLadder: {fileID: 0}
 --- !u!114 &24903394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13987,7 +13987,7 @@ MonoBehaviour:
   isCharacterV3: 0
   theRippleEffect: {fileID: 1392239207}
   theLegs: {fileID: 392121773}
-  fireIndicator: {fileID: 0}
+  theBCLadder: {fileID: 1985355087}
 --- !u!114 &1038294705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29571,8 +29571,8 @@ SceneRoots:
   - {fileID: 24903392}
   - {fileID: 1038294703}
   - {fileID: 1346815827}
-  - {fileID: 636157184}
   - {fileID: 1119544122}
+  - {fileID: 636157184}
   - {fileID: 620339282}
   - {fileID: 65933913}
   - {fileID: 685434371}
