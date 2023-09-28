@@ -11,9 +11,9 @@ namespace MoreMountains.CorgiEngine
 	public class Ladder : CorgiMonoBehaviour 
 	{
 		/// the different types of ladders
-		public enum LadderTypes { Simple, BiDirectional, Horizontal } //Leo Monge
+		public enum LadderTypes { Simple, BiDirectional, Horizontal } //Leo Monge: Need to ALWAYS bring it after update.
 
-		[Header("Behaviour")]
+        [Header("Behaviour")]
 
 		/// determines whether this ladder is simple (vertical) or bidirectional
 		[Tooltip("determines whether this ladder is simple (vertical) or bidirectional")]

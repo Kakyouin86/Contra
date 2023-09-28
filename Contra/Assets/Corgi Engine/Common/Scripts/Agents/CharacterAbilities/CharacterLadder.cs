@@ -76,8 +76,8 @@ namespace MoreMountains.CorgiEngine
 		{
             base.Initialization();
             CurrentLadderClimbingSpeed = Vector2.zero;
-            //_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>();//Leo Monge. 
-            _boxCollider = GameObject.FindWithTag("LadderCollider").GetComponent<BoxCollider2D>();//Leo Monge. This adds the collider of the Ladder Collider only
+            //_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>();//Leo Monge: Need to ALWAYS bring it after update.
+            _boxCollider = GameObject.FindWithTag("LadderCollider").GetComponent<BoxCollider2D>();//Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only
             _colliders = new List<Collider2D>();
             _characterHandleWeapon = this.gameObject.GetComponentInParent<Character>()?.FindAbility<CharacterHandleWeapon>();
         }
