@@ -93,7 +93,7 @@ MonoBehaviour:
   TimeBetweenUses: 0.1
   TimeBetweenUsesReleaseInterruption: 1
   CooldownDuration: 0
-  UseBurstMode: 0
+  UseBurstMode: 1
   BurstLength: 3
   BurstTimeBetweenShots: 0.1
   MagazineBased: 0
@@ -194,10 +194,10 @@ MonoBehaviour:
   ProjectileSpawnTransform: {fileID: 0}
   ProjectileSpawnOffset: {x: 0, y: 0, z: 0}
   ProjectilesPerShot: 1
-  Spread: {x: 5, y: 0, z: 0.5}
+  Spread: {x: 60, y: 0, z: 0.5}
   RotateWeaponOnSpread: 0
   RandomSpread: 1
-  ObjectPooler: {fileID: 0}
+  ObjectPooler: {fileID: 812638261945774685}
   SpawnPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &114000010799098734
 MonoBehaviour:
@@ -237,25 +237,15 @@ MonoBehaviour:
   Pool:
   - GameObjectToPool: {fileID: 183803012360247645, guid: dab71a8b6693a2849ac79df8bcfa5a0f,
       type: 3}
-    PoolSize: 2
+    PoolSize: 1
     PoolCanExpand: 1
     Enabled: 1
   - GameObjectToPool: {fileID: 183803012360247645, guid: 4d30d5928295f994ab9863d9e7aad42d,
       type: 3}
-    PoolSize: 2
+    PoolSize: 1
     PoolCanExpand: 1
     Enabled: 1
-  - GameObjectToPool: {fileID: 183803012360247645, guid: dab71a8b6693a2849ac79df8bcfa5a0f,
-      type: 3}
-    PoolSize: 2
-    PoolCanExpand: 1
-    Enabled: 1
-  - GameObjectToPool: {fileID: 183803012360247645, guid: 4d30d5928295f994ab9863d9e7aad42d,
-      type: 3}
-    PoolSize: 2
-    PoolCanExpand: 1
-    Enabled: 1
-  PoolingMethod: 2
+  PoolingMethod: 3
   CanPoolSameObjectTwice: 0
   MutualizedPoolName: 
 --- !u!1 &1000010747461450

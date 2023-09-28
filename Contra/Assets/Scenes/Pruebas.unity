@@ -14071,7 +14071,7 @@ MonoBehaviour:
   ForceWeaponRotationResetOnEquip: 0
   AutomaticallyBindAnimator: 1
   AmmoDisplayID: 0
-  ContinuousPress: 0
+  ContinuousPress: 1
   GettingHitInterruptsAttack: 0
   CanShootFromLadders: 1
   FaceWeaponDirection: 0

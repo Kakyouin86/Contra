@@ -877,9 +877,10 @@ namespace MoreMountains.CorgiEngine
 			{
 				ShootRequest();
 				remainingShots--;
-				yield return MMCoroutine.WaitFor(0); //Leo Monge. Need to ALWAYS bring it after update. This was "interval". Changed it to 0.
+				yield return MMCoroutine.WaitFor(interval); //Leo Monge. Need to ALWAYS bring it after update. This was "interval". Changed it to 0.
+                //yield return MMCoroutine.WaitFor(0); //Leo Monge. Need to ALWAYS bring it after update. This was "interval". Changed it to 0.
             }
-		}
+        }
 
 		/// <summary>
 		/// Determines whether or not the weapon can fire
