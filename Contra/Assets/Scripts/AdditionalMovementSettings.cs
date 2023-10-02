@@ -54,6 +54,9 @@ public class AdditionalMovementSettings : MonoBehaviour
     public GameObject theRippleEffect;
     public GameObject theLegs;
     public GameObject theBCLadder;
+    public bool startTimerBeforeNextAnim = false;
+    public float initialTimeBeforeNextAnim = 0.25f;
+    public float currentTimeBeforeNextAnim = 0.25f;
 
     private void Awake()
     {
@@ -228,17 +231,28 @@ public class AdditionalMovementSettings : MonoBehaviour
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //This makes the animator stay on "shooting" if the "Fire" of the weapon is still active
-        /*fireIndicator = GameObject.FindWithTag("FireIndicator").gameObject;
-        if (theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponInCooldown)
+        if (theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse)
         {
-            theAnimator.SetBool("IsStillShooting", true);
+            currentTimeBeforeNextAnim = initialTimeBeforeNextAnim;
+            startTimerBeforeNextAnim = true;
         }
-        else
+
+        if (startTimerBeforeNextAnim)
         {
-            theAnimator.SetBool("IsStillShooting", false);
-        }*/
+            currentTimeBeforeNextAnim -= Time.deltaTime;
+            theAnimator.SetBool("TimerBeforeNextAnim", true);
+        }
+
+        if (currentTimeBeforeNextAnim <= 0.0f)
+        {
+            currentTimeBeforeNextAnim = initialTimeBeforeNextAnim;
+            startTimerBeforeNextAnim = false;
+            theAnimator.SetBool("TimerBeforeNextAnim", false);
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
-    
+
     IEnumerator ReinitializeTheBCLadder()
     {
         yield return new WaitForSeconds(0.2f);

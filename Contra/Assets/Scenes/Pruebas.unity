@@ -1351,6 +1351,9 @@ MonoBehaviour:
   theRippleEffect: {fileID: 0}
   theLegs: {fileID: 0}
   theBCLadder: {fileID: 0}
+  startTimerBeforeNextAnim: 0
+  initialTimeBeforeNextAnim: 0
+  currentTimeBeforeNextAnim: 0
 --- !u!114 &24903394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13367,15 +13370,16 @@ GameObject:
   - component: {fileID: 1038294699}
   - component: {fileID: 1038294698}
   - component: {fileID: 1038294697}
-  - component: {fileID: 1038294696}
+  - component: {fileID: 1038294681}
   - component: {fileID: 1038294694}
   - component: {fileID: 1038294693}
-  - component: {fileID: 1038294690}
-  - component: {fileID: 1038294689}
   - component: {fileID: 1038294686}
-  - component: {fileID: 1038294684}
+  - component: {fileID: 1038294690}
+  - component: {fileID: 1038294696}
   - component: {fileID: 1038294682}
-  - component: {fileID: 1038294681}
+  - component: {fileID: 1038294708}
+  - component: {fileID: 1038294689}
+  - component: {fileID: 1038294684}
   - component: {fileID: 1038294707}
   - component: {fileID: 1038294706}
   - component: {fileID: 1038294705}
@@ -13394,7 +13398,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038294679}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46406e788b52547b6b352456466eb58b, type: 3}
   m_Name: 
@@ -13414,7 +13418,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038294679}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f59e06702d6be45948936bd909420d61, type: 3}
   m_Name: 
@@ -13442,7 +13446,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038294679}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eeabffc5d6e694a8287c891288b0a4be, type: 3}
   m_Name: 
@@ -13469,7 +13473,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038294679}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91c7e9428883e43cc8ce6e26ef802353, type: 3}
   m_Name: 
@@ -13489,7 +13493,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038294679}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fd71e945bfcd4897b3a95607989c7d4, type: 3}
   m_Name: 
@@ -13988,6 +13992,9 @@ MonoBehaviour:
   theRippleEffect: {fileID: 1392239207}
   theLegs: {fileID: 392121773}
   theBCLadder: {fileID: 1985355087}
+  startTimerBeforeNextAnim: 0
+  initialTimeBeforeNextAnim: 0.25
+  currentTimeBeforeNextAnim: 0.25
 --- !u!114 &1038294705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14030,7 +14037,7 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  WalkSpeed: 6
+  WalkSpeed: 7.5
   MovementSpeedMultiplier: 1
   AbilityMovementSpeedMultiplier: 1
   PushSpeedMultiplier: 1
@@ -14081,6 +14088,41 @@ MonoBehaviour:
   NewInputExtendsBuffer: 0
   MaximumBufferDuration: 0.25
   CurrentWeapon: {fileID: 0}
+--- !u!114 &1038294708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038294679}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d317597e2b47bcb4e80316f1b372d79b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStopFeedbacks: {fileID: 0}
+  AbilityPermitted: 1
+  BlockingMovementStates: 
+  BlockingConditionStates: 
+  BlockingWeaponStates: 
+  RollDuration: 0.5
+  RollSpeed: 3
+  BlockHorizontalInput: 0
+  PreventDamageCollisionsDuringRoll: 0
+  Aim:
+    AimControl: 2
+    RotationMode: 0
+    MinimumAngle: -180
+    MaximumAngle: 180
+    CurrentAngle: 0
+  MinimumInputThreshold: 0.1
+  FlipCharacterIfNeeded: 1
+  RollCooldown: 1
+  LimitedRolls: 0
+  SuccessiveRollsAmount: 1
+  SuccessiveRollsLeft: 1
+  SuccessiveRollsResetDuration: 2
 --- !u!1 &1039151515
 GameObject:
   m_ObjectHideFlags: 0
@@ -21416,7 +21458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1467476307
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26315,7 +26357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1893266543
 BoxCollider2D:
   m_ObjectHideFlags: 0
