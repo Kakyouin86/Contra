@@ -47,7 +47,7 @@ public class AdditionalMovementSettings : MonoBehaviour
     public float jumpingOffsetY;
     public float jumpingSizeX;
     public float jumpingSizeY;
-    public bool isCharacterV3 = true;
+    public bool isNotCharacterV3 = false;
     public GameObject theRippleEffect;
     public GameObject theLegs;
     public GameObject theBCLadder;
@@ -92,7 +92,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         //Makes the collider smaller when jumping.
         if (theController.State.IsJumping)
         {
-            if (!isCharacterV3)
+            if (!isNotCharacterV3)
             {
                 theBCTrigger.offset = new Vector2(0, 1.3f);
                 theBCTrigger.size = new Vector2(1, 1.8f);

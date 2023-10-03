@@ -13,8 +13,8 @@ public class Firepoint : MonoBehaviour
     public Character character;
     public GameObject theFirepoint;
     public Animator theAnimator;
-    public Vector3 theStandingPosition;
-    public Vector3 theCrouchingPosition;
+    //public Vector3 theStandingPosition;
+    //public Vector3 theCrouchingPosition;
     public AnimationClip[] animationNames;
     public Vector3 offset = new Vector3(0f, 0f, 0f);
     //public WeaponAim aimableWeapon;
@@ -29,8 +29,8 @@ public class Firepoint : MonoBehaviour
         character = GetComponent<Character>();
         theFirepoint = GameObject.FindWithTag("Firepoint");
         theAnimator = gameObject.transform.GetChild(0).GetComponent<Animator>();
-        theStandingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y);
-        theCrouchingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y + offset.y);
+        //theStandingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y);
+        //theCrouchingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y + offset.y);
     }
 
     void Update()

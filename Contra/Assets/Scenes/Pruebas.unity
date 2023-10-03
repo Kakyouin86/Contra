@@ -1344,7 +1344,7 @@ MonoBehaviour:
   jumpingOffsetY: 0
   jumpingSizeX: 0
   jumpingSizeY: 0
-  isCharacterV3: 0
+  isNotCharacterV3: 0
   theRippleEffect: {fileID: 0}
   theLegs: {fileID: 0}
   theBCLadder: {fileID: 0}
@@ -7716,7 +7716,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &620339281
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13983,7 +13983,7 @@ MonoBehaviour:
   jumpingOffsetY: 1.75
   jumpingSizeX: 1
   jumpingSizeY: 1.45
-  isCharacterV3: 0
+  isNotCharacterV3: 0
   theRippleEffect: {fileID: 1392239207}
   theLegs: {fileID: 392121773}
   theBCLadder: {fileID: 1985355087}
@@ -21506,7 +21506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1467476307
 BoxCollider2D:
   m_ObjectHideFlags: 0
