@@ -1335,9 +1335,6 @@ MonoBehaviour:
   theCharacterHandleWeapon: {fileID: 0}
   theAnimator: {fileID: 24903369}
   theFirepoint: {fileID: 827186282}
-  theStandingPosition: {x: 0, y: 0, z: 0}
-  theCrouchingPosition: {x: 0, y: 0, z: 0}
-  offset: {x: 0, y: -1.4, z: 0}
   theWeapon: {fileID: 0}
   horizontalLadder: 0
   theBCTrigger: {fileID: 24903389}
@@ -13384,6 +13381,7 @@ GameObject:
   - component: {fileID: 1038294706}
   - component: {fileID: 1038294705}
   - component: {fileID: 1038294704}
+  - component: {fileID: 1038294709}
   m_Layer: 9
   m_Name: Character v3
   m_TagString: Player
@@ -13975,10 +13973,7 @@ MonoBehaviour:
   theInputManager: {fileID: 0}
   theCharacterHandleWeapon: {fileID: 0}
   theAnimator: {fileID: 1448508891}
-  theFirepoint: {fileID: 1724734280}
-  theStandingPosition: {x: 0, y: 0, z: 0}
-  theCrouchingPosition: {x: 0, y: 0, z: 0}
-  offset: {x: 0, y: -2, z: 0}
+  theFirepoint: {fileID: 0}
   theWeapon: {fileID: 0}
   horizontalLadder: 0
   theBCTrigger: {fileID: 0}
@@ -14123,6 +14118,30 @@ MonoBehaviour:
   SuccessiveRollsAmount: 1
   SuccessiveRollsLeft: 1
   SuccessiveRollsResetDuration: 2
+--- !u!114 &1038294709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038294679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1254fbe2aa1ca9847a2df8249cdd5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  theFirepoint: {fileID: 0}
+  theAnimator: {fileID: 0}
+  theStandingPosition: {x: 0, y: 0, z: 0}
+  theCrouchingPosition: {x: 0, y: 0, z: 0}
+  animationNames:
+  - {fileID: 7400000, guid: 9840f9783961ce94bbe07a15431ddde9, type: 2}
+  - {fileID: 7400000, guid: 5de9feb9b1b988a429735bdf6e8421d2, type: 2}
+  - {fileID: 7400000, guid: 57babbd768979c94b9cab36979c42cad, type: 2}
+  - {fileID: 7400000, guid: e277545f6c1222e48858f7c9b54c71a2, type: 2}
+  - {fileID: 7400000, guid: 6ad14ed576bfe834b9081da7d53755df, type: 2}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1039151515
 GameObject:
   m_ObjectHideFlags: 0
@@ -24009,7 +24028,7 @@ GameObject:
   - component: {fileID: 1724734281}
   m_Layer: 9
   m_Name: Firepoint
-  m_TagString: Untagged
+  m_TagString: Firepoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27439,7 +27458,7 @@ MonoBehaviour:
   HideMobileControlsInEditor: 0
   MovementControl: 1
   DelayedButtonPresses: 0
-  SmoothMovement: 1
+  SmoothMovement: 0
   Threshold: {x: 0.1, y: 0.1}
 --- !u!114 &1966031592
 MonoBehaviour:

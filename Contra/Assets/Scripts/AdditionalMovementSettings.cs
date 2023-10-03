@@ -38,9 +38,6 @@ public class AdditionalMovementSettings : MonoBehaviour
     public CharacterHandleWeapon theCharacterHandleWeapon;
     public Animator theAnimator;
     public GameObject theFirepoint;
-    public Vector3 theStandingPosition;
-    public Vector3 theCrouchingPosition;
-    public Vector3 offset = new Vector3(0f, -2f, 0f);
     public Weapon theWeapon;
     public bool horizontalLadder = false;
     public BoxCollider2D theBCTrigger;
@@ -69,11 +66,9 @@ public class AdditionalMovementSettings : MonoBehaviour
         theInputManager = FindObjectOfType<InputManager>();
         theCharacterHandleWeapon = FindObjectOfType<CharacterHandleWeapon>();
         character = GetComponent<Character>();
+        theFirepoint = GameObject.FindWithTag("Firepoint");
         //theAnimator = GetComponent<Animator>();
         theBCTrigger = GetComponent<BoxCollider2D>();
-        theStandingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y);
-        theCrouchingPosition =
-            new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y + offset.y);
         theController.State.JustGotGrounded = true;
         theWeapon = FindObjectOfType<Weapon>();
         theOriginalBoxCollider2DSize = new Vector3(theBCTrigger.size.x, theBCTrigger.size.y);
@@ -113,19 +108,6 @@ public class AdditionalMovementSettings : MonoBehaviour
         {
             theBCTrigger.offset = new Vector2(theOriginalBoxCollider2DOffset.x, theOriginalBoxCollider2DOffset.y);
             theBCTrigger.size = new Vector2(theOriginalBoxCollider2DSize.x, theOriginalBoxCollider2DSize.y);
-        }
-
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //This makes the player's firepoint go down if he's crouching.
-        if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching &&
-            !player.GetButton(("HoldPosition")))
-        {
-            theFirepoint.gameObject.transform.localPosition =
-                new Vector3(theCrouchingPosition.x, theCrouchingPosition.y);
-        }
-        else
-        {
-            theFirepoint.gameObject.transform.localPosition = new Vector3(theStandingPosition.x, theStandingPosition.y);
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
