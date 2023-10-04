@@ -13,10 +13,10 @@ public class Firepoint : MonoBehaviour
     public Character character;
     public GameObject theFirepoint;
     public Animator theAnimator;
-    //public Vector3 theStandingPosition;
-    //public Vector3 theCrouchingPosition;
     public AnimationClip[] animationNames;
     public Vector3 offset = new Vector3(0f, 0f, 0f);
+    //public Vector3 theStandingPosition;
+    //public Vector3 theCrouchingPosition;
     //public WeaponAim aimableWeapon;
     //public float theAngle;
 
