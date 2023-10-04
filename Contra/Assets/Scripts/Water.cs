@@ -1,3 +1,4 @@
+using System.Collections;
 using MoreMountains.CorgiEngine;
 using UnityEngine;
 
@@ -11,10 +12,13 @@ public class Water : MonoBehaviour
     public GameObject theLegs;
     public GameObject theRippleEffect;
     public bool isPlayerInWater = false; // Flag to track whether the player is in water
+    public CharacterHorizontalMovement characterHorizontalMovement;
+    public CharacterCrouch characterCrouch;
 
     void Start()
     {
-
+        characterHorizontalMovement = GetComponentInParent<CharacterHorizontalMovement>();
+        characterCrouch = GetComponentInParent<CharacterCrouch>();
     }
 
     void Update()
@@ -25,8 +29,10 @@ public class Water : MonoBehaviour
     {
         if (other.CompareTag("Water"))
         {
-            isPlayerInWater = true; // Set the flag to true when player enters water
-            GetComponentInParent<CharacterCrouch>().AbilityPermitted = false;
+            isPlayerInWater = true;
+            characterHorizontalMovement.AbilityMovementSpeedMultiplier = 0f;
+            StartCoroutine(DisableControlls());
+            characterCrouch.AbilityPermitted = false;
             theLegs.SetActive(false);
             // theRippleEffect.SetActive(true);
             thePosition = new Vector3(transform.position.x, transform.position.y,
@@ -35,12 +41,19 @@ public class Water : MonoBehaviour
         }
     }
 
+    IEnumerator DisableControlls()
+    {
+        //This makes a short stop upon entering on the water
+        yield return new WaitForSeconds(0.05f);
+        characterHorizontalMovement.AbilityMovementSpeedMultiplier = 1f;
+    }
+
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Water"))
         {
-            isPlayerInWater = false; // Set the flag to false when player exits water
-            GetComponentInParent<CharacterCrouch>().AbilityPermitted = true;
+            isPlayerInWater = false;
+            characterCrouch.AbilityPermitted = true;
             theLegs.SetActive(true);
             theRippleEffect.SetActive(false);
             thePosition = new Vector3(transform.position.x, transform.position.y,
