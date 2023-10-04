@@ -1351,6 +1351,7 @@ MonoBehaviour:
   startTimerBeforeNextAnim: 0
   initialTimeBeforeNextAnim: 0
   currentTimeBeforeNextAnim: 0
+  slopesDetector: {fileID: 0}
 --- !u!114 &24903394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4472,6 +4473,7 @@ MonoBehaviour:
   yOffsetOutOfTheWater: {x: 0, y: 0, z: 0}
   theLegs: {fileID: 1554147282}
   theRippleEffect: {fileID: 1858501037}
+  isPlayerInWater: 0
 --- !u!114 &279173256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5814,7 +5816,7 @@ GameObject:
   - component: {fileID: 458236779}
   m_Layer: 9
   m_Name: Slopes Detector
-  m_TagString: Untagged
+  m_TagString: SlopesDetector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5855,6 +5857,7 @@ MonoBehaviour:
   yOffsetOutOfTheWater: {x: 0, y: 0.4, z: 0}
   theLegs: {fileID: 392121773}
   theRippleEffect: {fileID: 1392239207}
+  isPlayerInWater: 0
 --- !u!114 &458236780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13990,6 +13993,7 @@ MonoBehaviour:
   startTimerBeforeNextAnim: 0
   initialTimeBeforeNextAnim: 0.25
   currentTimeBeforeNextAnim: 0.25
+  slopesDetector: {fileID: 0}
 --- !u!114 &1038294705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14133,8 +14137,6 @@ MonoBehaviour:
   character: {fileID: 0}
   theFirepoint: {fileID: 0}
   theAnimator: {fileID: 0}
-  theStandingPosition: {x: 0, y: 0, z: 0}
-  theCrouchingPosition: {x: 0, y: 0, z: 0}
   animationNames:
   - {fileID: 7400000, guid: 9840f9783961ce94bbe07a15431ddde9, type: 2}
   - {fileID: 7400000, guid: 5de9feb9b1b988a429735bdf6e8421d2, type: 2}

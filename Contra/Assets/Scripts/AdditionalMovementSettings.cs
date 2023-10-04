@@ -54,6 +54,7 @@ public class AdditionalMovementSettings : MonoBehaviour
     public bool startTimerBeforeNextAnim = false;
     public float initialTimeBeforeNextAnim = 0.25f;
     public float currentTimeBeforeNextAnim = 0.25f;
+    public GameObject slopesDetector;
 
     private void Awake()
     {
@@ -67,6 +68,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         theCharacterHandleWeapon = FindObjectOfType<CharacterHandleWeapon>();
         character = GetComponent<Character>();
         theFirepoint = GameObject.FindWithTag("Firepoint");
+        slopesDetector = GameObject.FindWithTag("SlopesDetector");
         //theAnimator = GetComponent<Animator>();
         theBCTrigger = GetComponent<BoxCollider2D>();
         theController.State.JustGotGrounded = true;
@@ -118,7 +120,14 @@ public class AdditionalMovementSettings : MonoBehaviour
             theController.SetVerticalForce(0);
             //theAnimator.SetBool("Hold", true);
             theAnimator.SetBool("Walking", false);
-            theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = false;
+            if (!slopesDetector.GetComponent<Water>().isPlayerInWater)
+            {
+                theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = false;
+            }
+            else
+            {
+                theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = true;
+            }
         }
         else
         {
@@ -212,7 +221,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //This makes the animator stay on "shooting" if the "Fire" of the weapon is still active
+        //This makes the animator stay on "shooting" if the "Fire" of the weapon is still active.
         if (theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse)
         {
             currentTimeBeforeNextAnim = initialTimeBeforeNextAnim;
@@ -233,6 +242,11 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //This makes that if you are NOT in the water, then you can crouch again.
+        if (!slopesDetector.GetComponent<Water>().isPlayerInWater)
+        {
+            GetComponentInParent<CharacterCrouch>().AbilityPermitted = true;
+        }
     }
 
     IEnumerator ReinitializeTheBCLadder()

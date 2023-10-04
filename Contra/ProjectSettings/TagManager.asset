@@ -15,6 +15,7 @@ TagManager:
   - Water
   - FireIndicator
   - Firepoint
+  - SlopesDetector
   layers:
   - Default
   - TransparentFX
