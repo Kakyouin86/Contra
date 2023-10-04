@@ -4849,7 +4849,7 @@ GameObject:
   - component: {fileID: 2555748859113119938}
   - component: {fileID: 6036230622538877171}
   m_Layer: 0
-  m_Name: MinimalRocketLauncherRocket
+  m_Name: Minimal Rocket Launcher Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

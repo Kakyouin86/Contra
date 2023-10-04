@@ -279,6 +279,25 @@ public class Firepoint : MonoBehaviour
                 //////////////////////////////////////////////////////////////////////////////////////
                 //Horizontal ladder
                 //Horizontal ladder idle while facing right
+                if (((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Hold Forward") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(offset.x, offset.y);
+                }
+                //Horizontal ladder idle while facing left
+                if (((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Hold Forward") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(offset.x, offset.y);
+                }
+                //Horizontal ladder idle while facing right but aiming left
+                if (((animationNames.name == "Horizontal Ladder Hold Back") || (animationNames.name == "Horizontal Ladder Shooting Back")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(offset.x, offset.y);
+                }
+                //Horizontal ladder idle while facing left but aiming right
+                if (((animationNames.name == "Horizontal Ladder Hold Back") || (animationNames.name == "Horizontal Ladder Shooting Back")) && !character.IsFacingRight && (player.GetAxisRaw("Horizontal") > 0))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(offset.x, offset.y);
+                }
             }
         }
     }

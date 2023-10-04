@@ -39093,7 +39093,7 @@ GameObject:
   - component: {fileID: 930651639638429144}
   - component: {fileID: 8678671067086924098}
   m_Layer: 0
-  m_Name: MinimalChargeWeapon
+  m_Name: Minimal Charge Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
