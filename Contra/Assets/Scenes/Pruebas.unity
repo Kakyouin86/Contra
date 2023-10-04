@@ -13215,6 +13215,18 @@ MonoBehaviour:
   - {fileID: 7400000, guid: a7a949a3bc5eaba4c861ca5b07b961ec, type: 2}
   - {fileID: 7400000, guid: 5322168d91a6b7941a8d471e7eb98078, type: 2}
   - {fileID: 7400000, guid: 9b8e1dc10cb98a644aa2dcfb39c420d5, type: 2}
+  - {fileID: 7400000, guid: 904ab88bb535f394e8db39a2e9e1bc65, type: 2}
+  - {fileID: 7400000, guid: 048aa0d987e8db04aacc1fae294b638d, type: 2}
+  - {fileID: 7400000, guid: bbd3631ac3a58a446ab75eb377e10117, type: 2}
+  - {fileID: 7400000, guid: 95f13f353148dd34d936519b7e0ab9c6, type: 2}
+  - {fileID: 7400000, guid: fb29078697d048e4c99f4534092d9bdb, type: 2}
+  - {fileID: 7400000, guid: 3418426378be2eb41babf292007ac258, type: 2}
+  - {fileID: 7400000, guid: 4eaa114d758060747bff9b76dac34c9f, type: 2}
+  - {fileID: 7400000, guid: b3ec33a1b702a3a4abdd4f9e496b13f6, type: 2}
+  - {fileID: 7400000, guid: a2187a1a7c4692f40b3b7c70eb5b3b0d, type: 2}
+  - {fileID: 7400000, guid: f3bc1a0b36f9b7c459de11f93b21846e, type: 2}
+  - {fileID: 7400000, guid: 695974b2e2c645d4896f4493789f7cbb, type: 2}
+  - {fileID: 7400000, guid: f160647f15134584abdae1c02cfb6f93, type: 2}
   offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1039151515
 GameObject:
@@ -25183,7 +25195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1893266543
 BoxCollider2D:
   m_ObjectHideFlags: 0

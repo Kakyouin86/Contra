@@ -1334,7 +1334,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Horizontal Ladder Shooting Diagonal Up
+  m_Name: Horizontal Ladder Shooting Diagonal Up Forward
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -1773,7 +1773,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Horizontal Ladder Shooting Diagonal Down
+  m_Name: Horizontal Ladder Shooting Diagonal Down Forward
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -2325,7 +2325,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Horizontal Ladder Hold Diagonal Down
+  m_Name: Horizontal Ladder Hold Diagonal Down Forward
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -3445,7 +3445,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Horizontal Ladder Hold Diagonal Up
+  m_Name: Horizontal Ladder Hold Diagonal Up Forward
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
