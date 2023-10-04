@@ -58,8 +58,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AimControl: 1
   RotationMode: 2
-  WeaponRotationSpeed: 0
-  InstantFlip: 1
+  WeaponRotationSpeed: 20
+  InstantFlip: 0
   PreventAimWhileWeaponIsInUse: 0
   MinimumAngle: -180
   MaximumAngle: 180
@@ -194,7 +194,7 @@ MonoBehaviour:
   ProjectileSpawnTransform: {fileID: 0}
   ProjectileSpawnOffset: {x: 0, y: 0, z: 0}
   ProjectilesPerShot: 1
-  Spread: {x: 60, y: 0, z: 0.5}
+  Spread: {x: 0, y: 0, z: 1}
   RotateWeaponOnSpread: 0
   RandomSpread: 1
   ObjectPooler: {fileID: 812638261945774685}
