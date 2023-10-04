@@ -16,6 +16,7 @@ TagManager:
   - FireIndicator
   - Firepoint
   - SlopesDetector
+  - PlayerSprites
   layers:
   - Default
   - TransparentFX

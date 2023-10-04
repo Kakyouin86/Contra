@@ -20252,7 +20252,7 @@ GameObject:
   - component: {fileID: 1448508891}
   m_Layer: 9
   m_Name: Player Sprites
-  m_TagString: Untagged
+  m_TagString: PlayerSprites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

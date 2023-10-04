@@ -26,9 +26,9 @@ public class Firepoint : MonoBehaviour
     }
     void Start()
     {
-        character = GetComponent<Character>();
+        character = GameObject.FindWithTag("Player").GetComponent<Character>();
         theFirepoint = GameObject.FindWithTag("Firepoint");
-        theAnimator = gameObject.transform.GetChild(0).GetComponent<Animator>();
+        theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>();
         //theStandingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y);
         //theCrouchingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y + offset.y);
     }
