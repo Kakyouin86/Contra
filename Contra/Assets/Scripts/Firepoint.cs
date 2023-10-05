@@ -365,6 +365,26 @@ public class Firepoint : MonoBehaviour
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(2.8f, 0.65f);
                 }
+
+                //////////////////////////////////////////////////////////////////////////////////////
+                //Change the Weapon Rotation Speed
+                if (
+                    (animationNames.name == "Climb Hold Back")
+                    || (animationNames.name == "Climb Shooting Back")
+                    || (animationNames.name == "Horizontal Ladder Hold Back")
+                    || (animationNames.name == "Horizontal Ladder Shooting Back")
+                    || (animationNames.name == "Horizontal Ladder Idle")
+                    || (animationNames.name == "Horizontal Ladder Hold Forward")
+                    || (animationNames.name == "Horizontal Ladder Shooting Forward")
+                    )
+                {
+                    weaponAim.WeaponRotationSpeed = instantWeaponAimRotSpeed;
+                }
+
+                else
+                {
+                    weaponAim.WeaponRotationSpeed = originalWeaponAimRotSpeed;
+                }
             }
         }
     }

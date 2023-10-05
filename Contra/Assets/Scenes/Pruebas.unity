@@ -13233,6 +13233,9 @@ MonoBehaviour:
   weaponAim: {fileID: 0}
   originalWeaponAimRotSpeed: 0
   instantWeaponAimRotSpeed: 0
+  projectileWeapon: {fileID: 0}
+  originalCoolDown: 0
+  shortCooldown: 0.1
 --- !u!1 &1039151515
 GameObject:
   m_ObjectHideFlags: 0

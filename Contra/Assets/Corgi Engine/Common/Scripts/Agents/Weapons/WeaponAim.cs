@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using MoreMountains.Tools;
+using static MoreMountains.CorgiEngine.Weapon;
+using static Codice.Client.Common.Connection.AskCredentialsToUser;
 #if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
 using UnityEngine.InputSystem;
 #endif
@@ -16,8 +20,12 @@ namespace MoreMountains.CorgiEngine
 	[AddComponentMenu("Corgi Engine/Weapons/Weapon Aim")]
 	public class WeaponAim : CorgiMonoBehaviour 
 	{
-		/// the list of possible control modes
-		public enum AimControls { Off, PrimaryMovement, SecondaryMovement, Mouse, Script }
+        public Quaternion oldRotation; //Leo Monge: Need to ALWAYS bring it after update.
+        public ProjectileWeapon projectileWeapon; //Leo Monge: Need to ALWAYS bring it after update.
+        public int originalProjectiles ;//Leo Monge: Need to ALWAYS bring it after update.
+
+        /// the list of possible control modes
+        public enum AimControls { Off, PrimaryMovement, SecondaryMovement, Mouse, Script }
 		/// the list of possible rotation modes
 		public enum RotationModes { Free, Strict4Directions, Strict8Directions }
 
@@ -142,8 +150,8 @@ namespace MoreMountains.CorgiEngine
 		/// On Start(), we trigger the initialization
 		/// </summary>
 		protected virtual void Start()
-		{
-			Initialization();
+        {
+            Initialization();
 		}
 
 		/// <summary>
@@ -153,8 +161,10 @@ namespace MoreMountains.CorgiEngine
 		{
 			_weapon = this.gameObject.GetComponent<Weapon> ();
 			_weapons = this.gameObject.GetComponents<Weapon>().ToList();
-			
-			if (_weapon.Owner != null)
+            projectileWeapon = _weapon.GetComponent<ProjectileWeapon>(); //Leo Monge: Need to ALWAYS bring it after update. 
+            originalProjectiles = projectileWeapon.ProjectilesPerShot; //Leo Monge: Need to ALWAYS bring it after update. 
+
+            if (_weapon.Owner != null)
 			{
 				_characterGravity = _weapon.Owner?.FindAbility<CharacterGravity> ();
 				_controller = _weapon.Owner.GetComponent<CorgiController>();
@@ -428,37 +438,50 @@ namespace MoreMountains.CorgiEngine
 			WasFacingRightLastFrame = _weapon.Owner.IsFacingRight;
 		}
 
-		/// <summary>
-		/// Rotates the weapon, optionnally applying a lerp to it.
-		/// </summary>
-		/// <param name="newRotation">New rotation.</param>
-		protected virtual void RotateWeapon(Quaternion newRotation)
-		{
-			if (GameManager.Instance.Paused)
-			{
-				return;
-			}
+        /// <summary>
+        /// Rotates the weapon, optionally applying a lerp to it.
+        /// </summary>
+        /// <param name="newRotation">New rotation.</param>
+        protected virtual void RotateWeapon(Quaternion newRotation)
+        {
+            if (GameManager.Instance.Paused)
+            {
+                return;
+            }
 			// if the rotation speed is == 0, we have instant rotation
-			if (WeaponRotationSpeed == 0)
-			{
-				transform.rotation = newRotation;	
-			}
-			// otherwise we lerp the rotation
-			else
-			{
-                transform.rotation = Quaternion.Lerp (transform.rotation, newRotation, WeaponRotationSpeed * Time.fixedDeltaTime); //Leo Monge: Need to ALWAYS bring it after update. It was Time.deltaTime
+            if (WeaponRotationSpeed == 0 && oldRotation != newRotation)
+            {
+                projectileWeapon.ProjectilesPerShot = 0; //Leo Monge: Need to ALWAYS bring it after update.
+                transform.rotation = newRotation;
+                StartCoroutine(DelayInShotWhenRotating()); //Leo Monge: Need to ALWAYS bring it after update.
+                oldRotation = newRotation; //Leo Monge: Need to ALWAYS bring it after update.
+            }
+            // otherwise we lerp the rotation
+            else if (WeaponRotationSpeed != 0)
+            {
+                StartCoroutine(DelayInShotWhenRotating()); //Leo Monge: Need to ALWAYS bring it after update.
+                transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, WeaponRotationSpeed * Time.fixedDeltaTime); //Leo Monge: Need to ALWAYS bring it after update. It was Time.deltaTime
             }
 
-			if (InstantFlip && (WasFacingRightLastFrame != _weapon.Owner.IsFacingRight))
-			{
-				transform.rotation = newRotation;
-			}
+            if (InstantFlip && (WasFacingRightLastFrame != _weapon.Owner.IsFacingRight) && oldRotation != newRotation)
+            {
+                projectileWeapon.ProjectilesPerShot = 0; //Leo Monge: Need to ALWAYS bring it after update.
+                transform.rotation = newRotation;
+                StartCoroutine(DelayInShotWhenRotating()); //Leo Monge: Need to ALWAYS bring it after update.
+                oldRotation = newRotation; //Leo Monge: Need to ALWAYS bring it after update.
+            }
 		}
 
-		/// <summary>
-		/// If a reticle has been set, instantiates the reticle and positions it
-		/// </summary>
-		protected virtual void InitializeReticle()
+        IEnumerator DelayInShotWhenRotating()//Leo Monge: Need to ALWAYS bring it after update.
+        {
+            yield return new WaitForSeconds(0.005f);
+            projectileWeapon.ProjectilesPerShot = originalProjectiles;
+        }
+
+        /// <summary>
+        /// If a reticle has been set, instantiates the reticle and positions it
+        /// </summary>
+        protected virtual void InitializeReticle()
 		{
 			if (Reticle == null) { return; }
 			if (!DisplayReticle) { return; }

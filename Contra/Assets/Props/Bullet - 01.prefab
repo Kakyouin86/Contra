@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5303123853555457701}
   - component: {fileID: 547776533618371757}
   - component: {fileID: 7842010951109207968}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Bullet - 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 8960
+    m_Bits: 270592
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
   MinDamageCaused: 10
@@ -246,13 +246,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentHealth: 0
+  CurrentHealth: 10
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
   InitialHealth: 10
   MaximumHealth: 10
   Invulnerable: 0
-  ImmuneToDamage: 1
+  ImmuneToDamage: 0
   DamageFeedbacks: {fileID: 0}
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1

@@ -30,6 +30,8 @@ public class AdditionalMovementSettings : MonoBehaviour
     //CharacterWallClinging: 21
     //[Range(0.0000000001f, 1)]//Leo Monge: Need to ALWAYS bring it after update. it was 0.01f originally. With this small value, you can't detach from the wall.
 
+    //WaponAim: too many. All related to the pause when being an instant shoot.
+
     public Player player;
     public Character character;
     public CharacterHorizontalMovement horizontalMovementCorgi;
