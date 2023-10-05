@@ -13230,6 +13230,9 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 695974b2e2c645d4896f4493789f7cbb, type: 2}
   - {fileID: 7400000, guid: f160647f15134584abdae1c02cfb6f93, type: 2}
   offset: {x: 0, y: 0, z: 0}
+  weaponAim: {fileID: 0}
+  originalWeaponAimRotSpeed: 0
+  instantWeaponAimRotSpeed: 0
 --- !u!1 &1039151515
 GameObject:
   m_ObjectHideFlags: 0

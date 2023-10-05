@@ -58,7 +58,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AimControl: 1
   RotationMode: 2
-  WeaponRotationSpeed: 0
+  WeaponRotationSpeed: 20
   InstantFlip: 0
   PreventAimWhileWeaponIsInUse: 0
   MinimumAngle: -180

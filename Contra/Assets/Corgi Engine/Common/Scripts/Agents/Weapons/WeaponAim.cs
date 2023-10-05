@@ -446,7 +446,7 @@ namespace MoreMountains.CorgiEngine
 			// otherwise we lerp the rotation
 			else
 			{
-                transform.rotation = Quaternion.Lerp (transform.rotation, newRotation, WeaponRotationSpeed * Time.fixedDeltaTime); ////Leo Monge: Need to ALWAYS bring it after update. It was Time.deltaTime
+                transform.rotation = Quaternion.Lerp (transform.rotation, newRotation, WeaponRotationSpeed * Time.fixedDeltaTime); //Leo Monge: Need to ALWAYS bring it after update. It was Time.deltaTime
             }
 
 			if (InstantFlip && (WasFacingRightLastFrame != _weapon.Owner.IsFacingRight))
