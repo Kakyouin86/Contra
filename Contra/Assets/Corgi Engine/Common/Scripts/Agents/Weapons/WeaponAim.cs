@@ -359,10 +359,10 @@ namespace MoreMountains.CorgiEngine
 				return;
 			}
 			
-			GetCurrentAim ();
-			DetermineWeaponRotation ();
+			GetCurrentAim();
+			DetermineWeaponRotation();
 			MoveReticle();
-			HideReticle ();
+			HideReticle();
 			ResetCurrentAimMultiplier();
 		}
 
