@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 812638261945774685}
   m_Layer: 0
   m_Name: Machine Gun
-  m_TagString: Untagged
+  m_TagString: WeaponAim
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AimControl: 1
   RotationMode: 2
-  WeaponRotationSpeed: 20
+  WeaponRotationSpeed: 0
   InstantFlip: 0
   PreventAimWhileWeaponIsInUse: 0
   MinimumAngle: -180

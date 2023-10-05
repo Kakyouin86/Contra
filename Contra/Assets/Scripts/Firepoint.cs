@@ -19,6 +19,7 @@ public class Firepoint : MonoBehaviour
     //public Vector3 theCrouchingPosition;
     //public WeaponAim aimableWeapon;
     //public float theAngle;
+    public WeaponAim weaponAim;
 
     private void Awake()
     {
@@ -29,12 +30,14 @@ public class Firepoint : MonoBehaviour
         character = GameObject.FindWithTag("Player").GetComponent<Character>();
         theFirepoint = GameObject.FindWithTag("Firepoint");
         theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>();
+        weaponAim = GameObject.FindWithTag("WeaponAim").GetComponent<WeaponAim>();
         //theStandingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y);
         //theCrouchingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y + offset.y);
     }
 
     void Update()
     {
+
         //theStandingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y);
         //theCrouchingPosition = new Vector3(theFirepoint.transform.position.x, theFirepoint.transform.position.y + offset.y);
         //theAngle = aimableWeapon.CurrentAngleRelative;

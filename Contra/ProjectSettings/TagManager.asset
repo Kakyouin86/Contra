@@ -17,6 +17,7 @@ TagManager:
   - Firepoint
   - SlopesDetector
   - PlayerSprites
+  - WeaponAim
   layers:
   - Default
   - TransparentFX
