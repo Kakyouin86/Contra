@@ -25,7 +25,7 @@ public class AdditionalLadderOverride : Ladder
 
     //CharacterWallClinging: 21
     //[Range(0.0000000001f, 1)]//Leo Monge: Need to ALWAYS bring it after update. it was 0.01f originally. With this small value, you can't detach from the wall.
-
+    public bool canNotDettach;
     protected override void OnTriggerEnter2D(Collider2D collider)
     {
         // we check that the object colliding with the ladder is actually a corgi controller and a character

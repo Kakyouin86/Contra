@@ -59,7 +59,6 @@ public class AdditionalCharacterLadderOverride : CharacterLadder
 
     protected override void SetClimbingState()
     {
-
         // we set its state to LadderClimbing
         _movement.ChangeState(CharacterStates.MovementStates.LadderClimbing);
         // it can't move freely anymore
@@ -71,7 +70,6 @@ public class AdditionalCharacterLadderOverride : CharacterLadder
         _controller.SetVerticalForce(0);
         // we disable the gravity
         _controller.GravityActive(false);
-
     }
 
     protected override void Climbing()
@@ -98,6 +96,7 @@ public class AdditionalCharacterLadderOverride : CharacterLadder
             // we set the climbing speed state.
             CurrentLadderClimbingSpeed = Mathf.Abs(_verticalInput) * transform.up;
         }
+
         if (CurrentLadder.LadderType == Ladder.LadderTypes.BiDirectional)
         {
             _controller.SetHorizontalForce(_horizontalInput * LadderClimbingSpeed);
@@ -113,6 +112,5 @@ public class AdditionalCharacterLadderOverride : CharacterLadder
             CurrentLadderClimbingSpeed = Mathf.Abs(_horizontalInput) * transform.right;
             _characterHorizontalMovement.AbilityPermitted = true;
         }
-
     }
 }

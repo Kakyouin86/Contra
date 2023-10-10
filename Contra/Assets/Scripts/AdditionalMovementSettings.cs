@@ -42,6 +42,7 @@ public class AdditionalMovementSettings : MonoBehaviour
     public GameObject theFirepoint;
     public Weapon theWeapon;
     public bool horizontalLadder = false;
+    public bool canNotDettach = false;
     public BoxCollider2D theBCTrigger;
     public Vector2 theOriginalBoxCollider2DSize;
     public Vector2 theOriginalBoxCollider2DOffset;
@@ -209,7 +210,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         //This makes that if the player is hang and presses down and Jump, it will go through. Also, the Coroutine associated to this.
-        if ((player.GetAxis("Vertical") < 0) && (player.GetButton("Jump")) && horizontalLadder)
+        if ((player.GetAxis("Vertical") < 0) && (player.GetButton("Jump")) && horizontalLadder && !canNotDettach)
         {
             character.GetComponent<CharacterJump>().AbilityPermitted = false;
             theBCLadder.SetActive(false);
@@ -264,10 +265,19 @@ public class AdditionalMovementSettings : MonoBehaviour
         if (other.gameObject.tag == "HorizontalLadder" && character.MovementState.CurrentState == CharacterStates.MovementStates.LadderClimbing)
         {
             horizontalLadder = true;
+            if (other.gameObject.GetComponent<AdditionalLadderOverride>().canNotDettach)
+            {
+                canNotDettach = true;
+            }
+            else
+            {
+                canNotDettach = false;
+            }
         }
         else
         {
             horizontalLadder = false;
+            canNotDettach = false;
         }
     }
 }

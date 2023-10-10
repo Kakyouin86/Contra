@@ -13019,6 +13019,7 @@ MonoBehaviour:
   theFirepoint: {fileID: 0}
   theWeapon: {fileID: 0}
   horizontalLadder: 0
+  canNotDettach: 0
   theBCTrigger: {fileID: 0}
   theOriginalBoxCollider2DSize: {x: 0, y: 0}
   theOriginalBoxCollider2DOffset: {x: 0, y: 0}
@@ -20624,6 +20625,7 @@ MonoBehaviour:
   CenterCharacterOnLadder: 1
   LadderPlatform: {fileID: 109662303}
   AutoPositionLadderPlatform: 0
+  canNotDettach: 0
 --- !u!1 &1471093773
 GameObject:
   m_ObjectHideFlags: 0
@@ -25203,7 +25205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1893266543
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25333,6 +25335,7 @@ MonoBehaviour:
   CenterCharacterOnLadder: 1
   LadderPlatform: {fileID: 1381293293}
   AutoPositionLadderPlatform: 0
+  canNotDettach: 0
 --- !u!1 &1906486950
 GameObject:
   m_ObjectHideFlags: 0
