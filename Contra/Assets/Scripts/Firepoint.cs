@@ -378,14 +378,11 @@ public class Firepoint : MonoBehaviour
                 //////////////////////////////////////////////////////////////////////////////////////
                 //Change the Weapon Rotation Speed
                 if (
-                    (animationNames.name == "Climb Hold Back")
-                    || (animationNames.name == "Climb Shooting Back")
-                    || (animationNames.name == "Horizontal Ladder Hold Back")
-                    || (animationNames.name == "Horizontal Ladder Shooting Back")
-                    || (animationNames.name == "Horizontal Ladder Idle")
-                    || (animationNames.name == "Horizontal Ladder Hold Forward")
-                    || (animationNames.name == "Horizontal Ladder Shooting Forward")
-                    )
+                    ((animationNames.name == "Climb Hold Back"
+                        || animationNames.name == "Climb Shooting Back" 
+                        || animationNames.name == "Climb Shooting Forward"
+                        || animationNames.name == "Horizontal Ladder Shooting Back"
+                        || animationNames.name == "Horizontal Ladder Shooting Forward")))
                 {
                     weaponAim.WeaponRotationSpeed = instantWeaponAimRotSpeed;
                 }
