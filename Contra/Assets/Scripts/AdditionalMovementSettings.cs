@@ -1,11 +1,11 @@
 using System.Collections;
+using BarthaSzabolcs.Tutorial_SpriteFlash;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
 using Rewired;
 using Rewired.ComponentControls.Data;
 using InputManager = MoreMountains.CorgiEngine.InputManager;
-
 
 public class AdditionalMovementSettings : MonoBehaviour
 {
@@ -46,18 +46,20 @@ public class AdditionalMovementSettings : MonoBehaviour
     public BoxCollider2D theBCTrigger;
     public Vector2 theOriginalBoxCollider2DSize;
     public Vector2 theOriginalBoxCollider2DOffset;
-    public float jumpingOffsetX;
-    public float jumpingOffsetY;
-    public float jumpingSizeX;
-    public float jumpingSizeY;
+    public float jumpingOffsetX = 0f;
+    public float jumpingOffsetY = 1.75f;
+    public float jumpingSizeX = 1f;
+    public float jumpingSizeY = 1.45f;
     public bool isNotCharacterV3 = false;
     public GameObject theRippleEffect;
+    public GameObject theTorso;
     public GameObject theLegs;
     public GameObject theBCLadder;
     public bool startTimerBeforeNextAnim = false;
     public float initialTimeBeforeNextAnim = 0.25f;
     public float currentTimeBeforeNextAnim = 0.25f;
     public GameObject slopesDetector;
+    public float originalRollDuration;
 
     private void Awake()
     {
@@ -78,6 +80,9 @@ public class AdditionalMovementSettings : MonoBehaviour
         theWeapon = FindObjectOfType<Weapon>();
         theOriginalBoxCollider2DSize = new Vector3(theBCTrigger.size.x, theBCTrigger.size.y);
         theOriginalBoxCollider2DOffset = new Vector3(theBCTrigger.offset.x, theBCTrigger.offset.y);
+        originalRollDuration = GetComponent<CharacterRoll>().RollDuration;
+        theTorso.GetComponent<FlashSprites>().totalFlickerDuration = originalRollDuration;
+        theLegs.GetComponent<FlashSprites>().totalFlickerDuration = originalRollDuration;
     }
     void Update()
     {
@@ -249,6 +254,19 @@ public class AdditionalMovementSettings : MonoBehaviour
         if (!slopesDetector.GetComponent<Water>().isPlayerInWater)
         {
             GetComponentInParent<CharacterCrouch>().AbilityPermitted = true;
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //This makes that if the character is rolling, the activate the flickers in Torso and Legs
+        if (character.MovementState.CurrentState == CharacterStates.MovementStates.Rolling)
+        {
+            theTorso.GetComponent<FlashSprites>().run = true;
+            theLegs.GetComponent<FlashSprites>().run = true;
+        }
+        else
+        {
+            theTorso.GetComponent<FlashSprites>().run = false;
+            theLegs.GetComponent<FlashSprites>().run = false;
         }
     }
 
