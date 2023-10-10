@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 547776533618371757}
   - component: {fileID: 7842010951109207968}
   - component: {fileID: 6897001600883610955}
+  - component: {fileID: -5646056966342842286}
   m_Layer: 16
   m_Name: Bullet - 02
   m_TagString: Untagged
@@ -76,11 +77,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 346362833
-  m_SortingLayer: 7
+  m_SortingLayerID: -1628607475
+  m_SortingLayer: 2
   m_SortingOrder: -1
   m_Sprite: {fileID: -1497195010, guid: 82d3c8e8d1dfa17488b28a43189a97d7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -105,7 +106,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -181,9 +182,9 @@ MonoBehaviour:
   ExecuteOnDisable:
     m_PersistentCalls:
       m_Calls: []
-  LifeTime: 0.4
+  LifeTime: 1
   FaceDirection: 1
-  Speed: 450
+  Speed: 300
   Acceleration: 0
   Direction: {x: 0, y: 0, z: 0}
   DirectionCanBeChangedBySpawner: 1
@@ -289,14 +290,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3295aabfd93691741bb08806485b2b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObstaclesLayerMask:
+    serializedVersion: 2
+    m_Bits: 270592
   theBurst: {fileID: 3199536429230220929, guid: 9c430fd027e72984088b52c60e6a2c05,
     type: 3}
-  theOffsetPosition: {x: 0, y: 0, z: 0}
-  theFirepoint: {fileID: 0}
+  distanceToPlayer: 0
+  thresholdNotToShowBurst: 1
+  useRotations: 0
   weaponAim: {fileID: 0}
   projectile: {fileID: 0}
   theProjectileFacingRight: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
+  thePlayer: {fileID: 0}
+--- !u!114 &-5646056966342842286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183803012360247645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfdd322a582c3bc429d2350807e8a2c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mode: 0
   ObstaclesLayerMask:
     serializedVersion: 2
-    m_Bits: 270592
+    m_Bits: 256
+  SkinWidth: 0.1
+  RepositionRigidbodyIfHitTrigger: 1
+  RepositionRigidbodyIfHitNonTrigger: 1
