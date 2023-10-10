@@ -35,7 +35,7 @@ public class AdditionalCharacterHandleWeaponOverride : CharacterHandleWeapon
         //MMCharacterEvent.Trigger(_character, MMCharacterEventTypes.HandleWeapon, MMCharacterEvent.Moments.Start); Leo Monge
         //CurrentWeapon.WeaponInputStart();Leo Monge
 
-        if (_movement.CurrentState == CharacterStates.MovementStates.Dashing) //Leo Monge. It was just CurrentWeapon.WeaponInputStart();
+        if (_movement.CurrentState == CharacterStates.MovementStates.Rolling) //Leo Monge. It was just CurrentWeapon.WeaponInputStart(); //if (_movement.CurrentState == CharacterStates.MovementStates.Dashing)
         {
             CurrentWeapon.WeaponInputStop();//Leo Monge
         }

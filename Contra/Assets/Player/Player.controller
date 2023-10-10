@@ -482,7 +482,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Walking
@@ -1078,7 +1078,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3843435947915033385}
@@ -1144,7 +1144,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Death
@@ -1219,7 +1219,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Walking
@@ -1456,7 +1456,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Walking
@@ -1701,7 +1701,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Death
@@ -1741,7 +1741,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Jumping
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Death
@@ -1919,7 +1919,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Death
@@ -2129,7 +2129,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Death
@@ -2296,7 +2296,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Death
@@ -2491,7 +2491,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Walking
@@ -2656,7 +2656,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Jumping
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Death
@@ -2859,7 +2859,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Death
@@ -2944,7 +2944,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: Dashing
+  - m_Name: Rolling
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -3209,7 +3209,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Death
@@ -3330,7 +3330,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Walking
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: HorizontalLadder
@@ -3413,7 +3413,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Death
@@ -3575,7 +3575,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Walking
@@ -3655,7 +3655,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2461793852351127968}
@@ -3721,7 +3721,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Death
@@ -3765,6 +3765,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: HorizontalLadder
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7066680122050524913}
@@ -4084,7 +4087,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Walking
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Hold
@@ -4371,7 +4374,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Jumping
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Falling
@@ -4472,7 +4475,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Hold
@@ -4500,7 +4503,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -111358096618911956}
@@ -4528,7 +4531,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crawling
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Hold
@@ -4751,7 +4754,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Jumping
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: UpwardSlope
@@ -4912,7 +4915,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Hold
@@ -5050,7 +5053,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Walking
@@ -5119,7 +5122,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Hold
@@ -5399,7 +5402,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Walking
@@ -5571,7 +5574,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Falling
@@ -5652,7 +5655,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Walking
@@ -5707,7 +5710,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Walking
@@ -6135,7 +6138,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Death
@@ -6399,7 +6402,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Dashing
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Walking
