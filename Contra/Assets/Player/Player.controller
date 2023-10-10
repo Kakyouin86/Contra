@@ -4211,9 +4211,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: HorizontalLadder
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: Hold
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: TimerBeforeNextAnim
     m_EventTreshold: 0
