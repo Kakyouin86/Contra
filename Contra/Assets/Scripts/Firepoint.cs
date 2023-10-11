@@ -43,6 +43,7 @@ public class Firepoint : MonoBehaviour
         weaponAim = GameObject.FindWithTag("WeaponAim").GetComponent<WeaponAim>();
         projectileWeapon = GameObject.FindWithTag("WeaponAim").GetComponent<ProjectileWeapon>();
         originalWeaponAimRotSpeed = weaponAim.WeaponRotationSpeed;
+        animationNames = Resources.LoadAll<AnimationClip>("Player Animations");
     }
 
     void Update()
@@ -116,22 +117,22 @@ public class Firepoint : MonoBehaviour
                 //Shoot Down-Right
                 if (((animationNames.name == "Hold Diagonal Down") || (animationNames.name == "Shoot Diagonal Down") || (animationNames.name == "Torso Walking Diagonal Down") || (animationNames.name == "Shoot Diagonal Down Walking")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 1.5f);//Was new Vector3(0.7f, 0.5f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 1.6f);//Was new Vector3(0.7f, 0.5f);
                 }
                 //Shoot Down-Left
                 if (((animationNames.name == "Hold Diagonal Down") || (animationNames.name == "Shoot Diagonal Down") || (animationNames.name == "Torso Walking Diagonal Down") || (animationNames.name == "Shoot Diagonal Down Walking")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 1.5f);//Was new Vector3(-0.7f, 0.5f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 1.6f);//Was new Vector3(-0.7f, 0.5f);
                 }
                 //Shoot down while facing right
                 if (((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 2f);//Was new Vector3(-0.75f, 0f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 1.8f);//Was new Vector3(-0.75f, 0f);
                 }
                 //Shoot down while facing left
                 if (((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 2f);//Was new Vector3(0.75f, 0f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 1.8f);//Was new Vector3(0.75f, 0f);
                 }
 
 
