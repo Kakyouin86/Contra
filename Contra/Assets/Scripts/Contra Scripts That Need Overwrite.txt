@@ -48,6 +48,22 @@ oldRotation = newRotation; //Leo Monge: Need to ALWAYS bring it after update.
 }
 }
 
+--> Tags:
+  - LevelBounds
+  - Music
+  - Background
+  - NoMask
+  - HorizontalLadder
+  - UpwardSlope
+  - DownwardSlope
+  - LadderCollider
+  - Water
+  - FireIndicator
+  - Firepoint
+  - SlopesDetector
+  - PlayerSprites
+  - WeaponAim
+
 --> Firepoint animations:
 "Torso Idle"
 "Shoot Straight"
