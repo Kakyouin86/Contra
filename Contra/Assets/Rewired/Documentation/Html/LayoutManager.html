@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/BasicTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/BasicTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
@@ -70,7 +70,7 @@
               <li><a href="Deployment.html">Deployment</a></li>
               <li><a href="BestPractices.html">Best Practices</a></li>
               <li><a href="RewiredEditor.html">Rewired Editor</a></li>
-              <li><a href="http://guavaman.com/projects/rewired/docs/api-reference" target="_blank">API Reference</a></li>
+              <li><a href="https://guavaman.com/projects/rewired/docs/api-reference" target="_blank">API Reference</a></li>
             </ol>
             <strong>Concepts:</strong>
             <ul>
@@ -122,22 +122,22 @@
             </ul>
             <strong>Unity Help:</strong>
             <ul>
-              <li><a href="http://docs.unity3d.com/Manual/" target="_blank">Unity Manual</a></li>
-              <li><a href="http://docs.unity3d.com/ScriptReference/" target="_blank">Unity Script Reference</a></li>
-              <li><a href="http://unity3d.com/learn/tutorials/modules" target="_blank">Unity Tutorials</a></li>
+              <li><a href="https://docs.unity3d.com/Manual/" target="_blank">Unity Manual</a></li>
+              <li><a href="https://docs.unity3d.com/ScriptReference/" target="_blank">Unity Script Reference</a></li>
+              <li><a href="https://unity3d.com/learn/tutorials/modules" target="_blank">Unity Tutorials</a></li>
             </ul>
             <strong>Links:</strong>
             <ul>
-              <li><a href="http://guavaman.com/projects/rewired">Rewired Website</a></li>
-              <li><a href="http://guavaman.com/projects/rewired/docs">Web Documentation</a></li>
+              <li><a href="https://guavaman.com/projects/rewired">Rewired Website</a></li>
+              <li><a href="https://guavaman.com/projects/rewired/docs">Web Documentation</a></li>
             </ul>
         </div>
         
     
     	<div class="main-body">
-	        <div class="logo"><a href="http://guavaman.com/projects/rewired" title="Rewired"><img src="files/images/rewired-logo.png" width="173" height="139" alt="Rewired" /></a></div>
+	        <div class="logo"><a href="https://guavaman.com/projects/rewired" title="Rewired"><img src="files/images/rewired-logo.png" width="173" height="139" alt="Rewired" /></a></div>
                      
-            <h1>
+          <h1>
             <!-- InstanceBeginEditable name="PageHeader" -->Layout Manager <!-- InstanceEndEditable -->
             </h1>
             
@@ -257,11 +257,15 @@ player.controllers.maps.layoutManager.Apply();</pre>
 </ol>
 <p>When Layout Manager evaluates the Rules, for the specified Controller(s), it will unload any Controller Maps in Map Categories that match the specified Catgories in the Rule but do not match the specified Layout in the Rule. Then it will load Controller Maps in the specified Map Categories in the specified Layout.</p>
 <p>Rules can be created in the <a href="RewiredEditor.html#LayoutManagerRules">Rewired Editor on the Layout Manager Rules page</a> or created <a href="#creating-rule-sets-scripting">at runtime via scripting</a>.</p>
+<h3><a name="faq" id="faq"></a>FAQ:</h3>
+<p><strong>Q: Can I select a Rule Set or Rule at runtime using the Id instead of a Tag?</strong></p>
+<p>A: The Id cannot be used to select a Rule Set or Rule in a Player at runtime. Rule Sets can be defined entirely in code and can also be duplicated at runtime, in which case they would not have an id that would correspond to  the other Rule Set definitions that exist in the Rewired Input Manager.</p>
+<p>The Id constant which can be exported for rule sets exists only for the purpose of instantiating that Rule Set (loading it from the Rewired Input Manager) into a Player. That is not a common thing to do since most of the time you will assign these Rule Sets to your Player in the Rewired Editor and they will be loaded for you when the application starts. Once the application starts, Rule Sets are instantiated for each Player, after which point they have no connection anymore to the parent Rule Set definition from which they came.</p>
 <h3>API Reference:</h3>
 <ul>
-  <li><a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_ControllerMapLayoutManager.htm">ControllerMapLayoutManager</a></li>
-  <li><a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_ControllerMapLayoutManager_RuleSet.htm">ControllerMapLayoutManager.RuleSet</a></li>
-  <li><a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_ControllerMapLayoutManager_Rule.htm">ControllerMapLayoutManager.Rule</a></li>
+  <li><a href="https://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_ControllerMapLayoutManager.htm">ControllerMapLayoutManager</a></li>
+  <li><a href="https://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_ControllerMapLayoutManager_RuleSet.htm">ControllerMapLayoutManager.RuleSet</a></li>
+  <li><a href="https://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_ControllerMapLayoutManager_Rule.htm">ControllerMapLayoutManager.Rule</a></li>
 </ul>
 <div class="bottom-pager clearfix">
   <a class="back-button" href="Layouts.html" title="Documentation"><span class="button-img"></span>Layouts</a>
@@ -273,8 +277,8 @@ player.controllers.maps.layoutManager.Apply();</pre>
         
     </div>
   <div class="footer clearfix">
-   	<p class="left">Copyright &copy;2014-2021 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
-  	<p class="right"><a href="http://guavaman.com/projects/rewired" title="Return to Rewired Website">Return to Rewired Website</a></p>
+   	<p class="left">Copyright &copy;2014-2021 <a href="https://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
+  	<p class="right"><a href="https://guavaman.com/projects/rewired" title="Return to Rewired Website">Return to Rewired Website</a></p>
   </div>
   <!-- end .content --></div>
   <!-- end .container --></div>

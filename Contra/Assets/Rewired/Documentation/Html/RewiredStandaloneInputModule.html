@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/BasicTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/BasicTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
@@ -70,7 +70,7 @@
               <li><a href="Deployment.html">Deployment</a></li>
               <li><a href="BestPractices.html">Best Practices</a></li>
               <li><a href="RewiredEditor.html">Rewired Editor</a></li>
-              <li><a href="http://guavaman.com/projects/rewired/docs/api-reference" target="_blank">API Reference</a></li>
+              <li><a href="https://guavaman.com/projects/rewired/docs/api-reference" target="_blank">API Reference</a></li>
             </ol>
             <strong>Concepts:</strong>
             <ul>
@@ -122,20 +122,20 @@
             </ul>
             <strong>Unity Help:</strong>
             <ul>
-              <li><a href="http://docs.unity3d.com/Manual/" target="_blank">Unity Manual</a></li>
-              <li><a href="http://docs.unity3d.com/ScriptReference/" target="_blank">Unity Script Reference</a></li>
-              <li><a href="http://unity3d.com/learn/tutorials/modules" target="_blank">Unity Tutorials</a></li>
+              <li><a href="https://docs.unity3d.com/Manual/" target="_blank">Unity Manual</a></li>
+              <li><a href="https://docs.unity3d.com/ScriptReference/" target="_blank">Unity Script Reference</a></li>
+              <li><a href="https://unity3d.com/learn/tutorials/modules" target="_blank">Unity Tutorials</a></li>
             </ul>
             <strong>Links:</strong>
             <ul>
-              <li><a href="http://guavaman.com/projects/rewired">Rewired Website</a></li>
-              <li><a href="http://guavaman.com/projects/rewired/docs">Web Documentation</a></li>
+              <li><a href="https://guavaman.com/projects/rewired">Rewired Website</a></li>
+              <li><a href="https://guavaman.com/projects/rewired/docs">Web Documentation</a></li>
             </ul>
         </div>
         
     
     	<div class="main-body">
-	        <div class="logo"><a href="http://guavaman.com/projects/rewired" title="Rewired"><img src="files/images/rewired-logo.png" width="173" height="139" alt="Rewired" /></a></div>
+	        <div class="logo"><a href="https://guavaman.com/projects/rewired" title="Rewired"><img src="files/images/rewired-logo.png" width="173" height="139" alt="Rewired" /></a></div>
                      
           <h1>
             <!-- InstanceBeginEditable name="PageHeader" -->Rewired Standalone Input Module
@@ -164,7 +164,7 @@
     <p><strong>IMPORTANT:</strong></p>
     <p>The Rewired Standalone Input Module is not a re-invention of Unity's UI system. It is not a new UI system, it does not  attempt to solve issues with Unity UI's design, it does not attempt to add a bunch of new features to Unity UI. It is a simple bridge between Unity UI and Rewired. It does not change how Unity UI works and it has no control over the vast majority of Unity UI functionality which is handled in the UI element components themselves. Once the input is received from Rewired and input events are sent out to the Event System, what happens after that is out of Rewired's responsibility or knowledge.</p>
     <p> The Rewired Standalone Input Module does nothing besides control input in Unity's UI system by changing the underlying input source from UnityEngine.Input to Rewired. If you are having difficulties with controlling the UI, please make sure your problems aren't really  pertaining to usage of Unity's UI system before contacting support. I frequently get questions that are actually issues with Unity UI setup and have nothing to do with Rewired. When in doubt, test with the StandaloneInputModule instead of the RewiredStandaloneInputModule. If the problem persists, you know that the issue is not with Rewired but rather something you've missed when setting up Unity UI. </p>
-<p>Please refer to the <a href="https://docs.unity3d.com/Manual/com.unity.ugui.html">Unity UI documentation</a> and <a href="http://docs.unity3d.com/Manual/script-StandaloneInputModule.html">Unity documentation on the StandaloneInputModule</a> for basic usage.</p>
+<p>Please refer to the <a href="https://docs.unity3d.com/Manual/com.unity.ugui.html">Unity UI documentation</a> and <a href="https://docs.unity3d.com/Manual/script-StandaloneInputModule.html">Unity documentation on the StandaloneInputModule</a> for basic usage.</p>
     <p>&nbsp;</p>
     <hr />
     <h3><a name="quick-setup" id="quick-setup"></a>Quick Setup</h3>
@@ -360,7 +360,7 @@
     <ul>
       <li>The Rewired Standalone Input Module does nothing besides control input in Unity's UI system by changing the underlying input source from UnityEngine.Input to Rewired. If you are having difficulties with controlling the UI, please make sure your problems aren't really  pertaining to usage of Unity's UI system before contacting support. I frequently get questions that are actually issues with Unity UI setup and have nothing to do with Rewired. When in doubt, test with the StandaloneInputModule instead of the RewiredStandaloneInputModule. If the problem persists, you know that the issue is not with Rewired but rather something you've missed when setting up Unity UI. </li>
       </ul>
-    <p>Please refer to the <a href="https://docs.unity3d.com/Manual/com.unity.ugui.html">Unity UI documentation</a> and <a href="http://docs.unity3d.com/Manual/script-StandaloneInputModule.html">Unity documentation on the StandaloneInputModule</a> for basic usage.</p>
+    <p>Please refer to the <a href="https://docs.unity3d.com/Manual/com.unity.ugui.html">Unity UI documentation</a> and <a href="https://docs.unity3d.com/Manual/script-StandaloneInputModule.html">Unity documentation on the StandaloneInputModule</a> for basic usage.</p>
 <p><strong><a name="troubleshooting-duplicate-mouse-clicks" id="troubleshooting-duplicate-mouse-clicks"></a>Problem: Receiving duplicate mouse clicks when clicking on a UI button</strong></p>
     <p>Do not assign UI Submit or Cancel Actions to Mouse Left Button or Mouse Right Button or you will receive double-clicks evey time the mouse button is pressed over a button. The mouse button click on a UI element is based on mouse cursor position and does not use the Action system.</p>
     <p>Unity's UI is designed to have two completely different systems for Keyboard/Joystick and Mouse. The Keyboard/Joystick system uses the Navigation system, which involves setting an active selected GameObject in the EventSystem, and the InputModule sends directional navigation events, OnSubmit, and OnCancel events to the currently selected Selectable GameObject in the Event System. This system is only for keyboard/joystick navigation.<br />
@@ -374,16 +374,16 @@
     <ul>
       <li><em>Unity UI cannot be controlled by keyboard or joystick unless you specify a current or starting Selectable GameObject in the Unity UI EventSystem.</em></li>
     </ul>
-    <p>Unity UI requires a Selectable to be selected before any navigation will work for joystick or keyboard, otherwise it has no starting point from which to navigate when you press a key or a stick direction. You must either set the <a href="http://docs.unity3d.com/Manual/script-EventSystem.html" target="_blank">First Selected field in the inspector of the EventSystem component</a>, or set the current selected GameObject via scripting as shown below.<br />
+    <p>Unity UI requires a Selectable to be selected before any navigation will work for joystick or keyboard, otherwise it has no starting point from which to navigate when you press a key or a stick direction. You must either set the <a href="https://docs.unity3d.com/Manual/script-EventSystem.html" target="_blank">First Selected field in the inspector of the EventSystem component</a>, or set the current selected GameObject via scripting as shown below.<br />
     </p>
     <pre class="code">using UnityEngine.EventSystems;
 
 void SetSelected(GameObject selectableObject) {
     <span class="comment">// Set the currently selected GameObject</span>
-    EventSystem.current.<a href="http://docs.unity3d.com/ScriptReference/EventSystems.EventSystem.SetSelectedGameObject.html" target="_blank">SetSelectedGameObject</a>(selectableObject);
+    EventSystem.current.<a href="https://docs.unity3d.com/ScriptReference/EventSystems.EventSystem.SetSelectedGameObject.html" target="_blank">SetSelectedGameObject</a>(selectableObject);
 }<br />
     </pre>
-    <p>Please refer to the <a href="http://docs.unity3d.com/Manual/UISystem.html" target="_blank">Unity documentation</a> for information on how to use Unity UI.</p>
+    <p>Please refer to the <a href="https://docs.unity3d.com/Manual/UISystem.html" target="_blank">Unity documentation</a> for information on how to use Unity UI.</p>
     <p>&nbsp;</p>
     <hr />
     <p><strong><a name="troubleshooting-exceptions-in-callbacks-changing-settings" id="troubleshooting-exceptions-in-callbacks-changing-settings"></a>Problem: Exceptions thrown when making changes to various properties in the Rewired Standalone Input Module from a UI button press</strong></p>
@@ -410,8 +410,8 @@ void SetSelected(GameObject selectableObject) {
         
     </div>
   <div class="footer clearfix">
-   	<p class="left">Copyright &copy;2014-2021 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
-  	<p class="right"><a href="http://guavaman.com/projects/rewired" title="Return to Rewired Website">Return to Rewired Website</a></p>
+   	<p class="left">Copyright &copy;2014-2021 <a href="https://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
+  	<p class="right"><a href="https://guavaman.com/projects/rewired" title="Return to Rewired Website">Return to Rewired Website</a></p>
   </div>
   <!-- end .content --></div>
   <!-- end .container --></div>

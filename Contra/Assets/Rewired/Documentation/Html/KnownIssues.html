@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/BasicTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/BasicTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
@@ -70,7 +70,7 @@
               <li><a href="Deployment.html">Deployment</a></li>
               <li><a href="BestPractices.html">Best Practices</a></li>
               <li><a href="RewiredEditor.html">Rewired Editor</a></li>
-              <li><a href="http://guavaman.com/projects/rewired/docs/api-reference" target="_blank">API Reference</a></li>
+              <li><a href="https://guavaman.com/projects/rewired/docs/api-reference" target="_blank">API Reference</a></li>
             </ol>
             <strong>Concepts:</strong>
             <ul>
@@ -122,20 +122,20 @@
             </ul>
             <strong>Unity Help:</strong>
             <ul>
-              <li><a href="http://docs.unity3d.com/Manual/" target="_blank">Unity Manual</a></li>
-              <li><a href="http://docs.unity3d.com/ScriptReference/" target="_blank">Unity Script Reference</a></li>
-              <li><a href="http://unity3d.com/learn/tutorials/modules" target="_blank">Unity Tutorials</a></li>
+              <li><a href="https://docs.unity3d.com/Manual/" target="_blank">Unity Manual</a></li>
+              <li><a href="https://docs.unity3d.com/ScriptReference/" target="_blank">Unity Script Reference</a></li>
+              <li><a href="https://unity3d.com/learn/tutorials/modules" target="_blank">Unity Tutorials</a></li>
             </ul>
             <strong>Links:</strong>
             <ul>
-              <li><a href="http://guavaman.com/projects/rewired">Rewired Website</a></li>
-              <li><a href="http://guavaman.com/projects/rewired/docs">Web Documentation</a></li>
+              <li><a href="https://guavaman.com/projects/rewired">Rewired Website</a></li>
+              <li><a href="https://guavaman.com/projects/rewired/docs">Web Documentation</a></li>
             </ul>
         </div>
         
     
     	<div class="main-body">
-	        <div class="logo"><a href="http://guavaman.com/projects/rewired" title="Rewired"><img src="files/images/rewired-logo.png" width="173" height="139" alt="Rewired" /></a></div>
+	        <div class="logo"><a href="https://guavaman.com/projects/rewired" title="Rewired"><img src="files/images/rewired-logo.png" width="173" height="139" alt="Rewired" /></a></div>
                      
             <h1>
             <!-- InstanceBeginEditable name="PageHeader" -->Known Issues
@@ -513,7 +513,7 @@ On Windows, another easier way to disable the optimizer is to add an   environme
 <ul>
   <li>&lt;RI.Hid&gt; Failed to create device file: 2 The system cannot find the file specified.</li>
 </ul>
-<p>This error is logged by Unity itself and is not created by Rewired, nor is it related to Rewired in any way. It cannot be silenced or fixed. <a href="http://forum.unity3d.com/threads/ri-hid-failed-to-create-device-file.202934/" target="_blank">There is a forum thread detailing the issue here</a>.</p>
+<p>This error is logged by Unity itself and is not created by Rewired, nor is it related to Rewired in any way. It cannot be silenced or fixed. <a href="https://forum.unity3d.com/threads/ri-hid-failed-to-create-device-file.202934/" target="_blank">There is a forum thread detailing the issue here</a>.</p>
 <p>&nbsp;</p>
 <hr />
 <h3><a name="windows-stuck-button-right-click-window-title-bar" id="windows-stuck-button-right-click-window-title-bar"></a>Windows Standalone: Keyboard and mouse keys get stuck on when holding a key, right-clicking on the window's title bar, and then releasing the key</h3>
@@ -670,7 +670,7 @@ Catastrophic failure while running rrw: Mono.Cecil.AssemblyResolutionException: 
 <h3><a name="keyboard-stuck-linux" id="keyboard-stuck-linux"></a>Keyboard keys stuck on Linux in Unity 5.1.1</h3>
 <p>Rewired uses UnityEngine.Input.GetKey to get keyboard input on Linux. Underlying issues in UnityEngine.Input's keyboard handling are inherited by Rewired.</p>
 <p>This is not a Rewired issue, it's a Unity bug:<br />
-  <a href="http://forum.unity3d.com/threads/unity-5-1-1-broke-input-for-linux-standalone.335113/">http://forum.unity3d.com/threads/unity-5-1-1-broke-input-for-linux-standalone.335113/</a></p>
+  <a href="https://forum.unity3d.com/threads/unity-5-1-1-broke-input-for-linux-standalone.335113/">https://forum.unity3d.com/threads/unity-5-1-1-broke-input-for-linux-standalone.335113/</a></p>
 <p>Update to Unity 5.1.2 to fix it.</p>
 <p>&nbsp;</p>
 <hr />
@@ -794,7 +794,7 @@ Fields serialized in target platform, class 'Rewired.ComponentControls.TouchInte
 <hr />
 <h3><a name="serialized-data-corruption-after-import" id="serialized-data-corruption-after-import"></a>Serialized data corruption after importing Rewired </h3>
 <p>Unity has a major bug in the Unitypackage importer that can lead to data corruption when importing an asset from the Unity Asset Store or a Unitypackage file.</p>
-<p>If your Unity <a href="http://docs.unity3d.com/Manual/class-EditorManager.html" target="_blank">Editor Settings -&gt; Asset Serialization Mode</a> is set to &quot;Force Binary&quot;, serialized data may be corrupted when you import a Unitypackage. This often happens when a new Unitypackage is imported. If you then re-import the same package over the previous import, it will be imported correctly. If you then delete the imported files and re-import them, they will be corrupted again.</p>
+<p>If your Unity <a href="https://docs.unity3d.com/Manual/class-EditorManager.html" target="_blank">Editor Settings -&gt; Asset Serialization Mode</a> is set to &quot;Force Binary&quot;, serialized data may be corrupted when you import a Unitypackage. This often happens when a new Unitypackage is imported. If you then re-import the same package over the previous import, it will be imported correctly. If you then delete the imported files and re-import them, they will be corrupted again.</p>
 <p>Corrupted serialized data in Rewired can manifest itself as inexplicable errors and exceptions being thrown for no reason making Rewired completely unusable. The best thing to do in this case is to change the Asset Serialization Mode to &quot;Mixed&quot; or &quot;Force Text&quot; and re-import Rewired. If that's not possible or you don't want to have to wait for all your assets to be re-imported in the new serialization mode, import the Rewired asset twice in a row (do not delete the Rewired folder after the first import). The serialized data should be intact after the second import.</p>
 <p>This bug has been reported to Unity. They have been able to reproduce it and have sent it to the developers for resolution. No ETA was given.</p>
 <p>Last tested version: Unity 5.3.5f0</p>
@@ -824,13 +824,13 @@ Fields serialized in target platform, class 'Rewired.ComponentControls.TouchInte
 <hr />
 <h3><a name="il2cpp-p0-marshaled-error" id="compiler-error-512-patch2"></a>IL2CPP: _p0_marshaled': undeclared identifier error on Unity 5.3.2p1, 5.3.2p2</h3>
 <p>Unity's 5.3.2p1 patch introduced a new IL2CPP error when building Rewired_Core.dll. This affects all platforms that use IL2CPP including iOS and Windows 10 Universal (IL2CPP scripting backend).</p>
-<p>This is not an error in Rewired and there is no workaround for it. The only solution is to revert back to Unity version 5.3.2f1. Unity has announced the bug will be fixed in 5.3.2p3. <a href="http://forum.unity3d.com/threads/5-3-2p1-il2cpp-and-rewired-undeclared-identifier-_p0_marchaled.382953/#post-2490502" target="_blank">More details can be found here</a>.</p>
+<p>This is not an error in Rewired and there is no workaround for it. The only solution is to revert back to Unity version 5.3.2f1. Unity has announced the bug will be fixed in 5.3.2p3. <a href="https://forum.unity3d.com/threads/5-3-2p1-il2cpp-and-rewired-undeclared-identifier-_p0_marchaled.382953/#post-2490502" target="_blank">More details can be found here</a>.</p>
 <p>&nbsp;</p>
 <hr />
 <h3><a name="compiler-error-512-patch" id="compiler-error-512-patch"></a>Compiler error in 5.1.2 patch releases</h3>
 <p>Unity made an undocumented breaking change to UnityEngine.EventSystems.PointerInputModule.GetMousePointerEventData(). It now requires int id to be passed. This cannot be fixed automatically in my code until Unity 5.1.3 is released because there is no way to detect a patch version before compile.</p>
 <p>More information and a patch:<br />
-  <a href="http://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-20#post-2216921">http://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-20#post-2216921</a></p>
+  <a href="https://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-20#post-2216921">https://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-20#post-2216921</a></p>
 <p>&nbsp;</p>
 <hr />
 <h3><a name="editor-is-compiling-gc-alloc" id="editor-is-compiling-gc-alloc"></a>InputManager_Base.Update generates 17 bytes of GC Alloc per frame in the Profiler</h3>
@@ -1017,8 +1017,8 @@ public class RewiredCustomController_AndroidRemote : MonoBehaviour {
         
     </div>
   <div class="footer clearfix">
-   	<p class="left">Copyright &copy;2014-2021 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
-  	<p class="right"><a href="http://guavaman.com/projects/rewired" title="Return to Rewired Website">Return to Rewired Website</a></p>
+   	<p class="left">Copyright &copy;2014-2021 <a href="https://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
+  	<p class="right"><a href="https://guavaman.com/projects/rewired" title="Return to Rewired Website">Return to Rewired Website</a></p>
   </div>
   <!-- end .content --></div>
   <!-- end .container --></div>

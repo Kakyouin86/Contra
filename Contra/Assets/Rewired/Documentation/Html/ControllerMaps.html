@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/BasicTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/BasicTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
@@ -70,7 +70,7 @@
               <li><a href="Deployment.html">Deployment</a></li>
               <li><a href="BestPractices.html">Best Practices</a></li>
               <li><a href="RewiredEditor.html">Rewired Editor</a></li>
-              <li><a href="http://guavaman.com/projects/rewired/docs/api-reference" target="_blank">API Reference</a></li>
+              <li><a href="https://guavaman.com/projects/rewired/docs/api-reference" target="_blank">API Reference</a></li>
             </ol>
             <strong>Concepts:</strong>
             <ul>
@@ -122,20 +122,20 @@
             </ul>
             <strong>Unity Help:</strong>
             <ul>
-              <li><a href="http://docs.unity3d.com/Manual/" target="_blank">Unity Manual</a></li>
-              <li><a href="http://docs.unity3d.com/ScriptReference/" target="_blank">Unity Script Reference</a></li>
-              <li><a href="http://unity3d.com/learn/tutorials/modules" target="_blank">Unity Tutorials</a></li>
+              <li><a href="https://docs.unity3d.com/Manual/" target="_blank">Unity Manual</a></li>
+              <li><a href="https://docs.unity3d.com/ScriptReference/" target="_blank">Unity Script Reference</a></li>
+              <li><a href="https://unity3d.com/learn/tutorials/modules" target="_blank">Unity Tutorials</a></li>
             </ul>
             <strong>Links:</strong>
             <ul>
-              <li><a href="http://guavaman.com/projects/rewired">Rewired Website</a></li>
-              <li><a href="http://guavaman.com/projects/rewired/docs">Web Documentation</a></li>
+              <li><a href="https://guavaman.com/projects/rewired">Rewired Website</a></li>
+              <li><a href="https://guavaman.com/projects/rewired/docs">Web Documentation</a></li>
             </ul>
         </div>
         
     
     	<div class="main-body">
-	        <div class="logo"><a href="http://guavaman.com/projects/rewired" title="Rewired"><img src="files/images/rewired-logo.png" width="173" height="139" alt="Rewired" /></a></div>
+	        <div class="logo"><a href="https://guavaman.com/projects/rewired" title="Rewired"><img src="files/images/rewired-logo.png" width="173" height="139" alt="Rewired" /></a></div>
                      
             <h1>
             <!-- InstanceBeginEditable name="PageHeader" -->Controller Maps
@@ -162,7 +162,7 @@
     <p>When you create a Controller Map (Joystick Map, Keyboard Map, etc.) in the Rewired   Input Manager, you are defining a default Map that can be used by any Player. In   order for a Player to make use of a Controller Map, it must first be assigned to that   Player and enabled. You can assign the Controller Map in the <a href="RewiredEditor.html#Players">Rewired Input   Manager under the Players page</a>, and when the game starts and Rewired initializes, it will load the   map into the Player. You can also assign/load Controller Maps at runtime through scripting. <a href="HowTos.html#loading-controller-maps-runtime">See How To's - Loading Controller Maps at runtime</a> for more information.</p>
 <div>
   <p><strong><a name="enabling-disabling" id="creating-and-editing-controller-maps3"></a>Enabling and Disabling Controller Maps:</strong></p>
-  <p>Controller Maps can be enabled or disabled at will via scripting. This can be useful if you want to change game modes and have a different set of controls become active. For example, opening a menu screen. Disabled Controller Maps will not return any value when the Player is queried for an Action's input value. Controller Maps are stored in the <a href="http://guavaman.com/projects/rewired/docs/api-reference/?topic=html/T_Rewired_Player.htm">Player</a> class.</p>
+  <p>Controller Maps can be enabled or disabled at will via scripting. This can be useful if you want to change game modes and have a different set of controls become active. For example, opening a menu screen. Disabled Controller Maps will not return any value when the Player is queried for an Action's input value. Controller Maps are stored in the <a href="https://guavaman.com/projects/rewired/docs/api-reference/?topic=html/T_Rewired_Player.htm">Player</a> class.</p>
   <p>For a Controller Map to be processed and contribute to input, it must be enabled. The starting enabled state of the map can be set in the <a href="RewiredEditor.html#Players">Rewired Input   Manager on the Players page</a> where you have assigned the Controller Maps to be   loaded at start. To enable or disable a Controller Map at runtime via scripting,   see <a href="HowTos.html#enabling-disabling-controller-maps">How To’s – Enabling and Disabling Controller Maps</a>.</p>
   <p>Individual Action Element Maps (Action bindings) in each Controller Map <a href="HowTos.html#enabling-disabling-action-element-maps">can also be enabled and disabled</a> via scripting.</p>
 </div>
@@ -176,10 +176,10 @@
   Joystick Maps for a particular Joystick do not exist in the Player unless that Joystick is currently connected and assigned to that Player. By default, <a href="Controllers.html#joystick-assignment">Rewired auto-assigns Joysticks</a> to each Player as controllers are detected. The Joystick Maps are loaded at assignment time based on the settings defined in the <a href="RewiredEditor.html#Players">Rewired Input Manager - Player</a> page for that particular Player.</p>
 <p><strong><a name="keyboard-maps" id="joystick-maps2"></a>Keyboard Maps</strong></p>
     <p>Keyboard input returned by a Player is determined by the keys bound to Actions in one or more Keyboard Maps assigned to a Player. When a key is pressed that is bound to an Action, the Player will return a value for that Action.  You create these maps in the Rewired Input Manager and assign them to each Player and they will be loaded at start. You can also enable, disable, remove, add,  load, and save Keyboard Maps at runtime. </p>
-    <p>The keyboard is similar to a Joystick in that it must be assigned to a Player before you can receive input from it. (This can be set in the Rewired Input Manager or through the <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/P_Rewired_Player_ControllerHelper_hasKeyboard.htm">player.controllers.hasKeyboard</a> property.) </p>
+    <p>The keyboard is similar to a Joystick in that it must be assigned to a Player before you can receive input from it. (This can be set in the Rewired Input Manager or through the <a href="https://guavaman.com/projects/rewired/docs/api-reference/html/P_Rewired_Player_ControllerHelper_hasKeyboard.htm">player.controllers.hasKeyboard</a> property.) </p>
     <p><strong><a name="mouse-maps" id="joystick-maps3"></a>Mouse Maps</strong></p>
     <p>Mouse input returned by a Player is determined by the axes and buttons bound to Actions in one or more Mouse Maps assigned to a Player. When a button or axis is activated that is bound to an Action, the Player will return a value for that Action.  You create these maps in the Rewired Input Manager and assign them to each Player and they will be loaded at start. You can also enable, disable, remove, add,  load, and save Mouse Maps at runtime. </p>
-    <p>The mouse is similar to a Joystick in that it must be assigned to a Player before you can receive input from it. (This can be set in the Rewired Input Manager or through the <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/P_Rewired_Player_ControllerHelper_hasMouse.htm">player.controllers.hasMouse</a> property.) </p>
+    <p>The mouse is similar to a Joystick in that it must be assigned to a Player before you can receive input from it. (This can be set in the Rewired Input Manager or through the <a href="https://guavaman.com/projects/rewired/docs/api-reference/html/P_Rewired_Player_ControllerHelper_hasMouse.htm">player.controllers.hasMouse</a> property.) </p>
     <p><strong><a name="controller-templates" id="controller-templates"></a>Controller Templates:</strong></p>
     <p>A <a href="ControllerTemplates.html">Controller Template</a> represents a generalized controller layout that applies to all compatible controllers providing a common interface to work with these controllers. When you create a map for a Controller Template, any controller that implements the template will inherit that map automatically without the need for you to create a map specifically for that controller. For example, Rewired comes with a Gamepad Template. When you create a map for this Gamepad Template, you do not need to create individual maps specifically for any of the gamepads <a href="SupportedControllers.html">listed on this page</a> because they are all covered by the Gamepad Template. This makes is much quicker to create pre-defined Controller Maps for a huge variety of controllers. Additionally, as more controllers are added to the Template in the future, the map you've already created will work with these new controllers as well.</p>
     <p>Please see <a href="ControllerTemplates.html">Controller Templates</a> for detailed information.</p>
@@ -265,13 +265,13 @@ If &quot;Use Game Controller Framework&quot; is enabled or the Primary Input Sou
   <a href="HowTos.html#managing-controller-maps-runtime">How To's - Managing Controller Maps at runtime</a><br />
   <a href="HowTos.html#saving-loading-controller-maps">How To's - Saving and Loading Controller Maps</a></p>
 <p><strong>Loading Default Controller Maps</strong></p>
-<p><a href="http://guavaman.com/projects/rewired/docs/api-reference/html/Overload_Rewired_Player_ControllerHelper_MapHelper_LoadMap.htm">player.controllers.maps.LoadMap</a><br />
-  <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/M_Rewired_Player_ControllerHelper_MapHelper_LoadDefaultMaps.htm">player.controllers.maps.LoadDefaultMaps</a></p>
+<p><a href="https://guavaman.com/projects/rewired/docs/api-reference/html/Overload_Rewired_Player_ControllerHelper_MapHelper_LoadMap.htm">player.controllers.maps.LoadMap</a><br />
+  <a href="https://guavaman.com/projects/rewired/docs/api-reference/html/M_Rewired_Player_ControllerHelper_MapHelper_LoadDefaultMaps.htm">player.controllers.maps.LoadDefaultMaps</a></p>
 <p><strong>See Also</strong></p>
-    <p><a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_JoystickMap.htm">API Reference - Joystick Map</a><br />
-    <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_KeyboardMap.htm">API Reference - Keyboard Map</a><br />
-    <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_MouseMap.htm">API Reference - Mouse Map</a><br />
-    <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_CustomControllerMap.htm">API Reference - Custom Controller Map    </a></p>
+    <p><a href="https://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_JoystickMap.htm">API Reference - Joystick Map</a><br />
+    <a href="https://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_KeyboardMap.htm">API Reference - Keyboard Map</a><br />
+    <a href="https://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_MouseMap.htm">API Reference - Mouse Map</a><br />
+    <a href="https://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_CustomControllerMap.htm">API Reference - Custom Controller Map    </a></p>
     <div class="bottom-pager clearfix">
 	    <a class="back-button" href="Controllers.html" title="Input Behaviors"><span class="button-img"></span>Controllers</a>
     	<a class="forward-button" href="ControllerTemplates.html" title="Map Categories"><span class="button-img"></span>Controller Templates</a>
@@ -281,8 +281,8 @@ If &quot;Use Game Controller Framework&quot; is enabled or the Primary Input Sou
         
     </div>
   <div class="footer clearfix">
-   	<p class="left">Copyright &copy;2014-2021 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
-  	<p class="right"><a href="http://guavaman.com/projects/rewired" title="Return to Rewired Website">Return to Rewired Website</a></p>
+   	<p class="left">Copyright &copy;2014-2021 <a href="https://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
+  	<p class="right"><a href="https://guavaman.com/projects/rewired" title="Return to Rewired Website">Return to Rewired Website</a></p>
   </div>
   <!-- end .content --></div>
   <!-- end .container --></div>

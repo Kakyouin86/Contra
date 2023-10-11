@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/BasicTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/BasicTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
@@ -70,7 +70,7 @@
               <li><a href="Deployment.html">Deployment</a></li>
               <li><a href="BestPractices.html">Best Practices</a></li>
               <li><a href="RewiredEditor.html">Rewired Editor</a></li>
-              <li><a href="http://guavaman.com/projects/rewired/docs/api-reference" target="_blank">API Reference</a></li>
+              <li><a href="https://guavaman.com/projects/rewired/docs/api-reference" target="_blank">API Reference</a></li>
             </ol>
             <strong>Concepts:</strong>
             <ul>
@@ -122,20 +122,20 @@
             </ul>
             <strong>Unity Help:</strong>
             <ul>
-              <li><a href="http://docs.unity3d.com/Manual/" target="_blank">Unity Manual</a></li>
-              <li><a href="http://docs.unity3d.com/ScriptReference/" target="_blank">Unity Script Reference</a></li>
-              <li><a href="http://unity3d.com/learn/tutorials/modules" target="_blank">Unity Tutorials</a></li>
+              <li><a href="https://docs.unity3d.com/Manual/" target="_blank">Unity Manual</a></li>
+              <li><a href="https://docs.unity3d.com/ScriptReference/" target="_blank">Unity Script Reference</a></li>
+              <li><a href="https://unity3d.com/learn/tutorials/modules" target="_blank">Unity Tutorials</a></li>
             </ul>
             <strong>Links:</strong>
             <ul>
-              <li><a href="http://guavaman.com/projects/rewired">Rewired Website</a></li>
-              <li><a href="http://guavaman.com/projects/rewired/docs">Web Documentation</a></li>
+              <li><a href="https://guavaman.com/projects/rewired">Rewired Website</a></li>
+              <li><a href="https://guavaman.com/projects/rewired/docs">Web Documentation</a></li>
             </ul>
         </div>
         
     
     	<div class="main-body">
-	        <div class="logo"><a href="http://guavaman.com/projects/rewired" title="Rewired"><img src="files/images/rewired-logo.png" width="173" height="139" alt="Rewired" /></a></div>
+	        <div class="logo"><a href="https://guavaman.com/projects/rewired" title="Rewired"><img src="files/images/rewired-logo.png" width="173" height="139" alt="Rewired" /></a></div>
                      
           <h1>
             <!-- InstanceBeginEditable name="PageHeader" -->Troubleshooting <!-- InstanceEndEditable -->
@@ -249,7 +249,7 @@
     <p><strong>Prefab Method:<br />
   </strong>For game builds where you do not have access to the inspector, you can use the prefab in Assets/Rewired/DevTools/DebugInformation. Drag this prefab into your scene and build. It will display on screen the same information shown in the Debug Information foldout in the inspector. You can use the mouse or the touch screen to unfold the various items to find the information you want.</p>
 <p><strong>Scripting Method:</strong><br />
-  You can also get this information by using a little bit of debug code. This code will show all Joysticks assigned to each Player and all mappings in each Controller Map. You will be able to tell if a Joystick is assigned to a particular Player, if any Controller Maps were loaded for that Joystick, whether or not those Controller Maps are enabled, and the what Action is bound to each element. There are many more members in each of the <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_Player.htm">Player</a>, <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_Joystick.htm">Joystick</a>, <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_JoystickMap.htm">JoystickMap</a>, and <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_ActionElementMap.htm">ActionElementMap</a> classes that you can get useful information from.</p>
+  You can also get this information by using a little bit of debug code. This code will show all Joysticks assigned to each Player and all mappings in each Controller Map. You will be able to tell if a Joystick is assigned to a particular Player, if any Controller Maps were loaded for that Joystick, whether or not those Controller Maps are enabled, and the what Action is bound to each element. There are many more members in each of the <a href="https://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_Player.htm">Player</a>, <a href="https://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_Joystick.htm">Joystick</a>, <a href="https://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_JoystickMap.htm">JoystickMap</a>, and <a href="https://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_ActionElementMap.htm">ActionElementMap</a> classes that you can get useful information from.</p>
     <pre class="code">
 <span class="comment">// Log assigned Joystick information for all joysticks regardless of whether or not they've been assigned</span>
 Debug.Log(&quot;Rewired found &quot; + ReInput.controllers.joystickCount + &quot; joysticks attached.&quot;);
@@ -375,7 +375,7 @@ foreach(var p in ReInput.players.Players) {
     <p>Just because a controller is a gamepad does not mean Rewired will recognize it as a gamepad. Just what a &quot;gamepad&quot; is varies from product to product. There is no universal definition of a gamepad and the device itself does not provide any kind of element layout information. The Gamepad Template only applies to <a href="SupportedControllers.html">controllers that have had definitions created for them</a> and have been specifically assigned and configured for that template. If you want to use a gamepad <a href="SupportedControllers.html">that is not listed here</a>, you either have to <a href="HowTos.html#new-controller-definitions">make a controller definition for it</a> and <a href="HowTos.html#add-controller-to-existing-controller-template">add it to the Gamepad Template</a> or <a href="HowTos.html#controller-mapping-screen">provide your users with a control remapping screen</a> so they can map the controls themselves.</p>
     <p><strong><a name="controller-doesnt-work-more-reasons" id="controller-doesnt-work-more-reasons"></a>More reasons why your controller may appear not to work:</strong></p>
     <ul>
-      <li>You have multiple controllers connected, one Player, and have left the default <a href="http://guavaman.com/projects/rewired/docs/RewiredEditor.html#Settings">Joystick Auto-Assignment Settings in the Rewired input manager</a>: 
+      <li>You have multiple controllers connected, one Player, and have left the default <a href="https://guavaman.com/projects/rewired/docs/RewiredEditor.html#Settings">Joystick Auto-Assignment Settings in the Rewired input manager</a>: 
         Based on the default settings, Rewired will assign only one controller per-Player. If multiple controllers are present, only one will be assigned to each Player. If you only have one Player, the second controller will be left unassigned. In order to allow auto-assignment of multiple Joysticks to the same Player, Max Joysticks Per Player must be raised to a value greater than 1.  <a href="Controllers.html">See this page for information on Controllers</a>.</li>
       <li><strong>Steam</strong>  is very frequently the cause of inexplicable controller input problems such as controllers not appearing or not producing any input. Issues caused by Steam are notoriously difficult to diagnose because few people ever even mention they are using Steam when contacting support for help. If you are using Steam in your project, or in some cases, if Steam is even open in the background during development, it has a major impact on input devices visible to the application. <a href="#steam">See this for important information on Steam</a>.</li>
     </ul>
@@ -425,7 +425,7 @@ things. All of this information is visible in the Debug Information tool:</p>
 <h3><a name="joystick-problems" id="dll-not-found-xinput2"></a>Joystick control doesn't work</h3>
 <ol>
   <li>Did you create one or more <a href="RewiredEditor.html#Players">Players in the Rewired input manager</a>?</li>
-  <li>Is Auto-assign Joysticks enabled in the <a href="RewiredEditor.html#Settings">Rewired Input Manager Settings</a> page or have you manually <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/Overload_Rewired_Player_ControllerHelper_AddController.htm">assigned joysticks to the Player(s) during runtime through scripting</a>? (<a href="#controller-doesnt-work">See &quot;My Controller Doesn't Work&quot; also</a>.)</li>
+  <li>Is Auto-assign Joysticks enabled in the <a href="RewiredEditor.html#Settings">Rewired Input Manager Settings</a> page or have you manually <a href="https://guavaman.com/projects/rewired/docs/api-reference/html/Overload_Rewired_Player_ControllerHelper_AddController.htm">assigned joysticks to the Player(s) during runtime through scripting</a>? (<a href="#controller-doesnt-work">See &quot;My Controller Doesn't Work&quot; also</a>.)</li>
   <li>Did you create any <a href="RewiredEditor.html#JoystickMaps">Joystick Maps</a> compatible with the controller(s) you're using?</li>
   <li>Did you <a href="RewiredEditor.html#Players">assign those Joystick Maps to your Player(s) on start</a>?</li>
   <li>Are those <a href="RewiredEditor.html#Players">Joystick Maps enabled on start in the Player(s)</a>?</li>
@@ -442,7 +442,7 @@ things. All of this information is visible in the Debug Information tool:</p>
   <li>Did you create any <a href="RewiredEditor.html#KeyboardMaps">Keyboard Maps</a>?</li>
   <li>Did you <a href="RewiredEditor.html#Players">assign those Keyboard Maps to your Player(s) on start</a>?</li>
   <li>Are those <a href="RewiredEditor.html#Players">Keyboard Maps enabled on start in the Player(s)</a>?</li>
-  <li>Did you check <a href="RewiredEditor.html#Players">&quot;Assign Keyboard on Start&quot; in the Player(s)</a> you want to have access to the keyboard or <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/P_Rewired_Player_ControllerHelper_hasKeyboard.htm">assign the keyboard manually to the Player(s) during runtime through scripting</a>?</li>
+  <li>Did you check <a href="RewiredEditor.html#Players">&quot;Assign Keyboard on Start&quot; in the Player(s)</a> you want to have access to the keyboard or <a href="https://guavaman.com/projects/rewired/docs/api-reference/html/P_Rewired_Player_ControllerHelper_hasKeyboard.htm">assign the keyboard manually to the Player(s) during runtime through scripting</a>?</li>
   <li>Please go through the <a href="QuickStart.html">Quick Start guide</a> and ensure you haven't missed any steps.</li>
   <li>Read the documentation to learn more about how <a href="Controllers.html">Controllers</a> and <a href="ControllerMaps.html">Controller Maps</a> work.</li>
   <li>Use the <a href="#debug-information">Debug Information</a> tool to determine why it isn't working.</li>
@@ -455,7 +455,7 @@ things. All of this information is visible in the Debug Information tool:</p>
   <li>Did you create any <a href="RewiredEditor.html#MouseMaps">Mouse Maps</a>?</li>
   <li>Did you <a href="RewiredEditor.html#Players">assign those Mouse Maps to your Player(s) on start</a>?</li>
   <li>Are those <a href="RewiredEditor.html#Players">Mouse Maps enabled on start in the Player(s)</a>?</li>
-  <li>Did you check <a href="RewiredEditor.html#Players">&quot;Assign Mouse on Start&quot; in the Player(s)</a> you want to have access to the mouse or <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/P_Rewired_Player_ControllerHelper_hasMouse.htm">assign the mouse manually to the Player(s) during runtime through scripting</a>?</li>
+  <li>Did you check <a href="RewiredEditor.html#Players">&quot;Assign Mouse on Start&quot; in the Player(s)</a> you want to have access to the mouse or <a href="https://guavaman.com/projects/rewired/docs/api-reference/html/P_Rewired_Player_ControllerHelper_hasMouse.htm">assign the mouse manually to the Player(s) during runtime through scripting</a>?</li>
   <li>Please go through the <a href="QuickStart.html">Quick Start guide</a> and ensure you haven't missed any steps.</li>
   <li>Read the documentation to learn more about how <a href="Controllers.html">Controllers</a> and <a href="ControllerMaps.html">Controller Maps</a> work.</li>
   <li>Use the <a href="#debug-information">Debug Information</a> tool to determine why it isn't working.</li>
@@ -475,7 +475,7 @@ things. All of this information is visible in the Debug Information tool:</p>
   <p>UserDataStore   logs a message in the editor every time XML data is loaded 
   specifically for   the purpose of reminding you of this possibility.<br />
   <br />
-  You can <a href="http://guavaman.com/projects/rewired/docs/Troubleshooting.html#debug-information">view Controller   Maps live</a> in both the editor and in builds to see 
+  You can <a href="https://guavaman.com/projects/rewired/docs/Troubleshooting.html#debug-information">view Controller   Maps live</a> in both the editor and in builds to see 
   exactly what configuration   is loaded.<br />
   <br />
   2.   When you create the build, the scene you are building is not the same 
@@ -494,7 +494,7 @@ things. All of this information is visible in the Debug Information tool:</p>
   <p>&nbsp;</p>
 <hr />
 <h3><a name="joystick-count-on-start" id="dll-not-found-xinput7"></a>Joystick count is zero on Start() even when joysticks are connected</h3>
-<p>Please see <a href="http://guavaman.com/projects/rewired/docs/HowTos.html#connect-disconnect-events">How To's - Receiving Joystick connect and disconnect events</a> for important information.</p>
+<p>Please see <a href="https://guavaman.com/projects/rewired/docs/HowTos.html#connect-disconnect-events">How To's - Receiving Joystick connect and disconnect events</a> for important information.</p>
 <p>&nbsp;</p>
 <hr />
 <h3><a name="not-initialized" id="not-initialized"></a>Rewired is not initialized error</h3>
@@ -812,7 +812,7 @@ void CacheRewiredPlayer() {
   creates emulated XInput devices such as DS4Win, PS3 SCP driver, or 
   other tools that emulate XInput devices. Uninstall these tools/drivers and try again.</p>
 <p><strong>If you are seeing multiple devices, one named &quot;XInput Gamepad 1&quot; and one named something else like &quot;Controller (XBOX One For Windows)&quot;:</strong><br />
-  This error can only happen if the XInput-compatible device does not conform to Microsoft's documented standards for how XInput devices identify themselves. If the device deviates from these standards, Rewired will be unable to filter out XInput devices when it populates its Raw Input or Direct Input device list. This causes it to create both a Raw Input / Direct Input device and an XInput device. The only way to fix these problem devices is to add special case code to manually filter them out individually. <a href="http://guavaman.com/rewired#support" target="_blank">Report this device via the support form on the website</a> and include all relevant controller information shown by the Rewired/DevTools/JoystickElementIdentifier tool. (Create a new scene, add the JoystickElementIdentifier tool to the scene at 0, 0, 0, add an empty Rewired Input Manager, and press Play.) To include a screenshot, please include a link to the image on a filesharing service such as Dropbox.</p>
+  This error can only happen if the XInput-compatible device does not conform to Microsoft's documented standards for how XInput devices identify themselves. If the device deviates from these standards, Rewired will be unable to filter out XInput devices when it populates its Raw Input or Direct Input device list. This causes it to create both a Raw Input / Direct Input device and an XInput device. The only way to fix these problem devices is to add special case code to manually filter them out individually. <a href="https://guavaman.com/rewired#support" target="_blank">Report this device via the support form on the website</a> and include all relevant controller information shown by the Rewired/DevTools/JoystickElementIdentifier tool. (Create a new scene, add the JoystickElementIdentifier tool to the scene at 0, 0, 0, add an empty Rewired Input Manager, and press Play.) To include a screenshot, please include a link to the image on a filesharing service such as Dropbox.</p>
 <p>&nbsp;</p>
 <hr />
 <h3><a name="windows-xinput-device-always-connected" id="windows-xinput-multiple-devices2"></a>Windows, XInput: XInput-compatible device is always connected even after disconnecting the controller and no connect or disconnect events are sent</h3>
@@ -887,7 +887,7 @@ Int64* args, IntPtr method)
 <p></p>
 <h3><a name="android-joystick-keyboard-keys" id="android-joystick-keyboard-keys"></a>Joystick buttons  activate keyboard keys on Android</h3>
 <p>Rewired uses Unity input as the input source in Android so it is subject to its limitations. Most Android joysticks return keyboard keycode values for certain buttons on the controller such as Left Shoulder (Left Shift), Right Shoulder (Right Shift), Back (ESC), Menu (Menu), etc. These keyboard values can be in additon to or instead of a joystick button value. This can be problematic if you've developed your game for both desktop PCs and Android and have keyboard maps already set up for the desktop and you want to use the same input scheme for an Android build. When you press one of these buttons, if it also has an Action assigned through a keyboard map, you may get 2 values returned -- one for the keyboard map and one for the joystick map.</p>
-<p>An easy way to prevent this is to set <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/P_Rewired_Controller_enabled.htm">ReInput.controllers.Keyboard.enabled</a> = false to disable all keyboard input on Android. Special provision has been made for certain Android keycodes used by most joysticks such as Back and Menu so that these will still work when activated by a joystick. In addition to solving this issue, disabling keyboard input improves performance slightly. Note that on Android, even when disabling keyboard support certain keys will still function in order to still be able to support certain buttons on joysticks that return keyboard keycodes such as the Back button.</p>
+<p>An easy way to prevent this is to set <a href="https://guavaman.com/projects/rewired/docs/api-reference/html/P_Rewired_Controller_enabled.htm">ReInput.controllers.Keyboard.enabled</a> = false to disable all keyboard input on Android. Special provision has been made for certain Android keycodes used by most joysticks such as Back and Menu so that these will still work when activated by a joystick. In addition to solving this issue, disabling keyboard input improves performance slightly. Note that on Android, even when disabling keyboard support certain keys will still function in order to still be able to support certain buttons on joysticks that return keyboard keycodes such as the Back button.</p>
 <p>You can disable keyboard support per-platform on the <a href="RewiredEditor.html#Settings">Rewired Editor - Settings page</a> or through scripting as shown below.</p>
 <pre class="code">void Awake() {
 #if UNITY_ANDROID &amp;&amp; !UNITY_EDITOR
@@ -911,7 +911,6 @@ Int64* args, IntPtr method)
   <li>The controllers are treated as every other MFI controller because Apple has chosen to expose them as MFI controllers.</li>
   <li>Rewired has no explicit support for these controllers on iOS. It inherited support through the fact they chose to treat them as MFI controllers. There currently has been no update to Rewired to support these <br />
     controllers in any other way than as generic MFI controllers.</li>
-  <li><strong>Extra buttons added in iOS 13 (stick buttons, options, menu) do not currently work because they are not currently supported by Unity.</strong></li>
   <li>Controller.name can be used to identify which MFI controller this is so you can display device specific glyphs. Rewired cannot use the iOS 13 ProductCategory function.  <a href="TestedPlatforms.html">Rewired on iOS uses UnityEngine.Input for all input as shown here, so Apple API calls don't apply.</a></li>
   <li>You must make your Controller Map for the Gamepad Template or the iOS MFI Controller profiles. Controller Maps created for Xbox One Controller, Xbox 360 Controller, or DualShock 4 will not be used on iOS because, to Rewired, these controllers are all simply MFI controllers.</li>
   <li>IF I decide to change the current system implement these new controllers as separate controller definitions for the sole purpose of reporting button element names based on the specific device, that will be done in a future version and listed on the supported controllers page. There are also some very significant disadvantages to doing this including making user mappings no longer universal across MFI devices (when a user changes a mapping for a SteelSeries Nimbus MFI controller, then swaps out with a DS4 or Xbox One controller, it will not inherit those mappings made for the other MFI controller because they would now use different device profiles).</li>
@@ -929,7 +928,7 @@ Int64* args, IntPtr method)
 <h3><a name="ios-controllers-not-detected" id="ios-controllers-not-detected"></a>Game controllers not detected</h3>
 <p>In Unity versions 5.3.0+, game controllers no longer work in Unity because the XCode project Unity builds does not automatically reference the required GameController framework.</p>
 <p>Solution: Manually add a reference to the GameController or GameKit framework in XCode.</p>
-<p><a href="http://forum.unity3d.com/threads/no-mfi-controller-detected.384892/#post-2502963">More details of this issue and the solution can be found here</a>.</p>
+<p><a href="https://forum.unity3d.com/threads/no-mfi-controller-detected.384892/#post-2502963">More details of this issue and the solution can be found here</a>.</p>
 <p>&nbsp;</p>
 <hr />
 <p>&nbsp;</p>
@@ -938,12 +937,12 @@ Int64* args, IntPtr method)
 <h3><a name="tvos-controllers-not-detected" id="tvos-controllers-not-detected"></a>Game controllers not detected</h3>
 <p>In Unity versions 5.3.0+, game controllers no longer work in Unity because the XCode project Unity builds does not automatically reference the required GameController framework.</p>
 <p>Solution: Manually add a reference to the GameController or GameKit framework in XCode.</p>
-<p><a href="http://forum.unity3d.com/threads/no-mfi-controller-detected.384892/#post-2502963">More details of this issue and the solution can be found here</a>.</p>
+<p><a href="https://forum.unity3d.com/threads/no-mfi-controller-detected.384892/#post-2502963">More details of this issue and the solution can be found here</a>.</p>
 <p>&nbsp;</p>
 <hr />
 <h3><a name="tvos-joystick-keyboard-keys" id="tvos-joystick-keyboard-keys"></a>Joystick buttons  activate keyboard keys on tvOS</h3>
 <p>Rewired uses Unity input as the input source in tvOS so it is subject to its limitations. tvOS joysticks return keyboard keycode values for certain buttons on the controller such as Left Shoulder, Right Shoulder,  etc. These keyboard values are in additon to  a joystick button value. This can be problematic if you've developed your game for both desktop PCs and tvOS and have keyboard maps already set up for the desktop and you want to use the same input scheme for a tvOS build. When you press one of these buttons, if it also has an Action assigned through a keyboard map, you may get 2 values returned -- one for the keyboard map and one for the joystick map.</p>
-<p>An easy way to prevent this is to set <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/P_Rewired_Controller_enabled.htm">ReInput.controllers.Keyboard.enabled</a> = false to disable all keyboard input on tvOS. In addition to solving this issue, disabling keyboard input improves performance slightly.</p>
+<p>An easy way to prevent this is to set <a href="https://guavaman.com/projects/rewired/docs/api-reference/html/P_Rewired_Controller_enabled.htm">ReInput.controllers.Keyboard.enabled</a> = false to disable all keyboard input on tvOS. In addition to solving this issue, disabling keyboard input improves performance slightly.</p>
 <p>You can disable keyboard support per-platform on the <a href="RewiredEditor.html#Settings">Rewired Editor - Settings page</a> or through scripting as shown below.</p>
 <pre class="code">void Awake() {
 #if UNITY_TVOS &amp;&amp; !UNITY_EDITOR
@@ -1036,7 +1035,7 @@ Int64* args, IntPtr method)
 <p><strong>All Platforms</strong><br />
   Native Steam Controller support is not available at this time. Direct support of the controller's special features is not currently available. The Steam Controller can only be supported through Steam's automatic emulation of a standard controller (type varies by platform.)</p>
 <p><strong>Important<br />
-</strong>The Steam Controller is not a standard HID device and cannot be seen by the OS without Steam being initialized for your process through the Steam API with Steam running in the background. It is not possible to use the Steam Controller without Steam. Rewired does not initialize Steam for you -- you will have to do so using the Steam API or a C# Steam library such as <a href="http://steamworks.net/" target="_blank">Steamworks.net</a>.</p>
+</strong>The Steam Controller is not a standard HID device and cannot be seen by the OS without Steam being initialized for your process through the Steam API with Steam running in the background. It is not possible to use the Steam Controller without Steam. Rewired does not initialize Steam for you -- you will have to do so using the Steam API or a C# Steam library such as <a href="https://steamworks.net/" target="_blank">Steamworks.net</a>.</p>
 <p><strong>Rewired Mappings</strong><br />
   It is recommended you always create a Joystick Map for the <a href="ControllerTemplates.html#gamepad-template">Gamepad Template</a> in the Rewired Editor. This will cover the Steam Controller and <a href="#steam-configured-controllers">Steam-configured controllers</a> on all platforms.</p>
 <p><strong>Windows<br />
@@ -1203,8 +1202,8 @@ Int64* args, IntPtr method)
         
     </div>
   <div class="footer clearfix">
-   	<p class="left">Copyright &copy;2014-2021 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
-  	<p class="right"><a href="http://guavaman.com/projects/rewired" title="Return to Rewired Website">Return to Rewired Website</a></p>
+   	<p class="left">Copyright &copy;2014-2021 <a href="https://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
+  	<p class="right"><a href="https://guavaman.com/projects/rewired" title="Return to Rewired Website">Return to Rewired Website</a></p>
   </div>
   <!-- end .content --></div>
   <!-- end .container --></div>
