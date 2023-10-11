@@ -381,6 +381,8 @@ public class Firepoint : MonoBehaviour
                 if (
                     ((animationNames.name == "Shoot Straight"
                       || animationNames.name == "Shoot Straight Walking"
+                      || animationNames.name == "Shoot Diagonal Down Walking"
+                      || animationNames.name == "Torso Walking Diagonal Up"
                       || animationNames.name == "Climb Hold Back"
                       || animationNames.name == "Climb Shooting Back" 
                       || animationNames.name == "Climb Shooting Forward"
