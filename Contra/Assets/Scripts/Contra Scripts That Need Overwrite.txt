@@ -1,0 +1,49 @@
+Changes to do in each new update:
+
+--> Corgi Engine\Common\Scripts\Environment\Ladder.cs Line 14 should be:
+public enum LadderTypes { Simple, BiDirectional, Horizontal } //Leo Monge: Need to ALWAYS bring it after update.
+
+--> Corgi Engine\Common\Scripts\Agents\CorgiController\CharacterWallClinging.cs Line 20 should be:
+[Range(0.0000000001f, 1)]//Leo Monge: Need to ALWAYS bring it after update. it was 0.01f originally. With this small value, you can't detach from the wall.
+
+--> Corgi Engine\Common\Scripts\Agents\CorgiController\CharacterLadder.cs line 79 should be:
+//_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>();//Leo Monge: Need to ALWAYS bring it after update.
+GameObject ladderColliderObject = GameObject.FindGameObjectWithTag("LadderCollider");//Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only.
+if (ladderColliderObject != null)//Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only.
+{
+_boxCollider = ladderColliderObject.GetComponent<BoxCollider2D>();//Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only.
+}
+
+--> Corgi Engine\Common\Scripts\Agents\Weapons\WeaponAim.cs line 23 should be:
+public Quaternion oldRotation; //Leo Monge: Need to ALWAYS bring it after update.
+public ProjectileWeapon projectileWeapon; //Leo Monge: Need to ALWAYS bring it after update.
+public int originalProjectiles ;//Leo Monge: Need to ALWAYS bring it after update.
+
+--> Corgi Engine\Common\Scripts\Agents\Weapons\WeaponAim.cs line 163 should be:
+projectileWeapon = _weapon.GetComponent<ProjectileWeapon>(); //Leo Monge: Need to ALWAYS bring it after update.
+originalProjectiles = projectileWeapon.ProjectilesPerShot; //Leo Monge: Need to ALWAYS bring it after update.
+
+--> Corgi Engine\Common\Scripts\Agents\Weapons\WeaponAim.cs line 451 should be:
+// if the rotation speed is == 0, we have instant rotation
+if (WeaponRotationSpeed == 0 && oldRotation != newRotation) //Leo Monge: Need to ALWAYS bring it after update.
+{
+projectileWeapon.ProjectilesPerShot = 0; //Leo Monge: Need to ALWAYS bring it after update.
+transform.rotation = newRotation;
+StartCoroutine(DelayInShotWhenRotating()); //Leo Monge: Need to ALWAYS bring it after update.
+oldRotation = newRotation; //Leo Monge: Need to ALWAYS bring it after update.
+}
+// otherwise we lerp the rotation
+else if (WeaponRotationSpeed != 0)
+{
+StartCoroutine(DelayInShotWhenRotating()); //Leo Monge: Need to ALWAYS bring it after update.
+transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, WeaponRotationSpeed * Time.fixedDeltaTime); //Leo Monge: Need to ALWAYS bring it after update. It was Time.deltaTime
+}
+
+if (InstantFlip && (WasFacingRightLastFrame != _weapon.Owner.IsFacingRight) && oldRotation != newRotation)
+{
+projectileWeapon.ProjectilesPerShot = 0; //Leo Monge: Need to ALWAYS bring it after update.
+transform.rotation = newRotation;
+StartCoroutine(DelayInShotWhenRotating()); //Leo Monge: Need to ALWAYS bring it after update.
+oldRotation = newRotation; //Leo Monge: Need to ALWAYS bring it after update.
+}
+}
