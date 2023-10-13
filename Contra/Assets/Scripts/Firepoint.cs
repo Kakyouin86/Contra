@@ -23,6 +23,7 @@ public class Firepoint : MonoBehaviour
     public GameObject theFirepoint;
     public Animator theAnimator;
     public AnimationClip[] animationNames;
+    public AnimationClip[] animationNamesForInstantRotation;
     public Vector3 offset = new Vector3(0f, 0f, 0f);
     public WeaponAim weaponAim;
     public float originalWeaponAimRotSpeed;
@@ -378,7 +379,22 @@ public class Firepoint : MonoBehaviour
 
                 //////////////////////////////////////////////////////////////////////////////////////
                 //Change the Weapon Rotation Speed
-                if (
+
+                if (animationNamesForInstantRotation != null)
+                {
+                    foreach (var clip in animationNamesForInstantRotation)
+                    {
+                        if (clip.name == animationNames.name)
+                        {
+                            weaponAim.WeaponRotationSpeed = instantWeaponAimRotSpeed;
+                            return; // Exit the loop once the animation is found
+                        }
+                    }
+                }
+                // Set the default WeaponRotationSpeed if the animation is not found
+                weaponAim.WeaponRotationSpeed = originalWeaponAimRotSpeed;
+
+                /*if (
                     ((animationNames.name == "Shoot Straight"
                       || animationNames.name == "Shoot Straight Walking"
                       || animationNames.name == "Shoot Diagonal Down Walking"
@@ -394,7 +410,7 @@ public class Firepoint : MonoBehaviour
                 else
                 {
                     weaponAim.WeaponRotationSpeed = originalWeaponAimRotSpeed;
-                }
+                }*/
             }
         }
     }

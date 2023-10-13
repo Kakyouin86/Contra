@@ -4511,6 +4511,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Hold
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: Speed
+    m_EventTreshold: 0.1
+  - m_ConditionMode: 2
+    m_ConditionEvent: Crawling
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4564797152289916404}
   m_Solo: 0

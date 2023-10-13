@@ -48,6 +48,36 @@ oldRotation = newRotation; //Leo Monge: Need to ALWAYS bring it after update.
 }
 }
 
+--> Corgi Engine\Common\Scripts\Managers\InputManager.cs should have all variables public
+
+--> Rewired\Integration\CorgiEngine\Scripts\RewiredCorgiEngineInputManager.cs line 153 should be:
+public override void SetMovement() //Leo Monge: You need this code so the joystick detects absolute values.
+{
+if (!_initialized)
+{
+base.SetMovement();
+return;
+}
+if (SmoothMovement)
+{
+_primaryMovement.x = _rewiredPlayer.GetAxis(_rewiredActionId_horizontal);
+_primaryMovement.y = _rewiredPlayer.GetAxis(_rewiredActionId_vertical);
+
+// Normalize _primaryMovement
+_primaryMovement.x = Mathf.Abs(_primaryMovement.x) > 0.1f ? Mathf.Sign(_primaryMovement.x) : 0f;
+_primaryMovement.y = Mathf.Abs(_primaryMovement.y) > 0.1f ? Mathf.Sign(_primaryMovement.y) : 0f;
+}
+else
+{
+_primaryMovement.x = _rewiredPlayer.GetAxisRaw(_rewiredActionId_horizontal);
+_primaryMovement.y = _rewiredPlayer.GetAxisRaw(_rewiredActionId_vertical);
+
+// Normalize _primaryMovement
+_primaryMovement.x = _primaryMovement.x != 0f ? Mathf.Sign(_primaryMovement.x) : 0f;
+_primaryMovement.y = _primaryMovement.y != 0f ? Mathf.Sign(_primaryMovement.y) : 0f;
+}
+}
+
 --> Tags:
   - LevelBounds
   - Music
@@ -116,3 +146,10 @@ oldRotation = newRotation; //Leo Monge: Need to ALWAYS bring it after update.
 "Horizontal Ladder Shooting Down"
 "Horizontal Ladder Hold Diagonal Down Back"
 "Horizontal Ladder Shooting Diagonal Down Back"
+
+--> Firepoint animations for Strict Mode:
+"Climb Hold Back"
+"Climb Shooting Back" 
+"Climb Shooting Forward"
+"Horizontal Ladder Shooting Back"
+"Horizontal Ladder Shooting Forward"

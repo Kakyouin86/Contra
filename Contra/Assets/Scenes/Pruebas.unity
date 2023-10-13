@@ -10872,7 +10872,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &951121531
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13229,6 +13229,12 @@ MonoBehaviour:
   theFirepoint: {fileID: 0}
   theAnimator: {fileID: 0}
   animationNames: []
+  animationNamesForInstantRotation:
+  - {fileID: 7400000, guid: 753b673071bd1c04b92dca9c69a18c4e, type: 2}
+  - {fileID: 7400000, guid: f5f43cb68aa13a941ae93604d7025db3, type: 2}
+  - {fileID: 7400000, guid: bc5ccd68571e05546842069313d50b79, type: 2}
+  - {fileID: 7400000, guid: 9b8e1dc10cb98a644aa2dcfb39c420d5, type: 2}
+  - {fileID: 7400000, guid: a7a949a3bc5eaba4c861ca5b07b961ec, type: 2}
   offset: {x: 0, y: 0, z: 0}
   weaponAim: {fileID: 0}
   originalWeaponAimRotSpeed: 0
@@ -16676,6 +16682,14 @@ MonoBehaviour:
   DelayedButtonPresses: 0
   SmoothMovement: 0
   Threshold: {x: 0.1, y: 0.1}
+  _primaryMovement: {x: 0, y: 0}
+  _secondaryMovement: {x: 0, y: 0}
+  _axisHorizontal: 
+  _axisVertical: 
+  _axisSecondaryHorizontal: 
+  _axisSecondaryVertical: 
+  _axisShoot: 
+  _axisShootSecondary: 
 --- !u!1 &1122128343
 GameObject:
   m_ObjectHideFlags: 0
@@ -17686,7 +17700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1267481902
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19644,7 +19658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1389862584
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20618,8 +20632,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1620175883
-  m_SortingLayer: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 78e6e7db55d4d4559adbb4d027071acb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -24936,8 +24950,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.9, y: 0.26}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -1.9, y: -0.08}
+  m_SizeDelta: {x: 104.8992, y: 131.124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1854898800
 MonoBehaviour:
@@ -24959,7 +24973,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300002, guid: 9e09c275635a1704f8c95be03fc36589, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2141ae3ad0e3b2b4793f1e0f91d75e52, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -25328,8 +25342,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1620175883
-  m_SortingLayer: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 78e6e7db55d4d4559adbb4d027071acb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -26341,6 +26355,14 @@ MonoBehaviour:
   DelayedButtonPresses: 0
   SmoothMovement: 0
   Threshold: {x: 0.1, y: 0.1}
+  _primaryMovement: {x: 0, y: 0}
+  _secondaryMovement: {x: 0, y: 0}
+  _axisHorizontal: 
+  _axisVertical: 
+  _axisSecondaryHorizontal: 
+  _axisSecondaryVertical: 
+  _axisShoot: 
+  _axisShootSecondary: 
 --- !u!1 &1966031590
 GameObject:
   m_ObjectHideFlags: 0

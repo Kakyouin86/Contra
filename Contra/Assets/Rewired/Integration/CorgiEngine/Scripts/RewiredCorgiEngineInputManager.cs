@@ -150,17 +150,30 @@
         /// <summary>
         /// Called every frame, gets primary movement values from Rewired Player
         /// </summary>
-        public override void SetMovement() {
-            if(!_initialized) {
+        public override void SetMovement() //Leo Monge: You need this code so the joystick detects absolute values.
+        {
+            if (!_initialized)
+            {
                 base.SetMovement();
                 return;
             }
-            if(SmoothMovement) {
+            if (SmoothMovement)
+            {
                 _primaryMovement.x = _rewiredPlayer.GetAxis(_rewiredActionId_horizontal);
                 _primaryMovement.y = _rewiredPlayer.GetAxis(_rewiredActionId_vertical);
-            } else {
+
+                // Normalize _primaryMovement
+                _primaryMovement.x = Mathf.Abs(_primaryMovement.x) > 0.1f ? Mathf.Sign(_primaryMovement.x) : 0f;
+                _primaryMovement.y = Mathf.Abs(_primaryMovement.y) > 0.1f ? Mathf.Sign(_primaryMovement.y) : 0f;
+            }
+            else
+            {
                 _primaryMovement.x = _rewiredPlayer.GetAxisRaw(_rewiredActionId_horizontal);
                 _primaryMovement.y = _rewiredPlayer.GetAxisRaw(_rewiredActionId_vertical);
+
+                // Normalize _primaryMovement
+                _primaryMovement.x = _primaryMovement.x != 0f ? Mathf.Sign(_primaryMovement.x) : 0f;
+                _primaryMovement.y = _primaryMovement.y != 0f ? Mathf.Sign(_primaryMovement.y) : 0f;
             }
         }
 
