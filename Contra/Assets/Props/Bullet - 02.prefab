@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 5303123853555457701}
   - component: {fileID: 547776533618371757}
   - component: {fileID: 7842010951109207968}
-  - component: {fileID: 6897001600883610955}
   - component: {fileID: -5646056966342842286}
+  - component: {fileID: 3839924737645874464}
   m_Layer: 16
   m_Name: Bullet - 02
   m_TagString: Untagged
@@ -278,31 +278,6 @@ MonoBehaviour:
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
   TargetDamageResistanceProcessor: {fileID: 0}
---- !u!114 &6897001600883610955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183803012360247645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3295aabfd93691741bb08806485b2b3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObstaclesLayerMask:
-    serializedVersion: 2
-    m_Bits: 270592
-  theBurst: {fileID: 3199536429230220929, guid: 9c430fd027e72984088b52c60e6a2c05,
-    type: 3}
-  distanceToPlayer: 0
-  thresholdNotToShowBurst: 1
-  useRotations: 0
-  weaponAim: {fileID: 0}
-  projectile: {fileID: 0}
-  theProjectileFacingRight: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
-  thePlayer: {fileID: 0}
 --- !u!114 &-5646056966342842286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,3 +297,26 @@ MonoBehaviour:
   SkinWidth: 0.1
   RepositionRigidbodyIfHitTrigger: 1
   RepositionRigidbodyIfHitNonTrigger: 1
+--- !u!114 &3839924737645874464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183803012360247645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b95296ef9f66e44299eb703ede874bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToInstantiate: {fileID: 3199536429230220929, guid: 9c430fd027e72984088b52c60e6a2c05,
+    type: 3}
+  spawnPosition: {x: 0.4, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
+  ObstaclesLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  distanceToPlayer: 0
+  thresholdNotToShowBurst: 2
+  thePlayer: {fileID: 0}
+  weaponAim: {fileID: 0}

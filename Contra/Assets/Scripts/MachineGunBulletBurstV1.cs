@@ -5,7 +5,7 @@ using Rewired;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class MachineGunBulletBurst : MonoBehaviour
+public class MachineGunBulletBurstV1 : MonoBehaviour
 {
     public LayerMask ObstaclesLayerMask;
     public GameObject theBurst;
