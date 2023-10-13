@@ -14674,7 +14674,7 @@ MonoBehaviour:
       assignJoysticksToPlayingPlayersOnly: 0
       distributeJoysticksEvenly: 1
       reassignJoystickToPreviousOwnerOnReconnect: 1
-      defaultJoystickAxis2DDeadZoneType: 1
+      defaultJoystickAxis2DDeadZoneType: 2
       defaultJoystickAxis2DSensitivityType: 0
       defaultAxisSensitivityType: 0
       force4WayHats: 1
