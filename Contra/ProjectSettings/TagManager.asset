@@ -18,6 +18,9 @@ TagManager:
   - SlopesDetector
   - PlayerSprites
   - WeaponAim
+  - Torso
+  - Legs
+  - MachineGunLights
   layers:
   - Default
   - TransparentFX
