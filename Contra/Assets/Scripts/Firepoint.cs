@@ -380,6 +380,7 @@ public class Firepoint : MonoBehaviour
                 //////////////////////////////////////////////////////////////////////////////////////
                 //Change the Weapon Rotation Speed
 
+                bool animationFound = false;
                 if (animationNamesForInstantRotation != null)
                 {
                     foreach (var clip in animationNamesForInstantRotation)
@@ -387,13 +388,17 @@ public class Firepoint : MonoBehaviour
                         if (clip.name == animationNames.name)
                         {
                             weaponAim.WeaponRotationSpeed = instantWeaponAimRotSpeed;
-                            return; // Exit the loop once the animation is found
+                            animationFound = true;
+                            break; // Exit the loop once the animation is found
                         }
                     }
                 }
-                // Set the default WeaponRotationSpeed if the animation is not found
-                weaponAim.WeaponRotationSpeed = originalWeaponAimRotSpeed;
 
+                if (!animationFound)
+                {
+                    weaponAim.WeaponRotationSpeed = originalWeaponAimRotSpeed;
+                }
+                
                 /*if (
                     ((animationNames.name == "Shoot Straight"
                       || animationNames.name == "Shoot Straight Walking"
