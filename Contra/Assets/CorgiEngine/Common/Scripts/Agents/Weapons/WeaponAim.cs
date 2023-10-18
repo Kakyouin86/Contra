@@ -21,6 +21,7 @@ namespace MoreMountains.CorgiEngine
 	public class WeaponAim : CorgiMonoBehaviour 
 	{
         public Quaternion oldRotation; //Leo Monge: Need to ALWAYS bring it after update.
+        public Quaternion commonRotation; //Leo Monge: Need to ALWAYS bring it after update.
         public ProjectileWeapon projectileWeapon; //Leo Monge: Need to ALWAYS bring it after update.
         public int originalProjectiles ;//Leo Monge: Need to ALWAYS bring it after update.
 
@@ -444,31 +445,33 @@ namespace MoreMountains.CorgiEngine
         /// <param name="newRotation">New rotation.</param>
         protected virtual void RotateWeapon(Quaternion newRotation)
         {
+			commonRotation = newRotation;
             if (GameManager.Instance.Paused)
             {
                 return;
             }
 			// if the rotation speed is == 0, we have instant rotation
-            if (WeaponRotationSpeed == 0 && oldRotation != newRotation)
+            if (WeaponRotationSpeed == 0 && oldRotation != commonRotation)
             {
                 projectileWeapon.ProjectilesPerShot = 0; //Leo Monge: Need to ALWAYS bring it after update.
-                transform.rotation = newRotation;
+                transform.rotation = commonRotation;
                 StartCoroutine(DelayInShotWhenRotating()); //Leo Monge: Need to ALWAYS bring it after update.
-                oldRotation = newRotation; //Leo Monge: Need to ALWAYS bring it after update.
+                oldRotation = commonRotation; //Leo Monge: Need to ALWAYS bring it after update.
             }
             // otherwise we lerp the rotation
             else if (WeaponRotationSpeed != 0)
             {
                 StartCoroutine(DelayInShotWhenRotating()); //Leo Monge: Need to ALWAYS bring it after update.
-                transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, WeaponRotationSpeed * Time.fixedDeltaTime); //Leo Monge: Need to ALWAYS bring it after update. It was Time.deltaTime
+                transform.rotation = Quaternion.Lerp(transform.rotation, commonRotation, WeaponRotationSpeed * Time.fixedDeltaTime); //Leo Monge: Need to ALWAYS bring it after update. It was Time.deltaTime
+				oldRotation = transform.rotation;
             }
 
-            if (InstantFlip && (WasFacingRightLastFrame != _weapon.Owner.IsFacingRight) && oldRotation != newRotation)
+            if (InstantFlip && (WasFacingRightLastFrame != _weapon.Owner.IsFacingRight) && oldRotation != commonRotation)
             {
                 projectileWeapon.ProjectilesPerShot = 0; //Leo Monge: Need to ALWAYS bring it after update.
-                transform.rotation = newRotation;
+                transform.rotation = commonRotation;
                 StartCoroutine(DelayInShotWhenRotating()); //Leo Monge: Need to ALWAYS bring it after update.
-                oldRotation = newRotation; //Leo Monge: Need to ALWAYS bring it after update.
+                oldRotation = commonRotation; //Leo Monge: Need to ALWAYS bring it after update.
             }
 		}
 
