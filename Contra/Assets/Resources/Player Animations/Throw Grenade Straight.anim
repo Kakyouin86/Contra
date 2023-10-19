@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Throw Bombs Crouch
+  m_Name: Throw Grenade Straight
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 529122696, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
+      value: {fileID: -222292664, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
     - time: 0.033333335
-      value: {fileID: 89879996, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
+      value: {fileID: -437690837, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
     - time: 0.06666667
-      value: {fileID: -1905614698, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
+      value: {fileID: 1393538319, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
     attribute: m_Sprite
     path: Torso
     classID: 212
@@ -34,24 +34,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 529122696, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
+      value: {fileID: -359887118, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
     - time: 0.033333335
-      value: {fileID: 89879996, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
+      value: {fileID: 1048950309, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
     - time: 0.06666667
-      value: {fileID: -1905614698, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
-    attribute: m_Sprite
-    path: Legs
-    classID: 212
-    script: {fileID: 0}
-    flags: 2
-  - serializedVersion: 2
-    curve:
-    - time: 0
-      value: {fileID: 231619514, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
-    - time: 0.033333335
-      value: {fileID: 1025290862, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
-    - time: 0.06666667
-      value: {fileID: 747450412, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+      value: {fileID: 1283072439, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
     attribute: m_Sprite
     path: Machine Gun Lights
     classID: 212
@@ -74,15 +61,6 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1563094196
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
       path: 3857672697
       attribute: 0
       script: {fileID: 0}
@@ -92,15 +70,12 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 529122696, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
-    - {fileID: 89879996, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
-    - {fileID: -1905614698, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
-    - {fileID: 529122696, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
-    - {fileID: 89879996, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
-    - {fileID: -1905614698, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
-    - {fileID: 231619514, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
-    - {fileID: 1025290862, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
-    - {fileID: 747450412, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - {fileID: -222292664, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
+    - {fileID: -437690837, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
+    - {fileID: 1393538319, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
+    - {fileID: -359887118, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - {fileID: 1048950309, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - {fileID: 1283072439, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -111,7 +86,7 @@ AnimationClip:
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0

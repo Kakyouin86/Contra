@@ -12553,12 +12553,12 @@ GameObject:
   - component: {fileID: 1038294689}
   - component: {fileID: 1038294684}
   - component: {fileID: 1038294707}
+  - component: {fileID: 1038294711}
   - component: {fileID: 1038294706}
   - component: {fileID: 1038294705}
   - component: {fileID: 1038294704}
   - component: {fileID: 1038294709}
   - component: {fileID: 1038294710}
-  - component: {fileID: 1038294711}
   m_Layer: 9
   m_Name: Player v3
   m_TagString: Player
@@ -13364,7 +13364,7 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  InitialWeapon: {fileID: 3453867502650446759, guid: 3e5a36d5471980c4f9f78e1adf8633c4,
+  InitialWeapon: {fileID: 114000013303203308, guid: e73478c03405c9b46a3b1f6a22ad586a,
     type: 3}
   CanPickupWeapons: 1
   WeaponAttachment: {fileID: 1724734281}

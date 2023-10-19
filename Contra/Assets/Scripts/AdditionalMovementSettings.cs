@@ -6,32 +6,10 @@ using UnityEngine;
 using Rewired;
 using Rewired.ComponentControls.Data;
 using InputManager = MoreMountains.CorgiEngine.InputManager;
+using System.Security.Cryptography.X509Certificates;
 
 public class AdditionalMovementSettings : MonoBehaviour
 {
-    //These are the things we need to change in each script:
-
-    //Ladder: 14
-    //public enum LadderTypes { Simple, BiDirectional, Horizontal } //Leo Monge: Need to ALWAYS bring it after update.
-
-    //CharacterLadder: 75
-    /*
-     protected override void Initialization()
-       {
-       base.Initialization();
-       CurrentLadderClimbingSpeed = Vector2.zero;
-       //_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>();//Leo Monge: Need to ALWAYS bring it after update.
-       _boxCollider = GameObject.FindWithTag("LadderCollider").GetComponent<BoxCollider2D>();//Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only
-       _colliders = new List<Collider2D>();
-       _characterHandleWeapon = this.gameObject.GetComponentInParent<Character>()?.FindAbility<CharacterHandleWeapon>();
-       }
-     */
-
-    //CharacterWallClinging: 21
-    //[Range(0.0000000001f, 1)]//Leo Monge: Need to ALWAYS bring it after update. it was 0.01f originally. With this small value, you can't detach from the wall.
-
-    //WaponAim: too many. All related to the pause when being an instant shoot.
-
     public Player player;
     public Character character;
     public CharacterHorizontalMovement horizontalMovementCorgi;
@@ -257,7 +235,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //This makes that if the character is rolling, the activate the flickers in Torso and Legs
+        //This makes that if the character is rolling, the activate the flickers in Torso and Legs.
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.Rolling)
         {
             theTorso.GetComponent<FlashSprites>().run = true;
@@ -267,6 +245,17 @@ public class AdditionalMovementSettings : MonoBehaviour
         {
             theTorso.GetComponent<FlashSprites>().run = false;
             theLegs.GetComponent<FlashSprites>().run = false;
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //This checks that if the Throw Grenade animation is playing.
+        if (theAnimator.GetCurrentAnimatorStateInfo(1).IsName("Throw Grenade Straight"))
+        {
+            theAnimator.SetBool("ThrowGrenade", true);
+        }
+        else
+        {
+            //theAnimator.SetBool("ThrowGrenade", false);
         }
     }
 

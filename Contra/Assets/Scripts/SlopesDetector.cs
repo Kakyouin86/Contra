@@ -1,7 +1,6 @@
 using MoreMountains.CorgiEngine;
 using UnityEngine;
 
-
 public class SlopesDetector : MonoBehaviour
 {
     public Animator theAnimator;
