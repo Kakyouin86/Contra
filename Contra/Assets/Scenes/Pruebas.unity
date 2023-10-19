@@ -12558,6 +12558,7 @@ GameObject:
   - component: {fileID: 1038294704}
   - component: {fileID: 1038294709}
   - component: {fileID: 1038294710}
+  - component: {fileID: 1038294711}
   m_Layer: 9
   m_Name: Player v3
   m_TagString: Player
@@ -13341,6 +13342,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   torsoTag: Torso
   machineGunLightsTag: MachineGunLights
+  torsoObject: {fileID: 0}
+  machineGunObject: {fileID: 0}
+  torsoObjectActive: 1
+  machineGunActive: 0
+--- !u!114 &1038294711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038294679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3141ca867f14a464ab5c3a815142ad80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStopFeedbacks: {fileID: 0}
+  AbilityPermitted: 1
+  BlockingMovementStates: 
+  BlockingConditionStates: 
+  BlockingWeaponStates: 
+  InitialWeapon: {fileID: 3453867502650446759, guid: 3e5a36d5471980c4f9f78e1adf8633c4,
+    type: 3}
+  CanPickupWeapons: 1
+  WeaponAttachment: {fileID: 1724734281}
+  ForceWeaponScaleResetOnEquip: 0
+  ForceWeaponRotationResetOnEquip: 0
+  AutomaticallyBindAnimator: 1
+  AmmoDisplayID: 0
+  ContinuousPress: 0
+  GettingHitInterruptsAttack: 0
+  CanShootFromLadders: 0
+  FaceWeaponDirection: 0
+  InvertHorizontalAimWhenWallclinging: 0
+  ForceAlwaysShoot: 0
+  BufferInput: 0
+  NewInputExtendsBuffer: 0
+  MaximumBufferDuration: 0.25
+  CurrentWeapon: {fileID: 0}
 --- !u!1 &1039151515
 GameObject:
   m_ObjectHideFlags: 0
@@ -14931,6 +14972,15 @@ MonoBehaviour:
       _behaviorId: 0
       _userAssignable: 1
       _categoryId: 0
+    - _id: 28
+      _name: SecondaryShoot
+      _type: 1
+      _descriptiveName: Grenades
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 0
     - _id: 11
       _name: SwitchWeapon
       _type: 1
@@ -15108,7 +15158,7 @@ MonoBehaviour:
     actionCategoryMap:
       list:
       - categoryId: 0
-        actionIds: 00000000010000000200000003000000050000001b000000090000000b0000001a0000000c000000
+        actionIds: 00000000010000000200000003000000050000001b000000090000001c0000000b0000001a0000000c000000
       - categoryId: 1
         actionIds: 0d000000
       - categoryId: 2
@@ -16166,6 +16216,28 @@ MonoBehaviour:
         _modifierKey1: 0
         _modifierKey2: 0
         _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 9
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 110
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 28
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 109
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
     - id: 5
       categoryId: 1
       layoutId: 0
@@ -16433,6 +16505,17 @@ MonoBehaviour:
         _modifierKey1: 0
         _modifierKey2: 0
         _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 28
+        _elementType: 1
+        _elementIdentifierId: 4
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
     customControllerMaps:
     - id: 0
       categoryId: 0
@@ -16683,7 +16766,7 @@ MonoBehaviour:
     controllerMapLayoutManagerRuleSets: []
     controllerMapEnablerRuleSets: []
     playerIdCounter: 5
-    actionIdCounter: 28
+    actionIdCounter: 29
     actionCategoryIdCounter: 4
     inputBehaviorIdCounter: 1
     mapCategoryIdCounter: 4

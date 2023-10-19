@@ -14,33 +14,43 @@ public class ToggleWeapons : MonoBehaviour
         torsoObject = GameObject.FindGameObjectWithTag(torsoTag);
         machineGunObject = GameObject.FindGameObjectWithTag(machineGunLightsTag);
 
-        // Ensure both objects are initially in the correct state
-        torsoObject.SetActive(torsoObjectActive);
-        machineGunObject.SetActive(!torsoObjectActive);
-        machineGunActive = !torsoObjectActive;
+        // Ensure both objects are initially in the correct state if found
+        if (torsoObject != null)
+        {
+            torsoObject.SetActive(torsoObjectActive);
+        }
+
+        if (machineGunObject != null)
+        {
+            machineGunObject.SetActive(!torsoObjectActive);
+            machineGunActive = !torsoObjectActive;
+        }
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            if (torsoObjectActive)
+            if (torsoObject != null && machineGunObject != null)
             {
-                torsoObjectActive = false;
-                machineGunActive = true;
+                if (torsoObjectActive)
+                {
+                    torsoObjectActive = false;
+                    machineGunActive = true;
 
-                // Set object states accordingly
-                torsoObject.SetActive(false);
-                machineGunObject.SetActive(true);
-            }
-            else
-            {
-                machineGunActive = false;
-                torsoObjectActive = true;
+                    // Set object states accordingly
+                    torsoObject.SetActive(false);
+                    machineGunObject.SetActive(true);
+                }
+                else
+                {
+                    machineGunActive = false;
+                    torsoObjectActive = true;
 
-                // Set object states accordingly
-                machineGunObject.SetActive(false);
-                torsoObject.SetActive(true);
+                    // Set object states accordingly
+                    machineGunObject.SetActive(false);
+                    torsoObject.SetActive(true);
+                }
             }
         }
     }

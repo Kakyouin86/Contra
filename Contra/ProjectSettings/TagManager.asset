@@ -21,6 +21,7 @@ TagManager:
   - Torso
   - Legs
   - MachineGunLights
+  - FireGunLights
   layers:
   - Default
   - TransparentFX
