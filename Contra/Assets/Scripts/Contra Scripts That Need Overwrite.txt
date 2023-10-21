@@ -1,30 +1,33 @@
 Changes to do in each new update:
 
---> Corgi Engine\Common\Scripts\Environment\Ladder.cs Line 14 should be:
-public enum LadderTypes { Simple, BiDirectional, Horizontal } //Leo Monge: Need to ALWAYS bring it after update.
+!--> Corgi Engine\Common\Scripts\Environment\Ladder.cs Line 14 should be:
+ public enum LadderTypes { Simple, BiDirectional, Horizontal } //Leo Monge: Need to ALWAYS bring it after update.
 
 --> Corgi Engine\Common\Scripts\Agents\CorgiController\CharacterWallClinging.cs Line 20 should be:
-[Range(0.0000000001f, 1)]//Leo Monge: Need to ALWAYS bring it after update. it was 0.01f originally. With this small value, you can't detach from the wall.
+ [Range(0.0000000001f, 1)]//Leo Monge: Need to ALWAYS bring it after update. it was 0.01f originally. With this small value, you can't detach from the wall.
 
---> Corgi Engine\Common\Scripts\Agents\CorgiController\CharacterLadder.cs line 79 should be:
-//_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>();//Leo Monge: Need to ALWAYS bring it after update.
-GameObject ladderColliderObject = GameObject.FindGameObjectWithTag("LadderCollider");//Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only.
-if (ladderColliderObject != null)//Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only.
-{
-_boxCollider = ladderColliderObject.GetComponent<BoxCollider2D>();//Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only.
-}
+!--> Corgi Engine\Common\Scripts\Agents\CorgiController\CharacterLadder.cs line 79 should be:
+            //_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>();//Leo Monge: Need to ALWAYS bring it after update.
+            GameObject ladderColliderObject = GameObject.FindGameObjectWithTag("LadderCollider");//Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only
+            if (ladderColliderObject != null)//Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only
+            {
+                _boxCollider = ladderColliderObject.GetComponent<BoxCollider2D>();//Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only
+            }
+            _colliders = new List<Collider2D>();
+            _characterHandleWeapon = this.gameObject.GetComponentInParent<Character>()?.FindAbility<CharacterHandleWeapon>();
+        }
 
---> Corgi Engine\Common\Scripts\Agents\Weapons\WeaponAim.cs line 165 should be:
+!--> Corgi Engine\Common\Scripts\Agents\Weapons\WeaponAim.cs line 165 should be:
             projectileWeapon = _weapon.GetComponent<ProjectileWeapon>(); //Leo Monge: Need to ALWAYS bring it after update. 
             originalProjectiles = projectileWeapon.ProjectilesPerShot; //Leo Monge: Need to ALWAYS bring it after update. 
 
---> Corgi Engine\Common\Scripts\Agents\Weapons\WeaponAim.cs line 23 should be:
+!--> Corgi Engine\Common\Scripts\Agents\Weapons\WeaponAim.cs line 23 should be:
         public Quaternion oldRotation; //Leo Monge: Need to ALWAYS bring it after update.
         public Quaternion commonRotation; //Leo Monge: Need to ALWAYS bring it after update.
         public ProjectileWeapon projectileWeapon; //Leo Monge: Need to ALWAYS bring it after update.
         public int originalProjectiles ;//Leo Monge: Need to ALWAYS bring it after update.
 
---> Corgi Engine\Common\Scripts\Agents\Weapons\WeaponAim.cs line 446 should be:
+!--> Corgi Engine\Common\Scripts\Agents\Weapons\WeaponAim.cs line 446 should be:
         protected virtual void RotateWeapon(Quaternion newRotation)
         {
 			commonRotation = newRotation;
@@ -63,35 +66,44 @@ _boxCollider = ladderColliderObject.GetComponent<BoxCollider2D>();//Leo Monge: N
             projectileWeapon.ProjectilesPerShot = originalProjectiles;
         }
 
---> Corgi Engine\Common\Scripts\Managers\InputManager.cs should have all variables public
+!--> Corgi Engine\Common\Scripts\Managers\InputManager.cs should have all variables public
 
---> Rewired\Integration\CorgiEngine\Scripts\RewiredCorgiEngineInputManager.cs line 153 should be:
-public override void SetMovement() //Leo Monge: You need this code so the joystick detects absolute values.
-{
-if (!_initialized)
-{
-base.SetMovement();
-return;
-}
-if (SmoothMovement)
-{
-_primaryMovement.x = _rewiredPlayer.GetAxis(_rewiredActionId_horizontal);
-_primaryMovement.y = _rewiredPlayer.GetAxis(_rewiredActionId_vertical);
+!--> Corgi Engine\Common\Scripts\Agents\Weapons\Projectile.cs line 75 should be:
+ public Vector3 overrideValues = new Vector3(0f,0.3f,0f); //Leo Monge: Need to ALWAYS bring it after update. This makes the values in the Y axis, have a bit of a nice circle trajectory.
 
-// Normalize _primaryMovement
-_primaryMovement.x = Mathf.Abs(_primaryMovement.x) > 0.1f ? Mathf.Sign(_primaryMovement.x) : 0f;
-_primaryMovement.y = Mathf.Abs(_primaryMovement.y) > 0.1f ? Mathf.Sign(_primaryMovement.y) : 0f;
-}
-else
-{
-_primaryMovement.x = _rewiredPlayer.GetAxisRaw(_rewiredActionId_horizontal);
-_primaryMovement.y = _rewiredPlayer.GetAxisRaw(_rewiredActionId_vertical);
+!--> Corgi Engine\Common\Scripts\Agents\Weapons\Projectile.cs line 176 should be:
+            else //Leo Monge: Need to ALWAYS bring it after update. This makes the values in the Y axis, have a bit of a nice circle trajectory.
+            {
+                Direction = new Vector3(newDirection.x, overrideValues.y,newDirection.z); //Leo Monge: Need to ALWAYS bring it after update. This makes the values in the Y axis, have a bit of a nice circle trajectory.
+            } //Leo Monge: Need to ALWAYS bring it after update. This makes the values in the Y axis, have a bit of a nice circle trajectory.
 
-// Normalize _primaryMovement
-_primaryMovement.x = _primaryMovement.x != 0f ? Mathf.Sign(_primaryMovement.x) : 0f;
-_primaryMovement.y = _primaryMovement.y != 0f ? Mathf.Sign(_primaryMovement.y) : 0f;
-}
-}
+!--> Rewired\Integration\CorgiEngine\Scripts\RewiredCorgiEngineInputManager.cs line 153 should be:
+        public override void SetMovement() //Leo Monge: You need this code so the joystick detects absolute values.
+        {
+            if (!_initialized)
+            {
+                base.SetMovement();
+                return;
+            }
+            if (SmoothMovement)
+            {
+                _primaryMovement.x = _rewiredPlayer.GetAxis(_rewiredActionId_horizontal);
+                _primaryMovement.y = _rewiredPlayer.GetAxis(_rewiredActionId_vertical);
+
+                // Normalize _primaryMovement
+                _primaryMovement.x = Mathf.Abs(_primaryMovement.x) > 0.1f ? Mathf.Sign(_primaryMovement.x) : 0f;
+                _primaryMovement.y = Mathf.Abs(_primaryMovement.y) > 0.1f ? Mathf.Sign(_primaryMovement.y) : 0f;
+            }
+            else
+            {
+                _primaryMovement.x = _rewiredPlayer.GetAxisRaw(_rewiredActionId_horizontal);
+                _primaryMovement.y = _rewiredPlayer.GetAxisRaw(_rewiredActionId_vertical);
+
+                // Normalize _primaryMovement
+                _primaryMovement.x = _primaryMovement.x != 0f ? Mathf.Sign(_primaryMovement.x) : 0f;
+                _primaryMovement.y = _primaryMovement.y != 0f ? Mathf.Sign(_primaryMovement.y) : 0f;
+            }
+        }
 
 --> Tags:
   - LevelBounds
@@ -111,6 +123,7 @@ _primaryMovement.y = _primaryMovement.y != 0f ? Mathf.Sign(_primaryMovement.y) :
   - Torso
   - Legs
   - MachineGunLights
+  - FireGunLights
 
 --> Firepoint animations:
 "Torso Idle"
@@ -171,8 +184,6 @@ _primaryMovement.y = _primaryMovement.y != 0f ? Mathf.Sign(_primaryMovement.y) :
 "Climb Shooting Forward"
 "Horizontal Ladder Shooting Back"
 "Horizontal Ladder Shooting Forward"
-
-
 
 --> OLD!!!! Corgi Engine\Common\Scripts\Agents\Weapons\WeaponAim.cs line 446 should be:
         protected virtual void RotateWeapon(Quaternion newRotation)

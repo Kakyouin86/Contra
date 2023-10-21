@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using MoreMountains.Tools;
+using TMPro;
 
 namespace MoreMountains.CorgiEngine
 {
@@ -71,11 +72,12 @@ namespace MoreMountains.CorgiEngine
 		protected RaycastHit2D _hit2D;
 		protected Health _health;
 		protected bool _spawnerIsFacingRight;
+        public Vector3 overrideValues = new Vector3(0f,0.3f,0f); //Leo Monge: Need to ALWAYS bring it after update. This makes the values in the Y axis, have a bit of a nice circle trajectory.
 
-		/// <summary>
-		/// On awake, we store the initial speed of the object 
-		/// </summary>
-		protected virtual void Awake ()
+        /// <summary>
+        /// On awake, we store the initial speed of the object 
+        /// </summary>
+        protected virtual void Awake ()
 		{
 			_facingRightInitially = ProjectileIsFacingRight;
 			_initialSpeed = Speed;
@@ -171,7 +173,12 @@ namespace MoreMountains.CorgiEngine
 			{
 				Direction = newDirection;
 			}
-			if (ProjectileIsFacingRight != spawnerIsFacingRight)
+            else //Leo Monge: Need to ALWAYS bring it after update. This makes the values in the Y axis, have a bit of a nice circle trajectory.
+            {
+                Direction = new Vector3(newDirection.x, overrideValues.y,newDirection.z); //Leo Monge: Need to ALWAYS bring it after update. This makes the values in the Y axis, have a bit of a nice circle trajectory.
+            } //Leo Monge: Need to ALWAYS bring it after update. This makes the values in the Y axis, have a bit of a nice circle trajectory.
+
+            if (ProjectileIsFacingRight != spawnerIsFacingRight)
 			{
 				Flip ();
 			}

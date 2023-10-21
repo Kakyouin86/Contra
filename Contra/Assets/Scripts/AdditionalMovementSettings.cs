@@ -257,6 +257,10 @@ public class AdditionalMovementSettings : MonoBehaviour
         {
             //theAnimator.SetBool("ThrowGrenade", false);
         }
+        if (theAnimator.GetCurrentAnimatorStateInfo(1).IsName("Throw Grenade Crouch"))
+        {
+            theAnimator.SetBool("ThrowGrenade", true);
+        }
     }
 
     IEnumerator ReinitializeTheBCLadder()

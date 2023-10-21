@@ -316,7 +316,7 @@ MonoBehaviour:
   Speed: 1000
   Acceleration: 0
   Direction: {x: 0, y: 0, z: 0}
-  DirectionCanBeChangedBySpawner: 1
+  DirectionCanBeChangedBySpawner: 0
   FlipValue: {x: -1, y: 1, z: 1}
   ProjectileIsFacingRight: 1
   InitialInvulnerabilityDuration: 0
@@ -325,6 +325,7 @@ MonoBehaviour:
   SpawnSecurityCheckLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  overrideValues: {x: 0, y: 0.3, z: 0}
   AutoOrientAlongTrajectory: 0
 --- !u!114 &4433849062861794848
 MonoBehaviour:

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -5646056966342842286}
   - component: {fileID: 3839924737645874464}
   m_Layer: 16
-  m_Name: Bullet - 02
+  m_Name: Bullet - 02 (Bullet)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,6 +196,7 @@ MonoBehaviour:
   SpawnSecurityCheckLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  overrideValues: {x: 0, y: 0, z: 0}
 --- !u!114 &547776533618371757
 MonoBehaviour:
   m_ObjectHideFlags: 0
