@@ -255,7 +255,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.9375}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.875, y: 1.875}
     newSize: {x: 1.875, y: 1.875}
     adaptiveTilingThreshold: 0.5
@@ -325,7 +325,7 @@ MonoBehaviour:
   SpawnSecurityCheckLayerMask:
     serializedVersion: 2
     m_Bits: 0
-  overrideValues: {x: 0, y: 0.3, z: 0}
+  overrideValues: {x: 0, y: 0.1, z: 0}
   AutoOrientAlongTrajectory: 0
 --- !u!114 &4433849062861794848
 MonoBehaviour:
@@ -343,11 +343,11 @@ MonoBehaviour:
   TargetPoolableObject: {fileID: 0}
   TimeBeforeExplosion: 1.5
   ExplosionFeedback: {fileID: 7699853597995973578}
-  ExplodeOnContact: 0
-  ExplodeOnContactDetectionRadius: 1
+  ExplodeOnContact: 1
+  ExplodeOnContactDetectionRadius: 0.5
   ExplosionOnContactLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 272
   FlickerSprite: 1
   TimeBeforeFlicker: 1
   DamageAreaCollider: {fileID: 3463289103443726647}
@@ -476,7 +476,7 @@ MonoBehaviour:
   DebugActive: 0
   FeedbacksList:
   - rid: 0
-  - rid: 1
+  - rid: 8592335386530545665
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   StopFeedbacksOnDisable: 0
@@ -554,12 +554,12 @@ MonoBehaviour:
         DebugActive: 0
         SoundFX: {fileID: 8300000, guid: 2d6f1b59f05ba40e3a702c2695cb86fd, type: 3}
         Loop: 0
-    - rid: 1
-      type: {class: MMF_ParticlesInstantiation, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
+    - rid: 8592335386530545665
+      type: {class: MMF_InstantiateObject, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: 1226940377
-        Label: Particles Instantiation
+        UniqueID: 1210085782
+        Label: Instantiate Object
         ChannelMode: 0
         Channel: 0
         MMChannelDefinition: {fileID: 0}
@@ -622,23 +622,18 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 7699853597995973578}
         DebugActive: 0
-        Mode: 1
+        GameObjectToInstantiate: {fileID: 215298545304456261, guid: 169ec00ef03d8004b9505aacf958c705,
+          type: 3}
+        PositionMode: 0
+        AlsoApplyRotation: 0
+        AlsoApplyScale: 0
+        TargetTransform: {fileID: 0}
+        TargetPosition: {x: 0, y: 0, z: 0}
+        PositionOffset: {x: 0, y: 0, z: 0}
+        RandomizePosition: 0
+        RandomizedPositionMin: {x: 0, y: 0, z: 0}
+        RandomizedPositionMax: {x: 1, y: 1, z: 1}
+        ParentTransform: {fileID: 0}
+        CreateObjectPool: 0
         ObjectPoolSize: 5
         MutualizePools: 0
-        ParentTransform: {fileID: 0}
-        CachedRecycle: 0
-        ParticlesPrefab: {fileID: 19800000, guid: 5c89a1c1072915d4fb9356e161ede976,
-          type: 3}
-        RandomParticlePrefabs: []
-        ForceSetActiveOnPlay: 0
-        StopOnReset: 0
-        DeclaredDuration: 0
-        PositionMode: 0
-        InstantiateParticlesPosition: {fileID: 0}
-        TargetWorldPosition: {x: 0, y: 0, z: 0}
-        Offset: {x: 0, y: 0, z: 0}
-        NestParticles: 0
-        ApplyRotation: 0
-        ApplyScale: 0
-        ForceSimulationSpeed: 0
-        ForcedSimulationSpeed: {x: 0.1, y: 1}

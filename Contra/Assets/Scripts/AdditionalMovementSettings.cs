@@ -18,7 +18,8 @@ public class AdditionalMovementSettings : MonoBehaviour
     public CharacterHandleWeapon theCharacterHandleWeapon;
     public Animator theAnimator;
     public GameObject theFirepoint;
-    public Weapon theWeapon;
+    //public Weapon theWeapon;
+    public WeaponAim weaponAim;
     public bool horizontalLadder = false;
     public bool canNotDettach = false;
     public BoxCollider2D theBCTrigger;
@@ -55,7 +56,8 @@ public class AdditionalMovementSettings : MonoBehaviour
         //theAnimator = GetComponent<Animator>();
         theBCTrigger = GetComponent<BoxCollider2D>();
         theController.State.JustGotGrounded = true;
-        theWeapon = FindObjectOfType<Weapon>();
+        //theWeapon = FindObjectOfType<Weapon>();
+        //weaponAim = GameObject.FindWithTag("WeaponAim").GetComponent<WeaponAim>();
         theOriginalBoxCollider2DSize = new Vector3(theBCTrigger.size.x, theBCTrigger.size.y);
         theOriginalBoxCollider2DOffset = new Vector3(theBCTrigger.offset.x, theBCTrigger.offset.y);
         originalRollDuration = GetComponent<CharacterRoll>().RollDuration;
@@ -108,11 +110,13 @@ public class AdditionalMovementSettings : MonoBehaviour
             theAnimator.SetBool("Walking", false);
             if (!slopesDetector.GetComponent<Water>().isPlayerInWater)
             {
-                theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = false;
+                //theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = false;
+                weaponAim.IgnoreDownWhenGrounded = false;
             }
             else
             {
-                theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = true;
+                //theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = true;
+                weaponAim.IgnoreDownWhenGrounded = true;
             }
         }
         else
@@ -121,7 +125,8 @@ public class AdditionalMovementSettings : MonoBehaviour
             theController.State.JustGotGrounded = true;
             //theAnimator.SetBool("Hold", false);
             theAnimator.SetBool("Walking", false);
-            theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = true;
+            //theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = true;
+            weaponAim.IgnoreDownWhenGrounded = true;
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -140,7 +145,8 @@ public class AdditionalMovementSettings : MonoBehaviour
         //This makes that, when crouching, you can fire diagonally.
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crawling)
         {
-            theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = false;
+            //theFirepoint.GetComponentInChildren<WeaponAim>().IgnoreDownWhenGrounded = false;
+            weaponAim.IgnoreDownWhenGrounded = false;
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

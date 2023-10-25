@@ -195,6 +195,7 @@ MonoBehaviour:
   SpawnSecurityCheckLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  overrideValues: {x: 0, y: 0.3, z: 0}
   AutoOrientAlongTrajectory: 0
 --- !u!114 &114753537158969058
 MonoBehaviour:

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3d49826a96c74e84a8cdde2f27144032
+guid: 1e13f773b6164104a8186396734d1d29
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -46,8 +46,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
-  spritePivot: {x: 0.5, y: 0}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -110,337 +110,421 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grenade - 01_0
+      name: Flame Shot - 03_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 30
-        height: 30
+        width: 83
+        height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92d5e70cd759fc9418e18b04b3b27af7
-      internalID: 920497166
+      spriteID: 6e9858aac6f112d4b807d96a5cae0f84
+      internalID: 438162776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_1
+      name: Flame Shot - 03_1
       rect:
         serializedVersion: 2
-        x: 30
+        x: 83
         y: 0
-        width: 30
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9863ae81fdd22d147990bf13b5b7f81d
-      internalID: 609358442
+      spriteID: 5145bd062007b31428e701d1bdca79e5
+      internalID: 365778602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_2
+      name: Flame Shot - 03_2
       rect:
         serializedVersion: 2
-        x: 60
+        x: 166
         y: 0
-        width: 30
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e92ac69e4cf3e848afa797abbf50af0
-      internalID: -1499046850
+      spriteID: 8a4bae0e341f0994db12f2b17f52a5b4
+      internalID: -1917086915
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_3
+      name: Flame Shot - 03_3
       rect:
         serializedVersion: 2
-        x: 90
+        x: 249
         y: 0
-        width: 30
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b2ab19e48ecbe44193d8c07c428cb86
-      internalID: 506142630
+      spriteID: 046ae877eb7ca0544a5002e8af1cf544
+      internalID: 1136157088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_4
+      name: Flame Shot - 03_4
       rect:
         serializedVersion: 2
-        x: 120
+        x: 332
         y: 0
-        width: 30
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06b76354a3ff79548a231d6d83f5ecff
-      internalID: 350188362
+      spriteID: 8ad86ba0dad7896429656670c8ba5275
+      internalID: 883466331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_5
+      name: Flame Shot - 03_5
       rect:
         serializedVersion: 2
-        x: 150
+        x: 415
         y: 0
-        width: 30
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3f33b7646b39b842b59f19363f7a7b2
-      internalID: -1542664950
+      spriteID: cf236996faf724e4b8cd3b4e9c00fba9
+      internalID: 1369436757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_6
+      name: Flame Shot - 03_6
       rect:
         serializedVersion: 2
-        x: 180
+        x: 498
         y: 0
-        width: 30
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c644a7f06e6d5bd44a643005c06fa3cb
-      internalID: -733256206
+      spriteID: f82b493046a3d254cb0fc4d4673b09aa
+      internalID: 108531309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_7
+      name: Flame Shot - 03_7
       rect:
         serializedVersion: 2
-        x: 210
+        x: 581
         y: 0
-        width: 30
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d065fc8f848f0f46b072aff08ab6f94
-      internalID: -2053293543
+      spriteID: 296854e166eed3947b7ced9f6721f303
+      internalID: 64505817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_8
+      name: Flame Shot - 03_8
       rect:
         serializedVersion: 2
-        x: 240
+        x: 664
         y: 0
-        width: 30
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7c075a4abeacd14fa3cb2857a62ecf9
-      internalID: -321465668
+      spriteID: 338c77dc3d09c0e4e91c180eb143952e
+      internalID: 109045625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_9
+      name: Flame Shot - 03_9
       rect:
         serializedVersion: 2
-        x: 270
+        x: 747
         y: 0
-        width: 30
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 974f527aafcabf04b83b215cc596049c
-      internalID: 1918237348
+      spriteID: 1acc882831cd51848a51f9ed71b8d195
+      internalID: -722222943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_10
+      name: Flame Shot - 03_10
       rect:
         serializedVersion: 2
-        x: 300
+        x: 830
         y: 0
-        width: 30
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 900de7e831c226d4dbffeb3711104736
-      internalID: 166306406
+      spriteID: a8cee4b0a679a9741bede15b94e6322c
+      internalID: -295198612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_11
+      name: Flame Shot - 03_11
       rect:
         serializedVersion: 2
-        x: 330
+        x: 913
         y: 0
-        width: 30
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7a90372a46cdc540b5a200e6a7821fb
-      internalID: 451559726
+      spriteID: eded0542e8166f245bef8c505a34cd30
+      internalID: -1406231076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_12
+      name: Flame Shot - 03_12
       rect:
         serializedVersion: 2
-        x: 360
+        x: 996
         y: 0
-        width: 30
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ec4b759a55b91a4f99c1f53c0895189
-      internalID: 978215615
+      spriteID: 94367e7702d02bc4388c48218969f685
+      internalID: -1295436174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_13
+      name: Flame Shot - 03_13
       rect:
         serializedVersion: 2
-        x: 390
+        x: 1079
         y: 0
-        width: 30
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69144dbbed6c16f4a9cac17e5d454588
-      internalID: -1595595577
+      spriteID: 197fff6095e53e344bb619888f813def
+      internalID: -795998472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_14
+      name: Flame Shot - 03_14
       rect:
         serializedVersion: 2
-        x: 420
+        x: 1162
         y: 0
-        width: 30
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ca9df8be20f3ce46add67db432a523d
-      internalID: 1277499374
+      spriteID: e38914d8c518cf647a042d1646175a09
+      internalID: -1180356491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_15
+      name: Flame Shot - 03_15
       rect:
         serializedVersion: 2
-        x: 450
+        x: 1245
         y: 0
-        width: 30
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bedd665a0879ff34eaffb4926a88a1c4
-      internalID: -1265454193
+      spriteID: bd0d554bd3554f04dada2929eba62d8b
+      internalID: 166266005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Shot - 03_16
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 0
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f09fbd529d49343944b5b925dea7a1
+      internalID: 1120737048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Shot - 03_17
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 0
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a4a5f8ed9a747c418ca5c723b710aa4
+      internalID: -465567898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Shot - 03_18
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 0
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22271e5b159d2c46aec3c9f9e029177
+      internalID: -1521409585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Shot - 03_19
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 0
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4699a1e10b7e95c4298e592bc233f61a
+      internalID: 392561442
       vertices: []
       indices: 
       edges: []
@@ -456,22 +540,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Grenade - 01_0: 920497166
-      Grenade - 01_1: 609358442
-      Grenade - 01_10: 166306406
-      Grenade - 01_11: 451559726
-      Grenade - 01_12: 978215615
-      Grenade - 01_13: -1595595577
-      Grenade - 01_14: 1277499374
-      Grenade - 01_15: -1265454193
-      Grenade - 01_2: -1499046850
-      Grenade - 01_3: 506142630
-      Grenade - 01_4: 350188362
-      Grenade - 01_5: -1542664950
-      Grenade - 01_6: -733256206
-      Grenade - 01_7: -2053293543
-      Grenade - 01_8: -321465668
-      Grenade - 01_9: 1918237348
+      Flame Shot - 03_0: 438162776
+      Flame Shot - 03_1: 365778602
+      Flame Shot - 03_10: -295198612
+      Flame Shot - 03_11: -1406231076
+      Flame Shot - 03_12: -1295436174
+      Flame Shot - 03_13: -795998472
+      Flame Shot - 03_14: -1180356491
+      Flame Shot - 03_15: 166266005
+      Flame Shot - 03_16: 1120737048
+      Flame Shot - 03_17: -465567898
+      Flame Shot - 03_18: -1521409585
+      Flame Shot - 03_19: 392561442
+      Flame Shot - 03_2: -1917086915
+      Flame Shot - 03_3: 1136157088
+      Flame Shot - 03_4: 883466331
+      Flame Shot - 03_5: 1369436757
+      Flame Shot - 03_6: 108531309
+      Flame Shot - 03_7: 64505817
+      Flame Shot - 03_8: 109045625
+      Flame Shot - 03_9: -722222943
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1505,6 +1505,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: TimerBeforeNextAnim
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: ThrowGrenade
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3251951992460585841}
   m_Solo: 0
@@ -2969,6 +2972,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: TimerBeforeNextAnim
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: ThrowGrenade
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6908611229821871707}
@@ -5151,6 +5157,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: TimerBeforeNextAnim
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: ThrowGrenade
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3667604553735331455}
   m_Solo: 0
@@ -6285,6 +6294,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: TimerBeforeNextAnim
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: ThrowGrenade
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1961837973727427040}
