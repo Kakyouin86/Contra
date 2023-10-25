@@ -1,3 +1,8 @@
+using MoreMountains.CorgiEngine;
+using MoreMountains.InventoryEngine;
+using Rewired.ComponentControls.Data;
+using Unity.Burst.Intrinsics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ToggleWeapons : MonoBehaviour
@@ -8,13 +13,13 @@ public class ToggleWeapons : MonoBehaviour
     public GameObject machineGunObject;
     public bool torsoObjectActive = true;
     public bool machineGunActive = false;
+    public Inventory weaponInventory;
 
     void Start()
     {
         torsoObject = GameObject.FindGameObjectWithTag(torsoTag);
         machineGunObject = GameObject.FindGameObjectWithTag(machineGunLightsTag);
-
-        // Ensure both objects are initially in the correct state if found
+        weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventory").GetComponent<Inventory>();
         if (torsoObject != null)
         {
             torsoObject.SetActive(torsoObjectActive);
@@ -29,28 +34,33 @@ public class ToggleWeapons : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
+            weaponInventory.Content[0].ItemName == "Machine Gun")
         {
+            if (GetComponent<CharacterHandleWeapon>().CurrentWeapon.WeaponState.CurrentState != Weapon.WeaponStates.WeaponIdle)
+
+            {
+                torsoObjectActive = false;
+                machineGunActive = true;
+                torsoObject.SetActive(false);
+                machineGunObject.SetActive(true);
+            }
+            else
+            {
+                torsoObjectActive = true;
+                machineGunActive = false;
+                torsoObject.SetActive(true);
+                machineGunObject.SetActive(false);
+            }
+        }
+        else
+        {
+            machineGunActive = false;
+            torsoObjectActive = true;
             if (torsoObject != null && machineGunObject != null)
             {
-                if (torsoObjectActive)
-                {
-                    torsoObjectActive = false;
-                    machineGunActive = true;
-
-                    // Set object states accordingly
-                    torsoObject.SetActive(false);
-                    machineGunObject.SetActive(true);
-                }
-                else
-                {
-                    machineGunActive = false;
-                    torsoObjectActive = true;
-
-                    // Set object states accordingly
-                    machineGunObject.SetActive(false);
-                    torsoObject.SetActive(true);
-                }
+                machineGunObject.SetActive(false);
+                torsoObject.SetActive(true);
             }
         }
     }

@@ -14005,6 +14005,7 @@ MonoBehaviour:
   machineGunObject: {fileID: 0}
   torsoObjectActive: 1
   machineGunActive: 0
+  weaponInventory: {fileID: 0}
 --- !u!114 &1038294711
 MonoBehaviour:
   m_ObjectHideFlags: 0
