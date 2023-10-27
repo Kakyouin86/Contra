@@ -3,10 +3,6 @@ using BarthaSzabolcs.Tutorial_SpriteFlash;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
-using Rewired;
-using Rewired.ComponentControls.Data;
-using InputManager = MoreMountains.CorgiEngine.InputManager;
-using System.Security.Cryptography.X509Certificates;
 
 public class OverridesInPlayer : MonoBehaviour
 {

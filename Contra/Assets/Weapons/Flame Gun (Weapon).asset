@@ -91,5 +91,5 @@ MonoBehaviour:
   UseDefaultSoundsIfNull: 1
   EquippableWeapon: {fileID: 4216522610364318837, guid: 6e8793aa7ede5ff46aa457ebd3dbbc04,
     type: 3}
-  AutoEquipMode: 0
+  AutoEquipMode: 1
   HandleWeaponID: 1
