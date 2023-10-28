@@ -133,7 +133,7 @@ MonoBehaviour:
   DelayBeforeUseAnimationParameter: 
   SingleUseAnimationParameter: 
   UseAnimationParameter: IdleShootingStraight
-  DelayBetweenUsesAnimationParameter: 
+  DelayBetweenUsesAnimationParameter: DelayBetweenUses
   InCooldownAnimationParameter: 
   StopAnimationParameter: 
   ReloadStartAnimationParameter: 
@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d4f7ac84b5bd34f9c3e55bef0ad028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 0}
 --- !u!1 &1000010747461450
 GameObject:
   m_ObjectHideFlags: 0

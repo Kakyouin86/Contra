@@ -13904,8 +13904,8 @@ MonoBehaviour:
   theLegs: {fileID: 392121773}
   theBCLadder: {fileID: 1985355087}
   startTimerBeforeNextAnim: 0
-  initialTimeBeforeNextAnim: 0.25
-  currentTimeBeforeNextAnim: 0.25
+  initialTimeBeforeNextAnim: 0
+  currentTimeBeforeNextAnim: 0
   slopesDetector: {fileID: 0}
   originalRollDuration: 0
 --- !u!114 &1038294705

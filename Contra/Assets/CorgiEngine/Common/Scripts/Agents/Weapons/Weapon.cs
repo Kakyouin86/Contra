@@ -43,7 +43,8 @@ namespace MoreMountains.CorgiEngine
 	[SelectionBase]
 	[MMRequiresConstantRepaint]
 	public class Weapon : MMMonoBehaviour
-	{
+    {
+        public Animator theAnimator;
 		/// the possible use modes for the trigger
 		public enum TriggerModes { SemiAuto, Auto }
 		/// the possible states the weapon can be in
@@ -382,7 +383,8 @@ namespace MoreMountains.CorgiEngine
 
 		protected virtual void Start()
 		{
-			if (InitializeOnStart)
+            theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>(); //Leo Monge.
+            if (InitializeOnStart)
 			{
 				Initialization();
 			}
@@ -889,11 +891,13 @@ namespace MoreMountains.CorgiEngine
 
 			while (remainingShots > 0)
 			{
-				ShootRequest();
+                theAnimator.SetBool("Activado", true); //Leo Monge.
+                ShootRequest();
 				remainingShots--;
 				yield return MMCoroutine.WaitFor(interval);
 			}
-		}
+            theAnimator.SetBool("Activado", false); //Leo Monge.
+}
 
 		/// <summary>
 		/// Determines whether or not the weapon can fire
@@ -962,9 +966,9 @@ namespace MoreMountains.CorgiEngine
 				else
 				{
 					WeaponState.ChangeState(WeaponStates.WeaponUse);						
-				}					
-			}
-		}
+				}
+            }
+        }
 
 		#endregion Permissions
 

@@ -11060,7 +11060,7 @@ MonoBehaviour:
   DelayBeforeUseAnimationParameter: 
   SingleUseAnimationParameter: 
   UseAnimationParameter: IdleShootingStraight
-  DelayBetweenUsesAnimationParameter: 
+  DelayBetweenUsesAnimationParameter: DelayBetweenUses
   InCooldownAnimationParameter: 
   StopAnimationParameter: 
   ReloadStartAnimationParameter: 
