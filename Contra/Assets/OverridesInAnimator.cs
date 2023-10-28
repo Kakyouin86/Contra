@@ -27,7 +27,8 @@ public class OverridesInAnimator : MonoBehaviour
             flameGun = true;
             machineGun = false;
             //modifyTheMirror = true;
-            foreach (AnimationClip clip in animationNames)
+            theAnimator.SetBool("Flame Gun", true);
+            //foreach (AnimationClip clip in animationNames)
             {
                 theAnimator.SetFloat("Delay", 0f);
                 timerBeforeNextAnim = theAnimator.GetBool("TimerBeforeNextAnim");
@@ -41,7 +42,9 @@ public class OverridesInAnimator : MonoBehaviour
             machineGun = true;
             flameGun = false;
             //modifyTheMirror = false;
-            foreach (AnimationClip clip in animationNames)
+            //modifyTheMirror = true;
+            theAnimator.SetBool("Flame Gun", false);
+            //foreach (AnimationClip clip in animationNames)
             {
                 theAnimator.SetFloat("Delay", 1f);
                 timerBeforeNextAnim = theAnimator.GetBool("TimerBeforeNextAnim");

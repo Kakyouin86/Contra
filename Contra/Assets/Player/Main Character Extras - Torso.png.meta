@@ -298,6 +298,153 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_9
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c22330e3b45614185735e8466dc15c
+      internalID: 628798406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_10
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d42b6b7a2f75c4418b474d219a64521
+      internalID: 1830193229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_11
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df5be0a1f69ae6499bbbf6b48ce61e8
+      internalID: -1426775882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_12
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73be96830c2234d419d2d7468a194fb1
+      internalID: -1091950802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_13
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf8a5b4899df154c8bb364733318a35
+      internalID: -648743737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_14
+      rect:
+        serializedVersion: 2
+        x: 1513
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5752d158ef3db364d91bff934302e899
+      internalID: 1134171378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_15
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6116bd5cf6252d643b990f2befc15ef1
+      internalID: -1969912376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -311,6 +458,12 @@ TextureImporter:
     nameFileIdTable:
       Main Character Extras - Torso_0: -222292664
       Main Character Extras - Torso_1: -437690837
+      Main Character Extras - Torso_10: 1830193229
+      Main Character Extras - Torso_11: -1426775882
+      Main Character Extras - Torso_12: -1091950802
+      Main Character Extras - Torso_13: -648743737
+      Main Character Extras - Torso_14: 1134171378
+      Main Character Extras - Torso_15: -1969912376
       Main Character Extras - Torso_2: 1393538319
       Main Character Extras - Torso_3: 529122696
       Main Character Extras - Torso_4: 89879996
@@ -318,6 +471,7 @@ TextureImporter:
       Main Character Extras - Torso_6: 263894108
       Main Character Extras - Torso_7: 1927980096
       Main Character Extras - Torso_8: 2034729219
+      Main Character Extras - Torso_9: 628798406
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
