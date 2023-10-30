@@ -14058,6 +14058,8 @@ MonoBehaviour:
   - {fileID: 7400000, guid: bc5ccd68571e05546842069313d50b79, type: 2}
   - {fileID: 7400000, guid: 9b8e1dc10cb98a644aa2dcfb39c420d5, type: 2}
   - {fileID: 7400000, guid: a7a949a3bc5eaba4c861ca5b07b961ec, type: 2}
+  - {fileID: 7400000, guid: cdcedb86f041b7a48a900da739e4ebff, type: 2}
+  - {fileID: 7400000, guid: bc9d310de9891d34987465f0f6cf7e84, type: 2}
   offset: {x: 0, y: 0, z: 0}
   weaponAim: {fileID: 0}
   originalWeaponAimRotSpeed: 0
@@ -14681,7 +14683,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -229, y: 149}
+  m_AnchoredPosition: {x: -228.99997, y: 149}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1066834779
@@ -21287,7 +21289,7 @@ Animator:
   m_GameObject: {fileID: 1448508889}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d8536e224815bd241ab0e4686d743e68, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5abb445548e33cd45a1708f5ce95ec6c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

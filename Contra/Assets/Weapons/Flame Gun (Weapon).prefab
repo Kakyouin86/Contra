@@ -384,7 +384,7 @@ MonoBehaviour:
     TargetBPM: 120
   DebugActive: 0
   Mode: 0
-  BoundParticleSystem: {fileID: 4345223861844045487}
+  BoundParticleSystem: {fileID: 6246048642879681167}
   RandomParticleSystems: []
   MoveToPosition: 0
   ActivateOnPlay: 0
@@ -849,7 +849,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   RemapIntensityZero: 0
   RemapIntensityOne: 20
---- !u!1 &3576500735419742125
+--- !u!1 &2514687798176689012
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -857,24 +857,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 85787202697505797}
-  - component: {fileID: 4345223861844045487}
-  - component: {fileID: 1570695487978553985}
-  - component: {fileID: 2733200139263239055}
+  - component: {fileID: 5050526637754354759}
+  - component: {fileID: 6246048642879681167}
+  - component: {fileID: 3375251138422628782}
+  - component: {fileID: 2883266256236660711}
   m_Layer: 9
-  m_Name: Machine Gun Shells
+  m_Name: Flame Gun Shells
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &85787202697505797
+--- !u!4 &5050526637754354759
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3576500735419742125}
+  m_GameObject: {fileID: 2514687798176689012}
   serializedVersion: 2
   m_LocalRotation: {x: 0.09822746, y: -0.700251, z: -0.700251, w: 0.09822747}
   m_LocalPosition: {x: -0.046, y: 0.089, z: 0}
@@ -883,13 +883,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6359933466854169336}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &4345223861844045487
+--- !u!198 &6246048642879681167
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3576500735419742125}
+  m_GameObject: {fileID: 2514687798176689012}
   serializedVersion: 8
   lengthInSec: 0.2
   simulationSpeed: 3
@@ -1137,7 +1137,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.4
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1436,7 +1436,7 @@ ParticleSystem:
         m_RotationOrder: 0
     randomizeRotationDirection: 1
     gravitySource: 0
-    maxNumParticles: 1000
+    maxNumParticles: 2
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -1702,7 +1702,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 6
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5492,14 +5492,14 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &1570695487978553985
+--- !u!199 &3375251138422628782
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3576500735419742125}
+  m_GameObject: {fileID: 2514687798176689012}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -5566,13 +5566,13 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &2733200139263239055
+--- !u!114 &2883266256236660711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3576500735419742125}
+  m_GameObject: {fileID: 2514687798176689012}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b57176af794a1544ab1d2b6a1b25e8f, type: 3}
@@ -6168,7 +6168,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 85787202697505797}
+  - {fileID: 5050526637754354759}
   m_Father: {fileID: 5535692217675387912}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6644094088062468114
@@ -11017,6 +11017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d7ce0b8cf4b34859b9e359283b2e7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theAnimator: {fileID: 0}
   TriggerMode: 1
   Interruptable: 0
   InitializeOnStart: 0

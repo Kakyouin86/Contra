@@ -86,13 +86,13 @@ AnimatorStateMachine:
     m_Position: {x: -50, y: -270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4978513722751033149}
-    m_Position: {x: 350, y: -220, z: 0}
+    m_Position: {x: 310, y: -120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1961837973727427040}
-    m_Position: {x: 350, y: -270, z: 0}
+    m_Position: {x: 310, y: -170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7012416229004320940}
-    m_Position: {x: 490, y: -100, z: 0}
+    m_Position: {x: 310, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7423473944649688140}
     m_Position: {x: 490, y: 220, z: 0}
@@ -107,7 +107,7 @@ AnimatorStateMachine:
     m_Position: {x: 440, y: 310, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3667604553735331455}
-    m_Position: {x: 490, y: -150, z: 0}
+    m_Position: {x: 310, y: -50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6330658855037004437}
     m_Position: {x: -260, y: 20, z: 0}
@@ -122,10 +122,10 @@ AnimatorStateMachine:
     m_Position: {x: -260, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3906819832058058414}
-    m_Position: {x: -610, y: -550, z: 0}
+    m_Position: {x: -530, y: -400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5936300012554841312}
-    m_Position: {x: -610, y: -460, z: 0}
+    m_Position: {x: -530, y: -460, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 628892724721751526}
     m_Position: {x: -260, y: 120, z: 0}
@@ -134,13 +134,13 @@ AnimatorStateMachine:
     m_Position: {x: 700, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8183045939470432446}
-    m_Position: {x: 540, y: 10, z: 0}
+    m_Position: {x: 540, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3239392851512624703}
     m_Position: {x: 700, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4311343148925845180}
-    m_Position: {x: 540, y: -40, z: 0}
+    m_Position: {x: 540, y: -50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7487711743753029406}
     m_Position: {x: -260, y: 170, z: 0}
@@ -257,7 +257,7 @@ AnimatorStateMachine:
     m_Position: {x: -510, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4759390025510934384}
-    m_Position: {x: -610, y: -380, z: 0}
+    m_Position: {x: -530, y: -340, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -8340205692800144868}
@@ -276,10 +276,10 @@ AnimatorStateMachine:
   - {fileID: 2796284373156988184}
   - {fileID: 6542379267877112973}
   - {fileID: 6963517073615999816}
-  - {fileID: 8939999231865020203}
   - {fileID: 7258098831322834549}
-  - {fileID: -6342945127862504039}
+  - {fileID: 8939999231865020203}
   - {fileID: 1067295484299647515}
+  - {fileID: -6342945127862504039}
   - {fileID: -6239927266466892939}
   - {fileID: -4642929267907324345}
   - {fileID: -1596865239570090589}
@@ -335,7 +335,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: -20, y: -370, z: 0}
+  m_EntryPosition: {x: -60, y: -340, z: 0}
   m_ExitPosition: {x: 840, y: -80, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 6725150551735018942}
@@ -501,9 +501,6 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: LadderClimbing
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: isShooting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2150317296545001834}
@@ -851,29 +848,11 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: WeaponAngleRelativeAnimationParameter
-    m_EventTreshold: -79
-  - m_ConditionMode: 4
-    m_ConditionEvent: WeaponAngleRelativeAnimationParameter
-    m_EventTreshold: -44
   - m_ConditionMode: 2
     m_ConditionEvent: IdleShootingStraight
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Jumping
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Crouching
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Rolling
-    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Crawling
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Death
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Hold
@@ -881,15 +860,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: TimerBeforeNextAnim
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: isShooting
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: DelayBeforeShooting
-    m_EventTreshold: 0
-  - m_ConditionMode: 4
-    m_ConditionEvent: isShootingCounter
-    m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3239392851512624703}
   m_Solo: 0
@@ -1173,6 +1143,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: WeaponAngleRelativeAnimationParameter
     m_EventTreshold: -44
+  - m_ConditionMode: 1
+    m_ConditionEvent: IdleShootingStraight
+    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Jumping
     m_EventTreshold: 0
@@ -1182,9 +1155,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Rolling
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: Crawling
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Death
     m_EventTreshold: 0
@@ -1192,8 +1162,8 @@ AnimatorStateTransition:
     m_ConditionEvent: Hold
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: isShooting
-    m_EventTreshold: 0.01
+    m_ConditionEvent: Crawling
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4437664286944749173}
   m_Solo: 0
@@ -1518,15 +1488,15 @@ AnimatorState:
   m_WriteDefaultValues: 1
   m_Mirror: 0
   m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 1
+  m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: e80dde70b102c074689b7569d96073f2, type: 2}
   m_Tag: 
-  m_SpeedParameter: isShootingCounter
-  m_MirrorParameter: isShooting
-  m_CycleOffsetParameter: Speed
-  m_TimeParameter: isShootingCounter
+  m_SpeedParameter: 
+  m_MirrorParameter: Mirror
+  m_CycleOffsetParameter: 
+  m_TimeParameter: Speed
 --- !u!1101 &-4642929267907324345
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1567,9 +1537,6 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: ThrowGrenade
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: isShooting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3251951992460585841}
@@ -1660,7 +1627,7 @@ AnimatorState:
   m_Motion: {fileID: 7400000, guid: 21f654336fff6f24aad102a7f1779de0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
-  m_MirrorParameter: isShooting
+  m_MirrorParameter: Mirror
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1101 &-4418454705209271674
@@ -2182,9 +2149,9 @@ AnimatorState:
   m_Motion: {fileID: 7400000, guid: 52254e7907fbe514a93c83d84e41a555, type: 2}
   m_Tag: 
   m_SpeedParameter: 
-  m_MirrorParameter: isShooting
+  m_MirrorParameter: 
   m_CycleOffsetParameter: 
-  m_TimeParameter: Speed
+  m_TimeParameter: 
 --- !u!1102 &-3174057848518068455
 AnimatorState:
   serializedVersion: 6
@@ -2613,14 +2580,11 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Walking
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: Speed
+    m_EventTreshold: 0.1
   - m_ConditionMode: 2
     m_ConditionEvent: TimerBeforeNextAnim
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: isShooting
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: Hold
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6725150551735018942}
@@ -3042,9 +3006,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: ThrowGrenade
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: isShooting
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6908611229821871707}
   m_Solo: 0
@@ -3068,6 +3029,12 @@ AnimatorController:
   m_Name: Player
   serializedVersion: 5
   m_AnimatorParameters:
+  - m_Name: IdleShootingStraight
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   - m_Name: Jumping
     m_Type: 4
     m_DefaultFloat: 0
@@ -3098,19 +3065,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: ySpeed
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
   - m_Name: WeaponAngleRelativeAnimationParameter
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: WeaponAngleAnimationParameter
+  - m_Name: ySpeed
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -3128,37 +3089,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Hold
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: IdleShootingStraight
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: isShooting
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: isShootingCounter
+  - m_Name: WeaponAngleAnimationParameter
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: DelayBeforeShooting
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: DelayBetweenUses
+  - m_Name: Hold
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -3222,13 +3159,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: Flame Gun
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 0}
   - m_Name: Delay
     m_Type: 1
@@ -3237,6 +3168,24 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: Mirror
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Flame Gun
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: DelayBetweenUses
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Activado
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -3413,24 +3362,36 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: WeaponAngleRelativeAnimationParameter
+    m_EventTreshold: -79
+  - m_ConditionMode: 4
+    m_ConditionEvent: WeaponAngleRelativeAnimationParameter
+    m_EventTreshold: -44
   - m_ConditionMode: 2
     m_ConditionEvent: IdleShootingStraight
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Jumping
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Crouching
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Rolling
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Death
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Hold
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Crawling
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Hold
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
     m_ConditionEvent: TimerBeforeNextAnim
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: isShooting
-    m_EventTreshold: 0
-  - m_ConditionMode: 4
-    m_ConditionEvent: isShootingCounter
-    m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3239392851512624703}
   m_Solo: 0
@@ -3443,7 +3404,7 @@ AnimatorStateTransition:
   m_HasExitTime: 0
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
-  m_OrderedInterruption: 0
+  m_OrderedInterruption: 1
   m_CanTransitionToSelf: 0
 --- !u!1102 &1071193768262748747
 AnimatorState:
@@ -3742,7 +3703,8 @@ AnimatorState:
   m_Name: Shoot Straight
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions: []
+  m_Transitions:
+  - {fileID: 4106883539626739518}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -3755,9 +3717,9 @@ AnimatorState:
   m_Motion: {fileID: 7400000, guid: 5de9feb9b1b988a429735bdf6e8421d2, type: 2}
   m_Tag: 
   m_SpeedParameter: Delay
-  m_MirrorParameter: isShooting
+  m_MirrorParameter: Mirror
   m_CycleOffsetParameter: Delay
-  m_TimeParameter: isShootingCounter
+  m_TimeParameter: Delay
 --- !u!1101 &2173362496698156243
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -4532,6 +4494,34 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 0
+--- !u!1101 &4106883539626739518
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: IdleShootingStraight
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: TimerBeforeNextAnim
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 6725150551735018942}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &4209777268750566806
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -4633,7 +4623,7 @@ AnimatorState:
   m_Motion: {fileID: 7400000, guid: e050337b0012b0142b8c0ab95c931dd9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
-  m_MirrorParameter: isShooting
+  m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
 --- !u!1101 &4315823844537337323
@@ -5083,9 +5073,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: ThrowGrenade
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: isShooting
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6330658855037004437}
   m_Solo: 0
@@ -5232,9 +5219,6 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: ThrowGrenade
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: isShooting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3667604553735331455}
@@ -5756,9 +5740,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: ThrowGrenade
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: isShooting
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5936300012554841312}
   m_Solo: 0
@@ -5843,9 +5824,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: ThrowGrenade
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: isShooting
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6725150551735018942}
   m_Solo: 0
@@ -5901,9 +5879,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: TimerBeforeNextAnim
     m_EventTreshold: 0
-  - m_ConditionMode: 4
-    m_ConditionEvent: isShootingCounter
-    m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4311343148925845180}
   m_Solo: 0
@@ -6066,10 +6041,10 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: WeaponAngleRelativeAnimationParameter
-    m_EventTreshold: -0.1
+    m_EventTreshold: -1
   - m_ConditionMode: 4
     m_ConditionEvent: WeaponAngleRelativeAnimationParameter
-    m_EventTreshold: 0.1
+    m_EventTreshold: 1
   - m_ConditionMode: 1
     m_ConditionEvent: IdleShootingStraight
     m_EventTreshold: 0
@@ -6086,19 +6061,13 @@ AnimatorStateTransition:
     m_ConditionEvent: Walking
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Crawling
+    m_ConditionEvent: Hold
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: LadderClimbing
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: isShooting
+    m_ConditionEvent: Death
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Flame Gun
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: isShooting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4759390025510934384}
@@ -6376,7 +6345,7 @@ AnimatorState:
   m_Motion: {fileID: 7400000, guid: bc9d310de9891d34987465f0f6cf7e84, type: 2}
   m_Tag: 
   m_SpeedParameter: 
-  m_MirrorParameter: isShooting
+  m_MirrorParameter: Mirror
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1102 &8234508334108264352
@@ -6443,9 +6412,6 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: ThrowGrenade
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: isShooting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1961837973727427040}
@@ -6690,6 +6656,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: WeaponAngleRelativeAnimationParameter
     m_EventTreshold: 89
+  - m_ConditionMode: 1
+    m_ConditionEvent: IdleShootingStraight
+    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Jumping
     m_EventTreshold: 0
@@ -6708,9 +6677,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Hold
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: isShooting
-    m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8183045939470432446}
   m_Solo: 0

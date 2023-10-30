@@ -884,25 +884,32 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// Determines whether or not the weapon can fire
 		/// </summary>
-		public virtual IEnumerator ShootRequestCo()
-		{
+		public virtual IEnumerator ShootRequestCo() //Leo Monge. This whole thing is for the shooting.
+        {
 			int remainingShots = UseBurstMode ? BurstLength : 1;
 			float interval = UseBurstMode ? BurstTimeBetweenShots : 1;
-
-			while (remainingShots > 0)
+            float counter = 0.1f; // Counter for 0.1 seconds
+            while (remainingShots > 0)
 			{
-                theAnimator.SetBool("Activado", true); //Leo Monge.
+                theAnimator.SetBool("isShooting", true);
+                theAnimator.SetFloat("isShootingCounter", counter);
                 ShootRequest();
 				remainingShots--;
 				yield return MMCoroutine.WaitFor(interval);
 			}
-            theAnimator.SetBool("Activado", false); //Leo Monge.
-}
+            theAnimator.SetBool("isShooting", false);
+            while (counter > 0)
+            {
+                counter -= Time.deltaTime; // Decrease the counter
+                theAnimator.SetFloat("isShootingCounter", counter);
+                yield return null;
+            }
+        }
 
-		/// <summary>
-		/// Determines whether or not the weapon can fire
-		/// </summary>
-		protected virtual void ShootRequest()
+        /// <summary>
+        /// Determines whether or not the weapon can fire
+        /// </summary>
+        protected virtual void ShootRequest()
 		{
 			// if we have a weapon ammo component, we determine if we have enough ammunition to shoot
 			if (_reloading)

@@ -19,8 +19,6 @@ public class OverridesInAnimator : MonoBehaviour
 
     void Update()
     {
-
-
         if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
             weaponInventory.Content[0].ItemName == "Flame Gun")
         {

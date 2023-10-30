@@ -100,10 +100,20 @@ public class Firepoint : MonoBehaviour
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 2.5f);//Was new Vector3(0.7f, 3.5f);
                 }
+                //Shoot Up-Right Walking
+                if (((animationNames.name == "Torso Walking Diagonal Up") || (animationNames.name == "Shoot Diagonal Up Walking")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 2.4f);//Was new Vector3(0.7f, 3.5f);
+                }
                 //Shoot Up-Left
                 if (((animationNames.name == "Hold Diagonal Up") || (animationNames.name == "Shoot Diagonal Up") || (animationNames.name == "Torso Walking Diagonal Up") || (animationNames.name == "Shoot Diagonal Up Walking")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 2.5f);//Was new Vector3(-0.7f, 3.5f);
+                }
+                //Shoot Up-Left Walking
+                if (((animationNames.name == "Torso Walking Diagonal Up") || (animationNames.name == "Shoot Diagonal Up Walking")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.2f, 2.4f);//Was new Vector3(-0.7f, 3.5f);
                 }
                 //Shoot up while facing right
                 if (((animationNames.name == "Shoot Up") || (animationNames.name == "Hold Up")) && character.IsFacingRight)
@@ -120,10 +130,20 @@ public class Firepoint : MonoBehaviour
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 1.6f);//Was new Vector3(0.7f, 0.5f);
                 }
+                //Shoot Down-Right Walking
+                if (((animationNames.name == "Torso Walking Diagonal Down") || (animationNames.name == "Shoot Diagonal Down Walking")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.7f);//Was new Vector3(0.7f, 0.5f);
+                }
                 //Shoot Down-Left
                 if (((animationNames.name == "Hold Diagonal Down") || (animationNames.name == "Shoot Diagonal Down") || (animationNames.name == "Torso Walking Diagonal Down") || (animationNames.name == "Shoot Diagonal Down Walking")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 1.6f);//Was new Vector3(-0.7f, 0.5f);
+                }
+                //Shoot Down-Left Walking
+                if (((animationNames.name == "Torso Walking Diagonal Down") || (animationNames.name == "Shoot Diagonal Down Walking")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.0f, 1.7f);//Was new Vector3(-0.7f, 0.5f);
                 }
                 //Shoot down while facing right
                 if (((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down")) && character.IsFacingRight)
@@ -135,7 +155,6 @@ public class Firepoint : MonoBehaviour
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 1.8f);//Was new Vector3(0.75f, 0f);
                 }
-
 
                 //////////////////////////////////////////////////////////////////////////////////////
 
