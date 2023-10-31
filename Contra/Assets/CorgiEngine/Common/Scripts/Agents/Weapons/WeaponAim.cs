@@ -23,7 +23,7 @@ namespace MoreMountains.CorgiEngine
         public Quaternion oldRotation; //Leo Monge: Need to ALWAYS bring it after update.
         public Quaternion commonRotation; //Leo Monge: Need to ALWAYS bring it after update.
         public ProjectileWeapon projectileWeapon; //Leo Monge: Need to ALWAYS bring it after update.
-        public int originalProjectiles ;//Leo Monge: Need to ALWAYS bring it after update.
+        public int originalProjectiles ; //Leo Monge: Need to ALWAYS bring it after update.
 
         /// the list of possible control modes
         public enum AimControls { Off, PrimaryMovement, SecondaryMovement, Mouse, Script }
@@ -475,7 +475,7 @@ namespace MoreMountains.CorgiEngine
             }
 		}
 
-        IEnumerator DelayInShotWhenRotating()//Leo Monge: Need to ALWAYS bring it after update.
+        IEnumerator DelayInShotWhenRotating() //Leo Monge: Need to ALWAYS bring it after update.
         {
             yield return new WaitForSeconds(0.005f);
             projectileWeapon.ProjectilesPerShot = originalProjectiles;

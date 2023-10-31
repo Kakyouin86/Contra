@@ -77,7 +77,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 2150317296545001834}
-    m_Position: {x: -260, y: -530, z: 0}
+    m_Position: {x: -210, y: -550, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7066680122050524913}
     m_Position: {x: -260, y: -30, z: 0}
@@ -122,10 +122,10 @@ AnimatorStateMachine:
     m_Position: {x: -260, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3906819832058058414}
-    m_Position: {x: -610, y: -550, z: 0}
+    m_Position: {x: -360, y: -450, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5936300012554841312}
-    m_Position: {x: -610, y: -460, z: 0}
+    m_Position: {x: -360, y: -360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 628892724721751526}
     m_Position: {x: -260, y: 120, z: 0}
@@ -257,7 +257,13 @@ AnimatorStateMachine:
     m_Position: {x: -510, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4759390025510934384}
-    m_Position: {x: -610, y: -380, z: 0}
+    m_Position: {x: -360, y: -280, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 7947072240597756747}
+    m_Position: {x: 760, y: 10, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 2448414749541857518}
+    m_Position: {x: 910, y: 220, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -8340205692800144868}
@@ -331,12 +337,14 @@ AnimatorStateMachine:
   - {fileID: 7940602869003836862}
   - {fileID: -3289632553275536429}
   - {fileID: 7696707203303244749}
+  - {fileID: -4168469928929657935}
+  - {fileID: 2808970084191038472}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: -20, y: -370, z: 0}
-  m_ExitPosition: {x: 840, y: -80, z: 0}
+  m_ExitPosition: {x: 830, y: -610, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 6725150551735018942}
 --- !u!1102 &-8893964873835885876
@@ -513,7 +521,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 0.75
+  m_ExitTime: 0
   m_HasExitTime: 0
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
@@ -589,14 +597,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 7698227112e58dd45ba056929271eb0e, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1101 &-7546654030227504188
@@ -1194,6 +1202,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: isShooting
     m_EventTreshold: 0.01
+  - m_ConditionMode: 2
+    m_ConditionEvent: Flame Gun
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4437664286944749173}
   m_Solo: 0
@@ -1385,14 +1396,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 048aa0d987e8db04aacc1fae294b638d, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1102 &-5351197251158502462
@@ -1511,22 +1522,23 @@ AnimatorState:
   m_Name: Shoot Straight Walking Flame Gun
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions: []
+  m_Transitions:
+  - {fileID: 3961029313863082008}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
   m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 1
+  m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: e80dde70b102c074689b7569d96073f2, type: 2}
   m_Tag: 
-  m_SpeedParameter: isShootingCounter
-  m_MirrorParameter: isShooting
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: Speed
-  m_TimeParameter: isShootingCounter
+  m_TimeParameter: Delay
 --- !u!1101 &-4642929267907324345
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1627,15 +1639,15 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 6ad14ed576bfe834b9081da7d53755df, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
-  m_CycleOffsetParameter: 
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
+  m_CycleOffsetParameter: Speed
   m_TimeParameter: Delay
 --- !u!1102 &-4437664286944749173
 AnimatorState:
@@ -1722,16 +1734,68 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 3418426378be2eb41babf292007ac258, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
+--- !u!1101 &-4168469928929657935
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: WeaponAngleRelativeAnimationParameter
+    m_EventTreshold: 44
+  - m_ConditionMode: 4
+    m_ConditionEvent: WeaponAngleRelativeAnimationParameter
+    m_EventTreshold: 89
+  - m_ConditionMode: 2
+    m_ConditionEvent: Jumping
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Crouching
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Rolling
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: Walking
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Death
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Hold
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0.01
+  - m_ConditionMode: 1
+    m_ConditionEvent: Flame Gun
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 7947072240597756747}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &-4151588111265215159
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1880,14 +1944,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: b3ec33a1b702a3a4abdd4f9e496b13f6, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1101 &-3748295353373122523
@@ -2302,14 +2366,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 95f13f353148dd34d936519b7e0ab9c6, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1102 &-2895633953708601318
@@ -2328,14 +2392,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 6d0d298461b492c4d8cacf4e75082bdb, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1101 &-2783078773880116597
@@ -2425,15 +2489,15 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: f160647f15134584abdae1c02cfb6f93, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
-  m_CycleOffsetParameter: 
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
+  m_CycleOffsetParameter: Speed
   m_TimeParameter: Delay
 --- !u!1101 &-2331750367694029556
 AnimatorStateTransition:
@@ -2860,14 +2924,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 0f79f7aa9e3ddfe4f858ab5299e2ff94, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1101 &-676975994072735713
@@ -2949,6 +3013,34 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &-245895672184680477
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: isShootingCounter
+    m_EventTreshold: 0.1
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -3239392851512624703}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &-143854623608712045
 AnimatorState:
   serializedVersion: 6
@@ -3732,6 +3824,34 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &2104154899798962081
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: isShootingCounter
+    m_EventTreshold: 0.1
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 4311343148925845180}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &2150317296545001834
 AnimatorState:
   serializedVersion: 6
@@ -3748,16 +3868,16 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 5de9feb9b1b988a429735bdf6e8421d2, type: 2}
   m_Tag: 
   m_SpeedParameter: Delay
-  m_MirrorParameter: isShooting
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: Delay
-  m_TimeParameter: isShootingCounter
+  m_TimeParameter: Delay
 --- !u!1101 &2173362496698156243
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -3878,6 +3998,33 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 0
+--- !u!1102 &2448414749541857518
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shoot Diagonal Down Walking Flame Gun
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: -245895672184680477}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 2423b193e0a62b64481a36b39a50c75c, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &2461793852351127968
 AnimatorState:
   serializedVersion: 6
@@ -3990,6 +4137,58 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 0
+--- !u!1101 &2808970084191038472
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: WeaponAngleRelativeAnimationParameter
+    m_EventTreshold: -79
+  - m_ConditionMode: 4
+    m_ConditionEvent: WeaponAngleRelativeAnimationParameter
+    m_EventTreshold: -44
+  - m_ConditionMode: 2
+    m_ConditionEvent: Jumping
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Crouching
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Rolling
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: Crawling
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Death
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Hold
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0.01
+  - m_ConditionMode: 1
+    m_ConditionEvent: Flame Gun
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 2448414749541857518}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 1
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 0
 --- !u!1102 &2941205983858567879
 AnimatorState:
   serializedVersion: 6
@@ -4006,14 +4205,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 03fefc205838b904e808b57dff2fe45c, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1101 &3045498451350055550
@@ -4464,6 +4663,34 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &3961029313863082008
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: isShootingCounter
+    m_EventTreshold: 0.1
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 5936300012554841312}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 1
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &3997721795951064324
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -4600,14 +4827,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 9b8e1dc10cb98a644aa2dcfb39c420d5, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1102 &4311343148925845180
@@ -4720,14 +4947,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: f3bc1a0b36f9b7c459de11f93b21846e, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1101 &4538863295432338912
@@ -5530,14 +5757,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: bc5ccd68571e05546842069313d50b79, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1101 &6542379267877112973
@@ -5934,14 +6161,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 11195987a931b2c418668882c17dceff, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1102 &7487711743753029406
@@ -6173,15 +6400,15 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: a7a949a3bc5eaba4c861ca5b07b961ec, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
-  m_CycleOffsetParameter: 
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
+  m_CycleOffsetParameter: Speed
   m_TimeParameter: Delay
 --- !u!1101 &7795155890355838781
 AnimatorStateTransition:
@@ -6267,6 +6494,33 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 0
+--- !u!1102 &7947072240597756747
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shoot Diagonal Up Walking Flame Gun
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: 2104154899798962081}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: fbd4127497715724386e2e965668d13b, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &8054247822646477101
 AnimatorState:
   serializedVersion: 6
@@ -6283,14 +6537,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: f5f43cb68aa13a941ae93604d7025db3, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1102 &8068658230739709357
@@ -6528,14 +6782,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: e53b28e03227bae40ae784f7b3a89eb1, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1102 &8462481425028253007
@@ -6711,6 +6965,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: isShooting
     m_EventTreshold: 0.01
+  - m_ConditionMode: 2
+    m_ConditionEvent: Flame Gun
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8183045939470432446}
   m_Solo: 0

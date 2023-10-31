@@ -10,25 +10,29 @@ public class ToggleWeapons : MonoBehaviour
     public string torsoTag = "Torso";
     public string machineGunLightsTag = "MachineGunLights";
     public GameObject torsoObject;
-    public GameObject machineGunObject;
-    public bool torsoObjectActive = true;
+    public GameObject machineGunLights;
+    public bool torsoNoLights = true;
     public bool machineGunActive = false;
     public Inventory weaponInventory;
+    //public CharacterHandleWeapon theCharacterHandleWeapon;
+    //public Animator theAnimator;
 
     void Start()
     {
         torsoObject = GameObject.FindGameObjectWithTag(torsoTag);
-        machineGunObject = GameObject.FindGameObjectWithTag(machineGunLightsTag);
+        machineGunLights = GameObject.FindGameObjectWithTag(machineGunLightsTag);
         weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventory").GetComponent<Inventory>();
+        //theCharacterHandleWeapon = FindObjectOfType<CharacterHandleWeapon>();
+        //theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>();
         if (torsoObject != null)
         {
-            torsoObject.SetActive(torsoObjectActive);
+            torsoObject.SetActive(torsoNoLights);
         }
 
-        if (machineGunObject != null)
+        if (machineGunLights != null)
         {
-            machineGunObject.SetActive(!torsoObjectActive);
-            machineGunActive = !torsoObjectActive;
+            machineGunLights.SetActive(!torsoNoLights);
+            machineGunActive = !torsoNoLights;
         }
     }
 
@@ -40,26 +44,26 @@ public class ToggleWeapons : MonoBehaviour
             if (GetComponent<CharacterHandleWeapon>().CurrentWeapon.WeaponState.CurrentState != Weapon.WeaponStates.WeaponIdle)
 
             {
-                torsoObjectActive = false;
+                torsoNoLights = false;
                 machineGunActive = true;
                 torsoObject.SetActive(false);
-                machineGunObject.SetActive(true);
+                machineGunLights.SetActive(true);
             }
             else
             {
-                torsoObjectActive = true;
+                torsoNoLights = true;
                 machineGunActive = false;
                 torsoObject.SetActive(true);
-                machineGunObject.SetActive(false);
+                machineGunLights.SetActive(false);
             }
         }
         else
         {
             machineGunActive = false;
-            torsoObjectActive = true;
-            if (torsoObject != null && machineGunObject != null)
+            torsoNoLights = true;
+            if (torsoObject != null && machineGunLights != null)
             {
-                machineGunObject.SetActive(false);
+                machineGunLights.SetActive(false);
                 torsoObject.SetActive(true);
             }
         }

@@ -44,9 +44,9 @@ namespace MoreMountains.CorgiEngine
 	[MMRequiresConstantRepaint]
 	public class Weapon : MMMonoBehaviour
     {
-        public Animator theAnimator;
-		/// the possible use modes for the trigger
-		public enum TriggerModes { SemiAuto, Auto }
+        public Animator theAnimator; //Leo Monge: Need to ALWAYS bring it after update. This adds the Animator.
+        /// the possible use modes for the trigger
+        public enum TriggerModes { SemiAuto, Auto }
 		/// the possible states the weapon can be in
 		public enum WeaponStates { WeaponIdle, WeaponStart, WeaponDelayBeforeUse, WeaponUse, WeaponDelayBetweenUses, WeaponStop, WeaponReloadNeeded, WeaponReloadStart, WeaponReload, WeaponReloadStop, WeaponInterrupted, WeaponInCooldown }
 
@@ -383,7 +383,7 @@ namespace MoreMountains.CorgiEngine
 
 		protected virtual void Start()
 		{
-            theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>(); //Leo Monge.
+            theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>(); //Leo Monge: Need to ALWAYS bring it after update. This adds the Animator.
             if (InitializeOnStart)
 			{
 				Initialization();
@@ -884,7 +884,7 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// Determines whether or not the weapon can fire
 		/// </summary>
-		public virtual IEnumerator ShootRequestCo() //Leo Monge. This whole thing is for the shooting.
+		public virtual IEnumerator ShootRequestCo() //Leo Monge: Need to ALWAYS bring it after update. This whole thing should be edited because basically adds some "time" after shooting so it repeats the animation and adds a little timer so it finishes well the animations.
         {
 			int remainingShots = UseBurstMode ? BurstLength : 1;
 			float interval = UseBurstMode ? BurstTimeBetweenShots : 1;

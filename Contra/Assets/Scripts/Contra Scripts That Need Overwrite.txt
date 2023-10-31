@@ -77,6 +77,35 @@ Changes to do in each new update:
                 Direction = new Vector3(newDirection.x, overrideValues.y,newDirection.z); //Leo Monge: Need to ALWAYS bring it after update. This makes the values in the Y axis, have a bit of a nice circle trajectory.
             } //Leo Monge: Need to ALWAYS bring it after update. This makes the values in the Y axis, have a bit of a nice circle trajectory.
 
+!--> Corgi Engine\Common\Scripts\Agents\Weapons\Weapon.cs line 47 should be:
+        public Animator theAnimator;//Leo Monge: Need to ALWAYS bring it after update. This adds the Animator.
+
+!--> Corgi Engine\Common\Scripts\Agents\Weapons\Weapon.cs line 386 should be:
+            theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>();//Leo Monge: Need to ALWAYS bring it after update. This adds the Animator.
+
+!--> Corgi Engine\Common\Scripts\Agents\Weapons\Weapon.cs line 887 should be:
+		public virtual IEnumerator ShootRequestCo()//Leo Monge: Need to ALWAYS bring it after update. This whole thing should be edited because basically adds some "time" after shooting so it repeats the animation and adds a little timer so it finishes well the animations.
+        {
+			int remainingShots = UseBurstMode ? BurstLength : 1;
+			float interval = UseBurstMode ? BurstTimeBetweenShots : 1;
+            float counter = 0.1f; // Counter for 0.1 seconds
+            while (remainingShots > 0)
+			{
+                theAnimator.SetBool("isShooting", true);
+                theAnimator.SetFloat("isShootingCounter", counter);
+                ShootRequest();
+				remainingShots--;
+				yield return MMCoroutine.WaitFor(interval);
+			}
+            theAnimator.SetBool("isShooting", false);
+            while (counter > 0)
+            {
+                counter -= Time.deltaTime; // Decrease the counter
+                theAnimator.SetFloat("isShootingCounter", counter);
+                yield return null;
+            }
+        }
+
 !--> Rewired\Integration\CorgiEngine\Scripts\RewiredCorgiEngineInputManager.cs line 153 should be:
         public override void SetMovement() //Leo Monge: You need this code so the joystick detects absolute values.
         {

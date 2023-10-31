@@ -120,7 +120,7 @@ public class AdditionalCharacterHorizontalMovementOverride : CharacterHorizontal
             }
         }
         //{
-            //_movement.ChangeState(CharacterStates.MovementStates.Falling); Leo Monge. This was the original
+            //_movement.ChangeState(CharacterStates.MovementStates.Falling); Leo Monge. This was the original.
         //}
 
         // we apply instant acceleration if needed

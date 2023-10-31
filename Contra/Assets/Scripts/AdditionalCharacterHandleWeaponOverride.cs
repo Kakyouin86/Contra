@@ -41,7 +41,7 @@ public class AdditionalCharacterHandleWeaponOverride : CharacterHandleWeapon
         }
         else
         {
-            PlayAbilityStartFeedbacks(); //Leo Monge. This and the rest of the two lines are the ones originally here
+            PlayAbilityStartFeedbacks(); //Leo Monge. This and the rest of the two lines are the ones originally here.
             MMCharacterEvent.Trigger(_character, MMCharacterEventTypes.HandleWeapon, MMCharacterEvent.Moments.Start);
             CurrentWeapon.WeaponInputStart();
         }

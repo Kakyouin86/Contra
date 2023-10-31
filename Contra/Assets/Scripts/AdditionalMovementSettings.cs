@@ -34,9 +34,6 @@ public class AdditionalMovementSettings : MonoBehaviour
     public GameObject theTorso;
     public GameObject theLegs;
     public GameObject theBCLadder;
-    public bool startTimerBeforeNextAnim = false;
-    public float initialTimeBeforeNextAnim = 0.25f;
-    public float currentTimeBeforeNextAnim = 0.25f;
     public GameObject slopesDetector;
     public float originalRollDuration;
 
@@ -53,7 +50,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         character = GetComponent<Character>();
         theFirepoint = GameObject.FindWithTag("Firepoint");
         slopesDetector = GameObject.FindWithTag("SlopesDetector");
-        //theAnimator = GetComponent<Animator>();
+        theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>();
         theBCTrigger = GetComponent<BoxCollider2D>();
         theController.State.JustGotGrounded = true;
         //theWeapon = FindObjectOfType<Weapon>();
@@ -67,7 +64,7 @@ public class AdditionalMovementSettings : MonoBehaviour
     void Update()
     {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //Just the "Hold"
+        //Just the "Hold".
         if (player.GetButton(("HoldPosition")))
         {
             theAnimator.SetBool("Hold", true);
@@ -130,7 +127,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //This makes the Death bool to happen. Death trigger was NOT removed from the original script but I added a bool so it doesn't exit the animator.
+        //This makes the "Death" bool to happen. Death trigger was NOT removed from the original script but I added a bool so it doesn't exit the animator.
         if (character.ConditionState.CurrentState == CharacterStates.CharacterConditions.Dead)
         {
             theAnimator.SetBool("Death", true);
@@ -188,7 +185,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //This will detect horizontal ladders and assign the bool to the animator.
+        //This will detect horizontal ladders and assign the bool "HorizontalLadder" to the animator.
         if (horizontalLadder)
         {
             theAnimator.SetBool("HorizontalLadder", true);
@@ -198,7 +195,7 @@ public class AdditionalMovementSettings : MonoBehaviour
             theAnimator.SetBool("HorizontalLadder", false);
         }
 
-        //This makes that if the player is hang and presses down and Jump, it will go through. Also, the Coroutine associated to this.
+        //This makes that if the player is hanging and presses down+Jump, it will go down. Also, the CoRoutine associated to this.
         if ((player.GetAxis("Vertical") < 0) && (player.GetButton("Jump")) && horizontalLadder && !canNotDettach)
         {
             character.GetComponent<CharacterJump>().AbilityPermitted = false;
@@ -213,27 +210,6 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //This makes the animator stay on "shooting" if the "Fire" of the weapon is still active.
-        if (theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse)
-        {
-            currentTimeBeforeNextAnim = initialTimeBeforeNextAnim;
-            startTimerBeforeNextAnim = true;
-        }
-
-        if (startTimerBeforeNextAnim)
-        {
-            currentTimeBeforeNextAnim -= Time.deltaTime;
-            theAnimator.SetBool("TimerBeforeNextAnim", true);
-        }
-
-        if (currentTimeBeforeNextAnim <= 0.0f)
-        {
-            currentTimeBeforeNextAnim = initialTimeBeforeNextAnim;
-            startTimerBeforeNextAnim = false;
-            theAnimator.SetBool("TimerBeforeNextAnim", false);
-        }
-
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //This makes that if you are NOT in the water, then you can crouch again.
         if (!slopesDetector.GetComponent<Water>().isPlayerInWater)
         {
@@ -241,7 +217,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //This makes that if the character is rolling, the activate the flickers in Torso and Legs.
+        //This makes that if the character is rolling, then activate the flickers in Torso and Legs.
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.Rolling)
         {
             theTorso.GetComponent<FlashSprites>().run = true;
@@ -254,7 +230,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //This checks that if the Throw Grenade animation is playing.
+        //This checks if the Throw Grenade animation is playing.
         if (theAnimator.GetCurrentAnimatorStateInfo(1).IsName("Throw Grenade Straight"))
         {
             theAnimator.SetBool("ThrowGrenade", true);
@@ -276,7 +252,8 @@ public class AdditionalMovementSettings : MonoBehaviour
         character.GetComponent<CharacterJump>().AbilityPermitted = true;
     }
 
-    //This will detect horizontal ladders and assign the bool to the animator.
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //This will detect horizontal ladders and assign the bool to the animator.
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "HorizontalLadder" && character.MovementState.CurrentState == CharacterStates.MovementStates.LadderClimbing)

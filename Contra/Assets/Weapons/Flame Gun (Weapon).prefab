@@ -11022,9 +11022,9 @@ MonoBehaviour:
   Interruptable: 0
   InitializeOnStart: 0
   DelayBeforeUse: 0
-  DelayBeforeUseReleaseInterruption: 1
+  DelayBeforeUseReleaseInterruption: 0
   TimeBetweenUses: 0.5
-  TimeBetweenUsesReleaseInterruption: 1
+  TimeBetweenUsesReleaseInterruption: 0
   CooldownDuration: 0
   UseBurstMode: 0
   BurstLength: 1
@@ -11057,16 +11057,16 @@ MonoBehaviour:
   MirrorCharacterAnimatorParameters: 0
   EquippedAnimationParameter: 
   IdleAnimationParameter: IdleAnimationParameter
-  StartAnimationParameter: 
-  DelayBeforeUseAnimationParameter: 
-  SingleUseAnimationParameter: 
+  StartAnimationParameter: Delay1
+  DelayBeforeUseAnimationParameter: Delay2
+  SingleUseAnimationParameter: Delay3
   UseAnimationParameter: IdleShootingStraight
   DelayBetweenUsesAnimationParameter: DelayBetweenUses
-  InCooldownAnimationParameter: 
-  StopAnimationParameter: 
-  ReloadStartAnimationParameter: 
-  ReloadAnimationParameter: 
-  ReloadStopAnimationParameter: 
+  InCooldownAnimationParameter: Delay4
+  StopAnimationParameter: Delay5
+  ReloadStartAnimationParameter: Delay6
+  ReloadAnimationParameter: Delay7
+  ReloadStopAnimationParameter: Delay8
   WeaponAngleAnimationParameter: WeaponAngleAnimationParameter
   WeaponAngleRelativeAnimationParameter: WeaponAngleRelativeAnimationParameter
   WeaponStartMMFeedback: {fileID: 1557122528566623044}

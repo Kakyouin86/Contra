@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class OverridesInPlayer : MonoBehaviour
 {
+    //100% useless as of now
     public Character character;
     // Start is called before the first frame update
     void Start()
