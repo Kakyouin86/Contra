@@ -13903,9 +13903,6 @@ MonoBehaviour:
   theTorso: {fileID: 1973805546}
   theLegs: {fileID: 392121773}
   theBCLadder: {fileID: 1985355087}
-  startTimerBeforeNextAnim: 0
-  initialTimeBeforeNextAnim: 0
-  currentTimeBeforeNextAnim: 0
   slopesDetector: {fileID: 0}
   originalRollDuration: 0
 --- !u!114 &1038294705
@@ -14082,8 +14079,8 @@ MonoBehaviour:
   torsoTag: Torso
   machineGunLightsTag: MachineGunLights
   torsoObject: {fileID: 0}
-  machineGunObject: {fileID: 0}
-  torsoObjectActive: 1
+  machineGunLights: {fileID: 0}
+  torsoNoLights: 1
   machineGunActive: 0
   weaponInventory: {fileID: 0}
 --- !u!114 &1038294711
@@ -14165,11 +14162,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   machineGun: 0
   flameGun: 0
+  startTimerBeforeNextAnim: 0
+  initialTimeBeforeNextAnim: 0.05
+  currentTimeBeforeNextAnim: 0.05
   timerBeforeNextAnim: 0
   modifyTheMirror: 0
   theAnimator: {fileID: 0}
   animationNames: []
   weaponInventory: {fileID: 0}
+  theCharacterHandleWeapon: {fileID: 0}
 --- !u!1 &1039151515
 GameObject:
   m_ObjectHideFlags: 0
@@ -14683,7 +14684,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -228.99998, y: 149}
+  m_AnchoredPosition: {x: -228.99997, y: 149}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1066834779
@@ -15000,7 +15001,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -168.99998, y: 89}
+  m_AnchoredPosition: {x: -168.99997, y: 89}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1096386937
@@ -18416,7 +18417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 256, y: -28.00026}
+  m_AnchoredPosition: {x: 256, y: -28.000366}
   m_SizeDelta: {x: -522, y: -50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1243516504
@@ -25521,7 +25522,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -168.99998, y: 209}
+  m_AnchoredPosition: {x: -168.99997, y: 209}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1821347697

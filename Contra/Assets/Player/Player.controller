@@ -706,14 +706,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 0079cbde3d340154fb0fea2e378faa23, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1102 &-7306291023937896157
@@ -1502,14 +1502,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: cdcedb86f041b7a48a900da739e4ebff, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1102 &-4759390025510934384
@@ -2153,14 +2153,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 5b66e484f7c24d24884a1541e5d8ec2f, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1102 &-3295998367641866631
@@ -4859,10 +4859,10 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: e050337b0012b0142b8c0ab95c931dd9, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: isShooting
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
-  m_TimeParameter: 
+  m_TimeParameter: Speed
 --- !u!1101 &4315823844537337323
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -6016,14 +6016,14 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: a9708330a8d7e0f469d151734273c772, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: Mirror
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: 
   m_TimeParameter: Delay
 --- !u!1101 &7139909787203298113
@@ -6326,6 +6326,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: isShooting
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Hold
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4759390025510934384}
