@@ -21,7 +21,7 @@ TagManager:
   - Torso
   - Legs
   - MachineGunLights
-  - FireGunLights
+  - FlameGunLights
   - WeaponInventory
   layers:
   - Default

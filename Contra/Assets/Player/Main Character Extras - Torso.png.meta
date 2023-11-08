@@ -428,7 +428,7 @@ TextureImporter:
       name: Main Character Extras - Torso_15
       rect:
         serializedVersion: 2
-        x: 1602
+        x: 1691
         y: 0
         width: 89
         height: 70
@@ -441,6 +441,615 @@ TextureImporter:
       bones: []
       spriteID: 6116bd5cf6252d643b990f2befc15ef1
       internalID: -1969912376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_16
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b96c88754f6aa4d8e593559d4a715f
+      internalID: 754357906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_17
+      rect:
+        serializedVersion: 2
+        x: 1869
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c868bdd8f52ccbf4889aab2b8811e419
+      internalID: 601770155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_18
+      rect:
+        serializedVersion: 2
+        x: 1958
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35405d1583683334a96dfaebeac32735
+      internalID: -2003944533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_19
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f904f36b7aa437244b86f2fcd7146d2c
+      internalID: 1517239725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_20
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979ee0048216f9d4e8fff1a9b97f8428
+      internalID: 1786573792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_21
+      rect:
+        serializedVersion: 2
+        x: 2314
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d2d852d7ac06448a3faeac6c08115b
+      internalID: 1978157072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_22
+      rect:
+        serializedVersion: 2
+        x: 2403
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adeddfc284632944cae1cddc9965c351
+      internalID: -290257473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_23
+      rect:
+        serializedVersion: 2
+        x: 2492
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87f96a6c89ad8f4d86b1160a1c9362b
+      internalID: 534204076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_24
+      rect:
+        serializedVersion: 2
+        x: 2581
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e6655b3017f4545b367a635710d898
+      internalID: 1238041039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_25
+      rect:
+        serializedVersion: 2
+        x: 2670
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69798be6de9c45d46a45c635eaec9265
+      internalID: 1704200979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_26
+      rect:
+        serializedVersion: 2
+        x: 2759
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a39784174adb15d48aaf79011fd74674
+      internalID: -235968881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_27
+      rect:
+        serializedVersion: 2
+        x: 2937
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7150194ed9003243bff51bcfe412f65
+      internalID: 1525662058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_28
+      rect:
+        serializedVersion: 2
+        x: 3026
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ce476386a356e4f802d14501e2e509
+      internalID: 1336564337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_29
+      rect:
+        serializedVersion: 2
+        x: 3115
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 123f4fe337c910947b740b22c20be24f
+      internalID: -122927343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_30
+      rect:
+        serializedVersion: 2
+        x: 3204
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d4f5157596f424cae12ded70e2b42a
+      internalID: 1118178757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_31
+      rect:
+        serializedVersion: 2
+        x: 3293
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe10dbf5717e6342bf078a1ead33b50
+      internalID: -1084487326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_32
+      rect:
+        serializedVersion: 2
+        x: 3382
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e7201da87dfdf4e9f0c5d29dca5127
+      internalID: -2106360499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_33
+      rect:
+        serializedVersion: 2
+        x: 3560
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8f71c23309fe6941b94d31edaa335ea
+      internalID: 500502433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_34
+      rect:
+        serializedVersion: 2
+        x: 3649
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7315d5ed4f45ee7469d35ecb29b59f7f
+      internalID: -26970765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_35
+      rect:
+        serializedVersion: 2
+        x: 3738
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 418e39d97a1c92d48a6a67413e98052f
+      internalID: 1647706560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_36
+      rect:
+        serializedVersion: 2
+        x: 3827
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21dc0300a67c4534f9d3941eebbe373e
+      internalID: -825037907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_37
+      rect:
+        serializedVersion: 2
+        x: 3916
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6406ebb1e4042b04084b39242d2c7811
+      internalID: -620141934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_38
+      rect:
+        serializedVersion: 2
+        x: 4005
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce358398d3acde9498468b66c31a190f
+      internalID: 1458188744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_39
+      rect:
+        serializedVersion: 2
+        x: 4183
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77c4a52921f66548b21feb3c224a144
+      internalID: 2005515150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_40
+      rect:
+        serializedVersion: 2
+        x: 4272
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58b342a1ce09f64699d4c0224bc9ebb
+      internalID: -1400764305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_41
+      rect:
+        serializedVersion: 2
+        x: 4361
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43ebdf1c1b382d7408e89208b3315801
+      internalID: 840842854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_42
+      rect:
+        serializedVersion: 2
+        x: 4450
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04dc582906a000848b5d4f16ac8be519
+      internalID: 26034162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_43
+      rect:
+        serializedVersion: 2
+        x: 4539
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19196fdd29ba5a3469c0128782c0e4fa
+      internalID: 546875577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Character Extras - Torso_44
+      rect:
+        serializedVersion: 2
+        x: 4628
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b731e58bff1cc49a145e8ea0926932
+      internalID: 1659257562
       vertices: []
       indices: 
       edges: []
@@ -464,9 +1073,38 @@ TextureImporter:
       Main Character Extras - Torso_13: -648743737
       Main Character Extras - Torso_14: 1134171378
       Main Character Extras - Torso_15: -1969912376
+      Main Character Extras - Torso_16: 754357906
+      Main Character Extras - Torso_17: 601770155
+      Main Character Extras - Torso_18: -2003944533
+      Main Character Extras - Torso_19: 1517239725
       Main Character Extras - Torso_2: 1393538319
+      Main Character Extras - Torso_20: 1786573792
+      Main Character Extras - Torso_21: 1978157072
+      Main Character Extras - Torso_22: -290257473
+      Main Character Extras - Torso_23: 534204076
+      Main Character Extras - Torso_24: 1238041039
+      Main Character Extras - Torso_25: 1704200979
+      Main Character Extras - Torso_26: -235968881
+      Main Character Extras - Torso_27: 1525662058
+      Main Character Extras - Torso_28: 1336564337
+      Main Character Extras - Torso_29: -122927343
       Main Character Extras - Torso_3: 529122696
+      Main Character Extras - Torso_30: 1118178757
+      Main Character Extras - Torso_31: -1084487326
+      Main Character Extras - Torso_32: -2106360499
+      Main Character Extras - Torso_33: 500502433
+      Main Character Extras - Torso_34: -26970765
+      Main Character Extras - Torso_35: 1647706560
+      Main Character Extras - Torso_36: -825037907
+      Main Character Extras - Torso_37: -620141934
+      Main Character Extras - Torso_38: 1458188744
+      Main Character Extras - Torso_39: 2005515150
       Main Character Extras - Torso_4: 89879996
+      Main Character Extras - Torso_40: -1400764305
+      Main Character Extras - Torso_41: 840842854
+      Main Character Extras - Torso_42: 26034162
+      Main Character Extras - Torso_43: 546875577
+      Main Character Extras - Torso_44: 1659257562
       Main Character Extras - Torso_5: -1905614698
       Main Character Extras - Torso_6: 263894108
       Main Character Extras - Torso_7: 1927980096

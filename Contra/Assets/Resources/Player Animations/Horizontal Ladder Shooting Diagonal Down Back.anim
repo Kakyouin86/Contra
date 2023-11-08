@@ -40,6 +40,17 @@ AnimationClip:
     classID: 212
     script: {fileID: 0}
     flags: 2
+  - serializedVersion: 2
+    curve:
+    - time: 0
+      value: {fileID: -1417716549, guid: f96260ed0f061804798089fcefe6588b, type: 3}
+    - time: 0.05
+      value: {fileID: -1356756158, guid: f96260ed0f061804798089fcefe6588b, type: 3}
+    attribute: m_Sprite
+    path: Flame Gun Lights
+    classID: 212
+    script: {fileID: 0}
+    flags: 2
   m_SampleRate: 20
   m_WrapMode: 0
   m_Bounds:
@@ -65,11 +76,22 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
       isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 3131277271
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: -756233395, guid: 71daf959624085e4cbe661032c4fb7dd, type: 3}
     - {fileID: 946493190, guid: 71daf959624085e4cbe661032c4fb7dd, type: 3}
     - {fileID: -1387819168, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
     - {fileID: -1615513004, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - {fileID: -1417716549, guid: f96260ed0f061804798089fcefe6588b, type: 3}
+    - {fileID: -1356756158, guid: f96260ed0f061804798089fcefe6588b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

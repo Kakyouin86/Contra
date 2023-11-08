@@ -151,6 +151,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Bullet - 01_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 26
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca287871a721e2d4a93cd126a857c4dd
+      internalID: 1796446734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet - 01_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 26
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb8b4d8ad66fa44fafc48e93f23dca6
+      internalID: -399110714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -164,6 +206,8 @@ TextureImporter:
     nameFileIdTable:
       Bullet - 01_0: -171677877
       Bullet - 01_1: -1497195010
+      Bullet - 01_2: 1796446734
+      Bullet - 01_3: -399110714
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

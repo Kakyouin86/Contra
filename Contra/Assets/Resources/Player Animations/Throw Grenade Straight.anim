@@ -34,13 +34,26 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -359887118, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+      value: {fileID: -222292664, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
     - time: 0.033333335
-      value: {fileID: 1048950309, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+      value: {fileID: -437690837, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
     - time: 0.06666667
-      value: {fileID: 1283072439, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+      value: {fileID: 1393538319, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
     attribute: m_Sprite
     path: Machine Gun Lights
+    classID: 212
+    script: {fileID: 0}
+    flags: 2
+  - serializedVersion: 2
+    curve:
+    - time: 0
+      value: {fileID: -222292664, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
+    - time: 0.033333335
+      value: {fileID: -437690837, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
+    - time: 0.06666667
+      value: {fileID: 1393538319, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
+    attribute: m_Sprite
+    path: Flame Gun Lights
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -69,13 +82,25 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
       isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 3131277271
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: -222292664, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
     - {fileID: -437690837, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
     - {fileID: 1393538319, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
-    - {fileID: -359887118, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
-    - {fileID: 1048950309, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
-    - {fileID: 1283072439, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - {fileID: -222292664, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
+    - {fileID: -437690837, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
+    - {fileID: 1393538319, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
+    - {fileID: -222292664, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
+    - {fileID: -437690837, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
+    - {fileID: 1393538319, guid: 593423d1c2e9b2745b64509b808c9fd8, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

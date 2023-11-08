@@ -37,6 +37,44 @@ AnimationClip:
     classID: 212
     script: {fileID: 0}
     flags: 2
+  - serializedVersion: 2
+    curve:
+    - time: 0
+      value: {fileID: 1969395708, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - time: 0.1
+      value: {fileID: 503775896, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - time: 0.2
+      value: {fileID: -172807334, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - time: 0.3
+      value: {fileID: -1675180019, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - time: 0.4
+      value: {fileID: -732318417, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - time: 0.5
+      value: {fileID: 1422451710, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    attribute: m_Sprite
+    path: Machine Gun Lights
+    classID: 212
+    script: {fileID: 0}
+    flags: 2
+  - serializedVersion: 2
+    curve:
+    - time: 0
+      value: {fileID: -1915664858, guid: f96260ed0f061804798089fcefe6588b, type: 3}
+    - time: 0.1
+      value: {fileID: -1300576436, guid: f96260ed0f061804798089fcefe6588b, type: 3}
+    - time: 0.2
+      value: {fileID: -1052468298, guid: f96260ed0f061804798089fcefe6588b, type: 3}
+    - time: 0.3
+      value: {fileID: -912848745, guid: f96260ed0f061804798089fcefe6588b, type: 3}
+    - time: 0.4
+      value: {fileID: 861033131, guid: f96260ed0f061804798089fcefe6588b, type: 3}
+    - time: 0.5
+      value: {fileID: -1164637419, guid: f96260ed0f061804798089fcefe6588b, type: 3}
+    attribute: m_Sprite
+    path: Flame Gun Lights
+    classID: 212
+    script: {fileID: 0}
+    flags: 2
   m_SampleRate: 10
   m_WrapMode: 0
   m_Bounds:
@@ -53,6 +91,24 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
       isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 3857672697
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 3131277271
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: 380293277, guid: 71daf959624085e4cbe661032c4fb7dd, type: 3}
     - {fileID: 960344844, guid: 71daf959624085e4cbe661032c4fb7dd, type: 3}
@@ -60,6 +116,18 @@ AnimationClip:
     - {fileID: 1101923983, guid: 71daf959624085e4cbe661032c4fb7dd, type: 3}
     - {fileID: -997272395, guid: 71daf959624085e4cbe661032c4fb7dd, type: 3}
     - {fileID: 47614552, guid: 71daf959624085e4cbe661032c4fb7dd, type: 3}
+    - {fileID: 1969395708, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - {fileID: 503775896, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - {fileID: -172807334, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - {fileID: -1675180019, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - {fileID: -732318417, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - {fileID: 1422451710, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - {fileID: -1915664858, guid: f96260ed0f061804798089fcefe6588b, type: 3}
+    - {fileID: -1300576436, guid: f96260ed0f061804798089fcefe6588b, type: 3}
+    - {fileID: -1052468298, guid: f96260ed0f061804798089fcefe6588b, type: 3}
+    - {fileID: -912848745, guid: f96260ed0f061804798089fcefe6588b, type: 3}
+    - {fileID: 861033131, guid: f96260ed0f061804798089fcefe6588b, type: 3}
+    - {fileID: -1164637419, guid: f96260ed0f061804798089fcefe6588b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

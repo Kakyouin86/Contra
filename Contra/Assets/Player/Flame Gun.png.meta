@@ -1,0 +1,3009 @@
+fileFormatVersion: 2
+guid: f96260ed0f061804798089fcefe6588b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Flame Gun_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 184636d0b1abe634990312362bbc275f
+      internalID: 1808169705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41510f27aaa6cd94c96c3ac90e4e3d51
+      internalID: 2004816674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_2
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3167702098e4c404a907367e50d40af6
+      internalID: -446058679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_3
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00bfb1c133284e74b812437940a65010
+      internalID: -1605743384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_4
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7b9df10d897b343ac7b0201274b057
+      internalID: -1635003779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_5
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003417388e87e7e4a8f1391bf924a869
+      internalID: -188758587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_6
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa5aa1bdbcc798745b42210d282d9491
+      internalID: -1670939550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_7
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80ae0cb86204a9f4e8c294ac5374d304
+      internalID: 73331501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_8
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 843c98a7aed190347bfbb86ec0a226ed
+      internalID: -2041095291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_9
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6ef5f9d287121469714f0d66436bfe
+      internalID: 1437113312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_10
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e080ea18a082e4e8c549b712454559
+      internalID: 1722933931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_11
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e77ef9032bf197342a9a4af416a5862c
+      internalID: 1078775887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_12
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 638ee2b3593753d46bb60812197c4255
+      internalID: 74044500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_13
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203a70385a32a76489264f715b4d18d4
+      internalID: 1372440730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_14
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362fecabafbddd4468c34e419cc09667
+      internalID: 355367066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_15
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c9d38eec3fdd434eb33b8cc5977aa45
+      internalID: -1037132744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_16
+      rect:
+        serializedVersion: 2
+        x: 1513
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad170daf3eab9654eae86ad40297b519
+      internalID: -496018345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_17
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84d0b9de7b70f024d99bc9f5b4ef4a1b
+      internalID: -576655235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_18
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4797bbcd2ac86548b5cb22c58fbd968
+      internalID: -569291196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_19
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3548de1da86fd4eae3404f0f51a167
+      internalID: 1347612807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_20
+      rect:
+        serializedVersion: 2
+        x: 1869
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d028a9c26950c4a9dfcb44cbb96fc3
+      internalID: -1336236826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_21
+      rect:
+        serializedVersion: 2
+        x: 1958
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e2dc4ad5d8be6446b4d2879ee94e749
+      internalID: 1713228112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_22
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9232acd02e7694fa3262bda10c80ea
+      internalID: -1700824975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_23
+      rect:
+        serializedVersion: 2
+        x: 2225
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff8364c0c98525742a6128e4034b9e47
+      internalID: -1133934403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_24
+      rect:
+        serializedVersion: 2
+        x: 2314
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53758b3b2deebc649a1403d0ec1b580b
+      internalID: -870491624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_25
+      rect:
+        serializedVersion: 2
+        x: 2403
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5da1c91b0cfc1647bdac9ed2fedb71e
+      internalID: 671669099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_26
+      rect:
+        serializedVersion: 2
+        x: 2492
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7142c5a869307ea449d98142b7b21ab8
+      internalID: 946883666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_27
+      rect:
+        serializedVersion: 2
+        x: 2581
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212c2a2f7e12db44f85b74327f56f8d8
+      internalID: -330993767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_28
+      rect:
+        serializedVersion: 2
+        x: 2670
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2adf35ac3e163c4a98c92a946a9c02b
+      internalID: 2122507272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_29
+      rect:
+        serializedVersion: 2
+        x: 2848
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de3c3d23dbfb061499ad4db89baa1c29
+      internalID: 1529707296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_30
+      rect:
+        serializedVersion: 2
+        x: 2937
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 984405185e4bc6441be3f9c6fecdc17a
+      internalID: -1647922942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_31
+      rect:
+        serializedVersion: 2
+        x: 3026
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca70790abea67934caf20d8d04a590ab
+      internalID: 582272603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_32
+      rect:
+        serializedVersion: 2
+        x: 3115
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4e6c5db9aa8f54588bd9011d68d2eb
+      internalID: -216269311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_33
+      rect:
+        serializedVersion: 2
+        x: 3204
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90e793e175d8f042aeae982062e74ca
+      internalID: 1441361857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_34
+      rect:
+        serializedVersion: 2
+        x: 3293
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a714569976a0c4e4e86d192463b592e4
+      internalID: 1638645605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_35
+      rect:
+        serializedVersion: 2
+        x: 3382
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b10bdb466ed2a348aeb08e87eb6c6db
+      internalID: 123303715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_36
+      rect:
+        serializedVersion: 2
+        x: 3471
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ae59318dc436e46913fb268890f14e
+      internalID: 12644162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_37
+      rect:
+        serializedVersion: 2
+        x: 3560
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af07ba00b0edafe4e8c4f7c0dab23a8b
+      internalID: 1817132866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_38
+      rect:
+        serializedVersion: 2
+        x: 3649
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99807a43ed30e8444a8d1aede0e505f8
+      internalID: -24412879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_39
+      rect:
+        serializedVersion: 2
+        x: 3738
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da358722c9ae38c47afa486e67b8d5ac
+      internalID: 445687304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_40
+      rect:
+        serializedVersion: 2
+        x: 3827
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e32dc6c23fcec4f8a57e3455971683
+      internalID: -1239631095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_41
+      rect:
+        serializedVersion: 2
+        x: 4005
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76c2382ac390824f9d76b19dfd038db
+      internalID: -1915664858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_42
+      rect:
+        serializedVersion: 2
+        x: 4094
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df00ce8b26f91b94386f9bdd08170211
+      internalID: -1300576436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_43
+      rect:
+        serializedVersion: 2
+        x: 4183
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9cfce3951880ce4ea562af9c1be5b95
+      internalID: -1052468298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_44
+      rect:
+        serializedVersion: 2
+        x: 4272
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6591dbcd00a3cc44b5364e7de7cb7f4
+      internalID: -912848745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_45
+      rect:
+        serializedVersion: 2
+        x: 4361
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 567b63bff0e161f499ebfdaf8244cf81
+      internalID: 861033131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_46
+      rect:
+        serializedVersion: 2
+        x: 4450
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb50a19fa5acf74f918d275ed50c6bf
+      internalID: -1164637419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_47
+      rect:
+        serializedVersion: 2
+        x: 4628
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f871765816039e419557c7720c485c4
+      internalID: -2025693450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_48
+      rect:
+        serializedVersion: 2
+        x: 4717
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23fe6d3936ad7d94083245001ced2bf2
+      internalID: -989328240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_49
+      rect:
+        serializedVersion: 2
+        x: 4806
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145fc70a5cfe1df4e89d75b0e0138a6d
+      internalID: 1168535200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_50
+      rect:
+        serializedVersion: 2
+        x: 4895
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ab48fafce31d441bd399c3b508b00d
+      internalID: 1013414242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_51
+      rect:
+        serializedVersion: 2
+        x: 4984
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eb9bd0b08fe1164aa81496fc1f15275
+      internalID: 1522188894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_52
+      rect:
+        serializedVersion: 2
+        x: 5073
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c65b3b8a45515743b4ea8b7564e41e8
+      internalID: 480882477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_53
+      rect:
+        serializedVersion: 2
+        x: 5251
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6fcf119cf4823847a3c617923a321bd
+      internalID: 1777424031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_54
+      rect:
+        serializedVersion: 2
+        x: 5340
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568eb4281542c884085b4174171e2b19
+      internalID: -306217855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_55
+      rect:
+        serializedVersion: 2
+        x: 5429
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14745ea38b584ec459e44d9d6c583803
+      internalID: -2068286638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_56
+      rect:
+        serializedVersion: 2
+        x: 5518
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4da8e661b7948448ac8db48c6639d17
+      internalID: -221701162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_57
+      rect:
+        serializedVersion: 2
+        x: 5607
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9105f0d0860ad914c8c1dcba9bd2e396
+      internalID: -376487368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_58
+      rect:
+        serializedVersion: 2
+        x: 5696
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 337bd058ffc1d1744948236f0fac2da5
+      internalID: -756137636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_59
+      rect:
+        serializedVersion: 2
+        x: 5874
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ddd0bf45354484ab24daf6c4fc0a16
+      internalID: -259085541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_60
+      rect:
+        serializedVersion: 2
+        x: 5963
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f299100c590fbb43b1cda902aea15c2
+      internalID: -1224396201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_61
+      rect:
+        serializedVersion: 2
+        x: 6052
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f97e37af89d37544ab1a5b3fed77bb5
+      internalID: 1218245674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_62
+      rect:
+        serializedVersion: 2
+        x: 6141
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 898852b30e5e95a41b20516ea4ef9790
+      internalID: -1754573313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_63
+      rect:
+        serializedVersion: 2
+        x: 6230
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eeba09f7367fc646a3ef52de75ea5c3
+      internalID: 1907791737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_64
+      rect:
+        serializedVersion: 2
+        x: 6319
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c441eb7e26f4ab42b556d8a9931ef42
+      internalID: -1577811906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_65
+      rect:
+        serializedVersion: 2
+        x: 6497
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd05a4d7d3f687b41b2f4010152e5d12
+      internalID: -932537634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_66
+      rect:
+        serializedVersion: 2
+        x: 6586
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea82cfaf734930d4eb40461a007359d4
+      internalID: -638599497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_67
+      rect:
+        serializedVersion: 2
+        x: 6675
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f7fb4d24892d074381e0673a2ae9bcf
+      internalID: 250950701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_68
+      rect:
+        serializedVersion: 2
+        x: 6764
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de31e6bcce562ba4dacd003b760ff4c2
+      internalID: -1128606213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_69
+      rect:
+        serializedVersion: 2
+        x: 6942
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6435eaa9c9a90eb47a86d5991db0c062
+      internalID: -530533192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_70
+      rect:
+        serializedVersion: 2
+        x: 7031
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 703230d18b9053c48a70c0e5e833ea55
+      internalID: -621456019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_71
+      rect:
+        serializedVersion: 2
+        x: 7120
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750ee7820dac6ca44a862d72404669d7
+      internalID: 1491313307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_72
+      rect:
+        serializedVersion: 2
+        x: 7209
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d855a67bbfddbe4f94ce44eca9ad93a
+      internalID: 691082614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_73
+      rect:
+        serializedVersion: 2
+        x: 7298
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 316123afbedc81f469df12c772b5e75e
+      internalID: 1433697301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_74
+      rect:
+        serializedVersion: 2
+        x: 7387
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d14ce24fd4e235b4c80d75ca0ebf0ea0
+      internalID: -713226648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_75
+      rect:
+        serializedVersion: 2
+        x: 7476
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd4fd38c2c75ead488fec00ee8a62e04
+      internalID: -1929857083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_76
+      rect:
+        serializedVersion: 2
+        x: 7565
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 021b02146a19c6c4887018c338157fc8
+      internalID: -1678451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_77
+      rect:
+        serializedVersion: 2
+        x: 7743
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e72dc2038f421340abea98ce9804e16
+      internalID: -803858790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_78
+      rect:
+        serializedVersion: 2
+        x: 7832
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 659aa92afa6476a40a95d3e6209abd78
+      internalID: -645960197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_79
+      rect:
+        serializedVersion: 2
+        x: 7921
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3f5660f602be5a42a17f0c936be30bd
+      internalID: 343311288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_80
+      rect:
+        serializedVersion: 2
+        x: 8010
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb0a9e82eec00be4493d3f57b33a0b23
+      internalID: 828287474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_81
+      rect:
+        serializedVersion: 2
+        x: 8188
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a09946fb58f21d42857d141503c3659
+      internalID: 1920155292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_82
+      rect:
+        serializedVersion: 2
+        x: 8366
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd0272d8056b2f4ea0f8626bea68e6a
+      internalID: -1297157511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_83
+      rect:
+        serializedVersion: 2
+        x: 8544
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0d9919bc723ea49bfa087e0abe9486
+      internalID: -1307485374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_84
+      rect:
+        serializedVersion: 2
+        x: 9968
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b09f8eeffefc94caa577b4e284096f
+      internalID: -1490416966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_85
+      rect:
+        serializedVersion: 2
+        x: 10057
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77dd71f798d3e5f479528e30545bf876
+      internalID: -1179239956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_86
+      rect:
+        serializedVersion: 2
+        x: 10146
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ccc0fcc714dfc4faa4b322c45fc265
+      internalID: -917710167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_87
+      rect:
+        serializedVersion: 2
+        x: 10235
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 170c6ef931944dc41a59569b83bce8cb
+      internalID: 1686983731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_88
+      rect:
+        serializedVersion: 2
+        x: 10324
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca7bc3023e0e1e540944a8f5e4b5f5c2
+      internalID: 254801193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_89
+      rect:
+        serializedVersion: 2
+        x: 10413
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c8277517536374aab38a422e3319d8
+      internalID: -739590738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_90
+      rect:
+        serializedVersion: 2
+        x: 10502
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d455307068dc79049a1771e8a4b5b3b3
+      internalID: -2110541112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_91
+      rect:
+        serializedVersion: 2
+        x: 10591
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e589071b6d30f7244b2f09d688fc1b46
+      internalID: -2061341540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_92
+      rect:
+        serializedVersion: 2
+        x: 10680
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 645077d2cc4d3e14cace0d33b304d7be
+      internalID: -530155451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_93
+      rect:
+        serializedVersion: 2
+        x: 10769
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cded892303234c446b218de4520b127b
+      internalID: -1386034121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_94
+      rect:
+        serializedVersion: 2
+        x: 10947
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29379cff16d174548a056db5faba32ac
+      internalID: -1151985580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_95
+      rect:
+        serializedVersion: 2
+        x: 11036
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 206e7ad5c5d05a847b1f360457abbe52
+      internalID: -290982128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_96
+      rect:
+        serializedVersion: 2
+        x: 11125
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de11c04436c2e1d4184bad5a2d515b04
+      internalID: 541583957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_97
+      rect:
+        serializedVersion: 2
+        x: 11214
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c41c3e40b730492439255843b7a3f84c
+      internalID: -238051277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_98
+      rect:
+        serializedVersion: 2
+        x: 11303
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee3dc0a2ec7972445bceed8acc310eee
+      internalID: 1771312037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_99
+      rect:
+        serializedVersion: 2
+        x: 11392
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67789a11a0e4d094e9552b799c0d704c
+      internalID: 1189538683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_100
+      rect:
+        serializedVersion: 2
+        x: 11481
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583bb60a29582514fbaa4a2d4e6ac84e
+      internalID: -258515700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_101
+      rect:
+        serializedVersion: 2
+        x: 11659
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4025d34366a35f54b81c7f4d6a1f32fd
+      internalID: -1612494837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_102
+      rect:
+        serializedVersion: 2
+        x: 11748
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48124299e4adf6c4cbe787b643205b63
+      internalID: -901301374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_103
+      rect:
+        serializedVersion: 2
+        x: 12015
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b8203525916db478fe09acb1a31365
+      internalID: 1323662363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_104
+      rect:
+        serializedVersion: 2
+        x: 12104
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bff32a9880491e248970f469b19820fb
+      internalID: 1633283116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_105
+      rect:
+        serializedVersion: 2
+        x: 12371
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2122552d811b124bae40cb22df8768a
+      internalID: 721776641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_106
+      rect:
+        serializedVersion: 2
+        x: 12460
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 350fc2102cf44e24592e2cb589d6369f
+      internalID: -62403060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_107
+      rect:
+        serializedVersion: 2
+        x: 12549
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b32a966f837ce50499892a5e34cec941
+      internalID: -885578279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_108
+      rect:
+        serializedVersion: 2
+        x: 12638
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea7f1496372ec04d8770eaaa6a41342
+      internalID: -1039192229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_109
+      rect:
+        serializedVersion: 2
+        x: 12727
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0a38fa526ca6e4895e76916cffba1a
+      internalID: -1808588798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_110
+      rect:
+        serializedVersion: 2
+        x: 12816
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e80e3752f8310f84cb3bb38dccce6023
+      internalID: 1586526409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_111
+      rect:
+        serializedVersion: 2
+        x: 12905
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f12bffe00537242bd92214ce2f9d3f
+      internalID: 543690740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_112
+      rect:
+        serializedVersion: 2
+        x: 12994
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d83bcd45a0633654586e524b5d9288b2
+      internalID: 30608015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_113
+      rect:
+        serializedVersion: 2
+        x: 13083
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de47da8c4fd1594997991dceeb3e12d
+      internalID: -199146587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_114
+      rect:
+        serializedVersion: 2
+        x: 13172
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d870c20ae008d94eb4e50c9af79f0a0
+      internalID: -147105486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_115
+      rect:
+        serializedVersion: 2
+        x: 13261
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9499b9cea2f2ad4f9d6f2bb2a61b038
+      internalID: 260832035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_116
+      rect:
+        serializedVersion: 2
+        x: 13350
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ab2a4208b2093c40ac6727f0603d3b4
+      internalID: -49420165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_117
+      rect:
+        serializedVersion: 2
+        x: 13528
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 406cd0f5b6a69284496fe96fb29c522c
+      internalID: -442515792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_118
+      rect:
+        serializedVersion: 2
+        x: 13617
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa38b04c48fe06f4fa0308cb6743a5ac
+      internalID: -2101432078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_119
+      rect:
+        serializedVersion: 2
+        x: 13706
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d0584a349307a4599263d7c0e6eb59
+      internalID: -1147793209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_120
+      rect:
+        serializedVersion: 2
+        x: 13884
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc8cf061dc6a49245a104cc90f37d0df
+      internalID: -158935613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_121
+      rect:
+        serializedVersion: 2
+        x: 13973
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8fabf6bbc5c39144be2254fb5c9fe96
+      internalID: -2112071978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_122
+      rect:
+        serializedVersion: 2
+        x: 14062
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40dae3c12bb9816439d55992c746ad82
+      internalID: 201089605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_123
+      rect:
+        serializedVersion: 2
+        x: 14151
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3386e495351e1ae44b4583da8d50f204
+      internalID: 211174680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_124
+      rect:
+        serializedVersion: 2
+        x: 14329
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c97051e3f4d5d1a449735e78fe1e8517
+      internalID: 1759016792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_125
+      rect:
+        serializedVersion: 2
+        x: 14507
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a38ec9671818947ad44d6f9fa9926c
+      internalID: -1356756158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_126
+      rect:
+        serializedVersion: 2
+        x: 14596
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367c9989c9640204680ed52debd5e435
+      internalID: -1417716549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_127
+      rect:
+        serializedVersion: 2
+        x: 14685
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1b656ec423ee14387e2f62e3ed3275
+      internalID: -336397036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_128
+      rect:
+        serializedVersion: 2
+        x: 14774
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 063e2f8001ecff0459323316253691a1
+      internalID: 72961715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_129
+      rect:
+        serializedVersion: 2
+        x: 14863
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3243cd0d95387124d99b7a7bf0d3dc1a
+      internalID: -690940208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame Gun_130
+      rect:
+        serializedVersion: 2
+        x: 14952
+        y: 0
+        width: 89
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f60a49b6faf9024ead1acce5797dd61
+      internalID: 1752348676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Flame Gun_0: 1808169705
+      Flame Gun_1: 2004816674
+      Flame Gun_10: 1722933931
+      Flame Gun_100: -258515700
+      Flame Gun_101: -1612494837
+      Flame Gun_102: -901301374
+      Flame Gun_103: 1323662363
+      Flame Gun_104: 1633283116
+      Flame Gun_105: 721776641
+      Flame Gun_106: -62403060
+      Flame Gun_107: -885578279
+      Flame Gun_108: -1039192229
+      Flame Gun_109: -1808588798
+      Flame Gun_11: 1078775887
+      Flame Gun_110: 1586526409
+      Flame Gun_111: 543690740
+      Flame Gun_112: 30608015
+      Flame Gun_113: -199146587
+      Flame Gun_114: -147105486
+      Flame Gun_115: 260832035
+      Flame Gun_116: -49420165
+      Flame Gun_117: -442515792
+      Flame Gun_118: -2101432078
+      Flame Gun_119: -1147793209
+      Flame Gun_12: 74044500
+      Flame Gun_120: -158935613
+      Flame Gun_121: -2112071978
+      Flame Gun_122: 201089605
+      Flame Gun_123: 211174680
+      Flame Gun_124: 1759016792
+      Flame Gun_125: -1356756158
+      Flame Gun_126: -1417716549
+      Flame Gun_127: -336397036
+      Flame Gun_128: 72961715
+      Flame Gun_129: -690940208
+      Flame Gun_13: 1372440730
+      Flame Gun_130: 1752348676
+      Flame Gun_14: 355367066
+      Flame Gun_15: -1037132744
+      Flame Gun_16: -496018345
+      Flame Gun_17: -576655235
+      Flame Gun_18: -569291196
+      Flame Gun_19: 1347612807
+      Flame Gun_2: -446058679
+      Flame Gun_20: -1336236826
+      Flame Gun_21: 1713228112
+      Flame Gun_22: -1700824975
+      Flame Gun_23: -1133934403
+      Flame Gun_24: -870491624
+      Flame Gun_25: 671669099
+      Flame Gun_26: 946883666
+      Flame Gun_27: -330993767
+      Flame Gun_28: 2122507272
+      Flame Gun_29: 1529707296
+      Flame Gun_3: -1605743384
+      Flame Gun_30: -1647922942
+      Flame Gun_31: 582272603
+      Flame Gun_32: -216269311
+      Flame Gun_33: 1441361857
+      Flame Gun_34: 1638645605
+      Flame Gun_35: 123303715
+      Flame Gun_36: 12644162
+      Flame Gun_37: 1817132866
+      Flame Gun_38: -24412879
+      Flame Gun_39: 445687304
+      Flame Gun_4: -1635003779
+      Flame Gun_40: -1239631095
+      Flame Gun_41: -1915664858
+      Flame Gun_42: -1300576436
+      Flame Gun_43: -1052468298
+      Flame Gun_44: -912848745
+      Flame Gun_45: 861033131
+      Flame Gun_46: -1164637419
+      Flame Gun_47: -2025693450
+      Flame Gun_48: -989328240
+      Flame Gun_49: 1168535200
+      Flame Gun_5: -188758587
+      Flame Gun_50: 1013414242
+      Flame Gun_51: 1522188894
+      Flame Gun_52: 480882477
+      Flame Gun_53: 1777424031
+      Flame Gun_54: -306217855
+      Flame Gun_55: -2068286638
+      Flame Gun_56: -221701162
+      Flame Gun_57: -376487368
+      Flame Gun_58: -756137636
+      Flame Gun_59: -259085541
+      Flame Gun_6: -1670939550
+      Flame Gun_60: -1224396201
+      Flame Gun_61: 1218245674
+      Flame Gun_62: -1754573313
+      Flame Gun_63: 1907791737
+      Flame Gun_64: -1577811906
+      Flame Gun_65: -932537634
+      Flame Gun_66: -638599497
+      Flame Gun_67: 250950701
+      Flame Gun_68: -1128606213
+      Flame Gun_69: -530533192
+      Flame Gun_7: 73331501
+      Flame Gun_70: -621456019
+      Flame Gun_71: 1491313307
+      Flame Gun_72: 691082614
+      Flame Gun_73: 1433697301
+      Flame Gun_74: -713226648
+      Flame Gun_75: -1929857083
+      Flame Gun_76: -1678451
+      Flame Gun_77: -803858790
+      Flame Gun_78: -645960197
+      Flame Gun_79: 343311288
+      Flame Gun_8: -2041095291
+      Flame Gun_80: 828287474
+      Flame Gun_81: 1920155292
+      Flame Gun_82: -1297157511
+      Flame Gun_83: -1307485374
+      Flame Gun_84: -1490416966
+      Flame Gun_85: -1179239956
+      Flame Gun_86: -917710167
+      Flame Gun_87: 1686983731
+      Flame Gun_88: 254801193
+      Flame Gun_89: -739590738
+      Flame Gun_9: 1437113312
+      Flame Gun_90: -2110541112
+      Flame Gun_91: -2061341540
+      Flame Gun_92: -530155451
+      Flame Gun_93: -1386034121
+      Flame Gun_94: -1151985580
+      Flame Gun_95: -290982128
+      Flame Gun_96: 541583957
+      Flame Gun_97: -238051277
+      Flame Gun_98: 1771312037
+      Flame Gun_99: 1189538683
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
