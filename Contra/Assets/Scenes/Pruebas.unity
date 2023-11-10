@@ -4733,12 +4733,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392121773}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d3f2740b6f017143bfd805cd4db1ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashMaterial: {fileID: 2100000, guid: f5a11713a2c3ff041954676124d14094, type: 2}
+  flashMaterial: {fileID: 0}
   flashDuration: 0.2
   totalFlickerDuration: 0.35
   flickerTimer: 0
@@ -13984,11 +13984,14 @@ MonoBehaviour:
   jumpingSizeY: 1.45
   isNotCharacterV3: 0
   theRippleEffect: {fileID: 1392239207}
-  theTorso: {fileID: 1973805546}
-  theLegs: {fileID: 392121773}
+  theTorso: {fileID: 0}
+  theLegs: {fileID: 0}
+  theTorsoMachineGunLights: {fileID: 0}
+  theTorsoFlameGunLights: {fileID: 0}
   theBCLadder: {fileID: 1985355087}
   slopesDetector: {fileID: 0}
-  originalRollDuration: 0
+  originalMaterial: {fileID: 0}
+  flashMaterial: {fileID: 2100000, guid: 1a55358fc5a5c844da85a515c70abf1a, type: 2}
 --- !u!114 &1038294705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14170,6 +14173,10 @@ MonoBehaviour:
   machineGunActive: 0
   flameGunActive: 0
   weaponInventory: {fileID: 0}
+  torsoSpriteRenderer: {fileID: 0}
+  legsSpriteRenderer: {fileID: 0}
+  originalMaterial: {fileID: 0}
+  flameGunMaterial: {fileID: 2100000, guid: 2e1344b4324b35b4b939e02da8dc3e48, type: 2}
 --- !u!114 &1038294711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14252,8 +14259,6 @@ MonoBehaviour:
   startTimerBeforeNextAnim: 0
   initialTimeBeforeNextAnim: 0.05
   currentTimeBeforeNextAnim: 0.05
-  timerBeforeNextAnim: 0
-  modifyTheMirror: 0
   theAnimator: {fileID: 0}
   animationNames: []
   weaponInventory: {fileID: 0}
@@ -18504,7 +18509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 256, y: -28.000366}
+  m_AnchoredPosition: {x: 256, y: -28}
   m_SizeDelta: {x: -522, y: -50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1243516504
@@ -27836,12 +27841,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973805546}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d3f2740b6f017143bfd805cd4db1ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashMaterial: {fileID: 2100000, guid: f5a11713a2c3ff041954676124d14094, type: 2}
+  flashMaterial: {fileID: 0}
   flashDuration: 0.2
   totalFlickerDuration: 0.35
   flickerTimer: 0

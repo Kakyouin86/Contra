@@ -33,9 +33,13 @@ public class AdditionalMovementSettings : MonoBehaviour
     public GameObject theRippleEffect;
     public GameObject theTorso;
     public GameObject theLegs;
+    public GameObject theTorsoMachineGunLights;
+    public GameObject theTorsoFlameGunLights;
     public GameObject theBCLadder;
     public GameObject slopesDetector;
-    public float originalRollDuration;
+    //public float originalRollDuration;
+    public Material originalMaterial;
+    public Material flashMaterial;
 
     private void Awake()
     {
@@ -57,9 +61,14 @@ public class AdditionalMovementSettings : MonoBehaviour
         //weaponAim = GameObject.FindWithTag("WeaponAim").GetComponent<WeaponAim>();
         theOriginalBoxCollider2DSize = new Vector3(theBCTrigger.size.x, theBCTrigger.size.y);
         theOriginalBoxCollider2DOffset = new Vector3(theBCTrigger.offset.x, theBCTrigger.offset.y);
-        originalRollDuration = GetComponent<CharacterRoll>().RollDuration;
-        theTorso.GetComponent<FlashSprites>().totalFlickerDuration = originalRollDuration;
-        theLegs.GetComponent<FlashSprites>().totalFlickerDuration = originalRollDuration;
+        //originalRollDuration = GetComponent<CharacterRoll>().RollDuration;
+        //theTorso.GetComponent<FlashSprites>().totalFlickerDuration = originalRollDuration;
+        //theLegs.GetComponent<FlashSprites>().totalFlickerDuration = originalRollDuration;
+        theTorso = GameObject.FindWithTag("Torso");
+        theLegs = GameObject.FindWithTag("Legs");
+        theTorsoMachineGunLights = GameObject.FindWithTag("MachineGunLights");
+        theTorsoFlameGunLights = GameObject.FindWithTag("FlameGunLights");
+        originalMaterial = theTorso.GetComponent<SpriteRenderer>().material;
     }
     void Update()
     {
@@ -99,8 +108,9 @@ public class AdditionalMovementSettings : MonoBehaviour
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //This makes the Hold position impossible to move and aim without walking.
-        if (theController.State.IsGrounded && player.GetButton(("HoldPosition")) && !theController.State.IsJumping)
+        if (theController.State.IsGrounded && player.GetButton(("HoldPosition")) && !theController.State.IsJumping && character.MovementState.CurrentState != CharacterStates.MovementStates.Rolling)
         {
+            theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);
             theController.SetHorizontalForce(0);
             theController.SetVerticalForce(0);
             //theAnimator.SetBool("Hold", true);
@@ -220,13 +230,21 @@ public class AdditionalMovementSettings : MonoBehaviour
         //This makes that if the character is rolling, then activate the flickers in Torso and Legs.
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.Rolling)
         {
-            theTorso.GetComponent<FlashSprites>().run = true;
-            theLegs.GetComponent<FlashSprites>().run = true;
+            //theTorso.GetComponent<FlashSprites>().run = true;
+            //theLegs.GetComponent<FlashSprites>().run = true;
+            theTorso.GetComponent<SpriteRenderer>().material = flashMaterial;
+            theLegs.GetComponent<SpriteRenderer>().material = flashMaterial;
+            theTorsoMachineGunLights.GetComponent<SpriteRenderer>().material = flashMaterial;
+            theTorsoFlameGunLights.GetComponent<SpriteRenderer>().material = flashMaterial;
         }
         else
         {
-            theTorso.GetComponent<FlashSprites>().run = false;
-            theLegs.GetComponent<FlashSprites>().run = false;
+            //theTorso.GetComponent<FlashSprites>().run = false;
+            //theLegs.GetComponent<FlashSprites>().run = false;
+            theTorso.GetComponent<SpriteRenderer>().material = originalMaterial;
+            theLegs.GetComponent<SpriteRenderer>().material = originalMaterial;
+            theTorsoMachineGunLights.GetComponent<SpriteRenderer>().material = originalMaterial;
+            theTorsoFlameGunLights.GetComponent<SpriteRenderer>().material = originalMaterial;
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

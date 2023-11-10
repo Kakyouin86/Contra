@@ -16,8 +16,11 @@ public class ToggleWeapons : MonoBehaviour
     public bool torsoNoLights = true;
     public bool machineGunActive = false;
     public bool flameGunActive = false;
-
     public Inventory weaponInventory;
+    public SpriteRenderer torsoSpriteRenderer;
+    public SpriteRenderer legsSpriteRenderer;
+    public Material originalMaterial;
+    public Material flameGunMaterial;
     //public CharacterHandleWeapon theCharacterHandleWeapon;
     //public Animator theAnimator;
 
@@ -29,6 +32,10 @@ public class ToggleWeapons : MonoBehaviour
         weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventory").GetComponent<Inventory>();
         //theCharacterHandleWeapon = FindObjectOfType<CharacterHandleWeapon>();
         //theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>();
+        torsoSpriteRenderer = GameObject.FindGameObjectWithTag("Torso").GetComponent<SpriteRenderer>();
+        legsSpriteRenderer = GameObject.FindGameObjectWithTag("Legs").GetComponent<SpriteRenderer>();
+        originalMaterial = torsoSpriteRenderer.material;
+
         if (torsoObject != null)
         {
             torsoObject.SetActive(torsoNoLights);
@@ -46,8 +53,7 @@ public class ToggleWeapons : MonoBehaviour
         if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
             weaponInventory.Content[0].ItemName == "Machine Gun")
         {
-            if (GetComponent<CharacterHandleWeapon>().CurrentWeapon.WeaponState.CurrentState !=
-                Weapon.WeaponStates.WeaponIdle)
+            if (GetComponent<CharacterHandleWeapon>().CurrentWeapon.WeaponState.CurrentState != Weapon.WeaponStates.WeaponIdle)
             {
                 torsoNoLights = false;
                 machineGunActive = true;
@@ -55,6 +61,8 @@ public class ToggleWeapons : MonoBehaviour
                 torsoObject.SetActive(false);
                 machineGunLights.SetActive(true);
                 flameGunLights.SetActive(false);
+                torsoSpriteRenderer.material = originalMaterial;
+                legsSpriteRenderer.material = originalMaterial;
             }
             else
             {
@@ -71,7 +79,7 @@ public class ToggleWeapons : MonoBehaviour
             weaponInventory.Content[0].ItemName == "Flame Gun")
         {
             if (GetComponent<CharacterHandleWeapon>().CurrentWeapon.WeaponState.CurrentState !=
-                Weapon.WeaponStates.WeaponIdle)
+                Weapon.WeaponStates.WeaponIdle && GetComponent<Character>().MovementState.CurrentState != CharacterStates.MovementStates.Rolling)
             {
                 torsoNoLights = false;
                 machineGunActive = false;
@@ -79,8 +87,10 @@ public class ToggleWeapons : MonoBehaviour
                 torsoObject.SetActive(false);
                 machineGunLights.SetActive(false);
                 flameGunLights.SetActive(true);
+                flameGunLights.GetComponent<SpriteRenderer>().material = flameGunMaterial;
+                legsSpriteRenderer.material = flameGunMaterial;
             }
-            else
+            /*else
             {
                 torsoNoLights = true;
                 machineGunActive = false;
@@ -88,7 +98,10 @@ public class ToggleWeapons : MonoBehaviour
                 torsoObject.SetActive(true);
                 machineGunLights.SetActive(false);
                 flameGunLights.SetActive(false);
-            }
+                flameGunLights.GetComponent<SpriteRenderer>().material = originalMaterial;
+                torsoSpriteRenderer.material = originalMaterial;
+                legsSpriteRenderer.material = originalMaterial;
+            }*/
         }
 
         /*else
