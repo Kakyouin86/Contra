@@ -16,7 +16,7 @@ public class MachineGunBulletBurstV2 : MonoBehaviour
     public GameObject thePlayer;
     public WeaponAim weaponAim;
 
-    private void OnEnable()
+    public void OnEnable()
     {
         foreach (Transform child in transform)
         {
@@ -28,12 +28,10 @@ public class MachineGunBulletBurstV2 : MonoBehaviour
     {
         weaponAim = GameObject.FindWithTag("Firepoint").GetComponentInChildren<WeaponAim>();
         thePlayer = GameObject.FindWithTag("Player");
-
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-
         if (((1 << other.gameObject.layer) & ObstaclesLayerMask) != 0)
         {
             GameObject spawnedObject = Instantiate(objectToInstantiate, Vector3.zero, Quaternion.identity);

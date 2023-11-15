@@ -30,7 +30,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 639308867, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+      value: {fileID: -320687687, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
     attribute: m_Sprite
     path: Machine Gun Lights
     classID: 212
@@ -39,7 +39,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -2110541112, guid: f96260ed0f061804798089fcefe6588b, type: 3}
+      value: {fileID: -530155451, guid: f96260ed0f061804798089fcefe6588b, type: 3}
     attribute: m_Sprite
     path: Flame Gun Lights
     classID: 212
@@ -81,8 +81,8 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: -1961170217, guid: 71daf959624085e4cbe661032c4fb7dd, type: 3}
-    - {fileID: 639308867, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
-    - {fileID: -2110541112, guid: f96260ed0f061804798089fcefe6588b, type: 3}
+    - {fileID: -320687687, guid: 55187869f9ce3684db9e4cd236e0f05b, type: 3}
+    - {fileID: -530155451, guid: f96260ed0f061804798089fcefe6588b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

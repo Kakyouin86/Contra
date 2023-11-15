@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 6885755468511231297}
   - component: {fileID: 105668252355354254}
   - component: {fileID: 1330199959748496490}
-  - component: {fileID: 7747515360936644348}
   - component: {fileID: 595991298890600595}
   m_Layer: 16
   m_Name: Flame Shot - 01 (Bullet)
@@ -107,7 +106,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 768
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -287,7 +286,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5345617776012890272}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfdd322a582c3bc429d2350807e8a2c3, type: 3}
   m_Name: 
@@ -299,29 +298,6 @@ MonoBehaviour:
   SkinWidth: 0.1
   RepositionRigidbodyIfHitTrigger: 1
   RepositionRigidbodyIfHitNonTrigger: 1
---- !u!114 &7747515360936644348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5345617776012890272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b95296ef9f66e44299eb703ede874bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToInstantiate: {fileID: 3199536429230220929, guid: 9c430fd027e72984088b52c60e6a2c05,
-    type: 3}
-  spawnPosition: {x: 0.4, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
-  ObstaclesLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  distanceToPlayer: 0
-  thresholdNotToShowBurst: 2
-  thePlayer: {fileID: 0}
-  weaponAim: {fileID: 0}
 --- !u!95 &595991298890600595
 Animator:
   serializedVersion: 5

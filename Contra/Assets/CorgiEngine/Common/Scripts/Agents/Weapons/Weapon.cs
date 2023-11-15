@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
 using UnityEngine.Serialization;
+using MoreMountains.InventoryEngine;
 
 namespace MoreMountains.CorgiEngine
 {
@@ -44,15 +45,18 @@ namespace MoreMountains.CorgiEngine
 	[MMRequiresConstantRepaint]
 	public class Weapon : MMMonoBehaviour
     {
-        public Animator theAnimator; //Leo Monge: Need to ALWAYS bring it after update. This adds the Animator.
         /// the possible use modes for the trigger
         public enum TriggerModes { SemiAuto, Auto }
 		/// the possible states the weapon can be in
 		public enum WeaponStates { WeaponIdle, WeaponStart, WeaponDelayBeforeUse, WeaponUse, WeaponDelayBetweenUses, WeaponStop, WeaponReloadNeeded, WeaponReloadStart, WeaponReload, WeaponReloadStop, WeaponInterrupted, WeaponInCooldown }
 
 		[MMInspectorGroup("General Settings", true, 12)]
-		/// is this weapon on semi or full auto ?
-		[Tooltip("is this weapon on semi or full auto ?")]
+        public Animator theAnimator; //Leo Monge: Need to ALWAYS bring it after update. This adds the Animator.
+        public float customIntervalLeo = 0.5f; //Leo Monge
+        public float intervalWaitFor; //Leo Monge
+        public float counterIsShootingCounter = 0.0f; //Leo Monge
+        /// is this weapon on semi or full auto ?
+        [Tooltip("is this weapon on semi or full auto ?")]
 		public TriggerModes TriggerMode = TriggerModes.Auto;
 		/// whether or not this weapon can be interrupted 
 		[Tooltip("whether or not this weapon can be interrupted ")]
@@ -886,9 +890,13 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual IEnumerator ShootRequestCo() //Leo Monge: Need to ALWAYS bring it after update. This whole thing should be edited because basically adds some "time" after shooting so it repeats the animation and adds a little timer so it finishes well the animations.
         {
-			int remainingShots = UseBurstMode ? BurstLength : 1;
-			float interval = UseBurstMode ? BurstTimeBetweenShots : 1;
-            float counter = 0.1f; // Counter for 0.1 seconds
+            /*Inventory weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventory").GetComponent<Inventory>();
+            //float intervalLeo = 0.01f;
+            float intervalLeo = 1f; // Original interval of 1 second.
+            int remainingShots = UseBurstMode ? BurstLength : 1;
+            float interval = UseBurstMode ? BurstTimeBetweenShots : intervalLeo;
+            float counter = 0.00f;
+            //float counter = 0.1f; // Counter for 0.1 seconds
             while (remainingShots > 0)
 			{
                 theAnimator.SetBool("isShooting", true);
@@ -897,13 +905,42 @@ namespace MoreMountains.CorgiEngine
 				remainingShots--;
 				yield return MMCoroutine.WaitFor(interval);
 			}
-            theAnimator.SetBool("isShooting", false);
-            while (counter > 0)
+
+            if (weaponInventory.Content[0].ItemName == "Flame Gun")
             {
-                counter -= Time.deltaTime; // Decrease the counter
-                theAnimator.SetFloat("isShootingCounter", counter);
-                yield return null;
+                _aimableWeapon.IgnoreDownWhenGrounded = true;
+                while (counter > 0)
+                {
+                    counter -= Time.deltaTime; // Decrease the counter
+                    theAnimator.SetFloat("isShootingCounter", counter);
+                    yield return null;
+                }
             }
+
+            theAnimator.SetBool("isShooting", false);
+            TurnWeaponOff();*/
+            
+            //float customIntervalLeo = 0.5f; // Original interval of 1 second. Moved to 0.5. In 0.3 it creates bugs while shooting up.
+            int remainingShots = UseBurstMode ? BurstLength : 1;
+            intervalWaitFor = UseBurstMode ? BurstTimeBetweenShots : customIntervalLeo;
+            //float counter = 0.0f; // Counter for 0.1 seconds
+            while (remainingShots > 0) 
+            { 
+                theAnimator.SetBool("isShooting", true);
+		        theAnimator.SetFloat("isShootingCounter", counterIsShootingCounter);
+		        ShootRequest();
+		        remainingShots--;
+		        yield return MMCoroutine.WaitFor(intervalWaitFor);
+            }
+            theAnimator.SetBool("isShooting", false);
+            theAnimator.SetBool("IdleShootingStraight", false);
+
+            /*while (counter > 0) 
+            { 
+               counter -= Time.deltaTime; // Decrease the counter
+               theAnimator.SetFloat("isShootingCounter", counter); 
+               yield return null;
+            }*/
         }
 
         /// <summary>

@@ -88,26 +88,20 @@ public class AdditionalCharacterHorizontalMovementOverride : CharacterHorizontal
         }
 
         // if we're grounded, jumping but not moving up, we become idle
-        if ((_controller.State.IsGrounded)
-            && (_movement.CurrentState == CharacterStates.MovementStates.Jumping)
-            && (_controller.TimeAirborne >= _character.AirborneMinimumTime))
+        if ((_controller.State.IsGrounded) && (_movement.CurrentState == CharacterStates.MovementStates.Jumping) && (_controller.TimeAirborne >= _character.AirborneMinimumTime))
         {
             _movement.ChangeState(CharacterStates.MovementStates.Idle);
         }
 
         // if we're walking and not moving anymore, we go back to the Idle state
-        if ((_movement.CurrentState == CharacterStates.MovementStates.Walking)
-            && (_normalizedHorizontalSpeed == 0))
+        if ((_movement.CurrentState == CharacterStates.MovementStates.Walking) && (_normalizedHorizontalSpeed == 0))
         {
             _movement.ChangeState(CharacterStates.MovementStates.Idle);
             PlayAbilityStopFeedbacks();
         }
 
         // if the character is not grounded, but currently idle or walking, we change its state to Falling
-        if (!_controller.State.IsGrounded
-            && (
-                (_movement.CurrentState == CharacterStates.MovementStates.Walking)
-                || (_movement.CurrentState == CharacterStates.MovementStates.Idle)
+        if (!_controller.State.IsGrounded && ((_movement.CurrentState == CharacterStates.MovementStates.Walking) || (_movement.CurrentState == CharacterStates.MovementStates.Idle)
             ))
         {
             if (_controller.State.IsFalling)//Leo Monge. This is to detect when the character was actually falling and not jumping.

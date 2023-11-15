@@ -26,6 +26,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: HorizontalLadder
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2407803708979803527}
   m_Solo: 0
@@ -77,7 +80,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 2150317296545001834}
-    m_Position: {x: -210, y: -550, z: 0}
+    m_Position: {x: -190, y: -430, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7066680122050524913}
     m_Position: {x: -260, y: -30, z: 0}
@@ -116,7 +119,7 @@ AnimatorStateMachine:
     m_Position: {x: -260, y: 70, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2461793852351127968}
-    m_Position: {x: -260, y: -130, z: 0}
+    m_Position: {x: -270, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9172675011379727905}
     m_Position: {x: -260, y: -80, z: 0}
@@ -134,10 +137,10 @@ AnimatorStateMachine:
     m_Position: {x: 700, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8183045939470432446}
-    m_Position: {x: 540, y: 10, z: 0}
+    m_Position: {x: 540, y: 20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3239392851512624703}
-    m_Position: {x: 700, y: 170, z: 0}
+    m_Position: {x: 710, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4311343148925845180}
     m_Position: {x: 540, y: -40, z: 0}
@@ -343,7 +346,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: -20, y: -370, z: 0}
+  m_EntryPosition: {x: -30, y: -370, z: 0}
   m_ExitPosition: {x: 830, y: -610, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 6725150551735018942}
@@ -396,6 +399,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: WeaponAngleRelativeAnimationParameter
     m_EventTreshold: -35
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2941205983858567879}
   m_Solo: 0
@@ -461,6 +467,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: TimerBeforeNextAnim
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: DelayBetweenUses
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1005144994889451024}
   m_Solo: 0
@@ -489,9 +498,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: WeaponAngleRelativeAnimationParameter
     m_EventTreshold: 0.1
-  - m_ConditionMode: 1
-    m_ConditionEvent: IdleShootingStraight
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Jumping
     m_EventTreshold: 0
@@ -632,6 +638,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0.1
   - m_ConditionMode: 1
     m_ConditionEvent: HorizontalLadder
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7707238540426637239}
@@ -774,6 +783,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: TimerBeforeNextAnim
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 42519285011685129}
   m_Solo: 0
@@ -837,6 +849,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: WeaponAngleRelativeAnimationParameter
     m_EventTreshold: 55
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8462262662335457583}
   m_Solo: 0
@@ -947,6 +962,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 3
     m_ConditionEvent: LadderClimbingSpeedX
     m_EventTreshold: 0.1
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4301891841531337158}
   m_Solo: 0
@@ -998,9 +1016,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: LadderClimbing
     m_EventTreshold: 0
-  - m_ConditionMode: 4
-    m_ConditionEvent: LadderClimbingSpeedY
-    m_EventTreshold: 0.1
   - m_ConditionMode: 2
     m_ConditionEvent: IdleShootingStraight
     m_EventTreshold: 0
@@ -1259,9 +1274,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: WeaponAngleRelativeAnimationParameter
     m_EventTreshold: 0.1
-  - m_ConditionMode: 1
-    m_ConditionEvent: IdleShootingStraight
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Jumping
     m_EventTreshold: 0
@@ -1279,6 +1291,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Crawling
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: IdleShootingStraight
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2150317296545001834}
@@ -1320,6 +1335,34 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &-6104472745588773093
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Walking
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Hold
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -4759390025510934384}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 1
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &-5848107837651052894
 AnimatorState:
   serializedVersion: 6
@@ -1524,6 +1567,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3961029313863082008}
+  - {fileID: -475083658908228981}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -2089,6 +2133,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: LadderClimbing
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4978513722751033149}
   m_Solo: 0
@@ -2428,6 +2475,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: HorizontalLadder
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8054247822646477101}
   m_Solo: 0
@@ -2606,6 +2656,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 3
     m_ConditionEvent: LadderClimbingSpeedX
     m_EventTreshold: 0.1
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4464171554015813080}
   m_Solo: 0
@@ -2671,9 +2724,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: WeaponAngleRelativeAnimationParameter
     m_EventTreshold: 0.1
-  - m_ConditionMode: 2
-    m_ConditionEvent: IdleShootingStraight
-    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Walking
     m_EventTreshold: 0
@@ -2685,6 +2735,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Hold
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: Grounded
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6725150551735018942}
@@ -2734,6 +2787,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Crawling
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3346891366078443949}
@@ -2791,6 +2847,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Falling
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Grounded
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4542048682036448511}
   m_Solo: 0
@@ -2828,6 +2887,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: WeaponAngleRelativeAnimationParameter
     m_EventTreshold: -125
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2895633953708601318}
   m_Solo: 0
@@ -3013,6 +3075,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &-475083658908228981
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: Walking
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 6725150551735018942}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &-245895672184680477
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -3027,6 +3114,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: isShootingCounter
     m_EventTreshold: 0.1
+  - m_ConditionMode: 2
+    m_ConditionEvent: IdleShootingStraight
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3239392851512624703}
   m_Solo: 0
@@ -3035,7 +3125,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 0
+  m_ExitTime: 1
   m_HasExitTime: 0
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
@@ -3160,180 +3250,192 @@ AnimatorController:
   m_Name: Player
   serializedVersion: 5
   m_AnimatorParameters:
+  - m_Name: Grounded
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   - m_Name: Jumping
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Walking
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Crouching
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Crawling
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Speed
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: ySpeed
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: WeaponAngleRelativeAnimationParameter
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: WeaponAngleAnimationParameter
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Rolling
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Falling
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Hold
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: IdleShootingStraight
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: isShooting
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: isShootingCounter
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: DelayBeforeShooting
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: DelayBetweenUses
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Death
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: LadderClimbing
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: LadderClimbingSpeedY
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: LadderClimbingSpeedX
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: HorizontalLadder
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: UpwardSlope
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: DownwardSlope
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: TimerBeforeNextAnim
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Rolling
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: ThrowGrenade
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Flame Gun
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Delay
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Mirror
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
+  - m_Name: ShootCrouch
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Legs
@@ -3505,11 +3607,29 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
+  - m_ConditionMode: 3
+    m_ConditionEvent: WeaponAngleRelativeAnimationParameter
+    m_EventTreshold: -79
+  - m_ConditionMode: 4
+    m_ConditionEvent: WeaponAngleRelativeAnimationParameter
+    m_EventTreshold: -44
+  - m_ConditionMode: 1
     m_ConditionEvent: IdleShootingStraight
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Jumping
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Crouching
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Rolling
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Crawling
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Death
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Hold
@@ -3519,6 +3639,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: isShooting
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: DelayBeforeShooting
     m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: isShootingCounter
@@ -3638,6 +3761,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 3
     m_ConditionEvent: ySpeed
     m_EventTreshold: 4
+  - m_ConditionMode: 2
+    m_ConditionEvent: Grounded
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7066680122050524913}
   m_Solo: 0
@@ -3675,6 +3801,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: WeaponAngleRelativeAnimationParameter
     m_EventTreshold: -80
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7333847077633804786}
   m_Solo: 0
@@ -3723,6 +3852,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Crawling
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7423473944649688140}
@@ -3862,7 +3994,8 @@ AnimatorState:
   m_Name: Shoot Straight
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions: []
+  m_Transitions:
+  - {fileID: -6104472745588773093}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -3912,6 +4045,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Hold
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7012416229004320940}
@@ -4122,6 +4258,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Rolling
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Grounded
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7066680122050524913}
@@ -4416,6 +4555,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 3
     m_ConditionEvent: LadderClimbingSpeedX
     m_EventTreshold: 0.1
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2913660801204194460}
   m_Solo: 0
@@ -4892,6 +5034,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Crawling
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: ShootCrouch
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4564797152289916404}
   m_Solo: 0
@@ -4983,6 +5131,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: HorizontalLadder
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3868454444064871359}
   m_Solo: 0
@@ -5046,6 +5197,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: WeaponAngleRelativeAnimationParameter
     m_EventTreshold: 145
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7612652788657399736}
   m_Solo: 0
@@ -5083,6 +5237,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: HorizontalLadder
     m_EventTreshold: 0.1
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5484841571237482358}
   m_Solo: 0
@@ -5286,9 +5443,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: IdleShootingStraight
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Jumping
     m_EventTreshold: 0
@@ -5727,6 +5881,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: HorizontalLadder
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4361744860941951186}
   m_Solo: 0
@@ -5835,16 +5992,16 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_SpeedParameterActive: 1
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 9840f9783961ce94bbe07a15431ddde9, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
+  m_SpeedParameter: Delay
+  m_MirrorParameter: TimerBeforeNextAnim
+  m_CycleOffsetParameter: Delay
+  m_TimeParameter: Speed
 --- !u!1107 &6882207825426781719
 AnimatorStateMachine:
   serializedVersion: 6
@@ -6041,9 +6198,6 @@ AnimatorStateTransition:
     m_ConditionEvent: WeaponAngleRelativeAnimationParameter
     m_EventTreshold: 1
   - m_ConditionMode: 2
-    m_ConditionEvent: IdleShootingStraight
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
     m_ConditionEvent: Jumping
     m_EventTreshold: 0
   - m_ConditionMode: 2
@@ -6072,6 +6226,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: isShooting
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: Grounded
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6725150551735018942}
@@ -6413,28 +6570,6 @@ AnimatorState:
   m_MirrorParameter: TimerBeforeNextAnim
   m_CycleOffsetParameter: Speed
   m_TimeParameter: Delay
---- !u!1101 &7795155890355838781
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions: []
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 6725150551735018942}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 1
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
 --- !u!1101 &7910953310554549312
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -6646,8 +6781,7 @@ AnimatorState:
   m_Name: Throw Grenade Straight
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 7795155890355838781}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -6872,6 +7006,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0.1
   - m_ConditionMode: 2
     m_ConditionEvent: HorizontalLadder
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6444046792313246867}

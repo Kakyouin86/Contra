@@ -14,15 +14,24 @@ public class Water : MonoBehaviour
     public bool isPlayerInWater = false; // Flag to track whether the player is in water
     public CharacterHorizontalMovement characterHorizontalMovement;
     public CharacterCrouch characterCrouch;
+    public CharacterRoll characterRoll;
 
     void Start()
     {
         characterHorizontalMovement = GetComponentInParent<CharacterHorizontalMovement>();
         characterCrouch = GetComponentInParent<CharacterCrouch>();
+        characterRoll = GetComponentInParent<CharacterRoll>();
     }
 
     void Update()
     {
+        if (!isPlayerInWater)
+        {
+            theRippleEffect.SetActive(false);
+            characterCrouch.AbilityPermitted = true;
+            characterRoll.AbilityPermitted = true;
+            theLegs.SetActive(true);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -31,8 +40,9 @@ public class Water : MonoBehaviour
         {
             isPlayerInWater = true;
             characterHorizontalMovement.AbilityMovementSpeedMultiplier = 0f;
-            StartCoroutine(DisableControlls());
+            StartCoroutine(DisableControls());
             characterCrouch.AbilityPermitted = false;
+            characterRoll.AbilityPermitted = false;
             theLegs.SetActive(false);
             // theRippleEffect.SetActive(true);
             thePosition = new Vector3(transform.position.x, transform.position.y,
@@ -41,7 +51,7 @@ public class Water : MonoBehaviour
         }
     }
 
-    IEnumerator DisableControlls()
+    IEnumerator DisableControls()
     {
         //This makes a short stop upon entering on the water
         yield return new WaitForSeconds(0.05f);
@@ -54,6 +64,7 @@ public class Water : MonoBehaviour
         {
             isPlayerInWater = false;
             characterCrouch.AbilityPermitted = true;
+            characterRoll.AbilityPermitted = true;
             theLegs.SetActive(true);
             theRippleEffect.SetActive(false);
             thePosition = new Vector3(transform.position.x, transform.position.y,

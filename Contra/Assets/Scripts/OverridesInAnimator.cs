@@ -7,15 +7,17 @@ public class OverridesInAnimator : MonoBehaviour
     public bool machineGun;
     public bool flameGun;
     public bool startTimerBeforeNextAnim = false;
-    public float initialTimeBeforeNextAnim = 0.05f;
-    public float currentTimeBeforeNextAnim = 0.05f;
+    public float customTimeBeforeNextAnim = 0.03f;
+    public float initialTimeBeforeNextAnim = 0.03f;
+    public float currentTimeBeforeNextAnim = 0.03f;
     //public bool timerBeforeNextAnim;
    // public bool modifyTheMirror;
     public Animator theAnimator;
-    public AnimationClip[] animationNames;
     public Inventory weaponInventory;
     public CharacterHandleWeapon theCharacterHandleWeapon;
     public Player player;
+    public AnimationClip[] animationNames;
+
     private void Awake()
     {
         player = ReInput.players.GetPlayer(0);
@@ -77,7 +79,7 @@ public class OverridesInAnimator : MonoBehaviour
             weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
             weaponInventory.Content[0].ItemName != "Machine Gun")
         {
-            initialTimeBeforeNextAnim = 0.05f;
+            initialTimeBeforeNextAnim = customTimeBeforeNextAnim;
             currentTimeBeforeNextAnim = initialTimeBeforeNextAnim;
             startTimerBeforeNextAnim = true;
         }

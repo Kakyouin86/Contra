@@ -519,7 +519,7 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 
 			HLSLPROGRAM
 
-			#define ASE_SRP_VERSION 120106
+			#define ASE_SRP_VERSION 140007
 
 
 			#pragma vertex vert
@@ -673,19 +673,15 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			#ifdef _TOGGLEUNSCALEDTIME_ON
 			float UnscaledTime;
 			#endif
-			#ifdef _SHADERFADING_MASK
 			sampler2D _FadingMask;
-			#endif
 			sampler2D _UberNoiseTexture;
-			#ifdef _ENABLEWIND_ON
 			float WindMinIntensity;
 			float WindMaxIntensity;
 			float WindNoiseScale;
+			#ifdef _ENABLEWIND_ON
 			float WindTime;
 			#endif
-			#ifdef _ENABLEUVDISTORT_ON
 			sampler2D _UVDistortMask;
-			#endif
 			#ifdef _ENABLECUSTOMFADE_ON
 			sampler2D _CustomFadeFadeMask;
 			#endif
@@ -695,12 +691,8 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			#ifdef _ENABLERECOLORRGBYCP_ON
 			sampler2D _RecolorRGBYCPTexture;
 			#endif
-			#ifdef _ENABLEADDHUE_ON
 			sampler2D _AddHueMask;
-			#endif
-			#ifdef _ENABLESINEGLOW_ON
 			sampler2D _SineGlowMask;
-			#endif
 			#ifdef _ENABLEINNEROUTLINE_ON
 			sampler2D _InnerOutlineTintTexture;
 			#endif
@@ -710,18 +702,10 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			#ifdef _ENABLEPIXELOUTLINE_ON
 			sampler2D _PixelOutlineTintTexture;
 			#endif
-			#ifdef _ENABLEMETAL_ON
 			sampler2D _MetalMask;
-			#endif
-			#ifdef _ENABLESHINE_ON
 			sampler2D _ShineMask;
-			#endif
-			#ifdef _ENABLEADDCOLOR_ON
 			sampler2D _AddColorMask;
-			#endif
-			#ifdef _ENABLESTRONGTINT_ON
 			sampler2D _StrongTintMask;
-			#endif
 			sampler2D _MaskMap;
 			sampler2D _NormalMap;
 			CBUFFER_START( UnityPerMaterial )
@@ -1373,7 +1357,9 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			float _FadingFade;
 			#ifdef _ENABLEWIND_ON
 			float _WindMaxRotation;
+			#endif
 			float _WindRotation;
+			#ifdef _ENABLEWIND_ON
 			float _WindNoiseSpeed;
 			float _WindNoiseScale;
 			float _WindXPosition;
@@ -3565,7 +3551,7 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 
 			HLSLPROGRAM
 
-			#define ASE_SRP_VERSION 120106
+			#define ASE_SRP_VERSION 140007
 
 
 			#pragma vertex vert
@@ -3696,19 +3682,15 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			#ifdef _TOGGLEUNSCALEDTIME_ON
 			float UnscaledTime;
 			#endif
-			#ifdef _SHADERFADING_MASK
 			sampler2D _FadingMask;
-			#endif
 			sampler2D _UberNoiseTexture;
-			#ifdef _ENABLEWIND_ON
 			float WindMinIntensity;
 			float WindMaxIntensity;
 			float WindNoiseScale;
+			#ifdef _ENABLEWIND_ON
 			float WindTime;
 			#endif
-			#ifdef _ENABLEUVDISTORT_ON
 			sampler2D _UVDistortMask;
-			#endif
 			#ifdef _ENABLECUSTOMFADE_ON
 			sampler2D _CustomFadeFadeMask;
 			#endif
@@ -3718,12 +3700,8 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			#ifdef _ENABLERECOLORRGBYCP_ON
 			sampler2D _RecolorRGBYCPTexture;
 			#endif
-			#ifdef _ENABLEADDHUE_ON
 			sampler2D _AddHueMask;
-			#endif
-			#ifdef _ENABLESINEGLOW_ON
 			sampler2D _SineGlowMask;
-			#endif
 			#ifdef _ENABLEINNEROUTLINE_ON
 			sampler2D _InnerOutlineTintTexture;
 			#endif
@@ -3733,18 +3711,10 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			#ifdef _ENABLEPIXELOUTLINE_ON
 			sampler2D _PixelOutlineTintTexture;
 			#endif
-			#ifdef _ENABLEMETAL_ON
 			sampler2D _MetalMask;
-			#endif
-			#ifdef _ENABLESHINE_ON
 			sampler2D _ShineMask;
-			#endif
-			#ifdef _ENABLEADDCOLOR_ON
 			sampler2D _AddColorMask;
-			#endif
-			#ifdef _ENABLESTRONGTINT_ON
 			sampler2D _StrongTintMask;
-			#endif
 			sampler2D _NormalMap;
 			CBUFFER_START( UnityPerMaterial )
 			#ifdef _ENABLEPOISON_ON
@@ -4395,7 +4365,9 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			float _FadingFade;
 			#ifdef _ENABLEWIND_ON
 			float _WindMaxRotation;
+			#endif
 			float _WindRotation;
+			#ifdef _ENABLEWIND_ON
 			float _WindNoiseSpeed;
 			float _WindNoiseScale;
 			float _WindXPosition;
@@ -6579,7 +6551,7 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 
 			HLSLPROGRAM
 
-			#define ASE_SRP_VERSION 120106
+			#define ASE_SRP_VERSION 140007
 
 
 			#pragma vertex vert
@@ -6713,19 +6685,15 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			#ifdef _TOGGLEUNSCALEDTIME_ON
 			float UnscaledTime;
 			#endif
-			#ifdef _SHADERFADING_MASK
 			sampler2D _FadingMask;
-			#endif
 			sampler2D _UberNoiseTexture;
-			#ifdef _ENABLEWIND_ON
 			float WindMinIntensity;
 			float WindMaxIntensity;
 			float WindNoiseScale;
+			#ifdef _ENABLEWIND_ON
 			float WindTime;
 			#endif
-			#ifdef _ENABLEUVDISTORT_ON
 			sampler2D _UVDistortMask;
-			#endif
 			#ifdef _ENABLECUSTOMFADE_ON
 			sampler2D _CustomFadeFadeMask;
 			#endif
@@ -6735,12 +6703,8 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			#ifdef _ENABLERECOLORRGBYCP_ON
 			sampler2D _RecolorRGBYCPTexture;
 			#endif
-			#ifdef _ENABLEADDHUE_ON
 			sampler2D _AddHueMask;
-			#endif
-			#ifdef _ENABLESINEGLOW_ON
 			sampler2D _SineGlowMask;
-			#endif
 			#ifdef _ENABLEINNEROUTLINE_ON
 			sampler2D _InnerOutlineTintTexture;
 			#endif
@@ -6750,18 +6714,10 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			#ifdef _ENABLEPIXELOUTLINE_ON
 			sampler2D _PixelOutlineTintTexture;
 			#endif
-			#ifdef _ENABLEMETAL_ON
 			sampler2D _MetalMask;
-			#endif
-			#ifdef _ENABLESHINE_ON
 			sampler2D _ShineMask;
-			#endif
-			#ifdef _ENABLEADDCOLOR_ON
 			sampler2D _AddColorMask;
-			#endif
-			#ifdef _ENABLESTRONGTINT_ON
 			sampler2D _StrongTintMask;
-			#endif
 			CBUFFER_START( UnityPerMaterial )
 			#ifdef _ENABLEPOISON_ON
 			float4 _PoisonColor;
@@ -7411,7 +7367,9 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			float _FadingFade;
 			#ifdef _ENABLEWIND_ON
 			float _WindMaxRotation;
+			#endif
 			float _WindRotation;
+			#ifdef _ENABLEWIND_ON
 			float _WindNoiseSpeed;
 			float _WindNoiseScale;
 			float _WindXPosition;
@@ -9598,7 +9556,7 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 
             HLSLPROGRAM
 
-			#define ASE_SRP_VERSION 120106
+			#define ASE_SRP_VERSION 140007
 
 
 			#pragma vertex vert
@@ -9733,19 +9691,15 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			#ifdef _TOGGLEUNSCALEDTIME_ON
 			float UnscaledTime;
 			#endif
-			#ifdef _SHADERFADING_MASK
 			sampler2D _FadingMask;
-			#endif
 			sampler2D _UberNoiseTexture;
-			#ifdef _ENABLEWIND_ON
 			float WindMinIntensity;
 			float WindMaxIntensity;
 			float WindNoiseScale;
+			#ifdef _ENABLEWIND_ON
 			float WindTime;
 			#endif
-			#ifdef _ENABLEUVDISTORT_ON
 			sampler2D _UVDistortMask;
-			#endif
 			#ifdef _ENABLECUSTOMFADE_ON
 			sampler2D _CustomFadeFadeMask;
 			#endif
@@ -9755,12 +9709,8 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			#ifdef _ENABLERECOLORRGBYCP_ON
 			sampler2D _RecolorRGBYCPTexture;
 			#endif
-			#ifdef _ENABLEADDHUE_ON
 			sampler2D _AddHueMask;
-			#endif
-			#ifdef _ENABLESINEGLOW_ON
 			sampler2D _SineGlowMask;
-			#endif
 			#ifdef _ENABLEINNEROUTLINE_ON
 			sampler2D _InnerOutlineTintTexture;
 			#endif
@@ -9770,18 +9720,10 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			#ifdef _ENABLEPIXELOUTLINE_ON
 			sampler2D _PixelOutlineTintTexture;
 			#endif
-			#ifdef _ENABLEMETAL_ON
 			sampler2D _MetalMask;
-			#endif
-			#ifdef _ENABLESHINE_ON
 			sampler2D _ShineMask;
-			#endif
-			#ifdef _ENABLEADDCOLOR_ON
 			sampler2D _AddColorMask;
-			#endif
-			#ifdef _ENABLESTRONGTINT_ON
 			sampler2D _StrongTintMask;
-			#endif
 			CBUFFER_START( UnityPerMaterial )
 			#ifdef _ENABLEPOISON_ON
 			float4 _PoisonColor;
@@ -10431,7 +10373,9 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			float _FadingFade;
 			#ifdef _ENABLEWIND_ON
 			float _WindMaxRotation;
+			#endif
 			float _WindRotation;
+			#ifdef _ENABLEWIND_ON
 			float _WindNoiseSpeed;
 			float _WindNoiseScale;
 			float _WindXPosition;
@@ -12589,11 +12533,11 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
             Name "ScenePickingPass"
             Tags { "LightMode"="Picking" }
 
-            Cull Off
+			Cull Off
 
             HLSLPROGRAM
 
-			#define ASE_SRP_VERSION 120106
+			#define ASE_SRP_VERSION 140007
 
 
 			#pragma vertex vert
@@ -12728,19 +12672,15 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			#ifdef _TOGGLEUNSCALEDTIME_ON
 			float UnscaledTime;
 			#endif
-			#ifdef _SHADERFADING_MASK
 			sampler2D _FadingMask;
-			#endif
 			sampler2D _UberNoiseTexture;
-			#ifdef _ENABLEWIND_ON
 			float WindMinIntensity;
 			float WindMaxIntensity;
 			float WindNoiseScale;
+			#ifdef _ENABLEWIND_ON
 			float WindTime;
 			#endif
-			#ifdef _ENABLEUVDISTORT_ON
 			sampler2D _UVDistortMask;
-			#endif
 			#ifdef _ENABLECUSTOMFADE_ON
 			sampler2D _CustomFadeFadeMask;
 			#endif
@@ -12750,12 +12690,8 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			#ifdef _ENABLERECOLORRGBYCP_ON
 			sampler2D _RecolorRGBYCPTexture;
 			#endif
-			#ifdef _ENABLEADDHUE_ON
 			sampler2D _AddHueMask;
-			#endif
-			#ifdef _ENABLESINEGLOW_ON
 			sampler2D _SineGlowMask;
-			#endif
 			#ifdef _ENABLEINNEROUTLINE_ON
 			sampler2D _InnerOutlineTintTexture;
 			#endif
@@ -12765,18 +12701,10 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			#ifdef _ENABLEPIXELOUTLINE_ON
 			sampler2D _PixelOutlineTintTexture;
 			#endif
-			#ifdef _ENABLEMETAL_ON
 			sampler2D _MetalMask;
-			#endif
-			#ifdef _ENABLESHINE_ON
 			sampler2D _ShineMask;
-			#endif
-			#ifdef _ENABLEADDCOLOR_ON
 			sampler2D _AddColorMask;
-			#endif
-			#ifdef _ENABLESTRONGTINT_ON
 			sampler2D _StrongTintMask;
-			#endif
 			CBUFFER_START( UnityPerMaterial )
 			#ifdef _ENABLEPOISON_ON
 			float4 _PoisonColor;
@@ -13426,7 +13354,9 @@ Shader "Sprite Shaders Ultimate/2D Lit URP SSU"
 			float _FadingFade;
 			#ifdef _ENABLEWIND_ON
 			float _WindMaxRotation;
+			#endif
 			float _WindRotation;
+			#ifdef _ENABLEWIND_ON
 			float _WindNoiseSpeed;
 			float _WindNoiseScale;
 			float _WindXPosition;
@@ -15973,4 +15903,4 @@ WireConnection;503;2;494;0
 WireConnection;503;3;494;5
 WireConnection;503;4;142;0
 ASEEND*/
-//CHKSM=95C2571766AD75E887B8C872325676C82F8351EF
+//CHKSM=7864FFCFA5FB9AE07F6F5014532B45167DB73C3E

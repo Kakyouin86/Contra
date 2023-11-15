@@ -18,7 +18,6 @@ public class AdditionalMovementSettings : MonoBehaviour
     public CharacterHandleWeapon theCharacterHandleWeapon;
     public Animator theAnimator;
     public GameObject theFirepoint;
-    //public Weapon theWeapon;
     public WeaponAim weaponAim;
     public bool horizontalLadder = false;
     public bool canNotDettach = false;
@@ -57,7 +56,6 @@ public class AdditionalMovementSettings : MonoBehaviour
         theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>();
         theBCTrigger = GetComponent<BoxCollider2D>();
         theController.State.JustGotGrounded = true;
-        //theWeapon = FindObjectOfType<Weapon>();
         //weaponAim = GameObject.FindWithTag("WeaponAim").GetComponent<WeaponAim>();
         theOriginalBoxCollider2DSize = new Vector3(theBCTrigger.size.x, theBCTrigger.size.y);
         theOriginalBoxCollider2DOffset = new Vector3(theBCTrigger.offset.x, theBCTrigger.offset.y);
@@ -82,6 +80,13 @@ public class AdditionalMovementSettings : MonoBehaviour
         else
         {
             theAnimator.SetBool("Hold", false);
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //If I'm in the ladder and shooting, then I'm holding the "Hold Position". Now I can't move.
+        if (character.MovementState.CurrentState == CharacterStates.MovementStates.LadderClimbing && theAnimator.GetBool("isShooting"))
+        {
+            theAnimator.SetBool("Hold", true);
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -148,6 +153,15 @@ public class AdditionalMovementSettings : MonoBehaviour
             theAnimator.SetBool("Death", false);
         }
 
+        if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching && theAnimator.GetBool("isShooting"))
+        {
+            theAnimator.SetBool("ShootCrouch", true);
+        }
+        else
+        {
+            theAnimator.SetBool("ShootCrouch", false);
+        }
+
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //This makes that, when crouching, you can fire diagonally.
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crawling)
@@ -183,15 +197,15 @@ public class AdditionalMovementSettings : MonoBehaviour
             {
                 GetComponent<CharacterLadder>().LadderClimbingSpeed = 0f;
             }
-            if (horizontalLadder && player.GetButton(("HoldPosition")))
-            {
-                character.FlipModelOnDirectionChange = false;
-            }
-            else
-            {
-                character.FlipModelOnDirectionChange = true;
-            }
+        }
 
+        if (horizontalLadder && player.GetButton(("HoldPosition")))
+        {
+            character.FlipModelOnDirectionChange = false;
+        }
+        else
+        {
+            character.FlipModelOnDirectionChange = true;
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -220,7 +234,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //This makes that if you are NOT in the water, then you can crouch again.
+        //This makes that if you are NOT in the water, then you can crouch.
         if (!slopesDetector.GetComponent<Water>().isPlayerInWater)
         {
             GetComponentInParent<CharacterCrouch>().AbilityPermitted = true;
