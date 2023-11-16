@@ -23,6 +23,7 @@ TagManager:
   - MachineGunLights
   - FlameGunLights
   - WeaponInventory
+  - Shells
   layers:
   - Default
   - TransparentFX

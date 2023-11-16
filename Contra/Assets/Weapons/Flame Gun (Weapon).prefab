@@ -5926,9 +5926,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6359933466854169336}
+  - component: {fileID: 1807317365623960567}
   m_Layer: 0
   m_Name: Flame Gun Shells
-  m_TagString: Untagged
+  m_TagString: Shells
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5949,6 +5950,20 @@ Transform:
   - {fileID: 5050526637754354759}
   m_Father: {fileID: 5535692217675387912}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1807317365623960567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028521452921904775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd7e1315bfac146498378687138063f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itIsParticleSystem: 1
+  delay: 2
 --- !u!1 &6644094088062468114
 GameObject:
   m_ObjectHideFlags: 0
@@ -11048,7 +11063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MutualizeWaitingPools: 0
-  NestWaitingPool: 0
+  NestWaitingPool: 1
   NestUnderThis: 0
   GameObjectToPool: {fileID: 5345617776012890272, guid: da45ff3c82bd8f941b7fc880add0543d,
     type: 3}

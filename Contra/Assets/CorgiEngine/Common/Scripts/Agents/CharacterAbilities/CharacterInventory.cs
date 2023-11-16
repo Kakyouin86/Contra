@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using MoreMountains.Tools;
 using MoreMountains.InventoryEngine;
@@ -177,13 +177,28 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// We watch for a switch weapon input
 		/// </summary>
-		protected override void HandleInput()
-		{
+		protected override void HandleInput() //Leo Monge: Need to ALWAYS bring it after update. This will make a short delay when switching weapons. It's for the animator.
+        {
 			if (_inputManager.SwitchWeaponButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
-			{
-				SwitchWeapon ();
-			}
+            {
+                GameObject theShells = GameObject.FindGameObjectWithTag("Shells");
+                if (theShells != null)
+                {
+                    theShells.transform.SetParent(null);
+                }
+                Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
+				theAnimator.SetBool("DelayForSwitchingGuns", true);
+				SwitchWeapon();
+                StartCoroutine(DelayAnimations());
+            }
 		}
+
+        IEnumerator DelayAnimations() //Leo Monge: Need to ALWAYS bring it after update. This will make a short delay when switching weapons. It's for the animator.
+        {
+            yield return new WaitForSeconds(0.09f);
+            Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
+            theAnimator.SetBool("DelayForSwitchingGuns", false);
+        }
 
 		/// <summary>
 		/// Fills a list with all available weapons in the inventories
