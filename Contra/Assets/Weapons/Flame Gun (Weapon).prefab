@@ -10833,7 +10833,7 @@ GameObject:
   - component: {fileID: 3293708357513922918}
   - component: {fileID: 4216522610364318837}
   - component: {fileID: 6615104535841858016}
-  - component: {fileID: 8121238713574282587}
+  - component: {fileID: 3309603101287157443}
   - component: {fileID: 5261689521687212452}
   m_Layer: 0
   m_Name: Flame Gun (Weapon)
@@ -10935,7 +10935,7 @@ MonoBehaviour:
   AutoDestroyWhenEmpty: 0
   AutoDestroyWhenEmptyDelay: 1
   CurrentAmmoLoaded: 0
-  WeaponAttachmentOffset: {x: 0, y: 0, z: 0}
+  WeaponAttachmentOffset: {x: 0.5, y: 0.3, z: 0}
   FlipWeaponOnCharacterFlip: 1
   FlipValue: {x: -1, y: 1, z: 1}
   LeftHandHandle: {fileID: 0}
@@ -11050,7 +11050,7 @@ MonoBehaviour:
     m_Bits: 273152
   LaserWidth: {x: 0.05, y: 0.05}
   LaserMaterial: {fileID: 2100000, guid: 8300c5c2dd4a7a74fae045fc7b189935, type: 2}
---- !u!114 &8121238713574282587
+--- !u!114 &3309603101287157443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11059,16 +11059,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 7285309272384778091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
+  m_Script: {fileID: 11500000, guid: 73098ca8f002adc4f9debdbe47a78c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 5345617776012890272, guid: da45ff3c82bd8f941b7fc880add0543d,
-    type: 3}
-  PoolSize: 1
-  PoolCanExpand: 1
+  Pool:
+  - GameObjectToPool: {fileID: 6963813303730167545, guid: 9571c927befdcc54185bf1688bdf7fe6,
+      type: 3}
+    PoolSize: 1
+    PoolCanExpand: 1
+    Enabled: 1
+  - GameObjectToPool: {fileID: 4025523552417483689, guid: 3d2794325baa48c498021a024670ca15,
+      type: 3}
+    PoolSize: 1
+    PoolCanExpand: 1
+    Enabled: 1
+  PoolingMethod: 3
+  CanPoolSameObjectTwice: 0
+  MutualizedPoolName: 
 --- !u!114 &5261689521687212452
 MonoBehaviour:
   m_ObjectHideFlags: 0

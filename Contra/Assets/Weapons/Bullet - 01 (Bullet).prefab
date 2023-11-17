@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 547776533618371757}
   - component: {fileID: 7842010951109207968}
   - component: {fileID: 7765053312690057555}
+  - component: {fileID: 944925014373452082}
   m_Layer: 16
   m_Name: Bullet - 01 (Bullet)
   m_TagString: Untagged
@@ -127,7 +128,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -307,7 +308,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183803012360247645}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfdd322a582c3bc429d2350807e8a2c3, type: 3}
   m_Name: 
@@ -319,3 +320,26 @@ MonoBehaviour:
   SkinWidth: 0.1
   RepositionRigidbodyIfHitTrigger: 1
   RepositionRigidbodyIfHitNonTrigger: 1
+--- !u!114 &944925014373452082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183803012360247645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b95296ef9f66e44299eb703ede874bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToInstantiate: {fileID: 3199536429230220929, guid: 9c430fd027e72984088b52c60e6a2c05,
+    type: 3}
+  spawnPosition: {x: 0.4, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
+  ObstaclesLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  distanceToPlayer: 0
+  thresholdNotToShowBurst: 2
+  thePlayer: {fileID: 0}
+  weaponAim: {fileID: 0}

@@ -5,7 +5,7 @@ using Rewired;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class MachineGunBulletBurstV2 : MonoBehaviour
+public class BulletsCollidingWithPlatforms : MonoBehaviour
 {
     public GameObject objectToInstantiate;
     public Vector3 spawnPosition = new Vector3(0.4f, 0f, 0f);

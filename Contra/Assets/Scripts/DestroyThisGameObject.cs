@@ -16,9 +16,12 @@ public class DestroyThisGameObject : MonoBehaviour
             }
         }
     }
-    
-    private void OnTransformParentChanged()
+
+    public void OnTransformParentChanged()
     {
-        Destroy(gameObject, delay);
+        if (itIsParticleSystem)
+        {
+            Destroy(gameObject, delay);
+        }
     }
 }
