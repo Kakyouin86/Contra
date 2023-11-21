@@ -13230,9 +13230,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1038294703}
   - component: {fileID: 1038294702}
-  - component: {fileID: 1038294701}
   - component: {fileID: 1038294700}
   - component: {fileID: 1038294699}
+  - component: {fileID: 1038294701}
   - component: {fileID: 1038294698}
   - component: {fileID: 1038294697}
   - component: {fileID: 1038294681}
@@ -14021,6 +14021,8 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   weaponAim: {fileID: 0}
   weaponInventory: {fileID: 0}
+  theFireIndicator: {fileID: 0}
+  theSmokeIndicator: {fileID: 0}
   originalWeaponAimRotSpeed: 0
   instantWeaponAimRotSpeed: 0
   projectileWeapon: {fileID: 0}
@@ -16692,7 +16694,7 @@ MonoBehaviour:
         _modifierKey2: 0
         _modifierKey3: 0
       - _actionCategoryId: 0
-        _actionId: -1
+        _actionId: 28
         _elementType: 1
         _elementIdentifierId: 8
         _axisRange: 0
@@ -16971,6 +16973,17 @@ MonoBehaviour:
         _invert: 0
         _axisContribution: 0
         _keyboardKeyCode: 114
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 26
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 105
         _modifierKey1: 0
         _modifierKey2: 0
         _modifierKey3: 0

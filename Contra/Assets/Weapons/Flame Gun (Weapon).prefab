@@ -5895,7 +5895,7 @@ GameObject:
   - component: {fileID: 3885216836668689565}
   m_Layer: 0
   m_Name: Smoke
-  m_TagString: Untagged
+  m_TagString: SmokeIndicator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11271,12 +11271,12 @@ PrefabInstance:
     - target: {fileID: 4184408800011958438, guid: 74a30fbdd13e14c42a960158a3275727,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.05
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4184408800011958438, guid: 74a30fbdd13e14c42a960158a3275727,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.06
+      value: -0.18
       objectReference: {fileID: 0}
     - target: {fileID: 4184408800011958438, guid: 74a30fbdd13e14c42a960158a3275727,
         type: 3}

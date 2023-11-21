@@ -2,6 +2,7 @@ using MoreMountains.CorgiEngine;
 using MoreMountains.InventoryEngine;
 using UnityEngine;
 using Rewired;
+using Rewired.ComponentControls.Data;
 
 
 public class Firepoint : MonoBehaviour
@@ -24,6 +25,8 @@ public class Firepoint : MonoBehaviour
     public Vector3 offset = new Vector3(0f, 0f, 0f);
     public WeaponAim weaponAim;
     public Inventory weaponInventory;
+    public GameObject theFireIndicator;
+    public GameObject theSmokeIndicator;
     public float originalWeaponAimRotSpeed;
     public float instantWeaponAimRotSpeed = 0f;
     public ProjectileWeapon projectileWeapon;
@@ -66,177 +69,322 @@ public class Firepoint : MonoBehaviour
             {
                 //////////////////////////////////////////////////////////////////////////////////////
                 //Idle and straight
-                //Torso idle while facing right
+                //Torso IDLE while facing RIGHT
                 if (animationNames.name == "Torso Idle" && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);//Was new Vector3(1.05f, 2.03f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);
                 }
-                //Torso idle while facing left
+                //Torso IDLE while facing LEFT
                 if (animationNames.name == "Torso Idle" && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);//Was new Vector3(-1.05f, 2.03f);
-                }
-                //Shoot straight while facing right
-                if (animationNames.name == "Shoot Straight" && character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);//Was new Vector3(1.05f, 2.03f);
-                }
-                //Shoot straight while facing left
-                if (animationNames.name == "Shoot Straight" && !character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);//Was new Vector3(-1.05f, 2.03f);
-                }
-                //Shoot straight while walking and facing right
-                if (((animationNames.name == "Shoot Straight Walking") || (animationNames.name == "Shoot Straight Walking Flame Gun")) && character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);//Was new Vector3(1.05f, 2.03f);
-                }
-                //Shoot straight while walking and facing left
-                if (((animationNames.name == "Shoot Straight Walking") || (animationNames.name == "Shoot Straight Walking Flame Gun")) && !character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);//Was new Vector3(-1.05f, 2.03f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);
                 }
 
-                //Shoot Up-Right
-                if (((animationNames.name == "Hold Diagonal Up") || (animationNames.name == "Shoot Diagonal Up")) && character.IsFacingRight)
+                ///////
+
+                //Shoot STRAIGHT while facing RIGHT
+                if (animationNames.name == "Shoot Straight" && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 2.5f);//Was new Vector3(0.7f, 3.5f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);
                 }
-                //Shoot Up-Right Walking Machine Gun
+                //Shoot STRAIGHT while facing LEFT
+                if (animationNames.name == "Shoot Straight" && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);
+                }
+
+                ///////
+
+                //Shoot UP while facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Shoot Up") || (animationNames.name == "Hold Up")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 2.8f);
+                }
+                //Shoot UP while facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Shoot Up") || (animationNames.name == "Hold Up")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 2.8f);
+                }
+
+                //Shoot UP while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Shoot Up") || (animationNames.name == "Hold Up")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.6f, 2.95f);
+                }
+                //Shoot UP while facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Shoot Up") || (animationNames.name == "Hold Up")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.6f, 2.95f);
+                }
+
+                ///////
+
+                //Shoot UP-RIGHT while facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Hold Diagonal Up") || (animationNames.name == "Shoot Diagonal Up")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 2.5f);
+                }
+                //Shoot UP-LEFT while facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Hold Diagonal Up") || (animationNames.name == "Shoot Diagonal Up")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 2.5f);
+                }
+
+                //Shoot UP-RIGHT while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Hold Diagonal Up") || (animationNames.name == "Shoot Diagonal Up")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.25f, 2.6f);
+                }
+                //Shoot UP-LEFT while facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Hold Diagonal Up") || (animationNames.name == "Shoot Diagonal Up")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.25f, 2.6f);
+                }
+
+                ///////
+
+                //Shoot DOWN while facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 1.8f);
+                }
+                //Shoot DOWN while facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 1.8f);
+                }
+
+                //Shoot DOWN while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.5f, 0.8f);
+                }
+                //Shoot DOWN while facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.5f, 0.8f);
+                }
+
+                ///////
+
+                //Shoot DOWN-RIGHT while facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Hold Diagonal Down") || (animationNames.name == "Shoot Diagonal Down")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.6f);
+                }
+                //Shoot DOWN-LEFT while facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Hold Diagonal Down") || (animationNames.name == "Shoot Diagonal Down")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.6f);
+                }
+
+                //Shoot DOWN-RIGHT while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Hold Diagonal Down") || (animationNames.name == "Shoot Diagonal Down")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.15f);
+                }
+                //Shoot DOWN-LEFT while facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Hold Diagonal Down") || (animationNames.name == "Shoot Diagonal Down")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.15f);
+                }
+
+                ///////
+
+                //Shoot STRAIGHT while WALKING and facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Shoot Straight Walking")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 2.03f);
+                }
+                //Shoot STRAIGHT while WALKING and facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Shoot Straight Walking")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 2.03f);
+                }
+
+                //Shoot STRAIGHT while WALKING and facing RIGHT Flame Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Shoot Straight Walking") || (animationNames.name == "Shoot Straight Walking Flame Gun")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 2.03f);
+                }
+                //Shoot STRAIGHT while WALKING and facing LEFT Flame Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Shoot Straight Walking") || (animationNames.name == "Shoot Straight Walking Flame Gun")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 2.03f);
+                }
+
+                ///////
+
+                //Shoot UP-RIGHT while WALKING and facing RIGHT Machine Gun ---
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Torso Walking Diagonal Up") || (animationNames.name == "Shoot Diagonal Up Walking")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.9f, 3.1f);
                 }
-                //Shoot Up-Right Walking Flame Gun
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Torso Walking Diagonal Up") || (animationNames.name == "Shoot Diagonal Up Walking Flame Gun")) && character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 2.5f);//Was new Vector3(0.7f, 3.5f);
-                }
-
-                //Shoot Up-Left
-                if (((animationNames.name == "Hold Diagonal Up") || (animationNames.name == "Shoot Diagonal Up")) && !character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 2.5f);//Was new Vector3(0.7f, 3.5f);
-                }
-                //Shoot Up-Left Walking Machine Gun
+                //Shoot UP-LEFT while WALKING and facing LEFT Machine Gun ---
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Torso Walking Diagonal Up") || (animationNames.name == "Shoot Diagonal Up Walking")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.9f, 3.1f);
                 }
-                //Shoot Up-Left Walking Flame Gun
+
+                //Shoot UP-RIGHT while WALKING and facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Torso Walking Diagonal Up") || (animationNames.name == "Shoot Diagonal Up Walking Flame Gun")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 2.5f);
+                }
+                //Shoot UP-LEFT while WALKING and facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Torso Walking Diagonal Up") || (animationNames.name == "Shoot Diagonal Up Walking Flame Gun")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.2f, 2.5f);//Was new Vector3(0.7f, 3.5f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 2.5f);
                 }
 
-                //Shoot up while facing right
-                if (((animationNames.name == "Shoot Up") || (animationNames.name == "Hold Up")) && character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 2.8f);//Was new Vector3(-0.4f, 4.3f);
-                }
-                //Shoot up while facing left
-                if (((animationNames.name == "Shoot Up") || (animationNames.name == "Hold Up")) && !character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 2.8f);//Was new Vector3(0.4f, 4.3f);
-                }
+                ///////
 
-                //Shoot Down-Right
-                if (((animationNames.name == "Hold Diagonal Down") || (animationNames.name == "Shoot Diagonal Down")) && character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.6f);//Was new Vector3(0.7f, 3.5f);
-                }
-                //Shoot Down-Right Walking Machine Gun
+                //Shoot DOWN-RIGHT while WALKING while facing RIGHT Machine Gun ---
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Torso Walking Diagonal Down") || (animationNames.name == "Shoot Diagonal Down Walking")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.84f, 0.94f);
                 }
-                //Shoot Down-Right Walking Flame Gun
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Torso Walking Diagonal Down") || (animationNames.name == "Shoot Diagonal Down Walking Flame Gun")) && character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.7f);//Was new Vector3(0.7f, 3.5f);
-                }
-
-                //Shoot Down-Left
-                if (((animationNames.name == "Hold Diagonal Down") || (animationNames.name == "Shoot Diagonal Down")) && !character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.0f, 1.6f);//Was new Vector3(0.7f, 3.5f);
-                }
-                //Shoot Down-Left Walking Machine Gun
+                //Shoot DOWN-LEFT while WALKING while facing LEFT Machine Gun ---
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Torso Walking Diagonal Down") || (animationNames.name == "Shoot Diagonal Down Walking")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.84f, 0.94f);
                 }
-                //Shoot Down-Left Walking Flame Gun
+
+                //Shoot DOWN-RIGHT while WALKING while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Torso Walking Diagonal Down") || (animationNames.name == "Shoot Diagonal Down Walking Flame Gun")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.1f);
+                }
+                //Shoot DOWN-LEFT while WALKING while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Torso Walking Diagonal Down") || (animationNames.name == "Shoot Diagonal Down Walking Flame Gun")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.7f);//Was new Vector3(0.7f, 3.5f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.2f);
                 }
 
-                //Shoot down while facing right
-                if (((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down")) && character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 1.8f);//Was new Vector3(-0.75f, 0f);
-                }
-                //Shoot down while facing left
-                if (((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down")) && !character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 1.8f);//Was new Vector3(0.75f, 0f);
-                }
+                ///////
 
                 //////////////////////////////////////////////////////////////////////////////////////
 
                 //Jumps
-                //Right while jumping and facing right
-                if (animationNames.name == "Jumping" && character.IsFacingRight)
+                //Shoot RIGHT while JUMPING and facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Jumping")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 1.85f);//Was new Vector3(0.7f, 1.75f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 1.85f);
                 }
-                //Left while jumping and facing left
-                if (animationNames.name == "Jumping" && !character.IsFacingRight)
+                //Shoot LEFT while JUMPING and facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Jumping")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 1.85f);//Was new Vector3(-0.7f, 1.75f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 1.85f);
                 }
-                //Up while jumping and facing right
-                if (animationNames.name == "Jumping" && character.IsFacingRight && (player.GetAxisRaw("Vertical") > 0))
+                //Shoot RIGHT while JUMPING and facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.5f); ;//Was new Vector3(-0.5f, 3.0f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.4f, 1.6f);
                 }
-                //Up while jumping and facing left
-                if (animationNames.name == "Jumping" && !character.IsFacingRight && (player.GetAxisRaw("Vertical") > 0))
+                //Shoot LEFT while JUMPING and facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.5f); ;//Was new Vector3(0.5f, 3f);
-                }
-                //Down while jumping and facing right
-                if (animationNames.name == "Jumping" && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0))
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 2f);//Was new Vector3(-0.5f, 0.5f);
-                }
-                //Down while jumping and facing left
-                if (animationNames.name == "Jumping" && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0))
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 2f);//Was new Vector3(0.5f, 0.5f);
-                }
-                //Right-Up while jumping and facing right
-                if (animationNames.name == "Jumping" && character.IsFacingRight && (player.GetAxisRaw("Vertical") > 0) && (player.GetAxisRaw("Horizontal") > 0))
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.2f, 1.5f); //Was new Vector3(0.3f, 2.7f);
-                }
-                //Left-Up while jumping and facing left
-                if (animationNames.name == "Jumping" && !character.IsFacingRight && (player.GetAxisRaw("Vertical") > 0) && (player.GetAxisRaw("Horizontal") < 0))
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 1.5f);//Was new Vector3(-0.35f,2.7f);
-                }
-                //Right-Down while jumping and facing right
-                if (animationNames.name == "Jumping" && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0) && (player.GetAxisRaw("Horizontal") > 0))
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.2f, 2f);//Was new Vector3(0.3f, 0.85f);
-                }
-                //Left-Down while jumping and facing left
-                if (animationNames.name == "Jumping" && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0) && (player.GetAxisRaw("Horizontal") < 0))
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 2f);//Was new Vector3(- 0.35f, 0.85f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.4f, 1.6f);
                 }
 
+                ///////
+
+                //Shoot UP while JUMPING and facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") > 0))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.5f);
+                }
+                //Shoot UP while JUMPING and facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") > 0))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.5f);
+                }
+
+                //Shoot UP while JUMPING and facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") > 0))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.5f, 1.6f);
+                }
+                //Shoot UP while JUMPING and facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") > 0))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.5f, 1.6f);
+                }
+
+                ///////
+
+                //Shoot DOWN while JUMPING and facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 2f);
+                }
+                //Shoot DOWN while JUMPING and facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 2f);
+                }
+
+                //Shoot DOWN while JUMPING and facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.4f, 1.3f);
+                }
+                //Shoot DOWN while JUMPING and facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.4f, 1.3f);
+                }
+
+                ///////
+
+                //Shoot RIGHT-UP while JUMPING and facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") > 0)))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.2f, 1.5f);
+                }
+                //Shoot LEFT-UP while JUMPING and facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") < 0)))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 1.5f);
+                }
+
+                //Shoot RIGHT-UP while JUMPING and facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") > 0)))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.5f, 1.6f);
+                }
+                //Shoot LEFT-UP while JUMPING and facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") < 0)))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.5f, 1.6f);
+                }
+
+                ///////
+
+                //Shoot RIGHT-DOWN while JUMPING and facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") > 0)))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.2f, 2f);
+                }
+                //Shoot LEFT-DOWN while JUMPING and facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") < 0)))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 2f);
+                }
+
+                //Shoot RIGHT-DOWN while JUMPING and facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") > 0)))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.2f, 1.2f);
+                }
+                //Shoot LEFT-DOWN while JUMPING and facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") < 0)))
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 1.2f);
+                }
+
+                ///////
+                
                 //////////////////////////////////////////////////////////////////////////////////////
 
                 //Crouch
@@ -260,6 +408,12 @@ public class Firepoint : MonoBehaviour
                 //////////////////////////////////////////////////////////////////////////////////////
                 //Vertical ladder
                 //Vertical ladder idle while facing right
+
+
+
+
+
+
                 if (((animationNames.name == "Climb Idle") || (animationNames.name == "Climb Shooting Forward")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 2.1f);//Was new Vector3(0.85f,2.1f);
@@ -447,27 +601,41 @@ public class Firepoint : MonoBehaviour
 
                 //////////////////////////////////////////////////////////////////////////////////////
                 //This moves the Fire Burst when walking so that it doesn't create the effect that the shot is way away from the burst.
-                GameObject theFireIndicator = GameObject.FindWithTag("FireIndicator");
-                if (((animationNames.name == "Shoot Diagonal Up Walking") || (animationNames.name == "Torso Walking Diagonal Up")) && weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
-                    weaponInventory.Content[0].ItemName == "Machine Gun")
-                {
-                    theFireIndicator.transform.localPosition = new Vector3(0.29f, 0.08f, 0.0f);
-                }
-                /*else
-                {
-                    theFireIndicator.transform.localPosition = new Vector3(1.5f, 0.0f, 0.0f);
-                }*/
 
-                else if (((animationNames.name == "Shoot Diagonal Down Walking") || (animationNames.name == "Torso Walking Diagonal Down")) && weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
-                    weaponInventory.Content[0].ItemName == "Machine Gun")
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun")
                 {
-                    theFireIndicator.transform.localPosition = new Vector3(0.25f, -0.16f, 0.0f);
-                }
-                else
-                {
-                    theFireIndicator.transform.localPosition = new Vector3(1.5f, 0.0f, 0.0f);
+                    theFireIndicator = GameObject.FindWithTag("FireIndicator");
+                    if ((animationNames.name == "Shoot Diagonal Up Walking") || (animationNames.name == "Torso Walking Diagonal Up"))
+                    {
+                        theFireIndicator.transform.localPosition = new Vector3(0.29f, 0.08f, 0.0f);
+                    }
+                    else if ((animationNames.name == "Shoot Diagonal Down Walking") || (animationNames.name == "Torso Walking Diagonal Down"))
+
+                    {
+                        theFireIndicator.transform.localPosition = new Vector3(0.25f, -0.16f, 0.0f);
+                    }
+                    else
+                    {
+                        theFireIndicator.transform.localPosition = new Vector3(1.5f, 0.0f, 0.0f);
+                    }
                 }
 
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Flame Gun")
+                {
+                    theSmokeIndicator = GameObject.FindWithTag("SmokeIndicator");
+                    if ((animationNames.name == "Shoot Diagonal Up Walking Flame Gun") && character.IsFacingRight)
+                    {
+                        theSmokeIndicator.transform.localPosition = new Vector3(-0.35f, 0.35f, 0.0f);
+                    }
+                    else if ((animationNames.name == "Shoot Diagonal Up Walking Flame Gun") && !character.IsFacingRight)
+                    {
+                        theSmokeIndicator.transform.localPosition = new Vector3(-0.2f, 0.3f, 0.0f);
+                    }
+                    else
+                    {
+                        theSmokeIndicator.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+                    }
+                }
             }
         }
     }

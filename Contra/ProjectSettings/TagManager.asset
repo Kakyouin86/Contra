@@ -24,6 +24,7 @@ TagManager:
   - FlameGunLights
   - WeaponInventory
   - Shells
+  - SmokeIndicator
   layers:
   - Default
   - TransparentFX
