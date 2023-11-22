@@ -158,7 +158,7 @@ AnimatorStateMachine:
     m_Position: {x: -20, y: 1160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -715717945635665188}
-    m_Position: {x: -140, y: 450, z: 0}
+    m_Position: {x: -130, y: 450, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3935808112588193312}
     m_Position: {x: -20, y: 500, z: 0}
@@ -1699,7 +1699,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Horizontal Ladder Hold Back Diagonal Up
+  m_Name: Horizontal Ladder Hold Diagonal Up Back
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -2800,6 +2800,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: WeaponAngleRelativeAnimationParameter
     m_EventTreshold: 100
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -715717945635665188}
   m_Solo: 0

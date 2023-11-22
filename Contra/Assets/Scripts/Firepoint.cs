@@ -528,23 +528,23 @@ public class Firepoint : MonoBehaviour
 
                 ///////
 
-                //Vertical ladder shoot DOWN-RIGHT while facing RIGHT Machine Gun ---
+                //Vertical ladder shoot UP-LEFT while facing RIGHT Machine Gun ---
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Climb Hold Diagonal Up Back") || (animationNames.name == "Climb Shooting Diagonal Up Back")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-1.3f, 2.4f);
                 }
-                //Vertical ladder shoot DOWN-RIGHT while facing LEFT Machine Gun ---
+                //Vertical ladder shoot UP-RIGHT while facing LEFT Machine Gun ---
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Climb Hold Diagonal Up Back") || (animationNames.name == "Climb Shooting Diagonal Up Back")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(1.3f, 2.4f);
                 }
 
-                //Vertical ladder shoot DOWN-RIGHT while facing RIGHT Flame Gun |||
+                //Vertical ladder shoot UP-LEFT while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Hold Diagonal Up Back") || (animationNames.name == "Climb Shooting Diagonal Up Back")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-2.25f, 2.35f);
                 }
-                //Vertical ladder shoot DOWN-RIGHT while facing LEFT Flame Gun |||
+                //Vertical ladder shoot UP-RIGHT while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Hold Diagonal Up Back") || (animationNames.name == "Climb Shooting Diagonal Up Back")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(2.25f, 2.35f);
@@ -599,91 +599,205 @@ public class Firepoint : MonoBehaviour
                 }
 
                 ///////
-                
-                //////////////////////////////////////////////////////////////////////////////////////
-                //Horizontal ladder
-                //Horizontal ladder idle while facing right
-                if (((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Hold Forward") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.85f);//Was new Vector3(1.0f, 1.85f);
-                }
-                //Horizontal ladder idle while facing left
-                if (((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Hold Forward") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && !character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.85f);//Was new Vector3(-1.0f, 1.85f);
-                }
-                //Horizontal ladder idle while facing right but aiming left
-                if (((animationNames.name == "Horizontal Ladder Hold Back") || (animationNames.name == "Horizontal Ladder Shooting Back")) && character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-1.1f, 2.1f);//Was new Vector3(-3.1f, 2.15f);
-                }
-                //Horizontal ladder idle while facing left but aiming right
-                if (((animationNames.name == "Horizontal Ladder Hold Back") || (animationNames.name == "Horizontal Ladder Shooting Back")) && !character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(1.1f, 2.1f);//Was new Vector3(3.25f, 2.15f);
-                }
-                //Horizontal ladder idle while facing right and aiming diagonal up-right
-                if (((animationNames.name == "Horizontal Ladder Hold Diagonal Up Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Forward")) && character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 2.3f);//Was new Vector3(0.65f, 3.4f);
-                }
-                //Horizontal ladder idle while facing left and aiming diagonal up-right
-                if (((animationNames.name == "Horizontal Ladder Hold Diagonal Up Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Forward")) && !character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 2.3f);//new Vector3(-0.65f, 3.4f);
-                }
-                //Horizontal ladder idle while facing right and aiming up
-                if (((animationNames.name == "Horizontal Ladder Hold Up") || (animationNames.name == "Horizontal Ladder Shooting Up")) && character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 2.7f);//Was new Vector3(-0.55f, 4.2f);
-                }
-                //Horizontal ladder idle while facing left and aiming up
-                if (((animationNames.name == "Horizontal Ladder Hold Up") || (animationNames.name == "Horizontal Ladder Shooting Up")) && !character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 2.7f);//Was new Vector3(0.6f, 4.2f);
-                }
-                //Horizontal ladder idle while facing right and aiming diagonal up-left
-                if (((animationNames.name == "Horizontal Ladder Hold Back Diagonal Up") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Back")) && character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-1.1f, 2.3f);//Was new Vector3(-2.5f, 3.4f);
-                }
-                //Horizontal ladder idle while facing left and aiming diagonal up-left
-                if (((animationNames.name == "Horizontal Ladder Hold Back Diagonal Up") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Back")) && !character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(1.1f, 2.3f);//Was new Vector3(2.5f, 3.4f);
-                }
-                //Horizontal ladder idle while facing right and aiming down-forward
-                if (((animationNames.name == "Horizontal Ladder Hold Diagonal Down Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Forward")) && character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 1.4f);//Was new Vector3(0.35f, 0.4f);
-                }
-                //Horizontal ladder idle while facing left and aiming down-forward
-                if (((animationNames.name == "Horizontal Ladder Hold Diagonal Down Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Forward")) && !character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 1.4f);//Was new Vector3(-0.5f, 0.4f);
-                }
-                //Horizontal ladder idle while facing right and aiming down
-                if (((animationNames.name == "Horizontal Ladder Hold Down") || (animationNames.name == "Horizontal Ladder Shooting Down")) && character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.4f, 1.1f);//Was new Vector3(-0.8f, -0.5f);
-                }
-                //Horizontal ladder idle while facing left and aiming down
-                if (((animationNames.name == "Horizontal Ladder Hold Down") || (animationNames.name == "Horizontal Ladder Shooting Down")) && !character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.4f, 1.1f);//Was new Vector3(0.8f, -0.5f);
-                }
-                //Horizontal ladder idle while facing right and aiming down-back
-                if (((animationNames.name == "Horizontal Ladder Hold Diagonal Down Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Back")) && character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-1.3f, 1.7f);//Was new Vector3(-2.8f, 0.65f);
-                }
-                //Horizontal ladder idle while facing left and aiming down-back
-                if (((animationNames.name == "Horizontal Ladder Hold Diagonal Down Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Back")) && !character.IsFacingRight)
-                {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(1.3f, 1.7f);//Was new Vector3(2.8f, 0.65f);
-                }
 
                 //////////////////////////////////////////////////////////////////////////////////////
+
+                //Horizontal ladder
+
+                //Horizontal ladder shoot STRAIGHT while facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.85f);
+                }
+                //Horizontal ladder shoot STRAIGHT while facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.85f);
+                }
+
+                //Horizontal ladder shoot STRAIGHT while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.85f);
+                }
+                //Horizontal ladder shoot STRAIGHT while facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.85f);
+                }
+
+                ///////
+
+                //Horizontal ladder shoot BACK while facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Back") || (animationNames.name == "Horizontal Ladder Shooting Back")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-1.1f, 2.1f);
+                }
+                //Horizontal ladder shoot BACK while facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Back") || (animationNames.name == "Horizontal Ladder Shooting Back")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(1.1f, 2.1f);
+                }
+
+                //Horizontal ladder shoot BACK while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Back") || (animationNames.name == "Horizontal Ladder Shooting Back")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-2.15f, 1.8f);
+                }
+                //Horizontal ladder shoot BACK while facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Back") || (animationNames.name == "Horizontal Ladder Shooting Back")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(2.15f, 1.8f);
+                }
+
+                ///////
+
+                //Horizontal ladder shoot UP while facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Up") || (animationNames.name == "Horizontal Ladder Shooting Up")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 2.7f);
+                }
+                //Horizontal ladder shoot UP while facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Up") || (animationNames.name == "Horizontal Ladder Shooting Up")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 2.7f);
+                }
+
+                //Horizontal ladder shoot UP while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Up") || (animationNames.name == "Horizontal Ladder Shooting Up")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.8f, 2.9f);
+                }
+                //Horizontal ladder shoot UP while facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Up") || (animationNames.name == "Horizontal Ladder Shooting Up")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.8f, 2.9f);
+                }
+
+                ///////
+
+                //Horizontal ladder shoot DOWN while facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Down") || (animationNames.name == "Horizontal Ladder Shooting Down")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.4f, 1.1f);
+                }
+                //Horizontal ladder shoot DOWN while facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Down") || (animationNames.name == "Horizontal Ladder Shooting Down")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.4f, 1.1f);
+                }
+
+                //Horizontal ladder shoot DOWN while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Down") || (animationNames.name == "Horizontal Ladder Shooting Down")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.7f, 0.25f);
+                }
+                //Horizontal ladder shoot DOWN while facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Down") || (animationNames.name == "Horizontal Ladder Shooting Down")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.7f, 0.25f);
+                }
+
+                ///////
+
+                //Horizontal ladder shoot UP-RIGHT while facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Forward")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 2.3f);
+                }
+                //Horizontal ladder shoot UP-LEFT while facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Forward")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 2.3f);
+                }
+
+                //Horizontal ladder shoot UP-RIGHT while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Forward")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.25f, 2.4f);
+                }
+                //Horizontal ladder shoot UP-LEFT while facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Forward")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.25f, 2.4f);
+                }
+
+                ///////
+
+                //Horizontal ladder shoot UP-LEFT while facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Back")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-1.1f, 2.3f);
+                }
+                //Horizontal ladder shoot UP-RIGHT while facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Back")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(1.1f, 2.3f);
+                }
+
+                //Horizontal ladder shoot UP-LEFT while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Back")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-2f, 2.25f);
+                }
+                //Horizontal ladder shoot UP-RIGHT while facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Back")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(2f, 2.25f);
+                }
+
+                ///////
+
+                //Horizontal ladder shoot DOWN-RIGHT while facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Forward")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 1.4f);
+                }
+                //Horizontal ladder shoot DOWN-RIGHT while facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Forward")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 1.4f);
+                }
+
+                //Horizontal ladder shoot DOWN-RIGHT while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Forward")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.15f, 1.0f);
+                }
+                //Horizontal ladder shoot DOWN-RIGHT while facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Forward")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.15f, 1.0f);
+                }
+
+                ///////
+
+                //Horizontal ladder shoot DOWN-LEFT while facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Back")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-1.3f, 1.7f);
+                }
+                //Horizontal ladder shoot DOWN-LEFT while facing LEFT  Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Back")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(1.3f, 1.7f);
+                }
+
+                //Horizontal ladder shoot DOWN-LEFT while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Back")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-2, 1f);
+                }
+                //Horizontal ladder shoot DOWN-LEFT while facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Back")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(2, 1f);
+                }
+
+                ///////
+
+                //////////////////////////////////////////////////////////////////////////////////////
+
                 //Change the Weapon Rotation Speed. This is done so that if you change positions rapidly, it doesn't show as it's a circular movement on some animations. It creates all kind of crazy shoots in diagonals.
 
                 bool animationFound = false;
@@ -706,7 +820,7 @@ public class Firepoint : MonoBehaviour
                 }
 
                 //////////////////////////////////////////////////////////////////////////////////////
-                //This moves the Fire Burst when walking so that it doesn't create the effect that the shot is way away from the burst.
+                //This moves the Fire Burst or Smoke Particle Effect when playing some animations, so that it doesn't create the effect that the shot is way away from the burst.
 
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun")
                 {
@@ -773,6 +887,31 @@ public class Firepoint : MonoBehaviour
                         theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -180f);
                     }
                     else if (((animationNames.name == "Climb Hold Diagonal Down Back") || (animationNames.name == "Climb Shooting Diagonal Down Back")))
+                    {
+                        theSmokeIndicator.transform.localPosition = new Vector3(0.0f, -0.15f, 0.0f);
+                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 180f, 180f);
+                    }
+                    else if (((animationNames.name == "Horizontal Ladder Hold Back") || (animationNames.name == "Horizontal Ladder Shooting Back")))
+                    {
+                        theSmokeIndicator.transform.localPosition = new Vector3(0.0f, -0.15f, 0.0f);
+                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 180f, 180f);
+                    }
+                    else if (((animationNames.name == "Horizontal Ladder Hold Up") || (animationNames.name == "Horizontal Ladder Shooting Up")))
+                    {
+                        theSmokeIndicator.transform.localPosition = new Vector3(0.7f, 0.5f, 0.0f);
+                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
+                    }
+                    else if (((animationNames.name == "Horizontal Ladder Hold Down") || (animationNames.name == "Horizontal Ladder Shooting Down")))
+                    {
+                        theSmokeIndicator.transform.localPosition = new Vector3(0.7f, 0.5f, 0.0f);
+                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
+                    }
+                    else if (((animationNames.name == "Horizontal Ladder Hold Diagonal Up Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Back")))
+                    {
+                        theSmokeIndicator.transform.localPosition = new Vector3(1.2f, -0.3f, 0.0f);
+                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -180f);
+                    }
+                    else if (((animationNames.name == "Horizontal Ladder Hold Diagonal Down Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Back")))
                     {
                         theSmokeIndicator.transform.localPosition = new Vector3(0.0f, -0.15f, 0.0f);
                         theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 180f, 180f);
