@@ -10885,7 +10885,7 @@ MonoBehaviour:
   originalProjectiles: 0
   AimControl: 1
   RotationMode: 2
-  WeaponRotationSpeed: 40
+  WeaponRotationSpeed: 999
   InstantFlip: 0
   PreventAimWhileWeaponIsInUse: 0
   MinimumAngle: -180
