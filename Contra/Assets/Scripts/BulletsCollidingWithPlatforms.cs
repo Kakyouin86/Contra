@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using MoreMountains.CorgiEngine;
 using Rewired;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class BulletsCollidingWithPlatforms : MonoBehaviour
@@ -18,10 +19,26 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
 
     public void OnEnable()
     {
+        //GetComponent<Animator>().enabled = false;
+        //GetComponent<Animator>().Play(GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).fullPathHash, -1, 0f);
+        //GetComponent<Animator>().enabled = true;
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
         }
+    }
+
+    public void OnDisable()
+    {
+        GetComponent<SpriteRenderer>().sprite = null;
+        //GetComponent<Animator>().enabled = false;
+        //GetComponent<Animator>().Play(GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).fullPathHash, -1, 0f);
+        //GetComponent<Animator>().enabled = true;
+    }
+
+    public void Update()
+    {
+        
     }
 
     public void Start()
@@ -32,6 +49,7 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
+
         if (((1 << other.gameObject.layer) & ObstaclesLayerMask) != 0)
         {
             GameObject spawnedObject = Instantiate(objectToInstantiate, Vector3.zero, Quaternion.identity);
@@ -57,7 +75,8 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
             {
                 spawnedObject.IsDestroyed();
             }
-            spawnedObject = null;
+            //GetComponent<Animator>().enabled = false;
+            GetComponent<SpriteRenderer>().sprite = null;
         }
     }
 }
