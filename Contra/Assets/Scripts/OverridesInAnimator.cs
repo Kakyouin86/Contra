@@ -33,8 +33,7 @@ public class OverridesInAnimator : MonoBehaviour
 
     void Update()
     {
-        if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
-            weaponInventory.Content[0].ItemName == "Flame Gun")
+        if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Flame Gun") || (weaponInventory.Content[0].ItemName == "Super Flame Gun")))
         {
             flameGun = true;
             machineGun = false;
@@ -101,8 +100,7 @@ public class OverridesInAnimator : MonoBehaviour
         //This makes that if you are in the middle of the animation using the Machine Gun, all clips down below will be reset
         //if (Input.GetKeyDown(KeyCode.E))
         if (theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse &&
-            weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
-            weaponInventory.Content[0].ItemName == "Flame Gun")
+            weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Flame Gun") || (weaponInventory.Content[0].ItemName == "Super Flame Gun")))
         {
             if (theAnimator.GetCurrentAnimatorStateInfo(1).IsName("Shoot Straight"))
             {

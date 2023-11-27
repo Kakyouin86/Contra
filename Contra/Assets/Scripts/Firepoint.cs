@@ -840,7 +840,7 @@ public class Firepoint : MonoBehaviour
                     }
                 }
 
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Flame Gun")
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Flame Gun") || (weaponInventory.Content[0].ItemName == "Super Flame Gun")))
                 {
                     theSmokeIndicator = GameObject.FindWithTag("SmokeIndicator");
                     if (((animationNames.name == "Hold Up") || (animationNames.name == "Shoot Up")))
