@@ -11066,12 +11066,7 @@ MonoBehaviour:
   NestWaitingPool: 1
   NestUnderThis: 0
   Pool:
-  - GameObjectToPool: {fileID: 6963813303730167545, guid: 9571c927befdcc54185bf1688bdf7fe6,
-      type: 3}
-    PoolSize: 1
-    PoolCanExpand: 1
-    Enabled: 1
-  - GameObjectToPool: {fileID: 4025523552417483689, guid: 3d2794325baa48c498021a024670ca15,
+  - GameObjectToPool: {fileID: 5345617776012890272, guid: da45ff3c82bd8f941b7fc880add0543d,
       type: 3}
     PoolSize: 1
     PoolCanExpand: 1
