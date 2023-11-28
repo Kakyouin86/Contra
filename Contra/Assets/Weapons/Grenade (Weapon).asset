@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16f005fbcfc61684c82bf819bce9d63b, type: 3}
-  m_Name: Grenade - 03 (Super Bullet)
+  m_Name: Grenade (Weapon)
   m_EditorClassIdentifier: 
-  ItemID: Inventory Super Grenades
-  TargetInventoryName: Secondary Main Inventory
+  ItemID: Inventory Grenade
+  TargetInventoryName: Main Inventory
   ForceSlotIndex: 0
-  TargetIndex: 0
+  TargetIndex: 1
   Usable: 0
   Consumable: 1
   ConsumeQuantity: 1
@@ -33,9 +33,9 @@ MonoBehaviour:
     DisplayUseButton: 1
     DisplayUnequipButton: 1
   Quantity: 1
-  ItemName: Super Grenades
-  ShortDescription: Super grenades with enhanced damage and AoE.
-  Description: Super grenades
+  ItemName: Grenade
+  ShortDescription: Just a grenade.
+  Description: Default grenade.
   Icon: {fileID: 920497166, guid: 3d49826a96c74e84a8cdde2f27144032, type: 3}
   Prefab: {fileID: 0}
   ForcePrefabDropQuantity: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
     MaximumRotation: {x: 0, y: 0, z: 0}
     MinimumScale: {x: 1, y: 1, z: 1}
     MaximumScale: {x: 1, y: 1, z: 1}
-  MaximumStack: 1
+  MaximumStack: 2147483647
   ItemClass: 2
   TargetEquipmentInventoryName: Secondary Weapon Inventory
   EquippedSound: {fileID: 0}
@@ -89,7 +89,7 @@ MonoBehaviour:
   MovedSound: {fileID: 0}
   DroppedSound: {fileID: 0}
   UseDefaultSoundsIfNull: 1
-  EquippableWeapon: {fileID: 1239490628098550091, guid: 81e1ee0df4b7a774592ec6b524f52b87,
+  EquippableWeapon: {fileID: 7766883220953727492, guid: 28147cdd190ec574ba6cc197df98a3c2,
     type: 3}
-  AutoEquipMode: 0
-  HandleWeaponID: 1
+  AutoEquipMode: 1
+  HandleWeaponID: 2

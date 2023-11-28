@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16f005fbcfc61684c82bf819bce9d63b, type: 3}
-  m_Name: Flame Gun (Super Weapon)
+  m_Name: Grenade (Super Weapon)
   m_EditorClassIdentifier: 
-  ItemID: Inventory Flame Gun
+  ItemID: Inventory Grenade
   TargetInventoryName: Main Inventory
-  ForceSlotIndex: 1
+  ForceSlotIndex: 0
   TargetIndex: 1
   Usable: 0
   Consumable: 1
@@ -33,10 +33,10 @@ MonoBehaviour:
     DisplayUseButton: 1
     DisplayUnequipButton: 1
   Quantity: 1
-  ItemName: Super Flame Gun
-  ShortDescription: It's a great Flame Gun. An enhanced version.
-  Description: Every single game should have a Flame Gun and this one is way better.
-  Icon: {fileID: -783087452, guid: 0c5e8d071c147d447ad29a239022cb70, type: 3}
+  ItemName: Super Grenade
+  ShortDescription: Super grenade!
+  Description: The ultimate grenade.
+  Icon: {fileID: 920497166, guid: 3d49826a96c74e84a8cdde2f27144032, type: 3}
   Prefab: {fileID: 0}
   ForcePrefabDropQuantity: 0
   PrefabDropQuantity: 1
@@ -81,15 +81,15 @@ MonoBehaviour:
     MaximumRotation: {x: 0, y: 0, z: 0}
     MinimumScale: {x: 1, y: 1, z: 1}
     MaximumScale: {x: 1, y: 1, z: 1}
-  MaximumStack: 1
+  MaximumStack: 9999999
   ItemClass: 2
-  TargetEquipmentInventoryName: Weapon Inventory
+  TargetEquipmentInventoryName: Secondary Weapon Inventory
   EquippedSound: {fileID: 0}
   UsedSound: {fileID: 0}
   MovedSound: {fileID: 0}
   DroppedSound: {fileID: 0}
   UseDefaultSoundsIfNull: 1
-  EquippableWeapon: {fileID: 4216522610364318837, guid: 54f6b91dfe6c58844a3208ac4e06770e,
+  EquippableWeapon: {fileID: 7766883220953727492, guid: 0d374e497746a65479eb77102b9483cf,
     type: 3}
   AutoEquipMode: 1
-  HandleWeaponID: 1
+  HandleWeaponID: 2
