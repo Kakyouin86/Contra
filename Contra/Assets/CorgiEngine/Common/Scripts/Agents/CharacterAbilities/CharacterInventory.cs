@@ -174,24 +174,31 @@ namespace MoreMountains.CorgiEngine
 			if (HotbarInventory != null) { HotbarInventory.SetOwner (this.gameObject); HotbarInventory.TargetTransform = InventoryTransform;}
 		}
 
-		/// <summary>
-		/// We watch for a switch weapon input
-		/// </summary>
-		protected override void HandleInput() //Leo Monge: Need to ALWAYS bring it after update. This will make a short delay when switching weapons. It's for the animator.
+        /// <summary>
+        /// We watch for a switch weapon input
+        /// </summary>
+        protected override void HandleInput()
         {
-			if (_inputManager.SwitchWeaponButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+            if (_inputManager.SwitchWeaponButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
             {
-                GameObject theShells = GameObject.FindGameObjectWithTag("Shells");
-                if (theShells != null)
+                GameObject[] shellsArray = GameObject.FindGameObjectsWithTag("Shells");
+
+                foreach (GameObject theShells in shellsArray)
                 {
-                    theShells.transform.SetParent(null);
+                    if (theShells != null)
+                    {
+                        theShells.transform.SetParent(null);
+                        Destroy(theShells, 2f);
+                    }
                 }
+
                 Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
-				theAnimator.SetBool("DelayForSwitchingGuns", true);
-				SwitchWeapon();
+                theAnimator.SetBool("DelayForSwitchingGuns", true);
+                SwitchWeapon();
                 StartCoroutine(DelayAnimations());
             }
-		}
+        }
+
 
         IEnumerator DelayAnimations() //Leo Monge: Need to ALWAYS bring it after update. This will make a short delay when switching weapons. It's for the animator.
         {

@@ -5049,7 +5049,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 36059a6b5a5000a469004894f2d1d69e, type: 2}
+  - {fileID: 2100000, guid: 5c6e2e26dc017474685321d297530700, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10176,7 +10176,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1560561636924319824}
-  - component: {fileID: 459260198589995503}
   m_Layer: 0
   m_Name: Machine Gun Shells
   m_TagString: Shells
@@ -10200,20 +10199,6 @@ Transform:
   - {fileID: 4000010369676528}
   m_Father: {fileID: 4000012439199124}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &459260198589995503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6671100422368516668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd7e1315bfac146498378687138063f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itIsParticleSystem: 1
-  delay: 2
 --- !u!1 &8363607234244267995
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,12 +3,12 @@ using System.Collections;
 
 public class DestroyThisGameObject : MonoBehaviour
 {
-    public bool itIsParticleSystem;
+    //public bool itIsParticleSystem;
     public float delay = 0f;
 
     public void Start()
     {
-        if (!itIsParticleSystem)
+        //if (!itIsParticleSystem)
         {
             if (this.GetComponent<Animator>() != null)
             {
@@ -19,9 +19,10 @@ public class DestroyThisGameObject : MonoBehaviour
 
     public void OnTransformParentChanged()
     {
-        if (itIsParticleSystem)
+        //if (itIsParticleSystem)
         {
-            Destroy(gameObject, delay);
+            //Destroy(gameObject, delay);
+            //gameObject.SetActive(false);
         }
     }
 }
