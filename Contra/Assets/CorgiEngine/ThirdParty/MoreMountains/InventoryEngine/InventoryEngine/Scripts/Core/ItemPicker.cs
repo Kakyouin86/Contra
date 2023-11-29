@@ -83,7 +83,7 @@ namespace MoreMountains.InventoryEngine
 			}
 
 			Pick(Item.TargetInventoryName, playerID);
-		}
+        }
 
 		/// <summary>
 		/// Triggered when something collides with the picker

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f005fbcfc61684c82bf819bce9d63b, type: 3}
   m_Name: Machine Gun (Weapon)
   m_EditorClassIdentifier: 
-  ItemID: Inventory Machine Gun
+  ItemID: Inventory 00 - Machine Gun
   TargetInventoryName: Main Inventory
   ForceSlotIndex: 0
   TargetIndex: 0
@@ -34,7 +34,7 @@ MonoBehaviour:
     DisplayUnequipButton: 1
   Quantity: 1
   ItemName: Machine Gun
-  ShortDescription: It shots like crazy.
+  ShortDescription: It shoots like crazy.
   Description: Default machine gun.
   Icon: {fileID: -1568160985, guid: 3366de5538e2de34da12a9f086695ff4, type: 3}
   Prefab: {fileID: 0}

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16f005fbcfc61684c82bf819bce9d63b, type: 3}
-  m_Name: Grenade (Super Weapon)
+  m_Name: Grenade Launcher (Weapon)
   m_EditorClassIdentifier: 
-  ItemID: Inventory Grenade
+  ItemID: Inventory 03 - Grenade Launcher
   TargetInventoryName: Main Inventory
   ForceSlotIndex: 0
-  TargetIndex: 3
+  TargetIndex: 2
   Usable: 0
   Consumable: 1
   ConsumeQuantity: 1
@@ -33,10 +33,10 @@ MonoBehaviour:
     DisplayUseButton: 1
     DisplayUnequipButton: 1
   Quantity: 1
-  ItemName: Super Grenade
-  ShortDescription: Super grenade!
-  Description: The ultimate grenade.
-  Icon: {fileID: 920497166, guid: 3d49826a96c74e84a8cdde2f27144032, type: 3}
+  ItemName: Grenade Launcher
+  ShortDescription: 
+  Description: 
+  Icon: {fileID: -783087452, guid: 0c5e8d071c147d447ad29a239022cb70, type: 3}
   Prefab: {fileID: 0}
   ForcePrefabDropQuantity: 0
   PrefabDropQuantity: 1
@@ -81,15 +81,15 @@ MonoBehaviour:
     MaximumRotation: {x: 0, y: 0, z: 0}
     MinimumScale: {x: 1, y: 1, z: 1}
     MaximumScale: {x: 1, y: 1, z: 1}
-  MaximumStack: 9999999
+  MaximumStack: 1
   ItemClass: 2
-  TargetEquipmentInventoryName: Secondary Weapon Inventory
+  TargetEquipmentInventoryName: Weapon Inventory
   EquippedSound: {fileID: 0}
   UsedSound: {fileID: 0}
   MovedSound: {fileID: 0}
   DroppedSound: {fileID: 0}
   UseDefaultSoundsIfNull: 1
-  EquippableWeapon: {fileID: 7766883220953727492, guid: 0d374e497746a65479eb77102b9483cf,
+  EquippableWeapon: {fileID: 7491448193889686563, guid: 87ba1f8d7898ea441b8eb545c42af73e,
     type: 3}
   AutoEquipMode: 1
-  HandleWeaponID: 2
+  HandleWeaponID: 1

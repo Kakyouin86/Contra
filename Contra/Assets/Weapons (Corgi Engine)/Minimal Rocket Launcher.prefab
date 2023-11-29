@@ -180,6 +180,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0514d297deadac74fb15a7b7326ff0d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldRotation: {x: 0, y: 0, z: 0, w: 0}
+  commonRotation: {x: 0, y: 0, z: 0, w: 0}
+  projectileWeapon: {fileID: 0}
+  originalProjectiles: 0
   AimControl: 1
   RotationMode: 0
   WeaponRotationSpeed: 5
@@ -195,7 +199,7 @@ MonoBehaviour:
   ReticleZPosition: 0
   ReticleAtMousePosition: 0
   RotateReticle: 0
-  ReplaceMousePointer: 1
+  ReplaceMousePointer: 0
   DisableReticleOnDeath: 1
 --- !u!114 &7491448193889686563
 MonoBehaviour:
@@ -209,6 +213,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d7ce0b8cf4b34859b9e359283b2e7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theAnimator: {fileID: 0}
+  customIntervalLeo: 0.5
+  intervalWaitFor: 0
+  counterIsShootingCounter: 0
   TriggerMode: 1
   Interruptable: 0
   InitializeOnStart: 0
@@ -5281,13 +5289,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 0
   m_ApplyActiveColorSpace: 0
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 0001030405
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -10192,13 +10202,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 0
   m_ApplyActiveColorSpace: 0
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 0001030405
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -10421,6 +10433,7 @@ MonoBehaviour:
         Owner: {fileID: 3179196617872413397}
         DebugActive: 0
         Mode: 0
+        EmitCount: 100
         BoundParticleSystem: {fileID: 8960697758429636673}
         RandomParticleSystems: []
         MoveToPosition: 0
@@ -10498,6 +10511,7 @@ MonoBehaviour:
         Owner: {fileID: 3179196617872413397}
         DebugActive: 0
         Mode: 0
+        EmitCount: 100
         BoundParticleSystem: {fileID: 4964453079564691373}
         RandomParticleSystems: []
         MoveToPosition: 0

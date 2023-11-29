@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f005fbcfc61684c82bf819bce9d63b, type: 3}
   m_Name: Flame Gun (Weapon)
   m_EditorClassIdentifier: 
-  ItemID: Inventory Flame Gun
+  ItemID: Inventory 01 - Flame Gun
   TargetInventoryName: Main Inventory
-  ForceSlotIndex: 1
+  ForceSlotIndex: 0
   TargetIndex: 1
   Usable: 0
   Consumable: 1
@@ -81,7 +81,7 @@ MonoBehaviour:
     MaximumRotation: {x: 0, y: 0, z: 0}
     MinimumScale: {x: 1, y: 1, z: 1}
     MaximumScale: {x: 1, y: 1, z: 1}
-  MaximumStack: 9999999
+  MaximumStack: 1
   ItemClass: 2
   TargetEquipmentInventoryName: Weapon Inventory
   EquippedSound: {fileID: 0}

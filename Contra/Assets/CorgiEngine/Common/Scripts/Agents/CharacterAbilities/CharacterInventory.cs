@@ -3,6 +3,7 @@ using System.Collections;
 using MoreMountains.Tools;
 using MoreMountains.InventoryEngine;
 using System.Collections.Generic;
+using Rewired;
 
 namespace MoreMountains.CorgiEngine
 {
@@ -16,10 +17,16 @@ namespace MoreMountains.CorgiEngine
 	[AddComponentMenu("Corgi Engine/Character/Abilities/Character Inventory")] 
 	public class CharacterInventory : CharacterAbility, MMEventListener<MMInventoryEvent>, MMEventListener<CorgiEngineEvent>
 	{
-		/// <summary>
-		/// A struct used to store inventory items to add on init
-		/// </summary>
-		[System.Serializable]
+        private void Awake() //Leo Monge: Need to ALWAYS bring it after update. Everything related to "Forward" is so the logic behind the "switching weapons" work correctly.
+        {
+            player = ReInput.players.GetPlayer(0);
+        }
+
+        public Player player; //Leo Monge: Need to ALWAYS bring it after update.
+        /// <summary>
+        /// A struct used to store inventory items to add on init
+        /// </summary>
+        [System.Serializable]
 		public struct InventoryItemsToAdd
 		{
 			public InventoryItem Item;
@@ -197,6 +204,25 @@ namespace MoreMountains.CorgiEngine
                 SwitchWeapon();
                 StartCoroutine(DelayAnimations());
             }
+
+            if (player.GetButtonDown(("SwitchWeaponForward")))
+            {
+                GameObject[] shellsArray = GameObject.FindGameObjectsWithTag("Shells");
+
+                foreach (GameObject theShells in shellsArray)
+                {
+                    if (theShells != null)
+                    {
+                        theShells.transform.SetParent(null);
+                        Destroy(theShells, 2f);
+                    }
+                }
+
+                Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
+                theAnimator.SetBool("DelayForSwitchingGuns", true);
+                SwitchWeaponForward();
+                StartCoroutine(DelayAnimations());
+            }
         }
 
 
@@ -235,48 +261,164 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void DetermineNextWeaponName ()
 		{
-			if (InventoryItem.IsNull(WeaponInventory.Content[0]))
-			{
-				_nextWeaponID = _availableWeaponsIDs [0];
-				return;
-			}
+            /*	if (InventoryItem.IsNull(WeaponInventory.Content[0]))
+                {
+                    _nextWeaponID = _availableWeaponsIDs [0];
+                    return;
+                }
 
-			if ((_nextWeaponID == _emptySlotWeaponName) || (_nextWeaponID == _initialSlotWeaponName))
-			{
-				_nextWeaponID = _availableWeaponsIDs[0];
-				return;
-			}
+                if ((_nextWeaponID == _emptySlotWeaponName) || (_nextWeaponID == _initialSlotWeaponName))
+                {
+                    _nextWeaponID = _availableWeaponsIDs[0];
+                    return;
+                }
 
-			for (int i = 0; i < _availableWeaponsIDs.Count; i++)
-			{
-				if (_availableWeaponsIDs[i] == WeaponInventory.Content[0].ItemID)
-				{
-					if (i == _availableWeaponsIDs.Count - 1)
-					{
-						switch (WeaponRotationMode)
-						{
-							case WeaponRotationModes.AddEmptySlot:
-								_nextWeaponID = _emptySlotWeaponName;
-								return;
-							case WeaponRotationModes.AddInitialWeapon:
-								_nextWeaponID = _initialSlotWeaponName;
-								return;
-						}
-						_nextWeaponID = _availableWeaponsIDs [0];
-					}
-					else
-					{
-						_nextWeaponID = _availableWeaponsIDs [i+1];
-					}
-				}
-			}
-		}
+                for (int i = 0; i < _availableWeaponsIDs.Count; i++)
+                {
+                    if (_availableWeaponsIDs[i] == WeaponInventory.Content[0].ItemID)
+                    {
+                        if (i == _availableWeaponsIDs.Count - 1)
+                        {
+                            switch (WeaponRotationMode)
+                            {
+                                case WeaponRotationModes.AddEmptySlot:
+                                    _nextWeaponID = _emptySlotWeaponName;
+                                    return;
+                                case WeaponRotationModes.AddInitialWeapon:
+                                    _nextWeaponID = _initialSlotWeaponName;
+                                    return;
+                            }
+                            _nextWeaponID = _availableWeaponsIDs [0];
+                        }
+                        else
+                        {
+                            _nextWeaponID = _availableWeaponsIDs [i+1];
+                        }
+                    }
+                }*/
+            if (InventoryItem.IsNull(WeaponInventory.Content[0]))
+            {
+                _nextWeaponID = _availableWeaponsIDs[0];
+                return;
+            }
 
-		/// <summary>
-		/// Equips a weapon specified in parameters
-		/// </summary>
-		/// <param name="weaponID"></param>
-		protected virtual void EquipWeapon(string weaponID)
+            if ((_nextWeaponID == _emptySlotWeaponName) || (_nextWeaponID == _initialSlotWeaponName))
+            {
+                _nextWeaponID = _availableWeaponsIDs[0];
+                return;
+            }
+            for (int i = 0; i < _availableWeaponsIDs.Count; i++)
+            {
+                if (_availableWeaponsIDs[i] == WeaponInventory.Content[0].ItemID)
+                {
+                    //Debug.Log(i);
+                    if (_availableWeaponsIDs.Count == 1)
+                    {
+                        //Debug.Log("aca1");
+                        _nextWeaponID = _availableWeaponsIDs[0];
+                        return;
+                    }
+                    if (_availableWeaponsIDs.Count == 2)
+                    {
+                        //Debug.Log("aca2");
+                        if (i == 0)
+                        {
+                            //Debug.Log("aca2 = 00");
+                            _nextWeaponID = _availableWeaponsIDs[i + 1];
+                            return;
+
+                        }
+                        else
+                        {
+                            //Debug.Log("aca2 != 00");
+                            _nextWeaponID = _availableWeaponsIDs[i - 1];
+                            return;
+                        }
+                    }
+                    if (_availableWeaponsIDs.Count >= 3)
+                    {
+                        if (i == 0)
+                        {
+                            _nextWeaponID = _availableWeaponsIDs[_availableWeaponsIDs.Count - 1];
+                            return;
+                        }
+                        else
+                        {
+                            _nextWeaponID = _availableWeaponsIDs[i - 1];
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+
+        protected virtual void DetermineNextWeaponNameForward()
+        {
+            if (InventoryItem.IsNull(WeaponInventory.Content[0]))
+            {
+                _nextWeaponID = _availableWeaponsIDs[0];
+                return;
+            }
+
+            if ((_nextWeaponID == _emptySlotWeaponName) || (_nextWeaponID == _initialSlotWeaponName))
+            {
+                _nextWeaponID = _availableWeaponsIDs[0];
+                return;
+            }
+            for (int i = 0; i < _availableWeaponsIDs.Count; i++)
+            {
+                if (_availableWeaponsIDs[i] == WeaponInventory.Content[0].ItemID)
+                {
+                    if (_availableWeaponsIDs.Count == 1)
+                    {
+                        //.Log("aca1");
+                        _nextWeaponID = _availableWeaponsIDs[0];
+                        return;
+                    }
+                    if (_availableWeaponsIDs.Count == 2)
+                    {
+                        //Debug.Log("aca2");
+                        if (i == 0)
+                        {
+                            //Debug.Log("aca2 = 00");
+                            _nextWeaponID = _availableWeaponsIDs[i + 1];
+                            return;
+
+                        }
+                        else
+                        {
+                            //Debug.Log("aca2 != 00");
+                            _nextWeaponID = _availableWeaponsIDs[i - 1];
+                            return;
+                        }
+
+
+                    } 
+                    if (_availableWeaponsIDs.Count >= 3)
+                    {
+                        if (i == _availableWeaponsIDs.Count - 1)
+                        {
+                            //Debug.Log("aca3");
+                            _nextWeaponID = _availableWeaponsIDs[0];
+                            return;
+
+                        }
+                        else
+                        {
+                            //Debug.Log("aca4");
+                            _nextWeaponID = _availableWeaponsIDs[i + 1];
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Equips a weapon specified in parameters
+        /// </summary>
+        /// <param name="weaponID"></param>
+        protected virtual void EquipWeapon(string weaponID)
 		{
 			if ((weaponID == _emptySlotWeaponName) && (CharacterHandleWeapon != null))
 			{
@@ -331,12 +473,35 @@ namespace MoreMountains.CorgiEngine
 			PlayAbilityStartFeedbacks();
 		}
 
-		/// <summary>
-		/// Watches for InventoryLoaded events
-		/// When an inventory gets loaded, if it's our WeaponInventory, we check if there's already a weapon equipped, and if yes, we equip it
-		/// </summary>
-		/// <param name="inventoryEvent">Inventory event.</param>
-		public virtual void OnMMEvent(MMInventoryEvent inventoryEvent)
+        protected virtual void SwitchWeaponForward()
+        {
+            // if there's no character handle weapon component, we can't switch weapon, we do nothing and exit
+            if ((CharacterHandleWeapon == null) || (WeaponInventory == null))
+            {
+                return;
+            }
+
+            FillAvailableWeaponsLists();
+
+            // if we only have 0 or 1 weapon, there's nothing to switch, we do nothing and exit
+            if (_availableWeaponsIDs.Count <= 0)
+            {
+                return;
+            }
+
+            DetermineNextWeaponNameForward();
+            EquipWeapon(_nextWeaponID);
+            PlayAbilityStartFeedbacks();
+        }
+
+
+
+        /// <summary>
+        /// Watches for InventoryLoaded events
+        /// When an inventory gets loaded, if it's our WeaponInventory, we check if there's already a weapon equipped, and if yes, we equip it
+        /// </summary>
+        /// <param name="inventoryEvent">Inventory event.</param>
+        public virtual void OnMMEvent(MMInventoryEvent inventoryEvent)
 		{
 			if (inventoryEvent.InventoryEventType == MMInventoryEventType.InventoryLoaded)
 			{
