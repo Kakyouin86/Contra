@@ -49,7 +49,6 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-
         if (((1 << other.gameObject.layer) & ObstaclesLayerMask) != 0)
         {
             GameObject spawnedObject = Instantiate(objectToInstantiate, Vector3.zero, Quaternion.identity);
@@ -66,6 +65,10 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                 spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
             }
 
+            if (weaponAim == null)
+            {
+                weaponAim = GameObject.FindWithTag("Firepoint").GetComponentInChildren<WeaponAim>();
+            }
             distanceToPlayer = Vector3.Distance(transform.position, weaponAim.transform.position);
             if (distanceToPlayer > thresholdNotToShowBurst)
             {

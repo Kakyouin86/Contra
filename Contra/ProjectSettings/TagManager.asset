@@ -25,6 +25,10 @@ TagManager:
   - WeaponInventory
   - Shells
   - SmokeIndicator
+  - Inventory
+  - UI
+  - NormalWeapon
+  - UpgradedWeapon
   layers:
   - Default
   - TransparentFX

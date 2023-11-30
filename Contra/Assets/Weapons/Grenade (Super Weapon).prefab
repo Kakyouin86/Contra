@@ -94,13 +94,13 @@ MonoBehaviour:
   UseBurstMode: 0
   BurstLength: 3
   BurstTimeBetweenShots: 0.1
-  MagazineBased: 0
-  MagazineSize: 30
+  MagazineBased: 1
+  MagazineSize: 5
   AutoReload: 0
-  ReloadTime: 2
+  ReloadTime: 0
   AmmoConsumedPerShot: 1
   AutoDestroyWhenEmpty: 0
-  AutoDestroyWhenEmptyDelay: 1
+  AutoDestroyWhenEmptyDelay: 0
   CurrentAmmoLoaded: 0
   WeaponAttachmentOffset: {x: 0, y: 0.5, z: 0}
   FlipWeaponOnCharacterFlip: 1
