@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fac9bd89dcafc049b19f543ccf8fd57, type: 3}
   m_Name: Grenade (Super Ammo)
   m_EditorClassIdentifier: 
-  ItemID: Super Grenade
+  ItemID: Grenade
   TargetInventoryName: Main Inventory
   ForceSlotIndex: 0
   TargetIndex: 0
   Usable: 1
   Consumable: 1
   ConsumeQuantity: 1
-  Equippable: 1
+  Equippable: 0
   EquippableIfInventoryIsFull: 1
   MoveWhenEquipped: 1
   Droppable: 1
@@ -36,7 +36,7 @@ MonoBehaviour:
   ItemName: Super Grenade
   ShortDescription: 
   Description: 
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300004, guid: f3f4293ccdddd34468f58745d608416e, type: 3}
   Prefab: {fileID: 0}
   ForcePrefabDropQuantity: 0
   PrefabDropQuantity: 1
@@ -81,7 +81,7 @@ MonoBehaviour:
     MaximumRotation: {x: 0, y: 0, z: 0}
     MinimumScale: {x: 1, y: 1, z: 1}
     MaximumScale: {x: 1, y: 1, z: 1}
-  MaximumStack: 10
+  MaximumStack: 1
   ItemClass: 3
   TargetEquipmentInventoryName: 
   EquippedSound: {fileID: 0}

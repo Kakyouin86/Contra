@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using MoreMountains.Tools;
+using static MoreMountains.CorgiEngine.CharacterInventory;
+using System.Collections.Generic;
 
 namespace MoreMountains.CorgiEngine
 {	
@@ -20,9 +22,11 @@ namespace MoreMountains.CorgiEngine
 
 		/// the initial weapon owned by the character
 		[Tooltip("the initial weapon owned by the character")]
-		public Weapon InitialWeapon;
-		/// if this is set to true, the character can pick up PickableWeapons
-		[Tooltip("if this is set to true, the character can pick up PickableWeapons")]
+        public bool hasUpgradedGrenades = false;//Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
+        public Weapon InitialWeapon;
+        public Weapon InitialWeaponSuper;//Leo Monge: Need to ALWAYS bring it after update.
+        /// if this is set to true, the character can pick up PickableWeapons
+        [Tooltip("if this is set to true, the character can pick up PickableWeapons")]
 		public bool CanPickupWeapons = true;
 
 		[Header("Binding")]
@@ -131,13 +135,43 @@ namespace MoreMountains.CorgiEngine
 			if (_animator != null)
 			{
 				_weaponIK = _animator.GetComponent<WeaponIK> ();
-			}	
-			// we set the initial weapon
-			if (InitialWeapon != null)
-			{
-				ChangeWeapon(InitialWeapon, null);
 			}
+
+            if (!hasUpgradedGrenades) //Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
+            {
+                // we set the initial weapon
+                if (InitialWeapon != null)
+                {
+                    ChangeWeapon(InitialWeapon, null);
+                }
+            }
+            else
+            {
+                if (InitialWeaponSuper != null)
+                {
+                    ChangeWeapon(InitialWeaponSuper, null);
+                }
+            }
 		}
+
+        public void ChangeWeapon() //Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
+        {
+            if (!hasUpgradedGrenades)
+            {
+                // we set the initial weapon
+                if (InitialWeapon != null)
+                {
+                    ChangeWeapon(InitialWeapon, null);
+                }
+            }
+            else
+            {
+                if (InitialWeaponSuper != null)
+                {
+                    ChangeWeapon(InitialWeaponSuper, null);
+                }
+            }
+        }
 
 		/// <summary>
 		/// Every frame we check if it's needed to update the ammo display

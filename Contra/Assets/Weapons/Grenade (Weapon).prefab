@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7258311003476411968}
   - component: {fileID: 7766883220953727492}
   - component: {fileID: 1161082756214536862}
+  - component: {fileID: -8198970487537846784}
   m_Layer: 0
   m_Name: Grenade (Weapon)
-  m_TagString: Untagged
+  m_TagString: Grenade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,9 +95,9 @@ MonoBehaviour:
   UseBurstMode: 0
   BurstLength: 3
   BurstTimeBetweenShots: 0.1
-  MagazineBased: 1
-  MagazineSize: 5
-  AutoReload: 0
+  MagazineBased: 0
+  MagazineSize: 2
+  AutoReload: 1
   ReloadTime: 0
   AmmoConsumedPerShot: 1
   AutoDestroyWhenEmpty: 0
@@ -122,10 +123,10 @@ MonoBehaviour:
   MirrorCharacterAnimatorParameters: 0
   EquippedAnimationParameter: 
   IdleAnimationParameter: 
-  StartAnimationParameter: ThrowGrenade
+  StartAnimationParameter: 
   DelayBeforeUseAnimationParameter: 
   SingleUseAnimationParameter: 
-  UseAnimationParameter: 
+  UseAnimationParameter: ThrowGrenade
   DelayBetweenUsesAnimationParameter: 
   InCooldownAnimationParameter: 
   StopAnimationParameter: 
@@ -216,3 +217,21 @@ MonoBehaviour:
     type: 3}
   PoolSize: 1
   PoolCanExpand: 1
+--- !u!114 &-8198970487537846784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3277408455415991095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d708b09d7c685aa4596060c0c90f2d57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmmoID: Grenade
+  AmmoInventoryName: Main Inventory
+  MaxAmmo: 100
+  ShouldLoadOnStart: 1
+  ShouldEmptyOnSave: 1
+  CurrentAmmoAvailable: 0

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.CorgiEngine;
 using MoreMountains.InventoryEngine;
+using Rewired;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -23,6 +25,7 @@ public class UIAndUpgradesController : MonoBehaviour
     public Image slot5SpreadGunPlusPlayer1;
     public Image slot6GrenadePlayer1;
     public Image slot6GrenadePlusPlayer1;
+    public TextMeshProUGUI grenadesPlayer1;
     public TextMeshProUGUI livesPlayer1;
     public Inventory theInventory;
     public Inventory theWeaponInventory;
@@ -140,11 +143,40 @@ public class UIAndUpgradesController : MonoBehaviour
                 slot6GrenadePlusPlayer1.enabled = true;
             }
         }
+
+        //Here I pass the upgrade in the grenades to the Player so it autoloads the correct grenade in his inventory.
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        CharacterInventory playerInventory = player.GetComponent<CharacterInventory>();
+        if (playerInventory != null && grenadePlus)
+        {
+            playerInventory.hasUpgradedGrenades = true;
+        }
+        else
+        {
+            playerInventory.hasUpgradedGrenades = false;
+        }
+        CharacterHandleSecondaryWeapon playerSecondaryWeapon = player.GetComponent<CharacterHandleSecondaryWeapon>();
+        if (playerSecondaryWeapon != null && grenadePlus)
+        {
+            playerSecondaryWeapon.hasUpgradedGrenades = true;
+        }
+        else
+        {
+            playerSecondaryWeapon.hasUpgradedGrenades = false;
+        }
+        playerSecondaryWeapon.ChangeWeapon();
+
+        //Here we disable all the power ups that should not be present if I purchased a power up.
         DisableWeapons();
     }
 
     void Update()
     {
+        GameObject grenadesLeft = GameObject.FindGameObjectWithTag("Grenade");
+        grenadesPlayer1.text = grenadesLeft.GetComponent<WeaponAmmo>().CurrentAmmoAvailable.ToString();
+        GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
+        livesPlayer1.text = "x" + gameController.GetComponent<GameManager>().CurrentLives;
+
         if (thePlayer.machineGunActive || theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == machineGunName)
         {
             slot1MachineGunPlayer1.color = originalColor;

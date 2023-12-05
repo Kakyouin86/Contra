@@ -64,8 +64,10 @@ namespace MoreMountains.CorgiEngine
 		[Header("Start")]
 		/// a list of items and associated quantities to add to the main inventory
 		public List<InventoryItemsToAdd> AutoAddItemsMainInventory;
-		/// a list of items to add to the hotbar
-		public List<InventoryItemsToAdd> AutoAddItemsHotbar;
+        public List<InventoryItemsToAdd> AutoAddItemsMainInventorySuper;//Leo Monge: Need to ALWAYS bring it after update.
+        public bool hasUpgradedGrenades = false;//Leo Monge: Need to ALWAYS bring it after update.
+        /// a list of items to add to the hotbar
+        public List<InventoryItemsToAdd> AutoAddItemsHotbar;
 		/// a weapon to automatically add to the inventory and equip on init
 		public InventoryEngineWeapon AutoEquipWeapon;
 		
@@ -140,11 +142,22 @@ namespace MoreMountains.CorgiEngine
 				yield break;
 			}
 
-			foreach (InventoryItemsToAdd item in AutoAddItemsMainInventory)
-			{
-				MainInventory?.AddItem(item.Item, item.Quantity);
-			}
-			foreach (InventoryItemsToAdd item in AutoAddItemsHotbar)
+            if (!hasUpgradedGrenades)//Leo Monge: Need to ALWAYS bring it after update. This will add only the correct bombs.
+            {
+                foreach (InventoryItemsToAdd item in AutoAddItemsMainInventory)
+                {
+                    MainInventory?.AddItem(item.Item, item.Quantity);
+                }
+            }
+            else
+            {
+                foreach (InventoryItemsToAdd item in AutoAddItemsMainInventorySuper)
+                {
+                    MainInventory?.AddItem(item.Item, item.Quantity);
+                }
+            }
+
+            foreach (InventoryItemsToAdd item in AutoAddItemsHotbar)
 			{
 				HotbarInventory?.AddItem(item.Item, item.Quantity);
 			}

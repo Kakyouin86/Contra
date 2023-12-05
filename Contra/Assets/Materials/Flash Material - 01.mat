@@ -14,7 +14,7 @@ Material:
   m_ValidKeywords:
   - _ENABLEADDCOLOR_ON
   - _ENABLEPIXELOUTLINE_ON
-  - _ENABLESINEGLOW_ON
+  - _ENABLEPOISON_ON
   - _ENABLESPLITTONING_ON
   - _SHADERFADING_NONE
   - _SHADERSPACE_UV
@@ -229,7 +229,7 @@ Material:
     - _EnablePingPongGlow: 0
     - _EnablePixelOutline: 1
     - _EnablePixelate: 0
-    - _EnablePoison: 0
+    - _EnablePoison: 1
     - _EnableRainbow: 0
     - _EnableRecolorRGB: 0
     - _EnableRecolorRGBYCP: 0
@@ -240,7 +240,7 @@ Material:
     - _EnableShiftHue: 0
     - _EnableShifting: 0
     - _EnableShine: 0
-    - _EnableSineGlow: 1
+    - _EnableSineGlow: 0
     - _EnableSineMove: 0
     - _EnableSineRotate: 0
     - _EnableSineScale: 0
@@ -350,10 +350,10 @@ Material:
     - _PixelatePixelDensity: 16
     - _PixelatePixelsPerUnit: 100
     - _PixelsPerUnit: 100
-    - _PoisonDensity: 3
+    - _PoisonDensity: 4
     - _PoisonFade: 1
     - _PoisonNoiseBrightness: 2
-    - _PoisonRecolorFactor: 0.5
+    - _PoisonRecolorFactor: 0.4
     - _PoisonShiftSpeed: 0.2
     - _RainbowBrightness: 2
     - _RainbowContrast: 1
@@ -538,7 +538,7 @@ Material:
     - _GlitchNoiseSpeed: {r: 0, g: 1, b: 0, a: 0}
     - _HalftonePosition: {r: 0, g: 0, b: 0, a: 0}
     - _HologramTint: {r: 0.3137255, g: 1.662745, b: 2.996078, a: 1}
-    - _InkSpreadColor: {r: 8.47419, g: 5.013525, b: 0.08873497, a: 0}
+    - _InkSpreadColor: {r: 11.313708, g: 6.6445584, b: 0, a: 0}
     - _InkSpreadNoiseScale: {r: 0.4, g: 0.4, b: 0, a: 0}
     - _InkSpreadPosition: {r: 0.5, g: -1, b: 0, a: 0}
     - _InnerOutlineColor: {r: 0, g: 0, b: 0, a: 1}
@@ -558,11 +558,11 @@ Material:
     - _OuterOutlineNoiseScale: {r: 4, g: 4, b: 0, a: 0}
     - _OuterOutlineNoiseSpeed: {r: 0, g: 0.1, b: 0, a: 0}
     - _OuterOutlineTextureSpeed: {r: 0.5, g: 0, b: 0, a: 0}
-    - _PingPongGlowFrom: {r: 5.992157, g: 0.1882353, b: 0.1882353, a: 0}
-    - _PingPongGlowTo: {r: 0.1882353, g: 0.1882353, b: 5.992157, a: 0}
+    - _PingPongGlowFrom: {r: 8, g: 5.9409633, b: 0, a: 0}
+    - _PingPongGlowTo: {r: 0, g: 0, b: 0, a: 0}
     - _PixelOutlineColor: {r: 1, g: 0.8778939, b: 0.073584795, a: 1}
     - _PixelOutlineTextureSpeed: {r: 0.5, g: 0, b: 0, a: 0}
-    - _PoisonColor: {r: 0.3137255, g: 2.996078, b: 0.3137255, a: 0}
+    - _PoisonColor: {r: 3.976377, g: 3.9999995, b: 0.5235602, a: 0}
     - _PoisonNoiseScale: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _PoisonNoiseSpeed: {r: 0, g: -0.2, b: 0, a: 0}
     - _RainbowCenter: {r: 0, g: 0, b: 0, a: 0}
