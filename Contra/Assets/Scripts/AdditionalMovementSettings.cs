@@ -261,7 +261,7 @@ public class AdditionalMovementSettings : MonoBehaviour
             theTorsoFlameGunLights.GetComponent<SpriteRenderer>().material = originalMaterial;
         }
 
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //This checks if the Throw Grenade animation is playing.
         if (theAnimator.GetCurrentAnimatorStateInfo(1).IsName("Throw Grenade Straight"))
         {
@@ -274,7 +274,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         if (theAnimator.GetCurrentAnimatorStateInfo(1).IsName("Throw Grenade Crouch"))
         {
             theAnimator.SetBool("ThrowGrenade", true);
-        }
+        }*/
     }
 
     IEnumerator ReinitializeTheBCLadder()

@@ -1,0 +1,6 @@
+AÁÀÄÃÅÂBCÇDEÉÈËÊÆFGHIÌÍÏĨJKLMNÑOÒÓÖÕÔØPQRSŠTUÙÚÜŮVWXYZŽ
+aáàäãåâbcçdeéèëêæfghiíìïĩjklmnñoóòöõôøpqrsštuúùüůvwxyzž
+0123456789$+-_%*/\|=,.?¿#@&()!¡`´"ºª{}<>^€;¨:'·
+
+
+AÁÀÄÃÅÂBCÇDEÉÈËÊÆFGHIÌÍÏĨJKLMNÑOÒÓÖÕÔØPQRSŠTUÙÚÜŮVWXYZŽaáàäãåâbcçdeéèëêæfghiíìïĩjklmnñoóòöõôøpqrsštuúùüůvwxyzž0123456789$+-_%*/\|=,.?¿#@&()!¡`´"ºª{}<>^€;¨:'·
