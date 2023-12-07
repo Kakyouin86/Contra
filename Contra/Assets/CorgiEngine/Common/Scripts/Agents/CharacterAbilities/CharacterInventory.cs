@@ -135,9 +135,9 @@ namespace MoreMountains.CorgiEngine
 		/// <returns></returns>
 		protected virtual IEnumerator AutoAddAndEquip()
 		{
-			yield return MMCoroutine.WaitForFrames(1);
+            //yield return MMCoroutine.WaitForFrames(1);//Leo Monge: Need to ALWAYS bring it after update. This is because the grenades don't add up in the UI.
 
-			if (_autoAdded)
+            if (_autoAdded)
 			{
 				yield break;
 			}

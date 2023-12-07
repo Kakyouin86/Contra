@@ -153,7 +153,7 @@ namespace MoreMountains.CorgiEngine
 			}
 			
 			RefreshCurrentAmmoAvailable();
-		}
+        }
 		
 		/// <summary>
 		/// Empties the weapon's magazine and puts the ammo back in the inventory
@@ -262,7 +262,7 @@ namespace MoreMountains.CorgiEngine
 		protected void OnDestroy()
 		{
 			EmptyMagazine(false);
-		}
+        }
 
 		/// <summary>
 		/// On enable, we start listening for MMGameEvents. You may want to extend that to listen to other types of events.

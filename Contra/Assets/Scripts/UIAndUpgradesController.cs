@@ -175,7 +175,7 @@ public class UIAndUpgradesController : MonoBehaviour
         GameObject grenadesLeft = GameObject.FindGameObjectWithTag("Grenade");
         grenadesPlayer1.text = grenadesLeft.GetComponent<WeaponAmmo>().CurrentAmmoAvailable.ToString();
         GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
-        livesPlayer1.text = "x" + gameController.GetComponent<GameManager>().CurrentLives;
+        livesPlayer1.text = "X" + gameController.GetComponent<GameManager>().CurrentLives;
 
         if (thePlayer.machineGunActive || theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == machineGunName)
         {
