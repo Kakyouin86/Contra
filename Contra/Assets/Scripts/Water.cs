@@ -15,12 +15,14 @@ public class Water : MonoBehaviour
     public CharacterHorizontalMovement characterHorizontalMovement;
     public CharacterCrouch characterCrouch;
     public CharacterRoll characterRoll;
+    public UIAndUpgradesController theUIController;
 
     void Start()
     {
         characterHorizontalMovement = GetComponentInParent<CharacterHorizontalMovement>();
         characterCrouch = GetComponentInParent<CharacterCrouch>();
         characterRoll = GetComponentInParent<CharacterRoll>();
+        theUIController = GameObject.FindWithTag("UI").GetComponent<UIAndUpgradesController>();
     }
 
     void Update()
@@ -29,7 +31,10 @@ public class Water : MonoBehaviour
         {
             theRippleEffect.SetActive(false);
             characterCrouch.AbilityPermitted = true;
-            characterRoll.AbilityPermitted = true;
+            if (theUIController.GetComponent<UIAndUpgradesController>().dash)
+            {
+                characterRoll.AbilityPermitted = true;
+            }
             theLegs.SetActive(true);
         }
     }
@@ -64,7 +69,10 @@ public class Water : MonoBehaviour
         {
             isPlayerInWater = false;
             characterCrouch.AbilityPermitted = true;
-            characterRoll.AbilityPermitted = true;
+            if (theUIController.GetComponent<UIAndUpgradesController>().dash)
+            {
+                characterRoll.AbilityPermitted = true;
+            }
             theLegs.SetActive(true);
             theRippleEffect.SetActive(false);
             thePosition = new Vector3(transform.position.x, transform.position.y,

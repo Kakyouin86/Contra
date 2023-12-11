@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using MoreMountains.CorgiEngine;
 using MoreMountains.InventoryEngine;
 using Rewired;
@@ -35,6 +36,9 @@ public class UIAndUpgradesController : MonoBehaviour
     [ColorUsage(true, true)]
     public Color originalColor = new Color(255 / 255f, 255 / 255f, 255 / 255f, 255 / 255f);
 
+    [Header("Gauge components")]
+    public Image theGauge;
+
     [Header("Weapon parameters")]
     public string machineGunName = "Machine Gun";
     public string flameGunName = "Flame Gun";
@@ -52,7 +56,7 @@ public class UIAndUpgradesController : MonoBehaviour
     public string grenadePlusName = "Super Grenade";
     public bool grenadePlus = false;
 
-    [Header("Weapon In Use")]
+    [Header("Weapon In Use & Acquired Power Ups")]
     public bool machineGun = false;
     public bool flameGun = false;
     public bool flameGunPlus = false;
@@ -62,6 +66,9 @@ public class UIAndUpgradesController : MonoBehaviour
     public bool shotGunPlus = false;
     public bool spreadGun = false;
     public bool spreadGunPlus = false;
+    public bool doubleJump = false;
+    public bool dash = false;
+    public bool specialShot = false;
 
     void Start()
     {
@@ -168,6 +175,32 @@ public class UIAndUpgradesController : MonoBehaviour
 
         //Here we disable all the power ups that should not be present if I purchased a power up.
         DisableWeapons();
+
+        //Related to power ups and gauge.
+        if (doubleJump)
+        {
+            thePlayer.GetComponent<CharacterJump>().NumberOfJumps = 2;
+        }
+        else
+        {
+            thePlayer.GetComponent<CharacterJump>().NumberOfJumps = 1;
+        }
+        if (dash)
+        {
+            thePlayer.GetComponent<CharacterRoll>().AbilityPermitted = true;
+        }
+        else
+        {
+            thePlayer.GetComponent<CharacterRoll>().AbilityPermitted = false;
+        }
+        if (specialShot)
+        {
+            theGauge.enabled = true;
+        }
+        else
+        {
+            theGauge.enabled = false;
+        }
     }
 
     void Update()
