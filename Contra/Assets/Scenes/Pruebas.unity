@@ -4505,6 +4505,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &286164407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 286164411}
+  - component: {fileID: 286164410}
+  - component: {fileID: 286164408}
+  - component: {fileID: 286164409}
+  m_Layer: 5
+  m_Name: Flame Shot - 06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &286164408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286164407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 232934265, guid: e9f4fc900ff71f44a808f02c0384a224, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!95 &286164409
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286164407}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ae9dba7d047d704db7be155549a6dc8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!222 &286164410
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286164407}
+  m_CullTransparentMesh: 1
+--- !u!224 &286164411
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286164407}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2061454198}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -400, y: 0}
+  m_SizeDelta: {x: 150, y: 87.5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &304900112
 GameObject:
   m_ObjectHideFlags: 0
@@ -16092,7 +16189,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 804878300, guid: 68c58cc772ef6be47bf9a9a769290011, type: 3}
+  m_Sprite: {fileID: 745118398, guid: 68c58cc772ef6be47bf9a9a769290011, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18884,6 +18981,15 @@ MonoBehaviour:
       _behaviorId: 0
       _userAssignable: 1
       _categoryId: 0
+    - _id: 30
+      _name: SpecialShoot
+      _type: 1
+      _descriptiveName: Grenades
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 0
     - _id: 11
       _name: SwitchWeapon
       _type: 1
@@ -19070,7 +19176,7 @@ MonoBehaviour:
     actionCategoryMap:
       list:
       - categoryId: 0
-        actionIds: 00000000010000000200000003000000050000001b000000090000001c0000000b0000001d0000001a0000000c000000
+        actionIds: 00000000010000000200000003000000050000001b000000090000001c0000001e0000000b0000001d0000001a0000000c000000
       - categoryId: 1
         actionIds: 0d000000
       - categoryId: 2
@@ -20140,6 +20246,17 @@ MonoBehaviour:
         _modifierKey2: 0
         _modifierKey3: 0
       - _actionCategoryId: 0
+        _actionId: 30
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 117
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
         _actionId: 11
         _elementType: 1
         _elementIdentifierId: -1
@@ -20700,7 +20817,7 @@ MonoBehaviour:
     controllerMapLayoutManagerRuleSets: []
     controllerMapEnablerRuleSets: []
     playerIdCounter: 5
-    actionIdCounter: 30
+    actionIdCounter: 31
     actionCategoryIdCounter: 4
     inputBehaviorIdCounter: 1
     mapCategoryIdCounter: 4
@@ -25207,7 +25324,7 @@ GameObject:
   - component: {fileID: 1399686861}
   - component: {fileID: 1399686860}
   m_Layer: 0
-  m_Name: Game Manager & Power Ups
+  m_Name: Game Manager
   m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32390,6 +32507,7 @@ GameObject:
   - component: {fileID: 1966031593}
   - component: {fileID: 1966031592}
   - component: {fileID: 1966031596}
+  - component: {fileID: 1966031597}
   m_Layer: 0
   m_Name: Power Ups Manager & UI Camera
   m_TagString: UI
@@ -32513,6 +32631,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a32bb9543b1fe46a1dbf91615a84a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flameGunPlus: 0
+  rayGunPlus: 0
+  shotGunPlus: 0
+  spreadGunPlus: 0
+  doubleJump: 1
+  dash: 1
+  specialShot: 1
   avatarPlayer1: {fileID: 1090935717}
   theUIImagePlayer1: {fileID: 1458799208}
   allTheEmptySlotsPlayer1: {fileID: 411779875}
@@ -32534,7 +32659,7 @@ MonoBehaviour:
   thePlayer: {fileID: 0}
   fadingColor: {r: 0.50980395, g: 0.50980395, b: 0.50980395, a: 1}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
-  theGauge: {fileID: 2061454200}
+  theGauge: {fileID: 2061454197}
   machineGunName: Machine Gun
   flameGunName: Flame Gun
   flameGunPlusName: Super Flame Gun
@@ -32552,16 +32677,56 @@ MonoBehaviour:
   grenadePlus: 0
   machineGun: 1
   flameGun: 0
-  flameGunPlus: 0
   rayGun: 0
-  rayGunPlus: 0
   shotGun: 0
-  shotGunPlus: 0
   spreadGun: 0
-  spreadGunPlus: 0
-  doubleJump: 1
-  dash: 1
-  specialShot: 1
+--- !u!114 &1966031597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966031590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce3b9fab73711446a5f3b3a445654a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAlive: 1
+  canShootSpecialShoot: 0
+  isShooting: 0
+  hasReachedTarget: 0
+  specialShootCooldown: 3
+  timer: 0
+  originalSpecialShootDuration: 4
+  counterImages:
+  - {fileID: 453116529}
+  - {fileID: 590807071}
+  - {fileID: 64032815}
+  - {fileID: 43104033}
+  - {fileID: 395703073}
+  - {fileID: 829568670}
+  - {fileID: 804640392}
+  - {fileID: 1458073399}
+  - {fileID: 26536641}
+  - {fileID: 2013080714}
+  - {fileID: 890867627}
+  - {fileID: 190549512}
+  - {fileID: 1273478929}
+  - {fileID: 377133971}
+  - {fileID: 1998138538}
+  - {fileID: 773704755}
+  - {fileID: 1462849065}
+  - {fileID: 672736115}
+  - {fileID: 681453668}
+  - {fileID: 486323503}
+  completeBar: {fileID: 1009287165}
+  maxCompleteBar: {fileID: 2047820044}
+  theFlameShoot: {fileID: 286164408}
+  initialFlameShootPosition: {x: 0, y: 0, z: 0}
+  finalFlameShootPosition: {x: 400, y: 0, z: 0}
+  currentFlameShootDuration: 0
+  flameShootSpeed: 0
 --- !u!1 &1973805546
 GameObject:
   m_ObjectHideFlags: 0
@@ -34210,7 +34375,7 @@ GameObject:
   - component: {fileID: 2061454201}
   - component: {fileID: 2061454200}
   m_Layer: 5
-  m_Name: Bar
+  m_Name: Gauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34251,6 +34416,7 @@ RectTransform:
   - {fileID: 486323502}
   - {fileID: 1009287163}
   - {fileID: 2047820042}
+  - {fileID: 286164411}
   m_Father: {fileID: 701130290}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

@@ -11,6 +11,15 @@ using UnityEngine.UI;
 
 public class UIAndUpgradesController : MonoBehaviour
 {
+    [Header("Acquired Power Ups")]
+    public bool flameGunPlus = false;
+    public bool rayGunPlus = false;
+    public bool shotGunPlus = false;
+    public bool spreadGunPlus = false;
+    public bool doubleJump = false;
+    public bool dash = false;
+    public bool specialShot = false;
+
     [Header("Components")]
     public Image avatarPlayer1;
     public Image theUIImagePlayer1;
@@ -37,7 +46,7 @@ public class UIAndUpgradesController : MonoBehaviour
     public Color originalColor = new Color(255 / 255f, 255 / 255f, 255 / 255f, 255 / 255f);
 
     [Header("Gauge components")]
-    public Image theGauge;
+    public GameObject theGauge;
 
     [Header("Weapon parameters")]
     public string machineGunName = "Machine Gun";
@@ -56,20 +65,13 @@ public class UIAndUpgradesController : MonoBehaviour
     public string grenadePlusName = "Super Grenade";
     public bool grenadePlus = false;
 
-    [Header("Weapon In Use & Acquired Power Ups")]
+    [Header("Weapon In Use")]
     public bool machineGun = false;
     public bool flameGun = false;
-    public bool flameGunPlus = false;
     public bool rayGun = false;
-    public bool rayGunPlus = false;
     public bool shotGun = false;
-    public bool shotGunPlus = false;
     public bool spreadGun = false;
-    public bool spreadGunPlus = false;
-    public bool doubleJump = false;
-    public bool dash = false;
-    public bool specialShot = false;
-
+    
     void Start()
     {
         theInventory = GameObject.FindWithTag("Inventory").GetComponent<Inventory>();
@@ -195,11 +197,13 @@ public class UIAndUpgradesController : MonoBehaviour
         }
         if (specialShot)
         {
-            theGauge.enabled = true;
+            theGauge.SetActive(true);
+            GetComponent<SpecialShootController>().enabled = true;
         }
         else
         {
-            theGauge.enabled = false;
+            theGauge.SetActive(false);
+            GetComponent<SpecialShootController>().enabled = false;
         }
     }
 
