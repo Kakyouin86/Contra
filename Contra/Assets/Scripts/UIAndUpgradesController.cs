@@ -205,6 +205,15 @@ public class UIAndUpgradesController : MonoBehaviour
             theGauge.SetActive(false);
             GetComponent<SpecialShootController>().enabled = false;
         }
+
+        if (specialShot)
+        {
+            thePlayer.GetComponent<SpecialShootAndRaycastVisualization>().hasSpecialShoot = true;
+        }
+        else
+        {
+            thePlayer.GetComponent<SpecialShootAndRaycastVisualization>().hasSpecialShoot = false;
+        }
     }
 
     void Update()

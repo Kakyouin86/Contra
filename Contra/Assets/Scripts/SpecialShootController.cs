@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.UI;
 using Rewired;
@@ -21,6 +22,7 @@ public class SpecialShootController : MonoBehaviour
     public float currentFlameShootDuration;
     public float flameShootSpeed;
     public Player player;
+    public SpecialShootAndRaycastVisualization thePlayer;
     private void Awake()
     {
         player = ReInput.players.GetPlayer(0);
@@ -48,6 +50,7 @@ public class SpecialShootController : MonoBehaviour
 
         // Set the current flame shot duration to the original duration
         currentFlameShootDuration = originalSpecialShootDuration;
+        thePlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<SpecialShootAndRaycastVisualization>();
     }
 
     void Update()
@@ -59,6 +62,7 @@ public class SpecialShootController : MonoBehaviour
             if (timer >= specialShootCooldown)
             {
                 canShootSpecialShoot = true;
+                thePlayer.canShoot = true;
             }
             else
             {
@@ -191,6 +195,7 @@ public class SpecialShootController : MonoBehaviour
         // Reset the timer after shooting
         timer = 0f;
         canShootSpecialShoot = false;
+        thePlayer.canShoot = false;
     }
 
     void MoveFlameShot()
