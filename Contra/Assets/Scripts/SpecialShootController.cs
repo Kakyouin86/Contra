@@ -28,7 +28,7 @@ public class SpecialShootController : MonoBehaviour
         player = ReInput.players.GetPlayer(0);
     }
 
-    void Start()
+    public void Start()
     {
         // Disable all counter images at the beginning
         foreach (Image image in counterImages)
@@ -53,7 +53,7 @@ public class SpecialShootController : MonoBehaviour
         thePlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<SpecialShootAndRaycastVisualization>();
     }
 
-    void Update()
+    public void Update()
     {
         // Check if the character is alive
         if (IsCharacterAlive())
@@ -70,11 +70,11 @@ public class SpecialShootController : MonoBehaviour
                 timer += Time.deltaTime;
             }
 
-            // Check for user input to shoot the special shot
+            /*// Check for user input to shoot the special shot
             if (canShootSpecialShoot && player.GetButton(("SpecialShoot")))
             {
                 ShootSpecialShot();
-            }
+            }*/
 
             // Check if the special shot is currently being fired
             if (isShooting)
@@ -127,7 +127,7 @@ public class SpecialShootController : MonoBehaviour
         }
     }
 
-    void UpdateCounterImages()
+    public void UpdateCounterImages()
     {
         // Calculate the progress percentage based on the timer and cooldown
         float progress = Mathf.Clamp01(timer / specialShootCooldown);
@@ -166,7 +166,7 @@ public class SpecialShootController : MonoBehaviour
         }
     }
 
-    void EnableImage(int index)
+    public void EnableImage(int index)
     {
         // Disable all images first
         foreach (Image image in counterImages)
@@ -181,7 +181,7 @@ public class SpecialShootController : MonoBehaviour
         }
     }
 
-    void ShootSpecialShot()
+    public void ShootSpecialShot()
     {
         // Implement your logic to shoot the special shot here
         // Debug.Log("Special Shot Fired!");
@@ -198,7 +198,7 @@ public class SpecialShootController : MonoBehaviour
         thePlayer.canShoot = false;
     }
 
-    void MoveFlameShot()
+    public void MoveFlameShot()
     {
         if (isShooting)
         {

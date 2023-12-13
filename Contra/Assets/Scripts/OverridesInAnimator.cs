@@ -38,10 +38,24 @@ public class OverridesInAnimator : MonoBehaviour
             flameGun = true;
             machineGun = false;
             //modifyTheMirror = true;
-            theAnimator.SetBool("Flame Gun", true);
+            SpecialShootAndRaycastVisualization theSpecialShootAndRaycastVisualization =
+                GetComponent<SpecialShootAndRaycastVisualization>();
+
+            if (theSpecialShootAndRaycastVisualization.isShooting)
+            {
+                theAnimator.SetBool("Flame Gun", false);
+                machineGun = true;
+                theAnimator.SetFloat("Delay", 1f);
+            }
+            else
+            {
+                theAnimator.SetBool("Flame Gun", true);
+                theAnimator.SetFloat("Delay", 0f);
+            }
+
             //foreach (AnimationClip clip in animationNames)
             {
-                theAnimator.SetFloat("Delay", 0f);
+                //theAnimator.SetFloat("Delay", 0f);
                 ////timerBeforeNextAnim = theAnimator.GetBool("TimerBeforeNextAnim");
                 //theAnimator.SetBool("Mirror", timerBeforeNextAnim);
             }

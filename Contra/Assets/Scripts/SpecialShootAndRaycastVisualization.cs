@@ -70,7 +70,11 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
                 currentTimer = 0.0f;
                 isShooting = false;
                 Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
-                //theAnimator.SetBool("isShootingSpecial", false);
+                theAnimator.SetBool("isShootingSpecialShot", false);
+                AdditionalCharacterHandleWeaponOverride theAdditionalCharacterHandleWeaponOverride =
+                    GetComponent<AdditionalCharacterHandleWeaponOverride>();
+                theAdditionalCharacterHandleWeaponOverride.AbilityPermitted = true;
+
             }
         }
 
@@ -79,7 +83,14 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
             // Set isShooting to true
             isShooting = true;
             Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
-            //theAnimator.SetBool("isShootingSpecial", true);
+            theAnimator.SetBool("isShootingSpecialShot", true);
+            AdditionalCharacterHandleWeaponOverride theAdditionalCharacterHandleWeaponOverride = GetComponent<AdditionalCharacterHandleWeaponOverride>();
+            theAdditionalCharacterHandleWeaponOverride.AbilityPermitted = false;
+            SpecialShootController theSpecialShootController = GameObject.FindGameObjectWithTag("UI").GetComponent<SpecialShootController>();
+            theSpecialShootController.ShootSpecialShot();
+
+            _weapon.WeaponInputStop();
+            _weapon.TurnWeaponOff();
 
             // Check if thePickerInstance is not already instantiated and laser is enabled
             if (thePickerInstance == null)

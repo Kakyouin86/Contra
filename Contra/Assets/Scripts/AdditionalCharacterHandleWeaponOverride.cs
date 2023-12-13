@@ -37,7 +37,7 @@ public class AdditionalCharacterHandleWeaponOverride : CharacterHandleWeapon
 
         if (_movement.CurrentState == CharacterStates.MovementStates.Rolling) //Leo Monge. It was just CurrentWeapon.WeaponInputStart(); //if (_movement.CurrentState == CharacterStates.MovementStates.Dashing)
         {
-            CurrentWeapon.WeaponInputStop();//Leo Monge
+            CurrentWeapon.WeaponInputStop();//Leo Monge. This makes that if you are rolling, "Rolling", then it will STOP the gun from firing. Very important!
         }
         else
         {
