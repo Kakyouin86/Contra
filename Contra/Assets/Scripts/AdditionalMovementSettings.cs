@@ -16,6 +16,7 @@ public class AdditionalMovementSettings : MonoBehaviour
     public CorgiController theController;
     public InputManager theInputManager;
     public CharacterHandleWeapon theCharacterHandleWeapon;
+    public SpecialShootAndRaycastVisualization theSpecialShootAndRaycastVisualization;
     public Animator theAnimator;
     public GameObject theFirepoint;
     public WeaponAim weaponAim;
@@ -50,6 +51,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         horizontalMovementCorgi = GetComponent<CharacterHorizontalMovement>();
         theInputManager = FindObjectOfType<InputManager>();
         theCharacterHandleWeapon = FindObjectOfType<CharacterHandleWeapon>();
+        theSpecialShootAndRaycastVisualization = GetComponent<SpecialShootAndRaycastVisualization>();
         character = GetComponent<Character>();
         theFirepoint = GameObject.FindWithTag("Firepoint");
         slopesDetector = GameObject.FindWithTag("SlopesDetector");
@@ -183,7 +185,7 @@ public class AdditionalMovementSettings : MonoBehaviour
 
             if (theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponIdle)
             {
-                if (player.GetButton(("HoldPosition")))
+                if (player.GetButton(("HoldPosition")) || theSpecialShootAndRaycastVisualization.isShooting)
                 {
                     //theAnimator.SetBool("Hold", true);
                     GetComponent<CharacterLadder>().LadderClimbingSpeed = 0f;

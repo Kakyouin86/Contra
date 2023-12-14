@@ -82,7 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theAnimator: {fileID: 0}
   customIntervalLeo: 0
-  intervalWaitFor: 0
+  intervalWaitFor: 1
   counterIsShootingCounter: 0
   TriggerMode: 1
   Interruptable: 0
@@ -96,8 +96,8 @@ MonoBehaviour:
   BurstLength: 3
   BurstTimeBetweenShots: 0.1
   MagazineBased: 0
-  MagazineSize: 5
-  AutoReload: 0
+  MagazineSize: 2
+  AutoReload: 1
   ReloadTime: 0
   AmmoConsumedPerShot: 1
   AutoDestroyWhenEmpty: 0
@@ -126,7 +126,7 @@ MonoBehaviour:
   StartAnimationParameter: 
   DelayBeforeUseAnimationParameter: 
   SingleUseAnimationParameter: ThrowGrenade
-  UseAnimationParameter: 
+  UseAnimationParameter: ThrowGrenadeDelay
   DelayBetweenUsesAnimationParameter: 
   InCooldownAnimationParameter: 
   StopAnimationParameter: 

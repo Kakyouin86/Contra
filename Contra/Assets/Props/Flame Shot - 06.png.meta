@@ -129,7 +129,7 @@ TextureImporter:
         x: 0
         y: 0
         width: 24
-        height: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,7 +150,7 @@ TextureImporter:
         x: 24
         y: 0
         width: 24
-        height: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 470ff54249102ab4eb8684664ceb3c99
-      internalID: 249636466
+      spriteID: 0307b2364f5a69f438c2eea00d677975
+      internalID: 1353718427
       vertices: []
       indices: 
       edges: []
@@ -171,7 +171,7 @@ TextureImporter:
         x: 48
         y: 0
         width: 24
-        height: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 332567cabe5b45f47a16d3482f95044a
-      internalID: 1060017437
+      spriteID: 3a2575256e6e09e49b3c8e5f64504aa7
+      internalID: 409948354
       vertices: []
       indices: 
       edges: []
@@ -192,7 +192,7 @@ TextureImporter:
         x: 72
         y: 0
         width: 24
-        height: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5d7d3ede6c438f49af9236636400466
-      internalID: -1801716286
+      spriteID: 8a29ff6ce887efb4b8bc2931bdc99b5e
+      internalID: 134132058
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
         x: 96
         y: 0
         width: 24
-        height: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4d70a66d2c41fe40bca0f0d71e7516e
-      internalID: -599473095
+      spriteID: d934ec107ec2aa645912691938806504
+      internalID: 682755444
       vertices: []
       indices: 
       edges: []
@@ -234,7 +234,7 @@ TextureImporter:
         x: 120
         y: 0
         width: 24
-        height: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a48c758473888564fafd603828dae5c1
-      internalID: 1061924420
+      spriteID: ea89aeacdf8b2fc4fbce6231a2475aef
+      internalID: -1864214534
       vertices: []
       indices: 
       edges: []
@@ -255,7 +255,7 @@ TextureImporter:
         x: 144
         y: 0
         width: 24
-        height: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,8 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 110dc6625c6ffda459820fe56c67c2cc
-      internalID: 870845967
+      spriteID: daa959e8e075d26439e7036e5fbee095
+      internalID: -600596451
       vertices: []
       indices: 
       edges: []
@@ -276,7 +276,7 @@ TextureImporter:
         x: 168
         y: 0
         width: 24
-        height: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc737931e26122846952a91a9d1da8e8
-      internalID: -584976656
+      spriteID: 24275163717a8c5468db694a55c970bf
+      internalID: -1570498058
       vertices: []
       indices: 
       edges: []
@@ -302,13 +302,13 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Flame Shot - 06_0: 232934265
-      Flame Shot - 06_1: 249636466
-      Flame Shot - 06_2: 1060017437
-      Flame Shot - 06_3: -1801716286
-      Flame Shot - 06_4: -599473095
-      Flame Shot - 06_5: 1061924420
-      Flame Shot - 06_6: 870845967
-      Flame Shot - 06_7: -584976656
+      Flame Shot - 06_1: 1353718427
+      Flame Shot - 06_2: 409948354
+      Flame Shot - 06_3: 134132058
+      Flame Shot - 06_4: 682755444
+      Flame Shot - 06_5: -1864214534
+      Flame Shot - 06_6: -600596451
+      Flame Shot - 06_7: -1570498058
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

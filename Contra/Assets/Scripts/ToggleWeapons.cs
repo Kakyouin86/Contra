@@ -14,12 +14,15 @@ public class ToggleWeapons : MonoBehaviour
     public bool torsoNoLights = true;
     public bool machineGunActive = false;
     public bool flameGunActive = false;
+    public bool specialShootActive = false;
+    public SpecialShootAndRaycastVisualization theSpecialShootAndRaycastVisualization;
     public Inventory weaponInventory;
     public Animator theAnimator;
     public SpriteRenderer torsoSpriteRenderer;
     public SpriteRenderer legsSpriteRenderer;
     public Material originalMaterial;
     public Material flameGunMaterial;
+    public Material specialShootMaterial;
     //public CharacterHandleWeapon theCharacterHandleWeapon;
     //public Animator theAnimator;
 
@@ -28,6 +31,7 @@ public class ToggleWeapons : MonoBehaviour
         torsoObject = GameObject.FindGameObjectWithTag(torsoTag);
         machineGunLights = GameObject.FindGameObjectWithTag(machineGunLightsTag);
         flameGunLights = GameObject.FindGameObjectWithTag(flameGunLightsTag);
+        theSpecialShootAndRaycastVisualization = GetComponent<SpecialShootAndRaycastVisualization>();
         weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventory").GetComponent<Inventory>();
         theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
         //theCharacterHandleWeapon = FindObjectOfType<CharacterHandleWeapon>();
@@ -50,80 +54,74 @@ public class ToggleWeapons : MonoBehaviour
 
     void Update()
     {
-        if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
-            weaponInventory.Content[0].ItemName == "Machine Gun")
+        if (theSpecialShootAndRaycastVisualization.isShooting)
         {
-            if (GetComponent<CharacterHandleWeapon>().CurrentWeapon.WeaponState.CurrentState != Weapon.WeaponStates.WeaponIdle)
-            {
-                torsoNoLights = false;
-                machineGunActive = true;
-                flameGunActive = false;
-                torsoObject.SetActive(false);
-                machineGunLights.SetActive(true);
-                flameGunLights.SetActive(false);
-                torsoSpriteRenderer.material = originalMaterial;
-                legsSpriteRenderer.material = originalMaterial;
-            }
-            else
-            {
-                torsoNoLights = true;
-                machineGunActive = false;
-                flameGunActive = false;
-                torsoObject.SetActive(true);
-                machineGunLights.SetActive(false);
-                flameGunLights.SetActive(false);
-            }
-        }
-
-        if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
-            weaponInventory.Content[0].ItemName == "Flame Gun" && GetComponent<Character>().MovementState.CurrentState != CharacterStates.MovementStates.Rolling)
-        {
-            if (GetComponent<CharacterHandleWeapon>().CurrentWeapon.WeaponState.CurrentState != Weapon.WeaponStates.WeaponIdle && theAnimator.GetBool("isShooting"))
-            {
-                torsoNoLights = false;
-                machineGunActive = false;
-                flameGunActive = true;
-                torsoObject.SetActive(false);
-                machineGunLights.SetActive(false);
-                flameGunLights.SetActive(true);
-                flameGunLights.GetComponent<SpriteRenderer>().material = flameGunMaterial;
-                legsSpriteRenderer.material = flameGunMaterial;
-            }
-            else
-            {
-                torsoNoLights = true;
-                machineGunActive = false;
-                flameGunActive = false;
-                torsoObject.SetActive(true);
-                machineGunLights.SetActive(false);
-                flameGunLights.SetActive(false);
-                flameGunLights.GetComponent<SpriteRenderer>().material = originalMaterial;
-                torsoSpriteRenderer.material = originalMaterial;
-                legsSpriteRenderer.material = originalMaterial;
-            }
-        }
-
-        /*else
-        {
+            specialShootActive = true;
             torsoNoLights = true;
             machineGunActive = false;
             flameGunActive = false;
             torsoObject.SetActive(true);
             machineGunLights.SetActive(false);
             flameGunLights.SetActive(false);
+            torsoSpriteRenderer.material = specialShootMaterial;
+            legsSpriteRenderer.material = specialShootMaterial;
         }
 
-    else
-    {
-        torsoNoLights = true;
-        machineGunActive = false;
-        flameGunActive = false;
-        if (torsoObject != null && machineGunLights != null)
+        else
         {
-            machineGunLights.SetActive(false);
-            flameGunLights.SetActive(false);
-            torsoObject.SetActive(true);
+            specialShootActive = false;
+            if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
+            weaponInventory.Content[0].ItemName == "Machine Gun")
+            {
+                if (GetComponent<CharacterHandleWeapon>().CurrentWeapon.WeaponState.CurrentState != Weapon.WeaponStates.WeaponIdle)
+                {
+                    torsoNoLights = false;
+                    machineGunActive = true;
+                    flameGunActive = false;
+                    torsoObject.SetActive(false);
+                    machineGunLights.SetActive(true);
+                    flameGunLights.SetActive(false);
+                    torsoSpriteRenderer.material = originalMaterial;
+                    legsSpriteRenderer.material = originalMaterial;
+                }
+                else
+                {
+                    torsoNoLights = true;
+                    machineGunActive = false;
+                    flameGunActive = false;
+                    torsoObject.SetActive(true);
+                    machineGunLights.SetActive(false);
+                    flameGunLights.SetActive(false);
+                }
+            }
+
+            if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
+                weaponInventory.Content[0].ItemName == "Flame Gun" && GetComponent<Character>().MovementState.CurrentState != CharacterStates.MovementStates.Rolling)
+            {
+                if (GetComponent<CharacterHandleWeapon>().CurrentWeapon.WeaponState.CurrentState != Weapon.WeaponStates.WeaponIdle && theAnimator.GetBool("isShooting"))
+                {
+                    torsoNoLights = false;
+                    machineGunActive = false;
+                    flameGunActive = true;
+                    torsoObject.SetActive(false);
+                    machineGunLights.SetActive(false);
+                    flameGunLights.SetActive(true);
+                    flameGunLights.GetComponent<SpriteRenderer>().material = flameGunMaterial;
+                    legsSpriteRenderer.material = flameGunMaterial;
+                }
+                else
+                {
+                    torsoNoLights = true;
+                    machineGunActive = false;
+                    flameGunActive = false;
+                    torsoObject.SetActive(true);
+                    machineGunLights.SetActive(false);
+                    flameGunLights.SetActive(false);
+                    flameGunLights.GetComponent<SpriteRenderer>().material = originalMaterial;
+                    torsoSpriteRenderer.material = originalMaterial;
+                    legsSpriteRenderer.material = originalMaterial;
+                }
+            }
         }
-    }}*/
     }
 }

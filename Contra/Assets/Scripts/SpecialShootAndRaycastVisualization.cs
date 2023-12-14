@@ -26,7 +26,7 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
     public Vector3 LaserOrigin => _origin;
     public Vector3 LaserDestination => _destination;
     public Player player;
-    public GameObject thePickerPrefab;
+    public GameObject theSpecialShot;
     private GameObject thePickerInstance;
     private Weapon _weapon;
     private Vector3 _direction;
@@ -96,7 +96,7 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
             if (thePickerInstance == null)
             {
                 // Instantiate thePickerPrefab and store the reference
-                thePickerInstance = Instantiate(thePickerPrefab, transform.position, transform.rotation);
+                thePickerInstance = Instantiate(theSpecialShot, transform.position, transform.rotation);
 
                 // Set thePickerInstance's position and rotation to match _weapon
                 thePickerInstance.transform.position = _weapon.transform.position;
