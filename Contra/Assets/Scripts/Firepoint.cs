@@ -25,6 +25,7 @@ public class Firepoint : MonoBehaviour
     public Vector3 offset = new Vector3(0f, 0f, 0f);
     public WeaponAim weaponAim;
     public Inventory weaponInventory;
+    public SpecialShootAndRaycastVisualization theSpecialShootAndRaycastVisualization;
     public GameObject theFireIndicator;
     public GameObject theSmokeIndicator;
     public float originalWeaponAimRotSpeed;
@@ -47,6 +48,7 @@ public class Firepoint : MonoBehaviour
         originalWeaponAimRotSpeed = weaponAim.WeaponRotationSpeed;
         animationNames = Resources.LoadAll<AnimationClip>("Player Animations");
         weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventory").GetComponent<Inventory>();
+        theSpecialShootAndRaycastVisualization = GetComponent<SpecialShootAndRaycastVisualization>();
     }
 
     void Update()

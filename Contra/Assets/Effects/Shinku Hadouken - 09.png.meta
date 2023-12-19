@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 142fbd2b98ee58845a3a1910c83f9e28
+guid: c7fdc94f1cae5a4419740cb710023155
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,19 +81,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -123,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shinku Hadouken - 02_0
+      name: Shinku Hadouken - 09_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 60
-        height: 151
+        height: 113
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6068e42d55d7e947bd6e2d3ea0b4cb2
-      internalID: 602502585
+      spriteID: 6cd2226e2b98dae41aba2aa6f0faece1
+      internalID: 1565808582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shinku Hadouken - 02_1
+      name: Shinku Hadouken - 09_1
       rect:
         serializedVersion: 2
         x: 60
         y: 0
         width: 60
-        height: 151
+        height: 113
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 363a5fb25167a974094df6386b170138
-      internalID: 468900556
+      spriteID: 354614ad2e260a74dadf34a4af61b2a2
+      internalID: -947676490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shinku Hadouken - 02_2
+      name: Shinku Hadouken - 09_2
       rect:
         serializedVersion: 2
         x: 120
         y: 0
         width: 60
-        height: 151
+        height: 113
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9b84fd2ff01d3f4cb8c3901606c4f23
-      internalID: -594957364
+      spriteID: 88af8d427570d254fb85b310498f7530
+      internalID: 1645837448
       vertices: []
       indices: 
       edges: []
@@ -196,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Shinku Hadouken - 02_0: 602502585
-      Shinku Hadouken - 02_1: 468900556
-      Shinku Hadouken - 02_2: -594957364
+      Shinku Hadouken - 09_0: 1565808582
+      Shinku Hadouken - 09_1: -947676490
+      Shinku Hadouken - 09_2: 1645837448
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

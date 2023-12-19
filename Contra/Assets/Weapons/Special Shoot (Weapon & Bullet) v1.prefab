@@ -17,10 +17,9 @@ GameObject:
   - component: {fileID: 6885755468511231297}
   - component: {fileID: 105668252355354254}
   - component: {fileID: 1330199959748496490}
-  - component: {fileID: 515544757652918050}
   - component: {fileID: 7653363849265750829}
   m_Layer: 16
-  m_Name: Special Shoot (Weapon & Bullet)
+  m_Name: Special Shoot (Weapon & Bullet) v1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 5345617776012890272}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.877341, y: -2.587869, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -150,7 +149,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.125, y: 0.5}
-    oldSize: {x: 18.5, y: 9.4375}
+    oldSize: {x: 18.5, y: 9.75}
     newSize: {x: 3.0625, y: 2.375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -321,29 +320,6 @@ MonoBehaviour:
   SkinWidth: 0.1
   RepositionRigidbodyIfHitTrigger: 1
   RepositionRigidbodyIfHitNonTrigger: 1
---- !u!114 &515544757652918050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5345617776012890272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b95296ef9f66e44299eb703ede874bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToInstantiate: {fileID: 1305716679244723247, guid: dbc375c3180647b4aa4d8b1e880968c9,
-    type: 3}
-  spawnPosition: {x: 1.5, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
-  ObstaclesLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  distanceToPlayer: 0
-  thresholdNotToShowBurst: 0
-  thePlayer: {fileID: 0}
-  weaponAim: {fileID: 0}
 --- !u!114 &7653363849265750829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,3 +333,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0
+  destroyByTime: 0

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shinku Hadouken - 02
+  m_Name: Special Shoot (Weapon & Bullet) v2 - Shot Bottom
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 460542643, guid: 5f20b1653816d8246b617dd4dbe9d386, type: 3}
+      value: {fileID: 1257726441, guid: 54117fab69dbbf64894e4fc3dd93889a, type: 3}
     - time: 0.033333335
-      value: {fileID: 1387297751, guid: 5f20b1653816d8246b617dd4dbe9d386, type: 3}
+      value: {fileID: -398569233, guid: 54117fab69dbbf64894e4fc3dd93889a, type: 3}
     - time: 0.06666667
-      value: {fileID: 1180113090, guid: 5f20b1653816d8246b617dd4dbe9d386, type: 3}
+      value: {fileID: -1608407876, guid: 54117fab69dbbf64894e4fc3dd93889a, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,9 +48,9 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 460542643, guid: 5f20b1653816d8246b617dd4dbe9d386, type: 3}
-    - {fileID: 1387297751, guid: 5f20b1653816d8246b617dd4dbe9d386, type: 3}
-    - {fileID: 1180113090, guid: 5f20b1653816d8246b617dd4dbe9d386, type: 3}
+    - {fileID: 1257726441, guid: 54117fab69dbbf64894e4fc3dd93889a, type: 3}
+    - {fileID: -398569233, guid: 54117fab69dbbf64894e4fc3dd93889a, type: 3}
+    - {fileID: -1608407876, guid: 54117fab69dbbf64894e4fc3dd93889a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

@@ -17373,7 +17373,7 @@ MonoBehaviour:
   canShoot: 0
   enableLaser: 0
   isShooting: 0
-  animationTimer: 1.167
+  animationTimer: 0.85
   currentTimer: 0
   RaycastOriginOffset: {x: 0, y: 0, z: 0}
   LaserOriginOffset: {x: 0, y: 0, z: 0}
@@ -17383,7 +17383,7 @@ MonoBehaviour:
     m_Bits: 264448
   LaserWidth: {x: 0.05, y: 0.05}
   LaserMaterial: {fileID: 2100000, guid: 1edd60d55c9b2354abcfa9983da42782, type: 2}
-  theSpecialShot: {fileID: 5345617776012890272, guid: ab844f75233ab94479406f4503592869,
+  theSpecialShot: {fileID: 4211420323295667025, guid: 179abb41300adad4cb0fcbbe8b83284a,
     type: 3}
 --- !u!120 &1038294715
 LineRenderer:
@@ -33064,9 +33064,9 @@ MonoBehaviour:
   isShooting: 0
   hasReachedTarget: 0
   enableAnimation: 0
-  specialShootCooldown: 3
+  specialShootCooldown: 1
   timer: 0
-  originalSpecialShootDuration: 1.167
+  originalSpecialShootDuration: 1
   counterImages:
   - {fileID: 453116529}
   - {fileID: 590807071}
