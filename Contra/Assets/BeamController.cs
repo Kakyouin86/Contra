@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BeamController : MonoBehaviour
 {
+    public GameObject middlePrefabToInstantiate;
     public bool canInstantiate = false;
-    public float startInstantiating = 0.1f;
     public float stopInstantiating = 0.7f;
     public float timerToStopInstantiating = 0f;
     public GameObject[] topBeamSegments;
@@ -17,29 +17,24 @@ public class BeamController : MonoBehaviour
     public bool[] isBottomCollidingArray;
     public bool reEnableInProgress;
     public float maxRaycastLength = 10f;
-    public GameObject prefabToInstantiate; // Add the prefab to instantiate
-
-    // Flags to track prefab instantiation state for top and bottom beams separately
-    private bool topPrefabInstantiated = false;
-    private bool bottomPrefabInstantiated = false;
+    public GameObject prefabToInstantiate;
+    public bool topPrefabInstantiated = false;
+    public bool bottomPrefabInstantiated = false;
 
     void Start()
     {
         canInstantiate = false;
         isTopCollidingArray = new bool[topBeamSegments.Length];
         isBottomCollidingArray = new bool[bottomBeamSegments.Length];
-
         StartCoroutine(EnableSegmentsSequentially(topBeamSegments, true, isTopCollidingArray));
         StartCoroutine(EnableSegmentsSequentially(bottomBeamSegments, false, isBottomCollidingArray));
+        canInstantiate = true;
     }
 
     void Update()
     {
         timerToStopInstantiating += Time.deltaTime;
-        if (timerToStopInstantiating >= startInstantiating)
-        {
-            canInstantiate = true;
-        }
+
         if (timerToStopInstantiating >= stopInstantiating)
         {
             canInstantiate = false;
@@ -56,43 +51,78 @@ public class BeamController : MonoBehaviour
             {
                 var segment = beamSegments[i];
 
-                // If not colliding, enable rendering for the segment
                 if (isTop ? !isCollidingArray[i] : !isCollidingArray[i])
                 {
                     segment.GetComponent<SpriteRenderer>().enabled = true;
                 }
 
-                // Wait for the specified delay
                 yield return new WaitForSeconds(delayBetweenSegments);
 
-                // Check for collisions after each segment is instantiated
                 var collisionInfo = CheckCollision(segment);
 
-                // Update collision status based on the current collision
                 isCollidingArray[i] = collisionInfo.isColliding;
 
-                // If colliding and prefab not instantiated, instantiate prefab at the hit point and disable rendering for the segment and all the ones to the right
                 if (collisionInfo.isColliding)
                 {
                     if (isTop && !topPrefabInstantiated && canInstantiate)
                     {
-                        InstantiatePrefab(collisionInfo.hitPoint, segment.transform.up);
-                        topPrefabInstantiated = true;
+                        // Check for prior collisions before the current index
+                        if (!HasPriorCollisions(isBottomCollidingArray, i))
+                        {
+                            // Check if both top and bottom beams are colliding at the same index
+                            if (isBottomCollidingArray[i])
+                            {
+                                // Calculate the middle point between the top and bottom beams at the colliding index
+                                InstantiateMiddlePrefab(collisionInfo.hitPoint, topBeamSegments[i].transform.position, bottomBeamSegments[i].transform.position);
+                                topPrefabInstantiated = true;
+                                bottomPrefabInstantiated = true;
+                                continue; // Skip regular prefab instantiation
+                            }
+                            else
+                            {
+                                InstantiatePrefab(collisionInfo.hitPoint, segment.transform.up);
+                                topPrefabInstantiated = true;
+                            }
+                        }
+                        else
+                        {
+                            InstantiatePrefab(collisionInfo.hitPoint, segment.transform.up);
+                            topPrefabInstantiated = true;
+                        }
                     }
 
                     if (!isTop && !bottomPrefabInstantiated && canInstantiate)
                     {
-                        InstantiatePrefab(collisionInfo.hitPoint, segment.transform.up);
-                        bottomPrefabInstantiated = true;
+                        // Check for prior collisions before the current index
+                        if (!HasPriorCollisions(isTopCollidingArray, i))
+                        {
+                            // Check if both top and bottom beams are colliding at the same index
+                            if (isTopCollidingArray[i])
+                            {
+                                // Calculate the middle point between the top and bottom beams at the colliding index
+                                InstantiateMiddlePrefab(collisionInfo.hitPoint, topBeamSegments[i].transform.position, bottomBeamSegments[i].transform.position);
+                                topPrefabInstantiated = true;
+                                bottomPrefabInstantiated = true;
+                                continue; // Skip regular prefab instantiation
+                            }
+                            else
+                            {
+                                InstantiatePrefab(collisionInfo.hitPoint, segment.transform.up);
+                                bottomPrefabInstantiated = true;
+                            }
+                        }
+                        else
+                        {
+                            InstantiatePrefab(collisionInfo.hitPoint, segment.transform.up);
+                            bottomPrefabInstantiated = true;
+                        }
                     }
 
-                    // Disable rendering for the segment and all the ones to the right (this part remains the same as before)
                     for (int j = i; j < length; j++)
                     {
                         beamSegments[j].GetComponent<SpriteRenderer>().enabled = false;
                     }
 
-                    // Make it impossible to render the rest of the array next to the colliding segment
                     for (int k = i + 1; k < length; k++)
                     {
                         isCollidingArray[k] = true;
@@ -102,32 +132,47 @@ public class BeamController : MonoBehaviour
                 }
             }
 
-            // Enable segments again (sequentially) if no collision
             if (!reEnableInProgress)
             {
                 EnableSegmentsAgainSequentially(beamSegments, isTop, isCollidingArray);
             }
             else
             {
-                // Re-enable segments in order after the specified delay
                 ReEnableSegmentsInOrder(beamSegments, isTop, isCollidingArray);
                 yield return new WaitForSeconds(delayBetweenReEnable);
                 reEnableInProgress = false;
 
-                // Reset the prefab instantiation flags when re-enabling segments
                 topPrefabInstantiated = false;
                 bottomPrefabInstantiated = false;
             }
         }
     }
 
+    bool HasPriorCollisions(bool[] collisionArray, int currentIndex)
+    {
+        for (int i = 0; i < currentIndex; i++)
+        {
+            if (collisionArray[i])
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     void InstantiatePrefab(Vector3 position, Vector2 beamDirection)
     {
-        // Calculate the rotation based on the beam's direction
         float angle = Mathf.Atan2(beamDirection.y, beamDirection.x) * Mathf.Rad2Deg;
 
-        // Instantiate the prefab at the hit point with the calculated rotation
         Instantiate(prefabToInstantiate, position, Quaternion.Euler(0f, 0f, angle));
+    }
+
+    void InstantiateMiddlePrefab(Vector3 position, Vector3 topPosition, Vector3 bottomPosition)
+    {
+        Vector3 middlePoint = (topPosition + bottomPosition) / 2f;
+        float angle = Mathf.Atan2((topPosition - bottomPosition).y, (topPosition - bottomPosition).x) * Mathf.Rad2Deg;
+
+        Instantiate(middlePrefabToInstantiate, middlePoint, Quaternion.Euler(0f, 0f, angle));
     }
 
     void EnableSegmentsAgainSequentially(GameObject[] beamSegments, bool isTop, bool[] isCollidingArray)
@@ -138,11 +183,9 @@ public class BeamController : MonoBehaviour
         {
             var segment = beamSegments[i];
 
-            // If not colliding, enable rendering for the segment
             if (isTop ? !isCollidingArray[i] : !isCollidingArray[i])
             {
                 segment.GetComponent<SpriteRenderer>().enabled = true;
-                // Wait for the specified delay
                 StartCoroutine(WaitAndEnableNextSegment(segment, delayBetweenSegments));
             }
         }
@@ -157,7 +200,7 @@ public class BeamController : MonoBehaviour
             if (isTop ? !isCollidingArray[i] : !isCollidingArray[i])
             {
                 beamSegments[i].GetComponent<SpriteRenderer>().enabled = true;
-                yield return new WaitForSeconds(delayBetweenSegments); // Optional: introduce a delay between re-enabling segments
+                yield return new WaitForSeconds(delayBetweenSegments);
             }
         }
     }
@@ -179,12 +222,10 @@ public class BeamController : MonoBehaviour
         Vector3 startPos = beamSegment.transform.position;
         Vector3 endPos = startPos + beamSegment.transform.up * Mathf.Min(beamSegment.transform.localScale.y, maxRaycastLength);
 
-        // Visual representation of the raycast
         Debug.DrawRay(startPos, endPos - startPos, Color.red);
 
         RaycastHit2D hit = Physics2D.Linecast(startPos, endPos, LaserCollisionMask);
 
-        // If hit, set isColliding to true and return the hit point
         return new CollisionInfo
         {
             isColliding = hit.collider != null,
