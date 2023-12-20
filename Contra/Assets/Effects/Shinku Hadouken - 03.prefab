@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5764843930251810284}
   - component: {fileID: 424690130499915845}
   - component: {fileID: 2801698019435709956}
-  - component: {fileID: 1335904054974856856}
   m_Layer: 0
   m_Name: Shinku Hadouken - 03
   m_TagString: Untagged
@@ -122,20 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   destroyByTime: 0
---- !u!114 &1335904054974856856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1828934695333331287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd7e1315bfac146498378687138063f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 0
-  destroyByTime: 0
+  destroyTheParent: 1
 --- !u!1 &2384737577886595569
 GameObject:
   m_ObjectHideFlags: 0

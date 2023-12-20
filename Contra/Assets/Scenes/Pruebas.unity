@@ -17223,6 +17223,7 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   weaponAim: {fileID: 0}
   weaponInventory: {fileID: 0}
+  theSpecialShootAndRaycastVisualization: {fileID: 0}
   theFireIndicator: {fileID: 0}
   theSmokeIndicator: {fileID: 0}
   originalWeaponAimRotSpeed: 0

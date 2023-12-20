@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BeamController : MonoBehaviour
 {
-    public bool canInstantiate = true;
+    public bool canInstantiate = false;
+    public float startInstantiating = 0.1f;
     public float stopInstantiating = 0.7f;
     public float timerToStopInstantiating = 0f;
     public GameObject[] topBeamSegments;
@@ -24,7 +25,7 @@ public class BeamController : MonoBehaviour
 
     void Start()
     {
-        canInstantiate = true;
+        canInstantiate = false;
         isTopCollidingArray = new bool[topBeamSegments.Length];
         isBottomCollidingArray = new bool[bottomBeamSegments.Length];
 
@@ -35,6 +36,10 @@ public class BeamController : MonoBehaviour
     void Update()
     {
         timerToStopInstantiating += Time.deltaTime;
+        if (timerToStopInstantiating >= startInstantiating)
+        {
+            canInstantiate = true;
+        }
         if (timerToStopInstantiating >= stopInstantiating)
         {
             canInstantiate = false;

@@ -1,11 +1,14 @@
 using UnityEngine;
 using System.Collections;
+using System.Security.Cryptography;
+using MoreMountains.Tools;
 
 public class DestroyThisGameObject : MonoBehaviour
 {
     //public bool itIsParticleSystem;
     public float delay = 0f;
     public bool destroyByTime = false; //If this is true, then the GO will be destroyed when hitting that time. If not, then the animator gets to the final position of the animation currently playing.
+    public bool destroyTheParent = false;
 
     public void Start()
     {
@@ -13,7 +16,14 @@ public class DestroyThisGameObject : MonoBehaviour
         {
             if (this.GetComponent<Animator>() != null && !destroyByTime)
             {
-                Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay);
+                if (destroyTheParent)
+                {
+                    Destroy(transform.parent.gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay);
+                }
+                else
+                {
+                    Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay);
+                }
             }
         }
     }
@@ -26,7 +36,14 @@ public class DestroyThisGameObject : MonoBehaviour
 
             if (delay <= 0f)
             {
-                Destroy(gameObject);
+                if (destroyTheParent)
+                {
+                    Destroy(transform.parent.gameObject);
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }
