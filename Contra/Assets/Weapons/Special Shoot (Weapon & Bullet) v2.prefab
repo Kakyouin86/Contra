@@ -1301,6 +1301,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33e1542641081d3498c26adb938a730c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInstantiate: 1
+  stopInstantiating: 0.7
+  timerToStopInstantiating: 0
   topBeamSegments:
   - {fileID: 3895298464713584313}
   - {fileID: 2977922801004497587}
@@ -1332,8 +1335,6 @@ MonoBehaviour:
   maxRaycastLength: 10
   prefabToInstantiate: {fileID: 2384737577886595569, guid: 0300b34c479b81a468417049e5d5fb65,
     type: 3}
-  instantiationStartTime: 0
-  instantiationEndTime: 99999
 --- !u!1 &4654038721746574031
 GameObject:
   m_ObjectHideFlags: 0

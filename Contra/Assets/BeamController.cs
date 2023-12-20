@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BeamController : MonoBehaviour
 {
+    public bool canInstantiate = true;
+    public float stopInstantiating = 0.7f;
+    public float timerToStopInstantiating = 0f;
     public GameObject[] topBeamSegments;
     public GameObject[] bottomBeamSegments;
     public float delayBetweenSegments = 0.2f;
@@ -21,11 +24,21 @@ public class BeamController : MonoBehaviour
 
     void Start()
     {
+        canInstantiate = true;
         isTopCollidingArray = new bool[topBeamSegments.Length];
         isBottomCollidingArray = new bool[bottomBeamSegments.Length];
 
         StartCoroutine(EnableSegmentsSequentially(topBeamSegments, true, isTopCollidingArray));
         StartCoroutine(EnableSegmentsSequentially(bottomBeamSegments, false, isBottomCollidingArray));
+    }
+
+    void Update()
+    {
+        timerToStopInstantiating += Time.deltaTime;
+        if (timerToStopInstantiating >= stopInstantiating)
+        {
+            canInstantiate = false;
+        }
     }
 
     IEnumerator EnableSegmentsSequentially(GameObject[] beamSegments, bool isTop, bool[] isCollidingArray)
@@ -56,13 +69,13 @@ public class BeamController : MonoBehaviour
                 // If colliding and prefab not instantiated, instantiate prefab at the hit point and disable rendering for the segment and all the ones to the right
                 if (collisionInfo.isColliding)
                 {
-                    if (isTop && !topPrefabInstantiated)
+                    if (isTop && !topPrefabInstantiated && canInstantiate)
                     {
                         InstantiatePrefab(collisionInfo.hitPoint, segment.transform.up);
                         topPrefabInstantiated = true;
                     }
 
-                    if (!isTop && !bottomPrefabInstantiated)
+                    if (!isTop && !bottomPrefabInstantiated && canInstantiate)
                     {
                         InstantiatePrefab(collisionInfo.hitPoint, segment.transform.up);
                         bottomPrefabInstantiated = true;
