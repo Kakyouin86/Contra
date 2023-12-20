@@ -1330,6 +1330,10 @@ MonoBehaviour:
   isBottomCollidingArray: 
   reEnableInProgress: 0
   maxRaycastLength: 10
+  prefabToInstantiate: {fileID: 2384737577886595569, guid: 0300b34c479b81a468417049e5d5fb65,
+    type: 3}
+  instantiationStartTime: 0
+  instantiationEndTime: 99999
 --- !u!1 &4654038721746574031
 GameObject:
   m_ObjectHideFlags: 0

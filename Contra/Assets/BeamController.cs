@@ -6,20 +6,24 @@ public class BeamController : MonoBehaviour
 {
     public GameObject[] topBeamSegments;
     public GameObject[] bottomBeamSegments;
-    public float delayBetweenSegments = 0.0f;
-    public float delayBetweenReEnable = 0.05f; // Adjust this value for the delay between re-enabling segments
+    public float delayBetweenSegments = 0.2f;
+    public float delayBetweenReEnable = 1.0f;
     public LayerMask LaserCollisionMask = LayerManager.ObstaclesLayerMask;
     public bool[] isTopCollidingArray;
     public bool[] isBottomCollidingArray;
     public bool reEnableInProgress;
-    public float maxRaycastLength = 10f; // Adjust this value to limit the raycast length
+    public float maxRaycastLength = 10f;
+    public GameObject prefabToInstantiate; // Add the prefab to instantiate
+
+    // Flags to track prefab instantiation state for top and bottom beams separately
+    private bool topPrefabInstantiated = false;
+    private bool bottomPrefabInstantiated = false;
 
     void Start()
     {
         isTopCollidingArray = new bool[topBeamSegments.Length];
         isBottomCollidingArray = new bool[bottomBeamSegments.Length];
 
-        // Enable the segments sequentially with a delay
         StartCoroutine(EnableSegmentsSequentially(topBeamSegments, true, isTopCollidingArray));
         StartCoroutine(EnableSegmentsSequentially(bottomBeamSegments, false, isBottomCollidingArray));
     }
@@ -49,9 +53,22 @@ public class BeamController : MonoBehaviour
                 // Update collision status based on the current collision
                 isCollidingArray[i] = collisionInfo.isColliding;
 
-                // If colliding, disable rendering for the segment and all the ones to the right
+                // If colliding and prefab not instantiated, instantiate prefab at the hit point and disable rendering for the segment and all the ones to the right
                 if (collisionInfo.isColliding)
                 {
+                    if (isTop && !topPrefabInstantiated)
+                    {
+                        InstantiatePrefab(collisionInfo.hitPoint, segment.transform.up);
+                        topPrefabInstantiated = true;
+                    }
+
+                    if (!isTop && !bottomPrefabInstantiated)
+                    {
+                        InstantiatePrefab(collisionInfo.hitPoint, segment.transform.up);
+                        bottomPrefabInstantiated = true;
+                    }
+
+                    // Disable rendering for the segment and all the ones to the right (this part remains the same as before)
                     for (int j = i; j < length; j++)
                     {
                         beamSegments[j].GetComponent<SpriteRenderer>().enabled = false;
@@ -78,8 +95,21 @@ public class BeamController : MonoBehaviour
                 ReEnableSegmentsInOrder(beamSegments, isTop, isCollidingArray);
                 yield return new WaitForSeconds(delayBetweenReEnable);
                 reEnableInProgress = false;
+
+                // Reset the prefab instantiation flags when re-enabling segments
+                topPrefabInstantiated = false;
+                bottomPrefabInstantiated = false;
             }
         }
+    }
+
+    void InstantiatePrefab(Vector3 position, Vector2 beamDirection)
+    {
+        // Calculate the rotation based on the beam's direction
+        float angle = Mathf.Atan2(beamDirection.y, beamDirection.x) * Mathf.Rad2Deg;
+
+        // Instantiate the prefab at the hit point with the calculated rotation
+        Instantiate(prefabToInstantiate, position, Quaternion.Euler(0f, 0f, angle));
     }
 
     void EnableSegmentsAgainSequentially(GameObject[] beamSegments, bool isTop, bool[] isCollidingArray)
@@ -123,6 +153,7 @@ public class BeamController : MonoBehaviour
     struct CollisionInfo
     {
         public bool isColliding;
+        public Vector3 hitPoint;
     }
 
     CollisionInfo CheckCollision(GameObject beamSegment)
@@ -135,10 +166,11 @@ public class BeamController : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Linecast(startPos, endPos, LaserCollisionMask);
 
-        // If hit, set isColliding to true
+        // If hit, set isColliding to true and return the hit point
         return new CollisionInfo
         {
-            isColliding = hit.collider != null
+            isColliding = hit.collider != null,
+            hitPoint = hit.collider != null ? hit.point : Vector3.zero
         };
     }
 }
