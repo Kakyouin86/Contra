@@ -1729,6 +1729,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33e1542641081d3498c26adb938a730c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  middlePrefabToInstantiate: {fileID: 2384737577886595569, guid: 0300b34c479b81a468417049e5d5fb65,
+    type: 3}
   canInstantiate: 1
   stopInstantiating: 0.7
   timerToStopInstantiating: 0
@@ -1769,9 +1771,8 @@ MonoBehaviour:
   maxRaycastLength: 10
   prefabToInstantiate: {fileID: 1305716679244723247, guid: dbc375c3180647b4aa4d8b1e880968c9,
     type: 3}
-  middlePrefabToInstantiate: {fileID: 2384737577886595569, guid: 0300b34c479b81a468417049e5d5fb65,
-    type: 3}
-  distanceThreshold: 1.95
+  topPrefabInstantiated: 0
+  bottomPrefabInstantiated: 0
 --- !u!1 &4619059176134625564
 GameObject:
   m_ObjectHideFlags: 0

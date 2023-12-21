@@ -12,10 +12,11 @@ using UnityEngine.UI;
 public class UIAndUpgradesController : MonoBehaviour
 {
     [Header("Acquired Power Ups")]
-    public bool flameGunPlus = false;
-    public bool rayGunPlus = false;
-    public bool shotGunPlus = false;
-    public bool spreadGunPlus = false;
+    public bool grenadePlus = false;
+    public bool flameGunUpgrade = false;
+    public bool rayGunUpgrade = false;
+    public bool shotGunUpgrade = false;
+    public bool spreadGunUpgrade = false;
     public bool doubleJump = false;
     public bool dash = false;
     public bool specialShot = false;
@@ -52,25 +53,20 @@ public class UIAndUpgradesController : MonoBehaviour
     public string machineGunName = "Machine Gun";
     public string flameGunName = "Flame Gun";
     public string flameGunPlusName = "Super Flame Gun";
-    public bool flameGunUpgrade = false;
     public string rayGunName = "Ray Gun";
     public string rayGunPlusName = "Super Ray Gun";
-    public bool rayGunUpgrade = false;
     public string shotGunName = "Shot Gun";
     public string shotGunPlusName = "Super Shot Gun";
-    public bool shotGunUpgrade = false;
     public string spreadGunName = "Spread Gun";
     public string spreadGunPlusName = "Super Spread Gun";
-    public bool spreadGunUpgrade = false;
     public string grenadePlusName = "Super Grenade";
-    public bool grenadePlus = false;
 
-    [Header("Weapon In Use")]
+    /*[Header("Weapon In Use")]
     public bool machineGun = false;
     public bool flameGun = false;
     public bool rayGun = false;
     public bool shotGun = false;
-    public bool spreadGun = false;
+    public bool spreadGun = false;*/
     
     void Start()
     {
@@ -236,7 +232,7 @@ public class UIAndUpgradesController : MonoBehaviour
             slot5SpreadGunPlusPlayer1.color = fadingColor;
         }
 
-        if (thePlayer.flameGunActive && !flameGunPlus || theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == flameGunName)
+        if (thePlayer.flameGunActive && !flameGunUpgrade || theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == flameGunName)
         {
             slot1MachineGunPlayer1.color = fadingColor;
             slot2FlameGunPlayer1.color = originalColor;
@@ -249,7 +245,7 @@ public class UIAndUpgradesController : MonoBehaviour
             slot5SpreadGunPlusPlayer1.color = fadingColor;
         }
 
-        if (thePlayer.flameGunActive && flameGunPlus || theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == flameGunPlusName)
+        if (thePlayer.flameGunActive && flameGunUpgrade || theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == flameGunPlusName)
         {
             slot1MachineGunPlayer1.color = fadingColor;
             slot2FlameGunPlayer1.color = fadingColor;

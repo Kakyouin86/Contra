@@ -71,28 +71,50 @@ public class Firepoint : MonoBehaviour
             {
                 //////////////////////////////////////////////////////////////////////////////////////
                 //Idle and straight
-                //Torso IDLE while facing RIGHT
-                if (animationNames.name == "Torso Idle" && character.IsFacingRight)
+                //Torso IDLE while facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Torso Idle") || (animationNames.name == "Torso Idle")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);
                 }
-                //Torso IDLE while facing LEFT
-                if (animationNames.name == "Torso Idle" && !character.IsFacingRight)
+                //Torso IDLE while facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Torso Idle") || (animationNames.name == "Torso Idle")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);
+                }
+
+                //Torso IDLE  while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Torso Idle") || (animationNames.name == "Torso Idle")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.50f, 2.3f);
+                }
+                //Torso IDLE  while facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Torso Idle") || (animationNames.name == "Torso Idle")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.50f, 2.3f);
                 }
 
                 ///////
 
-                //Shoot STRAIGHT while facing RIGHT
-                if (animationNames.name == "Shoot Straight" && character.IsFacingRight)
+                //Shoot STRAIGHT while facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Shoot Straight") || (animationNames.name == "Shoot Straight")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);
                 }
-                //Shoot STRAIGHT while facing LEFT
-                if (animationNames.name == "Shoot Straight" && !character.IsFacingRight)
+                //Shoot STRAIGHT while facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Shoot Straight") || (animationNames.name == "Shoot Straight")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);
+                }
+
+                //Shoot STRAIGHT while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Shoot Straight") || (animationNames.name == "Shoot Straight")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.50f, 2.3f);
+                }
+                //Shoot STRAIGHT while facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Shoot Straight") || (animationNames.name == "Shoot Straight")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.50f, 2.3f);
                 }
 
                 ///////
@@ -111,12 +133,12 @@ public class Firepoint : MonoBehaviour
                 //Shoot UP while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Shoot Up") || (animationNames.name == "Hold Up")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.6f, 2.95f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.25f, 3.30f);
                 }
                 //Shoot UP while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Shoot Up") || (animationNames.name == "Hold Up")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.6f, 2.95f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 3.30f);
                 }
 
                 ///////
@@ -135,12 +157,12 @@ public class Firepoint : MonoBehaviour
                 //Shoot UP-RIGHT while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Hold Diagonal Up") || (animationNames.name == "Shoot Diagonal Up")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.25f, 2.6f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.25f, 2.90f);
                 }
                 //Shoot UP-LEFT while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Hold Diagonal Up") || (animationNames.name == "Shoot Diagonal Up")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.25f, 2.6f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.25f, 2.90f);
                 }
 
                 ///////
@@ -159,12 +181,12 @@ public class Firepoint : MonoBehaviour
                 //Shoot DOWN while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.5f, 0.8f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.05f, 1.1f);
                 }
                 //Shoot DOWN while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.5f, 0.8f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.00f, 1.1f);
                 }
 
                 ///////
@@ -183,12 +205,12 @@ public class Firepoint : MonoBehaviour
                 //Shoot DOWN-RIGHT while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Hold Diagonal Down") || (animationNames.name == "Shoot Diagonal Down")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.15f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.5f, 1.4f);
                 }
                 //Shoot DOWN-LEFT while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Hold Diagonal Down") || (animationNames.name == "Shoot Diagonal Down")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.15f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.5f, 1.4f);
                 }
 
                 ///////
@@ -207,12 +229,12 @@ public class Firepoint : MonoBehaviour
                 //Shoot STRAIGHT while WALKING and facing RIGHT Flame Gun ---
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Shoot Straight Walking") || (animationNames.name == "Shoot Straight Walking Flame Gun")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 2.03f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.55f, 2.25f);
                 }
                 //Shoot STRAIGHT while WALKING and facing LEFT Flame Gun ---
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Shoot Straight Walking") || (animationNames.name == "Shoot Straight Walking Flame Gun")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 2.03f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.60f, 2.25f);
                 }
 
                 ///////
@@ -231,12 +253,12 @@ public class Firepoint : MonoBehaviour
                 //Shoot UP-RIGHT while WALKING and facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Torso Walking Diagonal Up") || (animationNames.name == "Shoot Diagonal Up Walking Flame Gun")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 2.5f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 2.9f);
                 }
                 //Shoot UP-LEFT while WALKING and facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Torso Walking Diagonal Up") || (animationNames.name == "Shoot Diagonal Up Walking Flame Gun")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 2.5f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 2.85f);
                 }
 
                 ///////
@@ -255,12 +277,12 @@ public class Firepoint : MonoBehaviour
                 //Shoot DOWN-RIGHT while WALKING while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Torso Walking Diagonal Down") || (animationNames.name == "Shoot Diagonal Down Walking Flame Gun")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.1f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.5f, 1.4f);
                 }
                 //Shoot DOWN-LEFT while WALKING while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Torso Walking Diagonal Down") || (animationNames.name == "Shoot Diagonal Down Walking Flame Gun")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.2f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.5f, 1.4f);
                 }
 
                 ///////
@@ -281,12 +303,12 @@ public class Firepoint : MonoBehaviour
                 //Shoot RIGHT while JUMPING and facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.4f, 1.6f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 2.00f);
                 }
                 //Shoot LEFT while JUMPING and facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.4f, 1.6f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.2f, 2.00f);
                 }
 
                 ///////
@@ -305,12 +327,12 @@ public class Firepoint : MonoBehaviour
                 //Shoot UP while JUMPING and facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") > 0))
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.5f, 1.6f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.9f);
                 }
                 //Shoot UP while JUMPING and facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") > 0))
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.5f, 1.6f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.9f);
                 }
 
                 ///////
@@ -329,12 +351,12 @@ public class Firepoint : MonoBehaviour
                 //Shoot DOWN while JUMPING and facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0))
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.4f, 1.3f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 1.6f);
                 }
                 //Shoot DOWN while JUMPING and facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0))
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.4f, 1.3f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 1.6f);
                 }
 
                 ///////
@@ -353,12 +375,12 @@ public class Firepoint : MonoBehaviour
                 //Shoot UP-RIGHT while JUMPING and facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") > 0)))
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.5f, 1.6f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.9f);
                 }
                 //Shoot UP-LEFT while JUMPING and facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") < 0)))
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.5f, 1.6f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.9f);
                 }
 
                 ///////
@@ -377,35 +399,64 @@ public class Firepoint : MonoBehaviour
                 //Shoot RIGHT-DOWN while JUMPING and facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") > 0)))
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.2f, 1.2f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 1.5f);
                 }
                 //Shoot LEFT-DOWN while JUMPING and facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") < 0)))
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 1.2f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.7f, 1.5f);
                 }
 
                 ///////
-                
+
                 //////////////////////////////////////////////////////////////////////////////////////
 
                 //Crouch
-                if (animationNames.name == "Crouch" && character.IsFacingRight)
+                //Crouch IDLE while facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Crouch") || (animationNames.name == "Crouch")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 0.75f);//Was new Vector3(1.4f, 0.75f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 0.75f);
                 }
-                if (animationNames.name == "Crouch" && !character.IsFacingRight)
+                //Crouch IDLE while facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Crouch") || (animationNames.name == "Crouch")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 0.75f);//Was new Vector3(-1.35f, 0.75f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 0.75f);
                 }
-                if (animationNames.name == "Crouch Shooting" && character.IsFacingRight)
+
+                //Crouch IDLE  while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Crouch") || (animationNames.name == "Crouch")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 0.75f);//Was new Vector3(1.4f, 0.75f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(1.0f, 0.9f);
                 }
-                if (animationNames.name == "Crouch Shooting" && !character.IsFacingRight)
+                //Crouch IDLE  while facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Crouch") || (animationNames.name == "Crouch")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 0.75f);//Was new Vector3(-1.35f, 0.75f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-1.0f, 0.9f);
                 }
+
+                //Crouch SHOOTING while facing RIGHT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Crouch Shooting") || (animationNames.name == "Crouch Shooting")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 0.75f);
+                }
+                //Crouch SHOOTING while facing LEFT Machine Gun ---
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Crouch Shooting") || (animationNames.name == "Crouch Shooting")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 0.75f);
+                }
+
+                //Crouch SHOOTING while facing RIGHT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Crouch Shooting") || (animationNames.name == "Crouch Shooting")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(1.0f, 0.9f);
+                }
+                //Crouch SHOOTING while facing LEFT Flame Gun |||
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Crouch Shooting") || (animationNames.name == "Crouch Shooting")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-1.0f, 0.9f);
+                }
+
+                ///////
 
                 //////////////////////////////////////////////////////////////////////////////////////
                 //Vertical ladder
@@ -424,12 +475,12 @@ public class Firepoint : MonoBehaviour
                 //Vertical ladder shoot STRAIGHT while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Idle") || (animationNames.name == "Climb Shooting Forward")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.2f, 2);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.35f, 2.3f);
                 }
                 //Vertical ladder shoot STRAIGHT while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Idle") || (animationNames.name == "Climb Shooting Forward")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 2);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.35f, 2.3f);
                 }
 
                 ///////
@@ -448,12 +499,12 @@ public class Firepoint : MonoBehaviour
                 //Vertical ladder shoot BACK while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Hold Back") || (animationNames.name == "Climb Shooting Back")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-2.4f, 1.8f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-1.9f, 2.1f);
                 }
                 //Vertical ladder shoot BACK while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Hold Back") || (animationNames.name == "Climb Shooting Back")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(2.4f, 1.8f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(1.8f, 2.1f);
                 }
 
                 ///////
@@ -461,7 +512,7 @@ public class Firepoint : MonoBehaviour
                 //Vertical ladder shoot UP while facing RIGHT Machine Gun ---
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Climb Hold Up") || (animationNames.name == "Climb Shooting Up")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.2f, 2.8f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 2.1f);
                 }
                 //Vertical ladder shoot UP while facing LEFT Machine Gun ---
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName == "Machine Gun" && ((animationNames.name == "Climb Hold Up") || (animationNames.name == "Climb Shooting Up")) && !character.IsFacingRight)
@@ -472,12 +523,12 @@ public class Firepoint : MonoBehaviour
                 //Vertical ladder shoot UP while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Hold Up") || (animationNames.name == "Climb Shooting Up")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.9f, 3.0f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.4f, 3.3f);
                 }
                 //Vertical ladder shoot UP while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Hold Up") || (animationNames.name == "Climb Shooting Up")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.9f, 3.0f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.4f, 3.3f);
                 }
 
                 ///////
@@ -496,12 +547,12 @@ public class Firepoint : MonoBehaviour
                 //Vertical ladder shoot DOWN while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Hold Down") || (animationNames.name == "Climb Shooting Down")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.75f, 0.5f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.25f, 0.8f);
                 }
                 //Vertical ladder shoot DOWN while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Hold Down") || (animationNames.name == "Climb Shooting Down")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.75f, 0.5f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.25f, 0.8f);
                 }
 
                 ///////
@@ -520,12 +571,12 @@ public class Firepoint : MonoBehaviour
                 //Vertical ladder shoot UP-RIGHT while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Hold Diagonal Up Forward") || (animationNames.name == "Climb Shooting Diagonal Up Forward")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.5f, 2.65f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.05f, 2.95f);
                 }
                 //Vertical ladder shoot UP-LEFT while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Hold Diagonal Up Forward") || (animationNames.name == "Climb Shooting Diagonal Up Forward")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.4f, 2.65f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.11f, 2.95f);
                 }
 
                 ///////
@@ -544,12 +595,12 @@ public class Firepoint : MonoBehaviour
                 //Vertical ladder shoot UP-LEFT while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Hold Diagonal Up Back") || (animationNames.name == "Climb Shooting Diagonal Up Back")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-2.25f, 2.35f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-1.7f, 2.6f);
                 }
                 //Vertical ladder shoot UP-RIGHT while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Hold Diagonal Up Back") || (animationNames.name == "Climb Shooting Diagonal Up Back")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(2.25f, 2.35f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(1.7f, 2.5f);
                 }
 
                 ///////
@@ -568,12 +619,12 @@ public class Firepoint : MonoBehaviour
                 //Vertical ladder shoot DOWN-RIGHT while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Hold Diagonal Down Forward") || (animationNames.name == "Climb Shooting Diagonal Down Forward")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 1.15f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.25f, 1.5f);
                 }
                 //Vertical ladder shoot DOWN-RIGHT while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Hold Diagonal Down Forward") || (animationNames.name == "Climb Shooting Diagonal Down Forward")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 1.15f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.25f, 1.5f);
                 }
 
                 ///////
@@ -592,12 +643,12 @@ public class Firepoint : MonoBehaviour
                 //Vertical ladder shoot DOWN-LEFT while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Hold Diagonal Down Back") || (animationNames.name == "Climb Shooting Diagonal Down Back")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-2.3f, 0.95f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-1.7f, 1.35f);
                 }
                 //Vertical ladder shoot DOWN-LEFT while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Climb Hold Diagonal Down Back") || (animationNames.name == "Climb Shooting Diagonal Down Back")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(2.3f, 1.0f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(1.7f, 1.35f);
                 }
 
                 ///////
@@ -620,12 +671,12 @@ public class Firepoint : MonoBehaviour
                 //Horizontal ladder shoot STRAIGHT while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.85f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.5f, 2.15f);
                 }
                 //Horizontal ladder shoot STRAIGHT while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.85f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.5f, 2.15f);
                 }
 
                 ///////
@@ -644,12 +695,12 @@ public class Firepoint : MonoBehaviour
                 //Horizontal ladder shoot BACK while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Back") || (animationNames.name == "Horizontal Ladder Shooting Back")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-2.15f, 1.8f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-1.6f, 2.1f);
                 }
                 //Horizontal ladder shoot BACK while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Back") || (animationNames.name == "Horizontal Ladder Shooting Back")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(2.15f, 1.8f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(1.6f, 2.15f);
                 }
 
                 ///////
@@ -668,12 +719,12 @@ public class Firepoint : MonoBehaviour
                 //Horizontal ladder shoot UP while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Up") || (animationNames.name == "Horizontal Ladder Shooting Up")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.8f, 2.9f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.25f, 3.2f);
                 }
                 //Horizontal ladder shoot UP while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Up") || (animationNames.name == "Horizontal Ladder Shooting Up")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.8f, 2.9f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 3.2f);
                 }
 
                 ///////
@@ -692,12 +743,12 @@ public class Firepoint : MonoBehaviour
                 //Horizontal ladder shoot DOWN while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Down") || (animationNames.name == "Horizontal Ladder Shooting Down")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.7f, 0.25f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 0.55f);
                 }
                 //Horizontal ladder shoot DOWN while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Down") || (animationNames.name == "Horizontal Ladder Shooting Down")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.7f, 0.25f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 0.55f);
                 }
 
                 ///////
@@ -716,12 +767,12 @@ public class Firepoint : MonoBehaviour
                 //Horizontal ladder shoot UP-RIGHT while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Forward")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.25f, 2.4f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.25f, 2.75f);
                 }
                 //Horizontal ladder shoot UP-LEFT while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Forward")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.25f, 2.4f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.25f, 2.70f);
                 }
 
                 ///////
@@ -740,12 +791,12 @@ public class Firepoint : MonoBehaviour
                 //Horizontal ladder shoot UP-LEFT while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Back")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-2f, 2.25f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-1.4f, 2.55f);
                 }
                 //Horizontal ladder shoot UP-RIGHT while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Back")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(2f, 2.25f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(1.3f, 2.65f);
                 }
 
                 ///////
@@ -764,12 +815,12 @@ public class Firepoint : MonoBehaviour
                 //Horizontal ladder shoot DOWN-RIGHT while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Forward")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.15f, 1.0f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 1.25f);
                 }
                 //Horizontal ladder shoot DOWN-RIGHT while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Forward")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.15f, 1.0f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.35f, 1.3f);
                 }
 
                 ///////
@@ -788,12 +839,12 @@ public class Firepoint : MonoBehaviour
                 //Horizontal ladder shoot DOWN-LEFT while facing RIGHT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Back")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(-2, 1f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-1.45f, 1.35f);
                 }
                 //Horizontal ladder shoot DOWN-LEFT while facing LEFT Flame Gun |||
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && weaponInventory.Content[0].ItemName != "Machine Gun" && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Back")) && !character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(2, 1f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(1.4f, 1.3f);
                 }
 
                 ///////
@@ -857,11 +908,11 @@ public class Firepoint : MonoBehaviour
                     }
                     else if ((animationNames.name == "Shoot Diagonal Up Walking Flame Gun") && character.IsFacingRight)
                     {
-                        theSmokeIndicator.transform.localPosition = new Vector3(-0.35f, 0.35f, 0.0f);
+                        //theSmokeIndicator.transform.localPosition = new Vector3(-0.35f, 0.35f, 0.0f);
                     }
                     else if ((animationNames.name == "Shoot Diagonal Up Walking Flame Gun") && !character.IsFacingRight)
                     {
-                        theSmokeIndicator.transform.localPosition = new Vector3(-0.2f, 0.3f, 0.0f);
+                        //theSmokeIndicator.transform.localPosition = new Vector3(-0.2f, 0.3f, 0.0f);
                     }
                     else if (((animationNames.name == "Climb Shooting Back") || (animationNames.name == "Climb Hold Back")) && character.IsFacingRight)
                     {

@@ -17280,7 +17280,7 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  hasUpgradedGrenades: 0
+  hasUpgradedGrenades: 1
   InitialWeapon: {fileID: 7766883220953727492, guid: 28147cdd190ec574ba6cc197df98a3c2,
     type: 3}
   InitialWeaponSuper: {fileID: 7766883220953727492, guid: 0d374e497746a65479eb77102b9483cf,
@@ -32999,10 +32999,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a32bb9543b1fe46a1dbf91615a84a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flameGunPlus: 0
-  rayGunPlus: 0
-  shotGunPlus: 0
-  spreadGunPlus: 0
+  grenadePlus: 0
+  flameGunUpgrade: 0
+  rayGunUpgrade: 0
+  shotGunUpgrade: 0
+  spreadGunUpgrade: 0
   doubleJump: 1
   dash: 1
   specialShot: 1
@@ -33031,23 +33032,13 @@ MonoBehaviour:
   machineGunName: Machine Gun
   flameGunName: Flame Gun
   flameGunPlusName: Super Flame Gun
-  flameGunUpgrade: 0
   rayGunName: Ray Gun
   rayGunPlusName: Super Ray Gun
-  rayGunUpgrade: 0
   shotGunName: Shot Gun
   shotGunPlusName: Super Shot Gun
-  shotGunUpgrade: 0
   spreadGunName: Spread Gun
   spreadGunPlusName: Super Spread Gun
-  spreadGunUpgrade: 0
   grenadePlusName: Super Grenade
-  grenadePlus: 0
-  machineGun: 1
-  flameGun: 0
-  rayGun: 0
-  shotGun: 0
-  spreadGun: 0
 --- !u!114 &1966031597
 MonoBehaviour:
   m_ObjectHideFlags: 0
