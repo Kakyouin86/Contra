@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8e493c93c0c31cf4d97b2a11c25ee6a0
+guid: 3088ac7e8ff89e1499629f347bac3a39
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shinku Hadouken - 06_0
+      name: Shinku Hadouken - 10_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e175ae605eeda3f428781dfd82ff955b
-      internalID: 1257726441
+      spriteID: 3d874fbe653c19849a08625842e36c90
+      internalID: 1987868624
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shinku Hadouken - 06_1
+      name: Shinku Hadouken - 10_1
       rect:
         serializedVersion: 2
         x: 43
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e05ebceeb10fcdb41b64c13477c70d18
-      internalID: -398569233
+      spriteID: 8cb1923ac2464e34588ae97b19c78773
+      internalID: 1394540012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shinku Hadouken - 06_2
+      name: Shinku Hadouken - 10_2
       rect:
         serializedVersion: 2
         x: 86
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9c21a460006abd4ab537c3f5dbebd9f
-      internalID: -1608407876
+      spriteID: 57e694d47be975b4c93fbba23085ff7d
+      internalID: 1258108265
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Shinku Hadouken - 06_0: 1257726441
-      Shinku Hadouken - 06_1: -398569233
-      Shinku Hadouken - 06_2: -1608407876
+      Shinku Hadouken - 10_0: 1987868624
+      Shinku Hadouken - 10_1: 1394540012
+      Shinku Hadouken - 10_2: 1258108265
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
