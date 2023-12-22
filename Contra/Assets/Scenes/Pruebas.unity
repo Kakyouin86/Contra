@@ -17374,7 +17374,7 @@ MonoBehaviour:
   canShoot: 0
   enableLaser: 0
   isShooting: 0
-  animationTimer: 0.85
+  animationTimer: 0.9333
   currentTimer: 0
   RaycastOriginOffset: {x: 0, y: 0, z: 0}
   LaserOriginOffset: {x: 0, y: 0, z: 0}
