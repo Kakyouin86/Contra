@@ -369,4 +369,28 @@ public class UIAndUpgradesController : MonoBehaviour
             slot6GrenadePlusPlayer1.enabled = true;
         }
     }
+
+    public void PlayerIsDead()
+    {
+        Image[] player1Slots = new Image[]
+        {
+            slot2FlameGunPlayer1,
+            slot2FlameGunPlusPlayer1,
+            slot3RayGunPlayer1,
+            slot3RayGunPlusPlayer1,
+            slot4ShotGunPlayer1,
+            slot4ShotGunPlusPlayer1,
+            slot5SpreadGunPlayer1,
+            slot5SpreadGunPlusPlayer1
+        };
+
+        foreach (Image slot in player1Slots)
+        {
+            if (slot.enabled)
+            {
+                slot.color = originalColor;
+                slot.enabled = false;
+            }
+        }
+    }
 }

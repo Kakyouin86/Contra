@@ -66,7 +66,7 @@ public class Firepoint : MonoBehaviour
         }*/
         foreach (AnimationClip animationNames in animationNames)
         {
-            if (IsAnimationPlaying(animationNames.name))
+            if (IsAnimationPlaying(animationNames.name) && character.ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead)
             {
                 //////////////////////////////////////////////////////////////////////////////////////
                 //Idle and straight

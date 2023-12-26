@@ -1,9 +1,10 @@
 using MoreMountains.CorgiEngine;
 using MoreMountains.InventoryEngine;
+using MoreMountains.Tools;
 using Rewired;
 using UnityEngine;
 
-public class ToggleWeapons : MonoBehaviour
+public class ToggleWeapons : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
     public string torsoTag = "Torso";
     public string machineGunLightsTag = "MachineGunLights";
@@ -15,6 +16,7 @@ public class ToggleWeapons : MonoBehaviour
     public bool machineGunActive = false;
     public bool flameGunActive = false;
     public bool specialShootActive = false;
+    public UIAndUpgradesController theIAndUpgradesController;
     public SpecialShootAndRaycastVisualization theSpecialShootAndRaycastVisualization;
     public Inventory weaponInventory;
     public Animator theAnimator;
@@ -26,13 +28,17 @@ public class ToggleWeapons : MonoBehaviour
     //public CharacterHandleWeapon theCharacterHandleWeapon;
     //public Animator theAnimator;
 
+    public CharacterInventory theCharacterInventory;
+
     void Start()
     {
         torsoObject = GameObject.FindGameObjectWithTag(torsoTag);
         machineGunLights = GameObject.FindGameObjectWithTag(machineGunLightsTag);
         flameGunLights = GameObject.FindGameObjectWithTag(flameGunLightsTag);
+        theIAndUpgradesController = GameObject.FindGameObjectWithTag("UI").GetComponent<UIAndUpgradesController>();
         theSpecialShootAndRaycastVisualization = GetComponent<SpecialShootAndRaycastVisualization>();
         weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventory").GetComponent<Inventory>();
+        theCharacterInventory = GetComponent<CharacterInventory>();
         theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
         //theCharacterHandleWeapon = FindObjectOfType<CharacterHandleWeapon>();
         //theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>();
@@ -52,7 +58,35 @@ public class ToggleWeapons : MonoBehaviour
         }
     }
 
-    void Update()
+    protected virtual void OnEnable()
+    {
+        this.MMEventStartListening<CorgiEngineEvent>();
+    }
+
+    /// <summary>
+    /// OnDisable, we stop listening to events.
+    /// </summary>
+    protected virtual void OnDisable()
+    {
+        this.MMEventStopListening<CorgiEngineEvent>();
+    }
+
+    public void OnMMEvent(CorgiEngineEvent corgiEngineEvent)
+    {
+        if (corgiEngineEvent.EventType == CorgiEngineEventTypes.PlayerDeath)
+        {
+            GameObject theMainInventory = GameObject.FindWithTag("Inventory");
+            Inventory mainInventory = theMainInventory.GetComponent<Inventory>();
+            if (weaponInventory.Content[0].ItemName != "Machine Gun" && weaponInventory.Content[0].ItemName != null)
+            {
+                weaponInventory.DestroyItem(0);
+            }
+            theCharacterInventory.EquipWeapon("Inventory 00 - Machine Gun");
+            theIAndUpgradesController.PlayerIsDead();
+        }
+    }
+
+    public void Update()
     {
         if (theSpecialShootAndRaycastVisualization.isShooting)
         {

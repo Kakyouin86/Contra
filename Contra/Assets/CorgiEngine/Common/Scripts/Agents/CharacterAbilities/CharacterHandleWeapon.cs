@@ -577,5 +577,14 @@ namespace MoreMountains.CorgiEngine
 				ShootStop();
 			}
 		}
-	}
+
+        public void StopShooting() //Leo Monge: Need to ALWAYS bring it after update. Makes the shoot stop upon death.
+        {
+            if (_character.ConditionState.CurrentState == CharacterStates.CharacterConditions.Dead)
+            {
+                CurrentWeapon.WeaponInputStop();
+                CurrentWeapon.TurnWeaponOff();
+            }
+        }
+    }
 }

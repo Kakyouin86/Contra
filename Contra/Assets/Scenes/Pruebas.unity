@@ -8993,7 +8993,7 @@ MonoBehaviour:
   Quantity: 1
   RemainingQuantity: 1
   PickableIfInventoryIsFull: 0
-  DisableObjectWhenDepleted: 0
+  DisableObjectWhenDepleted: 1
   RequirePlayerTag: 1
 --- !u!114 &629196800
 MonoBehaviour:
@@ -9007,7 +9007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df1508296b0904b1ba069c225eb6482a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RespawnOnPlayerRespawn: 1
+  RespawnOnPlayerRespawn: 0
   RepositionToInitOnPlayerRespawn: 0
   DisableOnKill: 1
   AutoRespawnDuration: 0
@@ -16417,6 +16417,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1034460966
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4058588110552066139, guid: 8d86e71c850ab5e4f95736bc455511e3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799511612957621784, guid: 8d86e71c850ab5e4f95736bc455511e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.427715
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799511612957621784, guid: 8d86e71c850ab5e4f95736bc455511e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799511612957621784, guid: 8d86e71c850ab5e4f95736bc455511e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799511612957621784, guid: 8d86e71c850ab5e4f95736bc455511e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799511612957621784, guid: 8d86e71c850ab5e4f95736bc455511e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799511612957621784, guid: 8d86e71c850ab5e4f95736bc455511e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799511612957621784, guid: 8d86e71c850ab5e4f95736bc455511e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799511612957621784, guid: 8d86e71c850ab5e4f95736bc455511e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799511612957621784, guid: 8d86e71c850ab5e4f95736bc455511e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799511612957621784, guid: 8d86e71c850ab5e4f95736bc455511e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862695118489801745, guid: 8d86e71c850ab5e4f95736bc455511e3,
+        type: 3}
+      propertyPath: m_Name
+      value: Blue Robot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862695118489801745, guid: 8d86e71c850ab5e4f95736bc455511e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8d86e71c850ab5e4f95736bc455511e3, type: 3}
 --- !u!1 &1038294679
 GameObject:
   m_ObjectHideFlags: 0
@@ -16717,7 +16795,7 @@ MonoBehaviour:
   ImmuneToDamage: 0
   DamageFeedbacks: {fileID: 0}
   FeedbackIsProportionalToDamage: 0
-  FlickerSpriteOnHit: 1
+  FlickerSpriteOnHit: 0
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
   ImmuneToKnockback: 0
   ImmuneToKnockbackIfZeroDamage: 0
@@ -17014,7 +17092,7 @@ Transform:
   m_GameObject: {fileID: 1038294679}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -4.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17253,6 +17331,7 @@ MonoBehaviour:
   machineGunActive: 0
   flameGunActive: 0
   specialShootActive: 0
+  theIAndUpgradesController: {fileID: 0}
   theSpecialShootAndRaycastVisualization: {fileID: 0}
   weaponInventory: {fileID: 0}
   theAnimator: {fileID: 0}
@@ -17262,6 +17341,7 @@ MonoBehaviour:
   flameGunMaterial: {fileID: 2100000, guid: 2e1344b4324b35b4b939e02da8dc3e48, type: 2}
   specialShootMaterial: {fileID: 2100000, guid: 8ad1823302dbab94780eac083ac95065,
     type: 2}
+  theCharacterInventory: {fileID: 0}
 --- !u!114 &1038294711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21578,7 +21658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df1508296b0904b1ba069c225eb6482a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RespawnOnPlayerRespawn: 1
+  RespawnOnPlayerRespawn: 0
   RepositionToInitOnPlayerRespawn: 0
   DisableOnKill: 1
   AutoRespawnDuration: 0
@@ -30654,7 +30734,7 @@ MonoBehaviour:
   Quantity: 1
   RemainingQuantity: 1
   PickableIfInventoryIsFull: 0
-  DisableObjectWhenDepleted: 0
+  DisableObjectWhenDepleted: 1
   RequirePlayerTag: 1
 --- !u!114 &1816490389
 MonoBehaviour:
@@ -30668,7 +30748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df1508296b0904b1ba069c225eb6482a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RespawnOnPlayerRespawn: 1
+  RespawnOnPlayerRespawn: 0
   RepositionToInitOnPlayerRespawn: 0
   DisableOnKill: 1
   AutoRespawnDuration: 0
@@ -33505,7 +33585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df1508296b0904b1ba069c225eb6482a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RespawnOnPlayerRespawn: 1
+  RespawnOnPlayerRespawn: 0
   RepositionToInitOnPlayerRespawn: 0
   DisableOnKill: 1
   AutoRespawnDuration: 0
@@ -35797,3 +35877,4 @@ SceneRoots:
   - {fileID: 1487085693}
   - {fileID: 1330848839}
   - {fileID: 1368927822}
+  - {fileID: 1034460966}

@@ -559,7 +559,8 @@ namespace MoreMountains.CorgiEngine
 			{
 				// we set its dead state to true
 				_character.ConditionState.ChangeState(CharacterStates.CharacterConditions.Dead);
-				_character.Reset();
+                _character.GetComponent<CharacterHandleWeapon>().StopShooting(); ;//Leo Monge: Need to ALWAYS bring it after update. This is so you can't shoot while dead.
+                _character.Reset();
 
 				if (_character.CharacterType == Character.CharacterTypes.Player)
 				{

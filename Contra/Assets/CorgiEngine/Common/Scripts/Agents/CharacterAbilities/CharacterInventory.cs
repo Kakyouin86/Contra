@@ -431,8 +431,8 @@ namespace MoreMountains.CorgiEngine
         /// Equips a weapon specified in parameters
         /// </summary>
         /// <param name="weaponID"></param>
-        protected virtual void EquipWeapon(string weaponID)
-		{
+        public void EquipWeapon(string weaponID)//Leo Monge: Need to ALWAYS bring it after update. Need to be public so I can access in ToggleWeapons
+        {
 			if ((weaponID == _emptySlotWeaponName) && (CharacterHandleWeapon != null))
 			{
 				MMInventoryEvent.Trigger(MMInventoryEventType.UnEquipRequest, null, WeaponInventoryName, WeaponInventory.Content[0], 0, 0, PlayerID);

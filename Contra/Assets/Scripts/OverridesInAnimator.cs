@@ -28,7 +28,7 @@ public class OverridesInAnimator : MonoBehaviour
         theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
         animationNames = Resources.LoadAll<AnimationClip>("Player Animations");
         weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventory").GetComponent<Inventory>();
-        theCharacterHandleWeapon = FindObjectOfType<CharacterHandleWeapon>();
+        theCharacterHandleWeapon = GameObject.FindGameObjectWithTag("Player")?.GetComponent<CharacterHandleWeapon>();
     }
 
     void Update()

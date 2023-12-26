@@ -7,8 +7,10 @@ using Rewired;
 using Rewired.ComponentControls.Data;
 using InputManager = MoreMountains.CorgiEngine.InputManager;
 using System.Security.Cryptography.X509Certificates;
+using MoreMountains.InventoryEngine;
 
-public class AdditionalMovementSettings : MonoBehaviour
+
+public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
     public Player player;
     public Character character;
@@ -50,7 +52,7 @@ public class AdditionalMovementSettings : MonoBehaviour
     {
         horizontalMovementCorgi = GetComponent<CharacterHorizontalMovement>();
         theInputManager = FindObjectOfType<InputManager>();
-        theCharacterHandleWeapon = FindObjectOfType<CharacterHandleWeapon>();
+        theCharacterHandleWeapon = GetComponent<CharacterHandleWeapon>();
         theSpecialShootAndRaycastVisualization = GetComponent<SpecialShootAndRaycastVisualization>();
         character = GetComponent<Character>();
         theFirepoint = GameObject.FindWithTag("Firepoint");
@@ -70,6 +72,34 @@ public class AdditionalMovementSettings : MonoBehaviour
         theTorsoFlameGunLights = GameObject.FindWithTag("FlameGunLights");
         originalMaterial = theTorso.GetComponent<SpriteRenderer>().material;
     }
+
+    protected virtual void OnEnable()
+    {
+        this.MMEventStartListening<CorgiEngineEvent>();
+    }
+
+    /// <summary>
+    /// OnDisable, we stop listening to events.
+    /// </summary>
+    protected virtual void OnDisable()
+    {
+        this.MMEventStopListening<CorgiEngineEvent>();
+    }
+
+    public void OnMMEvent(CorgiEngineEvent corgiEngineEvent)
+    {
+        if (corgiEngineEvent.EventType == CorgiEngineEventTypes.PlayerDeath)
+        {
+         theAnimator.SetBool("Death",true);
+         theTorso.GetComponent<SpriteRenderer>().enabled = false;
+        }
+        else
+        {
+            theAnimator.SetBool("Death", false);
+            //theTorso.GetComponent<SpriteRenderer>().enabled = true;
+        }
+    }
+
     void Update()
     {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -144,17 +174,7 @@ public class AdditionalMovementSettings : MonoBehaviour
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //This makes the "Death" bool to happen. Death trigger was NOT removed from the original script but I added a bool so it doesn't exit the animator.
-        if (character.ConditionState.CurrentState == CharacterStates.CharacterConditions.Dead)
-        {
-            theAnimator.SetBool("Death", true);
-            //theAnimator.SetTrigger("Death");
-        }
-        else
-        {
-            theAnimator.SetBool("Death", false);
-        }
-
+        //This makes the "ShootCrouch" bool to happen.
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.Crouching && theAnimator.GetBool("isShooting"))
         {
             theAnimator.SetBool("ShootCrouch", true);
