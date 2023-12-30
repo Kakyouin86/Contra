@@ -91,7 +91,7 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
         if (corgiEngineEvent.EventType == CorgiEngineEventTypes.PlayerDeath)
         {
          theAnimator.SetBool("Death",true);
-         theTorso.GetComponent<SpriteRenderer>().enabled = false;
+         //theTorso.GetComponent<SpriteRenderer>().enabled = false;
         }
         else
         {

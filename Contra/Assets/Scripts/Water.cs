@@ -1,6 +1,8 @@
 using System.Collections;
 using MoreMountains.CorgiEngine;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
+using Character = MoreMountains.CorgiEngine.Character;
 
 public class Water : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class Water : MonoBehaviour
     public CharacterCrouch characterCrouch;
     public CharacterRoll characterRoll;
     public UIAndUpgradesController theUIController;
+    public Character character;
 
     void Start()
     {
@@ -23,6 +26,7 @@ public class Water : MonoBehaviour
         characterCrouch = GetComponentInParent<CharacterCrouch>();
         characterRoll = GetComponentInParent<CharacterRoll>();
         theUIController = GameObject.FindWithTag("UI").GetComponent<UIAndUpgradesController>();
+        character = GameObject.FindWithTag("Player").GetComponent<Character>();
     }
 
     void Update()
@@ -77,7 +81,10 @@ public class Water : MonoBehaviour
             theRippleEffect.SetActive(false);
             thePosition = new Vector3(transform.position.x, transform.position.y,
                 other.transform.position.z);
-            Instantiate(theSplashOutOfTheWater, new Vector3(thePosition.x, other.transform.position.y + yOffsetOutOfTheWater.y), transform.rotation);
+            if (character.ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead)
+            {
+                Instantiate(theSplashOutOfTheWater, new Vector3(thePosition.x, other.transform.position.y + yOffsetOutOfTheWater.y), transform.rotation);
+            }
         }
     }
 }

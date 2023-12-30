@@ -925,15 +925,23 @@ namespace MoreMountains.CorgiEngine
             intervalWaitFor = UseBurstMode ? BurstTimeBetweenShots : customIntervalLeo;
             //float counter = 0.0f; // Counter for 0.1 seconds
             while (remainingShots > 0) 
-            { 
-                theAnimator.SetBool("isShooting", true);
-		        theAnimator.SetFloat("isShootingCounter", counterIsShootingCounter);
+            {
+                if (!gameObject.CompareTag("Untagged"))
+                {
+                    theAnimator.SetBool("isShooting", true);
+                    theAnimator.SetFloat("isShootingCounter", counterIsShootingCounter);
+                }
 		        ShootRequest();
 		        remainingShots--;
 		        yield return MMCoroutine.WaitFor(intervalWaitFor);
             }
-            theAnimator.SetBool("isShooting", false);
-            theAnimator.SetBool("IdleShootingStraight", false);
+
+            if (!gameObject.CompareTag("Untagged"))
+            {
+                theAnimator.SetBool("isShooting", false);
+                theAnimator.SetBool("IdleShootingStraight", false);
+            }
+
 
             /*while (counter > 0) 
             { 

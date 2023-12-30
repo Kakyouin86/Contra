@@ -31,8 +31,8 @@ public class Firepoint : MonoBehaviour
     public float originalWeaponAimRotSpeed;
     public float instantWeaponAimRotSpeed = 0f;
     public ProjectileWeapon projectileWeapon;
-    public float originalCoolDown = 0f;
-    public float shortCooldown = 0.1f;
+    //public float originalCoolDown = 0f;
+    //public float shortCooldown = 0.1f;
 
     private void Awake()
     {
@@ -904,89 +904,105 @@ public class Firepoint : MonoBehaviour
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Flame Gun") || (weaponInventory.Content[0].ItemName == "Super Flame Gun")))
                 {
                     theSmokeIndicator = GameObject.FindWithTag("SmokeIndicator");
-                    if (((animationNames.name == "Hold Up") || (animationNames.name == "Shoot Up")))
+                    if (theSmokeIndicator != null)
                     {
-                        theSmokeIndicator.transform.localPosition = new Vector3(0.7f, 0.4f, 0.0f);
-                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
-                    }
-                    else if (((animationNames.name == "Hold Down") || (animationNames.name == "Shoot Down")))
-                    {
-                        theSmokeIndicator.transform.localPosition = new Vector3(0.8f, 0.4f, 0.0f);
-                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
-                    }
+                        if (((animationNames.name == "Hold Up") || (animationNames.name == "Shoot Up")))
+                        {
+                            theSmokeIndicator.transform.localPosition = new Vector3(0.7f, 0.4f, 0.0f);
+                            theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
+                        }
+                        else if (((animationNames.name == "Hold Down") || (animationNames.name == "Shoot Down")))
+                        {
+                            theSmokeIndicator.transform.localPosition = new Vector3(0.8f, 0.4f, 0.0f);
+                            theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
+                        }
 
-                    else if (((animationNames.name == "Hold Down") || (animationNames.name == "Shoot Down")))
-                    {
-                        theSmokeIndicator.transform.localPosition = new Vector3(0.8f, 0.4f, 0.0f);
-                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
-                    }
-                    else if ((animationNames.name == "Shoot Diagonal Up Walking Flame Gun") && character.IsFacingRight)
-                    {
-                        //theSmokeIndicator.transform.localPosition = new Vector3(-0.35f, 0.35f, 0.0f);
-                    }
-                    else if ((animationNames.name == "Shoot Diagonal Up Walking Flame Gun") && !character.IsFacingRight)
-                    {
-                        //theSmokeIndicator.transform.localPosition = new Vector3(-0.2f, 0.3f, 0.0f);
-                    }
-                    else if (((animationNames.name == "Climb Shooting Back") || (animationNames.name == "Climb Hold Back")) && character.IsFacingRight)
-                    {
-                        theSmokeIndicator.transform.localPosition = new Vector3(0.6f, -0.2f, 0.0f);
-                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(-180f, 90f, 0f);
-                    }
-                    else if (((animationNames.name == "Climb Shooting Back") || (animationNames.name == "Climb Hold Back")) && !character.IsFacingRight)
-                    {
-                        theSmokeIndicator.transform.localPosition = new Vector3(0.625f, -0.2f, 0.0f);
-                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(-180f, 90f, 0f);
-                    }
-                    else if (((animationNames.name == "Climb Hold Up") || (animationNames.name == "Climb Shooting Up")))
-                    {
-                        theSmokeIndicator.transform.localPosition = new Vector3(0.7f, 0.5f, 0.0f);
-                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
-                    }
-                    else if (((animationNames.name == "Climb Hold Down") || (animationNames.name == "Climb Shooting Down")))
-                    {
-                        theSmokeIndicator.transform.localPosition = new Vector3(0.7f, 0.5f, 0.0f);
-                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
-                    }
-                    else if (((animationNames.name == "Climb Hold Diagonal Up Back") || (animationNames.name == "Climb Shooting Diagonal Up Back")))
-                    {
-                        theSmokeIndicator.transform.localPosition = new Vector3(1.2f, -0.3f, 0.0f);
-                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -180f);
-                    }
-                    else if (((animationNames.name == "Climb Hold Diagonal Down Back") || (animationNames.name == "Climb Shooting Diagonal Down Back")))
-                    {
-                        theSmokeIndicator.transform.localPosition = new Vector3(0.0f, -0.15f, 0.0f);
-                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 180f, 180f);
-                    }
-                    else if (((animationNames.name == "Horizontal Ladder Hold Back") || (animationNames.name == "Horizontal Ladder Shooting Back")))
-                    {
-                        theSmokeIndicator.transform.localPosition = new Vector3(0.0f, -0.15f, 0.0f);
-                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 180f, 180f);
-                    }
-                    else if (((animationNames.name == "Horizontal Ladder Hold Up") || (animationNames.name == "Horizontal Ladder Shooting Up")))
-                    {
-                        theSmokeIndicator.transform.localPosition = new Vector3(0.7f, 0.5f, 0.0f);
-                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
-                    }
-                    else if (((animationNames.name == "Horizontal Ladder Hold Down") || (animationNames.name == "Horizontal Ladder Shooting Down")))
-                    {
-                        theSmokeIndicator.transform.localPosition = new Vector3(0.7f, 0.5f, 0.0f);
-                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
-                    }
-                    else if (((animationNames.name == "Horizontal Ladder Hold Diagonal Up Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Back")))
-                    {
-                        theSmokeIndicator.transform.localPosition = new Vector3(1.2f, -0.3f, 0.0f);
-                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -180f);
-                    }
-                    else if (((animationNames.name == "Horizontal Ladder Hold Diagonal Down Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Back")))
-                    {
-                        theSmokeIndicator.transform.localPosition = new Vector3(0.0f, -0.15f, 0.0f);
-                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 180f, 180f);
-                    }
-                    else
-                    {
-                        theSmokeIndicator.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-                        theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                        else if (((animationNames.name == "Hold Down") || (animationNames.name == "Shoot Down")))
+                        {
+                            theSmokeIndicator.transform.localPosition = new Vector3(0.8f, 0.4f, 0.0f);
+                            theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
+                        }
+                        else if ((animationNames.name == "Shoot Diagonal Up Walking Flame Gun") &&
+                                 character.IsFacingRight)
+                        {
+                            //theSmokeIndicator.transform.localPosition = new Vector3(-0.35f, 0.35f, 0.0f);
+                        }
+                        else if ((animationNames.name == "Shoot Diagonal Up Walking Flame Gun") &&
+                                 !character.IsFacingRight)
+                        {
+                            //theSmokeIndicator.transform.localPosition = new Vector3(-0.2f, 0.3f, 0.0f);
+                        }
+                        else if (((animationNames.name == "Climb Shooting Back") ||
+                                  (animationNames.name == "Climb Hold Back")) && character.IsFacingRight)
+                        {
+                            theSmokeIndicator.transform.localPosition = new Vector3(0.6f, -0.2f, 0.0f);
+                            theSmokeIndicator.transform.localRotation = Quaternion.Euler(-180f, 90f, 0f);
+                        }
+                        else if (((animationNames.name == "Climb Shooting Back") ||
+                                  (animationNames.name == "Climb Hold Back")) && !character.IsFacingRight)
+                        {
+                            theSmokeIndicator.transform.localPosition = new Vector3(0.625f, -0.2f, 0.0f);
+                            theSmokeIndicator.transform.localRotation = Quaternion.Euler(-180f, 90f, 0f);
+                        }
+                        else if (((animationNames.name == "Climb Hold Up") ||
+                                  (animationNames.name == "Climb Shooting Up")))
+                        {
+                            theSmokeIndicator.transform.localPosition = new Vector3(0.7f, 0.5f, 0.0f);
+                            theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
+                        }
+                        else if (((animationNames.name == "Climb Hold Down") ||
+                                  (animationNames.name == "Climb Shooting Down")))
+                        {
+                            theSmokeIndicator.transform.localPosition = new Vector3(0.7f, 0.5f, 0.0f);
+                            theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
+                        }
+                        else if (((animationNames.name == "Climb Hold Diagonal Up Back") ||
+                                  (animationNames.name == "Climb Shooting Diagonal Up Back")))
+                        {
+                            theSmokeIndicator.transform.localPosition = new Vector3(1.2f, -0.3f, 0.0f);
+                            theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -180f);
+                        }
+                        else if (((animationNames.name == "Climb Hold Diagonal Down Back") ||
+                                  (animationNames.name == "Climb Shooting Diagonal Down Back")))
+                        {
+                            theSmokeIndicator.transform.localPosition = new Vector3(0.0f, -0.15f, 0.0f);
+                            theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 180f, 180f);
+                        }
+                        else if (((animationNames.name == "Horizontal Ladder Hold Back") ||
+                                  (animationNames.name == "Horizontal Ladder Shooting Back")))
+                        {
+                            theSmokeIndicator.transform.localPosition = new Vector3(0.0f, -0.15f, 0.0f);
+                            theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 180f, 180f);
+                        }
+                        else if (((animationNames.name == "Horizontal Ladder Hold Up") ||
+                                  (animationNames.name == "Horizontal Ladder Shooting Up")))
+                        {
+                            theSmokeIndicator.transform.localPosition = new Vector3(0.7f, 0.5f, 0.0f);
+                            theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
+                        }
+                        else if (((animationNames.name == "Horizontal Ladder Hold Down") ||
+                                  (animationNames.name == "Horizontal Ladder Shooting Down")))
+                        {
+                            theSmokeIndicator.transform.localPosition = new Vector3(0.7f, 0.5f, 0.0f);
+                            theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
+                        }
+                        else if (((animationNames.name == "Horizontal Ladder Hold Diagonal Up Back") ||
+                                  (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Back")))
+                        {
+                            theSmokeIndicator.transform.localPosition = new Vector3(1.2f, -0.3f, 0.0f);
+                            theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, -180f);
+                        }
+                        else if (((animationNames.name == "Horizontal Ladder Hold Diagonal Down Back") ||
+                                  (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Back")))
+                        {
+                            theSmokeIndicator.transform.localPosition = new Vector3(0.0f, -0.15f, 0.0f);
+                            theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 180f, 180f);
+                        }
+                        else
+                        {
+                            theSmokeIndicator.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+                            theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                        }
                     }
                 }
             }
