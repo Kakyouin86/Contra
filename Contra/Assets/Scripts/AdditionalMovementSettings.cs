@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq.Expressions;
 using BarthaSzabolcs.Tutorial_SpriteFlash;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
@@ -8,6 +9,7 @@ using Rewired.ComponentControls.Data;
 using InputManager = MoreMountains.CorgiEngine.InputManager;
 using System.Security.Cryptography.X509Certificates;
 using MoreMountains.InventoryEngine;
+using Unity.VisualScripting;
 
 
 public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEngineEvent>
@@ -42,6 +44,7 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
     //public float originalRollDuration;
     public Material originalMaterial;
     public Material flashMaterial;
+    public bool characterDead = false;
 
     private void Awake()
     {
@@ -90,12 +93,14 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
     {
         if (corgiEngineEvent.EventType == CorgiEngineEventTypes.PlayerDeath)
         {
-         theAnimator.SetBool("Death",true);
-         //theTorso.GetComponent<SpriteRenderer>().enabled = false;
+            //theAnimator.SetBool("Death",true);
+            //theTorso.GetComponent<SpriteRenderer>().enabled = false;
         }
         else
         {
             theAnimator.SetBool("Death", false);
+            theAnimator.SetBool("Death Left", false);
+            characterDead = false;
             //theTorso.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
@@ -308,7 +313,7 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //This will detect horizontal ladders and assign the bool to the animator.
-    void OnTriggerStay2D(Collider2D other)
+    public void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "HorizontalLadder" && character.MovementState.CurrentState == CharacterStates.MovementStates.LadderClimbing)
         {
@@ -327,6 +332,30 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
             horizontalLadder = false;
             canNotDettach = false;
         }
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //This defines to which direction the player should go upon death.
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        DamageOnTouch damageOnTouch = other.GetComponent<DamageOnTouch>();
+        if (damageOnTouch != null & !characterDead)
+        {
+            // Get the relative position of the colliding object
+            Vector2 relativePosition = other.transform.position - transform.position;
+
+            // Determine if it's a horizontal collision
+            if (relativePosition.x > 0)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
     }
 }
 
