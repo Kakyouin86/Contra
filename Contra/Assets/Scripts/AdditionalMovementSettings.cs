@@ -1,19 +1,14 @@
 using System.Collections;
-using System.Linq.Expressions;
-using BarthaSzabolcs.Tutorial_SpriteFlash;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
 using Rewired;
-using Rewired.ComponentControls.Data;
+using UnityEditor.Rendering;
 using InputManager = MoreMountains.CorgiEngine.InputManager;
-using System.Security.Cryptography.X509Certificates;
-using MoreMountains.InventoryEngine;
-using Unity.VisualScripting;
-
 
 public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
+    public Vector3 TEST;
     public Player player;
     public Character character;
     public CharacterHorizontalMovement horizontalMovementCorgi;
@@ -100,6 +95,8 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
         {
             theAnimator.SetBool("Death", false);
             theAnimator.SetBool("Death Left", false);
+            theAnimator.SetBool("Death Flat", false);
+            theAnimator.SetBool("Death Left Flat", false);
             characterDead = false;
             //theTorso.GetComponent<SpriteRenderer>().enabled = true;
         }
@@ -107,6 +104,9 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
 
     void Update()
     {
+
+
+
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //Just the "Hold".
         if (player.GetButton(("HoldPosition")))
@@ -288,6 +288,45 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
             theTorsoFlameGunLights.GetComponent<SpriteRenderer>().material = originalMaterial;
         }
 
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //This finishes the Death animation when hitting the ground
+
+        if (theController.State.IsFalling)
+        {
+            theAnimator.SetBool("Death Flat", false);
+            theAnimator.SetBool("Death Left Flat", false);
+        }
+        else if (!theController.State.IsFalling && theController.State.IsGrounded && characterDead && theAnimator.GetBool("Death Left"))
+        {
+            theAnimator.SetBool("Death Left Flat", true);
+            // Get the current position
+            Vector3 currentPosition = transform.position;
+
+            // Calculate the new position by subtracting 2 units from the X-axis
+            Vector3 targetPosition = new Vector3(currentPosition.x - 2f, currentPosition.y, currentPosition.z);
+
+            // Move the GameObject to the new position instantly
+            transform.position = targetPosition;
+        }
+        else if (!theController.State.IsFalling && theController.State.IsGrounded && characterDead && theAnimator.GetBool("Death") && !theAnimator.GetBool("Death Left"))
+        {
+            theAnimator.SetBool("Death Flat", true);
+            // Get the current position
+            Vector3 currentPosition = transform.position;
+
+            // Calculate the new position by subtracting 2 units from the X-axis
+            Vector3 targetPosition = new Vector3(currentPosition.x - 2f, currentPosition.y, currentPosition.z);
+
+            // Move the GameObject to the new position instantly
+            transform.position = targetPosition;
+        }
+
+        else if (!theController.State.IsFalling && !theController.State.IsGrounded)
+        {
+            theAnimator.SetBool("Death Flat", false);
+            theAnimator.SetBool("Death Left Flat", false);
+        }
+        
         /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //This checks if the Throw Grenade animation is playing.
         if (theAnimator.GetCurrentAnimatorStateInfo(1).IsName("Throw Grenade Straight"))
@@ -303,6 +342,7 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
             theAnimator.SetBool("ThrowGrenade", true);
         }*/
     }
+
 
     IEnumerator ReinitializeTheBCLadder()
     {
@@ -342,17 +382,20 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
         DamageOnTouch damageOnTouch = other.GetComponent<DamageOnTouch>();
         if (damageOnTouch != null & !characterDead)
         {
-            // Get the relative position of the colliding object
             Vector2 relativePosition = other.transform.position - transform.position;
 
             // Determine if it's a horizontal collision
             if (relativePosition.x > 0)
             {
-
+                theAnimator.SetBool("Death", true);
+                theAnimator.SetBool("Death Left", true);
+                characterDead = true;
             }
             else
             {
-
+                theAnimator.SetBool("Death", true);
+                theAnimator.SetBool("Death Left", false);
+                characterDead = true;
             }
         }
 
