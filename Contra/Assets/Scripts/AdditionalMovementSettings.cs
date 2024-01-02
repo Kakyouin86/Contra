@@ -3,12 +3,10 @@ using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
 using Rewired;
-using UnityEditor.Rendering;
 using InputManager = MoreMountains.CorgiEngine.InputManager;
 
 public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
-    public Vector3 TEST;
     public Player player;
     public Character character;
     public CharacterHorizontalMovement horizontalMovementCorgi;
@@ -104,9 +102,6 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
 
     void Update()
     {
-
-
-
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //Just the "Hold".
         if (player.GetButton(("HoldPosition")))
@@ -289,9 +284,9 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //This finishes the Death animation when hitting the ground
+        //This finishes the Death animation when hitting the ground.
 
-        if (theController.State.IsFalling)
+        if (theController.State.IsFalling && characterDead)
         {
             theAnimator.SetBool("Death Flat", false);
             theAnimator.SetBool("Death Left Flat", false);
@@ -299,28 +294,21 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
         else if (!theController.State.IsFalling && theController.State.IsGrounded && characterDead && theAnimator.GetBool("Death Left"))
         {
             theAnimator.SetBool("Death Left Flat", true);
-            // Get the current position
-            Vector3 currentPosition = transform.position;
-
-            // Calculate the new position by subtracting 2 units from the X-axis
-            Vector3 targetPosition = new Vector3(currentPosition.x - 2f, currentPosition.y, currentPosition.z);
-
-            // Move the GameObject to the new position instantly
-            transform.position = targetPosition;
+            if (character.ConditionState.CurrentState == CharacterStates.CharacterConditions.Dead &&
+                !GetComponent<Health>().PostDamageInvulnerable)
+            {
+                character.GetComponent<CorgiController>().SetForce(Vector2.zero);
+            }
         }
         else if (!theController.State.IsFalling && theController.State.IsGrounded && characterDead && theAnimator.GetBool("Death") && !theAnimator.GetBool("Death Left"))
         {
             theAnimator.SetBool("Death Flat", true);
-            // Get the current position
-            Vector3 currentPosition = transform.position;
-
-            // Calculate the new position by subtracting 2 units from the X-axis
-            Vector3 targetPosition = new Vector3(currentPosition.x - 2f, currentPosition.y, currentPosition.z);
-
-            // Move the GameObject to the new position instantly
-            transform.position = targetPosition;
+            if (character.ConditionState.CurrentState == CharacterStates.CharacterConditions.Dead &&
+                !GetComponent<Health>().PostDamageInvulnerable)
+            {
+                character.GetComponent<CorgiController>().SetForce(Vector2.zero);
+            }
         }
-
         else if (!theController.State.IsFalling && !theController.State.IsGrounded)
         {
             theAnimator.SetBool("Death Flat", false);
@@ -342,7 +330,6 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
             theAnimator.SetBool("ThrowGrenade", true);
         }*/
     }
-
 
     IEnumerator ReinitializeTheBCLadder()
     {
@@ -390,15 +377,16 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
                 theAnimator.SetBool("Death", true);
                 theAnimator.SetBool("Death Left", true);
                 characterDead = true;
+                character.GetComponent<CorgiController>().SetForce(new Vector2(-5, 10));
             }
             else
             {
                 theAnimator.SetBool("Death", true);
                 theAnimator.SetBool("Death Left", false);
                 characterDead = true;
+                character.GetComponent<CorgiController>().SetForce(new Vector2(5, 10));
             }
         }
-
     }
 }
 

@@ -1,24 +1,57 @@
 using System.Collections;
 using MoreMountains.CorgiEngine;
+using MoreMountains.Tools;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 using Character = MoreMountains.CorgiEngine.Character;
 
-public class Water : MonoBehaviour
+public class Water : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
     public GameObject theSplashIntoTheWater;
     public GameObject theSplashOutOfTheWater;
     public Vector3 thePosition;
     public Vector3 yOffsetIntoTheWater;
     public Vector3 yOffsetOutOfTheWater;
+    public GameObject theTorso;
     public GameObject theLegs;
     public GameObject theRippleEffect;
-    public bool isPlayerInWater = false; // Flag to track whether the player is in water
+    public bool isPlayerInWater = false;
+    public float exitThreshold = 2f;
+    public float distance;
     public CharacterHorizontalMovement characterHorizontalMovement;
     public CharacterCrouch characterCrouch;
     public CharacterRoll characterRoll;
     public UIAndUpgradesController theUIController;
     public Character character;
+
+    protected virtual void OnEnable()
+    {
+        this.MMEventStartListening<CorgiEngineEvent>();
+    }
+
+    /// <summary>
+    /// OnDisable, we stop listening to events.
+    /// </summary>
+    protected virtual void OnDisable()
+    {
+        this.MMEventStopListening<CorgiEngineEvent>();
+    }
+
+    public void OnMMEvent(CorgiEngineEvent corgiEngineEvent)
+    {
+        if (corgiEngineEvent.EventType == CorgiEngineEventTypes.Respawn)
+        {
+            isPlayerInWater = false;
+            characterCrouch.AbilityPermitted = true;
+            if (theUIController.GetComponent<UIAndUpgradesController>().dash)
+            {
+                characterRoll.AbilityPermitted = true;
+            }
+            theLegs.SetActive(true);
+            theRippleEffect.SetActive(false);
+            theTorso.GetComponent<SpriteRenderer>().enabled = true;
+            theLegs.GetComponent<SpriteRenderer>().enabled = true;
+        }
+    }
 
     void Start()
     {
@@ -41,6 +74,12 @@ public class Water : MonoBehaviour
             }
             theLegs.SetActive(true);
         }
+
+        if (isPlayerInWater && character.ConditionState.CurrentState == CharacterStates.CharacterConditions.Dead)
+        {
+            theTorso.GetComponent<SpriteRenderer>().enabled = false;
+            theLegs.GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -54,8 +93,7 @@ public class Water : MonoBehaviour
             characterRoll.AbilityPermitted = false;
             theLegs.SetActive(false);
             // theRippleEffect.SetActive(true);
-            thePosition = new Vector3(transform.position.x, transform.position.y,
-                other.transform.position.z);
+            thePosition = new Vector3(transform.position.x, transform.position.y, other.transform.position.z);
             Instantiate(theSplashIntoTheWater, new Vector3(thePosition.x, other.transform.position.y + yOffsetIntoTheWater.y), transform.rotation);
         }
     }
@@ -71,17 +109,17 @@ public class Water : MonoBehaviour
     {
         if (other.CompareTag("Water"))
         {
+            distance = Vector2.Distance(transform.position, other.transform.position);
             isPlayerInWater = false;
             characterCrouch.AbilityPermitted = true;
             if (theUIController.GetComponent<UIAndUpgradesController>().dash)
-            {
+            { 
                 characterRoll.AbilityPermitted = true;
             }
             theLegs.SetActive(true);
             theRippleEffect.SetActive(false);
-            thePosition = new Vector3(transform.position.x, transform.position.y,
-                other.transform.position.z);
-            if (character.ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead)
+            thePosition = new Vector3(transform.position.x, transform.position.y, other.transform.position.z);
+            if (distance < exitThreshold)
             {
                 Instantiate(theSplashOutOfTheWater, new Vector3(thePosition.x, other.transform.position.y + yOffsetOutOfTheWater.y), transform.rotation);
             }
