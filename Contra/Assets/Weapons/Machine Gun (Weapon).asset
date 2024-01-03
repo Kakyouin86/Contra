@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f005fbcfc61684c82bf819bce9d63b, type: 3}
   m_Name: Machine Gun (Weapon)
   m_EditorClassIdentifier: 
-  ItemID: Inventory 00 - Machine Gun
+  ItemID: Inventory 01 - Machine Gun
   TargetInventoryName: Main Inventory
   ForceSlotIndex: 0
   TargetIndex: 0

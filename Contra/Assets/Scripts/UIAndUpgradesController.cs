@@ -79,7 +79,6 @@ public class UIAndUpgradesController : MonoBehaviour
         avatarPlayer1.enabled = true;
         theUIImagePlayer1.enabled = true;
         allTheEmptySlotsPlayer1.enabled = true;
-        slot1MachineGunPlayer1.enabled = true;
         slot2FlameGunPlayer1.enabled = false;
         slot2FlameGunPlusPlayer1.enabled = false;
         slot3RayGunPlayer1.enabled = false;
@@ -157,11 +156,11 @@ public class UIAndUpgradesController : MonoBehaviour
                 slot5SpreadGunPlayer1.enabled = false;
                 slot5SpreadGunPlusPlayer1.enabled = true;
             }
-            if (theInventory.Content[i] != null && grenadePlus && (theInventory.Content[i].ItemName == grenadePlusName))
+            /*if (theInventory.Content[i] != null && grenadePlus && (theInventory.Content[i].ItemName == grenadePlusName))
             {
                 slot6GrenadePlayer1.enabled = false;
                 slot6GrenadePlusPlayer1.enabled = true;
-            }
+            }*/
         }
 
         //Here I pass the upgrade in the grenades to the Player so it autoloads the correct grenade in his inventory.
@@ -169,6 +168,26 @@ public class UIAndUpgradesController : MonoBehaviour
         CharacterInventory playerInventory = player.GetComponent<CharacterInventory>();
         CharacterHandleWeapon playerWeapon = player.GetComponent<CharacterHandleWeapon>();
         CharacterHandleSecondaryWeapon playerSecondaryWeapon = player.GetComponent<CharacterHandleSecondaryWeapon>();
+
+        if (playerInventory != null && machineGunUpgrade)
+        {
+            playerInventory.hasUpgradedMachineGun = true;
+        }
+        else
+        {
+            playerInventory.hasUpgradedMachineGun = false;
+        }
+
+        if (playerWeapon != null && machineGunUpgrade)
+        {
+            playerWeapon.hasUpgradedMachineGun = true;
+        }
+        else
+        {
+            playerWeapon.hasUpgradedMachineGun = false;
+        }
+        playerWeapon.ChangeWeapon();
+
         if (playerInventory != null && grenadePlus)
         {
             playerInventory.hasUpgradedGrenades = true;
@@ -235,9 +254,10 @@ public class UIAndUpgradesController : MonoBehaviour
         GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
         livesPlayer1.text = "X" + gameController.GetComponent<GameManager>().CurrentLives;
 
-        if (thePlayer.machineGunActive || theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == machineGunName)
+        if (theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == machineGunName)
         {
             slot1MachineGunPlayer1.color = originalColor;
+            slot1MachineGunPlusPlayer1.color = fadingColor;
             slot2FlameGunPlayer1.color = fadingColor;
             slot2FlameGunPlusPlayer1.color = fadingColor;
             slot3RayGunPlayer1.color = fadingColor;
@@ -248,9 +268,24 @@ public class UIAndUpgradesController : MonoBehaviour
             slot5SpreadGunPlusPlayer1.color = fadingColor;
         }
 
-        if (thePlayer.flameGunActive && !flameGunUpgrade || theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == flameGunName)
+        if (theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == machineGunName) //OJO ACA QUE TENGO QUE EDITAR TOGGLE Y FIREPOINT PRIMER!!!
         {
             slot1MachineGunPlayer1.color = fadingColor;
+            slot1MachineGunPlusPlayer1.color = originalColor;
+            slot2FlameGunPlayer1.color = fadingColor;
+            slot2FlameGunPlusPlayer1.color = fadingColor;
+            slot3RayGunPlayer1.color = fadingColor;
+            slot3RayGunPlusPlayer1.color = fadingColor;
+            slot4ShotGunPlayer1.color = fadingColor;
+            slot4ShotGunPlusPlayer1.color = fadingColor;
+            slot5SpreadGunPlayer1.color = fadingColor;
+            slot5SpreadGunPlusPlayer1.color = fadingColor;
+        }
+
+        if (!flameGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == flameGunName)
+        {
+            slot1MachineGunPlayer1.color = fadingColor;
+            slot1MachineGunPlusPlayer1.color = fadingColor;
             slot2FlameGunPlayer1.color = originalColor;
             slot2FlameGunPlusPlayer1.color = fadingColor;
             slot3RayGunPlayer1.color = fadingColor;
@@ -261,9 +296,10 @@ public class UIAndUpgradesController : MonoBehaviour
             slot5SpreadGunPlusPlayer1.color = fadingColor;
         }
 
-        if (thePlayer.flameGunActive && flameGunUpgrade || theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == flameGunPlusName)
+        if (flameGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == flameGunPlusName)
         {
             slot1MachineGunPlayer1.color = fadingColor;
+            slot1MachineGunPlusPlayer1.color = fadingColor;
             slot2FlameGunPlayer1.color = fadingColor;
             slot2FlameGunPlusPlayer1.color = originalColor;
             slot3RayGunPlayer1.color = fadingColor;
@@ -372,7 +408,7 @@ public class UIAndUpgradesController : MonoBehaviour
         }
     }
 
-    public void Grenade()
+    /*public void Grenade()
     {
         if (!grenadePlus)
         {
@@ -384,7 +420,7 @@ public class UIAndUpgradesController : MonoBehaviour
             slot6GrenadePlayer1.enabled = false;
             slot6GrenadePlusPlayer1.enabled = true;
         }
-    }
+    }*/
 
     public void PlayerIsDead(string weaponName)
     {
@@ -397,6 +433,30 @@ public class UIAndUpgradesController : MonoBehaviour
             slot2FlameGunPlayer1.enabled = false;
             slot2FlameGunPlusPlayer1.color = originalColor;
             slot2FlameGunPlusPlayer1.enabled = false;
+        }
+
+        if ((weaponName == rayGunName || weaponName == rayGunPlusName))
+        {
+            slot3RayGunPlayer1.color = originalColor;
+            slot3RayGunPlayer1.enabled = false;
+            slot3RayGunPlusPlayer1.color = originalColor;
+            slot3RayGunPlusPlayer1.enabled = false;
+        }
+
+        if ((weaponName == shotGunName || weaponName == shotGunPlusName))
+        {
+            slot4ShotGunPlayer1.color = originalColor;
+            slot4ShotGunPlusPlayer1.enabled = false;
+            slot4ShotGunPlayer1.color = originalColor;
+            slot4ShotGunPlusPlayer1.enabled = false;
+        }
+
+        if ((weaponName == spreadGunName || weaponName == spreadGunPlusName))
+        {
+            slot5SpreadGunPlayer1.color = originalColor;
+            slot5SpreadGunPlusPlayer1.enabled = false;
+            slot5SpreadGunPlayer1.color = originalColor;
+            slot5SpreadGunPlusPlayer1.enabled = false;
         }
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f005fbcfc61684c82bf819bce9d63b, type: 3}
   m_Name: Machine Gun (Super Weapon)
   m_EditorClassIdentifier: 
-  ItemID: Inventory 00 - Machine Gun
+  ItemID: Inventory 02 - Super Machine Gun
   TargetInventoryName: Main Inventory
   ForceSlotIndex: 0
   TargetIndex: 0
@@ -33,7 +33,7 @@ MonoBehaviour:
     DisplayUseButton: 1
     DisplayUnequipButton: 1
   Quantity: 1
-  ItemName: Super Machine Gun
+  ItemName: Machine Gun
   ShortDescription: It shoots like crazy.
   Description: The SUPER machine gun.
   Icon: {fileID: 647495255, guid: 7ff42ed76a267d241915afb6dd086d67, type: 3}

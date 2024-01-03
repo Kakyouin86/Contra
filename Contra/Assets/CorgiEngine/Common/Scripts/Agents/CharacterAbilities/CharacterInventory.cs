@@ -64,13 +64,15 @@ namespace MoreMountains.CorgiEngine
 		[Header("Start")]
 		/// a list of items and associated quantities to add to the main inventory
 		public List<InventoryItemsToAdd> AutoAddItemsMainInventory;
+        public bool hasUpgradedMachineGun = false;//Leo Monge: Need to ALWAYS bring it after update.
         public bool hasUpgradedGrenades = false;//Leo Monge: Need to ALWAYS bring it after update.
         /// a list of items to add to the hotbar
         public List<InventoryItemsToAdd> AutoAddItemsHotbar;
 		/// a weapon to automatically add to the inventory and equip on init
 		public InventoryEngineWeapon AutoEquipWeapon;
-		
-		public List<string> AvailableWeaponsIDs => _availableWeaponsIDs;
+        public InventoryEngineWeapon AutoEquipWeaponSuper;//Leo Monge: Need to ALWAYS bring it after update.
+
+        public List<string> AvailableWeaponsIDs => _availableWeaponsIDs;
 
 		/// the reference to the main inventory
 		public Inventory MainInventory { get; set; }
@@ -134,8 +136,7 @@ namespace MoreMountains.CorgiEngine
 		/// <returns></returns>
 		protected virtual IEnumerator AutoAddAndEquip()
 		{
-            //yield return MMCoroutine.WaitForFrames(1);//Leo Monge: Need to ALWAYS bring it after update. This is because the grenades don't add up in the UI.
-
+            yield return MMCoroutine.WaitForFrames(1);//Leo Monge: Need to ALWAYS bring it after update. This is because the grenades don't add up in the UI and the Auto-Equip doesn't work.
             if (_autoAdded)
 			{
 				yield break;
@@ -150,8 +151,19 @@ namespace MoreMountains.CorgiEngine
 			}
 			if (AutoEquipWeapon != null)
 			{
-				MainInventory.AddItem(AutoEquipWeapon, 1);
-				EquipWeapon(AutoEquipWeapon.ItemID);
+                if (!hasUpgradedMachineGun)
+                {
+					Debug.Log("Character Inventory Normal Weapon");
+                    MainInventory.AddItem(AutoEquipWeapon, 1);
+                    EquipWeapon(AutoEquipWeapon.ItemID);
+                }
+                else
+                {
+                    Debug.Log("Character Inventory Super Weapon");
+                    MainInventory.AddItem(AutoEquipWeaponSuper, 1);
+                    EquipWeapon(AutoEquipWeaponSuper.ItemID);
+                }
+
 			}
 			_autoAdded = true;
 		}

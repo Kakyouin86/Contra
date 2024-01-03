@@ -77,11 +77,19 @@ public class ToggleWeapons : MonoBehaviour, MMEventListener<CorgiEngineEvent>
         {
             GameObject theMainInventory = GameObject.FindWithTag("Inventory");
             string weaponName = weaponInventory.Content[0].ItemName;
-            if (weaponInventory.Content[0].ItemName != "Machine Gun" && weaponInventory.Content[0].ItemName != null)
+            if ((weaponInventory.Content[0].ItemName != "Machine Gun") && weaponInventory.Content[0].ItemName != null)
             { 
                 weaponInventory.DestroyItem(0);
             }
-            theCharacterInventory.EquipWeapon("Inventory 00 - Machine Gun");
+
+            if (theUIAndUpgradesController.machineGunUpgrade)
+            {
+                theCharacterInventory.EquipWeapon("Inventory 02 - Super Machine Gun");
+            }
+            else
+            {
+                theCharacterInventory.EquipWeapon("Inventory 01 - Machine Gun");
+            }
             theUIAndUpgradesController.PlayerIsDead(weaponName);
         }
     }
@@ -104,8 +112,7 @@ public class ToggleWeapons : MonoBehaviour, MMEventListener<CorgiEngineEvent>
         else
         {
             specialShootActive = false;
-            if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
-            weaponInventory.Content[0].ItemName == "Machine Gun")
+            if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun"))
             {
                 if (GetComponent<CharacterHandleWeapon>().CurrentWeapon.WeaponState.CurrentState != Weapon.WeaponStates.WeaponIdle)
                 {
@@ -129,8 +136,7 @@ public class ToggleWeapons : MonoBehaviour, MMEventListener<CorgiEngineEvent>
                 }
             }
 
-            if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
-                weaponInventory.Content[0].ItemName == "Flame Gun" && GetComponent<Character>().MovementState.CurrentState != CharacterStates.MovementStates.Rolling)
+            if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Flame Gun" || weaponInventory.Content[0].ItemName == "Super Flame Gun") && GetComponent<Character>().MovementState.CurrentState != CharacterStates.MovementStates.Rolling)
             {
                 if (GetComponent<CharacterHandleWeapon>().CurrentWeapon.WeaponState.CurrentState != Weapon.WeaponStates.WeaponIdle && theAnimator.GetBool("isShooting"))
                 {

@@ -1,8 +1,10 @@
+using MoreMountains.CorgiEngine;
+using MoreMountains.Tools;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemMessageToUI : MonoBehaviour
+public class ItemMessageToUI : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
     public bool flameGun;
     public bool rayGun;
@@ -10,6 +12,31 @@ public class ItemMessageToUI : MonoBehaviour
     public bool spreadGun;
     public bool grenade;
     public UIAndUpgradesController theUIController;
+
+    protected virtual void OnEnable()
+    {
+        this.MMEventStartListening<CorgiEngineEvent>();
+    }
+
+    /// <summary>
+    /// OnDisable, we stop listening to events.
+    /// </summary>
+    protected virtual void OnDisable()
+    {
+        this.MMEventStopListening<CorgiEngineEvent>();
+    }
+
+    public void OnMMEvent(CorgiEngineEvent corgiEngineEvent)
+    {
+        if (corgiEngineEvent.EventType == CorgiEngineEventTypes.PlayerDeath)
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+        }
+        else
+        {
+            GetComponent<BoxCollider2D>().enabled = true;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -41,10 +68,10 @@ public class ItemMessageToUI : MonoBehaviour
                 theUIController.SpreadGun();
             }
 
-            if (grenade)
+            /*if (grenade)
             {
                 theUIController.Grenade();
-            }
+            }*/
         }
     }
 }

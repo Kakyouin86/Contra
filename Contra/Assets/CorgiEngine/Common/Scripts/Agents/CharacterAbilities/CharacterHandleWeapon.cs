@@ -18,10 +18,12 @@ namespace MoreMountains.CorgiEngine
 		/// This method is only used to display a helpbox text at the beginning of the ability's inspector
 		public override string HelpBoxText() { return "This component will allow your character to pickup and use weapons. What the weapon will do is defined in the Weapon classes. This just describes the behaviour of the 'hand' holding the weapon, not the weapon itself. Here you can set an initial weapon for your character to start with, allow weapon pickup, and specify a weapon attachment (a transform inside of your character, could be just an empty child gameobject, or a subpart of your model."; }
 
-		[Header("Weapon")]
+        [Header("Weapon")]
 
-		/// the initial weapon owned by the character
-		[Tooltip("the initial weapon owned by the character")]
+        /// the initial weapon owned by the character
+        [Tooltip("the initial weapon owned by the character")]
+        public bool mainWeapon;
+        public bool hasUpgradedMachineGun = false;//Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
         public bool hasUpgradedGrenades = false;//Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
         public Weapon InitialWeapon;
         public Weapon InitialWeaponSuper;//Leo Monge: Need to ALWAYS bring it after update.
@@ -137,7 +139,7 @@ namespace MoreMountains.CorgiEngine
 				_weaponIK = _animator.GetComponent<WeaponIK> ();
 			}
 
-            if (!hasUpgradedGrenades) //Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
+            if (!hasUpgradedMachineGun && mainWeapon) //Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
             {
                 // we set the initial weapon
                 if (InitialWeapon != null)
@@ -145,7 +147,23 @@ namespace MoreMountains.CorgiEngine
                     ChangeWeapon(InitialWeapon, null);
                 }
             }
-            else
+            if (hasUpgradedMachineGun && mainWeapon)
+            {
+                if (InitialWeaponSuper != null)
+                {
+                    ChangeWeapon(InitialWeaponSuper, null);
+                }
+            }
+
+            if (!hasUpgradedGrenades && !mainWeapon) //Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
+            {
+                // we set the initial weapon
+                if (InitialWeapon != null)
+                {
+                    ChangeWeapon(InitialWeapon, null);
+                }
+            }
+            if (hasUpgradedGrenades && !mainWeapon)
             {
                 if (InitialWeaponSuper != null)
                 {
@@ -156,7 +174,7 @@ namespace MoreMountains.CorgiEngine
 
         public void ChangeWeapon() //Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
         {
-            if (!hasUpgradedGrenades)
+            if (!hasUpgradedMachineGun && mainWeapon) //Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
             {
                 // we set the initial weapon
                 if (InitialWeapon != null)
@@ -164,7 +182,23 @@ namespace MoreMountains.CorgiEngine
                     ChangeWeapon(InitialWeapon, null);
                 }
             }
-            else
+            if (hasUpgradedMachineGun && mainWeapon)
+            {
+                if (InitialWeaponSuper != null)
+                {
+                    ChangeWeapon(InitialWeaponSuper, null);
+                }
+            }
+
+            if (!hasUpgradedGrenades && !mainWeapon) //Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
+            {
+                // we set the initial weapon
+                if (InitialWeapon != null)
+                {
+                    ChangeWeapon(InitialWeapon, null);
+                }
+            }
+            if (hasUpgradedGrenades && !mainWeapon)
             {
                 if (InitialWeaponSuper != null)
                 {

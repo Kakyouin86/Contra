@@ -17225,10 +17225,13 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
+  mainWeapon: 1
+  hasUpgradedMachineGun: 0
   hasUpgradedGrenades: 0
   InitialWeapon: {fileID: 114000013303203308, guid: f23d7d18cb664c84d997afd6bab811f7,
     type: 3}
-  InitialWeaponSuper: {fileID: 0}
+  InitialWeaponSuper: {fileID: 9034595794620367516, guid: fd8e6e3b652fd4f43bdd45bc84d893fe,
+    type: 3}
   CanPickupWeapons: 1
   WeaponAttachment: {fileID: 1724734281}
   ForceWeaponScaleResetOnEquip: 0
@@ -17364,6 +17367,8 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
+  mainWeapon: 0
+  hasUpgradedMachineGun: 0
   hasUpgradedGrenades: 1
   InitialWeapon: {fileID: 7766883220953727492, guid: 28147cdd190ec574ba6cc197df98a3c2,
     type: 3}
@@ -17414,9 +17419,12 @@ MonoBehaviour:
   AutoAddItemsMainInventory:
   - Item: {fileID: 11400000, guid: b379383112e1ba64b8d0a7fbf36cedcd, type: 2}
     Quantity: 5
+  hasUpgradedMachineGun: 0
   hasUpgradedGrenades: 0
   AutoAddItemsHotbar: []
   AutoEquipWeapon: {fileID: 11400000, guid: 92dad7791ab11af48ad4a0ad41858929, type: 2}
+  AutoEquipWeaponSuper: {fileID: 11400000, guid: 5deef9a79f20109418a5833c6412dab7,
+    type: 2}
 --- !u!114 &1038294713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33155,8 +33163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a32bb9543b1fe46a1dbf91615a84a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grenadePlus: 0
-  machineGunUpgrade: 0
+  grenadePlus: 1
+  machineGunUpgrade: 1
   flameGunUpgrade: 0
   rayGunUpgrade: 0
   shotGunUpgrade: 0

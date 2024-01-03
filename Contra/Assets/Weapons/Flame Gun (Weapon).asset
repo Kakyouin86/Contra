@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f005fbcfc61684c82bf819bce9d63b, type: 3}
   m_Name: Flame Gun (Weapon)
   m_EditorClassIdentifier: 
-  ItemID: Inventory 01 - Flame Gun
+  ItemID: Inventory 03 - Flame Gun
   TargetInventoryName: Main Inventory
   ForceSlotIndex: 0
   TargetIndex: 1
