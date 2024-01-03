@@ -16,7 +16,7 @@ public class ToggleWeapons : MonoBehaviour, MMEventListener<CorgiEngineEvent>
     public bool machineGunActive = false;
     public bool flameGunActive = false;
     public bool specialShootActive = false;
-    public UIAndUpgradesController theIAndUpgradesController;
+    public UIAndUpgradesController theUIAndUpgradesController;
     public SpecialShootAndRaycastVisualization theSpecialShootAndRaycastVisualization;
     public Inventory weaponInventory;
     public Animator theAnimator;
@@ -35,7 +35,7 @@ public class ToggleWeapons : MonoBehaviour, MMEventListener<CorgiEngineEvent>
         torsoObject = GameObject.FindGameObjectWithTag(torsoTag);
         machineGunLights = GameObject.FindGameObjectWithTag(machineGunLightsTag);
         flameGunLights = GameObject.FindGameObjectWithTag(flameGunLightsTag);
-        theIAndUpgradesController = GameObject.FindGameObjectWithTag("UI").GetComponent<UIAndUpgradesController>();
+        theUIAndUpgradesController = GameObject.FindGameObjectWithTag("UI").GetComponent<UIAndUpgradesController>();
         theSpecialShootAndRaycastVisualization = GetComponent<SpecialShootAndRaycastVisualization>();
         weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventory").GetComponent<Inventory>();
         theCharacterInventory = GetComponent<CharacterInventory>();
@@ -76,13 +76,13 @@ public class ToggleWeapons : MonoBehaviour, MMEventListener<CorgiEngineEvent>
         if (corgiEngineEvent.EventType == CorgiEngineEventTypes.PlayerDeath)
         {
             GameObject theMainInventory = GameObject.FindWithTag("Inventory");
-            Inventory mainInventory = theMainInventory.GetComponent<Inventory>();
+            string weaponName = weaponInventory.Content[0].ItemName;
             if (weaponInventory.Content[0].ItemName != "Machine Gun" && weaponInventory.Content[0].ItemName != null)
-            {
+            { 
                 weaponInventory.DestroyItem(0);
             }
             theCharacterInventory.EquipWeapon("Inventory 00 - Machine Gun");
-            theIAndUpgradesController.PlayerIsDead();
+            theUIAndUpgradesController.PlayerIsDead(weaponName);
         }
     }
 

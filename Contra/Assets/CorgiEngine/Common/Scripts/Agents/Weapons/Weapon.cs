@@ -1135,6 +1135,7 @@ namespace MoreMountains.CorgiEngine
 		/// <returns>The destruction.</returns>
 		public virtual IEnumerator WeaponDestruction()
 		{
+			Debug.Log("HERE????");
 			yield return new WaitForSeconds (AutoDestroyWhenEmptyDelay);
 			// if we don't have ammo anymore, and need to destroy our weapon, we do it
 			TurnWeaponOff();

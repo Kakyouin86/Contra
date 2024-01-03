@@ -13,6 +13,7 @@ public class UIAndUpgradesController : MonoBehaviour
 {
     [Header("Acquired Power Ups")]
     public bool grenadePlus = false;
+    public bool machineGunUpgrade = false;
     public bool flameGunUpgrade = false;
     public bool rayGunUpgrade = false;
     public bool shotGunUpgrade = false;
@@ -26,6 +27,7 @@ public class UIAndUpgradesController : MonoBehaviour
     public Image theUIImagePlayer1;
     public Image allTheEmptySlotsPlayer1;
     public Image slot1MachineGunPlayer1;
+    public Image slot1MachineGunPlusPlayer1;
     public Image slot2FlameGunPlayer1;
     public Image slot2FlameGunPlusPlayer1;
     public Image slot3RayGunPlayer1;
@@ -51,6 +53,7 @@ public class UIAndUpgradesController : MonoBehaviour
 
     [Header("Weapon parameters")]
     public string machineGunName = "Machine Gun";
+    public string machineGunPlusName = "Super Machine Gun";
     public string flameGunName = "Flame Gun";
     public string flameGunPlusName = "Super Flame Gun";
     public string rayGunName = "Ray Gun";
@@ -85,6 +88,18 @@ public class UIAndUpgradesController : MonoBehaviour
         slot4ShotGunPlusPlayer1.enabled = false;
         slot5SpreadGunPlayer1.enabled = false;
         slot5SpreadGunPlusPlayer1.enabled = false;
+
+        if (!machineGunUpgrade)
+        {
+            slot1MachineGunPlayer1.enabled = true;
+            slot1MachineGunPlusPlayer1.enabled = false;
+        }
+        else
+        {
+            slot1MachineGunPlayer1.enabled = false;
+            slot1MachineGunPlusPlayer1.enabled = true;
+        }
+
         if (!grenadePlus)
         {
             slot6GrenadePlayer1.enabled = true;
@@ -152,6 +167,8 @@ public class UIAndUpgradesController : MonoBehaviour
         //Here I pass the upgrade in the grenades to the Player so it autoloads the correct grenade in his inventory.
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         CharacterInventory playerInventory = player.GetComponent<CharacterInventory>();
+        CharacterHandleWeapon playerWeapon = player.GetComponent<CharacterHandleWeapon>();
+        CharacterHandleSecondaryWeapon playerSecondaryWeapon = player.GetComponent<CharacterHandleSecondaryWeapon>();
         if (playerInventory != null && grenadePlus)
         {
             playerInventory.hasUpgradedGrenades = true;
@@ -160,7 +177,6 @@ public class UIAndUpgradesController : MonoBehaviour
         {
             playerInventory.hasUpgradedGrenades = false;
         }
-        CharacterHandleSecondaryWeapon playerSecondaryWeapon = player.GetComponent<CharacterHandleSecondaryWeapon>();
         if (playerSecondaryWeapon != null && grenadePlus)
         {
             playerSecondaryWeapon.hasUpgradedGrenades = true;
@@ -370,27 +386,17 @@ public class UIAndUpgradesController : MonoBehaviour
         }
     }
 
-    public void PlayerIsDead()
+    public void PlayerIsDead(string weaponName)
     {
-        Image[] player1Slots = new Image[]
-        {
-            slot2FlameGunPlayer1,
-            slot2FlameGunPlusPlayer1,
-            slot3RayGunPlayer1,
-            slot3RayGunPlusPlayer1,
-            slot4ShotGunPlayer1,
-            slot4ShotGunPlusPlayer1,
-            slot5SpreadGunPlayer1,
-            slot5SpreadGunPlusPlayer1
-        };
+        slot1MachineGunPlayer1.enabled = true;
+        slot1MachineGunPlayer1.color = originalColor;
 
-        foreach (Image slot in player1Slots)
+        if ((weaponName == flameGunName || weaponName == flameGunPlusName))
         {
-            if (slot.enabled)
-            {
-                slot.color = originalColor;
-                slot.enabled = false;
-            }
+            slot2FlameGunPlayer1.color = originalColor;
+            slot2FlameGunPlayer1.enabled = false;
+            slot2FlameGunPlusPlayer1.color = originalColor;
+            slot2FlameGunPlusPlayer1.enabled = false;
         }
     }
 }
