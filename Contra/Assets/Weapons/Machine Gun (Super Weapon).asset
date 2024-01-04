@@ -33,7 +33,7 @@ MonoBehaviour:
     DisplayUseButton: 1
     DisplayUnequipButton: 1
   Quantity: 1
-  ItemName: Machine Gun
+  ItemName: Super Machine Gun
   ShortDescription: It shoots like crazy.
   Description: The SUPER machine gun.
   Icon: {fileID: 647495255, guid: 7ff42ed76a267d241915afb6dd086d67, type: 3}

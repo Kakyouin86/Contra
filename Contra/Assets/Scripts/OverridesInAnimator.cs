@@ -61,8 +61,7 @@ public class OverridesInAnimator : MonoBehaviour
             }
         }
 
-        if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
-            weaponInventory.Content[0].ItemName == "Machine Gun")
+        if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun"))
         {
             machineGun = true;
             flameGun = false;
@@ -79,18 +78,16 @@ public class OverridesInAnimator : MonoBehaviour
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //This makes the animator stay on "shooting" if the "Fire" of the weapon is still active. For the Machine Gun it should be 0 always.
-        if (theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse &&
-            weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
-            weaponInventory.Content[0].ItemName == "Machine Gun")
+        if (theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse && weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
+            (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun"))
         {
             initialTimeBeforeNextAnim = 0.0f;
             currentTimeBeforeNextAnim = initialTimeBeforeNextAnim;
             startTimerBeforeNextAnim = false;
         }
 
-        if (theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse &&
-            weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
-            weaponInventory.Content[0].ItemName != "Machine Gun")
+        if (theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse && weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null &&
+            (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun"))
         {
             initialTimeBeforeNextAnim = customTimeBeforeNextAnim;
             currentTimeBeforeNextAnim = initialTimeBeforeNextAnim;

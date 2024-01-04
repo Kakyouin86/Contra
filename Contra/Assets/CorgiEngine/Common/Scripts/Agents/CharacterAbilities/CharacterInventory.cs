@@ -153,13 +153,13 @@ namespace MoreMountains.CorgiEngine
 			{
                 if (!hasUpgradedMachineGun)
                 {
-					Debug.Log("Character Inventory Normal Weapon");
+					//Debug.Log("Character Inventory Normal Weapon");
                     MainInventory.AddItem(AutoEquipWeapon, 1);
                     EquipWeapon(AutoEquipWeapon.ItemID);
                 }
                 else
                 {
-                    Debug.Log("Character Inventory Super Weapon");
+                    //Debug.Log("Character Inventory Super Weapon");
                     MainInventory.AddItem(AutoEquipWeaponSuper, 1);
                     EquipWeapon(AutoEquipWeaponSuper.ItemID);
                 }

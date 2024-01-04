@@ -254,7 +254,7 @@ public class UIAndUpgradesController : MonoBehaviour
         GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
         livesPlayer1.text = "X" + gameController.GetComponent<GameManager>().CurrentLives;
 
-        if (theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == machineGunName)
+        if (!machineGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == machineGunName)
         {
             slot1MachineGunPlayer1.color = originalColor;
             slot1MachineGunPlusPlayer1.color = fadingColor;
@@ -268,7 +268,7 @@ public class UIAndUpgradesController : MonoBehaviour
             slot5SpreadGunPlusPlayer1.color = fadingColor;
         }
 
-        if (theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == machineGunName) //OJO ACA QUE TENGO QUE EDITAR TOGGLE Y FIREPOINT PRIMER!!!
+        if (machineGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == machineGunPlusName)
         {
             slot1MachineGunPlayer1.color = fadingColor;
             slot1MachineGunPlusPlayer1.color = originalColor;

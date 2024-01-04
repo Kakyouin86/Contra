@@ -33163,9 +33163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a32bb9543b1fe46a1dbf91615a84a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grenadePlus: 1
-  machineGunUpgrade: 0
-  flameGunUpgrade: 1
+  grenadePlus: 0
+  machineGunUpgrade: 1
+  flameGunUpgrade: 0
   rayGunUpgrade: 0
   shotGunUpgrade: 0
   spreadGunUpgrade: 0

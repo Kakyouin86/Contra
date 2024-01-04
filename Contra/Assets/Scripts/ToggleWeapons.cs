@@ -77,7 +77,8 @@ public class ToggleWeapons : MonoBehaviour, MMEventListener<CorgiEngineEvent>
         {
             GameObject theMainInventory = GameObject.FindWithTag("Inventory");
             string weaponName = weaponInventory.Content[0].ItemName;
-            if ((weaponInventory.Content[0].ItemName != "Machine Gun") && weaponInventory.Content[0].ItemName != null)
+
+            if ((weaponName != "Machine Gun" && weaponName != "Super Machine Gun") && weaponInventory.Content[0].ItemName != null)
             { 
                 weaponInventory.DestroyItem(0);
             }
@@ -112,7 +113,7 @@ public class ToggleWeapons : MonoBehaviour, MMEventListener<CorgiEngineEvent>
         else
         {
             specialShootActive = false;
-            if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun"))
+            if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun"))
             {
                 if (GetComponent<CharacterHandleWeapon>().CurrentWeapon.WeaponState.CurrentState != Weapon.WeaponStates.WeaponIdle)
                 {
