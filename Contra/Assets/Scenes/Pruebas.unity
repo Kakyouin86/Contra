@@ -33164,8 +33164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grenadePlus: 1
-  machineGunUpgrade: 1
-  flameGunUpgrade: 0
+  machineGunUpgrade: 0
+  flameGunUpgrade: 1
   rayGunUpgrade: 0
   shotGunUpgrade: 0
   spreadGunUpgrade: 0
