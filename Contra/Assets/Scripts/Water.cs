@@ -15,13 +15,14 @@ public class Water : MonoBehaviour, MMEventListener<CorgiEngineEvent>
     public GameObject theLegs;
     public GameObject theRippleEffect;
     public bool isPlayerInWater = false;
-    public float exitThreshold = 2f;
+    public float exitThreshold = 6f;
     public float distance;
     public CharacterHorizontalMovement characterHorizontalMovement;
     public CharacterCrouch characterCrouch;
     public CharacterRoll characterRoll;
     public UIAndUpgradesController theUIController;
     public Character character;
+    public bool runFirstBoxColliderOff = false;
 
     protected virtual void OnEnable()
     {
@@ -42,6 +43,8 @@ public class Water : MonoBehaviour, MMEventListener<CorgiEngineEvent>
         {
             isPlayerInWater = false;
             characterCrouch.AbilityPermitted = true;
+            GetComponent<BoxCollider2D>().enabled = true;
+            runFirstBoxColliderOff = false;
             if (theUIController.GetComponent<UIAndUpgradesController>().dash)
             {
                 characterRoll.AbilityPermitted = true;
@@ -64,7 +67,7 @@ public class Water : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 
     void Update()
     {
-        if (!isPlayerInWater)
+        if (!isPlayerInWater && character.ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead)
         {
             theRippleEffect.SetActive(false);
             characterCrouch.AbilityPermitted = true;
@@ -75,12 +78,27 @@ public class Water : MonoBehaviour, MMEventListener<CorgiEngineEvent>
             theLegs.SetActive(true);
         }
 
-        if (isPlayerInWater && character.ConditionState.CurrentState == CharacterStates.CharacterConditions.Dead)
+        if (character.ConditionState.CurrentState == CharacterStates.CharacterConditions.Dead)
         {
             theTorso.GetComponent<SpriteRenderer>().enabled = false;
-            theLegs.GetComponent<SpriteRenderer>().enabled = false;
+            theLegs.GetComponent<SpriteRenderer>().enabled = true;
+            isPlayerInWater = false;
+            if (!runFirstBoxColliderOff)
+            {
+                theLegs.SetActive(true);
+                GetComponent<BoxCollider2D>().enabled = false;
+                StartCoroutine(BringBackTheCollider());
+            }
         }
     }
+
+    IEnumerator BringBackTheCollider()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<BoxCollider2D>().enabled = true;
+        runFirstBoxColliderOff = true;
+    }
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -113,7 +131,7 @@ public class Water : MonoBehaviour, MMEventListener<CorgiEngineEvent>
             isPlayerInWater = false;
             characterCrouch.AbilityPermitted = true;
             if (theUIController.GetComponent<UIAndUpgradesController>().dash)
-            { 
+            {
                 characterRoll.AbilityPermitted = true;
             }
             theLegs.SetActive(true);

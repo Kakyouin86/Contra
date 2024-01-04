@@ -6601,13 +6601,14 @@ MonoBehaviour:
   theLegs: {fileID: 392121773}
   theRippleEffect: {fileID: 1392239207}
   isPlayerInWater: 0
-  exitThreshold: 2
+  exitThreshold: 6
   distance: 0
   characterHorizontalMovement: {fileID: 0}
   characterCrouch: {fileID: 0}
   characterRoll: {fileID: 0}
   theUIController: {fileID: 0}
   character: {fileID: 0}
+  runFirstBoxColliderOff: 0
 --- !u!114 &458236780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33164,7 +33165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grenadePlus: 0
-  machineGunUpgrade: 1
+  machineGunUpgrade: 0
   flameGunUpgrade: 0
   rayGunUpgrade: 0
   shotGunUpgrade: 0

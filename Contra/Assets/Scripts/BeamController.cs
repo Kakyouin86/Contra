@@ -1,6 +1,7 @@
 using MoreMountains.CorgiEngine;
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.Rendering.HableCurve;
 
 public class BeamController : MonoBehaviour
 {
@@ -54,6 +55,7 @@ public class BeamController : MonoBehaviour
                 if (isTop ? !isCollidingArray[i] : !isCollidingArray[i])
                 {
                     segment.GetComponent<SpriteRenderer>().enabled = true;
+                    segment.GetComponent<BoxCollider2D>().enabled = true;
                 }
 
                 yield return new WaitForSeconds(delayBetweenSegments);
@@ -121,6 +123,7 @@ public class BeamController : MonoBehaviour
                     for (int j = i; j < length; j++)
                     {
                         beamSegments[j].GetComponent<SpriteRenderer>().enabled = false;
+                        beamSegments[j].GetComponent<BoxCollider2D>().enabled = false;
                     }
 
                     for (int k = i + 1; k < length; k++)
@@ -186,6 +189,7 @@ public class BeamController : MonoBehaviour
             if (isTop ? !isCollidingArray[i] : !isCollidingArray[i])
             {
                 segment.GetComponent<SpriteRenderer>().enabled = true;
+                segment.GetComponent<BoxCollider2D>().enabled = true;
                 StartCoroutine(WaitAndEnableNextSegment(segment, delayBetweenSegments));
             }
         }
@@ -200,6 +204,7 @@ public class BeamController : MonoBehaviour
             if (isTop ? !isCollidingArray[i] : !isCollidingArray[i])
             {
                 beamSegments[i].GetComponent<SpriteRenderer>().enabled = true;
+                beamSegments[i].GetComponent<BoxCollider2D>().enabled = true;
                 yield return new WaitForSeconds(delayBetweenSegments);
             }
         }
@@ -209,6 +214,7 @@ public class BeamController : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         segment.GetComponent<SpriteRenderer>().enabled = true;
+        segment.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     struct CollisionInfo

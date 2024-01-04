@@ -11260,11 +11260,6 @@ MonoBehaviour:
     PoolSize: 1
     PoolCanExpand: 1
     Enabled: 1
-  - GameObjectToPool: {fileID: 8884766738728139143, guid: 1dc4df1f3bd6e3747ae1dce9b238407e,
-      type: 3}
-    PoolSize: 1
-    PoolCanExpand: 1
-    Enabled: 1
   PoolingMethod: 3
   CanPoolSameObjectTwice: 0
   MutualizedPoolName: 

@@ -125,7 +125,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 512
@@ -332,14 +332,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b95296ef9f66e44299eb703ede874bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToInstantiate: {fileID: 4836815659534229341, guid: 7ad8ea74aa7068849bd9824fd58daeff,
+  objectToInstantiate: {fileID: 3265214400913239461, guid: 10c2eb7ecfd8c2d4bab923fd3a080af4,
+    type: 3}
+  objectToInstantiateWater: {fileID: 5650233908315421779, guid: 443b024fa7e91cc4fa95ab8eec01b506,
     type: 3}
   spawnPosition: {x: 0.4, y: 0, z: 0}
+  spawnPositionWater: {x: -0.5, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
+  doNotInstantiateTheBurst: 0
   ObstaclesLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 272
   distanceToPlayer: 0
   thresholdNotToShowBurst: 2
+  thresholdNotToShowBurstWater: 2
   thePlayer: {fileID: 0}
   weaponAim: {fileID: 0}
