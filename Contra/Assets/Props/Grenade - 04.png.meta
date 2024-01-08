@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3d49826a96c74e84a8cdde2f27144032
+guid: c19ff05065432d94bb70ec6ab16a1c0c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -46,8 +46,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
-  spritePivot: {x: 0.5, y: 0}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grenade - 01_0
+      name: Grenade - 04_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 30
-        height: 30
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92d5e70cd759fc9418e18b04b3b27af7
-      internalID: 920497166
+      spriteID: e04d7e660e8c95e48b2ed0fa3bad33c2
+      internalID: -719471075
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_1
+      name: Grenade - 04_1
       rect:
         serializedVersion: 2
-        x: 30
+        x: 16
         y: 0
-        width: 30
-        height: 30
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9863ae81fdd22d147990bf13b5b7f81d
-      internalID: 609358442
+      spriteID: b15a9c368b5b93c4f8deeb15599fbf44
+      internalID: -1594885583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_2
+      name: Grenade - 04_2
       rect:
         serializedVersion: 2
-        x: 60
+        x: 32
         y: 0
-        width: 30
-        height: 30
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e92ac69e4cf3e848afa797abbf50af0
-      internalID: -1499046850
+      spriteID: ff70f2fa672ae6f42968c3860e310ea8
+      internalID: -1155380649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_3
+      name: Grenade - 04_3
       rect:
         serializedVersion: 2
-        x: 90
+        x: 48
         y: 0
-        width: 30
-        height: 30
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b2ab19e48ecbe44193d8c07c428cb86
-      internalID: 506142630
+      spriteID: 42f1ca7d9d524f9408e64e163e8dd93a
+      internalID: -1290349578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_4
+      name: Grenade - 04_4
       rect:
         serializedVersion: 2
-        x: 120
+        x: 64
         y: 0
-        width: 30
-        height: 30
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06b76354a3ff79548a231d6d83f5ecff
-      internalID: 350188362
+      spriteID: f9b4585e58cba084781584add8e3bea7
+      internalID: 1683633608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_5
+      name: Grenade - 04_5
       rect:
         serializedVersion: 2
-        x: 150
+        x: 80
         y: 0
-        width: 30
-        height: 30
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3f33b7646b39b842b59f19363f7a7b2
-      internalID: -1542664950
+      spriteID: f39245923c4dac24ab3385ebecca9f00
+      internalID: 452329292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_6
+      name: Grenade - 04_6
       rect:
         serializedVersion: 2
-        x: 180
+        x: 96
         y: 0
-        width: 30
-        height: 30
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c644a7f06e6d5bd44a643005c06fa3cb
-      internalID: -733256206
+      spriteID: 44bd51ab9f41d4e40a778635d22c6b05
+      internalID: 1003407576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_7
+      name: Grenade - 04_7
       rect:
         serializedVersion: 2
-        x: 210
+        x: 112
         y: 0
-        width: 30
-        height: 30
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d065fc8f848f0f46b072aff08ab6f94
-      internalID: -2053293543
+      spriteID: 09473d2a8b3c6a34885b5eaf05b04ea7
+      internalID: 1961690640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_8
+      name: Grenade - 04_8
       rect:
         serializedVersion: 2
-        x: 240
+        x: 128
         y: 0
-        width: 30
-        height: 30
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7c075a4abeacd14fa3cb2857a62ecf9
-      internalID: -321465668
+      spriteID: 8905155d5f121e445a50b01c7cb8bef9
+      internalID: -450047077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grenade - 01_9
+      name: Grenade - 04_9
       rect:
         serializedVersion: 2
-        x: 270
+        x: 144
         y: 0
-        width: 30
-        height: 30
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,134 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 974f527aafcabf04b83b215cc596049c
-      internalID: 1918237348
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grenade - 01_10
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 0
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 900de7e831c226d4dbffeb3711104736
-      internalID: 166306406
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grenade - 01_11
-      rect:
-        serializedVersion: 2
-        x: 330
-        y: 0
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7a90372a46cdc540b5a200e6a7821fb
-      internalID: 451559726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grenade - 01_12
-      rect:
-        serializedVersion: 2
-        x: 360
-        y: 0
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ec4b759a55b91a4f99c1f53c0895189
-      internalID: 978215615
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grenade - 01_13
-      rect:
-        serializedVersion: 2
-        x: 390
-        y: 0
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69144dbbed6c16f4a9cac17e5d454588
-      internalID: -1595595577
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grenade - 01_14
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 0
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ca9df8be20f3ce46add67db432a523d
-      internalID: 1277499374
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grenade - 01_15
-      rect:
-        serializedVersion: 2
-        x: 450
-        y: 0
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2a8a35de35bcdb54da9844815ad8e35b
-      internalID: -1188385603
+      spriteID: c38d9034734af1a4880159b552dfa104
+      internalID: -1927865810
       vertices: []
       indices: 
       edges: []
@@ -456,22 +330,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Grenade - 01_0: 920497166
-      Grenade - 01_1: 609358442
-      Grenade - 01_10: 166306406
-      Grenade - 01_11: 451559726
-      Grenade - 01_12: 978215615
-      Grenade - 01_13: -1595595577
-      Grenade - 01_14: 1277499374
-      Grenade - 01_15: -1188385603
-      Grenade - 01_2: -1499046850
-      Grenade - 01_3: 506142630
-      Grenade - 01_4: 350188362
-      Grenade - 01_5: -1542664950
-      Grenade - 01_6: -733256206
-      Grenade - 01_7: -2053293543
-      Grenade - 01_8: -321465668
-      Grenade - 01_9: 1918237348
+      Grenade - 04_0: -719471075
+      Grenade - 04_1: -1594885583
+      Grenade - 04_2: -1155380649
+      Grenade - 04_3: -1290349578
+      Grenade - 04_4: 1683633608
+      Grenade - 04_5: 452329292
+      Grenade - 04_6: 1003407576
+      Grenade - 04_7: 1961690640
+      Grenade - 04_8: -450047077
+      Grenade - 04_9: -1927865810
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

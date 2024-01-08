@@ -622,7 +622,7 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 7699853597995973578}
         DebugActive: 0
-        GameObjectToInstantiate: {fileID: 874389269557223518, guid: c285b82a150ad884e8927fcb272a7667,
+        GameObjectToInstantiate: {fileID: 4131492257063201396, guid: 82c9a134d2dce604d9e0e46f73f6c618,
           type: 3}
         PositionMode: 0
         AlsoApplyRotation: 0
