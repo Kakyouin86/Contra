@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: -1628607475
   m_SortingLayer: 2
   m_SortingOrder: -1
-  m_Sprite: {fileID: -1497195010, guid: 82d3c8e8d1dfa17488b28a43189a97d7, type: 3}
+  m_Sprite: {fileID: 747959291, guid: d86e6e2b8a2d258498e7ce256c3f3def, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b95296ef9f66e44299eb703ede874bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToInstantiate: {fileID: 3199536429230220929, guid: 9c430fd027e72984088b52c60e6a2c05,
+  objectToInstantiate: {fileID: 6174078521692028534, guid: f710dd934a49d67419d588cf345943b2,
     type: 3}
   objectToInstantiateWater: {fileID: 5650233908315421779, guid: 443b024fa7e91cc4fa95ab8eec01b506,
     type: 3}

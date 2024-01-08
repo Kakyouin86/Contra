@@ -142,10 +142,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -156,7 +156,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.125, y: 2.4375}
+  m_Size: {x: 2.7280953, y: 1.2865578}
   m_EdgeRadius: 0
 --- !u!50 &7420217862194882837
 Rigidbody2D:
@@ -334,10 +334,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToInstantiate: {fileID: 2221100705920657894, guid: 8b1039f2a8c38c24a963463bc9c82e78,
     type: 3}
-  objectToInstantiateWater: {fileID: 0}
+  objectToInstantiateWater: {fileID: 3193478456438886401, guid: 10081b2afeb8be9439a1368876046222,
+    type: 3}
   spawnPosition: {x: 1.5, y: 0, z: 0}
   spawnPositionWater: {x: -0.5, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
+  doNotInstantiateTheBurst: 0
   ObstaclesLayerMask:
     serializedVersion: 2
     m_Bits: 256

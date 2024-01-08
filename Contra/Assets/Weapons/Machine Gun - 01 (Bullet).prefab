@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b95296ef9f66e44299eb703ede874bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToInstantiate: {fileID: 3199536429230220929, guid: 9c430fd027e72984088b52c60e6a2c05,
+  objectToInstantiate: {fileID: 6174078521692028534, guid: f710dd934a49d67419d588cf345943b2,
     type: 3}
   objectToInstantiateWater: {fileID: 5650233908315421779, guid: 443b024fa7e91cc4fa95ab8eec01b506,
     type: 3}
