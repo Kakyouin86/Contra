@@ -124,7 +124,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9003440488919696238}
-  - component: {fileID: 338142398471108647}
   - component: {fileID: 2408983272703327285}
   m_Layer: 9
   m_Name: Slopes Detector
@@ -148,21 +147,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6155392508254906392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &338142398471108647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4468431973725739280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f86eba3bb80ddc749989daf437144e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theAnimator: {fileID: 0}
-  character: {fileID: 0}
-  theController: {fileID: 0}
 --- !u!61 &2408983272703327285
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -895,6 +879,8 @@ MonoBehaviour:
   BlockingConditionStates: 
   BlockingWeaponStates: 
   RunSpeed: 16
+  StopRunAtLowSpeed: 0
+  RunLowSpeedThreshold: 1
   ReadInput: 1
   AutoRun: 0
   AutoRunThreshold: 0.6
@@ -1040,9 +1026,6 @@ MonoBehaviour:
   MinimumTimeAfterLadderJump: 0.1
   NoInputClimb: 0
   NoInputClimbAirOnly: 0
-  _boxCollider: {fileID: 3217834828531648628}
-  _colliders: []
-  _characterHandleWeapon: {fileID: 0}
 --- !u!114 &5923276337235571897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1109,8 +1092,12 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
+  mainWeapon: 0
+  hasUpgradedMachineGun: 0
+  hasUpgradedGrenades: 0
   InitialWeapon: {fileID: 114000013303203308, guid: afc4c7a4c57ed5d49b059f033e81688d,
     type: 3}
+  InitialWeaponSuper: {fileID: 0}
   CanPickupWeapons: 1
   WeaponAttachment: {fileID: 811735157388737374}
   ForceWeaponScaleResetOnEquip: 0
@@ -1165,13 +1152,27 @@ MonoBehaviour:
   theController: {fileID: 0}
   theInputManager: {fileID: 0}
   theCharacterHandleWeapon: {fileID: 0}
+  theSpecialShootAndRaycastVisualization: {fileID: 0}
   theAnimator: {fileID: 0}
   theFirepoint: {fileID: 4240786728506088516}
-  theStandingPosition: {x: 0, y: 0, z: 0}
-  theCrouchingPosition: {x: 0, y: 0, z: 0}
-  offset: {x: 0, y: -1.4, z: 0}
-  theWeapon: {fileID: 0}
+  weaponAim: {fileID: 0}
   horizontalLadder: 0
+  canNotDettach: 0
   theBCTrigger: {fileID: 4494424520307725879}
   theOriginalBoxCollider2DSize: {x: 0, y: 0}
   theOriginalBoxCollider2DOffset: {x: 0, y: 0}
+  jumpingOffsetX: 0
+  jumpingOffsetY: 1.75
+  jumpingSizeX: 1
+  jumpingSizeY: 1.45
+  isNotCharacterV3: 0
+  theRippleEffect: {fileID: 0}
+  theTorso: {fileID: 0}
+  theLegs: {fileID: 0}
+  theTorsoMachineGunLights: {fileID: 0}
+  theTorsoFlameGunLights: {fileID: 0}
+  theBCLadder: {fileID: 0}
+  slopesDetector: {fileID: 0}
+  originalMaterial: {fileID: 0}
+  flashMaterial: {fileID: 0}
+  characterDead: 0

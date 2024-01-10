@@ -154,7 +154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5405732527763214677
 Transform:
   m_ObjectHideFlags: 0
@@ -818,10 +818,12 @@ MonoBehaviour:
   theController: {fileID: 3393890305626369696}
   theInputManager: {fileID: 0}
   theCharacterHandleWeapon: {fileID: 0}
+  theSpecialShootAndRaycastVisualization: {fileID: 0}
   theAnimator: {fileID: 2530905466954393227}
   theFirepoint: {fileID: 4822755551146874168}
-  theWeapon: {fileID: 0}
+  weaponAim: {fileID: 0}
   horizontalLadder: 0
+  canNotDettach: 0
   theBCTrigger: {fileID: 4060758096231868944}
   theOriginalBoxCollider2DSize: {x: 0, y: 0}
   theOriginalBoxCollider2DOffset: {x: 0, y: 0}
@@ -831,12 +833,15 @@ MonoBehaviour:
   jumpingSizeY: 0
   isNotCharacterV3: 0
   theRippleEffect: {fileID: 0}
+  theTorso: {fileID: 0}
   theLegs: {fileID: 0}
+  theTorsoMachineGunLights: {fileID: 0}
+  theTorsoFlameGunLights: {fileID: 0}
   theBCLadder: {fileID: 0}
-  startTimerBeforeNextAnim: 0
-  initialTimeBeforeNextAnim: 0
-  currentTimeBeforeNextAnim: 0
   slopesDetector: {fileID: 0}
+  originalMaterial: {fileID: 0}
+  flashMaterial: {fileID: 0}
+  characterDead: 0
 --- !u!114 &3458998671619744002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -879,8 +884,12 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
+  mainWeapon: 0
+  hasUpgradedMachineGun: 0
+  hasUpgradedGrenades: 0
   InitialWeapon: {fileID: 114000013303203308, guid: afc4c7a4c57ed5d49b059f033e81688d,
     type: 3}
+  InitialWeaponSuper: {fileID: 0}
   CanPickupWeapons: 1
   WeaponAttachment: {fileID: 6130784914730359036}
   ForceWeaponScaleResetOnEquip: 0
@@ -1043,9 +1052,18 @@ MonoBehaviour:
   thePosition: {x: 0, y: 0, z: 0}
   yOffsetIntoTheWater: {x: 0, y: 0, z: 0}
   yOffsetOutOfTheWater: {x: 0, y: 0, z: 0}
+  theTorso: {fileID: 0}
   theLegs: {fileID: 8213862195897933644}
   theRippleEffect: {fileID: 7420754247599764545}
   isPlayerInWater: 0
+  exitThreshold: 6
+  distance: 0
+  characterHorizontalMovement: {fileID: 0}
+  characterCrouch: {fileID: 0}
+  characterRoll: {fileID: 0}
+  theUIController: {fileID: 0}
+  character: {fileID: 0}
+  runFirstBoxColliderOff: 0
 --- !u!1 &6982478141314332974
 GameObject:
   m_ObjectHideFlags: 0

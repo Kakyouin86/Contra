@@ -1,3 +1,4 @@
+using System.Buffers;
 using MoreMountains.CorgiEngine;
 using MoreMountains.InventoryEngine;
 using Rewired;
@@ -6,6 +7,7 @@ public class OverridesInAnimator : MonoBehaviour
 {
     public bool machineGun;
     public bool flameGun;
+    public bool rayGun;
     public bool startTimerBeforeNextAnim = false;
     public float customTimeBeforeNextAnim = 0.03f;
     public float initialTimeBeforeNextAnim = 0.03f;
@@ -16,6 +18,7 @@ public class OverridesInAnimator : MonoBehaviour
     public Inventory weaponInventory;
     public CharacterHandleWeapon theCharacterHandleWeapon;
     public Player player;
+    public ChargeWeapon theChargeWeapon;
     public AnimationClip[] animationNames;
 
     private void Awake()
@@ -33,13 +36,31 @@ public class OverridesInAnimator : MonoBehaviour
 
     void Update()
     {
+        if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun"))
+        {
+            machineGun = true;
+            flameGun = false;
+            rayGun = false;
+            //modifyTheMirror = false;
+            //modifyTheMirror = true;
+            theAnimator.SetBool("Flame Gun", false);
+            theAnimator.SetBool("Charging", false);
+            //foreach (AnimationClip clip in animationNames)
+            {
+                theAnimator.SetFloat("Delay", 1f);
+                ////timerBeforeNextAnim = theAnimator.GetBool("TimerBeforeNextAnim");
+                //theAnimator.SetBool("Mirror", timerBeforeNextAnim);
+            }
+        }
+        
         if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Flame Gun") || (weaponInventory.Content[0].ItemName == "Super Flame Gun")))
         {
             flameGun = true;
             machineGun = false;
+            rayGun = false;
+            theAnimator.SetBool("Charging", false);
             //modifyTheMirror = true;
-            SpecialShootAndRaycastVisualization theSpecialShootAndRaycastVisualization =
-                GetComponent<SpecialShootAndRaycastVisualization>();
+            SpecialShootAndRaycastVisualization theSpecialShootAndRaycastVisualization = GetComponent<SpecialShootAndRaycastVisualization>();
 
             if (theSpecialShootAndRaycastVisualization.isShooting)
             {
@@ -61,9 +82,10 @@ public class OverridesInAnimator : MonoBehaviour
             }
         }
 
-        if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun"))
+        if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun"))
         {
-            machineGun = true;
+            rayGun = true;
+            machineGun = false;
             flameGun = false;
             //modifyTheMirror = false;
             //modifyTheMirror = true;
@@ -73,6 +95,15 @@ public class OverridesInAnimator : MonoBehaviour
                 theAnimator.SetFloat("Delay", 1f);
                 ////timerBeforeNextAnim = theAnimator.GetBool("TimerBeforeNextAnim");
                 //theAnimator.SetBool("Mirror", timerBeforeNextAnim);
+            }
+            theChargeWeapon = GameObject.FindWithTag("WeaponAim").GetComponent<ChargeWeapon>();
+            if (theChargeWeapon.Charging)
+            {
+                theAnimator.SetBool("Charging", true);
+            }
+            else
+            {
+                theAnimator.SetBool("Charging", false);
             }
         }
 

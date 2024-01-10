@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3fe9f48917a938745b7095ed4857e7e3
+guid: 46fe4e00f6d262b47a9c4f4e8eb62880
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Beam - 34_0
+      name: Beam - 39_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 592cce4ab4febe04693a85853f8b9445
-      internalID: 205707463
+      spriteID: e09e9f772863b17468fd9d7923b2dca1
+      internalID: -519483256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_1
+      name: Beam - 39_1
       rect:
         serializedVersion: 2
         x: 54
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5963b7012c2264e4181e7a823b6c7f8d
-      internalID: -211105907
+      spriteID: 6e62798df9fb1944c9450b8cb059941c
+      internalID: -1538686106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_2
+      name: Beam - 39_2
       rect:
         serializedVersion: 2
         x: 108
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 120b6be601bcf8e46bcb63145239d1ec
-      internalID: -865564218
+      spriteID: e69c5c5592557c4499b47e024ce00dca
+      internalID: 1693121126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_3
+      name: Beam - 39_3
       rect:
         serializedVersion: 2
         x: 162
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c74b92dd7f7d1142a5bfc67731efe00
-      internalID: -1283033443
+      spriteID: 7c22950be23bc0748aefa53faa194d01
+      internalID: -1217128337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_4
+      name: Beam - 39_4
       rect:
         serializedVersion: 2
         x: 216
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08e4a95437af70244a42d13e5356dd44
-      internalID: 1258096994
+      spriteID: e353bfa0041cbc74d99ceb37134286eb
+      internalID: -84347738
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_5
+      name: Beam - 39_5
       rect:
         serializedVersion: 2
         x: 270
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d0f0c2fa95da4844afbc5b10d47c3de
-      internalID: -398674368
+      spriteID: 75a734f0210bf714db6ecbb552be5f4b
+      internalID: 437677213
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_6
+      name: Beam - 39_6
       rect:
         serializedVersion: 2
         x: 324
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6925abaf7d6be46499c5d8c14e9d9655
-      internalID: 2057344600
+      spriteID: 149c1d15a8d354142b3926b8656f2244
+      internalID: -796535485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_7
+      name: Beam - 39_7
       rect:
         serializedVersion: 2
         x: 378
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb3b494c421fed84b8c94dfb71b32ced
-      internalID: 85474480
+      spriteID: 82f79066947013544ae876edf74d649a
+      internalID: -1359377750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_8
+      name: Beam - 39_8
       rect:
         serializedVersion: 2
         x: 432
@@ -292,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 643d67f97d9e6f64795a1b8498b5d4d0
-      internalID: -1557893917
+      spriteID: 59d40a5a1d57fb04383f43d4dd60ce49
+      internalID: -1339749830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_9
+      name: Beam - 39_9
       rect:
         serializedVersion: 2
         x: 486
@@ -313,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b32f6d01edf610248a0607a73d5f4540
-      internalID: -703081710
+      spriteID: 9ca00ba108865d94fab3d91ff14d3dd3
+      internalID: -986125031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_10
+      name: Beam - 39_10
       rect:
         serializedVersion: 2
         x: 540
@@ -334,14 +334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c2a399d090b5f647836da372ef633b8
-      internalID: -658397931
+      spriteID: 210afb71d81e73a48a8a4ed0591e5742
+      internalID: 449643490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_11
+      name: Beam - 39_11
       rect:
         serializedVersion: 2
         x: 594
@@ -355,14 +355,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44b568bf026e21d40b444d183e464f43
-      internalID: 666911367
+      spriteID: 0ee29cf9aa418a34d8ecdca77cbd32f3
+      internalID: 1736367812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_12
+      name: Beam - 39_12
       rect:
         serializedVersion: 2
         x: 648
@@ -376,14 +376,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95bed1d6dc6f11142abc745616ac5c88
-      internalID: 1876306531
+      spriteID: 01f74f219ae1fc344ba8e174220a7e2e
+      internalID: 884443263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_13
+      name: Beam - 39_13
       rect:
         serializedVersion: 2
         x: 702
@@ -397,14 +397,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a6a3ce8039730e468deb825e5428c35
-      internalID: -416237824
+      spriteID: ddbb483d962aa924e80f8349aa2cc36e
+      internalID: 1233028396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_14
+      name: Beam - 39_14
       rect:
         serializedVersion: 2
         x: 756
@@ -418,14 +418,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4716feb748782b42a1708fee422e8d8
-      internalID: 1538964381
+      spriteID: 2b3f1b070833b824aab05deecdb95d00
+      internalID: -1352786348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_15
+      name: Beam - 39_15
       rect:
         serializedVersion: 2
         x: 810
@@ -439,14 +439,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c48a83da5e1ddf40bfd381e570e574d
-      internalID: -1028402976
+      spriteID: d002d0eae9ae2ab4b8c690c96be0c070
+      internalID: 1177420534
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_16
+      name: Beam - 39_16
       rect:
         serializedVersion: 2
         x: 864
@@ -460,14 +460,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c00aad3d762c50546b959185722168ea
-      internalID: 1285407314
+      spriteID: ba21e6fe54bbaf546aaa7e168cb7d1da
+      internalID: -591026628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beam - 34_17
+      name: Beam - 39_17
       rect:
         serializedVersion: 2
         x: 918
@@ -481,8 +481,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3716686dcb36b004b81abc5c52835d5a
-      internalID: -2084495695
+      spriteID: 445784878ec2b2f4a8ca726516922808
+      internalID: -808702897
       vertices: []
       indices: 
       edges: []
@@ -498,24 +498,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Beam - 34_0: 205707463
-      Beam - 34_1: -211105907
-      Beam - 34_10: -658397931
-      Beam - 34_11: 666911367
-      Beam - 34_12: 1876306531
-      Beam - 34_13: -416237824
-      Beam - 34_14: 1538964381
-      Beam - 34_15: -1028402976
-      Beam - 34_16: 1285407314
-      Beam - 34_17: -2084495695
-      Beam - 34_2: -865564218
-      Beam - 34_3: -1283033443
-      Beam - 34_4: 1258096994
-      Beam - 34_5: -398674368
-      Beam - 34_6: 2057344600
-      Beam - 34_7: 85474480
-      Beam - 34_8: -1557893917
-      Beam - 34_9: -703081710
+      Beam - 39_0: -519483256
+      Beam - 39_1: -1538686106
+      Beam - 39_10: 449643490
+      Beam - 39_11: 1736367812
+      Beam - 39_12: 884443263
+      Beam - 39_13: 1233028396
+      Beam - 39_14: -1352786348
+      Beam - 39_15: 1177420534
+      Beam - 39_16: -591026628
+      Beam - 39_17: -808702897
+      Beam - 39_2: 1693121126
+      Beam - 39_3: -1217128337
+      Beam - 39_4: -84347738
+      Beam - 39_5: 437677213
+      Beam - 39_6: -796535485
+      Beam - 39_7: -1359377750
+      Beam - 39_8: -1339749830
+      Beam - 39_9: -986125031
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

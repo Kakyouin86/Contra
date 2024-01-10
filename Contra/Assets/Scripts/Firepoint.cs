@@ -71,12 +71,12 @@ public class Firepoint : MonoBehaviour
                 //////////////////////////////////////////////////////////////////////////////////////
                 //Idle and straight
                 //Torso IDLE while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Torso Idle") || (animationNames.name == "Torso Idle")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Torso Idle") || (animationNames.name == "Torso Idle")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);
                 }
                 //Torso IDLE while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Torso Idle") || (animationNames.name == "Torso Idle")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Torso Idle") || (animationNames.name == "Torso Idle")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);
                 }
@@ -95,12 +95,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Shoot STRAIGHT while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Shoot Straight") || (animationNames.name == "Shoot Straight")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Shoot Straight") || (animationNames.name == "Shoot Straight")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);
                 }
                 //Shoot STRAIGHT while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Shoot Straight") || (animationNames.name == "Shoot Straight")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Shoot Straight") || (animationNames.name == "Shoot Straight")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0, 2.03f);
                 }
@@ -119,12 +119,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Shoot UP while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Shoot Up") || (animationNames.name == "Hold Up")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Shoot Up") || (animationNames.name == "Hold Up")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 2.8f);
                 }
                 //Shoot UP while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Shoot Up") || (animationNames.name == "Hold Up")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Shoot Up") || (animationNames.name == "Hold Up")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 2.8f);
                 }
@@ -143,12 +143,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Shoot UP-RIGHT while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Hold Diagonal Up") || (animationNames.name == "Shoot Diagonal Up")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Hold Diagonal Up") || (animationNames.name == "Shoot Diagonal Up")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 2.5f);
                 }
                 //Shoot UP-LEFT while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Hold Diagonal Up") || (animationNames.name == "Shoot Diagonal Up")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Hold Diagonal Up") || (animationNames.name == "Shoot Diagonal Up")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 2.5f);
                 }
@@ -167,12 +167,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Shoot DOWN while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 1.8f);
                 }
                 //Shoot DOWN while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 1.8f);
                 }
@@ -191,12 +191,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Shoot DOWN-RIGHT while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Hold Diagonal Down") || (animationNames.name == "Shoot Diagonal Down")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Hold Diagonal Down") || (animationNames.name == "Shoot Diagonal Down")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.6f);
                 }
                 //Shoot DOWN-LEFT while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Hold Diagonal Down") || (animationNames.name == "Shoot Diagonal Down")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Hold Diagonal Down") || (animationNames.name == "Shoot Diagonal Down")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 1.6f);
                 }
@@ -215,12 +215,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Shoot STRAIGHT while WALKING and facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Shoot Straight Walking")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Shoot Straight Walking")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 2.03f);
                 }
                 //Shoot STRAIGHT while WALKING and facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Shoot Straight Walking")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Shoot Straight Walking")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.0f, 2.03f);
                 }
@@ -269,15 +269,26 @@ public class Firepoint : MonoBehaviour
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 2.5f);
                 }
 
+                //Shoot UP-RIGHT while WALKING and facing LEFT Ray Gun ***
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Ray Gun") || (weaponInventory.Content[0].ItemName == "Super Ray Gun")) && !theSpecialShootAndRaycastVisualization.isShooting && ((animationNames.name == "Torso Walking Diagonal Up") || (animationNames.name == "Shoot Diagonal Up Walking")) && character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.8f, 2.9f);
+                }
+                //Shoot UP-LEFT while WALKING and facing LEFT Ray Gun ***
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Ray Gun") || (weaponInventory.Content[0].ItemName == "Super Ray Gun")) && !theSpecialShootAndRaycastVisualization.isShooting && ((animationNames.name == "Torso Walking Diagonal Up") || (animationNames.name == "Shoot Diagonal Up Walking")) && !character.IsFacingRight)
+                {
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.8f, 2.85f);
+                }
+
                 ///////
 
                 //Shoot DOWN-RIGHT while WALKING while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Torso Walking Diagonal Down") || (animationNames.name == "Shoot Diagonal Down Walking")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Torso Walking Diagonal Down") || (animationNames.name == "Shoot Diagonal Down Walking")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.84f, 0.94f);
                 }
                 //Shoot DOWN-LEFT while WALKING while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Torso Walking Diagonal Down") || (animationNames.name == "Shoot Diagonal Down Walking")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Torso Walking Diagonal Down") || (animationNames.name == "Shoot Diagonal Down Walking")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.84f, 0.94f);
                 }
@@ -299,12 +310,12 @@ public class Firepoint : MonoBehaviour
 
                 //Jumps
                 //Shoot RIGHT while JUMPING and facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 1.85f);
                 }
                 //Shoot LEFT while JUMPING and facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 1.85f);
                 }
@@ -322,12 +333,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Shoot UP while JUMPING and facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") > 0))
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") > 0))
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.5f);
                 }
                 //Shoot UP while JUMPING and facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") > 0))
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") > 0))
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.5f);
                 }
@@ -346,12 +357,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Shoot DOWN while JUMPING and facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0))
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0))
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 2f);
                 }
                 //Shoot DOWN while JUMPING and facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0))
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0))
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 2f);
                 }
@@ -370,12 +381,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Shoot UP-RIGHT while JUMPING and facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") > 0)))
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") > 0)))
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.2f, 1.5f);
                 }
                 //Shoot UP-LEFT while JUMPING and facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") < 0)))
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") < 0)))
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 1.5f);
                 }
@@ -394,12 +405,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Shoot RIGHT-DOWN while JUMPING and facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") > 0)))
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") > 0)))
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.2f, 2f);
                 }
                 //Shoot LEFT-DOWN while JUMPING and facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") < 0)))
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Jumping")) && !character.IsFacingRight && (player.GetAxisRaw("Vertical") < 0 && (player.GetAxisRaw("Horizontal") < 0)))
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 2f);
                 }
@@ -421,12 +432,12 @@ public class Firepoint : MonoBehaviour
 
                 //Crouch
                 //Crouch IDLE while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting)  && ((animationNames.name == "Crouch") || (animationNames.name == "Crouch")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting)  && ((animationNames.name == "Crouch") || (animationNames.name == "Crouch")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 0.75f);
                 }
                 //Crouch IDLE while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting)  && ((animationNames.name == "Crouch") || (animationNames.name == "Crouch")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting)  && ((animationNames.name == "Crouch") || (animationNames.name == "Crouch")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 0.75f);
                 }
@@ -443,12 +454,12 @@ public class Firepoint : MonoBehaviour
                 }
 
                 //Crouch SHOOTING while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Crouch Shooting") || (animationNames.name == "Crouch Shooting")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Crouch Shooting") || (animationNames.name == "Crouch Shooting")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 0.75f);
                 }
                 //Crouch SHOOTING while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Crouch Shooting") || (animationNames.name == "Crouch Shooting")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Crouch Shooting") || (animationNames.name == "Crouch Shooting")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 0.75f);
                 }
@@ -470,12 +481,12 @@ public class Firepoint : MonoBehaviour
                 //Vertical ladder
 
                 //Vertical ladder shoot STRAIGHT while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Idle") || (animationNames.name == "Climb Shooting Forward")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Idle") || (animationNames.name == "Climb Shooting Forward")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 2.1f);
                 }
                 //Vertical ladder shoot STRAIGHT while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Idle") || (animationNames.name == "Climb Shooting Forward")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Idle") || (animationNames.name == "Climb Shooting Forward")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 2.1f);
                 }
@@ -494,12 +505,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Vertical ladder shoot BACK while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Back") || (animationNames.name == "Climb Shooting Back")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Back") || (animationNames.name == "Climb Shooting Back")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-1.4f, 2.1f);
                 }
                 //Vertical ladder shoot BACK while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Back") || (animationNames.name == "Climb Shooting Back")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Back") || (animationNames.name == "Climb Shooting Back")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(1.4f, 2.1f);
                 }
@@ -518,12 +529,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Vertical ladder shoot UP while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Up") || (animationNames.name == "Climb Shooting Up")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Up") || (animationNames.name == "Climb Shooting Up")) && character.IsFacingRight)
                 {
-                    theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 2.1f);
+                    theFirepoint.gameObject.transform.localPosition = new Vector3(-0.2f, 2.8f);
                 }
                 //Vertical ladder shoot UP while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Up") || (animationNames.name == "Climb Shooting Up")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Up") || (animationNames.name == "Climb Shooting Up")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 2.8f);
                 }
@@ -542,12 +553,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Vertical ladder shoot DOWN while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Down") || (animationNames.name == "Climb Shooting Down")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Down") || (animationNames.name == "Climb Shooting Down")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.5f, 1.3f);
                 }
                 //Vertical ladder shoot DOWN while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Down") || (animationNames.name == "Climb Shooting Down")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Down") || (animationNames.name == "Climb Shooting Down")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.5f, 1.3f);
                 }
@@ -566,12 +577,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Vertical ladder shoot UP-RIGHT while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Diagonal Up Forward") || (animationNames.name == "Climb Shooting Diagonal Up Forward")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Diagonal Up Forward") || (animationNames.name == "Climb Shooting Diagonal Up Forward")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 2.5f);
                 }
                 //Vertical ladder shoot UP-LEFT while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Diagonal Up Forward") || (animationNames.name == "Climb Shooting Diagonal Up Forward")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Diagonal Up Forward") || (animationNames.name == "Climb Shooting Diagonal Up Forward")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 2.5f);
                 }
@@ -590,12 +601,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Vertical ladder shoot UP-LEFT while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Diagonal Up Back") || (animationNames.name == "Climb Shooting Diagonal Up Back")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Diagonal Up Back") || (animationNames.name == "Climb Shooting Diagonal Up Back")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-1.3f, 2.4f);
                 }
                 //Vertical ladder shoot UP-RIGHT while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Diagonal Up Back") || (animationNames.name == "Climb Shooting Diagonal Up Back")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Diagonal Up Back") || (animationNames.name == "Climb Shooting Diagonal Up Back")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(1.3f, 2.4f);
                 }
@@ -614,12 +625,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Vertical ladder shoot DOWN-RIGHT while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Diagonal Down Forward") || (animationNames.name == "Climb Shooting Diagonal Down Forward")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Diagonal Down Forward") || (animationNames.name == "Climb Shooting Diagonal Down Forward")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 1.6f);
                 }
                 //Vertical ladder shoot DOWN-RIGHT while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Diagonal Down Forward") || (animationNames.name == "Climb Shooting Diagonal Down Forward")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Diagonal Down Forward") || (animationNames.name == "Climb Shooting Diagonal Down Forward")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 1.6f);
                 }
@@ -638,12 +649,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Vertical ladder shoot DOWN-LEFT while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Diagonal Down Back") || (animationNames.name == "Climb Shooting Diagonal Down Back")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Diagonal Down Back") || (animationNames.name == "Climb Shooting Diagonal Down Back")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-1.5f, 1.7f);
                 }
                 //Vertical ladder shoot DOWN-LEFT while facing LEFT  Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Diagonal Down Back") || (animationNames.name == "Climb Shooting Diagonal Down Back")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Hold Diagonal Down Back") || (animationNames.name == "Climb Shooting Diagonal Down Back")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(1.5f, 1.7f);
                 }
@@ -666,12 +677,12 @@ public class Firepoint : MonoBehaviour
                 //Horizontal ladder
 
                 //Horizontal ladder shoot STRAIGHT while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.85f);
                 }
                 //Horizontal ladder shoot STRAIGHT while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.85f);
                 }
@@ -690,12 +701,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Horizontal ladder shoot BACK while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Back") || (animationNames.name == "Horizontal Ladder Shooting Back")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Back") || (animationNames.name == "Horizontal Ladder Shooting Back")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-1.1f, 2.1f);
                 }
                 //Horizontal ladder shoot BACK while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Back") || (animationNames.name == "Horizontal Ladder Shooting Back")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Back") || (animationNames.name == "Horizontal Ladder Shooting Back")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(1.1f, 2.1f);
                 }
@@ -714,12 +725,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Horizontal ladder shoot UP while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Up") || (animationNames.name == "Horizontal Ladder Shooting Up")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Up") || (animationNames.name == "Horizontal Ladder Shooting Up")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 2.7f);
                 }
                 //Horizontal ladder shoot UP while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Up") || (animationNames.name == "Horizontal Ladder Shooting Up")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Up") || (animationNames.name == "Horizontal Ladder Shooting Up")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.1f, 2.7f);
                 }
@@ -738,12 +749,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Horizontal ladder shoot DOWN while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Down") || (animationNames.name == "Horizontal Ladder Shooting Down")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Down") || (animationNames.name == "Horizontal Ladder Shooting Down")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.2f, 1.1f);
                 }
                 //Horizontal ladder shoot DOWN while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Down") || (animationNames.name == "Horizontal Ladder Shooting Down")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Down") || (animationNames.name == "Horizontal Ladder Shooting Down")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.2f, 1.1f);
                 }
@@ -762,12 +773,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Horizontal ladder shoot UP-RIGHT while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Forward")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Forward")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 2.3f);
                 }
                 //Horizontal ladder shoot UP-LEFT while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Forward")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Forward")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 2.3f);
                 }
@@ -786,12 +797,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Horizontal ladder shoot UP-LEFT while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Back")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Back")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-1.1f, 2.3f);
                 }
                 //Horizontal ladder shoot UP-RIGHT while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Back")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Diagonal Up Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Up Back")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(1.1f, 2.3f);
                 }
@@ -810,12 +821,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Horizontal ladder shoot DOWN-RIGHT while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Forward")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Forward")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 1.4f);
                 }
                 //Horizontal ladder shoot DOWN-RIGHT while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Forward")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Forward") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Forward")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.1f, 1.4f);
                 }
@@ -834,12 +845,12 @@ public class Firepoint : MonoBehaviour
                 ///////
 
                 //Horizontal ladder shoot DOWN-LEFT while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Back")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Back")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-1.3f, 1.7f);
                 }
                 //Horizontal ladder shoot DOWN-LEFT while facing LEFT  Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Back")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Hold Diagonal Down Back") || (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Back")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(1.3f, 1.7f);
                 }
@@ -882,13 +893,30 @@ public class Firepoint : MonoBehaviour
 
                 //////////////////////////////////////////////////////////////////////////////////////
                 //This moves the Fire Burst or Smoke Particle Effect when playing some animations, so that it doesn't create the effect that the shot is way away from the burst.
-
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting) )
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting))
                 {
                     theFireIndicator = GameObject.FindWithTag("FireIndicator");
                     if ((animationNames.name == "Shoot Diagonal Up Walking") || (animationNames.name == "Torso Walking Diagonal Up"))
                     {
                         theFireIndicator.transform.localPosition = new Vector3(0.29f, 0.08f, 0.0f);
+                    }
+                    else if ((animationNames.name == "Shoot Diagonal Down Walking") || (animationNames.name == "Torso Walking Diagonal Down"))
+
+                    {
+                        theFireIndicator.transform.localPosition = new Vector3(0.25f, -0.16f, 0.0f);
+                    }
+                    else
+                    {
+                        theFireIndicator.transform.localPosition = new Vector3(1.5f, 0.0f, 0.0f);
+                    }
+                }
+
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun"))
+                {
+                    theFireIndicator = GameObject.FindWithTag("FireIndicator");
+                    if ((animationNames.name == "Shoot Diagonal Up Walking") || (animationNames.name == "Torso Walking Diagonal Up"))
+                    {
+                        theFireIndicator.transform.localPosition = new Vector3(0.9f, -0.08f, 0.0f);
                     }
                     else if ((animationNames.name == "Shoot Diagonal Down Walking") || (animationNames.name == "Torso Walking Diagonal Down"))
 

@@ -17,6 +17,7 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
     public Animator theAnimator;
     public GameObject theFirepoint;
     public WeaponAim weaponAim;
+    public OverridesInAnimator theOverridesInAnimator;
     public bool horizontalLadder = false;
     public bool canNotDettach = false;
     public BoxCollider2D theBCTrigger;
@@ -38,6 +39,7 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
     public Material originalMaterial;
     public Material flashMaterial;
     public bool characterDead = false;
+    public float chargingTimerForRayGun = 1f;
 
     private void Awake()
     {
@@ -54,6 +56,7 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
         theFirepoint = GameObject.FindWithTag("Firepoint");
         slopesDetector = GameObject.FindWithTag("SlopesDetector");
         theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>();
+        theOverridesInAnimator = GetComponent<OverridesInAnimator>();
         theBCTrigger = GetComponent<BoxCollider2D>();
         theController.State.JustGotGrounded = true;
         //weaponAim = GameObject.FindWithTag("WeaponAim").GetComponent<WeaponAim>();
@@ -116,9 +119,21 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //If I'm in the ladder and shooting, then I'm holding the "Hold Position". Now I can't move.
-        if (character.MovementState.CurrentState == CharacterStates.MovementStates.LadderClimbing && theAnimator.GetBool("isShooting"))
+
+        /*if (character.MovementState.CurrentState == CharacterStates.MovementStates.LadderClimbing && theAnimator.GetBool("isShooting"))
         {
             theAnimator.SetBool("Hold", true);
+        }*/
+        if (character.MovementState.CurrentState == CharacterStates.MovementStates.LadderClimbing && theAnimator.GetBool("isShooting"))
+        {
+            if (theAnimator.GetBool("Charging"))
+            {
+                theAnimator.SetBool("Hold", false);
+            }
+            else
+            {
+                theAnimator.SetBool("Hold", true);
+            }
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -202,22 +217,69 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
             {
                 horizontalMovementCorgi.AbilityPermitted = false;
             }
+            CharacterLadder characterLadder = GetComponent<CharacterLadder>();
+            bool isWeaponIdle = theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponIdle;
+            bool isWeaponUse = theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse;
+            bool isWeaponDelay = theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponDelayBetweenUses;
+            bool isWeaponStop = theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponStop;
+            bool isWeaponCooldown = theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponInCooldown;
+            bool isHoldPosition = player.GetButton("HoldPosition");
+            bool isShootingTheSpecialShoot = theSpecialShootAndRaycastVisualization.isShooting;
+            bool isCharging = theAnimator.GetBool("Charging");
+            bool chargingPause = theAnimator.GetBool("ChargingPause");
+            //Debug.Log(theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState);
+            //Debug.Log(chargingTimerForRayGun);
 
-            if (theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponIdle)
+            if (isCharging && chargingTimerForRayGun > 0)
             {
-                if (player.GetButton(("HoldPosition")) || theSpecialShootAndRaycastVisualization.isShooting)
+                chargingTimerForRayGun -= Time.deltaTime;
+            }
+
+            if (!isCharging || isWeaponCooldown)
+            {
+                chargingTimerForRayGun = 0.1f;
+            }
+            
+            if (isWeaponIdle)
+            {
+                if (isHoldPosition || isShootingTheSpecialShoot)
                 {
-                    //theAnimator.SetBool("Hold", true);
-                    GetComponent<CharacterLadder>().LadderClimbingSpeed = 0f;
+                    characterLadder.LadderClimbingSpeed = 0f;
+                    if (theOverridesInAnimator.rayGun)
+                    {
+                        theAnimator.SetBool("ChargingPause", true);
+                    }
+                    else
+                    {
+                        theAnimator.SetBool("ChargingPause", false);
+                    }
                 }
                 else
                 {
-                    GetComponent<CharacterLadder>().LadderClimbingSpeed = 5f;
+                    characterLadder.LadderClimbingSpeed = 5f;
+                    theAnimator.SetBool("ChargingPause", false);
                 }
             }
+
             else
             {
-                GetComponent<CharacterLadder>().LadderClimbingSpeed = 0f;
+                if ((isWeaponDelay || isWeaponUse) && isCharging && chargingTimerForRayGun < 0f && !isHoldPosition && theOverridesInAnimator.rayGun)
+                {
+                    characterLadder.LadderClimbingSpeed = 5f;
+                    theAnimator.SetBool("ChargingPause", false);
+                }
+                else
+                {
+                    characterLadder.LadderClimbingSpeed = 0f;
+                    if (theOverridesInAnimator.rayGun)
+                    {
+                        theAnimator.SetBool("ChargingPause", true);
+                    }
+                    else
+                    {
+                        theAnimator.SetBool("ChargingPause", false);
+                    }
+                }
             }
         }
 
@@ -336,6 +398,16 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
         yield return new WaitForSeconds(0.2f);
         theBCLadder.SetActive(true);
         character.GetComponent<CharacterJump>().AbilityPermitted = true;
+    }
+
+    IEnumerator LittleWaitForRayGun()
+    {
+        //Debug.Log("Here7");
+        yield return new WaitForSeconds(0.2f);
+        theAnimator.SetBool("ChargingPause", true);
+        chargingTimerForRayGun = 0.2f;
+        CharacterLadder characterLadder = GetComponent<CharacterLadder>();
+        characterLadder.LadderClimbingSpeed = 5f;
     }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

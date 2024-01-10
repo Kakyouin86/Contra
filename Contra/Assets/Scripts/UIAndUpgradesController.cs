@@ -309,6 +309,34 @@ public class UIAndUpgradesController : MonoBehaviour
             slot5SpreadGunPlayer1.color = fadingColor;
             slot5SpreadGunPlusPlayer1.color = fadingColor;
         }
+
+        if (!rayGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == rayGunName)
+        {
+            slot1MachineGunPlayer1.color = fadingColor;
+            slot1MachineGunPlusPlayer1.color = fadingColor;
+            slot2FlameGunPlayer1.color = fadingColor;
+            slot2FlameGunPlusPlayer1.color = fadingColor;
+            slot3RayGunPlayer1.color = originalColor;
+            slot3RayGunPlusPlayer1.color = fadingColor;
+            slot4ShotGunPlayer1.color = fadingColor;
+            slot4ShotGunPlusPlayer1.color = fadingColor;
+            slot5SpreadGunPlayer1.color = fadingColor;
+            slot5SpreadGunPlusPlayer1.color = fadingColor;
+        }
+
+        if (rayGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == rayGunPlusName)
+        {
+            slot1MachineGunPlayer1.color = fadingColor;
+            slot1MachineGunPlusPlayer1.color = fadingColor;
+            slot2FlameGunPlayer1.color = fadingColor;
+            slot2FlameGunPlusPlayer1.color = fadingColor;
+            slot3RayGunPlayer1.color = fadingColor;
+            slot3RayGunPlusPlayer1.color = originalColor;
+            slot4ShotGunPlayer1.color = fadingColor;
+            slot4ShotGunPlusPlayer1.color = fadingColor;
+            slot5SpreadGunPlayer1.color = fadingColor;
+            slot5SpreadGunPlusPlayer1.color = fadingColor;
+        }
     }
 
     public void DisableWeapons()
