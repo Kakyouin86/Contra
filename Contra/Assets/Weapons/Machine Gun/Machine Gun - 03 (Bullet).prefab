@@ -142,7 +142,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0839245, y: 0}
@@ -337,12 +337,12 @@ MonoBehaviour:
   objectToInstantiateWater: {fileID: 5650233908315421779, guid: 443b024fa7e91cc4fa95ab8eec01b506,
     type: 3}
   spawnPosition: {x: 0.4, y: 0, z: 0}
-  spawnPositionWater: {x: -0.5, y: 0, z: 0}
+  spawnPositionWater: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
   doNotInstantiateTheBurst: 0
   ObstaclesLayerMask:
     serializedVersion: 2
-    m_Bits: 272
+    m_Bits: 256
   distanceToPlayer: 0
   thresholdNotToShowBurst: 2
   thresholdNotToShowBurstWater: 2
