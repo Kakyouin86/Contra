@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 69b761d12ff81a74da3c00c30715ef85
+guid: 5888cf3942852fa40947989edba84283
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Vertical Puff - 10_0
+      name: Star - 01_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 28
-        height: 31
+        width: 14
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8796fa2a81f24144a948f03b32935731
-      internalID: -822248463
+      spriteID: 1cc8deefc0ffd8f4f92be7bc2b537423
+      internalID: 1899495576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vertical Puff - 10_1
+      name: Star - 01_1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 0
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa5d81e2a34b64647ad3c2622a108fec
+      internalID: -1315351656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star - 01_2
       rect:
         serializedVersion: 2
         x: 28
         y: 0
-        width: 28
-        height: 31
+        width: 14
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db92a620315021649aa2fa703a8fa37e
-      internalID: -2108263924
+      spriteID: bbd2e674e25af5e44a9044057b776ae8
+      internalID: 1766384466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vertical Puff - 10_2
+      name: Star - 01_3
       rect:
         serializedVersion: 2
-        x: 56
+        x: 42
         y: 0
-        width: 28
-        height: 31
+        width: 14
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,92 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 078de5a2f479ea24a88b4d9d55cf3fc7
-      internalID: 791426928
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertical Puff - 10_3
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 0
-        width: 28
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4460b6ecdef8422409979e06919db10f
-      internalID: 1738346312
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertical Puff - 10_4
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 0
-        width: 28
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1bcc34bc6d30d63419236c1b62cfcc7b
-      internalID: -2076493184
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertical Puff - 10_5
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 0
-        width: 28
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cfbc4d64d6ae1514295754231ca10b24
-      internalID: -905872270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertical Puff - 10_6
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 0
-        width: 28
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca25c0048d72c4642ad3cbd89699a28e
-      internalID: -1969658793
+      spriteID: 68747f614c8aefb48ae0e20005f59e3a
+      internalID: 1974182770
       vertices: []
       indices: 
       edges: []
@@ -267,13 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Vertical Puff - 10_0: -822248463
-      Vertical Puff - 10_1: -2108263924
-      Vertical Puff - 10_2: 791426928
-      Vertical Puff - 10_3: 1738346312
-      Vertical Puff - 10_4: -2076493184
-      Vertical Puff - 10_5: -905872270
-      Vertical Puff - 10_6: -1969658793
+      Star - 01_0: 1899495576
+      Star - 01_1: -1315351656
+      Star - 01_2: 1766384466
+      Star - 01_3: 1974182770
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

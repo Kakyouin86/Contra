@@ -348,3 +348,6 @@ MonoBehaviour:
   thresholdNotToShowBurstWater: 2
   thePlayer: {fileID: 0}
   weaponAim: {fileID: 0}
+  doNotInstantiateWithAngleWater: 1
+  doNotInstantiateWithAnglePlatform: 0
+  offsetMagnitude: 0.1

@@ -30,6 +30,8 @@ TagManager:
   - NormalWeapon
   - UpgradedWeapon
   - Grenade
+  - RayIndicator
+  - Spark
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 69b761d12ff81a74da3c00c30715ef85
+guid: d893dd67d8325184aa392557ef8cb11f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Vertical Puff - 10_0
+      name: Sparks - 57_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 28
-        height: 31
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8796fa2a81f24144a948f03b32935731
-      internalID: -822248463
+      spriteID: 3fe235b6090059b469c886d3a5179eb9
+      internalID: 935220211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vertical Puff - 10_1
+      name: Sparks - 57_1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 0
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e6843701be76142a77eeef2f211b40
+      internalID: -61423096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sparks - 57_2
       rect:
         serializedVersion: 2
         x: 28
         y: 0
-        width: 28
-        height: 31
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +166,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db92a620315021649aa2fa703a8fa37e
-      internalID: -2108263924
+      spriteID: 2fab7c6f5c230954fa01fa0f1f6a577f
+      internalID: -1909553779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vertical Puff - 10_2
+      name: Sparks - 57_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b4ace942469384d9171bb70a57c510
+      internalID: 407524815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sparks - 57_4
       rect:
         serializedVersion: 2
         x: 56
         y: 0
-        width: 28
-        height: 31
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +208,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 078de5a2f479ea24a88b4d9d55cf3fc7
-      internalID: 791426928
+      spriteID: 47c5ebe87f2dc0347ac610c97a699119
+      internalID: -650677705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vertical Puff - 10_3
+      name: Sparks - 57_5
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6109ff55713ef34eaee931bfd817940
+      internalID: 1869886912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sparks - 57_6
       rect:
         serializedVersion: 2
         x: 84
         y: 0
-        width: 28
-        height: 31
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +250,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4460b6ecdef8422409979e06919db10f
-      internalID: 1738346312
+      spriteID: 60d35db676ae9544aa09cd6ddd5682da
+      internalID: 1637714286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vertical Puff - 10_4
+      name: Sparks - 57_7
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f49fd9de8cf15745b57a01549d87dde
+      internalID: -1514896965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sparks - 57_8
       rect:
         serializedVersion: 2
         x: 112
         y: 0
-        width: 28
-        height: 31
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +292,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bcc34bc6d30d63419236c1b62cfcc7b
-      internalID: -2076493184
+      spriteID: 3fe4ec30ee71f5d42a3498534350e72c
+      internalID: -1356013649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vertical Puff - 10_5
+      name: Sparks - 57_9
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 0
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1fbb87278c8ca745917908b0d83035f
+      internalID: 1871731944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sparks - 57_10
       rect:
         serializedVersion: 2
         x: 140
         y: 0
-        width: 28
-        height: 31
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +334,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfbc4d64d6ae1514295754231ca10b24
-      internalID: -905872270
+      spriteID: d1c8b5ccb5be65f468b2211679846861
+      internalID: 858861595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vertical Puff - 10_6
+      name: Sparks - 57_11
       rect:
         serializedVersion: 2
-        x: 168
+        x: 154
         y: 0
-        width: 28
-        height: 31
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,8 +355,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca25c0048d72c4642ad3cbd89699a28e
-      internalID: -1969658793
+      spriteID: a458ff72ea1c65548b7bdb101ae69240
+      internalID: 1426608981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sparks - 57_12
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 420c2d2ae32c0e8448d9182ca608025c
+      internalID: -665293756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sparks - 57_13
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 0
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50914e1ce59df9f4ca7113d5aa7e71bf
+      internalID: 778130969
       vertices: []
       indices: 
       edges: []
@@ -267,13 +414,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Vertical Puff - 10_0: -822248463
-      Vertical Puff - 10_1: -2108263924
-      Vertical Puff - 10_2: 791426928
-      Vertical Puff - 10_3: 1738346312
-      Vertical Puff - 10_4: -2076493184
-      Vertical Puff - 10_5: -905872270
-      Vertical Puff - 10_6: -1969658793
+      Sparks - 57_0: 935220211
+      Sparks - 57_1: -61423096
+      Sparks - 57_10: 858861595
+      Sparks - 57_11: 1426608981
+      Sparks - 57_12: -665293756
+      Sparks - 57_13: 778130969
+      Sparks - 57_2: -1909553779
+      Sparks - 57_3: 407524815
+      Sparks - 57_4: -650677705
+      Sparks - 57_5: 1869886912
+      Sparks - 57_6: 1637714286
+      Sparks - 57_7: -1514896965
+      Sparks - 57_8: -1356013649
+      Sparks - 57_9: 1871731944
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,15 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq.Expressions;
 using MoreMountains.CorgiEngine;
 using MoreMountains.InventoryEngine;
-using Rewired;
+using MoreMountains.Tools;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIAndUpgradesController : MonoBehaviour
+public class UIAndUpgradesController : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
     [Header("Acquired Power Ups")]
     public bool grenadePlus = false;
@@ -24,6 +20,10 @@ public class UIAndUpgradesController : MonoBehaviour
 
     [Header("Components")]
     public Image avatarPlayer1;
+    public Color originalColorAvatar;
+    public bool avatarPlayer1IsFlashing = false;
+    public Color flashColor = Color.red; // Set the flash color in the inspector
+    public float flashSpeed = 5.0f;
     public Image theUIImagePlayer1;
     public Image allTheEmptySlotsPlayer1;
     public Image slot1MachineGunPlayer1;
@@ -77,6 +77,7 @@ public class UIAndUpgradesController : MonoBehaviour
         theWeaponInventory = GameObject.FindWithTag("WeaponInventory").GetComponent<Inventory>();
         thePlayer = GameObject.FindWithTag("Player").GetComponent<ToggleWeapons>();
         avatarPlayer1.enabled = true;
+        originalColorAvatar = avatarPlayer1.color;
         theUIImagePlayer1.enabled = true;
         allTheEmptySlotsPlayer1.enabled = true;
         slot2FlameGunPlayer1.enabled = false;
@@ -247,12 +248,49 @@ public class UIAndUpgradesController : MonoBehaviour
         }
     }
 
+
+    protected virtual void OnEnable()
+    {
+        this.MMEventStartListening<CorgiEngineEvent>();
+    }
+
+    /// <summary>
+    /// OnDisable, we stop listening to events.
+    /// </summary>
+    protected virtual void OnDisable()
+    {
+        this.MMEventStopListening<CorgiEngineEvent>();
+    }
+
+    public void OnMMEvent(CorgiEngineEvent corgiEngineEvent)
+    {
+        if (corgiEngineEvent.EventType == CorgiEngineEventTypes.PlayerDeath)
+        {
+            avatarPlayer1.GetComponent<Animator>().SetBool("Death",true);
+            avatarPlayer1IsFlashing = true;
+        }
+        else
+        {
+            avatarPlayer1.GetComponent<Animator>().SetBool("Death", false);
+            avatarPlayer1IsFlashing = false;
+        }
+    }
+
     void Update()
     {
         GameObject grenadesLeft = GameObject.FindGameObjectWithTag("Grenade");
         grenadesPlayer1.text = grenadesLeft.GetComponent<WeaponAmmo>().CurrentAmmoAvailable.ToString();
         GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
         livesPlayer1.text = "X" + gameController.GetComponent<GameManager>().CurrentLives;
+        if (avatarPlayer1IsFlashing)
+        {
+            float lerpValue = Mathf.PingPong(Time.time * flashSpeed, 1.0f);
+            avatarPlayer1.color = Color.Lerp(originalColorAvatar, flashColor, lerpValue);
+        }
+        else
+        {
+           avatarPlayer1.color = originalColorAvatar;
+        }
 
         if (!machineGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == machineGunName)
         {

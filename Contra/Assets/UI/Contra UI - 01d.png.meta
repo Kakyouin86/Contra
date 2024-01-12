@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 69b761d12ff81a74da3c00c30715ef85
+guid: e7954bfa6315e714baddb393d237b9c0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Vertical Puff - 10_0
+      name: Contra UI - 01d_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 28
-        height: 31
+        width: 154
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8796fa2a81f24144a948f03b32935731
-      internalID: -822248463
+      spriteID: 8a8897fd55018544bbafe65709552240
+      internalID: -50418038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vertical Puff - 10_1
+      name: Contra UI - 01d_1
       rect:
         serializedVersion: 2
-        x: 28
+        x: 154
         y: 0
-        width: 28
-        height: 31
+        width: 154
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db92a620315021649aa2fa703a8fa37e
-      internalID: -2108263924
+      spriteID: 0cc174464a26683498843b521c592a4c
+      internalID: -1228432200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vertical Puff - 10_2
+      name: Contra UI - 01d_2
       rect:
         serializedVersion: 2
-        x: 56
+        x: 308
         y: 0
-        width: 28
-        height: 31
+        width: 154
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,92 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 078de5a2f479ea24a88b4d9d55cf3fc7
-      internalID: 791426928
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertical Puff - 10_3
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 0
-        width: 28
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4460b6ecdef8422409979e06919db10f
-      internalID: 1738346312
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertical Puff - 10_4
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 0
-        width: 28
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1bcc34bc6d30d63419236c1b62cfcc7b
-      internalID: -2076493184
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertical Puff - 10_5
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 0
-        width: 28
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cfbc4d64d6ae1514295754231ca10b24
-      internalID: -905872270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vertical Puff - 10_6
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 0
-        width: 28
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca25c0048d72c4642ad3cbd89699a28e
-      internalID: -1969658793
+      spriteID: 17bcb7d35f5fcfe40bb23ec2cc5df63e
+      internalID: -2053319564
       vertices: []
       indices: 
       edges: []
@@ -267,13 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Vertical Puff - 10_0: -822248463
-      Vertical Puff - 10_1: -2108263924
-      Vertical Puff - 10_2: 791426928
-      Vertical Puff - 10_3: 1738346312
-      Vertical Puff - 10_4: -2076493184
-      Vertical Puff - 10_5: -905872270
-      Vertical Puff - 10_6: -1969658793
+      Contra UI - 01d_0: -50418038
+      Contra UI - 01d_1: -1228432200
+      Contra UI - 01d_2: -2053319564
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

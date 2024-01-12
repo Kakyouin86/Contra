@@ -128,7 +128,7 @@ BoxCollider2D:
     m_Bits: 16
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 768
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -156,7 +156,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.3295107, y: 1.3927563}
+  m_Size: {x: 2.2227743, y: 0.85741}
   m_EdgeRadius: 0
 --- !u!50 &5676914445041900970
 Rigidbody2D:
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToInstantiate: {fileID: 4836815659534229341, guid: 7ad8ea74aa7068849bd9824fd58daeff,
     type: 3}
-  objectToInstantiateWater: {fileID: 5650233908315421779, guid: 443b024fa7e91cc4fa95ab8eec01b506,
+  objectToInstantiateWater: {fileID: 4836815659534229341, guid: 7ad8ea74aa7068849bd9824fd58daeff,
     type: 3}
   spawnPosition: {x: 0.4, y: 0, z: 0}
   spawnPositionWater: {x: 0, y: 0, z: 0}
@@ -348,3 +348,6 @@ MonoBehaviour:
   thresholdNotToShowBurstWater: 2
   thePlayer: {fileID: 0}
   weaponAim: {fileID: 0}
+  doNotInstantiateWithAngleWater: 1
+  doNotInstantiateWithAnglePlatform: 0
+  offsetMagnitude: 0.1

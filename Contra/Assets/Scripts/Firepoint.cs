@@ -28,6 +28,8 @@ public class Firepoint : MonoBehaviour
     public SpecialShootAndRaycastVisualization theSpecialShootAndRaycastVisualization;
     public GameObject theFireIndicator;
     public GameObject theSmokeIndicator;
+    public GameObject[] theRayIndicator;
+    public GameObject[] sparks;
     public float originalWeaponAimRotSpeed;
     public float instantWeaponAimRotSpeed = 0f;
     public ProjectileWeapon projectileWeapon;
@@ -481,23 +483,23 @@ public class Firepoint : MonoBehaviour
                 //Vertical ladder
 
                 //Vertical ladder shoot STRAIGHT while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Idle") || (animationNames.name == "Climb Shooting Forward")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Idle") || (animationNames.name == "Climb Shooting Forward") || (animationNames.name == "Climb")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.3f, 2.1f);
                 }
                 //Vertical ladder shoot STRAIGHT while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Idle") || (animationNames.name == "Climb Shooting Forward")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Climb Idle") || (animationNames.name == "Climb Shooting Forward") || (animationNames.name == "Climb")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.3f, 2.1f);
                 }
 
                 //Vertical ladder shoot STRAIGHT while facing RIGHT Flame Gun |||
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Flame Gun") || (weaponInventory.Content[0].ItemName == "Super Flame Gun")) && !theSpecialShootAndRaycastVisualization.isShooting && ((animationNames.name == "Climb Idle") || (animationNames.name == "Climb Shooting Forward")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Flame Gun") || (weaponInventory.Content[0].ItemName == "Super Flame Gun")) && !theSpecialShootAndRaycastVisualization.isShooting && ((animationNames.name == "Climb Idle") || (animationNames.name == "Climb Shooting Forward") || (animationNames.name == "Climb")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.35f, 2.3f);
                 }
                 //Vertical ladder shoot STRAIGHT while facing LEFT Flame Gun |||
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Flame Gun") || (weaponInventory.Content[0].ItemName == "Super Flame Gun")) && !theSpecialShootAndRaycastVisualization.isShooting && ((animationNames.name == "Climb Idle") || (animationNames.name == "Climb Shooting Forward")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Flame Gun") || (weaponInventory.Content[0].ItemName == "Super Flame Gun")) && !theSpecialShootAndRaycastVisualization.isShooting && ((animationNames.name == "Climb Idle") || (animationNames.name == "Climb Shooting Forward") || (animationNames.name == "Climb")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.35f, 2.3f);
                 }
@@ -677,26 +679,27 @@ public class Firepoint : MonoBehaviour
                 //Horizontal ladder
 
                 //Horizontal ladder shoot STRAIGHT while facing RIGHT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward") || (animationNames.name == "Horizontal Ladder")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.85f);
                 }
                 //Horizontal ladder shoot STRAIGHT while facing LEFT Machine Gun ---
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun" || theSpecialShootAndRaycastVisualization.isShooting) && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward") || (animationNames.name == "Horizontal Ladder")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0f, 1.85f);
                 }
 
                 //Horizontal ladder shoot STRAIGHT while facing RIGHT Flame Gun |||
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Flame Gun") || (weaponInventory.Content[0].ItemName == "Super Flame Gun")) && !theSpecialShootAndRaycastVisualization.isShooting && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Flame Gun") || (weaponInventory.Content[0].ItemName == "Super Flame Gun")) && !theSpecialShootAndRaycastVisualization.isShooting && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward") || (animationNames.name == "Horizontal Ladder")) && character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(0.5f, 2.15f);
                 }
                 //Horizontal ladder shoot STRAIGHT while facing LEFT Flame Gun |||
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Flame Gun") || (weaponInventory.Content[0].ItemName == "Super Flame Gun")) && !theSpecialShootAndRaycastVisualization.isShooting && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward")) && !character.IsFacingRight)
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Flame Gun") || (weaponInventory.Content[0].ItemName == "Super Flame Gun")) && !theSpecialShootAndRaycastVisualization.isShooting && ((animationNames.name == "Horizontal Ladder Idle") || (animationNames.name == "Horizontal Ladder Shooting Forward") || (animationNames.name == "Horizontal Ladder")) && !character.IsFacingRight)
                 {
                     theFirepoint.gameObject.transform.localPosition = new Vector3(-0.5f, 2.15f);
                 }
+                
 
                 ///////
 
@@ -910,25 +913,9 @@ public class Firepoint : MonoBehaviour
                         theFireIndicator.transform.localPosition = new Vector3(1.5f, 0.0f, 0.0f);
                     }
                 }
-
-                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Ray Gun" || weaponInventory.Content[0].ItemName == "Super Ray Gun"))
-                {
-                    theFireIndicator = GameObject.FindWithTag("FireIndicator");
-                    if ((animationNames.name == "Shoot Diagonal Up Walking") || (animationNames.name == "Torso Walking Diagonal Up"))
-                    {
-                        theFireIndicator.transform.localPosition = new Vector3(0.9f, -0.08f, 0.0f);
-                    }
-                    else if ((animationNames.name == "Shoot Diagonal Down Walking") || (animationNames.name == "Torso Walking Diagonal Down"))
-
-                    {
-                        theFireIndicator.transform.localPosition = new Vector3(0.25f, -0.16f, 0.0f);
-                    }
-                    else
-                    {
-                        theFireIndicator.transform.localPosition = new Vector3(1.5f, 0.0f, 0.0f);
-                    }
-                }
-
+                
+                //////////////////////////////////////////////////////////////////////////////////////
+                // Edits in the Fire Indicator
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Flame Gun") || (weaponInventory.Content[0].ItemName == "Super Flame Gun")))
                 {
                     theSmokeIndicator = GameObject.FindWithTag("SmokeIndicator");
@@ -1030,6 +1017,205 @@ public class Firepoint : MonoBehaviour
                         {
                             theSmokeIndicator.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
                             theSmokeIndicator.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                        }
+                    }
+                }
+
+                //////////////////////////////////////////////////////////////////////////////////////
+                // Edits in the Ray Indicator
+                if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Ray Gun") || (weaponInventory.Content[0].ItemName == "Super Ray Gun")))
+                {
+                    theRayIndicator = GameObject.FindGameObjectsWithTag("RayIndicator");
+                    foreach (var rayIndicator in theRayIndicator)
+                    {
+                        foreach (var weapon in weaponInventory.Content)
+                        {
+                            if (weapon != null && (weapon.ItemName == "Ray Gun" || weapon.ItemName == "Super Ray Gun"))
+                            {
+                                if ((animationNames.name == "Shoot Diagonal Up Walking") ||
+                                    (animationNames.name == "Torso Walking Diagonal Up"))
+                                {
+                                    rayIndicator.transform.localPosition = new Vector3(0.45f, 0.2f, 0.0f);
+                                }
+                                else if ((animationNames.name == "Shoot Diagonal Down Walking") ||
+                                         (animationNames.name == "Torso Walking Diagonal Down"))
+                                {
+                                    rayIndicator.transform.localPosition = new Vector3(0.05f, -0.1f, 0.0f);
+                                }
+                                else if ((animationNames.name == "Shoot Up") || (animationNames.name == "Hold Up"))
+                                {
+                                    rayIndicator.transform.localPosition = new Vector3(0.1f, 0.05f, 0.0f);
+                                }
+                                else if ((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down"))
+                                {
+                                    rayIndicator.transform.localPosition = new Vector3(0.2f, 0.00f, 0.0f);
+                                }
+                                else
+                                {
+                                    rayIndicator.transform.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
+                                }
+                            }
+                        }
+                    }
+
+                    sparks = GameObject.FindGameObjectsWithTag("Spark");
+                    if (animationNames.name == "Horizontal Ladder")
+                    {
+                        foreach (var spark in sparks)
+                        {
+                            if (spark != null)
+                            {
+                                float horizontalInput = player.GetAxisRaw("Horizontal");
+                                float verticalInput = player.GetAxisRaw("Vertical");
+                                if (horizontalInput > 0 && verticalInput == 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(-0.7f, 0.2f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 90);
+                                }
+                                if (horizontalInput < 0 && verticalInput == 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(-0.35f, 0.2f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 90);
+                                }
+                                if (horizontalInput > 0 && verticalInput > 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(-0.30f, 0.5f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 45);
+                                }
+                                if (horizontalInput > 0 && verticalInput < 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(-0.5f, -0.2f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, -45);
+                                }
+                                if (horizontalInput < 0 && verticalInput > 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(-0.1f, 0.45f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 45);
+                                }
+                                if (horizontalInput < 0 && verticalInput < 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(-0.5f, -0.2f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, -45);
+                                }
+                            }
+                        }
+                    }
+                    else if (animationNames.name == "Horizontal Ladder Shooting Diagonal Down Back" || animationNames.name == "Horizontal Ladder Hold Diagonal Down Back")
+                    {
+                        foreach (var spark in sparks)
+                        {
+                            if (spark != null)
+                            {
+                                spark.transform.localPosition = new Vector3(-0.1f, 0.2f, 0.0f);
+                            }
+                        }
+                    }
+                    else if (animationNames.name == "Climb" && character.IsFacingRight)
+                    {
+                        foreach (var spark in sparks)
+                        {
+                            if (spark != null)
+                            {
+                                float horizontalInput = player.GetAxisRaw("Horizontal");
+                                float verticalInput = player.GetAxisRaw("Vertical");
+                                if (horizontalInput == 0 && verticalInput > 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(-0.30f, 0.40f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0);
+                                }
+                                if (horizontalInput == 0 && verticalInput < 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(0.2f, -0.4f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0);
+                                }
+                                if (horizontalInput > 0 && verticalInput > 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(-0.5f, 0.00f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 45);
+                                }
+                                if (horizontalInput < 0 && verticalInput > 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(0.10f, 0.50f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, -45);
+                                }
+                                if (horizontalInput > 0 && verticalInput < 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(-0.1f, -0.4f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, -45);
+                                }
+                                if (horizontalInput < 0 && verticalInput < 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(0.35f, -0.15f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 45);
+                                }
+                            }
+                        }
+                    }
+
+                    else if (animationNames.name == "Climb" && !character.IsFacingRight)
+                    {
+                        foreach (var spark in sparks)
+                        {
+                            if (spark != null)
+                            {
+                                float horizontalInput = player.GetAxisRaw("Horizontal");
+                                float verticalInput = player.GetAxisRaw("Vertical");
+                                if (horizontalInput == 0 && verticalInput > 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(-0.35f, 0.40f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0);
+                                }
+                                if (horizontalInput == 0 && verticalInput < 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(0.2f, -0.4f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0);
+                                }
+                                if (horizontalInput > 0 && verticalInput > 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(0.0f, 0.50f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, -45);
+                                }
+                                if (horizontalInput < 0 && verticalInput > 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(-0.60f, 0.00f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 45);
+                                }
+                                if (horizontalInput > 0 && verticalInput < 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(0.40f, -0.1f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 45);
+                                }
+                                if (horizontalInput < 0 && verticalInput < 0)
+                                {
+                                    spark.transform.localPosition = new Vector3(-0.05f, -0.40f, 0.0f);
+                                    spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, -45);
+                                }
+                            }
+                        }
+                    }
+
+                    else if (animationNames.name == "Climb Shooting Diagonal Down Back" || animationNames.name == "Climb Hold Diagonal Down Back")
+                    {
+                        foreach (var spark in sparks)
+                        {
+                            if (spark != null)
+                            {
+                                spark.transform.localPosition = new Vector3(-0.15f, 0.15f, 0.0f);
+                            }
+                        }
+                    }
+                    
+                    else
+                    {
+                        foreach (var spark in sparks)
+                        {
+                            if (spark != null)
+                            {
+                                float horizontalInput = player.GetAxisRaw("Horizontal");
+                                float verticalInput = player.GetAxisRaw("Vertical");
+                                spark.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+                                spark.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                            }
                         }
                     }
                 }

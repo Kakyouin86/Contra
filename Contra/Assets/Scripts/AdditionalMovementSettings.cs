@@ -4,6 +4,9 @@ using MoreMountains.Tools;
 using UnityEngine;
 using Rewired;
 using InputManager = MoreMountains.CorgiEngine.InputManager;
+using UnityEngine.SocialPlatforms;
+using Unity.VisualScripting;
+using UnityEngine.WSA;
 
 public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
@@ -99,8 +102,58 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
             theAnimator.SetBool("Death Flat", false);
             theAnimator.SetBool("Death Left Flat", false);
             characterDead = false;
-            //theTorso.GetComponent<SpriteRenderer>().enabled = true;
+            //Physics2D.IgnoreLayerCollision(gameObject.layer, theLayerMaskToExcludeAfterDeath, false);
         }
+
+        if (corgiEngineEvent.EventType == CorgiEngineEventTypes.Respawn)
+        {
+            StartCoroutine(DeathColliders());
+        }
+    }
+
+    IEnumerator DeathColliders()
+    {
+        Physics2D.IgnoreLayerCollision(gameObject.layer, 12, true);
+        Physics2D.IgnoreLayerCollision(gameObject.layer, 13, true);
+        // Flash effect for 3 seconds
+        float flashDuration = 0.1f; // Duration for each flash
+        float elapsedTime = 0f;
+
+        while (elapsedTime < 2f)
+        {
+            // Toggle sprite renderer colors to create a flash effect
+            ToggleSpriteRendererColor(theTorsoMachineGunLights.GetComponent<SpriteRenderer>());
+            ToggleSpriteRendererColor(theTorsoFlameGunLights.GetComponent<SpriteRenderer>());
+            ToggleSpriteRendererColor(theTorso.GetComponent<SpriteRenderer>());
+            ToggleSpriteRendererColor(theLegs.GetComponent<SpriteRenderer>());
+
+            // Wait for a short duration before the next flash
+            yield return new WaitForSeconds(flashDuration);
+
+            elapsedTime += flashDuration;
+        }
+
+        // Reset the sprite renderer colors at the end of the flashing duration
+        ResetSpriteRendererColor(theTorsoMachineGunLights.GetComponent<SpriteRenderer>());
+        ResetSpriteRendererColor(theTorsoFlameGunLights.GetComponent<SpriteRenderer>());
+        ResetSpriteRendererColor(theTorso.GetComponent<SpriteRenderer>());
+        ResetSpriteRendererColor(theLegs.GetComponent<SpriteRenderer>());
+        Physics2D.IgnoreLayerCollision(gameObject.layer, 12, false);
+        Physics2D.IgnoreLayerCollision(gameObject.layer, 13, false);
+    }
+
+    public void ToggleSpriteRendererColor(SpriteRenderer spriteRenderer)
+    {
+        // Toggle the sprite renderer color (example: toggle between red and white)
+        // spriteRenderer.color = spriteRenderer.color == Color.red ? Color.white : Color.red;
+        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, spriteRenderer.color.a == 1.0f ? 0.5f : 1.0f);
+    }
+
+    public void ResetSpriteRendererColor(SpriteRenderer spriteRenderer)
+    {
+        // Reset the sprite renderer color to its original color (e.g., white)
+        // spriteRenderer.color = Color.white;
+        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1.0f);
     }
 
     void Update()
