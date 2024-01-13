@@ -337,9 +337,10 @@ MonoBehaviour:
     type: 3}
   objectToInstantiateWater: {fileID: 5650233908315421779, guid: 443b024fa7e91cc4fa95ab8eec01b506,
     type: 3}
+  spawnPositionArista: {x: -1, y: 0, z: 0}
   spawnPosition: {x: 0.4, y: 0, z: 0}
   spawnPositionDiagonalsPlatforms: {x: 0.6, y: 0, z: 0}
-  spawnPositionWater: {x: 0, y: 0, z: 0}
+  spawnPositionWater: {x: 0.6, y: 0, z: 0}
   spawnPositionDiagonalsWater: {x: 0.6, y: 0, z: 0}
   thresholdNotToShowBurst: 2
   thresholdNotToShowBurstWater: 2
