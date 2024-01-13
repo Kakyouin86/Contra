@@ -60,6 +60,7 @@ MonoBehaviour:
   oldRotation: {x: 0, y: 0, z: 0, w: 0}
   commonRotation: {x: 0, y: 0, z: 0, w: 0}
   projectileWeapon: {fileID: 0}
+  chargeWeapon: {fileID: 0}
   originalProjectiles: 0
   AimControl: 1
   RotationMode: 2

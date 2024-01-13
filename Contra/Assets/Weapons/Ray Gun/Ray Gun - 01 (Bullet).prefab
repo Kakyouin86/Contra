@@ -337,17 +337,20 @@ MonoBehaviour:
   objectToInstantiateWater: {fileID: 5650233908315421779, guid: 443b024fa7e91cc4fa95ab8eec01b506,
     type: 3}
   spawnPosition: {x: 0.4, y: 0, z: 0}
+  spawnPositionDiagonalsPlatforms: {x: 0.6, y: 0, z: 0}
   spawnPositionWater: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
+  spawnPositionDiagonalsWater: {x: 1, y: 0, z: 0}
+  thresholdNotToShowBurst: 2
+  thresholdNotToShowBurstWater: 2
   doNotInstantiateTheBurst: 0
+  doNotInstantiateWithAngleWater: 1
+  doNotInstantiateWithAnglePlatform: 0
+  applyOffsetToDiagonals: 1
+  rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
+  distanceToPlayer: 0
+  offsetMagnitude: 0.1
   ObstaclesLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  distanceToPlayer: 0
-  thresholdNotToShowBurst: 2
-  thresholdNotToShowBurstWater: 2
   thePlayer: {fileID: 0}
   weaponAim: {fileID: 0}
-  doNotInstantiateWithAngleWater: 1
-  doNotInstantiateWithAnglePlatform: 0
-  offsetMagnitude: 0.1

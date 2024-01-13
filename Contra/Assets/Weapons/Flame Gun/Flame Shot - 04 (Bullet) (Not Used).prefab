@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5116146280746259599}
   - component: {fileID: 6416140192926614608}
   - component: {fileID: 2460808707257766364}
+  - component: {fileID: -8314758724569344288}
   m_Layer: 16
   m_Name: Flame Shot - 04 (Bullet) (Not Used)
   m_TagString: Untagged
@@ -337,14 +338,38 @@ MonoBehaviour:
   objectToInstantiateWater: {fileID: 3193478456438886401, guid: 10081b2afeb8be9439a1368876046222,
     type: 3}
   spawnPosition: {x: 1.5, y: 0, z: 0}
+  spawnPositionDiagonalsPlatforms: {x: 0.4, y: -0.1, z: 0}
   spawnPositionWater: {x: -0.5, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
+  spawnPositionDiagonalsWater: {x: 0.6, y: 0, z: 0}
+  thresholdNotToShowBurst: 0
+  thresholdNotToShowBurstWater: 2
   doNotInstantiateTheBurst: 0
+  doNotInstantiateWithAngleWater: 1
+  doNotInstantiateWithAnglePlatform: 0
+  applyOffsetToDiagonals: 1
+  rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
+  distanceToPlayer: 0
+  offsetMagnitude: 0.1
   ObstaclesLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  distanceToPlayer: 0
-  thresholdNotToShowBurst: 0
-  thresholdNotToShowBurstWater: 2
   thePlayer: {fileID: 0}
   weaponAim: {fileID: 0}
+--- !u!114 &-8314758724569344288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7374938925509788188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 117d8df41fa4cff44b4be63b34e61e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastPosition: {x: 0, y: 0, z: 0}
+  hasCheckedDirection: 0
+  isMovingRight: 0
+  isMovingLeft: 0
+  isMovingUp: 0
+  isMovingDown: 0

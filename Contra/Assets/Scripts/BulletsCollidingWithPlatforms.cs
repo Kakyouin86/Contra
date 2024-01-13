@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using MoreMountains.CorgiEngine;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,19 +7,22 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
 {
     public GameObject objectToInstantiate;
     public GameObject objectToInstantiateWater;
-    public Vector3 spawnPosition = new Vector3(0.4f, 0f, 0f);
-    public Vector3 spawnPositionWater = new Vector3(-0.5f, 0f, 0f);
-    public Quaternion rotation = Quaternion.Euler(0f, 0f, 90f);
-    public bool doNotInstantiateTheBurst = false;
-    public LayerMask ObstaclesLayerMask;
-    public float distanceToPlayer;
+    public Vector3 spawnPosition = new Vector3(0.4f, 0.0f, 0f);
+    public Vector3 spawnPositionDiagonalsPlatforms = new Vector3(0.6f, 0.0f, 0f);
+    public Vector3 spawnPositionWater = new Vector3(0.4f, 0.0f, 0f);
+    public Vector3 spawnPositionDiagonalsWater = new Vector3(0.0f, 0.0f, 0f);
     public float thresholdNotToShowBurst = 2f;
     public float thresholdNotToShowBurstWater = 2f;
-    public GameObject thePlayer;
-    public WeaponAim weaponAim;
+    public bool doNotInstantiateTheBurst = false;
     public bool doNotInstantiateWithAngleWater = true;
     public bool doNotInstantiateWithAnglePlatform = false;
+    public bool applyOffsetToDiagonals = true;
+    public Quaternion rotation = Quaternion.Euler(0f, 0f, 90f);
+    public float distanceToPlayer;
     public float offsetMagnitude = 0.1f;
+    public LayerMask ObstaclesLayerMask;
+    public GameObject thePlayer;
+    public WeaponAim weaponAim;
 
     public void OnEnable()
     {
@@ -37,6 +41,7 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
 
     public void Update()
     {
+
     }
 
     public void Start()
@@ -53,29 +58,153 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = false;
             GameObject spawnedObject = Instantiate(objectToInstantiateWater, Vector3.zero, Quaternion.identity);
             spawnedObject.transform.SetParent(transform);
-
             /*if (doNotInstantiateWithAngleWater)
             {
                 spawnedObject.transform.position = other.ClosestPoint(transform.position);
             }*/
+            ////////////////////////////////////////////////////////////////////////////////////////////////
+            // Water related
             if (doNotInstantiateWithAngleWater)
             {
-                spawnedObject.transform.position = other.ClosestPoint(transform.position);
-                Vector2 hitNormal = other.ClosestPoint(transform.position) - (Vector2)transform.position;
-                Vector3 offset = new Vector3(Mathf.Sign(hitNormal.x) * offsetMagnitude, 0f, 0f);
-                spawnedObject.transform.position += offset;
+                if (GetComponent<BulletsDirection>() != null && applyOffsetToDiagonals)
+                {
+                    if ((GetComponent<BulletsDirection>().isMovingDown || GetComponent<BulletsDirection>().isMovingUp) && !GetComponent<BulletsDirection>().isMovingLeft && !GetComponent<BulletsDirection>().isMovingRight)
+                    {
+                        spawnedObject.transform.localPosition = Vector3.zero + spawnPositionWater;
+                    }
+
+                    else if (GetComponent<BulletsDirection>().isMovingDown &&
+                        GetComponent<BulletsDirection>().isMovingLeft)
+                    {
+                        spawnedObject.transform.localPosition = new Vector3(-spawnPositionDiagonalsWater.x + 0.0f, -spawnPositionDiagonalsWater.y, -spawnPositionDiagonalsWater.z);
+                    }
+
+                    else if (GetComponent<BulletsDirection>().isMovingDown &&
+                        GetComponent<BulletsDirection>().isMovingRight)
+                    {
+                        spawnedObject.transform.localPosition = spawnPositionDiagonalsWater;
+                    }
+
+                    else if (GetComponent<BulletsDirection>().isMovingUp &&
+                        GetComponent<BulletsDirection>().isMovingLeft)
+                    {
+                        spawnedObject.transform.localPosition = new Vector3(spawnPositionDiagonalsWater.x + 0.2f, spawnPositionDiagonalsWater.y, spawnPositionDiagonalsWater.z);
+                    }
+
+                    else if (GetComponent<BulletsDirection>().isMovingUp &&
+                        GetComponent<BulletsDirection>().isMovingRight)
+                    {
+                        spawnedObject.transform.localPosition = spawnPositionDiagonalsWater;
+                    }
+                    else
+                    {
+                        spawnedObject.transform.localPosition = spawnPositionWater;
+                    }
+                }
+                else
+                {
+                    spawnedObject.transform.localPosition = spawnPositionWater;
+                }
             }
             else
             {
                 if (!GetComponent<SpriteRenderer>().flipX)
                 {
-                    spawnedObject.transform.localPosition = spawnPositionWater;
-                    spawnedObject.transform.localRotation = rotation;
+                    if (GetComponent<BulletsDirection>() != null && applyOffsetToDiagonals)
+                    {
+                        if ((GetComponent<BulletsDirection>().isMovingDown || GetComponent<BulletsDirection>().isMovingUp) && !GetComponent<BulletsDirection>().isMovingLeft && !GetComponent<BulletsDirection>().isMovingRight)
+                        {
+                            spawnedObject.transform.localPosition = Vector3.zero + spawnPositionWater;
+                            spawnedObject.transform.localRotation = rotation;
+                        }
+
+                        else if (GetComponent<BulletsDirection>().isMovingDown &&
+                            GetComponent<BulletsDirection>().isMovingLeft)
+                        {
+                            spawnedObject.transform.localPosition = new Vector3(-spawnPositionDiagonalsWater.x + 1.5f, -spawnPositionDiagonalsWater.y, -spawnPositionDiagonalsWater.z);
+                            spawnedObject.transform.localRotation = rotation;
+                        }
+
+                        else if (GetComponent<BulletsDirection>().isMovingDown &&
+                            GetComponent<BulletsDirection>().isMovingRight)
+                        {
+                            spawnedObject.transform.localPosition = spawnPositionDiagonalsWater;
+                            spawnedObject.transform.localRotation = rotation;
+                        }
+
+                        else if (GetComponent<BulletsDirection>().isMovingUp &&
+                            GetComponent<BulletsDirection>().isMovingLeft)
+                        {
+                            spawnedObject.transform.localPosition = new Vector3(spawnPositionDiagonalsWater.x + 0.2f, spawnPositionDiagonalsWater.y, spawnPositionDiagonalsWater.z);
+                            spawnedObject.transform.localRotation = rotation;
+                        }
+
+                        else if (GetComponent<BulletsDirection>().isMovingUp &&
+                            GetComponent<BulletsDirection>().isMovingRight)
+                        {
+                            spawnedObject.transform.localPosition = spawnPositionDiagonalsWater;
+                            spawnedObject.transform.localRotation = rotation;
+                        }
+                        else
+                        {
+                            spawnedObject.transform.localPosition = spawnPositionWater;
+                            spawnedObject.transform.localRotation = rotation;
+                        }
+                    }
+                    else
+                    {
+                        spawnedObject.transform.localPosition = spawnPositionWater;
+                        spawnedObject.transform.localRotation = rotation;
+                    }
                 }
                 else
                 {
-                    spawnedObject.transform.localPosition = -spawnPositionWater;
-                    spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
+                    if (GetComponent<BulletsDirection>() != null && applyOffsetToDiagonals)
+                    {
+                        if ((GetComponent<BulletsDirection>().isMovingDown || GetComponent<BulletsDirection>().isMovingUp) && !GetComponent<BulletsDirection>().isMovingLeft && !GetComponent<BulletsDirection>().isMovingRight)
+                        {
+                            spawnedObject.transform.localPosition = Vector3.zero - spawnPositionWater;
+                            spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
+                        }
+
+                        else if (GetComponent<BulletsDirection>().isMovingDown &&
+                                 GetComponent<BulletsDirection>().isMovingLeft)
+                        {
+                            spawnedObject.transform.localPosition = new Vector3(spawnPositionDiagonalsWater.x - 0.6f, spawnPositionDiagonalsWater.y, spawnPositionDiagonalsWater.z);
+                            spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
+                        }
+
+                        else if (GetComponent<BulletsDirection>().isMovingDown &&
+                                 GetComponent<BulletsDirection>().isMovingRight)
+                        {
+                            spawnedObject.transform.localPosition = -spawnPositionDiagonalsWater;
+                            spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
+                        }
+
+                        else if (GetComponent<BulletsDirection>().isMovingUp &&
+                                 GetComponent<BulletsDirection>().isMovingLeft)
+                        {
+                            spawnedObject.transform.localPosition = -spawnPositionDiagonalsWater;
+                            spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
+                        }
+
+                        else if (GetComponent<BulletsDirection>().isMovingUp &&
+                                 GetComponent<BulletsDirection>().isMovingRight)
+                        {
+                            spawnedObject.transform.localPosition = -spawnPositionDiagonalsWater;
+                            spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
+                        }
+                        else
+                        {
+                            spawnedObject.transform.localPosition = -spawnPositionWater;
+                            spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
+                        }
+                    }
+                    else
+                    {
+                        spawnedObject.transform.localPosition = -spawnPositionWater;
+                        spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
+                    }
                 }
             }
 
@@ -98,6 +227,9 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
             return;
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+        /// Platforms related
+
         if (((1 << other.gameObject.layer) & ObstaclesLayerMask) != 0 && !doNotInstantiateTheBurst)
         {
             GameObject spawnedObject = Instantiate(objectToInstantiate, Vector3.zero, Quaternion.identity);
@@ -105,38 +237,146 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
 
             if (doNotInstantiateWithAnglePlatform)
             {
-                spawnedObject.transform.position = other.ClosestPoint(transform.position);
-            }
-            /*if (doNotInstantiateWithAnglePlatform)
-            {
-                spawnedObject.transform.position = other.ClosestPoint(transform.position);
-
-                // Apply a custom offset for diagonal hits on the floor
-                Vector2 hitNormal = other.ClosestPoint(transform.position) - (Vector2)transform.position;
-
-                // Check if the hit is diagonal
-                if (Mathf.Abs(hitNormal.x) > 0.1f && Mathf.Abs(hitNormal.y) > 0.1f)
+                if (GetComponent<BulletsDirection>() != null && applyOffsetToDiagonals)
                 {
-                    Vector3 offset = new Vector3(offsetMagnitude, 0f, 0f);
-                    spawnedObject.transform.position += offset;
+                    if ((GetComponent<BulletsDirection>().isMovingDown || GetComponent<BulletsDirection>().isMovingUp) && !GetComponent<BulletsDirection>().isMovingLeft && !GetComponent<BulletsDirection>().isMovingRight)
+                    {
+                        spawnedObject.transform.localPosition = Vector3.zero + spawnPosition;
+                    }
+
+                    else if (GetComponent<BulletsDirection>().isMovingDown &&
+                        GetComponent<BulletsDirection>().isMovingLeft)
+                    {
+                        spawnedObject.transform.localPosition = new Vector3(-spawnPositionDiagonalsPlatforms.x + 1.5f, -spawnPositionDiagonalsPlatforms.y, -spawnPositionDiagonalsPlatforms.z);
+                    }
+
+                    else if (GetComponent<BulletsDirection>().isMovingDown &&
+                        GetComponent<BulletsDirection>().isMovingRight)
+                    {
+                        spawnedObject.transform.localPosition = spawnPositionDiagonalsPlatforms;
+                    }
+
+                    else if (GetComponent<BulletsDirection>().isMovingUp &&
+                        GetComponent<BulletsDirection>().isMovingLeft)
+                    {
+                        spawnedObject.transform.localPosition = new Vector3(spawnPositionDiagonalsPlatforms.x + 0.2f, spawnPositionDiagonalsPlatforms.y, spawnPositionDiagonalsPlatforms.z);
+                    }
+
+                    else if (GetComponent<BulletsDirection>().isMovingUp &&
+                        GetComponent<BulletsDirection>().isMovingRight)
+                    {
+                        spawnedObject.transform.localPosition = spawnPositionDiagonalsPlatforms;
+                    }
+                    else
+                    {
+                        spawnedObject.transform.localPosition = spawnPosition;
+                    }
                 }
-            }*/
+                else
+                {
+                    spawnedObject.transform.localPosition = spawnPosition;
+                }
+            }
             else
             {
                 if (!GetComponent<SpriteRenderer>().flipX)
                 {
-                    spawnedObject.transform.localPosition = spawnPosition;
-                    spawnedObject.transform.localRotation = rotation;
+                    if (GetComponent<BulletsDirection>() != null && applyOffsetToDiagonals)
+                    {
+                        if ((GetComponent<BulletsDirection>().isMovingDown || GetComponent<BulletsDirection>().isMovingUp) && !GetComponent<BulletsDirection>().isMovingLeft && !GetComponent<BulletsDirection>().isMovingRight)
+                        {
+                            spawnedObject.transform.localPosition = Vector3.zero + spawnPosition;
+                            spawnedObject.transform.localRotation = rotation;
+                        }
+
+                        else if (GetComponent<BulletsDirection>().isMovingDown &&
+                            GetComponent<BulletsDirection>().isMovingLeft)
+                        {
+                            spawnedObject.transform.localPosition = new Vector3(-spawnPositionDiagonalsPlatforms.x + 1.5f , -spawnPositionDiagonalsPlatforms.y, -spawnPositionDiagonalsPlatforms.z);
+                            spawnedObject.transform.localRotation = rotation;
+                        }
+
+                        else if (GetComponent<BulletsDirection>().isMovingDown &&
+                            GetComponent<BulletsDirection>().isMovingRight)
+                        {
+                            spawnedObject.transform.localPosition = spawnPositionDiagonalsPlatforms;
+                            spawnedObject.transform.localRotation = rotation;
+                        }
+
+                        else if (GetComponent<BulletsDirection>().isMovingUp &&
+                            GetComponent<BulletsDirection>().isMovingLeft)
+                        {
+                            spawnedObject.transform.localPosition = new Vector3(spawnPositionDiagonalsPlatforms.x + 0.2f, spawnPositionDiagonalsPlatforms.y, spawnPositionDiagonalsPlatforms.z);
+                            spawnedObject.transform.localRotation = rotation;
+                        }
+
+                        else if (GetComponent<BulletsDirection>().isMovingUp &&
+                            GetComponent<BulletsDirection>().isMovingRight)
+                        {
+                            spawnedObject.transform.localPosition = spawnPositionDiagonalsPlatforms;
+                            spawnedObject.transform.localRotation = rotation;
+                        }
+                        else
+                        {
+                            spawnedObject.transform.localPosition = spawnPosition;
+                            spawnedObject.transform.localRotation = rotation;
+                        }
+                    }
+                    else
+                    {
+                        spawnedObject.transform.localPosition = spawnPosition;
+                        spawnedObject.transform.localRotation = rotation;
+                    }
                 }
                 else
                 {
-                    spawnedObject.transform.localPosition = -spawnPosition;
-                    spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
-                }
-                Vector2 hitNormal = other.ClosestPoint(transform.position) - (Vector2)transform.position;
-                if (Mathf.Abs(hitNormal.x) > 0.1f && Mathf.Abs(hitNormal.y) > 0.1f)
-                {
-                    spawnedObject.transform.localPosition += new Vector3(0f, 0f, 0.1f);
+                    if (GetComponent<BulletsDirection>() != null && applyOffsetToDiagonals)
+                    {
+                        if ((GetComponent<BulletsDirection>().isMovingDown || GetComponent<BulletsDirection>().isMovingUp) && !GetComponent<BulletsDirection>().isMovingLeft && !GetComponent<BulletsDirection>().isMovingRight)
+                        {
+                            spawnedObject.transform.localPosition = Vector3.zero - spawnPosition;
+                            spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
+                        }
+
+                        else if (GetComponent<BulletsDirection>().isMovingDown &&
+                                 GetComponent<BulletsDirection>().isMovingLeft)
+                        {
+                            spawnedObject.transform.localPosition = new Vector3(
+                                spawnPositionDiagonalsPlatforms.x - 0.6f, spawnPositionDiagonalsPlatforms.y, spawnPositionDiagonalsPlatforms.z);
+                            spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
+                        }
+
+                        else if (GetComponent<BulletsDirection>().isMovingDown &&
+                                 GetComponent<BulletsDirection>().isMovingRight)
+                        {
+                            spawnedObject.transform.localPosition = -spawnPositionDiagonalsPlatforms;
+                            spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
+                        }
+
+                        else if (GetComponent<BulletsDirection>().isMovingUp &&
+                                 GetComponent<BulletsDirection>().isMovingLeft)
+                        {
+                            spawnedObject.transform.localPosition = -spawnPositionDiagonalsPlatforms;
+                            spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
+                        }
+
+                        else if (GetComponent<BulletsDirection>().isMovingUp &&
+                                 GetComponent<BulletsDirection>().isMovingRight)
+                        {
+                            spawnedObject.transform.localPosition = -spawnPositionDiagonalsPlatforms;
+                            spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
+                        }
+                        else
+                        {
+                            spawnedObject.transform.localPosition = -spawnPosition;
+                            spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
+                        }
+                    }
+                    else
+                    {
+                        spawnedObject.transform.localPosition = -spawnPosition;
+                        spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
+                    }
                 }
             }
 
