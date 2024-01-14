@@ -1044,11 +1044,11 @@ public class Firepoint : MonoBehaviour
                                 }
                                 else if ((animationNames.name == "Shoot Up") || (animationNames.name == "Hold Up"))
                                 {
-                                    rayIndicator.transform.localPosition = new Vector3(0.1f, 0.05f, 0.0f);
+                                    rayIndicator.transform.localPosition = new Vector3(1.05f, 0.05f, 0.0f);
                                 }
                                 else if ((animationNames.name == "Shoot Down") || (animationNames.name == "Hold Down"))
                                 {
-                                    rayIndicator.transform.localPosition = new Vector3(0.2f, 0.00f, 0.0f);
+                                    rayIndicator.transform.localPosition = new Vector3(1.4f, 0.00f, 0.0f);
                                 }
                                 else
                                 {

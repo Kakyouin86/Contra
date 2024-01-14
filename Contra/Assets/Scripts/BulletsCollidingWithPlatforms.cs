@@ -14,6 +14,7 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
     public Vector3 spawnPositionDiagonalsWater = new Vector3(0.0f, 0.0f, 0f);
     public float thresholdNotToShowBurst = 2f;
     public float thresholdNotToShowBurstWater = 2f;
+    public bool overrrideTheDoNotInstantiateTheBurst = false;
     public bool doNotInstantiateTheBurst = false;
     public bool doNotInstantiateWithAngleWater = true;
     public bool doNotInstantiateWithAnglePlatform = false;
@@ -32,7 +33,14 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        doNotInstantiateTheBurst = false;
+        if (!overrrideTheDoNotInstantiateTheBurst)
+        {
+            doNotInstantiateTheBurst = false;
+        }
+        else
+        {
+            doNotInstantiateTheBurst = true;
+        }
         GetComponent<SpriteRenderer>().enabled = true;
     }
 
@@ -136,12 +144,10 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                     if (gameObject.transform.rotation.z < 0)
                     {
                         spawnedObject.transform.localPosition = new Vector3(spawnPositionWater.x + 0.8f, spawnPositionWater.y, spawnPositionWater.z);
-                        Debug.Log("Here");
                     }
                     else
                     {
                         spawnedObject.transform.localPosition = new Vector3(-spawnPositionWater.x + 0.0f, -spawnPositionWater.y, -spawnPositionWater.z);
-                        Debug.Log("H3ere");
                     }
                 }
             }
@@ -276,7 +282,7 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
         ////////////////////////////////////////////////////////////////////////////////////////////////
         /// Arista related
 
-        if (other.tag == "Arista")
+        if (other.tag == "Arista" && !doNotInstantiateTheBurst)
         {
             //Debug.Log("Arista");
             if (GetComponent<BulletsDirection>() != null && applyOffsetToDiagonals)

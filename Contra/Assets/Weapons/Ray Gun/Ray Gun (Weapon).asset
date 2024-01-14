@@ -36,7 +36,7 @@ MonoBehaviour:
   ItemName: Ray Gun
   ShortDescription: It electrifies like crazy.
   Description: Normal Ray Gun.
-  Icon: {fileID: 824215728, guid: 3fe9f48917a938745b7095ed4857e7e3, type: 3}
+  Icon: {fileID: 0}
   Prefab: {fileID: 0}
   ForcePrefabDropQuantity: 0
   PrefabDropQuantity: 1

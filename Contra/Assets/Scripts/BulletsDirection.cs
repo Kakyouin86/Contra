@@ -1,38 +1,53 @@
 using System.Collections;
+using MoreMountains.CorgiEngine;
+using MoreMountains.Tools;
 using UnityEngine;
 
 public class BulletsDirection : MonoBehaviour
 {
     public Vector3 lastPosition;
     public bool hasCheckedDirection = false;
-
     public bool isMovingRight = false;
     public bool isMovingLeft = false;
     public bool isMovingUp = false;
     public bool isMovingDown = false;
+    public float deviationThreshold = 0.1f;
+    public float delayInCalculation = 0.1f;
+    public GameObject thePlayer;
+    public bool facingRight = false;
 
-    // Adjust this threshold based on the acceptable deviation
-    private float deviationThreshold = 0.1f;
-
-    void Start()
+    public void Start()
     {
-
+        thePlayer = GetComponent<Projectile>().GetOwner().gameObject;
+        if (thePlayer != null)
+        {
+            facingRight = thePlayer.GetComponent<Character>().IsFacingRight;
+        }
     }
 
-    void OnEnable()
+    public void Update()
     {
+        
+    }
+
+    public void OnEnable()
+    {
+        if (thePlayer != null)
+        {
+            facingRight = thePlayer.GetComponent<Character>().IsFacingRight;
+        }
         hasCheckedDirection = false;
         ResetDirectionBools();
         lastPosition = transform.position;
-        StartCoroutine(CheckDirectionAfterDelay(0.1f));
+        StartCoroutine(CheckDirectionAfterDelay(delayInCalculation));
     }
 
-    void OnDisable()
+    public void OnDisable()
     {
         hasCheckedDirection = true;
     }
 
-    void ResetDirectionBools()
+    public void ResetDirectionBools()
     {
         isMovingRight = false;
         isMovingLeft = false;

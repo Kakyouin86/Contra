@@ -248,7 +248,6 @@ public class UIAndUpgradesController : MonoBehaviour, MMEventListener<CorgiEngin
         }
     }
 
-
     protected virtual void OnEnable()
     {
         this.MMEventStartListening<CorgiEngineEvent>();

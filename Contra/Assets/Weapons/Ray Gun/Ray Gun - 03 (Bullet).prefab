@@ -344,6 +344,7 @@ MonoBehaviour:
   spawnPositionDiagonalsWater: {x: 0.6, y: 0, z: 0}
   thresholdNotToShowBurst: 3
   thresholdNotToShowBurstWater: 3
+  overrrideTheDoNotInstantiateTheBurst: 0
   doNotInstantiateTheBurst: 0
   doNotInstantiateWithAngleWater: 1
   doNotInstantiateWithAnglePlatform: 0
@@ -374,3 +375,7 @@ MonoBehaviour:
   isMovingLeft: 0
   isMovingUp: 0
   isMovingDown: 0
+  deviationThreshold: 0.1
+  delayInCalculation: 0.1
+  thePlayer: {fileID: 0}
+  facingRight: 0
