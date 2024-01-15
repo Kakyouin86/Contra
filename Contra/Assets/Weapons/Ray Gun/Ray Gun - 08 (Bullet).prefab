@@ -346,3 +346,6 @@ MonoBehaviour:
   rightRaycast: 0
   raycastLength: 1
   offset: {x: 0.2, y: 0, z: 0}
+  bigExplosion: 0
+  offsetBigExplosion: {x: 1, y: 1, z: 0}
+  travellingRight: 1

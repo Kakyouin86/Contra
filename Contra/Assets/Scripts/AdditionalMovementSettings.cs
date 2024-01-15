@@ -22,6 +22,7 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
     public WeaponAim weaponAim;
     public OverridesInAnimator theOverridesInAnimator;
     public bool horizontalLadder = false;
+    public bool verticalLadder = false;
     public bool canNotDettach = false;
     public BoxCollider2D theBCTrigger;
     public Vector2 theOriginalBoxCollider2DSize;
@@ -177,6 +178,12 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
         {
             theAnimator.SetBool("Hold", true);
         }*/
+
+        if (character.MovementState.CurrentState != CharacterStates.MovementStates.LadderClimbing)
+        {
+            verticalLadder = false;
+        }
+
         if (character.MovementState.CurrentState == CharacterStates.MovementStates.LadderClimbing && theAnimator.GetBool("isShooting"))
         {
             if (theAnimator.GetBool("Charging"))
@@ -269,6 +276,7 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
             if (!horizontalLadder)
             {
                 horizontalMovementCorgi.AbilityPermitted = false;
+                verticalLadder = true;
             }
             CharacterLadder characterLadder = GetComponent<CharacterLadder>();
             bool isWeaponIdle = theCharacterHandleWeapon.CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponIdle;
@@ -483,6 +491,7 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
         {
             horizontalLadder = false;
             canNotDettach = false;
+            verticalLadder = false;
         }
     }
 

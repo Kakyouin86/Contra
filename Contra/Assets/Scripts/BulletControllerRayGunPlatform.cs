@@ -18,6 +18,15 @@ public class BulletControllerRayGunPlatform : MonoBehaviour
     public Vector3 offsetBigExplosion = new Vector3(1f, 1f, 0);
     public bool travellingRight = true;
 
+
+    public void OnEnable()
+    {
+    }
+
+    public void OnDisable()
+    {
+    }
+
     void Start()
     {
         destroyTimer = destroyDelay;
@@ -142,42 +151,138 @@ public class BulletControllerRayGunPlatform : MonoBehaviour
                 if (travellingRight && downRaycast)
                 {
                     Instantiate(theExplosion, transform.position + new Vector3(offsetBigExplosion.x, 0, 0), transform.rotation);
-                    Debug.Log("Here 1");
+                    //Debug.Log("Here 1");
                 }
                 else if (!travellingRight && downRaycast)
                 {
                     Instantiate(theExplosion, transform.position + new Vector3(-offsetBigExplosion.x, 0), transform.rotation);
-                    Debug.Log("Here 2");
+                    //Debug.Log("Here 2");
                 }
                 else if (travellingRight && rightRaycast)
                 {
                     Instantiate(theExplosion, transform.position + new Vector3(0, offsetBigExplosion.y, 0), transform.rotation);
-                    Debug.Log("Here 3");
+                    //Debug.Log("Here 3");
                 }
                 else if (!travellingRight && leftRaycast)
                 {
                     Instantiate(theExplosion, transform.position + new Vector3(0, offsetBigExplosion.y, 0), transform.rotation);
-                    Debug.Log("Here 4");
+                    //Debug.Log("Here 4");
                 }
                 else if (travellingRight && upRaycast)
                 {
                     Instantiate(theExplosion, transform.position + new Vector3(offsetBigExplosion.x, 0, 0), transform.rotation);
-                    Debug.Log("Here 5");
+                    //Debug.Log("Here 5");
                 }
                 else if (!travellingRight && upRaycast)
                 {
                     Instantiate(theExplosion, transform.position + new Vector3(-offsetBigExplosion.x, 0, 0), transform.rotation);
-                    Debug.Log("Here 6");
+                    //Debug.Log("Here 6");
                 }
 
                 else
                 {
                     Instantiate(theExplosion, transform.position, transform.rotation);
-                    Debug.Log("Here 7");
+                    //Debug.Log("Here 7");
                 }
             }
 
             Destroy(gameObject);
         }
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        // Check if the collision occurred with the specified layer
+        if (((1 << other.gameObject.layer) & platformLayer) != 0)
+        {
+            // Check if the collision occurred on the right side and close to a platform
+            if (travellingRight && IsCloseToPlatform(Vector2.right))
+            {
+                HandleCollision();
+            }
+
+            // Check if the collision occurred on the left side and close to a platform
+            if (!travellingRight && IsCloseToPlatform(Vector2.left))
+            {
+                HandleCollision();
+            }
+        }
+    }
+
+    public bool IsCloseToPlatform(Vector2 raycastDirection)
+    {
+        float raycastDistance = 2f; // Adjust this value as needed
+        float raycastHeight = 1f; // Adjust this value based on the height of your object
+
+        Vector2 raycastStartPoint = new Vector2(transform.position.x, transform.position.y + raycastHeight);
+
+        // Perform the raycast
+        RaycastHit2D hit = Physics2D.Raycast(raycastStartPoint, raycastDirection, raycastDistance, platformLayer);
+
+        // Debug log for the raycast
+        //Debug.DrawRay(raycastStartPoint, raycastDirection * raycastDistance, Color.green, 2f);
+
+        // Check if the raycast hit a platform and if the hit point is close enough to the other object
+        if (hit.collider != null && Vector2.Distance(hit.point, transform.position) < raycastDistance)
+        {
+            // Debug log for the successful hit
+            //Debug.Log("Raycast hit a platform!");
+            return true;
+        }
+        else
+        {
+            // Debug log for no hit or not close enough
+            //Debug.Log("Raycast did not hit a platform or not close enough.");
+            return false;
+        }
+    }
+
+    public void HandleCollision()
+    {
+        if (!bigExplosion)
+        {
+            Instantiate(theExplosion, transform.position, transform.rotation);
+        }
+        else
+        {
+            if (travellingRight && downRaycast)
+            {
+                Instantiate(theExplosion, transform.position + new Vector3(offsetBigExplosion.x, 0, 0), transform.rotation);
+                //Debug.Log("Here 1");
+            }
+            else if (!travellingRight && downRaycast)
+            {
+                Instantiate(theExplosion, transform.position + new Vector3(-offsetBigExplosion.x, 0), transform.rotation);
+                //Debug.Log("Here 2");
+            }
+            else if (travellingRight && rightRaycast)
+            {
+                Instantiate(theExplosion, transform.position + new Vector3(0, offsetBigExplosion.y, 0), transform.rotation);
+                //Debug.Log("Here 3");
+            }
+            else if (!travellingRight && leftRaycast)
+            {
+                Instantiate(theExplosion, transform.position + new Vector3(0, offsetBigExplosion.y, 0), transform.rotation);
+                //Debug.Log("Here 4");
+            }
+            else if (travellingRight && upRaycast)
+            {
+                Instantiate(theExplosion, transform.position + new Vector3(offsetBigExplosion.x, 0, 0), transform.rotation);
+                //Debug.Log("Here 5");
+            }
+            else if (!travellingRight && upRaycast)
+            {
+                Instantiate(theExplosion, transform.position + new Vector3(-offsetBigExplosion.x, 0, 0), transform.rotation);
+                //Debug.Log("Here 6");
+            }
+
+            else
+            {
+                Instantiate(theExplosion, transform.position, transform.rotation);
+                //Debug.Log("Here 7");
+            }
+        }
+
+        Destroy(gameObject);
     }
 }

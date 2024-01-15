@@ -342,8 +342,8 @@ MonoBehaviour:
   spawnPositionDiagonalsPlatforms: {x: 0.6, y: 0, z: 0}
   spawnPositionWater: {x: 0, y: 0, z: 0}
   spawnPositionDiagonalsWater: {x: 0, y: 0, z: 0}
-  thresholdNotToShowBurst: 3
-  thresholdNotToShowBurstWater: 3
+  thresholdNotToShowBurst: 0
+  thresholdNotToShowBurstWater: 0
   overrrideTheDoNotInstantiateTheBurst: 0
   doNotInstantiateTheBurst: 0
   doNotInstantiateWithAngleWater: 1
@@ -379,3 +379,14 @@ MonoBehaviour:
   delayInCalculation: 0.1
   thePlayer: {fileID: 0}
   facingRight: 0
+  cantCalculate: 0
+  raycastLength: 10
+  platformLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  leftWall: 0
+  rightWall: 0
+  topWall: 0
+  bottomWall: 0
+  closeToTwoWalls: 0
+  hangingShoot: 0

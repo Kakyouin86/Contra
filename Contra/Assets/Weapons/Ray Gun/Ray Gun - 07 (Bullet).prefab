@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: -1628607475
   m_SortingLayer: 2
   m_SortingOrder: -1
-  m_Sprite: {fileID: 1103069186, guid: 5f3dd004f7304e24f906869fbe933521, type: 3}
+  m_Sprite: {fileID: -1972212227, guid: e00d0e4179de2204aa943631c8ebce3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
@@ -151,14 +151,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1}
+    oldSize: {x: 3, y: 1.5}
     newSize: {x: 3.375, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.63558125}
+  m_Size: {x: 1.2685019, y: 0.59189606}
   m_EdgeRadius: 0
 --- !u!50 &1373645431941411328
 Rigidbody2D:
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b95296ef9f66e44299eb703ede874bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToInstantiate: {fileID: 5555927747874763094, guid: debbfeaab3264c046b00572c682326e4,
+  objectToInstantiate: {fileID: 4836815659534229341, guid: 7ad8ea74aa7068849bd9824fd58daeff,
     type: 3}
   objectToInstantiateWater: {fileID: 5650233908315421779, guid: 443b024fa7e91cc4fa95ab8eec01b506,
     type: 3}
@@ -343,8 +343,8 @@ MonoBehaviour:
   spawnPositionDiagonalsPlatforms: {x: 0.6, y: 0, z: 0}
   spawnPositionWater: {x: 0, y: 0, z: 0}
   spawnPositionDiagonalsWater: {x: 0, y: 0, z: 0}
-  thresholdNotToShowBurst: 3
-  thresholdNotToShowBurstWater: 3
+  thresholdNotToShowBurst: 0
+  thresholdNotToShowBurstWater: 0
   overrrideTheDoNotInstantiateTheBurst: 1
   doNotInstantiateTheBurst: 0
   doNotInstantiateWithAngleWater: 1
@@ -380,6 +380,17 @@ MonoBehaviour:
   delayInCalculation: 0.1
   thePlayer: {fileID: 0}
   facingRight: 0
+  cantCalculate: 0
+  raycastLength: 10
+  platformLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  leftWall: 0
+  rightWall: 0
+  topWall: 0
+  bottomWall: 0
+  closeToTwoWalls: 0
+  hangingShoot: 0
 --- !u!114 &-5325677366038993192
 MonoBehaviour:
   m_ObjectHideFlags: 0
