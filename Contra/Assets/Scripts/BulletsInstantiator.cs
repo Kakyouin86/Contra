@@ -9,6 +9,7 @@ public class BulletsInstantiator : MonoBehaviour
     public LayerMask layerMask;
     public float bulletForce = 10;
     public bool cancelTheInstantiation = false;
+    public bool hitWater = false;
     public float raycastDistance = 0.1f;
 
     public void Start()
@@ -20,9 +21,11 @@ public class BulletsInstantiator : MonoBehaviour
     {
     }
 
+
     public void OnEnable()
     {
         cancelTheInstantiation = false;
+        hitWater  = false;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -30,6 +33,7 @@ public class BulletsInstantiator : MonoBehaviour
         if (other.CompareTag("Water"))
         {
             cancelTheInstantiation = true;
+            hitWater = true;
             return;
         }
 
@@ -217,7 +221,7 @@ public class BulletsInstantiator : MonoBehaviour
             }
         }
 
-        if (((1 << other.gameObject.layer) & layerMask) != 0 && cancelTheInstantiation)
+        if (((1 << other.gameObject.layer) & layerMask) != 0 && cancelTheInstantiation && !hitWater)
         {
             Instantiate(GetComponent<BulletsCollidingWithPlatforms>().objectToInstantiate, other.ClosestPoint(transform.position) + new Vector2(0.0f, 0f), Quaternion.identity);
         }

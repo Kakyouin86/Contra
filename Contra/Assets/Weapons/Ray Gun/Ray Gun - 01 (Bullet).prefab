@@ -379,3 +379,14 @@ MonoBehaviour:
   delayInCalculation: 0.1
   thePlayer: {fileID: 0}
   facingRight: 0
+  cantCalculate: 0
+  raycastLength: 10
+  platformLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  leftWall: 0
+  rightWall: 0
+  topWall: 0
+  bottomWall: 0
+  closeToTwoWalls: 0
+  hangingShoot: 0

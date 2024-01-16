@@ -413,4 +413,5 @@ MonoBehaviour:
     m_Bits: 256
   bulletForce: 10
   cancelTheInstantiation: 0
+  hitWater: 0
   raycastDistance: 0.1
