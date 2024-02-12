@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b9b05f133d5d97b479f3606e84bad851
+guid: d510b46d9ed49764788b2b4081e8bfbd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,139 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI Icons - 02_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 174a48d8c0b7a7343b5233fadfa2119d
-      internalID: 1141386251
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Icons - 02_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d30eb37fc2be6e4fb09fbebc64ecef9
-      internalID: -2050636132
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Icons - 02_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a23b69450fbfcb04b984c2e67cdd058e
-      internalID: -1797332422
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Icons - 02_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad26073943beea043ae418f4e51dd655
-      internalID: -1767905481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Icons - 02_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c71700b542bc32468a1adcf3e9b8143
-      internalID: 741896306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Icons - 02_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0920788d63affbd4786c5b50bcf1a1aa
-      internalID: 1442656990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Icons - 02_6
+      name: Item Container - Ray Gun - 01_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,41 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67f42635023ee9349bf7da70a6336e46
-      internalID: 111357721
+      spriteID: 1af4b53a9ddc6a24f880aec2ab8a871f
+      internalID: 2100352341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI Icons - 02_7
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ebfc0ce8770339c4ab3ba4a6d6d255e0
-      internalID: 905009558
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Icons - 02_8
+      name: Item Container - Ray Gun - 01_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,41 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b226448241b4c8242959ebf7f0370333
-      internalID: 1250196742
+      spriteID: 9d1ff90efa317d34a971d3055c6e9be0
+      internalID: -85177443
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI Icons - 02_9
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6cbfb210ef528c944a11d92245eaae44
-      internalID: -30444080
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Icons - 02_10
+      name: Item Container - Ray Gun - 01_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7dd4c050ca163749af00d31b080afe5
-      internalID: -202903635
+      spriteID: fc468733f4f79df45ae1c7482a38e488
+      internalID: -1948404985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI Icons - 02_11
+      name: Item Container - Ray Gun - 01_3
       rect:
         serializedVersion: 2
-        x: 80
+        x: 96
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,8 +187,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8881f894131613543b0878759819a756
-      internalID: 1243223863
+      spriteID: 03e0c2aa38224ca4f874e4802a811089
+      internalID: 864477658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item Container - Ray Gun - 01_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e732294fe489d4438b57fd203dfc5a4
+      internalID: 1725836415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item Container - Ray Gun - 01_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b61d2753b4b28a942807e6632fc5e2c1
+      internalID: -1738813908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item Container - Ray Gun - 01_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857601cabd5c60f40af0df7675b9e410
+      internalID: 1728560108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item Container - Ray Gun - 01_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0584f9f348f4fcf4998b331486a9bc9e
+      internalID: -1234226543
       vertices: []
       indices: 
       edges: []
@@ -372,18 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UI Icons - 02_0: 1141386251
-      UI Icons - 02_1: -2050636132
-      UI Icons - 02_10: -202903635
-      UI Icons - 02_11: 1243223863
-      UI Icons - 02_2: -1797332422
-      UI Icons - 02_3: -1767905481
-      UI Icons - 02_4: 741896306
-      UI Icons - 02_5: 1442656990
-      UI Icons - 02_6: 111357721
-      UI Icons - 02_7: 905009558
-      UI Icons - 02_8: 1250196742
-      UI Icons - 02_9: -30444080
+      Item Container - Ray Gun - 01_0: 2100352341
+      Item Container - Ray Gun - 01_1: -85177443
+      Item Container - Ray Gun - 01_2: -1948404985
+      Item Container - Ray Gun - 01_3: 864477658
+      Item Container - Ray Gun - 01_4: 1725836415
+      Item Container - Ray Gun - 01_5: -1738813908
+      Item Container - Ray Gun - 01_6: 1728560108
+      Item Container - Ray Gun - 01_7: -1234226543
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

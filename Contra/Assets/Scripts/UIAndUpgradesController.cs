@@ -3,7 +3,9 @@ using MoreMountains.InventoryEngine;
 using MoreMountains.Tools;
 using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
+using Character = MoreMountains.CorgiEngine.Character;
 
 public class UIAndUpgradesController : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
@@ -278,7 +280,11 @@ public class UIAndUpgradesController : MonoBehaviour, MMEventListener<CorgiEngin
     void Update()
     {
         GameObject grenadesLeft = GameObject.FindGameObjectWithTag("Grenade");
-        grenadesPlayer1.text = grenadesLeft.GetComponent<WeaponAmmo>().CurrentAmmoAvailable.ToString();
+        if (thePlayer.GetComponent<Character>().ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead)
+        {
+            grenadesPlayer1.text = grenadesLeft.GetComponent<WeaponAmmo>().CurrentAmmoAvailable.ToString();
+        }
+
         GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
         livesPlayer1.text = "X" + gameController.GetComponent<GameManager>().CurrentLives;
         if (avatarPlayer1IsFlashing)
@@ -291,88 +297,91 @@ public class UIAndUpgradesController : MonoBehaviour, MMEventListener<CorgiEngin
            avatarPlayer1.color = originalColorAvatar;
         }
 
-        if (!machineGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == machineGunName)
+        if (thePlayer.GetComponent<Character>().ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead)
         {
-            slot1MachineGunPlayer1.color = originalColor;
-            slot1MachineGunPlusPlayer1.color = fadingColor;
-            slot2FlameGunPlayer1.color = fadingColor;
-            slot2FlameGunPlusPlayer1.color = fadingColor;
-            slot3RayGunPlayer1.color = fadingColor;
-            slot3RayGunPlusPlayer1.color = fadingColor;
-            slot4ShotGunPlayer1.color = fadingColor;
-            slot4ShotGunPlusPlayer1.color = fadingColor;
-            slot5SpreadGunPlayer1.color = fadingColor;
-            slot5SpreadGunPlusPlayer1.color = fadingColor;
-        }
+            if (!machineGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == machineGunName)
+            {
+                slot1MachineGunPlayer1.color = originalColor;
+                slot1MachineGunPlusPlayer1.color = fadingColor;
+                slot2FlameGunPlayer1.color = fadingColor;
+                slot2FlameGunPlusPlayer1.color = fadingColor;
+                slot3RayGunPlayer1.color = fadingColor;
+                slot3RayGunPlusPlayer1.color = fadingColor;
+                slot4ShotGunPlayer1.color = fadingColor;
+                slot4ShotGunPlusPlayer1.color = fadingColor;
+                slot5SpreadGunPlayer1.color = fadingColor;
+                slot5SpreadGunPlusPlayer1.color = fadingColor;
+            }
 
-        if (machineGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == machineGunPlusName)
-        {
-            slot1MachineGunPlayer1.color = fadingColor;
-            slot1MachineGunPlusPlayer1.color = originalColor;
-            slot2FlameGunPlayer1.color = fadingColor;
-            slot2FlameGunPlusPlayer1.color = fadingColor;
-            slot3RayGunPlayer1.color = fadingColor;
-            slot3RayGunPlusPlayer1.color = fadingColor;
-            slot4ShotGunPlayer1.color = fadingColor;
-            slot4ShotGunPlusPlayer1.color = fadingColor;
-            slot5SpreadGunPlayer1.color = fadingColor;
-            slot5SpreadGunPlusPlayer1.color = fadingColor;
-        }
+            if (machineGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == machineGunPlusName)
+            {
+                slot1MachineGunPlayer1.color = fadingColor;
+                slot1MachineGunPlusPlayer1.color = originalColor;
+                slot2FlameGunPlayer1.color = fadingColor;
+                slot2FlameGunPlusPlayer1.color = fadingColor;
+                slot3RayGunPlayer1.color = fadingColor;
+                slot3RayGunPlusPlayer1.color = fadingColor;
+                slot4ShotGunPlayer1.color = fadingColor;
+                slot4ShotGunPlusPlayer1.color = fadingColor;
+                slot5SpreadGunPlayer1.color = fadingColor;
+                slot5SpreadGunPlusPlayer1.color = fadingColor;
+            }
 
-        if (!flameGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == flameGunName)
-        {
-            slot1MachineGunPlayer1.color = fadingColor;
-            slot1MachineGunPlusPlayer1.color = fadingColor;
-            slot2FlameGunPlayer1.color = originalColor;
-            slot2FlameGunPlusPlayer1.color = fadingColor;
-            slot3RayGunPlayer1.color = fadingColor;
-            slot3RayGunPlusPlayer1.color = fadingColor;
-            slot4ShotGunPlayer1.color = fadingColor;
-            slot4ShotGunPlusPlayer1.color = fadingColor;
-            slot5SpreadGunPlayer1.color = fadingColor;
-            slot5SpreadGunPlusPlayer1.color = fadingColor;
-        }
+            if (!flameGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == flameGunName)
+            {
+                slot1MachineGunPlayer1.color = fadingColor;
+                slot1MachineGunPlusPlayer1.color = fadingColor;
+                slot2FlameGunPlayer1.color = originalColor;
+                slot2FlameGunPlusPlayer1.color = fadingColor;
+                slot3RayGunPlayer1.color = fadingColor;
+                slot3RayGunPlusPlayer1.color = fadingColor;
+                slot4ShotGunPlayer1.color = fadingColor;
+                slot4ShotGunPlusPlayer1.color = fadingColor;
+                slot5SpreadGunPlayer1.color = fadingColor;
+                slot5SpreadGunPlusPlayer1.color = fadingColor;
+            }
 
-        if (flameGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == flameGunPlusName)
-        {
-            slot1MachineGunPlayer1.color = fadingColor;
-            slot1MachineGunPlusPlayer1.color = fadingColor;
-            slot2FlameGunPlayer1.color = fadingColor;
-            slot2FlameGunPlusPlayer1.color = originalColor;
-            slot3RayGunPlayer1.color = fadingColor;
-            slot3RayGunPlusPlayer1.color = fadingColor;
-            slot4ShotGunPlayer1.color = fadingColor;
-            slot4ShotGunPlusPlayer1.color = fadingColor;
-            slot5SpreadGunPlayer1.color = fadingColor;
-            slot5SpreadGunPlusPlayer1.color = fadingColor;
-        }
+            if (flameGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == flameGunPlusName)
+            {
+                slot1MachineGunPlayer1.color = fadingColor;
+                slot1MachineGunPlusPlayer1.color = fadingColor;
+                slot2FlameGunPlayer1.color = fadingColor;
+                slot2FlameGunPlusPlayer1.color = originalColor;
+                slot3RayGunPlayer1.color = fadingColor;
+                slot3RayGunPlusPlayer1.color = fadingColor;
+                slot4ShotGunPlayer1.color = fadingColor;
+                slot4ShotGunPlusPlayer1.color = fadingColor;
+                slot5SpreadGunPlayer1.color = fadingColor;
+                slot5SpreadGunPlusPlayer1.color = fadingColor;
+            }
 
-        if (!rayGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == rayGunName)
-        {
-            slot1MachineGunPlayer1.color = fadingColor;
-            slot1MachineGunPlusPlayer1.color = fadingColor;
-            slot2FlameGunPlayer1.color = fadingColor;
-            slot2FlameGunPlusPlayer1.color = fadingColor;
-            slot3RayGunPlayer1.color = originalColor;
-            slot3RayGunPlusPlayer1.color = fadingColor;
-            slot4ShotGunPlayer1.color = fadingColor;
-            slot4ShotGunPlusPlayer1.color = fadingColor;
-            slot5SpreadGunPlayer1.color = fadingColor;
-            slot5SpreadGunPlusPlayer1.color = fadingColor;
-        }
+            if (!rayGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == rayGunName)
+            {
+                slot1MachineGunPlayer1.color = fadingColor;
+                slot1MachineGunPlusPlayer1.color = fadingColor;
+                slot2FlameGunPlayer1.color = fadingColor;
+                slot2FlameGunPlusPlayer1.color = fadingColor;
+                slot3RayGunPlayer1.color = originalColor;
+                slot3RayGunPlusPlayer1.color = fadingColor;
+                slot4ShotGunPlayer1.color = fadingColor;
+                slot4ShotGunPlusPlayer1.color = fadingColor;
+                slot5SpreadGunPlayer1.color = fadingColor;
+                slot5SpreadGunPlusPlayer1.color = fadingColor;
+            }
 
-        if (rayGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == rayGunPlusName)
-        {
-            slot1MachineGunPlayer1.color = fadingColor;
-            slot1MachineGunPlusPlayer1.color = fadingColor;
-            slot2FlameGunPlayer1.color = fadingColor;
-            slot2FlameGunPlusPlayer1.color = fadingColor;
-            slot3RayGunPlayer1.color = fadingColor;
-            slot3RayGunPlusPlayer1.color = originalColor;
-            slot4ShotGunPlayer1.color = fadingColor;
-            slot4ShotGunPlusPlayer1.color = fadingColor;
-            slot5SpreadGunPlayer1.color = fadingColor;
-            slot5SpreadGunPlusPlayer1.color = fadingColor;
+            if (rayGunUpgrade && theWeaponInventory.Content[0] != null && theWeaponInventory.Content[0].ItemName == rayGunPlusName)
+            {
+                slot1MachineGunPlayer1.color = fadingColor;
+                slot1MachineGunPlusPlayer1.color = fadingColor;
+                slot2FlameGunPlayer1.color = fadingColor;
+                slot2FlameGunPlusPlayer1.color = fadingColor;
+                slot3RayGunPlayer1.color = fadingColor;
+                slot3RayGunPlusPlayer1.color = originalColor;
+                slot4ShotGunPlayer1.color = fadingColor;
+                slot4ShotGunPlusPlayer1.color = fadingColor;
+                slot5SpreadGunPlayer1.color = fadingColor;
+                slot5SpreadGunPlusPlayer1.color = fadingColor;
+            }
         }
     }
 

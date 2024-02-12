@@ -7,6 +7,10 @@ using InputManager = MoreMountains.CorgiEngine.InputManager;
 using UnityEngine.SocialPlatforms;
 using Unity.VisualScripting;
 using UnityEngine.WSA;
+using MoreMountains.InventoryEngine;
+using static MoreMountains.InventoryEngine.Inventory;
+using System.Collections.Generic;
+using System.Linq;
 
 public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
@@ -44,6 +48,8 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
     public Material flashMaterial;
     public bool characterDead = false;
     public float chargingTimerForRayGun = 1f;
+    public GameObject grenadesFillerRegular;
+    public GameObject grenadesFillerUpgraded;
 
     private void Awake()
     {
@@ -109,6 +115,51 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
         if (corgiEngineEvent.EventType == CorgiEngineEventTypes.Respawn)
         {
             StartCoroutine(DeathColliders());
+            GameObject grenades = GameObject.FindGameObjectWithTag("Grenade");
+
+            if (grenades != null)
+            {
+                Inventory theInventory = GameObject.FindWithTag("Inventory").GetComponent<Inventory>();
+                int grenadeCount = 0;
+                int occupiedSlotsCount = 0;
+
+                // Count the number of grenades and occupied slots
+                for (int i = 0; i < theInventory.Content.Length; i++)
+                {
+                    InventoryItem item = theInventory.Content[i];
+                    if (item != null)
+                    {
+                        occupiedSlotsCount++;
+                        if (item.ItemName == "Grenade")
+                        {
+                            grenadeCount++;
+                        }
+                    }
+                }
+
+                // Check if the number of grenades is exactly 5
+                if (grenadeCount != 5)
+                {
+                    // Clear slots with "Grenade" if there are any
+                    for (int i = 0; i < theInventory.Content.Length; i++)
+                    {
+                        if (theInventory.Content[i]?.ItemName == "Grenade")
+                        {
+                            theInventory.Content[i] = null;
+                        }
+                    }
+                    // Instantiate appropriate filler based on UI state
+                    UIAndUpgradesController theUIAndUpgradesController = GameObject.FindGameObjectWithTag("UI").GetComponent<UIAndUpgradesController>();
+                    if (theUIAndUpgradesController != null && !theUIAndUpgradesController.grenadePlus)
+                    {
+                        Instantiate(grenadesFillerRegular, transform.position, transform.rotation);
+                    }
+                    else
+                    {
+                        Instantiate(grenadesFillerUpgraded, transform.position, transform.rotation);
+                    }
+                }
+            }
         }
     }
 

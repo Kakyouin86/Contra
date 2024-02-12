@@ -44,15 +44,22 @@ namespace MoreMountains.CorgiEngine
 			// we grab the ammo inventory if it exists
 			GameObject ammoInventoryTmp = GameObject.Find (AmmoInventoryName);
 			if (ammoInventoryTmp != null) { AmmoInventory = ammoInventoryTmp.GetComponent<Inventory> (); }
-
 			_weapon = this.gameObject.GetComponent<Weapon> ();
 			if (ShouldLoadOnStart)
 			{
 				LoadOnStart ();	
 			}
-		}
 
-		protected virtual void LoadOnStart()
+            StartCoroutine(RefreshOnStart());//Leo Monge: Need to ALWAYS bring it after update. Makes the Grenades be detected on start.
+        }
+
+        IEnumerator RefreshOnStart()//Leo Monge: Need to ALWAYS bring it after update. Makes the Grenades be detected on start.
+        {
+            yield return new WaitForSeconds(0.015f);
+            RefreshCurrentAmmoAvailable();
+        }
+
+        protected virtual void LoadOnStart()
 		{
 			FillWeaponWithAmmo ();
 		}
@@ -129,29 +136,28 @@ namespace MoreMountains.CorgiEngine
 			
 			if (_ammoItem == null)
 			{
-				List<int> list = AmmoInventory.InventoryContains(AmmoID);
+                List<int> list = AmmoInventory.InventoryContains(AmmoID);
 				if (list.Count > 0)
 				{
-					_ammoItem = AmmoInventory.Content[list[list.Count - 1]];
+                    _ammoItem = AmmoInventory.Content[list[list.Count - 1]];
 				}
 			}
 
 			if (_weapon.MagazineBased)
 			{
-				int counter = 0;
+                int counter = 0;
 				int stock = CurrentAmmoAvailable - _weapon.CurrentAmmoLoaded;
 				for (int i = _weapon.CurrentAmmoLoaded; i < _weapon.MagazineSize; i++)
 				{
 					if (stock > 0)
 					{
-						stock--;
+                        stock--;
 						counter++;		
 						AmmoInventory.UseItem (AmmoID);	
 					}									
 				}
 				_weapon.CurrentAmmoLoaded += counter;
 			}
-			
 			RefreshCurrentAmmoAvailable();
         }
 		

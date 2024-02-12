@@ -1,0 +1,4628 @@
+fileFormatVersion: 2
+guid: 71c31a226cb54fa4082add211dbe1ceb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Contra UI - 04_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1473262598835994b917e2177d42f26d
+      internalID: 1092728692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc8a513994d2a9e449701e2081f3a896
+      internalID: -291558074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40cb3ec9ff23c174f9bd6eb0b9d1d947
+      internalID: 1140364427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a9cc14138d20fa478f572a5540feca6
+      internalID: -750852947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b95ca155c77063a439d010bca5ad5ccf
+      internalID: -774080610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c4f5cb522bc0044ab81f715ddea0da
+      internalID: 1889186821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c3a74a4a9b8af4fad82b2bdce90400
+      internalID: -2123271488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25028c3bf42ae3045a8bbd2c8fea7d47
+      internalID: -849772084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0dc16fb77042c489bc133fb8a5af03
+      internalID: -1480244630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c39940b3f69818458e509b9a989a969
+      internalID: -1912176144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854d27f1a23dbd8489f64bd668d050e3
+      internalID: -1930108788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_11
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f0a171a920dd0142b31be8db2ea287e
+      internalID: -424156035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_12
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c307e18b536798547a1e5c7df8ecb288
+      internalID: -1101241259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_13
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7873f9095393c774aa3f36f091e07041
+      internalID: -359662827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_14
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b16034d90d1276343b03d31778400ff7
+      internalID: -454725193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_15
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89bac951ab9fde74bb8a74e9a48741c3
+      internalID: -201307161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_16
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb0f32c9ddeeacb458b3919c1ec5c77b
+      internalID: -1199426855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_17
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d03f1aa839b58c489ef00c535c04d12
+      internalID: -528480592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_18
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ef81c2a88e56447a3c471dee0c4c49
+      internalID: 1133071534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_19
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef2445abe7423454183e895be142323a
+      internalID: 236903803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_20
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0411cdb50b6f20469029f854835d905
+      internalID: -884710724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_21
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0576cb6847a2deb4f8036cad759b6dbe
+      internalID: -1923220216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_22
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace803a7cea92e64d94d1857959084f7
+      internalID: 995073814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_23
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6003350fd6bb1d43912ad5096232d2b
+      internalID: 573698670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_24
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff1ba56e3c0cefc47af33a1230a814bd
+      internalID: 1541860328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_25
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb829270e15892f49ae5c611dabfcc48
+      internalID: -130881715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_26
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49afda7ad6a8b145ba061531dce8ac9
+      internalID: 2112561515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_27
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdce85853681a244097659fd63715bba
+      internalID: 160191041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_28
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e92e2a4cd26447e488ebae0d21bd11dd
+      internalID: 1800194665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_29
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 133982e898d9738439afc56bf8901cc1
+      internalID: -1033695996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_30
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 881a39c066358f841925d4d09cdb8332
+      internalID: 348551474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_31
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2789192b681ccc74c85fe232897eb831
+      internalID: -1231976312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_32
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e984ca12b81c4e24f88e8addf37c6ba2
+      internalID: -888465455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_33
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cd9e0502ead52c4c9552be632663037
+      internalID: -2054117050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_34
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e673e0b7e40f844981675c2ef229639
+      internalID: -1773575905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_35
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4712e86b81dbb4da718ee94467e8c6
+      internalID: -1840107305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_36
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858f1572e1f27694e86abb48114eb375
+      internalID: -1099827407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_37
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d0b06129e91056429c52fa84317ec21
+      internalID: 1051811958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_38
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae7a68f3d7f4f5d4b96c1f9ea4879686
+      internalID: 1724066338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_39
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 719e2a2405f04e847861b35d00487c99
+      internalID: 132640600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_40
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b647ee556e60f304a890fef8a5f50b41
+      internalID: -305260887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_41
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a5b23114934b14aaee953336c07a15
+      internalID: -127826641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_42
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10212a90bedce3e49b4996386c1dde8c
+      internalID: -1545538579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_43
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fc764638ae93014eb5d0800253786f5
+      internalID: 405906937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_44
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 035441e8667b29743bcb0b754232e4a5
+      internalID: -621996691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_45
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c0f996020d6384e8c3d6af006ab91c
+      internalID: -188472105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_46
+      rect:
+        serializedVersion: 2
+        x: 2064
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a0904fb2a759a04b89cd0baad3255dd
+      internalID: 1326209522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_47
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255189f18433db8438dc1308d384da83
+      internalID: -76514664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_48
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd0dad9764d60044e93428082efbd9b4
+      internalID: -554691267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_49
+      rect:
+        serializedVersion: 2
+        x: 2192
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8acebfe71a0840149aa5d9484a09d82b
+      internalID: 2094657192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_50
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 060e48b2ae80e844d86a70a25220a44e
+      internalID: -32509338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_51
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 419bb7d5a5a3cbb4eb81c8208ffdaa5d
+      internalID: -1069235488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_52
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 761bbf57030a3e84cb767c3c8eb700a6
+      internalID: -1254819585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_53
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 354ca0bbccf468740950a5535019ebeb
+      internalID: 1498919398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_54
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497e7cc1dab52234e8f5489750c48bc5
+      internalID: -575431974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_55
+      rect:
+        serializedVersion: 2
+        x: 2352
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a1bb17b8494af42819ae2aa5b0f1e5
+      internalID: 756782855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_56
+      rect:
+        serializedVersion: 2
+        x: 2368
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e10b6a97b34d6b049a99c312c4c89722
+      internalID: 1354267324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_57
+      rect:
+        serializedVersion: 2
+        x: 2384
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1dbb857415ace8459d039b722714e83
+      internalID: 1243037521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_58
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 965cb23907fba4b4d98aef81053d83ca
+      internalID: 17003548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_59
+      rect:
+        serializedVersion: 2
+        x: 2480
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 007833533afac984e9f9cdaafe441cfb
+      internalID: -395068950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_60
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad951eff711b1b4c9a53c72c245ecde
+      internalID: -231573980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_61
+      rect:
+        serializedVersion: 2
+        x: 2512
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f72ff49a665d82d45b7d593864a6165f
+      internalID: 1013313810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_62
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ef56d3feeeb584b90e6addb6e19db3
+      internalID: -1830792870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_63
+      rect:
+        serializedVersion: 2
+        x: 2544
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 980563ff39519324c8eb1436376d64f6
+      internalID: 118428105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_64
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3d2e56220fd874c915666e612cf21a
+      internalID: -1657571007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_65
+      rect:
+        serializedVersion: 2
+        x: 2624
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469d05f1572bd7741abbbc5b857e2c50
+      internalID: -2112496636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_66
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be138448c2ffcd4682a8c52c966999f
+      internalID: -1803198177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_67
+      rect:
+        serializedVersion: 2
+        x: 2656
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b84cc0f4482b347499ae019abd3af554
+      internalID: -1871038651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_68
+      rect:
+        serializedVersion: 2
+        x: 2672
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc646ad0ba8b524192648ecb362e5af
+      internalID: 1053714270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_69
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d36129b0c4c16f409d74cff1493a4c3
+      internalID: -766386967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_70
+      rect:
+        serializedVersion: 2
+        x: 2704
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 389299bdc0c095c43ad6f8c86b6dc3c4
+      internalID: -1731223766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_71
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81904cf1a5bde344280b5d638c8ce5cd
+      internalID: 2107782864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_72
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 619ecd21c3f05a342b4dd460067da6ff
+      internalID: -70511864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_73
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 689be67dc39cb904fa56b4ae1a73c767
+      internalID: 755082112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_74
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44e6d7f1b1a95a441af9e2a9a3a22e08
+      internalID: 465918368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_75
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c377e183789c01842bc608c725530840
+      internalID: 1252234187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_76
+      rect:
+        serializedVersion: 2
+        x: 2848
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e0dacea3450da42b517f61c4f15425
+      internalID: 736077873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_77
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7973ebda74d1d2f4aad288cb67e7b8e2
+      internalID: -292906072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_78
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c5fd162a045f948b6914c64b2d500a
+      internalID: 1971137761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_79
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0123c5f08f71264c9f9b597592284ef
+      internalID: -699537722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_80
+      rect:
+        serializedVersion: 2
+        x: 2960
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 350f61f6e83293c4fbf2e315f50f3475
+      internalID: -1474510259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_81
+      rect:
+        serializedVersion: 2
+        x: 2976
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7399e326ce49c5e49972621c724d1572
+      internalID: 1283194589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_82
+      rect:
+        serializedVersion: 2
+        x: 2992
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40e5c52e9031be34693b8151d48ee175
+      internalID: -747153138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_83
+      rect:
+        serializedVersion: 2
+        x: 3008
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a695798b94678447a94f2029ef8da19
+      internalID: -602485359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_84
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18874bb69bb72d14ab0743af10d6514e
+      internalID: 117059079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_85
+      rect:
+        serializedVersion: 2
+        x: 3040
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a733feb21251b624ea07d3c09c937f9f
+      internalID: -446325940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_86
+      rect:
+        serializedVersion: 2
+        x: 3088
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 855972f4ad32aa34b9c7135383ce02d4
+      internalID: -468469099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_87
+      rect:
+        serializedVersion: 2
+        x: 3104
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 087814f4a4ed62c49b444c769aa8c8f1
+      internalID: -1902721130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_88
+      rect:
+        serializedVersion: 2
+        x: 3120
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0589abec221126e4597918ad5e538787
+      internalID: 1882497270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_89
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ce37238c2e0bd4bbe08b6af3131e33
+      internalID: -1238569209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_90
+      rect:
+        serializedVersion: 2
+        x: 3152
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c1231a04d858094aa1cdbe2ecbcf5e4
+      internalID: 1559341132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_91
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 391f6c03873ffd4458c5e079e44dbf98
+      internalID: -923320128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_92
+      rect:
+        serializedVersion: 2
+        x: 3184
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 413add81d3ce0ad4e9d784fd6d744bd1
+      internalID: -730282007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_93
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af534047c1cae2947b0bc987ffca4457
+      internalID: -1070388334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_94
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8617ea029d70da0478ec1effc1e76aa9
+      internalID: 1523041422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_95
+      rect:
+        serializedVersion: 2
+        x: 3264
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a72ad5d4c005b4b86a42d771660a6e
+      internalID: 1268856320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_96
+      rect:
+        serializedVersion: 2
+        x: 3280
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 052540b9e443d3e4ebbe3ba8e2ab2968
+      internalID: -774229962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_97
+      rect:
+        serializedVersion: 2
+        x: 3296
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d27961a95234df647a1e90802c1d487e
+      internalID: -1463681059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_98
+      rect:
+        serializedVersion: 2
+        x: 3312
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dae9d0065f922f74fa6dad8538ad8232
+      internalID: -1404059452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_99
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7573ed03b7479546ba870d083a4de56
+      internalID: -455369958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_100
+      rect:
+        serializedVersion: 2
+        x: 3344
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 047bc8707bf6fd94cbdc294e79dbc0e8
+      internalID: -1544776356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_101
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e752fa8dbd532924ab6d7ae653f7b46f
+      internalID: 1994604530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_102
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7554dedb19205c246a78b3944535f479
+      internalID: -1734092336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_103
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d74d76ba06d9c42bcbbaf8af37a69d
+      internalID: 426784864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_104
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc03ca11c14a73e498b2f9fb37ccc1e1
+      internalID: -1568711738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_105
+      rect:
+        serializedVersion: 2
+        x: 3456
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5750ee2e933f0a44d91debe9f451ca54
+      internalID: 2020911742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_106
+      rect:
+        serializedVersion: 2
+        x: 3472
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd3109911b5f07241b79644ede8fba8d
+      internalID: 506249669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_107
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3e16c63683192488cde9d0961931e8
+      internalID: 1814178062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_108
+      rect:
+        serializedVersion: 2
+        x: 3504
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4b1a4baebbab445a4eb269ddbe3c79
+      internalID: 996077256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_109
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3acc9c84e569adb4491e506ee415f813
+      internalID: 1371311955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_110
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3199c7d67d2609447b2ced4162f012ed
+      internalID: -1660366067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_111
+      rect:
+        serializedVersion: 2
+        x: 3568
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b9d96e5d727a554abbebf21b2e70cf8
+      internalID: 671512197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_112
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b090320521e34740ad10c4df65d94a7
+      internalID: -20020081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_113
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc7492a9636c76240bba1f22fc9dd938
+      internalID: 967070402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_114
+      rect:
+        serializedVersion: 2
+        x: 3616
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b67519f7e8f691f4b9cb4e65640ffbf6
+      internalID: -1030169032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_115
+      rect:
+        serializedVersion: 2
+        x: 3632
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b55698465f89ca42bbb41ccbc4c8422
+      internalID: -139242009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_116
+      rect:
+        serializedVersion: 2
+        x: 3648
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db2ab2502e0d4374087d95a9e9988015
+      internalID: -424791379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_117
+      rect:
+        serializedVersion: 2
+        x: 3664
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fda97795dd25ee40aed7a468996eb44
+      internalID: -915261898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_118
+      rect:
+        serializedVersion: 2
+        x: 3680
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36604f52cf31bf74fa5828fc4f5307f6
+      internalID: -653122012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_119
+      rect:
+        serializedVersion: 2
+        x: 3712
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de55828f74027de4b9ef21f9105c9df2
+      internalID: -712402552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_120
+      rect:
+        serializedVersion: 2
+        x: 3728
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 202e0930b99e03f45b3b02bfd8b1591d
+      internalID: 981306325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_121
+      rect:
+        serializedVersion: 2
+        x: 3744
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 202c551f1dd10b54fad37d4511a05631
+      internalID: 298591729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_122
+      rect:
+        serializedVersion: 2
+        x: 3760
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba9aa94fc6885e49892d2cdada66541
+      internalID: 833128191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_123
+      rect:
+        serializedVersion: 2
+        x: 3776
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba3bff41bcd80645a118109cdcc7630
+      internalID: -1957466988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_124
+      rect:
+        serializedVersion: 2
+        x: 3792
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c121dad045577e43bf3b160c1e95a36
+      internalID: -911216096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_125
+      rect:
+        serializedVersion: 2
+        x: 3808
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688f283482d602348a936dac0855c695
+      internalID: 1815251406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_126
+      rect:
+        serializedVersion: 2
+        x: 3824
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fdac78358eeca445b91c950881ee5cd
+      internalID: 1044317628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_127
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daf23ae1cc1c9e74e8d052cc325732d0
+      internalID: -322198752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_128
+      rect:
+        serializedVersion: 2
+        x: 3856
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6afd8407152e39c4f9c13e01f94bbb27
+      internalID: -2062196829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_129
+      rect:
+        serializedVersion: 2
+        x: 3872
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 725ed9dac0995174481566ecacde6185
+      internalID: 2025430409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_130
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f9e0d06b6e84e45b450afb2df3833a
+      internalID: -1676270443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_131
+      rect:
+        serializedVersion: 2
+        x: 3904
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ccd4b77826791046af42bbc18a79346
+      internalID: -873264765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_132
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf4e49a4b5e5834eba12709f8d8da9b
+      internalID: 1578537390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_133
+      rect:
+        serializedVersion: 2
+        x: 3936
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e937623baa04f9645af7f0a2f51a4b2d
+      internalID: 431622810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_134
+      rect:
+        serializedVersion: 2
+        x: 3952
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb635f0489b0c2048afbfb3789ad685c
+      internalID: -276938557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_135
+      rect:
+        serializedVersion: 2
+        x: 3968
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64862077cee2ece4b91186107769f634
+      internalID: -615696358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_136
+      rect:
+        serializedVersion: 2
+        x: 3984
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbcfc59f51e0ca941a7ab558a0cf5ad1
+      internalID: 1501050249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_137
+      rect:
+        serializedVersion: 2
+        x: 4016
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e3b16dd9930e5a44b7fb634c4e4737d
+      internalID: 250022197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_138
+      rect:
+        serializedVersion: 2
+        x: 4032
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71743358471cc640845bf0bc1f10a45
+      internalID: 399686712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_139
+      rect:
+        serializedVersion: 2
+        x: 4048
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59d811c4c33db744db74e1a2668975b5
+      internalID: -1810613630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_140
+      rect:
+        serializedVersion: 2
+        x: 4064
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d7582e0eb30604e93d085753e0a853
+      internalID: -39582828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_141
+      rect:
+        serializedVersion: 2
+        x: 4080
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a67d315cb8c21b94a919b0458c51d7a4
+      internalID: 1836678091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_142
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3f0554aa771474ab30124c3b83bc20
+      internalID: -1685379903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_143
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf482e8efa8d204d9812c8635f9d1dd
+      internalID: -1782259017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_144
+      rect:
+        serializedVersion: 2
+        x: 4128
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08d321951752b748ae6da7a880746db
+      internalID: 1670673210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_145
+      rect:
+        serializedVersion: 2
+        x: 4144
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68958b5a78cd7f419c8675b6a861e26
+      internalID: 1253370536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_146
+      rect:
+        serializedVersion: 2
+        x: 4176
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a51ec1f63b3181741826016f30e227cf
+      internalID: 636052671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_147
+      rect:
+        serializedVersion: 2
+        x: 4192
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acac311fd83854f4290d1b093f8edf30
+      internalID: -1498464978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_148
+      rect:
+        serializedVersion: 2
+        x: 4208
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7009c31236553bb47be19b7b54b6e732
+      internalID: 422032358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_149
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e2dd84546d5d440bfe48de013ec2b7
+      internalID: 2027108055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_150
+      rect:
+        serializedVersion: 2
+        x: 4240
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f16646e80580f4428073a7e712ac527
+      internalID: -1065634816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_151
+      rect:
+        serializedVersion: 2
+        x: 4256
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4586d2113d821b4bad5355f475d7418
+      internalID: -285925682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_152
+      rect:
+        serializedVersion: 2
+        x: 4272
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1202fe454c4d4f54a898205cde09c902
+      internalID: -662056386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_153
+      rect:
+        serializedVersion: 2
+        x: 4288
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc8fa2f8f844dea44a15d48607041ced
+      internalID: -1205456412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_154
+      rect:
+        serializedVersion: 2
+        x: 4368
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18f87ff061859e24bb9634881e75809d
+      internalID: 575326197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_155
+      rect:
+        serializedVersion: 2
+        x: 4384
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d1a482d0fff08848aeda2036aa2427c
+      internalID: 833980589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_156
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1587be39032ad9740be424cea63c53fa
+      internalID: -835353521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_157
+      rect:
+        serializedVersion: 2
+        x: 4416
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b15ee4acf8a2a44a0ed1313f3a2b06
+      internalID: 1840929241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_158
+      rect:
+        serializedVersion: 2
+        x: 4512
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f26be9cf6127dd46a92cfd1f46ad0c0
+      internalID: -98520364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_159
+      rect:
+        serializedVersion: 2
+        x: 4528
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d60536cc7f986d48aeeb4c5eda036e1
+      internalID: 1934772974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_160
+      rect:
+        serializedVersion: 2
+        x: 4544
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e9b5ea7e0311e4ba68c1e7613d6a14
+      internalID: 876168874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_161
+      rect:
+        serializedVersion: 2
+        x: 4560
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c5ae12ce535d054d8e9f15b2a24b393
+      internalID: -1219128075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_162
+      rect:
+        serializedVersion: 2
+        x: 4640
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bb1d8ec76dab314dabf3fd0a164a10e
+      internalID: -824064946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_163
+      rect:
+        serializedVersion: 2
+        x: 4656
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3de99fcaf4f9fa946897d9a2d808d3e3
+      internalID: -1257935221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_164
+      rect:
+        serializedVersion: 2
+        x: 4672
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85772fcf6f30e0e4f812801ed6d1b448
+      internalID: 2060901000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_165
+      rect:
+        serializedVersion: 2
+        x: 4688
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27601bd3b009a064f9b40cfb78a9d730
+      internalID: -942678739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_166
+      rect:
+        serializedVersion: 2
+        x: 4704
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b979ba12e1d8f624c83c5b5bd9d9dc8a
+      internalID: 1963142224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_167
+      rect:
+        serializedVersion: 2
+        x: 4720
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dcbd1c4d0fbb2548a96098b2b88bbbf
+      internalID: -1563862030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_168
+      rect:
+        serializedVersion: 2
+        x: 4736
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9d04d8ca6027b4db285345ae083485
+      internalID: -214611608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_169
+      rect:
+        serializedVersion: 2
+        x: 4752
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59acf98ea987f4e49ab97c2357f0448e
+      internalID: -469642597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_170
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a7298ef117ce641b4b3801fa404a94
+      internalID: -1271654480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_171
+      rect:
+        serializedVersion: 2
+        x: 4816
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e9dbb56598bba4e8e95c46946b8906
+      internalID: 886215824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_172
+      rect:
+        serializedVersion: 2
+        x: 4832
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b3636f23172b17439024427eaed6b96
+      internalID: -1043504089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_173
+      rect:
+        serializedVersion: 2
+        x: 4848
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 352056d070c21c940a0433336d7c5e71
+      internalID: -935529018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_174
+      rect:
+        serializedVersion: 2
+        x: 4864
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3c45dcd8afbdc43958a8c2980afcfa
+      internalID: -1867938200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_175
+      rect:
+        serializedVersion: 2
+        x: 4880
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f67881ab631d37e49ae1fd61ba6bdd89
+      internalID: -18677645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_176
+      rect:
+        serializedVersion: 2
+        x: 4896
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea472eb44bc35334ea25828940a814c2
+      internalID: -1556699584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_177
+      rect:
+        serializedVersion: 2
+        x: 4912
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd09d291972d3547857359b68f5cb7e
+      internalID: -1398712616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_178
+      rect:
+        serializedVersion: 2
+        x: 4944
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a9fdaf785b20d4285d11707e4051e4
+      internalID: -125943926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_179
+      rect:
+        serializedVersion: 2
+        x: 4960
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2151dd77ea13dd149a953829052c9346
+      internalID: -733046807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_180
+      rect:
+        serializedVersion: 2
+        x: 4976
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b63e8e657d396f439380c2bf3e2dc7c
+      internalID: 2023536260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_181
+      rect:
+        serializedVersion: 2
+        x: 4992
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8665cd9841a9b164698db2d225eb0128
+      internalID: -1751917920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_182
+      rect:
+        serializedVersion: 2
+        x: 5008
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8405e93493f4dac40884b0c0b0d7e232
+      internalID: 1772664114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_183
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58edd81545cc26a4d80082d4fa97c300
+      internalID: 1799101123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_184
+      rect:
+        serializedVersion: 2
+        x: 5056
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef53490c53b668408cc8fa31f961b1e
+      internalID: -1005580250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_185
+      rect:
+        serializedVersion: 2
+        x: 5104
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35b1b7f8e3adad4bb951d5aca7adfc5
+      internalID: -1827126020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_186
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29fcdcafd2bf86f4c84acbf0a27cc2ab
+      internalID: 1108098305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_187
+      rect:
+        serializedVersion: 2
+        x: 5136
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c075278d5ac72574eacb94d78d00304e
+      internalID: -92029161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_188
+      rect:
+        serializedVersion: 2
+        x: 5152
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235daf43ba916464393985b1203082bf
+      internalID: 488971428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_189
+      rect:
+        serializedVersion: 2
+        x: 5168
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f16c7b668c959fc4a9eb4de7a52d4fa2
+      internalID: -1435753061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_190
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c1338357fe62ec4fa66e0dadf4f8806
+      internalID: 846236228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_191
+      rect:
+        serializedVersion: 2
+        x: 5216
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89ea06dd488c1c4982a4186c8aeff64
+      internalID: 1099943615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_192
+      rect:
+        serializedVersion: 2
+        x: 5264
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab17097c1a77a6489899c68269776b1
+      internalID: 21221690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_193
+      rect:
+        serializedVersion: 2
+        x: 5296
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2c2bd23f42ab942bf0746bf13207bf
+      internalID: 480607208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_194
+      rect:
+        serializedVersion: 2
+        x: 5312
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0502274a6e119e24a8777ac9179216e5
+      internalID: -759972331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_195
+      rect:
+        serializedVersion: 2
+        x: 5328
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f1f53ec74ca8c84085b43c7565186ce
+      internalID: 1044889200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_196
+      rect:
+        serializedVersion: 2
+        x: 5344
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2539006f334ed4246884966e7f0a1f41
+      internalID: 1319436048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_197
+      rect:
+        serializedVersion: 2
+        x: 5424
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a18649182b50c294baf92b8fb8a1036c
+      internalID: -109647036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_198
+      rect:
+        serializedVersion: 2
+        x: 5440
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e6575fb4b409445ac26235056b6aa2
+      internalID: -1314616580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_199
+      rect:
+        serializedVersion: 2
+        x: 5456
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5952c92d78b24a04193db41b533293ab
+      internalID: 1529839734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_200
+      rect:
+        serializedVersion: 2
+        x: 5472
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62680b857ff7b344883acd323f6e62a3
+      internalID: -1846704230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_201
+      rect:
+        serializedVersion: 2
+        x: 5488
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fb3d37431f6cb48a5e795adf0df061
+      internalID: -619484223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_202
+      rect:
+        serializedVersion: 2
+        x: 5504
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb2cb8fc88de244b954921ec257d4aa
+      internalID: 701710129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Contra UI - 04_203
+      rect:
+        serializedVersion: 2
+        x: 5520
+        y: 7
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be026ed64f1ef24587e6c42d52c24d2
+      internalID: 192567659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Contra UI - 04_0: 1092728692
+      Contra UI - 04_1: -291558074
+      Contra UI - 04_10: -1930108788
+      Contra UI - 04_100: -1544776356
+      Contra UI - 04_101: 1994604530
+      Contra UI - 04_102: -1734092336
+      Contra UI - 04_103: 426784864
+      Contra UI - 04_104: -1568711738
+      Contra UI - 04_105: 2020911742
+      Contra UI - 04_106: 506249669
+      Contra UI - 04_107: 1814178062
+      Contra UI - 04_108: 996077256
+      Contra UI - 04_109: 1371311955
+      Contra UI - 04_11: -424156035
+      Contra UI - 04_110: -1660366067
+      Contra UI - 04_111: 671512197
+      Contra UI - 04_112: -20020081
+      Contra UI - 04_113: 967070402
+      Contra UI - 04_114: -1030169032
+      Contra UI - 04_115: -139242009
+      Contra UI - 04_116: -424791379
+      Contra UI - 04_117: -915261898
+      Contra UI - 04_118: -653122012
+      Contra UI - 04_119: -712402552
+      Contra UI - 04_12: -1101241259
+      Contra UI - 04_120: 981306325
+      Contra UI - 04_121: 298591729
+      Contra UI - 04_122: 833128191
+      Contra UI - 04_123: -1957466988
+      Contra UI - 04_124: -911216096
+      Contra UI - 04_125: 1815251406
+      Contra UI - 04_126: 1044317628
+      Contra UI - 04_127: -322198752
+      Contra UI - 04_128: -2062196829
+      Contra UI - 04_129: 2025430409
+      Contra UI - 04_13: -359662827
+      Contra UI - 04_130: -1676270443
+      Contra UI - 04_131: -873264765
+      Contra UI - 04_132: 1578537390
+      Contra UI - 04_133: 431622810
+      Contra UI - 04_134: -276938557
+      Contra UI - 04_135: -615696358
+      Contra UI - 04_136: 1501050249
+      Contra UI - 04_137: 250022197
+      Contra UI - 04_138: 399686712
+      Contra UI - 04_139: -1810613630
+      Contra UI - 04_14: -454725193
+      Contra UI - 04_140: -39582828
+      Contra UI - 04_141: 1836678091
+      Contra UI - 04_142: -1685379903
+      Contra UI - 04_143: -1782259017
+      Contra UI - 04_144: 1670673210
+      Contra UI - 04_145: 1253370536
+      Contra UI - 04_146: 636052671
+      Contra UI - 04_147: -1498464978
+      Contra UI - 04_148: 422032358
+      Contra UI - 04_149: 2027108055
+      Contra UI - 04_15: -201307161
+      Contra UI - 04_150: -1065634816
+      Contra UI - 04_151: -285925682
+      Contra UI - 04_152: -662056386
+      Contra UI - 04_153: -1205456412
+      Contra UI - 04_154: 575326197
+      Contra UI - 04_155: 833980589
+      Contra UI - 04_156: -835353521
+      Contra UI - 04_157: 1840929241
+      Contra UI - 04_158: -98520364
+      Contra UI - 04_159: 1934772974
+      Contra UI - 04_16: -1199426855
+      Contra UI - 04_160: 876168874
+      Contra UI - 04_161: -1219128075
+      Contra UI - 04_162: -824064946
+      Contra UI - 04_163: -1257935221
+      Contra UI - 04_164: 2060901000
+      Contra UI - 04_165: -942678739
+      Contra UI - 04_166: 1963142224
+      Contra UI - 04_167: -1563862030
+      Contra UI - 04_168: -214611608
+      Contra UI - 04_169: -469642597
+      Contra UI - 04_17: -528480592
+      Contra UI - 04_170: -1271654480
+      Contra UI - 04_171: 886215824
+      Contra UI - 04_172: -1043504089
+      Contra UI - 04_173: -935529018
+      Contra UI - 04_174: -1867938200
+      Contra UI - 04_175: -18677645
+      Contra UI - 04_176: -1556699584
+      Contra UI - 04_177: -1398712616
+      Contra UI - 04_178: -125943926
+      Contra UI - 04_179: -733046807
+      Contra UI - 04_18: 1133071534
+      Contra UI - 04_180: 2023536260
+      Contra UI - 04_181: -1751917920
+      Contra UI - 04_182: 1772664114
+      Contra UI - 04_183: 1799101123
+      Contra UI - 04_184: -1005580250
+      Contra UI - 04_185: -1827126020
+      Contra UI - 04_186: 1108098305
+      Contra UI - 04_187: -92029161
+      Contra UI - 04_188: 488971428
+      Contra UI - 04_189: -1435753061
+      Contra UI - 04_19: 236903803
+      Contra UI - 04_190: 846236228
+      Contra UI - 04_191: 1099943615
+      Contra UI - 04_192: 21221690
+      Contra UI - 04_193: 480607208
+      Contra UI - 04_194: -759972331
+      Contra UI - 04_195: 1044889200
+      Contra UI - 04_196: 1319436048
+      Contra UI - 04_197: -109647036
+      Contra UI - 04_198: -1314616580
+      Contra UI - 04_199: 1529839734
+      Contra UI - 04_2: 1140364427
+      Contra UI - 04_20: -884710724
+      Contra UI - 04_200: -1846704230
+      Contra UI - 04_201: -619484223
+      Contra UI - 04_202: 701710129
+      Contra UI - 04_203: 192567659
+      Contra UI - 04_21: -1923220216
+      Contra UI - 04_22: 995073814
+      Contra UI - 04_23: 573698670
+      Contra UI - 04_24: 1541860328
+      Contra UI - 04_25: -130881715
+      Contra UI - 04_26: 2112561515
+      Contra UI - 04_27: 160191041
+      Contra UI - 04_28: 1800194665
+      Contra UI - 04_29: -1033695996
+      Contra UI - 04_3: -750852947
+      Contra UI - 04_30: 348551474
+      Contra UI - 04_31: -1231976312
+      Contra UI - 04_32: -888465455
+      Contra UI - 04_33: -2054117050
+      Contra UI - 04_34: -1773575905
+      Contra UI - 04_35: -1840107305
+      Contra UI - 04_36: -1099827407
+      Contra UI - 04_37: 1051811958
+      Contra UI - 04_38: 1724066338
+      Contra UI - 04_39: 132640600
+      Contra UI - 04_4: -774080610
+      Contra UI - 04_40: -305260887
+      Contra UI - 04_41: -127826641
+      Contra UI - 04_42: -1545538579
+      Contra UI - 04_43: 405906937
+      Contra UI - 04_44: -621996691
+      Contra UI - 04_45: -188472105
+      Contra UI - 04_46: 1326209522
+      Contra UI - 04_47: -76514664
+      Contra UI - 04_48: -554691267
+      Contra UI - 04_49: 2094657192
+      Contra UI - 04_5: 1889186821
+      Contra UI - 04_50: -32509338
+      Contra UI - 04_51: -1069235488
+      Contra UI - 04_52: -1254819585
+      Contra UI - 04_53: 1498919398
+      Contra UI - 04_54: -575431974
+      Contra UI - 04_55: 756782855
+      Contra UI - 04_56: 1354267324
+      Contra UI - 04_57: 1243037521
+      Contra UI - 04_58: 17003548
+      Contra UI - 04_59: -395068950
+      Contra UI - 04_6: -2123271488
+      Contra UI - 04_60: -231573980
+      Contra UI - 04_61: 1013313810
+      Contra UI - 04_62: -1830792870
+      Contra UI - 04_63: 118428105
+      Contra UI - 04_64: -1657571007
+      Contra UI - 04_65: -2112496636
+      Contra UI - 04_66: -1803198177
+      Contra UI - 04_67: -1871038651
+      Contra UI - 04_68: 1053714270
+      Contra UI - 04_69: -766386967
+      Contra UI - 04_7: -849772084
+      Contra UI - 04_70: -1731223766
+      Contra UI - 04_71: 2107782864
+      Contra UI - 04_72: -70511864
+      Contra UI - 04_73: 755082112
+      Contra UI - 04_74: 465918368
+      Contra UI - 04_75: 1252234187
+      Contra UI - 04_76: 736077873
+      Contra UI - 04_77: -292906072
+      Contra UI - 04_78: 1971137761
+      Contra UI - 04_79: -699537722
+      Contra UI - 04_8: -1480244630
+      Contra UI - 04_80: -1474510259
+      Contra UI - 04_81: 1283194589
+      Contra UI - 04_82: -747153138
+      Contra UI - 04_83: -602485359
+      Contra UI - 04_84: 117059079
+      Contra UI - 04_85: -446325940
+      Contra UI - 04_86: -468469099
+      Contra UI - 04_87: -1902721130
+      Contra UI - 04_88: 1882497270
+      Contra UI - 04_89: -1238569209
+      Contra UI - 04_9: -1912176144
+      Contra UI - 04_90: 1559341132
+      Contra UI - 04_91: -923320128
+      Contra UI - 04_92: -730282007
+      Contra UI - 04_93: -1070388334
+      Contra UI - 04_94: 1523041422
+      Contra UI - 04_95: 1268856320
+      Contra UI - 04_96: -774229962
+      Contra UI - 04_97: -1463681059
+      Contra UI - 04_98: -1404059452
+      Contra UI - 04_99: -455369958
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

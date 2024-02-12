@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b9b05f133d5d97b479f3606e84bad851
+guid: 481ad16217ca3344791f34c97e85dd8f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,139 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI Icons - 02_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 174a48d8c0b7a7343b5233fadfa2119d
-      internalID: 1141386251
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Icons - 02_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d30eb37fc2be6e4fb09fbebc64ecef9
-      internalID: -2050636132
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Icons - 02_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a23b69450fbfcb04b984c2e67cdd058e
-      internalID: -1797332422
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Icons - 02_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad26073943beea043ae418f4e51dd655
-      internalID: -1767905481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Icons - 02_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c71700b542bc32468a1adcf3e9b8143
-      internalID: 741896306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Icons - 02_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0920788d63affbd4786c5b50bcf1a1aa
-      internalID: 1442656990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Icons - 02_6
+      name: Item Container - Flame Gun - 02_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,41 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67f42635023ee9349bf7da70a6336e46
-      internalID: 111357721
+      spriteID: 0c5334b8ed5fffb409f529f8c35d0730
+      internalID: 36261154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI Icons - 02_7
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ebfc0ce8770339c4ab3ba4a6d6d255e0
-      internalID: 905009558
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Icons - 02_8
+      name: Item Container - Flame Gun - 02_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,41 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b226448241b4c8242959ebf7f0370333
-      internalID: 1250196742
+      spriteID: 89153b20a70b97144959c4b17515954e
+      internalID: -1145043807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI Icons - 02_9
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6cbfb210ef528c944a11d92245eaae44
-      internalID: -30444080
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Icons - 02_10
+      name: Item Container - Flame Gun - 02_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7dd4c050ca163749af00d31b080afe5
-      internalID: -202903635
+      spriteID: 24c3fb93b6ebfbc4a8d2aad87ab4e78a
+      internalID: -1007029972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI Icons - 02_11
+      name: Item Container - Flame Gun - 02_3
       rect:
         serializedVersion: 2
-        x: 80
+        x: 96
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,8 +187,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8881f894131613543b0878759819a756
-      internalID: 1243223863
+      spriteID: ba236a9c7fd725e4abd37710b6b9b4f9
+      internalID: 95875121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item Container - Flame Gun - 02_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f8a3e081d557d44aea39909d3629e6
+      internalID: -625974783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item Container - Flame Gun - 02_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860bedf9007ce654d84cb04169ce9e6a
+      internalID: -1491942665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item Container - Flame Gun - 02_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d424055708ea8964981fe9dd8729560d
+      internalID: -1878913964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item Container - Flame Gun - 02_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fe8e0b6a37d334409ece5a518270336
+      internalID: 1011436100
       vertices: []
       indices: 
       edges: []
@@ -372,18 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UI Icons - 02_0: 1141386251
-      UI Icons - 02_1: -2050636132
-      UI Icons - 02_10: -202903635
-      UI Icons - 02_11: 1243223863
-      UI Icons - 02_2: -1797332422
-      UI Icons - 02_3: -1767905481
-      UI Icons - 02_4: 741896306
-      UI Icons - 02_5: 1442656990
-      UI Icons - 02_6: 111357721
-      UI Icons - 02_7: 905009558
-      UI Icons - 02_8: 1250196742
-      UI Icons - 02_9: -30444080
+      Item Container - Flame Gun - 02_0: 36261154
+      Item Container - Flame Gun - 02_1: -1145043807
+      Item Container - Flame Gun - 02_2: -1007029972
+      Item Container - Flame Gun - 02_3: 95875121
+      Item Container - Flame Gun - 02_4: -625974783
+      Item Container - Flame Gun - 02_5: -1491942665
+      Item Container - Flame Gun - 02_6: -1878913964
+      Item Container - Flame Gun - 02_7: 1011436100
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -115,8 +115,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 154
-        height: 63
+        width: 36
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a8897fd55018544bbafe65709552240
-      internalID: -50418038
+      spriteID: ffd35da717cc7214c96ce972ac32b292
+      internalID: 1834539780
       vertices: []
       indices: 
       edges: []
@@ -134,10 +134,10 @@ TextureImporter:
       name: Contra UI - 01d_1
       rect:
         serializedVersion: 2
-        x: 154
+        x: 36
         y: 0
-        width: 154
-        height: 63
+        width: 36
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cc174464a26683498843b521c592a4c
-      internalID: -1228432200
+      spriteID: 1289e47d0f0c08648b10cc28365643df
+      internalID: 384520430
       vertices: []
       indices: 
       edges: []
@@ -155,10 +155,10 @@ TextureImporter:
       name: Contra UI - 01d_2
       rect:
         serializedVersion: 2
-        x: 308
+        x: 72
         y: 0
-        width: 154
-        height: 63
+        width: 36
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17bcb7d35f5fcfe40bb23ec2cc5df63e
-      internalID: -2053319564
+      spriteID: aac37ac27b24fbb4d895735021727258
+      internalID: -1914005378
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Contra UI - 01d_0: -50418038
-      Contra UI - 01d_1: -1228432200
-      Contra UI - 01d_2: -2053319564
+      Contra UI - 01d_0: 1834539780
+      Contra UI - 01d_1: 384520430
+      Contra UI - 01d_2: -1914005378
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
