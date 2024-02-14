@@ -5798,7 +5798,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 346362833
+  m_SortingLayerID: 468613927
   m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
@@ -11071,6 +11071,7 @@ MonoBehaviour:
   oldRotation: {x: 0, y: 0, z: 0, w: 0}
   commonRotation: {x: 0, y: 0, z: 0, w: 0}
   projectileWeapon: {fileID: 0}
+  chargeWeapon: {fileID: 0}
   originalProjectiles: 0
   AimControl: 1
   RotationMode: 2

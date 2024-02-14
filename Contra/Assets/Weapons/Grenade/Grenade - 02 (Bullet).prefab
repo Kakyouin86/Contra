@@ -362,9 +362,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1628607475
+  m_SortingLayer: 2
+  m_SortingOrder: -1
   m_Sprite: {fileID: 36415874, guid: 9c130092bf954814caed6b1023650fc7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -524,7 +524,7 @@ MonoBehaviour:
   ExplodeOnContactDetectionRadius: 0.5
   ExplosionOnContactLayerMask:
     serializedVersion: 2
-    m_Bits: 272
+    m_Bits: 8464
   FlickerSprite: 1
   TimeBeforeFlicker: 1
   DamageAreaCollider: {fileID: 7745062669738436641}
