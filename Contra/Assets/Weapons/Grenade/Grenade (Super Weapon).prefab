@@ -50,6 +50,7 @@ MonoBehaviour:
   oldRotation: {x: 0, y: 0, z: 0, w: 0}
   commonRotation: {x: 0, y: 0, z: 0, w: 0}
   projectileWeapon: {fileID: 0}
+  chargeWeapon: {fileID: 0}
   originalProjectiles: 1
   AimControl: 2
   RotationMode: 2
@@ -89,7 +90,7 @@ MonoBehaviour:
   InitializeOnStart: 0
   DelayBeforeUse: 0
   DelayBeforeUseReleaseInterruption: 1
-  TimeBetweenUses: 1
+  TimeBetweenUses: 0.1
   TimeBetweenUsesReleaseInterruption: 1
   CooldownDuration: 0
   UseBurstMode: 0

@@ -488,7 +488,19 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
             theAnimator.SetBool("Death Flat", false);
             theAnimator.SetBool("Death Left Flat", false);
         }
-        
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //This doesn't allow to throw grenades if rolling or shooting the primary Weapon. The climbing part is taken in consideration within Corgi's bool "Can Shoot From Ladders".
+
+        if (character.MovementState.CurrentState == CharacterStates.MovementStates.Rolling)
+        {
+            character.GetComponent<CharacterHandleSecondaryWeapon>().AbilityPermitted = false;
+        }
+        else
+        {
+            character.GetComponent<CharacterHandleSecondaryWeapon>().AbilityPermitted = true;
+        }
+
         /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //This checks if the Throw Grenade animation is playing.
         if (theAnimator.GetCurrentAnimatorStateInfo(1).IsName("Throw Grenade Straight"))
@@ -505,14 +517,14 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
         }*/
     }
 
-    IEnumerator ReinitializeTheBCLadder()
+    public IEnumerator ReinitializeTheBCLadder()
     {
         yield return new WaitForSeconds(0.2f);
         theBCLadder.SetActive(true);
         character.GetComponent<CharacterJump>().AbilityPermitted = true;
     }
 
-    IEnumerator LittleWaitForRayGun()
+    public IEnumerator LittleWaitForRayGun()
     {
         //Debug.Log("Here7");
         yield return new WaitForSeconds(0.2f);

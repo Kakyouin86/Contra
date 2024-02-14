@@ -7,7 +7,7 @@ public class AdditionalCharacterHandleWeaponOverride : CharacterHandleWeapon
 {
     public override void ShootStart()
     {
-        // if the Shoot action is enabled in the permissions, we continue, if not we do nothing.  If the player is dead we do nothing.
+        // if the Shoot action is enabled in the permissions, we continue, if not we do nothing. If the player is dead we do nothing.
         if (!AbilityAuthorized
             || (CurrentWeapon == null)
             || ((_condition.CurrentState != CharacterStates.CharacterConditions.Normal) && (_condition.CurrentState != CharacterStates.CharacterConditions.ControlledMovement)))
@@ -30,10 +30,6 @@ public class AdditionalCharacterHandleWeaponOverride : CharacterHandleWeapon
                 _bufferEndsAt = Time.time + MaximumBufferDuration;
             }
         }
-
-        //PlayAbilityStartFeedbacks(); Leo Monge
-        //MMCharacterEvent.Trigger(_character, MMCharacterEventTypes.HandleWeapon, MMCharacterEvent.Moments.Start); Leo Monge
-        //CurrentWeapon.WeaponInputStart();Leo Monge
 
         if (_movement.CurrentState == CharacterStates.MovementStates.Rolling) //Leo Monge. It was just CurrentWeapon.WeaponInputStart(); //if (_movement.CurrentState == CharacterStates.MovementStates.Dashing)
         {

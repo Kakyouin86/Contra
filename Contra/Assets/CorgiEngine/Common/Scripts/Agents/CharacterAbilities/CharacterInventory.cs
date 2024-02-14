@@ -198,42 +198,45 @@ namespace MoreMountains.CorgiEngine
         /// </summary>
         protected override void HandleInput() //Leo Monge: Need to ALWAYS bring it after update. This has several edits in the shells/sprites.
         {
-            if (_inputManager.SwitchWeaponButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+            if (CharacterHandleWeapon.GetComponent<Character>().ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead)
             {
-                GameObject[] shellsArray = GameObject.FindGameObjectsWithTag("Shells");
-
-                foreach (GameObject theShells in shellsArray)
+                if (_inputManager.SwitchWeaponButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
                 {
-                    if (theShells != null)
+                    GameObject[] shellsArray = GameObject.FindGameObjectsWithTag("Shells");
+
+                    foreach (GameObject theShells in shellsArray)
                     {
-                        theShells.transform.SetParent(null);
-                        Destroy(theShells, 2f);
+                        if (theShells != null)
+                        {
+                            theShells.transform.SetParent(null);
+                            Destroy(theShells, 2f);
+                        }
                     }
+
+                    Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
+                    theAnimator.SetBool("DelayForSwitchingGuns", true);
+                    SwitchWeapon();
+                    StartCoroutine(DelayAnimations());
                 }
 
-                Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
-                theAnimator.SetBool("DelayForSwitchingGuns", true);
-                SwitchWeapon();
-                StartCoroutine(DelayAnimations());
-            }
-
-            if (player.GetButtonDown(("SwitchWeaponForward")))
-            {
-                GameObject[] shellsArray = GameObject.FindGameObjectsWithTag("Shells");
-
-                foreach (GameObject theShells in shellsArray)
+                if (player.GetButtonDown(("SwitchWeaponForward")))
                 {
-                    if (theShells != null)
-                    {
-                        theShells.transform.SetParent(null);
-                        Destroy(theShells, 2f);
-                    }
-                }
+                    GameObject[] shellsArray = GameObject.FindGameObjectsWithTag("Shells");
 
-                Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
-                theAnimator.SetBool("DelayForSwitchingGuns", true);
-                SwitchWeaponForward();
-                StartCoroutine(DelayAnimations());
+                    foreach (GameObject theShells in shellsArray)
+                    {
+                        if (theShells != null)
+                        {
+                            theShells.transform.SetParent(null);
+                            Destroy(theShells, 2f);
+                        }
+                    }
+
+                    Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
+                    theAnimator.SetBool("DelayForSwitchingGuns", true);
+                    SwitchWeaponForward();
+                    StartCoroutine(DelayAnimations());
+                }
             }
         }
 
