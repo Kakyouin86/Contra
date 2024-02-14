@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
 using UnityEngine.Serialization;
-using MoreMountains.InventoryEngine;
 
 namespace MoreMountains.CorgiEngine
 {
@@ -44,9 +43,9 @@ namespace MoreMountains.CorgiEngine
 	[SelectionBase]
 	[MMRequiresConstantRepaint]
 	public class Weapon : MMMonoBehaviour
-    {
-        /// the possible use modes for the trigger
-        public enum TriggerModes { SemiAuto, Auto }
+	{
+		/// the possible use modes for the trigger
+		public enum TriggerModes { SemiAuto, Auto }
 		/// the possible states the weapon can be in
 		public enum WeaponStates { WeaponIdle, WeaponStart, WeaponDelayBeforeUse, WeaponUse, WeaponDelayBetweenUses, WeaponStop, WeaponReloadNeeded, WeaponReloadStart, WeaponReload, WeaponReloadStop, WeaponInterrupted, WeaponInCooldown }
 
@@ -383,21 +382,21 @@ namespace MoreMountains.CorgiEngine
 		protected bool _gravityBeforeUse = true;
 		protected bool _canFlipBeforeUse = true;
 
-		#region Initialization
+        #region Initialization
 
-		protected virtual void Start()
-		{
+        protected virtual void Start()
+        {
             theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>(); //Leo Monge: Need to ALWAYS bring it after update. This adds the Animator.
             if (InitializeOnStart)
-			{
-				Initialization();
-			}
-		}
+            {
+                Initialization();
+            }
+        }
 
-		/// <summary>
-		/// Initialize this weapon.
-		/// </summary>
-		public virtual void Initialization()
+        /// <summary>
+        /// Initialize this weapon.
+        /// </summary>
+        public virtual void Initialization()
 		{
 			if (!_initialized)
 			{
@@ -649,7 +648,7 @@ namespace MoreMountains.CorgiEngine
 			{
 				_controller.GravityActive(_gravityBeforeUse);
 			}
-			if (PreventFlipWhileInUse)
+			if (PreventFlipWhileInUse && (Owner != null))
 			{
 				Owner.CanFlip = _canFlipBeforeUse;
 			}
@@ -881,14 +880,14 @@ namespace MoreMountains.CorgiEngine
 			ApplyRecoil(ApplyRecoilOnUse, RecoilOnUseProperties);   
 		}
 
-		#endregion StateMachine
+        #endregion StateMachine
 
-		#region Permissions
-		
-		/// <summary>
-		/// Determines whether or not the weapon can fire
-		/// </summary>
-		public virtual IEnumerator ShootRequestCo() //Leo Monge: Need to ALWAYS bring it after update. This whole thing should be edited because basically adds some "time" after shooting so it repeats the animation and adds a little timer so it finishes well the animations.
+        #region Permissions
+
+        /// <summary>
+        /// Determines whether or not the weapon can fire
+        /// </summary>
+        public virtual IEnumerator ShootRequestCo() //Leo Monge: Need to ALWAYS bring it after update. This whole thing should be edited because basically adds some "time" after shooting so it repeats the animation and adds a little timer so it finishes well the animations.
         {
             /*Inventory weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventory").GetComponent<Inventory>();
             //float intervalLeo = 0.01f;
@@ -919,21 +918,21 @@ namespace MoreMountains.CorgiEngine
 
             theAnimator.SetBool("isShooting", false);
             TurnWeaponOff();*/
-            
+
             //float customIntervalLeo = 0.5f; // Original interval of 1 second. Moved to 0.5. In 0.3 it creates bugs while shooting up.
             int remainingShots = UseBurstMode ? BurstLength : 1;
             intervalWaitFor = UseBurstMode ? BurstTimeBetweenShots : customIntervalLeo;
             //float counter = 0.0f; // Counter for 0.1 seconds
-            while (remainingShots > 0) 
+            while (remainingShots > 0)
             {
                 if (!gameObject.CompareTag("Untagged"))
                 {
                     theAnimator.SetBool("isShooting", true);
                     theAnimator.SetFloat("isShootingCounter", counterIsShootingCounter);
                 }
-		        ShootRequest();
-		        remainingShots--;
-		        yield return MMCoroutine.WaitFor(intervalWaitFor);
+                ShootRequest();
+                remainingShots--;
+                yield return MMCoroutine.WaitFor(intervalWaitFor);
             }
 
             if (!gameObject.CompareTag("Untagged"))
@@ -1018,9 +1017,9 @@ namespace MoreMountains.CorgiEngine
 				else
 				{
 					WeaponState.ChangeState(WeaponStates.WeaponUse);						
-				}
-            }
-        }
+				}					
+			}
+		}
 
 		#endregion Permissions
 
@@ -1135,7 +1134,6 @@ namespace MoreMountains.CorgiEngine
 		/// <returns>The destruction.</returns>
 		public virtual IEnumerator WeaponDestruction()
 		{
-			Debug.Log("HERE????");
 			yield return new WaitForSeconds (AutoDestroyWhenEmptyDelay);
 			// if we don't have ammo anymore, and need to destroy our weapon, we do it
 			TurnWeaponOff();

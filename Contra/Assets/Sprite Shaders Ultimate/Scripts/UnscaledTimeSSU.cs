@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace SpriteShadersUltimate
 {
+    [AddComponentMenu("Sprite Shaders Ultimate/Utility/Unscaled Time")]
     public class UnscaledTimeSSU : MonoBehaviour
     {
         public bool dontDestroyOnLoad;

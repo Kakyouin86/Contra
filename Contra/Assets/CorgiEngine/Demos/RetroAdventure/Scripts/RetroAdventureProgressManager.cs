@@ -56,6 +56,15 @@ namespace MoreMountains.CorgiEngine
 
 		protected const string _saveFolderName = "MMRetroAdventureProgress";
 		protected const string _saveFileName = "Progress.data";
+		
+		/// <summary>
+		/// Statics initialization to support enter play modes
+		/// </summary>
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+		protected static void InitializeStatics()
+		{
+			_instance = null;
+		}
 
 		/// <summary>
 		/// On awake, we load our progress and initialize our stars counter

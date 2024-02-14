@@ -234,7 +234,7 @@
 <p>&nbsp;</p>
 <hr />
 <h3><a name="force-feedback" id="default-dead-zone5"></a>Does Rewired support force feedback?</h3>
-<p>The only form of force feedback currently supported by Rewired is gamepad vibration. Vibration works with certain controllers on certain platforms and input sources.</p>
+<p>The only forms of force feedback currently supported by Rewired are gamepad vibration and DualSense trigger haptics. Vibration works with certain controllers on certain platforms and input sources.</p>
 <p>Currently vibration is only supported on the following controllers and platforms and input sources:</p>
 <table width="100%" border="0" class="supported-controllers-table">
   <tr>
@@ -280,6 +280,8 @@
     <td align="center" valign="top"><ul>
       <li>XInput<br />
         <span class="note">(2 of 4 motors supported)</span></li>
+      <li>Windows Gaming Input<br />
+        <span class="note">(All motors supported)</span>      </li>
       <li> SDL2*</li>
     </ul></td>
     <td align="center" valign="top"><ul>
@@ -288,7 +290,7 @@
           (<a href="https://github.com/360Controller/360Controller/releases" target="_blank">Driver required</a>)</span></li>
       <li>Game Controller Framework</li>
     </ul>      </td>
-    <td align="center" valign="top">Not tested</td>
+    <td align="center" valign="top">Native</td>
     <td align="center" valign="top">Native<br />
       <span class="note">(2 of 4 motors supported)</span></td>
     <td align="center" valign="top">Native<br />
@@ -307,9 +309,13 @@
     <td align="center" valign="top"><ul>
       <li>XInput<br />
         <span class="note">(2 of 4 motors supported)</span></li>
+      <li>Windows Gaming Input<br />
+        <span class="note">(All motors supported)<br />
+        </span></li>
+      <li> SDL2*</li>
     </ul></td>
-    <td align="center" valign="top">&mdash;</td>
-    <td align="center" valign="top">&mdash;</td>
+    <td align="center" valign="top">Game Controller Framework</td>
+    <td align="center" valign="top">Native</td>
     <td align="center" valign="top">Native<br />
       <span class="note">(2 of 4 motors supported)</span></td>
     <td align="center" valign="top">Native<br />
@@ -329,10 +335,10 @@
       <span class="note">(<a href="RewiredEditor.html#settings-windows-enhanced-device-support">Enhanced Device Support</a> required)</span></td>
     <td align="center" valign="top"><ul>
       <li>Native<br />
-        <span class="note">(<a href="RewiredEditor.html#settings-osx-enhanced-device-support">Enhanced Device Support</a> required, wired only)</span></li>
+        <span class="note">(<a href="RewiredEditor.html#settings-osx-enhanced-device-support">Enhanced Device Support</a> required,)</span></li>
       <li>Game Controller Framework</li>
     </ul>      </td>
-    <td align="center" valign="top">&mdash;</td>
+    <td align="center" valign="top">Native</td>
     <td align="center" valign="top">&mdash;</td>
     <td align="center" valign="top">&mdash;</td>
     <td align="center" valign="top">&mdash;</td>
@@ -348,10 +354,11 @@
       <span class="note">(<a href="RewiredEditor.html#settings-windows-enhanced-device-support">Enhanced Device Support</a> required)</span></td>
     <td align="center" valign="top"><ul>
       <li>Native<br />
-        <span class="note">(<a href="RewiredEditor.html#settings-osx-enhanced-device-support">Enhanced Device Support</a> required, wired only)</span></li>
+        <span class="note">(<a href="RewiredEditor.html#settings-osx-enhanced-device-support">Enhanced Device Support</a> required)</span></li>
       <li>Game Controller Framework</li>
     </ul>      </td>
-    <td align="center" valign="top">&mdash;</td>
+    <td align="center" valign="top">Native<br />
+      <span class="note">(<a href="RewiredEditor.html#settings-linux-enhanced-device-support">Enhanced Device Support</a> required for haptic triggers)</span></td>
     <td align="center" valign="top">&mdash;</td>
     <td align="center" valign="top">&mdash;</td>
     <td align="center" valign="top">&mdash;</td>
@@ -362,10 +369,12 @@
     <td align="center" valign="top">Native</td>
   </tr>
   <tr>
-    <td valign="top">Nintendo Joy-Cons and Pro Controller</td>
-    <td align="center" valign="top">&mdash;</td>
-    <td align="center" valign="top">&mdash;</td>
-    <td align="center" valign="top">&mdash;</td>
+    <td valign="top">Nintendo Joy-Cons </td>
+    <td align="center" valign="top">Raw Input<br />
+      <span class="note">(<a href="RewiredEditor.html#settings-windows-enhanced-device-support">Enhanced Device Support</a> required)</span></td>
+    <td align="center" valign="top">Native<br />
+      <span class="note">(<a href="RewiredEditor.html#settings-windows-enhanced-device-support">Enhanced Device Support</a> required)</span></td>
+    <td align="center" valign="top">Native</td>
     <td align="center" valign="top">&mdash;</td>
     <td align="center" valign="top">&mdash;</td>
     <td align="center" valign="top">&mdash;</td>
@@ -374,9 +383,29 @@
     <td align="center" valign="top">&mdash;</td>
     <td align="center" valign="top">Native<br />
       <span class="note">(All motors and features supported)</span></td>
-    <td align="center" valign="top">Native<br />
-      <span class="note">(Pro Controller)</span></td>
+    <td align="center" valign="top">&mdash;</td>
   </tr>
+  <tr>
+    <td valign="top">Nintendo Pro Controller</td>
+    <td align="center" valign="top">Raw Input<br />
+      <span class="note">(<a href="RewiredEditor.html#settings-windows-enhanced-device-support">Enhanced Device Support</a> required)</span></td>
+    <td align="center" valign="top"><ul>
+      <li>Native<br />
+        <span class="note">(<a href="RewiredEditor.html#settings-osx-enhanced-device-support">Enhanced Device Support</a> required,)</span></li>
+      <li>Game Controller Framework<br />
+        <span class="note">(Wireless only.)</span></li>
+    </ul></td>
+    <td align="center" valign="top">Native</td>
+    <td align="center" valign="top">&mdash;</td>
+    <td align="center" valign="top">&mdash;</td>
+    <td align="center" valign="top">&mdash;</td>
+    <td align="center" valign="top">&nbsp;</td>
+    <td align="center" valign="top">&mdash;</td>
+    <td align="center" valign="top">&mdash;</td>
+    <td align="center" valign="top">Native<br />
+      <span class="note">(All motors and features supported)</span></td>
+    <td align="center" valign="top">Native</td>
+    </tr>
   <tr>
     <td valign="top">Stadia Controller</td>
     <td align="center" valign="top">&mdash;</td>

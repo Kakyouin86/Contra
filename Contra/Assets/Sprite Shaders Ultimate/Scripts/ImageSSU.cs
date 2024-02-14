@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 namespace SpriteShadersUltimate
 {
+    [AddComponentMenu("Sprite Shaders Ultimate/Utility/Image")]
     public class ImageSSU : InstancerSSU
     {
         //Updates material when RectTransform changes.

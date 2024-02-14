@@ -286,6 +286,8 @@ namespace MoreMountains.Feedbacks
 		protected override void CustomInitialization(MMF_Player owner)
 		{
 			base.CustomInitialization(owner);
+			HandleSO();
+			
 			if (RandomUnique)
 			{
 				_randomUniqueShuffleBag = new MMShufflebag<int>(RandomSfx.Length);
@@ -317,8 +319,6 @@ namespace MoreMountains.Feedbacks
 			{
 				return;
 			}
-
-			HandleSO();
             
 			float intensityMultiplier = ComputeIntensity(feedbacksIntensity, position);
             

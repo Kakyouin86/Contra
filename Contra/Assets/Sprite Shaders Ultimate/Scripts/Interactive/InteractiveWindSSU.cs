@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace SpriteShadersUltimate
 {
+    [AddComponentMenu("Sprite Shaders Ultimate/Wind/Interactive Wind")]
     public class InteractiveWindSSU : InstancerSSU
     {
         [Tooltip("How much physical interaction bends the sprite.")]

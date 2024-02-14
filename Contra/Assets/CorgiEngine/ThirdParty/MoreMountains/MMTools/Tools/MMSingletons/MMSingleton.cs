@@ -11,12 +11,6 @@ namespace MoreMountains.Tools
 		public static bool HasInstance => _instance != null;
 		public static T TryGetInstance() => HasInstance ? _instance : null;
 		public static T Current => _instance;
-		
-		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-		protected static void InitializeStatics()
-		{
-			_instance = null;
-		}
 
 		/// <summary>
 		/// Singleton design pattern

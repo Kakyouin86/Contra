@@ -50,6 +50,15 @@ namespace MoreMountains.CorgiEngine
 		protected Vector3 _maxBoundsLastFrame;
 		protected bool _initialOneWayLevelAutoScrolling;
 		protected float _initialOneWayLevelAutoScrollingSpeed;
+		
+		/// <summary>
+		/// Statics initialization to support enter play modes
+		/// </summary>
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+		protected static void InitializeStatics()
+		{
+			_instance = null;
+		}
 
 		/// <summary>
 		/// Forces the level to prevent being able to go back in the opposite direction, or not

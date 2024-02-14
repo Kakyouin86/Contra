@@ -1814,6 +1814,7 @@ MonoBehaviour:
           ButtonText: Debug Stop Sound
         PlayMethod: 0
         PoolSize: 10
+        UseLegacyEventsMode: 0
         StopSoundOnFeedbackStop: 1
         MinVolume: 1
         MaxVolume: 1
@@ -9563,6 +9564,7 @@ MonoBehaviour:
           ButtonText: Debug Stop Sound
         PlayMethod: 0
         PoolSize: 10
+        UseLegacyEventsMode: 0
         StopSoundOnFeedbackStop: 1
         MinVolume: 1
         MaxVolume: 1
@@ -18085,7 +18087,7 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 346362833
-  m_SortingLayer: 7
+  m_SortingLayer: 0
   m_SortingOrder: 10
   m_Positions:
   - {x: 0, y: 0, z: 0}
@@ -19583,7 +19585,6 @@ MonoBehaviour:
       useXInput: 1
       useNativeMouse: 1
       useEnhancedDeviceSupport: 1
-      windowsStandalone_useSteamRawInputControllerWorkaround: 0
       osxStandalone_useEnhancedDeviceSupport: 1
       android_supportUnknownGamepads: 1
       ps4_assignJoysticksByPS4JoyId: 1
@@ -19591,22 +19592,30 @@ MonoBehaviour:
       logToScreen: 0
       runInEditMode: 0
       allowInputInEditorSceneView: 0
+      unityUsePhysicalKeys: 0
+      keyCombinationOverrideMode: 1
+      generateKeyEventsOnKeyCombinationOverride: 0
       platformVars_windowsStandalone:
         disableKeyboard: 0
         disableMouse: 0
         ignoreInputWhenAppNotInFocus: 1
         useNativeKeyboard: 1
         joystickRefreshRate: 240
+        useWindowsGamingInput: 0
+        enhancedDeviceSupportExcludedDeviceTypes: 
       platformVars_linuxStandalone:
         disableKeyboard: 0
         disableMouse: 0
         ignoreInputWhenAppNotInFocus: 1
+        useEnhancedDeviceSupport: 1
+        enhancedDeviceSupportExcludedDeviceTypes: 
       platformVars_osxStandalone:
         disableKeyboard: 0
         disableMouse: 0
         ignoreInputWhenAppNotInFocus: 1
         useAppleGameController: 0
         assignJoysticksByUserId: 0
+        enhancedDeviceSupportExcludedDeviceTypes: 
       platformVars_windowsUWP:
         disableKeyboard: 0
         disableMouse: 0
@@ -21722,14 +21731,6 @@ MonoBehaviour:
   DelayedButtonPresses: 0
   SmoothMovement: 0
   Threshold: {x: 0.1, y: 0.1}
-  _primaryMovement: {x: 0, y: 0}
-  _secondaryMovement: {x: 0, y: 0}
-  _axisHorizontal: 
-  _axisVertical: 
-  _axisSecondaryHorizontal: 
-  _axisSecondaryVertical: 
-  _axisShoot: 
-  _axisShootSecondary: 
 --- !u!1 &1122128343
 GameObject:
   m_ObjectHideFlags: 0
@@ -22580,6 +22581,7 @@ MonoBehaviour:
           ButtonText: Debug Stop Sound
         PlayMethod: 0
         PoolSize: 10
+        UseLegacyEventsMode: 0
         StopSoundOnFeedbackStop: 1
         MinVolume: 1
         MaxVolume: 1
@@ -25225,6 +25227,7 @@ MonoBehaviour:
           ButtonText: Debug Stop Sound
         PlayMethod: 0
         PoolSize: 10
+        UseLegacyEventsMode: 0
         StopSoundOnFeedbackStop: 1
         MinVolume: 1
         MaxVolume: 1
@@ -33920,14 +33923,6 @@ MonoBehaviour:
   DelayedButtonPresses: 0
   SmoothMovement: 0
   Threshold: {x: 0.1, y: 0.1}
-  _primaryMovement: {x: 0, y: 0}
-  _secondaryMovement: {x: 0, y: 0}
-  _axisHorizontal: 
-  _axisVertical: 
-  _axisSecondaryHorizontal: 
-  _axisSecondaryVertical: 
-  _axisShoot: 
-  _axisShootSecondary: 
 --- !u!1 &1966031590
 GameObject:
   m_ObjectHideFlags: 0
@@ -36839,6 +36834,7 @@ MonoBehaviour:
           ButtonText: Debug Stop Sound
         PlayMethod: 0
         PoolSize: 10
+        UseLegacyEventsMode: 0
         StopSoundOnFeedbackStop: 1
         MinVolume: 1
         MaxVolume: 1
@@ -37635,6 +37631,7 @@ MonoBehaviour:
           ButtonText: Debug Stop Sound
         PlayMethod: 0
         PoolSize: 10
+        UseLegacyEventsMode: 0
         StopSoundOnFeedbackStop: 1
         MinVolume: 1
         MaxVolume: 1

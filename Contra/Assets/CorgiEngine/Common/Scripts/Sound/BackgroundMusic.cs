@@ -22,6 +22,15 @@ namespace MoreMountains.CorgiEngine
 		public int ID = 255;
 
 		protected AudioSource _source;
+		
+		/// <summary>
+		/// Statics initialization to support enter play modes
+		/// </summary>
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+		protected static void InitializeStatics()
+		{
+			_instance = null;
+		}
 
 		/// <summary>
 		/// Gets the AudioSource associated to that GameObject, and asks the GameManager to play it.

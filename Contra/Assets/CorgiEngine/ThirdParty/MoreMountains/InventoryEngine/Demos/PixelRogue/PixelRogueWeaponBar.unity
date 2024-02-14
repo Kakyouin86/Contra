@@ -2373,10 +2373,20 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1707067089828962178, guid: 21bbf2e974b14e2468230a1da74b7a63,
+        type: 3}
+      propertyPath: TargetInventories.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1707067089828962178, guid: 21bbf2e974b14e2468230a1da74b7a63,
+        type: 3}
+      propertyPath: TargetInventories.Array.data[0]
+      value: 
+      objectReference: {fileID: 801302916}
     - target: {fileID: 3405107812832344190, guid: 21bbf2e974b14e2468230a1da74b7a63,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6365043651016374918, guid: 21bbf2e974b14e2468230a1da74b7a63,
         type: 3}

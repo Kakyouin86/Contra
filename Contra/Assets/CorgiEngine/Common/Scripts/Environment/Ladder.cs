@@ -10,8 +10,8 @@ namespace MoreMountains.CorgiEngine
 	[AddComponentMenu("Corgi Engine/Environment/Ladder")]
 	public class Ladder : CorgiMonoBehaviour 
 	{
-		/// the different types of ladders
-		public enum LadderTypes { Simple, BiDirectional, Horizontal } //Leo Monge: Need to ALWAYS bring it after update.
+        /// the different types of ladders
+        public enum LadderTypes { Simple, BiDirectional, Horizontal } //Leo Monge: Need to ALWAYS bring it after update.
 
         [Header("Behaviour")]
 

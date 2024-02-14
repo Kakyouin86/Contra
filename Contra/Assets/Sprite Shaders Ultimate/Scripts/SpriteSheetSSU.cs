@@ -9,6 +9,7 @@ namespace SpriteShadersUltimate
     /// Attach this to sprite renderers or images with a sprite shaders ultimate material.
     /// Enable Sprite Sheet Fix and let this component update the Sprite Sheet Rect variable.
     /// </summary>
+    [AddComponentMenu("Sprite Shaders Ultimate/Utility/Sprite Sheet")]
     public class SpriteSheetSSU : MonoBehaviour
     {
         public bool updateChanges = false;

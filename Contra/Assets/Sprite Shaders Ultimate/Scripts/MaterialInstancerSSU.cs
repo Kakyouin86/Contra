@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 namespace SpriteShadersUltimate
 {
+    [AddComponentMenu("Sprite Shaders Ultimate/Utility/Material Instancer")]
     public class MaterialInstancerSSU : InstancerSSU
     {
         void Awake()

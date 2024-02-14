@@ -111,6 +111,7 @@ namespace MoreMountains.CorgiEngine
 		protected bool _coyoteTime = false;
 		protected bool _inputBuffer = false;
 		protected bool _jumpingDownFromOneWayPlatform = false;
+		protected float _lastJumpButtonDownTimestamp = 0f;
                 
 		// animation parameters
 		protected const string _jumpingAnimationParameterName = "Jumping";
@@ -220,7 +221,7 @@ namespace MoreMountains.CorgiEngine
 			// we handle input buffer
 			if ((InputBufferDuration > 0f) && (_controller.State.JustGotGrounded))
 			{
-				if ((_inputManager.JumpButton.TimeSinceLastButtonDown < InputBufferDuration) && (Time.time - _lastJumpAt > InputBufferDuration) && !_jumpingDownFromOneWayPlatform) 
+				if ((Time.unscaledTime - _lastJumpButtonDownTimestamp < InputBufferDuration) && (Time.time - _lastJumpAt > InputBufferDuration) && !_jumpingDownFromOneWayPlatform) 
 				{
 					NumberOfJumpsLeft = NumberOfJumps;	
 					_doubleJumping = false;
@@ -237,6 +238,11 @@ namespace MoreMountains.CorgiEngine
 			if (_inputManager.JumpButton.State.CurrentState == MMInput.ButtonStates.ButtonUp)
 			{
 				JumpStop();
+			}
+
+			if (_inputManager.JumpButton.IsDown)
+			{
+				_lastJumpButtonDownTimestamp = Time.unscaledTime;
 			}
 		}	
 

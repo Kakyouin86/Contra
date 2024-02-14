@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using MoreMountains.Tools;
 using MoreMountains.InventoryEngine;
@@ -21,8 +21,8 @@ namespace MoreMountains.CorgiEngine
         {
             player = ReInput.players.GetPlayer(0);
         }
-
         public Player player; //Leo Monge: Need to ALWAYS bring it after update.
+
         /// <summary>
         /// A struct used to store inventory items to add on init
         /// </summary>
@@ -138,22 +138,22 @@ namespace MoreMountains.CorgiEngine
 		{
             yield return MMCoroutine.WaitForFrames(1);//Leo Monge: Need to ALWAYS bring it after update. This is because the grenades don't add up in the UI and the Auto-Equip doesn't work.
             if (_autoAdded)
-			{
-				yield break;
-			}
+            {
+                yield break;
+            }
             foreach (InventoryItemsToAdd item in AutoAddItemsMainInventory)
             {
                 MainInventory?.AddItem(item.Item, item.Quantity);
             }
             foreach (InventoryItemsToAdd item in AutoAddItemsHotbar)
-			{
-				HotbarInventory?.AddItem(item.Item, item.Quantity);
-			}
-			if (AutoEquipWeapon != null)
-			{
+            {
+                HotbarInventory?.AddItem(item.Item, item.Quantity);
+            }
+            if (AutoEquipWeapon != null)
+            {
                 if (!hasUpgradedMachineGun)
                 {
-					//Debug.Log("Character Inventory Normal Weapon");
+                    //Debug.Log("Character Inventory Normal Weapon");
                     MainInventory.AddItem(AutoEquipWeapon, 1);
                     EquipWeapon(AutoEquipWeapon.ItemID);
                 }
@@ -164,9 +164,9 @@ namespace MoreMountains.CorgiEngine
                     EquipWeapon(AutoEquipWeaponSuper.ItemID);
                 }
 
-			}
-			_autoAdded = true;
-		}
+            }
+            _autoAdded = true;
+        }
 
 		/// <summary>
 		/// Grabs references to all inventories
@@ -196,7 +196,7 @@ namespace MoreMountains.CorgiEngine
         /// <summary>
         /// We watch for a switch weapon input
         /// </summary>
-        protected override void HandleInput()
+        protected override void HandleInput() //Leo Monge: Need to ALWAYS bring it after update. This has several edits in the shells/sprites.
         {
             if (_inputManager.SwitchWeaponButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
             {
@@ -245,10 +245,10 @@ namespace MoreMountains.CorgiEngine
             theAnimator.SetBool("DelayForSwitchingGuns", false);
         }
 
-		/// <summary>
-		/// Fills a list with all available weapons in the inventories
-		/// </summary>
-		protected virtual void FillAvailableWeaponsLists()
+        /// <summary>
+        /// Fills a list with all available weapons in the inventories
+        /// </summary>
+        protected virtual void FillAvailableWeaponsLists()
 		{
 			_availableWeaponsIDs = new List<string> ();
 			if ((CharacterHandleWeapon == null) || (WeaponInventory == null))
@@ -268,46 +268,11 @@ namespace MoreMountains.CorgiEngine
 			_availableWeaponsIDs.Sort ();
 		}
 
-		/// <summary>
-		/// Determines the name of the next weapon
-		/// </summary>
-		protected virtual void DetermineNextWeaponName ()
-		{
-            /*	if (InventoryItem.IsNull(WeaponInventory.Content[0]))
-                {
-                    _nextWeaponID = _availableWeaponsIDs [0];
-                    return;
-                }
-
-                if ((_nextWeaponID == _emptySlotWeaponName) || (_nextWeaponID == _initialSlotWeaponName))
-                {
-                    _nextWeaponID = _availableWeaponsIDs[0];
-                    return;
-                }
-
-                for (int i = 0; i < _availableWeaponsIDs.Count; i++)
-                {
-                    if (_availableWeaponsIDs[i] == WeaponInventory.Content[0].ItemID)
-                    {
-                        if (i == _availableWeaponsIDs.Count - 1)
-                        {
-                            switch (WeaponRotationMode)
-                            {
-                                case WeaponRotationModes.AddEmptySlot:
-                                    _nextWeaponID = _emptySlotWeaponName;
-                                    return;
-                                case WeaponRotationModes.AddInitialWeapon:
-                                    _nextWeaponID = _initialSlotWeaponName;
-                                    return;
-                            }
-                            _nextWeaponID = _availableWeaponsIDs [0];
-                        }
-                        else
-                        {
-                            _nextWeaponID = _availableWeaponsIDs [i+1];
-                        }
-                    }
-                }*/
+        /// <summary>
+        /// Determines the name of the next weapon
+        /// </summary>
+        protected virtual void DetermineNextWeaponName() //Leo Monge: Need to ALWAYS bring it after update. Several edits for the cycling of the weapons.
+        {
             if (InventoryItem.IsNull(WeaponInventory.Content[0]))
             {
                 _nextWeaponID = _availableWeaponsIDs[0];
@@ -364,7 +329,7 @@ namespace MoreMountains.CorgiEngine
             }
         }
 
-        protected virtual void DetermineNextWeaponNameForward()
+        protected virtual void DetermineNextWeaponNameForward() //Leo Monge: Need to ALWAYS bring it after update. Several edits for the cycling of the weapons.
         {
             if (InventoryItem.IsNull(WeaponInventory.Content[0]))
             {
@@ -405,7 +370,7 @@ namespace MoreMountains.CorgiEngine
                         }
 
 
-                    } 
+                    }
                     if (_availableWeaponsIDs.Count >= 3)
                     {
                         if (i == _availableWeaponsIDs.Count - 1)
@@ -430,42 +395,42 @@ namespace MoreMountains.CorgiEngine
         /// Equips a weapon specified in parameters
         /// </summary>
         /// <param name="weaponID"></param>
-        public void EquipWeapon(string weaponID)//Leo Monge: Need to ALWAYS bring it after update. Need to be public so I can access in ToggleWeapons
+        public void EquipWeapon(string weaponID) //Leo Monge: Need to ALWAYS bring it after update. Need to be public so I can access in ToggleWeapons
         {
-			if ((weaponID == _emptySlotWeaponName) && (CharacterHandleWeapon != null))
-			{
-				MMInventoryEvent.Trigger(MMInventoryEventType.UnEquipRequest, null, WeaponInventoryName, WeaponInventory.Content[0], 0, 0, PlayerID);
-				CharacterHandleWeapon.ChangeWeapon(null, _emptySlotWeaponName, false);
-				MMInventoryEvent.Trigger(MMInventoryEventType.Redraw, null, WeaponInventory.name, null, 0, 0, PlayerID);
-			}
+            if ((weaponID == _emptySlotWeaponName) && (CharacterHandleWeapon != null))
+            {
+                MMInventoryEvent.Trigger(MMInventoryEventType.UnEquipRequest, null, WeaponInventoryName, WeaponInventory.Content[0], 0, 0, PlayerID);
+                CharacterHandleWeapon.ChangeWeapon(null, _emptySlotWeaponName, false);
+                MMInventoryEvent.Trigger(MMInventoryEventType.Redraw, null, WeaponInventory.name, null, 0, 0, PlayerID);
+            }
 
-			if ((weaponID == _initialSlotWeaponName) && (CharacterHandleWeapon != null))
-			{
-				MMInventoryEvent.Trigger(MMInventoryEventType.UnEquipRequest, null, WeaponInventoryName, WeaponInventory.Content[0], 0, 0, PlayerID);
-				CharacterHandleWeapon.ChangeWeapon(CharacterHandleWeapon.InitialWeapon, _initialSlotWeaponName, false);
-				MMInventoryEvent.Trigger(MMInventoryEventType.Redraw, null, WeaponInventory.name, null, 0, 0, PlayerID);
-				return;
-			}
+            if ((weaponID == _initialSlotWeaponName) && (CharacterHandleWeapon != null))
+            {
+                MMInventoryEvent.Trigger(MMInventoryEventType.UnEquipRequest, null, WeaponInventoryName, WeaponInventory.Content[0], 0, 0, PlayerID);
+                CharacterHandleWeapon.ChangeWeapon(CharacterHandleWeapon.InitialWeapon, _initialSlotWeaponName, false);
+                MMInventoryEvent.Trigger(MMInventoryEventType.Redraw, null, WeaponInventory.name, null, 0, 0, PlayerID);
+                return;
+            }
 
-			for (int i = 0; i < MainInventory.Content.Length ; i++)
-			{
-				if (InventoryItem.IsNull(MainInventory.Content[i]))
-				{
-					continue;
-				}
-				if (MainInventory.Content[i].ItemID == weaponID)
-				{
-					MMInventoryEvent.Trigger(MMInventoryEventType.EquipRequest, null, MainInventory.name, MainInventory.Content[i], 0, i, PlayerID);
-					break;
-				}
-			}
-		}
+            for (int i = 0; i < MainInventory.Content.Length; i++)
+            {
+                if (InventoryItem.IsNull(MainInventory.Content[i]))
+                {
+                    continue;
+                }
+                if (MainInventory.Content[i].ItemID == weaponID)
+                {
+                    MMInventoryEvent.Trigger(MMInventoryEventType.EquipRequest, null, MainInventory.name, MainInventory.Content[i], 0, i, PlayerID);
+                    break;
+                }
+            }
+        }
 
-		/// <summary>
-		/// Switches to the next weapon in line
-		/// </summary>
-		protected virtual void SwitchWeapon()
-		{
+        /// <summary>
+        /// Switches to the next weapon in line
+        /// </summary>
+        protected virtual void SwitchWeapon() //Leo Monge: Need to ALWAYS bring it after update. Need to be public so I can access in ToggleWeapons
+        {
 			// if there's no character handle weapon component, we can't switch weapon, we do nothing and exit
 			if ((CharacterHandleWeapon == null) || (WeaponInventory == null))
 			{
@@ -485,7 +450,7 @@ namespace MoreMountains.CorgiEngine
 			PlayAbilityStartFeedbacks();
 		}
 
-        protected virtual void SwitchWeaponForward()
+        protected virtual void SwitchWeaponForward() //Leo Monge: Need to ALWAYS bring it after update. Need to be public so I can access in ToggleWeapons
         {
             // if there's no character handle weapon component, we can't switch weapon, we do nothing and exit
             if ((CharacterHandleWeapon == null) || (WeaponInventory == null))
@@ -505,8 +470,6 @@ namespace MoreMountains.CorgiEngine
             EquipWeapon(_nextWeaponID);
             PlayAbilityStartFeedbacks();
         }
-
-
 
         /// <summary>
         /// Watches for InventoryLoaded events

@@ -19,12 +19,15 @@ MonoBehaviour:
   hints:
   - property: _RecolorRGBBlueTint
     text: '- Tint alpha is used for contrast.'
+  - property: _RecolorRGBTexture
+    text: '- The texture''s alpha fades the tinting effect.'
   lines:
   - _RecolorRGBTintAreas
   spaceHint: 
   requiresFullRectMesh: 0
   requiresSpriteSheetFix: 0
   requiresInstancing: 0
+  requiresTiling: 0
   benchmarkValue: 1500
   textureSamples: 1
   textureToggle: 

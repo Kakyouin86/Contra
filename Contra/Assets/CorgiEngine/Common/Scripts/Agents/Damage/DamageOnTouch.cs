@@ -441,6 +441,7 @@ namespace MoreMountains.CorgiEngine
 			}
 			
 			return (_colliderCorgiController != null)
+			       && (DamageCausedKnockbackType != KnockbackStyles.NoKnockback)
 			       && (DamageCausedKnockbackForce != Vector2.zero)
 			       && !_colliderHealth.Invulnerable
 			       && !_colliderHealth.PostDamageInvulnerable

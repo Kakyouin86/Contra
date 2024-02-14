@@ -773,11 +773,6 @@ namespace MoreMountains.InventoryEngine
 						return;
 					}
 				}
-				// call the equip method of the item
-				if (!item.Equip(PlayerID))
-				{
-					return;
-				}
 				// if this is a mono slot inventory, we prepare to swap
 				if (item.TargetEquipmentInventory(PlayerID).Content.Length == 1)
 				{
@@ -791,6 +786,7 @@ namespace MoreMountains.InventoryEngine
 						{
 							// we store the item in the equipment inventory
 							oldItem = item.TargetEquipmentInventory(PlayerID).Content[0].Copy();
+							oldItem.UnEquip(PlayerID);
 							item.TargetEquipmentInventory(PlayerID).EmptyInventory();
 						}
 					}
@@ -813,6 +809,11 @@ namespace MoreMountains.InventoryEngine
 					{
 						AddItem(oldItem, oldItem.Quantity);    
 					}
+				}
+				// call the equip method of the item
+				if (!item.Equip(PlayerID))
+				{
+					return;
 				}
 				MMInventoryEvent.Trigger(MMInventoryEventType.ItemEquipped, slot, this.name, item, item.Quantity, index, PlayerID);
 			}

@@ -143,15 +143,24 @@ namespace MoreMountains.CorgiEngine
 		/// the secondary movement (usually the right stick on a gamepad), used to aim
 		public Vector2 SecondaryMovement {get { return _secondaryMovement; } }
 
-        public List<MMInput.IMButton> ButtonList;
-        public Vector2 _primaryMovement = Vector2.zero;
-        public Vector2 _secondaryMovement = Vector2.zero;
-        public string _axisHorizontal;
-        public string _axisVertical;
-        public string _axisSecondaryHorizontal;
-        public string _axisSecondaryVertical;
-        public string _axisShoot;
-        public string _axisShootSecondary;
+		protected List<MMInput.IMButton> ButtonList;
+		protected Vector2 _primaryMovement = Vector2.zero;
+		protected Vector2 _secondaryMovement = Vector2.zero;
+		protected string _axisHorizontal;
+		protected string _axisVertical;
+		protected string _axisSecondaryHorizontal;
+		protected string _axisSecondaryVertical;
+		protected string _axisShoot;
+		protected string _axisShootSecondary;
+		
+		/// <summary>
+		/// Statics initialization to support enter play modes
+		/// </summary>
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+		protected static void InitializeStatics()
+		{
+			_instance = null;
+		}
 
 		/// <summary>
 		/// On Start we look for what mode to use, and initialize our axis and buttons

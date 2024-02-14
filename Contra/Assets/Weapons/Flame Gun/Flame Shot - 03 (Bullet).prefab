@@ -337,12 +337,14 @@ MonoBehaviour:
     type: 3}
   objectToInstantiateWater: {fileID: 3193478456438886401, guid: 10081b2afeb8be9439a1368876046222,
     type: 3}
+  spawnPositionArista: {x: -1, y: 0, z: 0}
   spawnPosition: {x: 1.5, y: 0, z: 0}
   spawnPositionDiagonalsPlatforms: {x: 0.4, y: -0.1, z: 0}
   spawnPositionWater: {x: -0.5, y: 0, z: 0}
   spawnPositionDiagonalsWater: {x: 0.6, y: 0, z: 0}
   thresholdNotToShowBurst: 0
   thresholdNotToShowBurstWater: 2
+  overrrideTheDoNotInstantiateTheBurst: 0
   doNotInstantiateTheBurst: 0
   doNotInstantiateWithAngleWater: 1
   doNotInstantiateWithAnglePlatform: 0
@@ -373,3 +375,18 @@ MonoBehaviour:
   isMovingLeft: 0
   isMovingUp: 0
   isMovingDown: 0
+  deviationThreshold: 0.1
+  delayInCalculation: 0.1
+  thePlayer: {fileID: 0}
+  facingRight: 0
+  cantCalculate: 0
+  raycastLength: 10
+  platformLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  leftWall: 0
+  rightWall: 0
+  topWall: 0
+  bottomWall: 0
+  closeToTwoWalls: 0
+  hangingShoot: 0

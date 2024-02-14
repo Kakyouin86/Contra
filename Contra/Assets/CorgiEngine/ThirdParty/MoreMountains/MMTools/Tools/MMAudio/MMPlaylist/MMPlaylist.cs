@@ -21,6 +21,7 @@ namespace MoreMountains.Tools
 			OnEvent?.Invoke(channel);
 		}
 	}
+	
 	public struct MMPlaylistStopEvent
 	{
 		static private event Delegate OnEvent;
@@ -34,6 +35,7 @@ namespace MoreMountains.Tools
 			OnEvent?.Invoke(channel);
 		}
 	}
+	
 	public struct MMPlaylistPauseEvent
 	{
 		static private event Delegate OnEvent;
@@ -47,6 +49,7 @@ namespace MoreMountains.Tools
 			OnEvent?.Invoke(channel);
 		}
 	}
+	
 	public struct MMPlaylistPlayNextEvent
 	{
 		static private event Delegate OnEvent;
@@ -60,6 +63,7 @@ namespace MoreMountains.Tools
 			OnEvent?.Invoke(channel);
 		}
 	}
+	
 	public struct MMPlaylistPlayPreviousEvent
 	{
 		static private event Delegate OnEvent;
@@ -99,6 +103,48 @@ namespace MoreMountains.Tools
 		static public void Trigger(int channel, float newVolumeMultiplier, bool applyVolumeMultiplierInstantly = false)
 		{
 			OnEvent?.Invoke(channel, newVolumeMultiplier, applyVolumeMultiplierInstantly);
+		}
+	}
+
+	public struct MMPlaylistPitchMultiplierEvent
+	{
+		static private event Delegate OnEvent;
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] private static void RuntimeInitialization() { OnEvent = null; }
+		static public void Register(Delegate callback) { OnEvent += callback; }
+		static public void Unregister(Delegate callback) { OnEvent -= callback; }
+
+		public delegate void Delegate(int channel, float newPitchMultiplier, bool applyPitchMultiplierInstantly = false);
+		static public void Trigger(int channel, float newPitchMultiplier, bool applyPitchMultiplierInstantly = false)
+		{
+			OnEvent?.Invoke(channel, newPitchMultiplier, applyPitchMultiplierInstantly);
+		}
+	}
+	
+	public struct MMPlaylistChangeEvent
+	{
+		static private event Delegate OnEvent;
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] private static void RuntimeInitialization() { OnEvent = null; }
+		static public void Register(Delegate callback) { OnEvent += callback; }
+		static public void Unregister(Delegate callback) { OnEvent -= callback; }
+
+		public delegate void Delegate(int channel, MMSMPlaylist newPlaylist, bool andPlay);
+		static public void Trigger(int channel, MMSMPlaylist newPlaylist, bool andPlay)
+		{
+			OnEvent?.Invoke(channel, newPlaylist, andPlay);
+		}
+	}
+	
+	public struct MMPlaylistNewSongStartedEvent
+	{
+		static private event Delegate OnEvent;
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] private static void RuntimeInitialization() { OnEvent = null; }
+		static public void Register(Delegate callback) { OnEvent += callback; }
+		static public void Unregister(Delegate callback) { OnEvent -= callback; }
+
+		public delegate void Delegate(int channel);
+		static public void Trigger(int channel)
+		{
+			OnEvent?.Invoke(channel);
 		}
 	}
 
@@ -251,8 +297,6 @@ namespace MoreMountains.Tools
 		/// a next song test button
 		[MMInspectorButton("QueueTargetSong")]
 		public bool QueueTargetSongButton;
-		
-		
 		/// a next song test button
 		[MMInspectorButton("SetLoopTargetSong")]
 		public bool SetLoopTargetSongButton;
@@ -264,7 +308,6 @@ namespace MoreMountains.Tools
 		protected int _songsPlayedThisCycle = 0;
 		protected Coroutine _coroutine;
 		protected bool _shouldResumeOnApplicationPause = false;
-		
 		public static bool HasInstance => _instance != null;
 		public static MMPlaylist Current => _instance;
 		protected static MMPlaylist _instance;

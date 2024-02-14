@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace SpriteShadersUltimate
 {
+    [AddComponentMenu("Sprite Shaders Ultimate/Wind/Wind Manager")]
     public class WindManagerSSU : MonoBehaviour
     {
         [Header("Settings:")]

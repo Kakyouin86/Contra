@@ -60,6 +60,15 @@ namespace MoreMountains.CorgiEngine
 		protected List<AudioSource> _loopingSounds;
 			
 		/// <summary>
+		/// Statics initialization to support enter play modes
+		/// </summary>
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+		protected static void InitializeStatics()
+		{
+			_instance = null;
+		}
+		
+		/// <summary>
 		/// Plays a background music.
 		/// Only one background music can be active at a time.
 		/// </summary>

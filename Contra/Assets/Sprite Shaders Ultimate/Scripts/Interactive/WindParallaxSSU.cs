@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace SpriteShadersUltimate
 {
+    [AddComponentMenu("Sprite Shaders Ultimate/Wind/Wind Parallax")]
     public class WindParallaxSSU : MonoBehaviour
     {
         float originalXPosition;

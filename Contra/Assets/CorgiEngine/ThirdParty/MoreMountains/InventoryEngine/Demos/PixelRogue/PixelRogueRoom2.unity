@@ -1443,6 +1443,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1707067089828962178, guid: 21bbf2e974b14e2468230a1da74b7a63,
+        type: 3}
+      propertyPath: TargetInventories.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1707067089828962178, guid: 21bbf2e974b14e2468230a1da74b7a63,
+        type: 3}
+      propertyPath: TargetInventories.Array.data[0]
+      value: 
+      objectReference: {fileID: 1586008713}
+    - target: {fileID: 2750602139739136250, guid: 21bbf2e974b14e2468230a1da74b7a63,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114780042331512758, guid: 21bbf2e974b14e2468230a1da74b7a63, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 21bbf2e974b14e2468230a1da74b7a63, type: 3}
@@ -1484,6 +1499,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!114 &237575280 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11445666, guid: 0ca555e6f01353f409523346d86ea89f,
@@ -2124,6 +2140,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!1 &451500622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2703,6 +2720,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!1 &862819209
 GameObject:
   m_ObjectHideFlags: 0
@@ -4160,6 +4178,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!1 &1739829247
 GameObject:
   m_ObjectHideFlags: 0
@@ -4431,6 +4450,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!1 &1870693507
 GameObject:
   m_ObjectHideFlags: 0

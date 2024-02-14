@@ -224,6 +224,9 @@ namespace MoreMountains.Feedbacks
 		/// </summary>
 		protected virtual void ShakeComplete()
 		{
+			_journey = ForwardDirection ? ShakeDuration : 0f;
+			Shake();
+			
 			if (_resetTargetValuesAfterShake || AlwaysResetTargetValuesAfterShake)
 			{
 				ResetTargetValues();

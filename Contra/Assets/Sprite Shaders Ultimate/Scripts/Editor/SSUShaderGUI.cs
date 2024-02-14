@@ -301,7 +301,7 @@ namespace SpriteShadersUltimate
                 EditorGUILayout.BeginHorizontal();
                 if (prop.type == MaterialProperty.PropType.Texture)
                 {
-                    prop.textureValue = (Texture)EditorGUILayout.ObjectField(displayContent, prop.textureValue, typeof(Texture), false);
+                    prop.textureValue = (Texture)EditorGUILayout.ObjectField(displayContent, prop.textureValue, typeof(Texture), false, GUILayout.Height(50));
                 }
                 else if (prop.type == MaterialProperty.PropType.Vector)
                 {
@@ -356,7 +356,7 @@ namespace SpriteShadersUltimate
                         Rect lastRect = GUILayoutUtility.GetLastRect();
                         lastRect.y -= 1;
                         GUI.color = new Color(1, 1, 1, 0.5f);
-                        GUI.Label(lastRect, "<color=#00000000>" + displayContent.text + "</color>  <b><size=9>| " + Mathf.RoundToInt(prop.colorValue.a * 200) + "%</size></b>", labelStyle);
+                        GUI.Label(lastRect, "<color=#00000000>" + displayContent.text + "</color>  <b><size=9>| " + Mathf.RoundToInt(prop.colorValue.a * 200) + "% Contrast</size></b>", labelStyle);
                         GUI.color = Color.white;
                     }
 
@@ -376,10 +376,11 @@ namespace SpriteShadersUltimate
                     ResetButton(prop);
                     HelpButton(prop, displayContent);
                 }
+
                 EditorGUILayout.EndHorizontal();
 
                 //Hints:
-                if(prop.name == "_ToggleUnscaledTime" && prop.floatValue > 0.5f)
+                if (prop.name == "_ToggleUnscaledTime" && prop.floatValue > 0.5f)
                 {
                     DisplayHint("- Requires <b>one</b> active <b>UnscaledTimeSSU</b> component in your scene.");
                 }
@@ -693,7 +694,7 @@ namespace SpriteShadersUltimate
             }
 
             //Performance:
-            if(performanceBenchmark <= 1)
+            /*if(performanceBenchmark <= 1)
             {
                 EditorGUILayout.LabelField("- GPU Performance: " + "<b>" + Mathf.RoundToInt(performanceBenchmark * 0.1f) + "</b> (<size=11>same as unity's built-in shader</size>)", labelStyle);
             }
@@ -709,7 +710,7 @@ namespace SpriteShadersUltimate
             else
             {
                 EditorGUILayout.LabelField("- Texture Samples: <b>" + textureAmount + "</b>", labelStyle);
-            }
+            }*/
             EditorGUILayout.EndVertical();
 
             wasWarned = false;
@@ -941,7 +942,7 @@ namespace SpriteShadersUltimate
             }
 
             //WindParallaxSSU Required:
-            if(enabledShaders.Contains("Wind") && materials[0].GetFloat("_WindIsParallax") > 0.5f && Selection.activeGameObject.GetComponent<WindParallaxSSU>() == null)
+            if(enabledShaders.Contains("Wind") && materials[0].GetFloat("_WindIsParallax") > 0.5f && Selection.activeGameObject != null && Selection.activeGameObject.GetComponent<WindParallaxSSU>() == null)
             {
                 StartWarning();
                 EditorGUILayout.LabelField("- <b>Is Parallax</b> requires the <b>WindParallaxSSU</b> component.", labelStyle);
@@ -1225,7 +1226,14 @@ namespace SpriteShadersUltimate
                     {
                         DisplayHint(descriptionLines[d]);
                     }
-                    DisplayHint("- GPU Performance: <b>" + Mathf.RoundToInt(currentHint.benchmarkValue * 0.1f) + "</b>");
+
+                    string performanceText = "Relatively Lower";
+                    if (currentHint.benchmarkValue > 600)
+                    {
+                        performanceText = currentHint.benchmarkValue < 1700 ? "Average" : "Relatively Higher";
+                    }
+
+                    DisplayHint("- GPU Usage: <b>" + performanceText + "</b>");
                 }
 
                 if (prop.name == "_EnableSmoothPixelArt")
@@ -1811,22 +1819,31 @@ namespace SpriteShadersUltimate
                     prop.floatValue = defaultValue;
                 }
             }
+            else if (prop.type == MaterialProperty.PropType.Texture)
+            {
+                Texture defaultValue = defaultMaterial.GetTexture(prop.name);
+
+                if (prop.textureValue == defaultValue)
+                {
+                    GUI.enabled = false;
+                }
+
+                if (GUILayout.Button(resetButton, GUILayout.Width(20), GUILayout.Height(50)))
+                {
+                    prop.textureValue = defaultValue;
+                }
+            }
 
             GUI.enabled = true;
         }
 
         void HelpButton(MaterialProperty prop, GUIContent displayContent)
         {
-            if(prop.type == MaterialProperty.PropType.Texture)
-            {
-                return;
-            }
-
             GUIContent infoButton = new GUIContent();
             infoButton.text = "<size=1> </size>C<size=10>#</size>";
             infoButton.tooltip = "Useful information for programmers.";
 
-            if (GUILayout.Button(infoButton, buttonStyle, GUILayout.Width(26)))
+            if (GUILayout.Button(infoButton, buttonStyle, GUILayout.Width(26), GUILayout.Height((prop.type == MaterialProperty.PropType.Texture) ? 50 : 20)))
             {
                 CodingHelper.Open(displayContent, prop, shader, EditorGUIUtility.currentViewWidth);
             }
@@ -2029,7 +2046,11 @@ namespace SpriteShadersUltimate
             {
                 number++;
             }
+
             newPath = EditorUtility.SaveFilePanel("Save Texture", folderPath, spriteTexture.name + " (Baked " + number + ")", "png");
+            EditorGUILayout.BeginVertical();
+            EditorGUILayout.BeginVertical();
+            EditorGUILayout.BeginVertical();
 
             if (newPath != "")
             {

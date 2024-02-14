@@ -56,6 +56,15 @@ namespace MoreMountains.CorgiEngine
 		protected float _initialJoystickAlpha;
 		protected float _initialArrowsAlpha;
 		protected float _initialButtonsAlpha;
+		
+		/// <summary>
+		/// Statics initialization to support enter play modes
+		/// </summary>
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+		protected static void InitializeStatics()
+		{
+			_instance = null;
+		}
 
 		/// <summary>
 		/// Initialization

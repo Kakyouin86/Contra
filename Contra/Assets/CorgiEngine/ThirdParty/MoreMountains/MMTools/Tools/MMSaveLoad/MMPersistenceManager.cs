@@ -70,7 +70,15 @@ namespace MoreMountains.Tools
 		protected string _currentSceneName;
 
 		#region INITIALIZATION
-
+			/// <summary>
+			/// Statics initialization to support enter play modes
+			/// </summary>
+			[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+			protected static void InitializeStatics()
+			{
+				_instance = null;
+			}
+		
 			/// <summary>
 			/// On Awake we initialize our dictionary
 			/// </summary>

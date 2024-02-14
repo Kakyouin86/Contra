@@ -137,7 +137,7 @@
     	<div class="main-body">
 	        <div class="logo"><a href="https://guavaman.com/projects/rewired" title="Rewired"><img src="files/images/rewired-logo.png" width="173" height="139" alt="Rewired" /></a></div>
                      
-            <h1>
+          <h1>
             <!-- InstanceBeginEditable name="PageHeader" -->Known Issues
       <!-- InstanceEndEditable -->
             </h1>
@@ -148,11 +148,14 @@
     <h3><a href="#general">General</a></h3>
     <ul>
       <li><a href="#not-compatible-unity-new-input-system">Compatibility with Unity's &quot;new&quot; input system</a></li>
+      <li><a href="#unity-physical-keys">Unity Physical Keys setting</a></li>
+      <li><a href="#keyboard-key-names-incorrect">Keyboard key names are incorrect on non-US 101-key keyboards</a></li>
       <li><a href="#windows-standalone-il2cpp-vs2019-hang">All platforms compiled with IL2CPP on Windows: Builds never finish, build fails with errors, builds crash, built exe hangs at launch, or builds throw exceptions about duplicate Actions</a></li>
       <li><a href="#running-in-a-sandbox">Running in a Sandbox</a></li>
     </ul>
     <h3><a href="#windows">Windows:</a></h3>
     <ul>
+      <li><a href="#windows-wgi-close-stall">Windows Standalone, Use Windows Gaming Input: Stall when Unity Editor or application is closed</a></li>
       <li><a href="#windows-xbox-series-x-dont-work-out-of-focus">Windows Standalone: Xbox Series S/X controllers do not work when application is out of focus when Use XInput is disabled</a>.</li>
       <li><a href="#windows-editor-keyboard-keys-stuck-raw-input">Windows Editor: Keyboard keys sticking for the same duration they were pressed after being released</a></li>
       <li><a href="#windows-10-second-stall">Windows Standalone: Extra 10 second stall when pressing Play in the Unity editor and when running a build</a></li>
@@ -177,7 +180,7 @@
       <li><a href="#windows-stuck-button-right-click-window-title-bar">Windows Standalone: Keyboard and mouse keys get stuck on when holding a key, right-clicking on the window's title bar, and then releasing the key</a></li>
       <li><a href="#windows-app-store-u5">Windows App Store support not working in Unity 5.0.0, fixed in 5.0.1</a></li>
       <li><a href="#windows-high-refresh-rate-mouse-slowdown">Windows Standalone: High refresh rate mouse causes slowdown and profiler spikes</a></li>
-      </ul>
+    </ul>
     <h3><a href="#uwp">Windows 10 Universal (UWP):</a></h3>
     <ul>
       <li><a href="#uwp-il2cpp-error-2020-2">Windows 10 Universal: IL2CPP build error <span class="code">(no further information about what managed code was being converted is available)</span></a><span class="code"></span></li>
@@ -186,15 +189,16 @@
       <li><a href="#uwp-shift-keys">Windows 10 Universal: Left Shift is activated when Right Shift is pressed</a></li>
       <li><a href="#uwp-net-550-reference-rewriter-error">Windows 10 Universal .NET: UnityException: Failed to run reference rewriter error on Unity 5.5.0, 5.5.1</a></li>
     </ul>
-    <h3><a href="#osx">MacOS:</a></h3>
+    <h3><a href="#macos">MacOS:</a></h3>
     <ul>
-      <li><a href="#osx-apple-silicon-crash">OSX, Apple Silicon: Build crashes when a controller is connected</a></li>
-      <li><a href="#osx-standalone-il2cpp">OSX, IL2CPP: Rewired falls back to Unity input</a></li>
-      <li><a href="#osx-net46-initialization-exception">OSX, .NET 4.6 experimental backend: Throws exception on initialization in Unity 2017.1 - Unity 2017.3</a></li>
-      <li><a href="#osx-game-controller-framework">MacOS: Game Controller Framework</a>
+      <li><a href="#macos-application-freeze-on-initialize">MacOS: Application freezes forever when initializing Rewired</a></li>
+      <li><a href="#macos-apple-silicon-crash">MacOS, Apple Silicon: Build crashes when a controller is connected</a></li>
+      <li><a href="#macos-standalone-il2cpp">MacOS, IL2CPP: Rewired falls back to Unity input</a></li>
+      <li><a href="#macos-net46-initialization-exception">MacOS, .NET 4.6 experimental backend: Throws exception on initialization in Unity 2017.1 - Unity 2017.3</a></li>
+      <li><a href="#macos-game-controller-framework">MacOS: Game Controller Framework</a>
         <ul>
-          <li><a href="#osx-gccontroller-vibration-connection-bug">MacOS, Game Controller Framework: Controller vibration stops working on some controllers when another controller is connected or disconnected</a></li>
-          <li><a href="#osx-gccontroller-sony-controller-problems">MacOS, Game Controller Framework: Sony Dual Shock 4 and Dual Sense controller issues</a></li>
+          <li><a href="#macos-gccontroller-vibration-connection-bug">MacOS, Game Controller Framework: Controller vibration stops working on some controllers when another controller is connected or disconnected</a></li>
+          <li><a href="#macos-gccontroller-sony-controller-problems">MacOS, Game Controller Framework: Sony Dual Shock 4 and Dual Sense controller issues</a></li>
     </ul>
       </li>
       </ul>
@@ -255,6 +259,19 @@
 <p>Rewired is not compatible with Unity's new input system. If you enable the new input system by setting this value to &quot;Input System&quot; or &quot;Both&quot;, Rewired and/or Unity's input system may not function at all or parts of each system may not function correctly. While some platforms may work, others may not.</p>
 <p>The only setting supported by Rewired is:<br />
   Player Settings -&gt; Active Input Handling -&gt; Input Manager</p>
+<p>&nbsp;</p>
+<hr />
+<h3><a name="unity-physical-keys" id="unity-physical-keys"></a>Unity Physical Keys setting</h3>
+<p>Unity added the Physical Key option in Unity 2021.2 and made it enabled by default in 2022.0.<br />
+  <a href="https://docs.unity.cn/Manual/class-InputManager.html" target="_blank" rel="nofollow">https://docs.unity.cn/Manual/class-InputManager.html</a></p>
+<p>If enabled, keyboard keys will map to their physical location on a US 101-key keyboard regardless of the keyboard layout being used (AZERTY for exampe). This is useful for making a locale-independent input layout. Example: WASD to move.</p>
+<p>The problem is, if enabled, the KeyCode returned for a key will match the US 101-key layout, and glyphs and help text will display incorrect information to the user. For example, the A key on a AZERTY keyboard is located where the Q key is on a US 101-key keyboard, and the KeyCode returned for the A key will be KeyCode.Q. Unity added the Physical Keys setting but neglected to add a function which would get the key label for the key code. This makes it impossible to display accurate help text or glpys to the user if this option is enabled. This affects anything that might need to display a key name including Control Mapper.</p>
+<p>Because of the above issue, it is recommended to disable Physical Keys in the Unity Input Manager settings. A toggle box has been added to the <a href="RewiredEditor.html#Settings">Rewired Input Manager -&gt; Settings</a> page for easy access to this setting (Unity 2021.2+).</p>
+<p>If you choose to use Physical Keys, native keyboard handling will be automatically disabled on all platforms that support it because it does not support Physical Key mapping and Unity fallback keyboard handling will be used instead, allowing you to use Physical Key mapping.</p>
+<p>&nbsp;</p>
+<hr />
+<h3><a name="keyboard-key-names-incorrect" id="keyboard-key-names-incorrect"></a>Keyboard key names are incorrect on non-US 101-key keyboards</h3>
+<p>This happens when the Unity &quot;Physical Keys&quot; option is enabled and cannot be fixed. <a href="#unity-physical-keys">See this for more information</a>.</p>
 <p>&nbsp;</p>
 <hr />
 <h3><a name="windows-standalone-il2cpp-vs2019-hang" id="windows-standalone-il2cpp-vs2019-hang"></a>All platforms compiled with IL2CPP on Windows: Builds never finish, build fails with errors, builds crash, built exe hangs at launch, or builds throw exceptions about duplicate Actions</h3>
@@ -323,6 +340,11 @@ On Windows, another easier way to disable the optimizer is to add an   environme
 <p>&nbsp;</p>
 <h2><a name="windows" id="windows"></a>Windows</h2>
 <p>&nbsp;</p>
+<h3><a name="windows-wgi-close-stall" id="windows-wgi-close-stall"></a>Windows Standalone, Use Windows Gaming Input: Stall when Unity Editor or application is closed</h3>
+<p><strong>Applies to Unity 5 - 2021, Mono scripting backend:</strong><br />
+  When Use Windows Gaming Input is enabled, if a controller was ever connected during the applciation session, when the application is quit (Unity Editor or a game build), the application will stall for at least 30 seconds before closing. The cause has been traced to the use of unmanaged to managed callbacks in Mono. Callbacks are used to detect Windows Gaming Input controller connection and disconnection events. The issue does not occur in IL2CPP builds or in Unity 2022+.</p>
+<h3>&nbsp;</h3>
+<hr />
 <h3><a name="windows-xbox-series-x-dont-work-out-of-focus" id="windows-xbox-series-x-dont-work-out-of-focus"></a>Windows Standalone: Xbox Series S/X controllers do not work when application is out of focus when Use XInput is disabled</h3>
 <p>Xbox Series S/X controllers do not work when the application is out of focus. This is a problem at the driver level and is not an issue with Rewired. The driver does not send any Raw Input events to the application when it is out of focus even when explicitly told to do so when registering for Raw Input events. This affects Raw Input, Direct Input, and Unity input sources. This does not affect XInput.</p>
 <h3>&nbsp;</h3>
@@ -363,6 +385,7 @@ On Windows, another easier way to disable the optimizer is to add an   environme
 <p></p>
 <hr />
 <h3><a name="xinput-device-name" id="apple-tv-gyro2"></a>Windows Platforms: XInput devices on Windows appear as &quot;XInput Gamepad&quot;</h3>
+<p>As of Rewired 1.1.47.0, it is now recommended that you enable <a href="RewiredEditor.html#settings-windows-use-windows-gaming-input">Use Windows Gaming Input</a> which supports all features of XInput and allows for better device identification. Also, on Windows UWP, Windows Gaming Support was updated to allow differentiation between Xbox 360 and Xbox One controllers in Rewired 1.1.47.0.
 <p>On Windows, with Use XInput enabled, and always on Windows App Store and Windows 10 Universal builds, there's no way to differentiate one XInput controller type from another. To XInput, everything is simply Gamepad with an id of 0-3. This is not a Rewired issue, it is a design decision by Microsoft.<br />
   <br />
   There is no possible way to associate an   XInput id to the matching HID device to get its name and make it be recognized   as a specific controller. Because of this, you cannot identify an XInput controller by   name in Windows when XInput is enabled. This also affects which controller maps   are loaded for this joystick in Windows when using XInput. Since the device is   simply an Xinput device, it will be loaded from the XBox 360 controller   definition, not the Logitech F310, for example. 
@@ -372,25 +395,30 @@ On Windows, another easier way to disable the optimizer is to add an   environme
 <ol>
   <li>L/R triggers are treated as 1 combined axis and both   cannot be pressed simultaneously without canceling each other out.</li>
   <li>You lose universal XInput controller support because   each XInput controller now must be specifically recognized and mapped. Any unrecognized XInput devices will be treated as Unknown Controllers.</li>
-  <li>Vibration is not supported without XInput enabled.</li>
+  <li>Vibration is not supported.</li>
   <p>&nbsp;</p>
 </ol>
 <hr />
 <h3><a name="windows-xinput-devices-use-x360-map" id="windows-xinput-devices-use-x360-map"></a>Windows Platforms: All XInput devices use the Xbox 360 Controller map when &quot;Use XInput&quot; is enabled</h3>
+<p> As of Rewired 1.1.47.0, it is now recommended that you enable <a href="RewiredEditor.html#settings-windows-use-windows-gaming-input">Use Windows Gaming Input</a> which supports all features of XInput and allows for better device identification.</p>
 <p>As explained in the <a href="#xinput-device-name">previous topic</a>, when Use XInput is enabled and always on Windows App Store and Windows 10 Universal builds, there is no way to differentiate one XInput device from another by name or product/vendor id. Therefore, all XInput devices will use the Xbox 360 Controller map on Windows when Use XInput is enabled. This will match all XInput devices, generic or not, and will provide full coverage of all XInput devices. You cannot map these devices based on the individual device type such as Xbox One or Logitech F310 when using XInput because the device cannot be identified as as specific device type  but rather simply as an XInput gamepad. All XInput gamepads will use Xbox 360 Controller profile when Use XInput is enabled.</p>
 <p>If you disable Use XInput, you will get device-specific identification and recognition (Windows Standalone only, not Windows App Store or Windows 10 Universal), but you will also have the drawbacks <a href="#xinput-device-name">explained in the previous topic</a>.</p>
 <p>There is rarely ever a need to map these controllers individually by using the specific device-type maps. Just create your Joystick Map using the Gamepad Template and it will cover <a href="SupportedControllers.html">all gamepads listed here</a> regardless of whether or not you have Use XInput enabled.</p>
 <p>&nbsp;</p>
 <hr />
 <h3><a name="more-than-4-xbox-controllers" id="dll-not-found-xinput6"></a>More than 4 XBox controllers cannot be used at the same time</h3>
-<p><strong>Windows Standalone</strong><br />
+<p><strong>Windows Standalone</strong></p>
+<p>Windows Gaming Input:<br />
+  As of Rewired 1.1.47.0, it is now recommended that you enable <a href="RewiredEditor.html#settings-windows-use-windows-gaming-input">Use Windows Gaming Input</a> which supports more than 4 XInput devices with support for all special controller features.</p>
+<p>XInput:<br />
   XInput has a hard limit of 4 devices. This is not a Rewired limitation, it is a limitation in Microsoft's XInput system.</p>
-<p>You can mix and match non-XInput devices with XInput devices for a total of more than 4, but you cannot use more than 4 XInput compatible devices simultaneously if XInput is enabled. If you need to support more than 4 XInput controllers, you must disable XInput in the <a href="RewiredEditor.html#Settings">Rewired Editor - Settings</a> page.</p>
-<p>Be advised that by disabling &quot;Use XInput&quot; in the Rewired Input Manager, you introduce these new   issues/limitations:</p>
+<p>You can mix and match non-XInput devices with XInput devices for a total of more than 4, but you cannot use more than 4 XInput compatible devices simultaneously if XInput is enabled but Windows Gaming Input is disabled. If you need to support more than 4 XInput controllers, you can either disable XInput and use Raw/Direct Input or enable Windows Gaming Input in the <a href="RewiredEditor.html#Settings">Rewired Editor - Settings</a> page.</p>
+<p>If both &quot;Use XInput&quot; and &quot;Use Windows Gaming Input&quot; are enabled, if Windows Gaming Input is unavalable on the system, XInput will be used as the fallback input source for compatible devices. Otherwise, the primary input source will be used as the fallback input source. This has some important implications. If your game absolutely requires support for more than 4 XInput-compatible devices, it is recommended you enable &quot;Use Windows Gaming Input&quot; but disable &quot;Use XInput&quot; so on systems that do not support Windows Gaming Input, Raw Input / Direct Input will be used as the fallback input source, allowing for more than 4 XInput-compatible devices to be used simultaneously, albeit with the caveats below. Otherwise, enable both &quot;Use XInput&quot; and &quot;Use Windows Gaming Input&quot; for best feature support.</p>
+<p>Be advised that by disabling &quot;Use XInput&quot; and &quot;Windows Gaming Input&quot; in the Rewired Input Manager, Raw Input or Direct Input will be used to handle XInput-compatible controllers and will introduce these new   issues/limitations:</p>
 <ol>
   <li>L/R triggers are treated as 1 combined axis and both   cannot be pressed simultaneously without canceling each other out.</li>
   <li>You lose universal XInput controller support because   each XInput controller now must be specifically recognized and mapped. Any unrecognized XInput devices will be treated as Unknown Controllers.</li>
-  <li>Vibration is not supported without XInput enabled.</li>
+  <li>Vibration is not supported.</li>
 </ol>
 <p><strong>OSX Standalone</strong><br />
   XBox 360 controllers on OSX require <a href="https://github.com/360Controller/360Controller/releases" target="_blank"> this XBox 360 driver</a>. This driver also imposes the 4-device limit just like XInput. It is currently not possible to use more than 4 XInput devices simultaneously on OSX. Again, you can mix and match non-XInput controllers to achieve a total count greater than 4. Because the driver is required for the controller to be detected, there is no way to disable the use of this driver and get around this issue.</p>
@@ -549,7 +577,8 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 <p>&nbsp;</p>
 <hr />
 <h3><a name="uwp-gamepads-appear-twice" id="uwp-gamepads-appear-twice"></a>Windows 10 Universal: Certain gamepads appear twice when HID device support is enabled</h3>
-<p>Microsoft has apparently started mapping non-Xbox gamepads like the Sony DualShock 4 to make them appear as XInput devices through their UWP Windows.Gaming.Input system. This has the side effect that, if you enable the application to allow the use of HID input devices in the Package.appxmanifest, the DualShock 4 will show up as 2 devices at the same time -- an XInput gamepad and the HID DualShock 4 gamepad. While true XInput gamepads provide a way to identify them as such through the HID system, Microsoft has provided no way to determine that these pseudo-XInput devices (HID devices are being  treated as XInput devices) are being handled by XInput, so there is no way to programatically filter out these duplicate devices. The only workaround is to disable HID device support. You can either do this by removing HID support from the package manifest in the Visual Studio build project or by disabling the <a href="RewiredEditor.html#settings-uwp">&quot;Support HID Devices&quot; option in the Rewired Input Manager -&gt; Settings -&gt; Windows UWP page</a>. This allows you to choose to support the Gamepad (XInput) system and/or the HID system for input devices. This is still not ideal, but it at least gives you the option to disable XInput to allow for wider device support without risking duplicate devices, though disabling XInput will also disable support for controller vibration. There is no perfect solution because Microsoft simply has not provided the ability to get the necessary information to allow devices to be filtered properly.</p>
+<p><strong>Solution: <span style="color: #008800">Update to Rewired 1.1.47.0+.</span></strong></p>
+<p>Microsoft has apparently started mapping non-Xbox gamepads like the Sony DualShock 4 to make them appear as XInput devices through their UWP Windows.Gaming.Input system. This has the side effect that, if you enable the application to allow the use of HID input devices in the Package.appxmanifest, the DualShock 4 will show up as 2 devices at the same time -- an XInput gamepad and the HID DualShock 4 gamepad. While true XInput gamepads provide a way to identify them as such through the HID system, Microsoft has provided no way to determine that these pseudo-XInput devices (HID devices are being  treated as XInput devices) are being handled by XInput, so there is no way to programatically filter out these duplicate devices. The only workaround is to disable HID device support. You can either do this by removing HID support from the package manifest in the Visual Studio build project or by disabling the <a href="RewiredEditor.html#settings-uwp">&quot;Support HID Devices&quot; option in the Rewired Input Manager -&gt; Settings -&gt; Windows UWP page</a>. This allows you to choose to support the Gamepad (XInput) system and/or the HID system for input devices. This is still not ideal, but it at least gives you the option to disable XInput to allow for wider device support without risking duplicate devices, though disabling XInput will also disable support for controller vibration. There is no perfect solution because Microsoft simply has not provided the ability to get the necessary information to allow devices to be filtered properly. Edit: New API functionality has been added by Microsoft that makes device filtering possible and a fix was implemented in Rewired 1.1.47.0.</p>
 <p>&nbsp;</p>
 <hr />
 <h3><a name="uwp-il2cpp-controller-disconnect-crash" id="uwp-il2cpp-controller-disconnect-crash"></a>Windows 10 Universal IL2CPP: Crash when disconnecting controllers</h3>
@@ -612,19 +641,29 @@ Catastrophic failure while running rrw: Mono.Cecil.AssemblyResolutionException: 
 <p>&nbsp;</p>
 <hr />
 <p>&nbsp;</p>
-<h2><a name="osx" id="osx"></a>MacOS:</h2>
+<h2><a name="osx" id="osx"></a><a name="macos" id="macos"></a>MacOS:</h2>
 <p>&nbsp;</p>
-<h3><a name="osx-apple-silicon-crash" id="osx-apple-silicon-crash"></a>OSX, Apple Silicon: Build crashes when a controller is connected</h3>
+<h3><a name="osx-application-freeze-on-initialize" id="osx-application-freeze-on-initialize"></a><a name="macos-application-freeze-on-initialize" id="macos-application-freeze-on-initialize"></a>MacOS: Application freezes forever when initializing Rewired</h3>
+<ul>
+  <li>This is actually a Unity bug that happens to affect Rewired. It cannot be fixed or worked around by Rewired.</li>
+  <li>The bug is present in the latest versions of Unity as of this writing: Unity 2022.3.12f1 and 2023.1.18f1, Apple M1, MacOS 14.0. The bug has been reported to Unity.</li>
+  <li>When a controller is disconnected from the system, there is a small chance that Unity's HID controller handling code will freeze permanently. This appears to be done on a separate thread because it does not cause the application to stop functioning. However, it does stop controllers from ever being detected again until the application or Unity editor is quit. Without Rewired involved, Unity's controller support just simply stops functioning.</li>
+  <li>However, if Rewired is initialized at any time after Unity's input system freezes, Rewired's function call to I/O Kit's HID Manager to specify which types of controllers to monitor will block forever causing the entire application to freeze permanently. There is no workaround without Unity fixing the underlying bug that is causing this.</li>
+  <li>To minimize the possibility of this affecting a final game, initialize Rewired only once very early in the game initialization sequence and never initialize it again. Even if Unity's input system freezes after controllers are connected and disconnected, it will not affect Rewired in any way so long as Rewired has already been initialized. If the Rewired Input Manager were to be destroyed or disabled, then re-instantiated or re-enabled, Rewired would be required to initialize again and would freeze when I/O HID Manager is being setup. Likewise, do not allow the user to change any runtime settings that require Rewired to be reset such as changing the primary input source or enabling / disabling optional secondary input sources.</li>
+</ul>
+<p>&nbsp;</p>
+<hr />
+<h3><a name="osx-apple-silicon-crash" id="osx-apple-silicon-crash"></a><a name="macos-apple-silicon-crash" id="macos-apple-silicon-crash"></a>MacOS, Apple Silicon: Build crashes when a controller is connected</h3>
 <p>Unity has a bug that causes a crash when any native code calls back into managed code. This cannot be fixed or worked around. Only Unity can fix this bug and Rewired's native input cannot function without this feature. The only way to get around this issue is to build to IL2CPP.</p>
 <p><a href="https://issuetracker.unity3d.com/issues/macos-aot-dot-monopinvokecallback-native-to-managed-callback-fails-with-apple-silicon-when-scripting-backend-is-mono">More information about the Mono bug can be found at the Unity bug tracker</a>.</p>
 <p>&nbsp;</p>
 <hr />
-<h3><a name="osx-standalone-il2cpp" id="osx-standalone-il2cpp2"></a>OSX, IL2CPP: Rewired falls back to Unity input</h3>
+<h3><a name="osx-standalone-il2cpp" id="osx-standalone-il2cpp2"></a><a name="macos-standalone-il2cpp" id="macos-standalone-il2cpp"></a>MacOS, IL2CPP: Rewired falls back to Unity input</h3>
 <p>Support for IL2CPP on desktop platforms was added in Rewired 1.1.22.0.</p>
 <p><strong>Solution:</strong> <a href="Updating.html">Update Rewired</a>.</p>
 <p>&nbsp;</p>
 <hr />
-<h3><a name="osx-net46-initialization-exception" id="osx-net46-initialization-exception"></a>OSX, .NET 4.6 experimental backend: Throws exception on initialization  in Unity 2017.1 - 2017.3</h3>
+<h3><a name="osx-net46-initialization-exception" id="osx-net46-initialization-exception"></a><a name="macos-net46-initialization-exception" id="macos-net46-initialization-exception"></a>MacOS, .NET 4.6 experimental backend: Throws exception on initialization  in Unity 2017.1 - 2017.3</h3>
 <p><strong>Update:</strong> The Unity bug was fixed in Unity 2017.4.1f1. Any version of Unity after that should work correctly.</p>
 <p><strong>Solution:</strong> Update to Unity 2017.4.1f1+.</p>
 <p>As of Unity 2017.2.0f3, when the .NET 4.6 experimental backend is enabled in OSX, an exception will be thrown on initialization causing Rewired to not function. This exception is due to a bug in the .NET 4.6 experimental backend that prevents all P/Invoke calls from functioning, always throwing a DllNotFoundException. The exact same call works using the .NET 3.5 backend while the 4.6 backend fails. This bug has been reported to Unity.</p>
@@ -643,11 +682,11 @@ Catastrophic failure while running rrw: Mono.Cecil.AssemblyResolutionException: 
 <hr />
 <h2><a name="osx-game-controller-framework" id="osx-game-controller-framework"></a>MacOS: Game Controller Framework</h2>
 <p>&nbsp;</p>
-<h3><a name="osx-gccontroller-vibration-connection-bug" id="osx-gccontroller-vibration-connection-bug"></a>MacOS, Game Controller Framework: Controller vibration stops working on some controllers when another controller is connected or disconnected</h3>
+<h3><a name="osx-gccontroller-vibration-connection-bug" id="osx-gccontroller-vibration-connection-bug"></a><a name="macos-gccontroller-vibration-connection-bug" id="macos-gccontroller-vibration-connection-bug"></a>MacOS, Game Controller Framework: Controller vibration stops working on some controllers when another controller is connected or disconnected</h3>
 <p>When using the Game Controller Framework, controller vibration can stop working randomly when any Game Controller Framework compatible controller is connected to or disconnected from the system. This is a bug on Apple's end and cannot be fixed by Rewired. Once the vibration motors stop working on the connected controller(s), the only way to make them work again is to disconnect and reconnect the controller.</p>
 <p>&nbsp;</p>
 <hr />
-<h3><a name="osx-gccontroller-sony-controller-problems" id="osx-gccontroller-sony-controller-problems"></a>MacOS, Game Controller Framework: Sony Dual Shock 4 and Dual Sense controller issues</h3>
+<h3><a name="osx-gccontroller-sony-controller-problems" id="osx-gccontroller-sony-controller-problems"></a><a name="macos-gccontroller-sony-controller-problems" id="macos-gccontroller-sony-controller-problems"></a>MacOS, Game Controller Framework: Sony Dual Shock 4 and Dual Sense controller issues</h3>
 <p>Based on my testing, there are numerous issues with the Dual Shock 4 and Dual Sense controllers when using the Game Controller Framework. These issues are not caused by Rewired but by Apple's Game Controller Framework. There are no software fixes possible.</p>
 <p>Issues I have experienced when testing on an M1 Mac connecting wirelessly:</p>
 <ul>

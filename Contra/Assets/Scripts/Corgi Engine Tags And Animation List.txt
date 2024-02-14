@@ -1,0 +1,79 @@
+--> Tags:
+  - LevelBounds
+  - Music
+  - Background
+  - NoMask
+  - HorizontalLadder
+  - UpwardSlope
+  - DownwardSlope
+  - LadderCollider
+  - Water
+  - FireIndicator
+  - Firepoint
+  - SlopesDetector
+  - PlayerSprites
+  - WeaponAim
+  - Torso
+  - Legs
+  - MachineGunLights
+  - FireGunLights
+
+--> Firepoint animations:
+"Torso Idle"
+"Shoot Straight"
+"Shoot Straight Walking"
+"Hold Diagonal Up"
+"Shoot Diagonal Up"
+"Torso Walking Diagonal Up"
+"Shoot Diagonal Up Walking"
+"Shoot Up"
+"Hold Up"
+"Hold Diagonal Down"
+"Shoot Diagonal Down"
+"Torso Walking Diagonal Down"
+"Shoot Diagonal Down Walking"
+"Shoot Down"
+"Hold Down"
+"Jumping"
+"Crouch"
+"Crouch Shooting"
+"Climb Idle"
+"Climb Shooting Forward"
+"Climb Hold Back"
+"Climb Shooting Back"
+"Climb Hold Diagonal Up Forward"
+"Climb Shooting Diagonal Up Forward"
+"Climb Hold Up"
+"Climb Shooting Up"
+"Climb Hold Diagonal Up Back"
+"Climb Shooting Diagonal Up Back"
+"Climb Hold Diagonal Down Forward"
+"Climb Shooting Diagonal Down Forward"
+"Climb Hold Down"
+"Climb Shooting Down"
+"Climb Hold Diagonal Down Back"
+"Climb Shooting Diagonal Down Back"
+"Horizontal Ladder Shooting Back"
+"Horizontal Ladder Shooting Forward"
+"Horizontal Ladder Idle"
+"Horizontal Ladder Hold Forward"
+"Horizontal Ladder Hold Back"
+"Horizontal Ladder Hold Diagonal Up Forward"
+"Horizontal Ladder Shooting Diagonal Up Forward"
+"Horizontal Ladder Hold Up"
+"Horizontal Ladder Shooting Up"
+"Horizontal Ladder Hold Back Diagonal Up"
+"Horizontal Ladder Shooting Diagonal Up Back"
+"Horizontal Ladder Hold Diagonal Down Forward"
+"Horizontal Ladder Shooting Diagonal Down Forward"
+"Horizontal Ladder Hold Down"
+"Horizontal Ladder Shooting Down"
+"Horizontal Ladder Hold Diagonal Down Back"
+"Horizontal Ladder Shooting Diagonal Down Back"
+
+--> Firepoint animations for Strict Mode:
+"Climb Hold Back"
+"Climb Shooting Back" 
+"Climb Shooting Forward"
+"Horizontal Ladder Shooting Back"
+"Horizontal Ladder Shooting Forward"

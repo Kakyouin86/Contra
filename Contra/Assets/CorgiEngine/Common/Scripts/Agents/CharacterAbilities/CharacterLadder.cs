@@ -69,11 +69,11 @@ namespace MoreMountains.CorgiEngine
 		protected int _ladderClimbingSpeedYAnimationParameter;
 		protected float _lastJumpFromLadderAt = -float.MaxValue;
 
-		/// <summary>
-		/// On Start(), we initialize our various flags
-		/// </summary>
-		protected override void Initialization()
-		{
+        /// <summary>
+        /// On Start(), we initialize our various flags
+        /// </summary>
+        protected override void Initialization()
+        {
             base.Initialization();
             CurrentLadderClimbingSpeed = Vector2.zero;
             //_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>(); //Leo Monge: Need to ALWAYS bring it after update.
@@ -86,10 +86,10 @@ namespace MoreMountains.CorgiEngine
             _characterHandleWeapon = this.gameObject.GetComponentInParent<Character>()?.FindAbility<CharacterHandleWeapon>();
         }
 
-		/// <summary>
-		/// Every frame, we check if we need to do something about ladders
-		/// </summary>
-		public override void ProcessAbility()
+        /// <summary>
+        /// Every frame, we check if we need to do something about ladders
+        /// </summary>
+        public override void ProcessAbility()
 		{
 			base.ProcessAbility();
 			ComputeClosestLadder();

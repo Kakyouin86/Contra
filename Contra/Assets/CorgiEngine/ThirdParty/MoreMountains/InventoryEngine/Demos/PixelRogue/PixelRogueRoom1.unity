@@ -185,6 +185,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!4 &191042822 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 401158, guid: 8e3b87501a6ef0246a7a5e8e2dc5e4f9,
@@ -582,6 +583,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!4 &451423277 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 434744, guid: 91029e093b01d0246b933ad8e3fe3ce1,
@@ -1926,6 +1928,32 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1707067089828962178, guid: 21bbf2e974b14e2468230a1da74b7a63,
+        type: 3}
+      propertyPath: DisplayFormat
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1707067089828962178, guid: 21bbf2e974b14e2468230a1da74b7a63,
+        type: 3}
+      propertyPath: Item.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1707067089828962178, guid: 21bbf2e974b14e2468230a1da74b7a63,
+        type: 3}
+      propertyPath: Item.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c96dc824a5c07d499919dd781334700,
+        type: 2}
+    - target: {fileID: 1707067089828962178, guid: 21bbf2e974b14e2468230a1da74b7a63,
+        type: 3}
+      propertyPath: TargetInventories.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1707067089828962178, guid: 21bbf2e974b14e2468230a1da74b7a63,
+        type: 3}
+      propertyPath: TargetInventories.Array.data[0]
+      value: 
+      objectReference: {fileID: 801302916}
     m_RemovedComponents:
     - {fileID: 114780042331512758, guid: 21bbf2e974b14e2468230a1da74b7a63, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 21bbf2e974b14e2468230a1da74b7a63, type: 3}
@@ -1955,6 +1983,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!1001 &798279274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2320,6 +2349,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!1001 &881046474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2566,6 +2596,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!1 &1158339329 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 185068, guid: 75ead9d9c4f35e348b491055d205f968,
@@ -2592,6 +2623,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!4 &1244340403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 479798, guid: 9656340f886d7124dbc67c8cd98349d6,
@@ -2722,6 +2754,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!1 &1304511504
 GameObject:
   m_ObjectHideFlags: 0
@@ -2860,6 +2893,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!4 &1444283730 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 470748, guid: 08c4c98e1efab2c469628f8660223920,
@@ -3004,6 +3038,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!1001 &1543429579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3083,6 +3118,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!1001 &1624921451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3540,6 +3576,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!1 &2114265489 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 170916, guid: 8e3b87501a6ef0246a7a5e8e2dc5e4f9,
@@ -3566,6 +3603,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!1 &2133781402 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 180430, guid: 9656340f886d7124dbc67c8cd98349d6,
@@ -3592,6 +3630,7 @@ MonoBehaviour:
   SaveLocalRotation: 1
   SaveLocalScale: 1
   SaveActiveState: 1
+  SaveEnabledStates: 0
 --- !u!1 &2134158053
 GameObject:
   m_ObjectHideFlags: 0

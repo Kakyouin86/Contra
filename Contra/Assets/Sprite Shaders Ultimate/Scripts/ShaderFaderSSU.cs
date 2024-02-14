@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 namespace SpriteShadersUltimate
 {
+    [AddComponentMenu("Sprite Shaders Ultimate/Utility/Shader Fader")]
     public class ShaderFaderSSU : MonoBehaviour
     {
         //Fading:

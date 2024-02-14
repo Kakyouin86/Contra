@@ -8,31 +8,6 @@ TagManager:
   - Music
   - Background
   - NoMask
-  - HorizontalLadder
-  - UpwardSlope
-  - DownwardSlope
-  - LadderCollider
-  - Water
-  - FireIndicator
-  - Firepoint
-  - SlopesDetector
-  - PlayerSprites
-  - WeaponAim
-  - Torso
-  - Legs
-  - MachineGunLights
-  - FlameGunLights
-  - WeaponInventory
-  - Shells
-  - SmokeIndicator
-  - Inventory
-  - UI
-  - NormalWeapon
-  - UpgradedWeapon
-  - Grenade
-  - RayIndicator
-  - Spark
-  - Arista
   layers:
   - Default
   - TransparentFX
@@ -90,7 +65,4 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 3241408355
-    locked: 0
-  - name: Effects On Top
-    uniqueID: 346362833
     locked: 0

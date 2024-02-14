@@ -44,12 +44,12 @@ namespace MoreMountains.CorgiEngine
 			// we grab the ammo inventory if it exists
 			GameObject ammoInventoryTmp = GameObject.Find (AmmoInventoryName);
 			if (ammoInventoryTmp != null) { AmmoInventory = ammoInventoryTmp.GetComponent<Inventory> (); }
+
 			_weapon = this.gameObject.GetComponent<Weapon> ();
 			if (ShouldLoadOnStart)
 			{
 				LoadOnStart ();	
 			}
-
             StartCoroutine(RefreshOnStart());//Leo Monge: Need to ALWAYS bring it after update. Makes the Grenades be detected on start.
         }
 
@@ -136,30 +136,31 @@ namespace MoreMountains.CorgiEngine
 			
 			if (_ammoItem == null)
 			{
-                List<int> list = AmmoInventory.InventoryContains(AmmoID);
+				List<int> list = AmmoInventory.InventoryContains(AmmoID);
 				if (list.Count > 0)
 				{
-                    _ammoItem = AmmoInventory.Content[list[list.Count - 1]];
+					_ammoItem = AmmoInventory.Content[list[list.Count - 1]];
 				}
 			}
 
 			if (_weapon.MagazineBased)
 			{
-                int counter = 0;
+				int counter = 0;
 				int stock = CurrentAmmoAvailable - _weapon.CurrentAmmoLoaded;
 				for (int i = _weapon.CurrentAmmoLoaded; i < _weapon.MagazineSize; i++)
 				{
 					if (stock > 0)
 					{
-                        stock--;
+						stock--;
 						counter++;		
 						AmmoInventory.UseItem (AmmoID);	
 					}									
 				}
 				_weapon.CurrentAmmoLoaded += counter;
 			}
+			
 			RefreshCurrentAmmoAvailable();
-        }
+		}
 		
 		/// <summary>
 		/// Empties the weapon's magazine and puts the ammo back in the inventory
@@ -268,7 +269,7 @@ namespace MoreMountains.CorgiEngine
 		protected void OnDestroy()
 		{
 			EmptyMagazine(false);
-        }
+		}
 
 		/// <summary>
 		/// On enable, we start listening for MMGameEvents. You may want to extend that to listen to other types of events.

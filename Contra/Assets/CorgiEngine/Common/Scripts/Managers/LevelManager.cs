@@ -168,6 +168,15 @@ namespace MoreMountains.CorgiEngine
 		protected BoxCollider _collider;
 		protected BoxCollider2D _collider2D;
 		protected Bounds _originalBounds;
+		
+		/// <summary>
+		/// Statics initialization to support enter play modes
+		/// </summary>
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+		protected static void InitializeStatics()
+		{
+			_instance = null;
+		}
 
 		/// <summary>
 		/// On awake, instantiates the player

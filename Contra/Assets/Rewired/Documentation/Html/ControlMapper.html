@@ -340,18 +340,23 @@
     <ul>
       <li>UI auto navigation will find other  UI elements outside Control Mapper and try to navigate to them when a direction is pressed. If you have other UI elements behind Control Mapper, you must disable interactability on them. The easiest way to do that is with a Canvas Group setting CanvasGroup.interactable to false.</li>
       <li>If you have multiple Canvases in your scene and you want auto navigation to work between elements on the different Canvases, all Canvases must have the same Render Mode.</li>
-    </ul>
+  </ul>
     <p><strong>Opening and closing the screen</strong></p>
 <p>The easiest way to control the screen is by assigning Actions in the <a href="#screen-control-actions">Screen Control Actions section of the inspector</a>.</p>
-    <p>Another way is by using a Unity UI button and assigning ControlMapper.Open() to the OnClick event.</p>
+    <p>Another way is by using a Unity UI button and assigning ControlMapper.Open to the OnClick event.</p>
     <p>You can also control the screen through scripting:</p>
     <ul>
-      <li>Opening the screen: ControlMapper.Open();</li>
-      <li>Closing the screen: ControlMapper.Close();</li>
+      <li>Opening the screen: ControlMapper.Open</li>
+      <li>Closing the screen: ControlMapper.Close</li>
       </ul>
     <p>Control Mapper also has events for when the screen is opened and closed should you need that information.</p>
 <p><strong>Changing settings through scripting</strong></p>
     <p> Certain Control Mapper options can be changed through scripting, but not in real-time while the screen is open. This can be useful should you need to make changes based on some criteria such as platform-specific settings. For example, before initializing the Control Mapper (before opening it), you could disable keyboard support. This may be useful if you're publishing your game on a platform that doesn't support keyboards, but you don't want to create a separate Control Mapper for this.    </p>
+    <p>The ControlMapper class inherits from UnityEngine.MonoBehaviour, and like any other MonoBehavior subclass, you must get a reference to the ControlMapper instance in order to call any methods in the class.</p>
+    <pre class="code">var controlMapper = UnityEngine.Object.FindObjectOfType&lt;Rewired.UI.ControlMapper.ControlMapper&gt;();
+if(controlMapper != null) {
+    controlMapper.Open();
+}</pre>
     <p><strong>Screen scale</strong></p>
     <p>Scale of the Control Mapper by default is handled by the Canvas Scaler Fitter component on the Canvas below the main Control Mapper game object. The Canvas Scaler Fitter component controls the scale settings for the display based on the current aspect ratio of the screen. Breakpoints have been predefined to help keep the display usable at various screen aspect ratios.</p>
     <p>&nbsp;</p>

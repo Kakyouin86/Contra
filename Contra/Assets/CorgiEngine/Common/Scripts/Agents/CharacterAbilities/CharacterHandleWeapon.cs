@@ -1,8 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using MoreMountains.Tools;
-using static MoreMountains.CorgiEngine.CharacterInventory;
-using System.Collections.Generic;
 
 namespace MoreMountains.CorgiEngine
 {	
@@ -18,15 +16,15 @@ namespace MoreMountains.CorgiEngine
 		/// This method is only used to display a helpbox text at the beginning of the ability's inspector
 		public override string HelpBoxText() { return "This component will allow your character to pickup and use weapons. What the weapon will do is defined in the Weapon classes. This just describes the behaviour of the 'hand' holding the weapon, not the weapon itself. Here you can set an initial weapon for your character to start with, allow weapon pickup, and specify a weapon attachment (a transform inside of your character, could be just an empty child gameobject, or a subpart of your model."; }
 
-        [Header("Weapon")]
+		[Header("Weapon")]
 
-        /// the initial weapon owned by the character
-        [Tooltip("the initial weapon owned by the character")]
-        public bool mainWeapon;
-        public bool hasUpgradedMachineGun = false;//Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
-        public bool hasUpgradedGrenades = false;//Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
+		/// the initial weapon owned by the character
+		[Tooltip("the initial weapon owned by the character")]
+        public bool mainWeapon; //Leo Monge: Need to ALWAYS bring it after update
+        public bool hasUpgradedMachineGun = false; //Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
+        public bool hasUpgradedGrenades = false; //Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
         public Weapon InitialWeapon;
-        public Weapon InitialWeaponSuper;//Leo Monge: Need to ALWAYS bring it after update.
+        public Weapon InitialWeaponSuper; //Leo Monge: Need to ALWAYS bring it after update.
         /// if this is set to true, the character can pick up PickableWeapons
         [Tooltip("if this is set to true, the character can pick up PickableWeapons")]
 		public bool CanPickupWeapons = true;
@@ -121,23 +119,23 @@ namespace MoreMountains.CorgiEngine
 			Setup ();
 		}
 
-		/// <summary>
-		/// Grabs various components and inits stuff
-		/// </summary>
-		public virtual void Setup()
-		{
-			_character = gameObject.GetComponentInParent<Character>();
-			CharacterAnimator = _animator;
-            
-			// filler if the WeaponAttachment has not been set
-			if (WeaponAttachment==null)
-			{
-				WeaponAttachment=transform;
-			}		
-			if (_animator != null)
-			{
-				_weaponIK = _animator.GetComponent<WeaponIK> ();
-			}
+        /// <summary>
+        /// Grabs various components and inits stuff
+        /// </summary>
+        public virtual void Setup()
+        {
+            _character = gameObject.GetComponentInParent<Character>();
+            CharacterAnimator = _animator;
+
+            // filler if the WeaponAttachment has not been set
+            if (WeaponAttachment == null)
+            {
+                WeaponAttachment = transform;
+            }
+            if (_animator != null)
+            {
+                _weaponIK = _animator.GetComponent<WeaponIK>();
+            }
 
             if (!hasUpgradedMachineGun && mainWeapon) //Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
             {
@@ -170,7 +168,7 @@ namespace MoreMountains.CorgiEngine
                     ChangeWeapon(InitialWeaponSuper, null);
                 }
             }
-		}
+        }
 
         public void ChangeWeapon() //Leo Monge: Need to ALWAYS bring it after update. Adds the correct grenade if I have the power up.
         {
@@ -207,10 +205,10 @@ namespace MoreMountains.CorgiEngine
             }
         }
 
-		/// <summary>
-		/// Every frame we check if it's needed to update the ammo display
-		/// </summary>
-		public override void ProcessAbility()
+        /// <summary>
+        /// Every frame we check if it's needed to update the ammo display
+        /// </summary>
+        public override void ProcessAbility()
 		{
 			base.ProcessAbility ();
 			UpdateAmmoDisplay (); 
@@ -443,88 +441,88 @@ namespace MoreMountains.CorgiEngine
 				CurrentWeapon.InitiateReloadWeapon ();
 			}
 		}
-		
-		/// <summary>
-		/// Changes the character's current weapon to the one passed as a parameter
-		/// </summary>
-		/// <param name="newWeapon">The new weapon.</param>
-		public virtual void ChangeWeapon(Weapon newWeapon, string weaponID, bool combo = false)
-		{
-			// if the character already has a weapon, we make it stop shooting
-			if (CurrentWeapon != null)
-			{
-				CurrentWeapon.ResetComboAnimatorParameter();
 
-				if (!combo)
-				{
-					ShootStop();
-					if (_character._animator != null)
-					{
-						AnimatorControllerParameter[] parameters = _character._animator.parameters;
-						foreach(AnimatorControllerParameter parameter in parameters)
-						{
-							if (parameter.name == CurrentWeapon.EquippedAnimationParameter)
-							{
-								MMAnimatorExtensions.UpdateAnimatorBool(_animator, CurrentWeapon.EquippedAnimationParameter, false);
-							}
-						}
-					}
+        /// <summary>
+        /// Changes the character's current weapon to the one passed as a parameter
+        /// </summary>
+        /// <param name="newWeapon">The new weapon.</param>
+        public virtual void ChangeWeapon(Weapon newWeapon, string weaponID, bool combo = false)
+        {
+            // if the character already has a weapon, we make it stop shooting
+            if (CurrentWeapon != null)
+            {
+                CurrentWeapon.ResetComboAnimatorParameter();
 
-					Destroy(CurrentWeapon.gameObject);
-				}
-			}
-            
-			if (newWeapon != null)
-			{			
-				if (!combo)
-				{
-					CurrentWeapon = (Weapon)Instantiate(newWeapon, WeaponAttachment.transform.position + newWeapon.WeaponAttachmentOffset, Quaternion.identity);
-				}				
-				CurrentWeapon.transform.SetParent(WeaponAttachment.transform);
-				if (ForceWeaponScaleResetOnEquip)
-				{
-					CurrentWeapon.transform.localScale = Vector3.one;
-				}
-				if (ForceWeaponRotationResetOnEquip)
-				{
-					CurrentWeapon.transform.localRotation = Quaternion.identity;    
-				}
-                
-				CurrentWeapon.SetOwner (_character, this);
-				CurrentWeapon.WeaponID = weaponID;
-				_aimableWeapon = CurrentWeapon.GetComponent<WeaponAim> ();
-				// we handle (optional) inverse kinematics (IK) 
-				if (_weaponIK != null)
-				{
-					_weaponIK.SetHandles(CurrentWeapon.LeftHandHandle, CurrentWeapon.RightHandHandle);
-				}
-				// we turn off the gun's emitters.
-				CurrentWeapon.Initialization();
-				CurrentWeapon.InitializeComboWeapons();
-				CurrentWeapon.InitializeAnimatorParameters();
-				InitializeAnimatorParameters();
-				if ((_character != null) && !combo)
-				{
-					if (!_character.IsFacingRight)
-					{
-						if (CurrentWeapon != null)
-						{
-							CurrentWeapon.FlipWeapon();
-							CurrentWeapon.FlipWeaponModel();
-						}
-					}
-				}				
-			}
-			else
-			{
-				CurrentWeapon = null;
-			}
-		}	
+                if (!combo)
+                {
+                    ShootStop();
+                    if (_character._animator != null)
+                    {
+                        AnimatorControllerParameter[] parameters = _character._animator.parameters;
+                        foreach (AnimatorControllerParameter parameter in parameters)
+                        {
+                            if (parameter.name == CurrentWeapon.EquippedAnimationParameter)
+                            {
+                                MMAnimatorExtensions.UpdateAnimatorBool(_animator, CurrentWeapon.EquippedAnimationParameter, false);
+                            }
+                        }
+                    }
 
-		/// <summary>
-		/// Flips the current weapon if needed
-		/// </summary>
-		public override void Flip()
+                    Destroy(CurrentWeapon.gameObject);
+                }
+            }
+
+            if (newWeapon != null)
+            {
+                if (!combo)
+                {
+                    CurrentWeapon = (Weapon)Instantiate(newWeapon, WeaponAttachment.transform.position + newWeapon.WeaponAttachmentOffset, Quaternion.identity);
+                }
+                CurrentWeapon.transform.SetParent(WeaponAttachment.transform);
+                if (ForceWeaponScaleResetOnEquip)
+                {
+                    CurrentWeapon.transform.localScale = Vector3.one;
+                }
+                if (ForceWeaponRotationResetOnEquip)
+                {
+                    CurrentWeapon.transform.localRotation = Quaternion.identity;
+                }
+
+                CurrentWeapon.SetOwner(_character, this);
+                CurrentWeapon.WeaponID = weaponID;
+                _aimableWeapon = CurrentWeapon.GetComponent<WeaponAim>();
+                // we handle (optional) inverse kinematics (IK) 
+                if (_weaponIK != null)
+                {
+                    _weaponIK.SetHandles(CurrentWeapon.LeftHandHandle, CurrentWeapon.RightHandHandle);
+                }
+                // we turn off the gun's emitters.
+                CurrentWeapon.Initialization();
+                CurrentWeapon.InitializeComboWeapons();
+                CurrentWeapon.InitializeAnimatorParameters();
+                InitializeAnimatorParameters();
+                if ((_character != null) && !combo)
+                {
+                    if (!_character.IsFacingRight)
+                    {
+                        if (CurrentWeapon != null)
+                        {
+                            CurrentWeapon.FlipWeapon();
+                            CurrentWeapon.FlipWeaponModel();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                CurrentWeapon = null;
+            }
+        }
+
+        /// <summary>
+        /// Flips the current weapon if needed
+        /// </summary>
+        public override void Flip()
 		{
 			if (CurrentWeapon != null)
 			{
@@ -620,5 +618,5 @@ namespace MoreMountains.CorgiEngine
                 CurrentWeapon.TurnWeaponOff();
             }
         }
-    }
+	}
 }

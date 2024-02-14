@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using MoreMountains.Tools;
-using TMPro;
 
 namespace MoreMountains.CorgiEngine
 {
@@ -72,7 +71,7 @@ namespace MoreMountains.CorgiEngine
 		protected RaycastHit2D _hit2D;
 		protected Health _health;
 		protected bool _spawnerIsFacingRight;
-        public Vector3 overrideValues = new Vector3(0f,0.3f,0f); //Leo Monge: Need to ALWAYS bring it after update. This makes the values in the Y axis, have a bit of a nice circle trajectory.
+        public Vector3 overrideValues = new Vector3(0f, 0.3f, 0f); //Leo Monge: Need to ALWAYS bring it after update. This makes the values in the Y axis, have a bit of a nice circle trajectory.
 
         /// <summary>
         /// On awake, we store the initial speed of the object 
@@ -160,38 +159,38 @@ namespace MoreMountains.CorgiEngine
 			Speed += Acceleration * Time.deltaTime;
 		}
 
-		/// <summary>
-		/// Sets the projectile's direction.
-		/// </summary>
-		/// <param name="newDirection">New direction.</param>
-		/// <param name="newRotation">New rotation.</param>
-		/// <param name="spawnerIsFacingRight">If set to <c>true</c> spawner is facing right.</param>
-		public virtual void SetDirection(Vector3 newDirection, Quaternion newRotation, bool spawnerIsFacingRight=true)
-		{
-			_spawnerIsFacingRight = spawnerIsFacingRight;
-			if (DirectionCanBeChangedBySpawner)
-			{
-				Direction = newDirection;
-			}
+        /// <summary>
+        /// Sets the projectile's direction.
+        /// </summary>
+        /// <param name="newDirection">New direction.</param>
+        /// <param name="newRotation">New rotation.</param>
+        /// <param name="spawnerIsFacingRight">If set to <c>true</c> spawner is facing right.</param>
+        public virtual void SetDirection(Vector3 newDirection, Quaternion newRotation, bool spawnerIsFacingRight = true)
+        {
+            _spawnerIsFacingRight = spawnerIsFacingRight;
+            if (DirectionCanBeChangedBySpawner)
+            {
+                Direction = newDirection;
+            }
             else //Leo Monge: Need to ALWAYS bring it after update. This makes the values in the Y axis, have a bit of a nice circle trajectory.
             {
-                Direction = new Vector3(newDirection.x, overrideValues.y,newDirection.z); //Leo Monge: Need to ALWAYS bring it after update. This makes the values in the Y axis, have a bit of a nice circle trajectory.
+                Direction = new Vector3(newDirection.x, overrideValues.y, newDirection.z); //Leo Monge: Need to ALWAYS bring it after update. This makes the values in the Y axis, have a bit of a nice circle trajectory.
             } //Leo Monge: Need to ALWAYS bring it after update. This makes the values in the Y axis, have a bit of a nice circle trajectory.
 
             if (ProjectileIsFacingRight != spawnerIsFacingRight)
-			{
-				Flip ();
-			}
-			if (FaceDirection)
-			{
-				transform.rotation = newRotation;
-			}
-		}
+            {
+                Flip();
+            }
+            if (FaceDirection)
+            {
+                transform.rotation = newRotation;
+            }
+        }
 
-		/// <summary>
-		/// Flip the projectile
-		/// </summary>
-		public virtual void Flip()
+        /// <summary>
+        /// Flip the projectile
+        /// </summary>
+        public virtual void Flip()
 		{
 			if (_spriteRenderer != null)
 			{

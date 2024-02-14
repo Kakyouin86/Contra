@@ -33,7 +33,7 @@ namespace SpriteShadersUltimate
 
             //Internal Name:
             GUI.color = new Color(1, 1, 1, 0.7f);
-            EditorGUILayout.LabelField("<b><size=14>Variable:</size></b>", labelStyle);
+            EditorGUILayout.LabelField("<b><size=14>Property Name:</size></b>", labelStyle);
             GUI.color = Color.white;
             DisplayCode("<b>" + prop.name + "</b>", labelStyle);
             EditorGUILayout.Space(); EditorGUILayout.Space();
@@ -42,30 +42,32 @@ namespace SpriteShadersUltimate
 
             //Code:
             GUI.color = new Color(1, 1, 1, 0.7f);
-            EditorGUILayout.LabelField("<b><size=14>Code:</size></b>", labelStyle);
+            EditorGUILayout.LabelField("<b><size=14>Set Function:</size></b>", labelStyle);
             GUI.color = Color.white;
 
             string codeText = default;
+            string propertyText = default;
             if (prop.type == MaterialProperty.PropType.Color)
             {
-                codeText = "Color color = new Color(1f, 0.5f, 0f);\n" +
-                    "material.SetColor(<b>\"" + prop.name + "\"</b>, color);";
+                propertyText = "public Color colorValue;";
+                codeText = "material.SetColor(<b>\"" + prop.name + "\"</b>, colorValue);";
             }
             else if (prop.type == MaterialProperty.PropType.Vector)
             {
-                codeText = "Vector2 position = new Vector2(1f, 2f);\n" +
-                    "material.SetVector(<b>\"" + prop.name + "\"</b>, position);";
+                propertyText = "public Vector2 vectorValue;";
+                codeText = "material.SetVector(<b>\"" + prop.name + "\"</b>, vectorValue);";
             }
             else if (prop.type == MaterialProperty.PropType.Texture)
             {
-                codeText = "Texture texture = Resources.Load<Texture>(\"Textures/Example\");\n" +
-                    "material.SetTexture(<b>\"" + prop.name + "\"</b>, texture);";
+                propertyText = "public Texture textureValue;";
+                codeText = "material.SetTexture(<b>\"" + prop.name + "\"</b>, textureValue);";
             }
             else
             {
-                codeText = "material.SetFloat(<b>\"" + prop.name + "\"</b>, 0.5f);";
+                propertyText = "public float floatValue;";
+                codeText = "material.SetFloat(<b>\"" + prop.name + "\"</b>, floatValue);";
             }
-            
+
             DisplayCode(codeText, labelStyle);
 
             //Example:
@@ -73,7 +75,7 @@ namespace SpriteShadersUltimate
             EditorGUILayout.Space(); EditorGUILayout.Space();
             EditorGUILayout.Space(); EditorGUILayout.Space();
             GUI.color = new Color(1, 1, 1, 0.7f);
-            EditorGUILayout.LabelField("<b><size=14>Example:</size></b>", labelStyle);
+            EditorGUILayout.LabelField("<b><size=14>Example Code:</size></b>", labelStyle);
             GUI.color = Color.white;
 
             Rect lastRect = GUILayoutUtility.GetLastRect();
@@ -118,10 +120,13 @@ namespace SpriteShadersUltimate
             string exampleText = default;
             if(isImage)
             {
-                exampleText = @"using UnityEngine.UI;
+                exampleText = @"using UnityEngine;
+using UnityEngine.UI;
 
 public class Example : MonoBehaviour
 {
+    " + propertyText + @"
+
     Material material;
 
     void Start()
@@ -139,8 +144,12 @@ public class Example : MonoBehaviour
             }
             else
             {
-                exampleText = @"public class Example : MonoBehaviour
+                exampleText = @"using UnityEngine;
+
+public class Example : MonoBehaviour
 {
+    " + propertyText + @"
+
     Material material;
 
     void Start()
@@ -226,7 +235,7 @@ public class Example : MonoBehaviour
             window.ShowUtility();
             window.labelContent = labelContent;
             window.prop = prop;
-            window.titleContent = new GUIContent("How to modify " + labelContent.text + " at runtime.");
+            window.titleContent = new GUIContent("Coding Hints - " + labelContent.text);
             window.isImage = (Selection.activeGameObject != null && Selection.activeGameObject.GetComponent<Graphic>() != null) || shader.name.Contains("UI");
 
             Vector2 position = new Vector2(window.position.x, window.position.y);

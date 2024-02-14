@@ -108,7 +108,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &114000014182369340
 MonoBehaviour:
@@ -164,9 +164,9 @@ MonoBehaviour:
   MinDamageCaused: 10
   MaxDamageCaused: 10
   TypedDamages: []
-  DamageCausedKnockbackType: 0
+  DamageCausedKnockbackType: 1
   DamageCausedKnockbackDirection: 0
-  DamageCausedKnockbackForce: {x: 0, y: 0}
+  DamageCausedKnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
   RepeatDamageOverTime: 0
   AmountOfRepeats: 3
@@ -4998,6 +4998,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 0e1495cd2b1257b419c4c5668cd82472, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

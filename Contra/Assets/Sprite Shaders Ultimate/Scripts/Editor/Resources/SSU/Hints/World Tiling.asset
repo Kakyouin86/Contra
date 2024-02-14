@@ -12,10 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 344c00355f060794ea582079ebb0a81f, type: 3}
   m_Name: World Tiling
   m_EditorClassIdentifier: 
-  shaderDescription: '- Tiles the sprite''s texture in <b>world space</b>.
-
-    -
-    Makes blending issues impossible.'
+  shaderDescription: '- Tiles the sprite''s texture in <b>world space</b>.'
   hints: []
   lines: []
   spaceHint: 

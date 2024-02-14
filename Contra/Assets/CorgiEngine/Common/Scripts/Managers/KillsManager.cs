@@ -61,6 +61,15 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("An optional text counter displaying the remaining amount of deaths before OnLastDeath")]
 		public TMP_Text RemainingCounter_TMP;
 		#endif
+		
+		/// <summary>
+		/// Statics initialization to support enter play modes
+		/// </summary>
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+		protected static void InitializeStatics()
+		{
+			_instance = null;
+		}
 
 		/// <summary>
 		/// On start we initialize our remaining deaths counter

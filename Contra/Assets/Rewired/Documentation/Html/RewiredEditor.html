@@ -203,6 +203,11 @@
     <td valign="top">&nbsp;</td>
   </tr>
   <tr>
+    <td valign="top">Use Physical Keys (Unity)</td>
+    <td valign="top"><p>If enabled, keyboard keys will map to their physical location on a US 101-key keyboard regardless of the keyboard layout being used (AZERTY for exampe). This is useful for making a locale-independent input layout. Example: WASD to move. If enabled, the KeyCode returned for a key will match the US 101-key layout, and glyphs and help text will display incorrect information to the user. For example, the A key on a AZERTY keyboard is located where the Q key is on a US 101-key keyboard, and the KeyCode returned for the A key will be KeyCode.Q. Changing this setting will modify it project-wide in the Unity Input Manager settings.</p>
+      <p>It is recommended to disable this option. <a href="KnownIssues.html#unity-physical-keys">See this for more information.</a></p></td>
+  </tr>
+  <tr>
     <td valign="top">Disable Native Input</td>
     <td valign="top"><p>Force Unity Input to be the input source. This will disable all external input sources such as Raw Input, Direct Input, XInput, and native OSX.</p>
       <p>WARNING:
@@ -229,20 +234,29 @@
     <td valign="top"><a name="settings-windows-input-source" id="settings-windows-input-source"></a>Input Source</td>
     <td valign="top"><p>The primary input source for the Windows Standalone platform.</p>
       <p>Raw Input - Use Raw Input for the input source. Note: Raw Input carries significant advantages over Direct Input such as better Bluetooth controller support, support for more elements on certain controllers, better controller recognition, etc.  Does not require any extra libraries. Windows Control Panel joystick calibration does not affect joystick axes.</p>
-      <p>XInput - Use XInput for the input source. This will use XInput only. All non-XInput compatible controllers will be non-functional. To support both XInput and non-XInput controllers, use Raw Input or Direct Input instead and enable the Use XInput option. Installation of DirectX end-user runtimes is required on Windows XP.</p>
-      <p> Direct Input - Use Direct Input for the input source. Installation of DirectX end-user runtimes may be required for Direct Input support. Windows Control Panel joystick calibration settings affect joystick axes.</p>
+      <p>XInput - Use XInput for the input source. This will use XInput only. All non-XInput compatible controllers will be non-functional. To support both XInput and non-XInput controllers, use Raw Input or Direct Input instead and enable the Use XInput option. Supports XBox Controller 2-motor vibration, independent trigger values, but only supports 4 XInput-compatible controllers at once. Installation of DirectX end-user runtimes is required on Windows XP.</p>
+      <p>Windows Gaming Input - Use Windows.Gaming.Input for the input source. This will use Windows.Gaming.Input only for controllers. All non-WindowsGamingInput compatible controllers will be non-functional. At the present time, only Gamepads are supported. To support all controller types, use Raw Input or Direct Input instead and enable the Use Windows Gaming Input option. Supports XBox Controller 4-motor vibration, independent trigger values, and supports more than 4 XInput-compatible controllers at once. (Requires Windows 10, October 2018 Update version 1809 (10.0.17763.0) or greater.  Will fall back to other input sources on older versions of Windows.)</p>
+<p> Direct Input - Use Direct Input for the input source. Installation of DirectX end-user runtimes may be required for Direct Input support. Windows Control Panel joystick calibration settings affect joystick axes.</p>
 <p> SDL2 - Use SDL2 for the input source. This option requires the SDL2 runtime library to be installed. Note: SDL2 does not support as many devices as other native input sources.</p>
 <p>Unity Input - Use Unity fallback input.</p></td>
   </tr>
   <tr>
-    <td valign="top">Use XInput</td>
-    <td valign="top"><p>On Windows, use XInput for compatible devices. Otherwise fall back to Raw Input or Direct Input. Installation of DirectX end-user runtimes may be required for XInput support. (Windows Vista+ include XInput support without the need for additional drivers.) Required for XBox 360 vibration support.</p>
+    <td valign="top"><a name="settings-windows-use-windows-gaming-input" id="settings-windows-use-windows-gaming-input"></a>Use Windows Gaming Input</td>
+    <td valign="top"><p>On Windows, use Windows.Gaming.Input for compatible devices. Devices not compatible with Windows Gaming Input will be handled by the primary input source. Supports XBox Controller 4-motor vibration, independent trigger values, and supports more than 4 XInput-compatible controllers at once.</p>
+      <p>(Requires Windows 10, October 2018 Update version 1809 (10.0.17763.0) or greater.  Will fall back to other input sources on older versions of Windows.)</p>
+      <p>If both Use XInput and Use Windows Gaming Input are enabled, if Windows Gaming Input is unavalable on the system, XInput will be used as the fallback input source for compatible devices. Otherwise, the primary input source will be used as the fallback input source.</p>
       <p>(Only available when  Input Source is set to Raw Input or Direct Input.)</p></td>
+  </tr>
+  <tr>
+    <td valign="top">Use XInput</td>
+    <td valign="top"><p>On Windows, use XInput for compatible devices. Devices not compatible with XInput will be handled by the primary input source.   Supports XBox Controller 2-motor vibration, independent trigger values, but only supports 4 XInput-compatible controllers at once. Installation of DirectX end-user runtimes is required on Windows XP.</p>
+      <p>If both Use XInput and Use Windows Gaming Input are enabled, if Windows Gaming Input is unavalable on the system, XInput will be used as the fallback input source for compatible devices. Otherwise, the primary input source will be used as the fallback input source.</p>
+      <p>(Only available when  Input Source is set to Raw Input, Direct Input, or Windows Gaming Input.)</p></td>
   </tr>
   <tr>
     <td valign="top">Joystick Refresh Rate</td>
     <td valign="top"><p>The joystick refresh rate in frames per second. Set this to a higher value if you need higher precision input timing at high frame rates such as for a music beat game. Higher values result in higher CPU usage. Note that setting this to a very high value when the game is running at a low frame rate will not result in higher precision input.</p>
-      <p>This settings only applies to input sources that use a separate thread to poll for joystick input values (currently XInput and Direct Input). This setting does not apply to event-based input sources such as Raw Input.</p></td>
+      <p>This settings only applies to input sources that use a separate thread to poll for joystick input values (currently Direct Input, XInput, and Windows Gaming Input). This setting does not apply to event-based input sources such as Raw Input.</p></td>
   </tr>
   <tr>
     <td valign="top"> Native Mouse Handling</td>
@@ -258,6 +272,10 @@
     <td valign="top"><a name="settings-windows-enhanced-device-support" id="settings-windows-enhanced-device-support"></a>Enhanced Device Support</td>
     <td valign="top"><p>Enable low-level enhanced support for certain devices. If enhanced support is available for a particular device, this will enable device-specific features such as vibration / force feedback, lights, gyroscopes, accelerometers, touchpads, etc.</p>
       <p>(Only available when Input Source is set to Raw Input.)</p></td>
+  </tr>
+  <tr>
+    <td valign="top">Enhanced Device Support Options</td>
+    <td valign="top">Excluded Devices - A list of device types that will be excluded from Enhanced Device Support on this platform. A device that is excluded from Enhanced Device Support will treated like any other controller and will be handled by the primary and/or secondary input sources for the platform, and any special controller features provided by Enhanced Device Support will not be available.</td>
   </tr>
   <tr>
     <td valign="top"><strong><a name="settings-osx" id="settings-osx"></a>OSX:</strong></td>
@@ -287,6 +305,10 @@
       <p>(Only available when Input Source is set to Native.)</p></td>
   </tr>
   <tr>
+    <td valign="top">Enhanced Device Support Options</td>
+    <td valign="top">Excluded Devices - A list of device types that will be excluded from Enhanced Device Support on this platform. A device that is excluded from Enhanced Device Support will treated like any other controller and will be handled by the primary and/or secondary input sources for the platform, and any special controller features provided by Enhanced Device Support will not be available.</td>
+  </tr>
+  <tr>
     <td valign="top"><strong>Linux:</strong></td>
     <td valign="top">&nbsp;</td>
   </tr>
@@ -296,6 +318,16 @@
       <p>Native - Use native input for the input source. This provides the best device support.</p>
       <p> SDL2 - Use SDL2 for the input source. May be required for Steam Streaming and Steam Controller support in Linux. This option requires the SDL2 runtime library to be installed. Note: SDL2 does not support as many devices as other native input sources.</p>
       <p>Unity Input - Use Unity fallback input. </p></td>
+  </tr>
+  <tr>
+    <td valign="top"><a name="settings-linux-enhanced-device-support" id="settings-linux-enhanced-device-support2"></a>Enhanced Device Support</td>
+    <td valign="top"><p>Enable low-level enhanced support for certain devices. If enhanced support is available for a particular device, this will enable device-specific features such as vibration / force feedback, lights, gyroscopes, accelerometers, touchpads, etc.</p>
+      <p>Enhanced Device Support on Linux requires UDEV rules to be set up by the end-user. <a href="HowTos.html#enhanced-device-support-linux">See this for more information</a>.</p>
+      <p>(Only available when Input Source is set to Native.)</p></td>
+  </tr>
+  <tr>
+    <td valign="top">Enhanced Device Support Options</td>
+    <td valign="top">Excluded Devices - A list of device types that will be excluded from Enhanced Device Support on this platform. A device that is excluded from Enhanced Device Support will treated like any other controller and will be handled by the primary and/or secondary input sources for the platform, and any special controller features provided by Enhanced Device Support will not be available.</td>
   </tr>
   <tr>
     <td valign="top"><strong><a name="settings-uwp" id="settings-uwp"></a>Windows UWP:</strong></td>
@@ -308,12 +340,12 @@
       <p>Unity Input - Use Unity fallback input.</p></td>
   </tr>
   <tr>
-    <td valign="top">Use XInput</td>
-    <td valign="top"><p>Use XInput for compatible devices. Also enables special features for XInput devices such as vibration.</p>
+    <td valign="top">Use Gamepad API</td>
+    <td valign="top"><p>Use Windows.Gaming.Input.Gamepad for compatible devices. Also enables special features for compatible devices such as vibration.</p>
       <p>(Only available when Input Source is set to Native.)</p></td>
   </tr>
   <tr>
-    <td valign="top">Support HID Devices</td>
+    <td valign="top">Use HID API</td>
     <td valign="top"><p>This allows support for older gamepads, gamepads made for Android, flight controllers, racing wheels, etc. In order to use this feature, you must add support for HID gamepads and joysticks to the app manifest file. Please see the Special Platform Support  -&gt; Windows 10 Universal documentation for details.</p>
       <p>(Only available when Input Source is set to Native.)</p></td>
   </tr>
@@ -435,6 +467,18 @@
   <tr>
     <td valign="top"><a name="settings-defer-controller-connected-events-on-start" id="settings-defer-controller-connected-events-on-start"></a>Defer Controller Connected Events On Start</td>
     <td valign="top">Defer controller connected events for controllers already connected when Rewired initializes until the Start event instead of during initialization. Normally, it's impossible to receive controller connection events at the start of runtime because Rewired initializes before any other script is able to subscribe to the controller connected event. Enabling this will defer the controller connected events until the Start event, allowing your scripts to subscribe to the controller connected event in Awake and still receive the event callback. If disabled, controller connection events for controllers already connected before runtime starts will be missed.</td>
+  </tr>
+  <tr>
+    <td valign="top">Key Combination Override Mode</td>
+    <td valign="top"><p>Determines how Actions bound keys that are also used in key combinations behave. Example: Ctrl is bound to Action1 and Ctrl + W is bound to Action 2. When Ctrl is pressed, Action1 activates until W is also pressed. This enum defines how the underlying Action1 bound to Ctrl will behave when H is pressed and when H is released. When Ctrl + H is pressed, the key combination overrides Action1 and it returns a value of False.</p>
+      <p> None: All key combination override handling is disabled for all keys including modifier and primary keys. Even if a key combination includes a key that is already bound to an Action, both the Action bound to the key combination and the Action bound to the individual key will return true when pressed. Example: W is bound to Action1. Cntl + W is bound to Action2. When Cntl + W is pressed, both Action1 and Action2 return true.</p>
+      <p>Pause:  An Action bound to a modifier key that is a member of a key combination will return False for the duration that the key combination is active. When any key of the overriding key combination is released, the Action bound to the modifier key will no longer be overridden and return a True value if the key is still pressed.</p>
+      <p> Cancel: An Action bound to a modifier key that is a member of a key combination will return False until the key is released and pressed again. The Action of the member key is canceled by the key combination override.</p>
+<p>Overlap: An Action bound to a modifier key that is a member of a key combination will return True as long as the key is held and will not have its value overridden by the key combination unless the modifier key matches the primary key of the key combination. Actions bound to each modifier key in the key combination will return value along with the Action bound to the key combination. Example: Cntl is bound to Action1. Cntl + W is bound to Action2. When Cntl + W is pressed, both Action1 and Action2 return true.  Note that this does not apply to the primary key of a key combination. In the previous example, an Action bound to W alone does not return true when Cntl + W is pressed. This also does not apply to key combinations themselves. Key combinations can be overridden by other key combinations that have more modifiers. Example: Cntl + W is bound to Action1. Cntl + Shift + W is bound to Action2. When Cntl + Shift + W is pressed, Action2 returns true, but Action1 returns false. If a key combination is overridden by another key combination that has more modifiers, the overridden key combination will return false until all constiutent keys are released and pressed again.</p></td>
+  </tr>
+  <tr>
+    <td valign="top">Generate Key Events On Key Combo Override</td>
+    <td valign="top">Determines if key up and down events are generated when the Action(s) bound to one or more modifier keys that are part of a key combination are overridden and resumed when the succeeding key(s) in the key combination are pressed or released. Example: Cntl is bound to Action1. Cntl + W is bound to Action2. When Cntl is pressed, Action1 generates Down and On events. When W is pressed while Cntl is held, should Action1, bound to Cntl, generate an Up event (because it has been overridden and is now off). Similarly, when Cntl + W is held and W is released, if Key Combination Override Mode is set to Momentary, should Action1, bound to Cntl, generate a Down event (because it is no longer overridden and resumes returning True)?</td>
   </tr>
   <tr>
     <td valign="top">Logging</td>
