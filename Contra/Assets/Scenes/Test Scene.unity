@@ -2600,7 +2600,7 @@ Transform:
   m_GameObject: {fileID: 167342568}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.51, y: -0.45, z: 0}
+  m_LocalPosition: {x: 1.51, y: -0.729058, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2638,8 +2638,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePickup: {fileID: 7855422921690638066, guid: 2bf5c7e39710d2a4880dadebc0ad06e9,
     type: 3}
+  theSmokeEffect: {fileID: 5218677002007531831, guid: fe11ba05d3738c749bcdf1e35f5af27c,
+    type: 3}
   health: {fileID: 0}
   hasInstantiated: 0
+  offset1: {x: 0.35, y: 1.5, z: 0}
+  offset2: {x: -0.35, y: 1.5, z: 0}
+  jumpForce: 5
 --- !u!114 &167342572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2725,7 +2730,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.4136, y: 1.4944764}
   m_EdgeRadius: 0
 --- !u!95 &167342574
 Animator:
@@ -3529,8 +3534,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePickup: {fileID: 7855422921690638066, guid: 0eaf1604db7d0d446b7eb86420d591c7,
     type: 3}
+  theSmokeEffect: {fileID: 5218677002007531831, guid: fe11ba05d3738c749bcdf1e35f5af27c,
+    type: 3}
   health: {fileID: 0}
   hasInstantiated: 0
+  offset1: {x: 0.35, y: 1.5, z: 0}
+  offset2: {x: -0.35, y: 1.5, z: 0}
+  jumpForce: 5
 --- !u!114 &240966475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3616,7 +3626,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.4136, y: 1.4944764}
   m_EdgeRadius: 0
 --- !u!95 &240966477
 Animator:
@@ -10523,7 +10533,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.4136, y: 1.4944764}
   m_EdgeRadius: 0
 --- !u!95 &730174417
 Animator:
@@ -10612,8 +10622,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePickup: {fileID: 7855422921690638066, guid: f8723e94dd94c424298529384872bde9,
     type: 3}
+  theSmokeEffect: {fileID: 5218677002007531831, guid: fe11ba05d3738c749bcdf1e35f5af27c,
+    type: 3}
   health: {fileID: 0}
   hasInstantiated: 0
+  offset1: {x: 0.35, y: 1.5, z: 0}
+  offset2: {x: -0.35, y: 1.5, z: 0}
+  jumpForce: 5
 --- !u!114 &730174420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21575,8 +21590,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePickup: {fileID: 7855422921690638066, guid: cbbccb034d5af7c4686a37c7dda6da66,
     type: 3}
+  theSmokeEffect: {fileID: 5218677002007531831, guid: fe11ba05d3738c749bcdf1e35f5af27c,
+    type: 3}
   health: {fileID: 0}
   hasInstantiated: 0
+  offset1: {x: 0.35, y: 1.5, z: 0}
+  offset2: {x: -0.35, y: 1.5, z: 0}
+  jumpForce: 5
 --- !u!114 &1172561660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21662,7 +21682,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.4136, y: 1.4944764}
   m_EdgeRadius: 0
 --- !u!95 &1172561662
 Animator:
@@ -27359,7 +27379,7 @@ Transform:
   m_GameObject: {fileID: 1521304123}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.51, y: -0.45, z: 0}
+  m_LocalPosition: {x: 1.51, y: -0.729058, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27397,8 +27417,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePickup: {fileID: 7855422921690638066, guid: 672c697503e6c3748afafb2069177a56,
     type: 3}
+  theSmokeEffect: {fileID: 5218677002007531831, guid: fe11ba05d3738c749bcdf1e35f5af27c,
+    type: 3}
   health: {fileID: 0}
   hasInstantiated: 0
+  offset1: {x: 0.35, y: 1.5, z: 0}
+  offset2: {x: -0.35, y: 1.5, z: 0}
+  jumpForce: 5
 --- !u!114 &1521304127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27484,7 +27509,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.4136, y: 1.4944764}
   m_EdgeRadius: 0
 --- !u!95 &1521304129
 Animator:
@@ -34638,8 +34663,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePickup: {fileID: 7855422921690638066, guid: a677982e000acdd4ca23ecb328f46a4b,
     type: 3}
+  theSmokeEffect: {fileID: 5218677002007531831, guid: fe11ba05d3738c749bcdf1e35f5af27c,
+    type: 3}
   health: {fileID: 0}
   hasInstantiated: 0
+  offset1: {x: 0.35, y: 1.5, z: 0}
+  offset2: {x: -0.35, y: 1.5, z: 0}
+  jumpForce: 5
 --- !u!114 &2085247408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34725,7 +34755,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.4136, y: 1.4944764}
   m_EdgeRadius: 0
 --- !u!95 &2085247410
 Animator:

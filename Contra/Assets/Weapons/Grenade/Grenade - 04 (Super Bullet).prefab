@@ -528,7 +528,7 @@ MonoBehaviour:
   FlickerSprite: 1
   TimeBeforeFlicker: 1
   DamageAreaCollider: {fileID: 3039944566928016123}
-  DamageAreaActiveDuration: 0.3
+  DamageAreaActiveDuration: 0.25
 --- !u!1 &9034719068397956968
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +596,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.47
+  m_Radius: 2
 --- !u!114 &2842607449744170839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,7 +620,7 @@ MonoBehaviour:
   DamageCausedKnockbackType: 1
   DamageCausedKnockbackDirection: 0
   DamageCausedKnockbackForce: {x: 10, y: 2}
-  InvincibilityDuration: 0.5
+  InvincibilityDuration: 0.2
   RepeatDamageOverTime: 0
   AmountOfRepeats: 3
   DurationBetweenRepeats: 1

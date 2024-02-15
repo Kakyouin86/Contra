@@ -528,7 +528,7 @@ MonoBehaviour:
   FlickerSprite: 1
   TimeBeforeFlicker: 1
   DamageAreaCollider: {fileID: 7745062669738436641}
-  DamageAreaActiveDuration: 0.3
+  DamageAreaActiveDuration: 0.2
 --- !u!1 &3810479563379019101
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,7 +620,7 @@ MonoBehaviour:
   DamageCausedKnockbackType: 1
   DamageCausedKnockbackDirection: 0
   DamageCausedKnockbackForce: {x: 10, y: 2}
-  InvincibilityDuration: 0.5
+  InvincibilityDuration: 0.2
   RepeatDamageOverTime: 0
   AmountOfRepeats: 3
   DurationBetweenRepeats: 1
