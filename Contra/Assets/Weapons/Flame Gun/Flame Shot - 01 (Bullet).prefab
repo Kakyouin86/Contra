@@ -157,7 +157,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.7280953, y: 1.2865578}
+  m_Size: {x: 2.7280953, y: 1.1106315}
   m_EdgeRadius: 0
 --- !u!50 &37657821112985171
 Rigidbody2D:
@@ -237,8 +237,8 @@ MonoBehaviour:
     m_Bits: 270592
   ApplyDamageOnTriggerEnter: 1
   ApplyDamageOnTriggerStay: 1
-  MinDamageCaused: 10
-  MaxDamageCaused: 10
+  MinDamageCaused: 30
+  MaxDamageCaused: 30
   TypedDamages: []
   DamageCausedKnockbackType: 1
   DamageCausedKnockbackDirection: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
   DurationBetweenRepeats: 1
   DamageOverTimeInterruptible: 1
   RepeatedDamageType: {fileID: 0}
-  DamageTakenEveryTime: 10
+  DamageTakenEveryTime: 30
   DamageTakenDamageable: 5
   DamageTakenNonDamageable: 10
   DamageTakenKnockbackType: 0

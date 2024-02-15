@@ -165,8 +165,10 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
 
     IEnumerator DeathColliders()
     {
-        Physics2D.IgnoreLayerCollision(gameObject.layer, 12, true);
-        Physics2D.IgnoreLayerCollision(gameObject.layer, 13, true);
+        //Physics2D.IgnoreLayerCollision(gameObject.layer, 12, true);
+        //Physics2D.IgnoreLayerCollision(gameObject.layer, 13, true);
+        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), true);
+        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), true);
         // Flash effect for 3 seconds
         float flashDuration = 0.1f; // Duration for each flash
         float elapsedTime = 0f;
@@ -190,8 +192,10 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
         ResetSpriteRendererColor(theTorsoFlameGunLights.GetComponent<SpriteRenderer>());
         ResetSpriteRendererColor(theTorso.GetComponent<SpriteRenderer>());
         ResetSpriteRendererColor(theLegs.GetComponent<SpriteRenderer>());
-        Physics2D.IgnoreLayerCollision(gameObject.layer, 12, false);
-        Physics2D.IgnoreLayerCollision(gameObject.layer, 13, false);
+        //Physics2D.IgnoreLayerCollision(gameObject.layer, 12, false);
+        //Physics2D.IgnoreLayerCollision(gameObject.layer, 13, false);
+        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), false);
+        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), false);
     }
 
     public void ToggleSpriteRendererColor(SpriteRenderer spriteRenderer)
@@ -446,6 +450,8 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
             theLegs.GetComponent<SpriteRenderer>().material = flashMaterial;
             theTorsoMachineGunLights.GetComponent<SpriteRenderer>().material = flashMaterial;
             theTorsoFlameGunLights.GetComponent<SpriteRenderer>().material = flashMaterial;
+            //Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), true);
+            //Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), true);
         }
         else
         {

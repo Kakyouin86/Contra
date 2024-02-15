@@ -16666,7 +16666,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 264448
   LaserWidth: {x: 0.05, y: 0.05}
-  LaserMaterial: {fileID: 2100000, guid: 1edd60d55c9b2354abcfa9983da42782, type: 2}
+  LaserMaterial: {fileID: 2100000, guid: 15774b50519dbcc4fb7d558d64bc949c, type: 2}
   theSpecialShot: {fileID: 4211420323295667025, guid: 179abb41300adad4cb0fcbbe8b83284a,
     type: 3}
 --- !u!120 &1038294715

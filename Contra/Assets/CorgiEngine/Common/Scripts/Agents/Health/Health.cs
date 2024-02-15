@@ -113,6 +113,7 @@ namespace MoreMountains.CorgiEngine
         /// the color the sprite should flicker to
         [Tooltip("the color the sprite should flicker to")] [MMCondition("FlickerSpriteOnHit", true)]
         public Color FlickerColor = new Color32(255, 20, 20, 255);
+        public bool isCharacter = false; //Leo Monge: Need to ALWAYS bring it after update. This will avoid errors in flickering the character.
         public float flickerDuration = 0.01f; //Leo Monge: Need to ALWAYS bring it after update. This will create a better flicker than the original.
         public int numberOfFlickers = 1; //Leo Monge: Need to ALWAYS bring it after update. How many flickers per shot.
 
@@ -1169,12 +1170,15 @@ namespace MoreMountains.CorgiEngine
 
         public void OnTriggerEnter2D(Collider2D other)  //Leo Monge: Need to ALWAYS bring it after update. 
         {
-            Health health = GetComponent<Health>();
-            if (health != null && health.CurrentHealth > 1)
+            if (!isCharacter)
             {
-                if (other.CompareTag("Bullet"))
+                Health health = GetComponent<Health>();
+                if (health != null && health.CurrentHealth > 1)
                 {
-                    StartCoroutine(FlickerToRed());
+                    if (other.CompareTag("Bullet"))
+                    {
+                        StartCoroutine(FlickerToRed());
+                    }
                 }
             }
         }

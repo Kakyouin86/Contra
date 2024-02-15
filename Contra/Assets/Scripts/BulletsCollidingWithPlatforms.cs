@@ -284,6 +284,7 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
 
         if (other.tag == "Arista" && !doNotInstantiateTheBurst)
         {
+            doNotInstantiateTheBurst = true;
             //Debug.Log("Arista");
             if (GetComponent<BulletsDirection>() != null && applyOffsetToDiagonals)
             {
@@ -336,6 +337,7 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
         if (((1 << other.gameObject.layer) & ObstaclesLayerMask) != 0 && !doNotInstantiateTheBurst)
         {
             //Debug.Log("Plaform");
+            doNotInstantiateTheBurst = true;
             GameObject spawnedObject = Instantiate(objectToInstantiate, Vector3.zero, Quaternion.identity);
             spawnedObject.transform.SetParent(transform);
 
