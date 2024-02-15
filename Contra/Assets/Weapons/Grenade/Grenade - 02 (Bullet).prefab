@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 3846127819570464461}
   m_Layer: 0
   m_Name: Grenade - 02 (Bullet)
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

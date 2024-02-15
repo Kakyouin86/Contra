@@ -288,17 +288,19 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
             if (GetComponent<BulletsDirection>() != null && applyOffsetToDiagonals)
             {
                 if (!(GetComponent<BulletsDirection>().isMovingDown ^ GetComponent<BulletsDirection>().isMovingUp ^
-                      GetComponent<BulletsDirection>().isMovingLeft ^ GetComponent<BulletsDirection>().isMovingRight))
+                      GetComponent<BulletsDirection>().isMovingLeft ^ GetComponent<BulletsDirection>().isMovingRight)) 
                 {
                     GameObject spawnedObject = Instantiate(objectToInstantiate, Vector3.zero, Quaternion.identity);
                     spawnedObject.transform.SetParent(transform);
                     doNotInstantiateTheBurst = true;
-                    if (gameObject.transform.rotation.z < 0)
+                    if (gameObject.transform.rotation.z <= 0)
                     {
+                        //Debug.Log("Here Arista 1");
                         spawnedObject.transform.localPosition = -spawnPositionArista;
                     }
                     else
                     {
+                        //Debug.Log("Here Arista 2");
                         spawnedObject.transform.localPosition = spawnPositionArista;
                     }
 
@@ -348,46 +350,52 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                     {
                         if (gameObject.transform.rotation.z < 0)
                         {
+                            //Debug.Log("Here Platform 1");
                             spawnedObject.transform.localPosition = Vector3.zero + spawnPosition;
-                            Debug.Log("Here");
                         }
                         else
                         {
+                            //Debug.Log("Here Platform 2");
                             spawnedObject.transform.localPosition = Vector3.zero - spawnPosition;
-                            Debug.Log("Here");
                         }
                     }
 
                     else if (GetComponent<BulletsDirection>().isMovingDown &&
                              GetComponent<BulletsDirection>().isMovingLeft)
                     {
+                        //Debug.Log("Here Platform 3");
                         spawnedObject.transform.localPosition = new Vector3(-spawnPositionDiagonalsPlatforms.x + 1.5f, -spawnPositionDiagonalsPlatforms.y, -spawnPositionDiagonalsPlatforms.z);
                     }
 
                     else if (GetComponent<BulletsDirection>().isMovingDown &&
                              GetComponent<BulletsDirection>().isMovingRight)
                     {
+                        //Debug.Log("Here Platform 4");
                         spawnedObject.transform.localPosition = spawnPositionDiagonalsPlatforms;
                     }
 
                     else if (GetComponent<BulletsDirection>().isMovingUp &&
                              GetComponent<BulletsDirection>().isMovingLeft)
                     {
+                        //Debug.Log("Here Platform 5");
                         spawnedObject.transform.localPosition = new Vector3(spawnPositionDiagonalsPlatforms.x + 0.2f, spawnPositionDiagonalsPlatforms.y, spawnPositionDiagonalsPlatforms.z);
                     }
 
                     else if (GetComponent<BulletsDirection>().isMovingUp &&
                              GetComponent<BulletsDirection>().isMovingRight)
                     {
+                        //Debug.Log("Here Platform 6");
                         spawnedObject.transform.localPosition = spawnPositionDiagonalsPlatforms;
                     }
                     else
                     {
+                        //Debug.Log("Here Platform 7");
                         spawnedObject.transform.localPosition = spawnPosition;
                     }
                 }
                 else
                 {
+                    //Debug.Log("Here Platform 8");
                     spawnedObject.transform.localPosition = spawnPosition;
                 }
             }
@@ -402,6 +410,7 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                             !GetComponent<BulletsDirection>().isMovingLeft &&
                             !GetComponent<BulletsDirection>().isMovingRight)
                         {
+                            //Debug.Log("Here Platform 9");
                             spawnedObject.transform.localPosition = Vector3.zero + spawnPosition;
                             spawnedObject.transform.localRotation = rotation;
                         }
@@ -411,11 +420,13 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                         {
                             if (gameObject.transform.rotation.z < 0)
                             {
-                                spawnedObject.transform.localPosition = new Vector3(-spawnPositionDiagonalsPlatforms.x + 1.5f, -spawnPositionDiagonalsPlatforms.y, -spawnPositionDiagonalsPlatforms.z);
+                                //Debug.Log("Here Platform 10");
+                                spawnedObject.transform.localPosition = new Vector3(-spawnPositionDiagonalsPlatforms.x + 1.0f, -spawnPositionDiagonalsPlatforms.y, -spawnPositionDiagonalsPlatforms.z);
                                 spawnedObject.transform.localRotation = rotation;
                             }
                             else
                             {
+                                //Debug.Log("Here Platform 11");
                                 spawnedObject.transform.localPosition = new Vector3(-spawnPositionDiagonalsPlatforms.x + 1.5f, -spawnPositionDiagonalsPlatforms.y, -spawnPositionDiagonalsPlatforms.z);
                                 spawnedObject.transform.localRotation = rotation;
                             }
@@ -424,6 +435,7 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                         else if (GetComponent<BulletsDirection>().isMovingDown &&
                                  GetComponent<BulletsDirection>().isMovingRight)
                         {
+                            //Debug.Log("Here Platform 12");
                             spawnedObject.transform.localPosition = spawnPositionDiagonalsPlatforms;
                             spawnedObject.transform.localRotation = rotation;
                         }
@@ -431,26 +443,28 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                         else if (GetComponent<BulletsDirection>().isMovingUp &&
                                  GetComponent<BulletsDirection>().isMovingLeft)
                         {
-                            spawnedObject.transform.localPosition = new Vector3(
-                                spawnPositionDiagonalsPlatforms.x + 0.2f, spawnPositionDiagonalsPlatforms.y,
-                                spawnPositionDiagonalsPlatforms.z);
+                            //Debug.Log("Here Platform 13");
+                            spawnedObject.transform.localPosition = new Vector3(spawnPositionDiagonalsPlatforms.x + 0.2f, spawnPositionDiagonalsPlatforms.y, spawnPositionDiagonalsPlatforms.z);
                             spawnedObject.transform.localRotation = rotation;
                         }
 
                         else if (GetComponent<BulletsDirection>().isMovingUp &&
                                  GetComponent<BulletsDirection>().isMovingRight)
                         {
+                            //Debug.Log("Here Platform 14");
                             spawnedObject.transform.localPosition = spawnPositionDiagonalsPlatforms;
                             spawnedObject.transform.localRotation = rotation;
                         }
                         else
                         {
+                            //Debug.Log("Here Platform 15");
                             spawnedObject.transform.localPosition = spawnPosition;
                             spawnedObject.transform.localRotation = rotation;
                         }
                     }
                     else
                     {
+                        //Debug.Log("Here Platform 16");
                         spawnedObject.transform.localPosition = spawnPosition;
                         spawnedObject.transform.localRotation = rotation;
                     }
@@ -464,6 +478,7 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                             !GetComponent<BulletsDirection>().isMovingLeft &&
                             !GetComponent<BulletsDirection>().isMovingRight)
                         {
+                            //Debug.Log("Here Platform 17");
                             spawnedObject.transform.localPosition = Vector3.zero - spawnPosition;
                             spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
                         }
@@ -471,13 +486,15 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                         else if (GetComponent<BulletsDirection>().isMovingDown &&
                                  GetComponent<BulletsDirection>().isMovingLeft)
                         {
-                            spawnedObject.transform.localPosition = new Vector3(spawnPositionDiagonalsPlatforms.x - 0.6f, spawnPositionDiagonalsPlatforms.y, spawnPositionDiagonalsPlatforms.z);
+                            //Debug.Log("Here Platform 18");
+                            spawnedObject.transform.localPosition = new Vector3(spawnPositionDiagonalsPlatforms.x - 1.2f, spawnPositionDiagonalsPlatforms.y, spawnPositionDiagonalsPlatforms.z);
                             spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
                         }
 
                         else if (GetComponent<BulletsDirection>().isMovingDown &&
                                  GetComponent<BulletsDirection>().isMovingRight)
                         {
+                            //Debug.Log("Here Platform 19");
                             spawnedObject.transform.localPosition = -spawnPositionDiagonalsPlatforms;
                             spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
                         }
@@ -485,6 +502,7 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                         else if (GetComponent<BulletsDirection>().isMovingUp &&
                                  GetComponent<BulletsDirection>().isMovingLeft)
                         {
+                            //Debug.Log("Here Platform 20");
                             spawnedObject.transform.localPosition = -spawnPositionDiagonalsPlatforms;
                             spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
                         }
@@ -492,17 +510,20 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                         else if (GetComponent<BulletsDirection>().isMovingUp &&
                                  GetComponent<BulletsDirection>().isMovingRight)
                         {
+                            //Debug.Log("Here Platform 21");
                             spawnedObject.transform.localPosition = -spawnPositionDiagonalsPlatforms;
                             spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
                         }
                         else
                         {
+                            //Debug.Log("Here Platform 22");
                             spawnedObject.transform.localPosition = -spawnPosition;
                             spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
                         }
                     }
                     else
                     {
+                        //Debug.Log("Here Platform 23");
                         spawnedObject.transform.localPosition = -spawnPosition;
                         spawnedObject.transform.localRotation = Quaternion.Euler(0f, 0f, -rotation.eulerAngles.z);
                     }

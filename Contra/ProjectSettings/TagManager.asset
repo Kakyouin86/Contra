@@ -33,6 +33,7 @@ TagManager:
   - Shells
   - RayIndicator
   - SmokeIndicator
+  - Bullet
   layers:
   - Default
   - TransparentFX

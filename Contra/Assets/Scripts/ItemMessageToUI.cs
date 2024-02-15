@@ -30,15 +30,18 @@ public class ItemMessageToUI : MonoBehaviour, MMEventListener<CorgiEngineEvent>
     {
         if (corgiEngineEvent.EventType == CorgiEngineEventTypes.PlayerDeath)
         {
-            GetComponent<BoxCollider2D>().enabled = false;
+            //GetComponent<BoxCollider2D>().enabled = false;
+            // Exclude layer "Player" from collision
+            Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Player"), true);
         }
         else
         {
-            GetComponent<BoxCollider2D>().enabled = true;
+            //GetComponent<BoxCollider2D>().enabled = true;
+            // Include layer "Player" in collision
+            Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Player"), false);
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         theUIController = GameObject.FindWithTag("UI").GetComponent<UIAndUpgradesController>();
