@@ -7,6 +7,8 @@ using static MoreMountains.CorgiEngine.Character;
 public class BulletsDirection : MonoBehaviour
 {
     public Vector3 lastPosition;
+    public float deltaX;
+    public float deltaY;
     public bool hasCheckedDirection = false;
     public bool isMovingRight = false;
     public bool isMovingLeft = false;
@@ -45,7 +47,6 @@ public class BulletsDirection : MonoBehaviour
 
     public void Update()
     {
-
         //Debug.Log(hitLeft + " hit Left");
         //Debug.Log(hitRight + " hit Right");
         //Debug.Log(hitUp + " hit Up");
@@ -112,6 +113,7 @@ public class BulletsDirection : MonoBehaviour
         }
 
         StartCoroutine(CheckDirectionAfterDelay(delayInCalculation));
+        //CheckDirectionAfterDelay();
     }
 
     public void OnDisable()
@@ -162,60 +164,71 @@ public class BulletsDirection : MonoBehaviour
     }
 
     IEnumerator CheckDirectionAfterDelay(float delay)
+    //public void CheckDirectionAfterDelay()
     {
         yield return new WaitForSeconds(delay);
-
-        if (!hasCheckedDirection)
-        {
+        //if (!hasCheckedDirection)
+        //{
             Vector3 currentPosition = transform.position;
 
             // Compare current position with the last position to determine direction
-            float deltaX = currentPosition.x - lastPosition.x;
-            float deltaY = currentPosition.y - lastPosition.y;
+            deltaX = currentPosition.x - lastPosition.x;
+            deltaY = currentPosition.y - lastPosition.y;
 
             // Check for diagonal directions with a deviation threshold
             if (Mathf.Abs(deltaX) > Mathf.Abs(deltaY) + deviationThreshold)
             {
+                //Debug.Log("Here 1");
                 if (deltaX > 0)
                 {
+                    //Debug.Log("Here 2");
                     isMovingRight = true;
                 }
                 else if (deltaX < 0)
                 {
+                    //Debug.Log("Here 3");
                     isMovingLeft = true;
                 }
             }
             else if (Mathf.Abs(deltaY) > Mathf.Abs(deltaX) + deviationThreshold)
             {
+                //Debug.Log("Here 4");
                 if (deltaY > 0)
                 {
+                    //Debug.Log("Here 5");
                     isMovingUp = true;
                 }
                 else if (deltaY < 0)
                 {
+                    //Debug.Log("Here 6");
                     isMovingDown = true;
                 }
             }
             // Check for primary directions
             else
             {
+                //Debug.Log("Here 7");
                 if (deltaX > 0 && deltaY > 0)
                 {
+                    //Debug.Log("Here 8");
                     isMovingUp = true;
                     isMovingRight = true;
                 }
                 else if (deltaX < 0 && deltaY > 0)
                 {
+                    //Debug.Log("Here 9");
                     isMovingUp = true;
                     isMovingLeft = true;
                 }
                 else if (deltaX > 0 && deltaY < 0)
                 {
+                    //Debug.Log("Here 10");
                     isMovingDown = true;
                     isMovingRight = true;
                 }
                 else if (deltaX < 0 && deltaY < 0)
                 {
+                    //Debug.Log("Here 11");
                     isMovingDown = true;
                     isMovingLeft = true;
                 }
@@ -227,5 +240,5 @@ public class BulletsDirection : MonoBehaviour
             lastPosition = currentPosition;
             hasCheckedDirection = true;
         }
-    }
+    //}
 }

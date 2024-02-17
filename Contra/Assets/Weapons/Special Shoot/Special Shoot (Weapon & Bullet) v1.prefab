@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1628607475
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 6
   m_Sprite: {fileID: -900366719, guid: c1d6c5df7d8a85b44ab4faacbcad408a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -282,6 +282,9 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
+  flickerDuration: 0.01
+  numberOfFlickers: 1
   ImmuneToKnockback: 0
   ImmuneToKnockbackIfZeroDamage: 0
   DeathFeedbacks: {fileID: 0}
@@ -334,3 +337,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   destroyByTime: 0
+  destroyTheParent: 0

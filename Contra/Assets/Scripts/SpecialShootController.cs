@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Rewired;
+using MoreMountains.CorgiEngine;
+using MoreMountains.Tools;
 
-public class SpecialShootController : MonoBehaviour
+public class SpecialShootController : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
     public bool isAlive = true;
     public bool canShootSpecialShoot = false;
@@ -24,7 +26,36 @@ public class SpecialShootController : MonoBehaviour
     public Player player;
     public SpecialShootAndRaycastVisualization theSpecialShootAndRaycastVisualization;
 
-    private void Awake()
+    protected virtual void OnEnable()
+    {
+        this.MMEventStartListening<CorgiEngineEvent>();
+    }
+
+    /// <summary>
+    /// OnDisable, we stop listening to events.
+    /// </summary>
+    protected virtual void OnDisable()
+    {
+        this.MMEventStopListening<CorgiEngineEvent>();
+    }
+
+    public void OnMMEvent(CorgiEngineEvent corgiEngineEvent)
+    {
+        if (corgiEngineEvent.EventType == CorgiEngineEventTypes.PlayerDeath)
+        {
+            canShootSpecialShoot = false;
+            theSpecialShootAndRaycastVisualization.ResetEverything();
+            if (theSpecialShootAndRaycastVisualization.theSpecialShotInstantiated != null)
+            {
+                theSpecialShootAndRaycastVisualization.theSpecialShotInstantiated.GetComponent<Animator>().SetBool("Death", true);
+            }
+        }
+        else
+        {
+            canShootSpecialShoot = true;
+        }
+    }
+    public void Awake()
     {
         player = ReInput.players.GetPlayer(0);
     }
@@ -63,8 +94,10 @@ public class SpecialShootController : MonoBehaviour
         {
             if (timer >= specialShootCooldown)
             {
-                canShootSpecialShoot = true;
-                theSpecialShootAndRaycastVisualization.canShoot = true;
+                if (canShootSpecialShoot)
+                {
+                    theSpecialShootAndRaycastVisualization.canShoot = true;
+                }
             }
             else
             {
@@ -175,7 +208,7 @@ public class SpecialShootController : MonoBehaviour
         isShooting = true;
         theAnimationThatTranslatesSpeed = (initialFlameShootPosition.x - finalFlameShootPosition.x) / originalSpecialShootDuration;
         timer = 0f;
-        canShootSpecialShoot = false;
+        //canShootSpecialShoot = false;
         theSpecialShootAndRaycastVisualization.canShoot = false;
     }
 

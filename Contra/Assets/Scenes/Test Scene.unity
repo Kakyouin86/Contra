@@ -1046,6 +1046,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -1774,6 +1775,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -6599,8 +6601,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1628607475
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 9e09c275635a1704f8c95be03fc36589, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7599,6 +7601,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -8118,6 +8121,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -8295,6 +8299,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -9481,6 +9486,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -10368,6 +10374,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -11300,6 +11307,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -11777,6 +11785,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -11967,8 +11976,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1628607475
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 9e09c275635a1704f8c95be03fc36589, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -12552,6 +12561,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -14639,6 +14649,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -14816,6 +14827,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -15981,6 +15993,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 0
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 1
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -16338,6 +16351,7 @@ MonoBehaviour:
     type: 3}
   grenadesFillerUpgraded: {fileID: 7877908857749827989, guid: b5c9416b1098f2746aff3c6580e87160,
     type: 3}
+  imRespawning: 0
 --- !u!114 &1038294705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16657,7 +16671,7 @@ MonoBehaviour:
   canShoot: 0
   enableLaser: 0
   isShooting: 0
-  animationTimer: 0.9333
+  animationTimer: 0.8
   currentTimer: 0
   RaycastOriginOffset: {x: 0, y: 0, z: 0}
   LaserOriginOffset: {x: 0, y: 0, z: 0}
@@ -16669,6 +16683,7 @@ MonoBehaviour:
   LaserMaterial: {fileID: 2100000, guid: 15774b50519dbcc4fb7d558d64bc949c, type: 2}
   theSpecialShot: {fileID: 4211420323295667025, guid: 179abb41300adad4cb0fcbbe8b83284a,
     type: 3}
+  theSpecialShotInstantiated: {fileID: 0}
 --- !u!120 &1038294715
 LineRenderer:
   serializedVersion: 2
@@ -20756,8 +20771,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1628607475
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 9e09c275635a1704f8c95be03fc36589, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -21211,6 +21226,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -24162,7 +24178,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1628607475
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_Sprite: {fileID: -1041813112, guid: 862e8412687267f4f9872527305bfa28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -24927,6 +24943,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -26445,6 +26462,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -26814,6 +26832,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -27736,8 +27755,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1628607475
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 9e09c275635a1704f8c95be03fc36589, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -28229,6 +28248,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -28437,6 +28457,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -28784,6 +28805,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -30151,6 +30173,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -30802,6 +30825,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -32507,6 +32531,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -32684,6 +32709,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -33106,6 +33132,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0

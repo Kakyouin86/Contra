@@ -3,7 +3,6 @@ using MoreMountains.InventoryEngine;
 using MoreMountains.Tools;
 using TMPro;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 using Character = MoreMountains.CorgiEngine.Character;
 

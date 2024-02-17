@@ -1168,7 +1168,7 @@ namespace MoreMountains.CorgiEngine
             }
         }
 
-        public void OnTriggerEnter2D(Collider2D other)  //Leo Monge: Need to ALWAYS bring it after update. 
+        public void OnTriggerEnter2D(Collider2D other) //Leo Monge: Need to ALWAYS bring it after update. Remember to toggle ON in the character's Health component.
         {
             if (!isCharacter)
             {
@@ -1184,13 +1184,16 @@ namespace MoreMountains.CorgiEngine
         }
 
         IEnumerator FlickerToRed() //Leo Monge: Need to ALWAYS bring it after update. 
-        {
-            for (int i = 0; i < numberOfFlickers; i++) // Adjust the number of flickers as needed
+        { 
+            if (gameObject.activeSelf) 
             {
-                _renderer.material.color = FlickerColor;
-                yield return new WaitForSeconds(flickerDuration);
-                _renderer.material.color = _initialColor;
-                yield return new WaitForSeconds(flickerDuration);
+                for (int i = 0; i < numberOfFlickers; i++) // Adjust the number of flickers as needed
+                {
+                    _renderer.material.color = FlickerColor;
+                    yield return new WaitForSeconds(flickerDuration);
+                    _renderer.material.color = _initialColor;
+                    yield return new WaitForSeconds(flickerDuration);
+                }
             }
         }
     }

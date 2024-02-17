@@ -87,10 +87,12 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                     {
                         if (gameObject.transform.rotation.z < 0)
                         {
+                            //Debug.Log("Here Water 1");
                             spawnedObject.transform.localPosition = Vector3.zero + spawnPositionWater;
                         }
                         else
                         {
+                            //Debug.Log("Here Water 2");
                             spawnedObject.transform.localPosition = Vector3.zero - spawnPositionWater;
                         }
                     }
@@ -100,10 +102,12 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                     {
                         if (gameObject.transform.rotation.z < 0)
                         {
+                            //Debug.Log("Here Water 3");
                             spawnedObject.transform.localPosition = new Vector3(spawnPositionDiagonalsWater.x + 0.0f, spawnPositionDiagonalsWater.y, spawnPositionDiagonalsWater.z);
                         }
                         else
                         {
+                            //Debug.Log("Here Water 4");
                             spawnedObject.transform.localPosition = new Vector3(-spawnPositionDiagonalsWater.x + 0.0f, -spawnPositionDiagonalsWater.y, -spawnPositionDiagonalsWater.z);
                         }
                     }
@@ -113,10 +117,12 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                     {
                         if (gameObject.transform.rotation.z < 0)
                         {
+                            //Debug.Log("Here Water 5");
                             spawnedObject.transform.localPosition = new Vector3(spawnPositionDiagonalsWater.x + 0.0f, spawnPositionDiagonalsWater.y, spawnPositionDiagonalsWater.z);
                         }
                         else
                         {
+                            //Debug.Log("Here Water 6");
                             spawnedObject.transform.localPosition = new Vector3(-spawnPositionDiagonalsWater.x + 0.0f, -spawnPositionDiagonalsWater.y, -spawnPositionDiagonalsWater.z);
                         }
                     }
@@ -124,6 +130,7 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                     else if (GetComponent<BulletsDirection>().isMovingUp &&
                              GetComponent<BulletsDirection>().isMovingLeft)
                     {
+                        //Debug.Log("Here Water 7");
                         spawnedObject.transform.localPosition = new Vector3(spawnPositionDiagonalsWater.x + 0.2f,
                             spawnPositionDiagonalsWater.y, spawnPositionDiagonalsWater.z);
                     }
@@ -131,22 +138,25 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                     else if (GetComponent<BulletsDirection>().isMovingUp &&
                              GetComponent<BulletsDirection>().isMovingRight)
                     {
+                        //Debug.Log("Here Water 8");
                         spawnedObject.transform.localPosition = spawnPositionDiagonalsWater;
                     }
                     else
                     {
+                        //Debug.Log("Here Water 9");
                         spawnedObject.transform.localPosition = spawnPositionWater;
-
                     }
                 }
                 else
                 {
                     if (gameObject.transform.rotation.z < 0)
                     {
+                        //Debug.Log("Here Water 10");
                         spawnedObject.transform.localPosition = new Vector3(spawnPositionWater.x + 0.8f, spawnPositionWater.y, spawnPositionWater.z);
                     }
                     else
                     {
+                        //Debug.Log("Here Water 11");
                         spawnedObject.transform.localPosition = new Vector3(-spawnPositionWater.x + 0.0f, -spawnPositionWater.y, -spawnPositionWater.z);
                     }
                 }
@@ -164,7 +174,6 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                         {
                             spawnedObject.transform.localPosition = Vector3.zero + spawnPositionWater;
                             spawnedObject.transform.localRotation = rotation;
-                            Debug.Log("Here");
                         }
 
                         else if (GetComponent<BulletsDirection>().isMovingDown &&

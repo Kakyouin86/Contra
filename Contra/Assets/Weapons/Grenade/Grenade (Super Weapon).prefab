@@ -85,7 +85,7 @@ MonoBehaviour:
   customIntervalLeo: 0
   intervalWaitFor: 1
   counterIsShootingCounter: 0
-  TriggerMode: 1
+  TriggerMode: 0
   Interruptable: 0
   InitializeOnStart: 0
   DelayBeforeUse: 0

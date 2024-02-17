@@ -1,7 +1,5 @@
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemMessageToUI : MonoBehaviour, MMEventListener<CorgiEngineEvent>
@@ -30,14 +28,10 @@ public class ItemMessageToUI : MonoBehaviour, MMEventListener<CorgiEngineEvent>
     {
         if (corgiEngineEvent.EventType == CorgiEngineEventTypes.PlayerDeath)
         {
-            //GetComponent<BoxCollider2D>().enabled = false;
-            // Exclude layer "Player" from collision
             Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Player"), true);
         }
         else
         {
-            //GetComponent<BoxCollider2D>().enabled = true;
-            // Include layer "Player" in collision
             Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Player"), false);
         }
     }

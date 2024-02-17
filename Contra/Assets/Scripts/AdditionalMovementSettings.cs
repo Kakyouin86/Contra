@@ -1,16 +1,10 @@
 using System.Collections;
 using MoreMountains.CorgiEngine;
+using MoreMountains.InventoryEngine;
 using MoreMountains.Tools;
 using UnityEngine;
 using Rewired;
 using InputManager = MoreMountains.CorgiEngine.InputManager;
-using UnityEngine.SocialPlatforms;
-using Unity.VisualScripting;
-using UnityEngine.WSA;
-using MoreMountains.InventoryEngine;
-using static MoreMountains.InventoryEngine.Inventory;
-using System.Collections.Generic;
-using System.Linq;
 
 public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
@@ -50,6 +44,7 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
     public float chargingTimerForRayGun = 1f;
     public GameObject grenadesFillerRegular;
     public GameObject grenadesFillerUpgraded;
+    public bool imRespawning = false;
 
     private void Awake()
     {
@@ -99,21 +94,27 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
     {
         if (corgiEngineEvent.EventType == CorgiEngineEventTypes.PlayerDeath)
         {
+            Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Player"), true);
             //theAnimator.SetBool("Death",true);
             //theTorso.GetComponent<SpriteRenderer>().enabled = false;
         }
         else
+        {
+            //theAnimator.SetBool("Death", false);
+            //theAnimator.SetBool("Death Left", false);
+            //theAnimator.SetBool("Death Flat", false);
+            //theAnimator.SetBool("Death Left Flat", false);
+            //characterDead = false;
+        }
+
+        if (corgiEngineEvent.EventType == CorgiEngineEventTypes.Respawn)
         {
             theAnimator.SetBool("Death", false);
             theAnimator.SetBool("Death Left", false);
             theAnimator.SetBool("Death Flat", false);
             theAnimator.SetBool("Death Left Flat", false);
             characterDead = false;
-            //Physics2D.IgnoreLayerCollision(gameObject.layer, theLayerMaskToExcludeAfterDeath, false);
-        }
 
-        if (corgiEngineEvent.EventType == CorgiEngineEventTypes.Respawn)
-        {
             StartCoroutine(DeathColliders());
             GameObject grenades = GameObject.FindGameObjectWithTag("Grenade");
 
@@ -165,10 +166,10 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
 
     IEnumerator DeathColliders()
     {
-        //Physics2D.IgnoreLayerCollision(gameObject.layer, 12, true);
-        //Physics2D.IgnoreLayerCollision(gameObject.layer, 13, true);
+        imRespawning = true;
         Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), true);
         Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), true);
+
         // Flash effect for 3 seconds
         float flashDuration = 0.1f; // Duration for each flash
         float elapsedTime = 0f;
@@ -192,10 +193,10 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
         ResetSpriteRendererColor(theTorsoFlameGunLights.GetComponent<SpriteRenderer>());
         ResetSpriteRendererColor(theTorso.GetComponent<SpriteRenderer>());
         ResetSpriteRendererColor(theLegs.GetComponent<SpriteRenderer>());
-        //Physics2D.IgnoreLayerCollision(gameObject.layer, 12, false);
-        //Physics2D.IgnoreLayerCollision(gameObject.layer, 13, false);
+
         Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), false);
         Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), false);
+        imRespawning = false;
     }
 
     public void ToggleSpriteRendererColor(SpriteRenderer spriteRenderer)
@@ -452,6 +453,8 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
             theTorsoFlameGunLights.GetComponent<SpriteRenderer>().material = flashMaterial;
             //Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), true);
             //Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), true);
+            Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), true);
+            Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), true);
         }
         else
         {
@@ -461,8 +464,12 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
             theLegs.GetComponent<SpriteRenderer>().material = originalMaterial;
             theTorsoMachineGunLights.GetComponent<SpriteRenderer>().material = originalMaterial;
             theTorsoFlameGunLights.GetComponent<SpriteRenderer>().material = originalMaterial;
+            if (!imRespawning)
+            {
+                Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), false);
+                Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), false);
+            }
         }
-
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //This finishes the Death animation when hitting the ground.
 

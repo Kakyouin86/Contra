@@ -27,7 +27,7 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
     public Vector3 LaserDestination => _destination;
     public Player player;
     public GameObject theSpecialShot;
-    private GameObject thePickerInstance;
+    public GameObject theSpecialShotInstantiated;
     private Weapon _weapon;
     private Vector3 _direction;
     private LineRenderer _line;
@@ -38,7 +38,7 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
     private Vector3 _weaponPosition;
     private Quaternion _weaponRotation;
 
-    private void Awake()
+    public void Awake()
     {
         player = ReInput.players.GetPlayer(0);
     }
@@ -52,7 +52,7 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
         _line.endWidth = LaserWidth.y;
         _line.material = LaserMaterial;
     }
-
+    
     public void Update()
     {
         _weapon = GameObject.FindGameObjectWithTag("WeaponAim").GetComponent<Weapon>();
@@ -66,15 +66,7 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
             // Check if the timer exceeds the animation length
             if (currentTimer >= animationTimer)
             {
-                // Animation is done, reset the timer and set isShooting to false
-                currentTimer = 0.0f;
-                isShooting = false;
-                Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
-                theAnimator.SetBool("isShootingSpecialShot", false);
-                AdditionalCharacterHandleWeaponOverride theAdditionalCharacterHandleWeaponOverride =
-                    GetComponent<AdditionalCharacterHandleWeaponOverride>();
-                theAdditionalCharacterHandleWeaponOverride.AbilityPermitted = true;
-
+                ResetEverything();
             }
         }
 
@@ -93,33 +85,44 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
             _weapon.TurnWeaponOff();
 
             // Check if thePickerInstance is not already instantiated and laser is enabled
-            if (thePickerInstance == null)
+            if (theSpecialShotInstantiated == null)
             {
                 // Instantiate thePickerPrefab and store the reference
-                thePickerInstance = Instantiate(theSpecialShot, transform.position, transform.rotation);
+                theSpecialShotInstantiated = Instantiate(theSpecialShot, transform.position, transform.rotation);
 
                 // Set thePickerInstance's position and rotation to match _weapon
-                thePickerInstance.transform.position = _weapon.transform.position;
-                thePickerInstance.transform.rotation = _weapon.transform.rotation;
+                theSpecialShotInstantiated.transform.position = _weapon.transform.position;
+                theSpecialShotInstantiated.transform.rotation = _weapon.transform.rotation;
             }
         }
 
-        if (thePickerInstance != null)
+        if (theSpecialShotInstantiated != null)
         {
             // Update thePickerInstance's position and rotation to match _weapon
-            thePickerInstance.transform.position = _weapon.transform.position;
+            theSpecialShotInstantiated.transform.position = _weapon.transform.position;
 
             // Adjust thePickerInstance's rotation based on _weapon.Flipped
             if (_weapon.Flipped)
             {
                 // If flipped, rotate 180 degrees
-                thePickerInstance.transform.rotation = _weapon.transform.rotation * Quaternion.Euler(0f, 0f, 180f);
+                theSpecialShotInstantiated.transform.rotation = _weapon.transform.rotation * Quaternion.Euler(0f, 0f, 180f);
             }
             else
             {
-                thePickerInstance.transform.rotation = _weapon.transform.rotation;
+                theSpecialShotInstantiated.transform.rotation = _weapon.transform.rotation;
             }
         }
+    }
+
+    public void ResetEverything()
+    {
+        // Animation is done, reset the timer and set isShooting to false
+        currentTimer = 0.0f;
+        isShooting = false;
+        Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
+        theAnimator.SetBool("isShootingSpecialShot", false);
+        AdditionalCharacterHandleWeaponOverride theAdditionalCharacterHandleWeaponOverride = GetComponent<AdditionalCharacterHandleWeaponOverride>();
+        theAdditionalCharacterHandleWeaponOverride.AbilityPermitted = true;
     }
 
     public void ShootLaser()
@@ -165,10 +168,10 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
         enableLaser = enabled;
 
         // If disabling the laser, also destroy the picker instance
-        if (!enabled && thePickerInstance != null)
+        if (!enabled && theSpecialShotInstantiated != null)
         {
-            Destroy(thePickerInstance);
-            thePickerInstance = null;
+            Destroy(theSpecialShotInstantiated);
+            theSpecialShotInstantiated = null;
         }
     }
 }

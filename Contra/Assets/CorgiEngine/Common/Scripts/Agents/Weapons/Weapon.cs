@@ -950,6 +950,15 @@ namespace MoreMountains.CorgiEngine
             }*/
         }
 
+        public void OnDestroy() //Leo Monge: Need to ALWAYS bring it after update. This avoids that if you switch from Machine gun to any other gun and there are remaining shots, the bools don't stay as True forever.
+        {
+            if (theAnimator != null)
+            {
+                theAnimator.SetBool("isShooting", false);
+                theAnimator.SetBool("IdleShootingStraight", false);
+            }
+        }
+
         /// <summary>
         /// Determines whether or not the weapon can fire
         /// </summary>
