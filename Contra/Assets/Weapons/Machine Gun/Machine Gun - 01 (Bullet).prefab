@@ -283,6 +283,7 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
