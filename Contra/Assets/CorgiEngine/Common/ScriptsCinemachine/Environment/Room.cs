@@ -18,7 +18,7 @@ namespace MoreMountains.CorgiEngine
 	public class Room : CorgiMonoBehaviour, MMEventListener<CorgiEngineEvent>
 	{
 		/// the collider for this room
-		public Collider2D RoomCollider { get { return _roomCollider2D; } }
+		public virtual Collider2D RoomCollider { get { return _roomCollider2D; } }
 
 		[Header("Camera")]
 

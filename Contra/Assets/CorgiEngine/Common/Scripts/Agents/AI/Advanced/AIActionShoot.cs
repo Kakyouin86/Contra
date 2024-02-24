@@ -92,7 +92,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void TestFaceTarget()
 		{
-			if (!FaceTarget)
+			if (!FaceTarget || (_brain.Target == null))
 			{
 				return;
 			}
@@ -112,7 +112,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void TestAimAtTarget()
 		{
-			if (!AimAtTarget)
+			if (!AimAtTarget || (_brain.Target == null))
 			{
 				return;
 			}

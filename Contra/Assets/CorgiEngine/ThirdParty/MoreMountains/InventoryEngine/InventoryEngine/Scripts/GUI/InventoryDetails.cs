@@ -17,7 +17,7 @@ namespace MoreMountains.InventoryEngine
 		/// if you make this panel global, it'll ignore 
 		public bool Global = false;
 		/// whether the details are currently hidden or not 
-		public bool Hidden { get; protected set; }
+		public virtual bool Hidden { get; protected set; }
 
 		[Header("Default")]
 		[MMInformation("By checking HideOnEmptySlot, the Details panel won't be displayed if you select an empty slot.",MMInformationAttribute.InformationType.Info,false)]

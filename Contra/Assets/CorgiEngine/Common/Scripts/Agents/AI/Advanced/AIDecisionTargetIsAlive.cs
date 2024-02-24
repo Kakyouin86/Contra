@@ -35,6 +35,12 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			_character = _brain.Target.gameObject.MMGetComponentNoAlloc<Character>();
+
+			if (_character == null)
+			{
+				_character = _brain.Target.gameObject.GetComponentInParent<Character>();
+			}
+			
 			if (_character != null)
 			{
 				if (_character.ConditionState.CurrentState == CharacterStates.CharacterConditions.Dead)

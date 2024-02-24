@@ -72,7 +72,10 @@ namespace MoreMountains.CorgiEngine
 		public TimescaleModes TimescaleMode = TimescaleModes.Scaled;
 		/// whether or not the start of the charge should trigger the first step's weapon's attack or not
 		[Tooltip("whether or not the start of the charge should trigger the first step's weapon's attack or not")]
-		public bool AllowInitialShot = true;
+		public bool AllowInitialShotOnPress = true;
+		/// whether or not releasing the charge should trigger the first step's weapon's attack or not
+		[Tooltip("whether or not releasing the charge should trigger the first step's weapon's attack or not")]
+		public bool AllowInitialShotOnRelease = false;
 		
 		[Header("Debug")]
 		/// the current charge index in the Weapons step list
@@ -191,7 +194,7 @@ namespace MoreMountains.CorgiEngine
 			if (WeaponExists(CurrentChargeIndex))
 			{
 				StartStepCharge(CurrentChargeIndex);
-				if (AllowInitialShot)
+				if (AllowInitialShotOnPress)
 				{
 					ForceWeaponAttack(0);
 				}
@@ -252,8 +255,13 @@ namespace MoreMountains.CorgiEngine
 			{
 				return;
 			}
+
+			if (CurrentChargeIndex == 0 && AllowInitialShotOnRelease)
+			{
+				ForceWeaponAttack(0);
+			}
 			
-			if ((CurrentChargeIndex >= 0) || !AllowInitialShot)
+			if ((CurrentChargeIndex >= 0) || !AllowInitialShotOnPress)
 			{
 				bool shouldAttack = true;
 				if (CurrentChargeIndex < Weapons.Count - 1 && !Weapons[CurrentChargeIndex].ChargeComplete)

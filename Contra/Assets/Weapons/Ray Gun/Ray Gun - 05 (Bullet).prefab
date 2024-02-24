@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 0
   CurrentHealth: 10
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -300,6 +301,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -372,6 +374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastPosition: {x: 0, y: 0, z: 0}
+  deltaX: 0
+  deltaY: 0
   hasCheckedDirection: 0
   isMovingRight: 0
   isMovingLeft: 0
@@ -385,7 +389,7 @@ MonoBehaviour:
   raycastLength: 10
   platformLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   leftWall: 0
   rightWall: 0
   topWall: 0

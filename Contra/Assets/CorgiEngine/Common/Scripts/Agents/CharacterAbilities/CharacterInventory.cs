@@ -16,13 +16,12 @@ namespace MoreMountains.CorgiEngine
 	[MMHiddenProperties("AbilityStopFeedbacks")]
 	[AddComponentMenu("Corgi Engine/Character/Abilities/Character Inventory")] 
 	public class CharacterInventory : CharacterAbility, MMEventListener<MMInventoryEvent>, MMEventListener<CorgiEngineEvent>
-	{
+    {
         private void Awake() //Leo Monge: Need to ALWAYS bring it after update. Everything related to "Forward" is so the logic behind the "switching weapons" work correctly.
         {
             player = ReInput.players.GetPlayer(0);
         }
         public Player player; //Leo Monge: Need to ALWAYS bring it after update.
-
         /// <summary>
         /// A struct used to store inventory items to add on init
         /// </summary>
@@ -136,37 +135,28 @@ namespace MoreMountains.CorgiEngine
 		/// <returns></returns>
 		protected virtual IEnumerator AutoAddAndEquip()
 		{
-            yield return MMCoroutine.WaitForFrames(1);//Leo Monge: Need to ALWAYS bring it after update. This is because the grenades don't add up in the UI and the Auto-Equip doesn't work.
-            if (_autoAdded)
-            {
-                yield break;
-            }
-            foreach (InventoryItemsToAdd item in AutoAddItemsMainInventory)
-            {
-                MainInventory?.AddItem(item.Item, item.Quantity);
-            }
-            foreach (InventoryItemsToAdd item in AutoAddItemsHotbar)
-            {
-                HotbarInventory?.AddItem(item.Item, item.Quantity);
-            }
-            if (AutoEquipWeapon != null)
-            {
-                if (!hasUpgradedMachineGun)
-                {
-                    //Debug.Log("Character Inventory Normal Weapon");
-                    MainInventory.AddItem(AutoEquipWeapon, 1);
-                    EquipWeapon(AutoEquipWeapon.ItemID);
-                }
-                else
-                {
-                    //Debug.Log("Character Inventory Super Weapon");
-                    MainInventory.AddItem(AutoEquipWeaponSuper, 1);
-                    EquipWeapon(AutoEquipWeaponSuper.ItemID);
-                }
+			yield return MMCoroutine.WaitForFrames(1);
 
-            }
-            _autoAdded = true;
-        }
+			if (_autoAdded)
+			{
+				yield break;
+			}
+
+			foreach (InventoryItemsToAdd item in AutoAddItemsMainInventory)
+			{
+				MainInventory?.AddItem(item.Item, item.Quantity);
+			}
+			foreach (InventoryItemsToAdd item in AutoAddItemsHotbar)
+			{
+				HotbarInventory?.AddItem(item.Item, item.Quantity);
+			}
+			if (AutoEquipWeapon != null)
+			{
+				MainInventory.AddItem(AutoEquipWeapon, 1);
+				EquipWeapon(AutoEquipWeapon.ItemID);
+			}
+			_autoAdded = true;
+		}
 
 		/// <summary>
 		/// Grabs references to all inventories
@@ -198,49 +188,44 @@ namespace MoreMountains.CorgiEngine
         /// </summary>
         protected override void HandleInput() //Leo Monge: Need to ALWAYS bring it after update. This has several edits in the shells/sprites.
         {
-            if (CharacterHandleWeapon.GetComponent<Character>().ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead)
+            if (_inputManager.SwitchWeaponButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
             {
-                if (_inputManager.SwitchWeaponButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+                GameObject[] shellsArray = GameObject.FindGameObjectsWithTag("Shells");
+
+                foreach (GameObject theShells in shellsArray)
                 {
-                    GameObject[] shellsArray = GameObject.FindGameObjectsWithTag("Shells");
-
-                    foreach (GameObject theShells in shellsArray)
+                    if (theShells != null)
                     {
-                        if (theShells != null)
-                        {
-                            theShells.transform.SetParent(null);
-                            Destroy(theShells, 2f);
-                        }
+                        theShells.transform.SetParent(null);
+                        Destroy(theShells, 2f);
                     }
-
-                    Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
-                    theAnimator.SetBool("DelayForSwitchingGuns", true);
-                    SwitchWeapon();
-                    StartCoroutine(DelayAnimations());
                 }
 
-                if (player.GetButtonDown(("SwitchWeaponForward")))
+                Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
+                theAnimator.SetBool("DelayForSwitchingGuns", true);
+                SwitchWeapon();
+                StartCoroutine(DelayAnimations());
+            }
+
+            if (player.GetButtonDown(("SwitchWeaponForward")))
+            {
+                GameObject[] shellsArray = GameObject.FindGameObjectsWithTag("Shells");
+
+                foreach (GameObject theShells in shellsArray)
                 {
-                    GameObject[] shellsArray = GameObject.FindGameObjectsWithTag("Shells");
-
-                    foreach (GameObject theShells in shellsArray)
+                    if (theShells != null)
                     {
-                        if (theShells != null)
-                        {
-                            theShells.transform.SetParent(null);
-                            Destroy(theShells, 2f);
-                        }
+                        theShells.transform.SetParent(null);
+                        Destroy(theShells, 2f);
                     }
-
-                    Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
-                    theAnimator.SetBool("DelayForSwitchingGuns", true);
-                    SwitchWeaponForward();
-                    StartCoroutine(DelayAnimations());
                 }
+
+                Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
+                theAnimator.SetBool("DelayForSwitchingGuns", true);
+                SwitchWeaponForward();
+                StartCoroutine(DelayAnimations());
             }
         }
-
-
         IEnumerator DelayAnimations() //Leo Monge: Need to ALWAYS bring it after update. This will make a short delay when switching weapons. It's for the animator.
         {
             yield return new WaitForSeconds(0.09f);
@@ -434,24 +419,24 @@ namespace MoreMountains.CorgiEngine
         /// </summary>
         protected virtual void SwitchWeapon() //Leo Monge: Need to ALWAYS bring it after update. Need to be public so I can access in ToggleWeapons
         {
-			// if there's no character handle weapon component, we can't switch weapon, we do nothing and exit
-			if ((CharacterHandleWeapon == null) || (WeaponInventory == null))
-			{
-				return;
-			}
+            // if there's no character handle weapon component, we can't switch weapon, we do nothing and exit
+            if ((CharacterHandleWeapon == null) || (WeaponInventory == null))
+            {
+                return;
+            }
 
-			FillAvailableWeaponsLists ();
+            FillAvailableWeaponsLists();
 
-			// if we only have 0 or 1 weapon, there's nothing to switch, we do nothing and exit
-			if (_availableWeaponsIDs.Count <= 0)
-			{
-				return;
-			}
+            // if we only have 0 or 1 weapon, there's nothing to switch, we do nothing and exit
+            if (_availableWeaponsIDs.Count <= 0)
+            {
+                return;
+            }
 
-			DetermineNextWeaponName ();
-			EquipWeapon (_nextWeaponID);
-			PlayAbilityStartFeedbacks();
-		}
+            DetermineNextWeaponName();
+            EquipWeapon(_nextWeaponID);
+            PlayAbilityStartFeedbacks();
+        }
 
         protected virtual void SwitchWeaponForward() //Leo Monge: Need to ALWAYS bring it after update. Need to be public so I can access in ToggleWeapons
         {
@@ -474,11 +459,6 @@ namespace MoreMountains.CorgiEngine
             PlayAbilityStartFeedbacks();
         }
 
-        /// <summary>
-        /// Watches for InventoryLoaded events
-        /// When an inventory gets loaded, if it's our WeaponInventory, we check if there's already a weapon equipped, and if yes, we equip it
-        /// </summary>
-        /// <param name="inventoryEvent">Inventory event.</param>
         public virtual void OnMMEvent(MMInventoryEvent inventoryEvent)
 		{
 			if (inventoryEvent.InventoryEventType == MMInventoryEventType.InventoryLoaded)

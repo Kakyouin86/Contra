@@ -16,7 +16,7 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("the angle of the gravity for this zone")]
 		public float GravityDirectionAngle = 180;
 		/// the vector angle of the gravity for this zone
-		public Vector2 GravityDirectionVector { get { return MMMaths.RotateVector2 (Vector2.down, GravityDirectionAngle);	}}
+		public virtual Vector2 GravityDirectionVector { get { return MMMaths.RotateVector2 (Vector2.down, GravityDirectionAngle);	}}
 
 		/// <summary>
 		/// On DrawGizmos, we draw an arrow to show the zone's current gravity direction

@@ -139,9 +139,9 @@ namespace MoreMountains.CorgiEngine
 		/// the shoot axis, used as a button (non analogic)
 		public MMInput.ButtonStates SecondaryShootAxis { get; protected set; }
 		/// the primary movement value (used to move the character around)
-		public Vector2 PrimaryMovement {get { return _primaryMovement; } }
+		public virtual Vector2 PrimaryMovement {get { return _primaryMovement; } }
 		/// the secondary movement (usually the right stick on a gamepad), used to aim
-		public Vector2 SecondaryMovement {get { return _secondaryMovement; } }
+		public virtual Vector2 SecondaryMovement {get { return _secondaryMovement; } }
 
 		protected List<MMInput.IMButton> ButtonList;
 		protected Vector2 _primaryMovement = Vector2.zero;

@@ -1,4 +1,4 @@
-Corgi Engine v8.7
+Corgi Engine v8.8
 
 ----
 

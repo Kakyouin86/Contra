@@ -85,7 +85,7 @@ namespace MoreMountains.CorgiEngine
 		}
 		
 		/// true if the ability has already been initialized
-		public bool AbilityInitialized { get { return _abilityInitialized; } }
+		public virtual bool AbilityInitialized { get { return _abilityInitialized; } }
 
 		protected Character _character;
 		protected Transform _characterTransform;

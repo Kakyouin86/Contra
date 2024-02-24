@@ -196,6 +196,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0

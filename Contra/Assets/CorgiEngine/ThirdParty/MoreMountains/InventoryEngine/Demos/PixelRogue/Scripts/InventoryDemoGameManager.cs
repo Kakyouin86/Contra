@@ -9,7 +9,7 @@ namespace MoreMountains.InventoryEngine
 	/// </summary>
 	public class InventoryDemoGameManager : MMSingleton<InventoryDemoGameManager> 
 	{
-		public InventoryDemoCharacter Player { get; protected set; }
+		public virtual InventoryDemoCharacter Player { get; protected set; }
 		
 		/// <summary>
 		/// Statics initialization to support enter play modes

@@ -1035,6 +1035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -1046,7 +1047,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -1064,6 +1064,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -1764,6 +1765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -1775,7 +1777,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -1793,6 +1794,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -4223,7 +4225,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 4}
+  m_Size: {x: 4.1, y: 8.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -6609,7 +6611,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.11, y: 1.16}
+  m_Size: {x: 3.23, y: 0.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -6652,7 +6654,7 @@ BoxCollider2D:
     border: {x: 0.21, y: 0, z: 0.16, w: 0}
     pivot: {x: 0, y: 0.5}
     oldSize: {x: 3.23, y: 0.77}
-    newSize: {x: 4.11, y: 1.16}
+    newSize: {x: 3.23, y: 0.77}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -6861,6 +6863,7 @@ MonoBehaviour:
         m_RotationOrder: 4
       Initialized: 0
     ProgressBarSpeed: 5
+    SpeedIntervals: []
     FadeMode: 0
     UnloadMethod: 2
     AntiSpillSceneName: 
@@ -7590,6 +7593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -7601,7 +7605,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -7619,6 +7622,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -8110,6 +8114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -8121,7 +8126,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -8139,6 +8143,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -8288,6 +8293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -8299,7 +8305,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -8317,6 +8322,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -9475,6 +9481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -9486,7 +9493,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -9504,6 +9510,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -10363,6 +10370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -10374,7 +10382,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -10392,6 +10399,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -10832,7 +10840,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.11, y: 1.16}
+  m_Size: {x: 3.23, y: 0.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -10875,7 +10883,7 @@ BoxCollider2D:
     border: {x: 0.21, y: 0, z: 0.16, w: 0}
     pivot: {x: 0, y: 0.5}
     oldSize: {x: 3.23, y: 0.77}
-    newSize: {x: 4.11, y: 1.16}
+    newSize: {x: 3.23, y: 0.77}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -11296,6 +11304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -11307,7 +11316,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -11325,6 +11333,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -11774,6 +11783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -11785,7 +11795,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -11803,6 +11812,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -11914,7 +11924,7 @@ BoxCollider2D:
     border: {x: 0.21, y: 0, z: 0.16, w: 0}
     pivot: {x: 0, y: 0.5}
     oldSize: {x: 3.23, y: 0.77}
-    newSize: {x: 4.11, y: 1.16}
+    newSize: {x: 3.23, y: 0.77}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -11984,7 +11994,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.11, y: 1.16}
+  m_Size: {x: 3.23, y: 0.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -12550,6 +12560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -12561,7 +12572,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -12579,6 +12589,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -14638,6 +14649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -14649,7 +14661,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -14667,6 +14678,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -14816,6 +14828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -14827,7 +14840,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -14845,6 +14857,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -15946,6 +15959,7 @@ MonoBehaviour:
   BlockingWeaponStates: 
   CrawlAuthorized: 1
   CrawlSpeed: 6
+  InputDriven: 1
   ResizeColliderWhenCrouched: 0
   CrouchedBoxColliderSize: {x: 1, y: 1}
   CanCrouchWhileMoving: 1
@@ -15982,6 +15996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 0
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -15993,7 +16008,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 0
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 1
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -16011,6 +16025,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -16315,6 +16330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d0d64f4fd5a0d438d119c79f2995ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cole: 1
+  Regina: 0
   character: {fileID: 0}
   horizontalMovementCorgi: {fileID: 0}
   theController: {fileID: 1038294698}
@@ -16395,6 +16412,7 @@ MonoBehaviour:
   BlockingConditionStates: 
   BlockingWeaponStates: 
   WalkSpeed: 7.5
+  ResetHorizontalSpeedBtn: 0
   MovementSpeedMultiplier: 1
   AbilityMovementSpeedMultiplier: 1
   PushSpeedMultiplier: 1
@@ -18229,7 +18247,7 @@ MonoBehaviour:
       logToScreen: 0
       runInEditMode: 0
       allowInputInEditorSceneView: 0
-      unityUsePhysicalKeys: 0
+      unityUsePhysicalKeys: 1
       keyCombinationOverrideMode: 1
       generateKeyEventsOnKeyCombinationOverride: 0
       platformVars_windowsStandalone:
@@ -20779,7 +20797,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.11, y: 1.16}
+  m_Size: {x: 3.23, y: 0.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -20822,7 +20840,7 @@ BoxCollider2D:
     border: {x: 0.21, y: 0, z: 0.16, w: 0}
     pivot: {x: 0, y: 0.5}
     oldSize: {x: 3.23, y: 0.77}
-    newSize: {x: 4.11, y: 1.16}
+    newSize: {x: 3.23, y: 0.77}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -21215,6 +21233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -21226,7 +21245,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -21244,6 +21262,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -24932,6 +24951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -24943,7 +24963,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -24961,6 +24980,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -26451,6 +26471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -26462,7 +26483,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -26480,6 +26500,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -26821,6 +26842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -26832,7 +26854,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -26850,6 +26871,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -27763,7 +27785,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.11, y: 1.16}
+  m_Size: {x: 3.23, y: 0.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -27806,7 +27828,7 @@ BoxCollider2D:
     border: {x: 0.21, y: 0, z: 0.16, w: 0}
     pivot: {x: 0, y: 0.5}
     oldSize: {x: 3.23, y: 0.77}
-    newSize: {x: 4.11, y: 1.16}
+    newSize: {x: 3.23, y: 0.77}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -28237,6 +28259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -28248,7 +28271,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -28266,6 +28288,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -28446,6 +28469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -28457,7 +28481,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -28475,6 +28498,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -28794,6 +28818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -28805,7 +28830,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -28823,6 +28847,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -30162,6 +30187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -30173,7 +30199,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -30191,6 +30216,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -30814,6 +30840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -30825,7 +30852,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -30843,6 +30869,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -32520,6 +32547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -32531,7 +32559,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -32549,6 +32576,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -32698,6 +32726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -32709,7 +32738,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -32727,6 +32755,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -33121,6 +33150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -33132,7 +33162,6 @@ MonoBehaviour:
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
-  isCharacter: 0
   flickerDuration: 0.05
   numberOfFlickers: 5
   ImmuneToKnockback: 0
@@ -33150,6 +33179,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0

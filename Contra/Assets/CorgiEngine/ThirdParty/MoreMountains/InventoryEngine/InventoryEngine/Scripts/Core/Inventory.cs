@@ -60,13 +60,13 @@ namespace MoreMountains.InventoryEngine
 		public bool DrawContentInInspector = false;
 
 		/// the owner of the inventory (for games where you have multiple characters)
-		public GameObject Owner { get; set; }
+		public virtual GameObject Owner { get; set; }
 
 		/// The number of free slots in this inventory
-		public int NumberOfFreeSlots => Content.Length - NumberOfFilledSlots;
+		public virtual int NumberOfFreeSlots => Content.Length - NumberOfFilledSlots;
 
 		/// whether or not the inventory is full (doesn't have any remaining free slots)
-		public bool IsFull => NumberOfFreeSlots <= 0;
+		public virtual bool IsFull => NumberOfFreeSlots <= 0;
 
 		/// The number of filled slots 
 		public int NumberOfFilledSlots
@@ -190,6 +190,9 @@ namespace MoreMountains.InventoryEngine
 			}
 
 			List<int> list = InventoryContains(itemToAdd.ItemID);
+;
+			quantity = CapMaxQuantity(itemToAdd, quantity);
+			
 			// if there's at least one item like this already in the inventory and it's stackable
 			if (list.Count > 0 && itemToAdd.MaximumStack > 1)
 			{
@@ -248,6 +251,8 @@ namespace MoreMountains.InventoryEngine
 		public virtual bool AddItemAt(InventoryItem itemToAdd, int quantity, int destinationIndex)
 		{
 			int tempQuantity = quantity;
+
+			tempQuantity = CapMaxQuantity(itemToAdd, quantity);
 			
 			if (!InventoryItem.IsNull(Content[destinationIndex]))
 			{
@@ -464,6 +469,17 @@ namespace MoreMountains.InventoryEngine
 			Content = new InventoryItem[Content.Length];
 
 			MMInventoryEvent.Trigger(MMInventoryEventType.ContentChanged, null, this.name, null, 0, 0, PlayerID);
+		}
+
+		/// <summary>
+		/// Returns the max value of a specific item that can be added to this inventory  without exceeding the max quantity defined on the item
+		/// </summary>
+		/// <param name="itemToAdd"></param>
+		/// <param name="newQuantity"></param>
+		/// <returns></returns>
+		public virtual int CapMaxQuantity(InventoryItem itemToAdd, int newQuantity)
+		{
+			return Mathf.Min(newQuantity, itemToAdd.MaximumQuantity - GetQuantity(itemToAdd.ItemID));
 		}
 
 		/// <summary>

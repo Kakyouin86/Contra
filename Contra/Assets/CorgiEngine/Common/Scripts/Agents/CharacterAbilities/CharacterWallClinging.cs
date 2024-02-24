@@ -36,21 +36,21 @@ namespace MoreMountains.CorgiEngine
 		public bool InputIndependent = false;
 
 		public bool IsFacingRightWhileWallClinging { get; set; }
+		public bool HasTouchedGround { get; set; }
 
 		protected CharacterStates.MovementStates _stateLastFrame;
 		protected RaycastHit2D _raycast;
 		protected WallClingingOverride _wallClingingOverride;
+		protected bool _inputManagerNotNull;
 
 		// animation parameters
 		protected const string _wallClingingAnimationParameterName = "WallClinging";
 		protected int _wallClingingAnimationParameter;
 
-		/// <summary>
-		/// Checks the input to see if we should enter the WallClinging state
-		/// </summary>
-		protected override void HandleInput()
+		protected override void Initialization()
 		{
-			WallClinging();
+			base.Initialization();
+			_inputManagerNotNull = _inputManager != null;
 		}
 
 		/// <summary>
@@ -60,6 +60,7 @@ namespace MoreMountains.CorgiEngine
 		{
 			base.ProcessAbility();
 
+			WallClinging();
 			ExitWallClinging();
 			WallClingingLastFrame ();
 		}
@@ -96,19 +97,22 @@ namespace MoreMountains.CorgiEngine
 			}
 			else
 			{
-				if (_horizontalInput <= -_inputManager.Threshold.x)
+				if (_inputManagerNotNull)
 				{
-					if (TestForWall(-1))
+					if (_horizontalInput <= -_inputManager.Threshold.x)
 					{
-						EnterWallClinging();
+						if (TestForWall(-1))
+						{
+							EnterWallClinging();
+						}
 					}
-				}
-				else if (_horizontalInput >= _inputManager.Threshold.x)
-				{
-					if (TestForWall(1))
+					else if (_horizontalInput >= _inputManager.Threshold.x)
 					{
-						EnterWallClinging();
-					}
+						if (TestForWall(1))
+						{
+							EnterWallClinging();
+						}
+					}	
 				}
 			}            
 		}
@@ -198,6 +202,7 @@ namespace MoreMountains.CorgiEngine
 
 			_movement.ChangeState(CharacterStates.MovementStates.WallClinging);
 			IsFacingRightWhileWallClinging = _character.IsFacingRight;
+			HasTouchedGround = false;
 		}
 
 		/// <summary>
@@ -205,6 +210,11 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void ExitWallClinging()
 		{
+			if (_controller.State.IsGrounded)
+			{
+				HasTouchedGround = true;
+			}
+			
 			if (_movement.CurrentState == CharacterStates.MovementStates.WallClinging)
 			{
 				// we prepare a boolean to store our exit condition value

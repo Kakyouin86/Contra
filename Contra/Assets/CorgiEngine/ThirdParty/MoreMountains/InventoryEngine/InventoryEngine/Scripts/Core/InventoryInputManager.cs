@@ -213,7 +213,7 @@ namespace MoreMountains.InventoryEngine
 		public Button UnEquipButton;
         
 		/// returns the active slot
-		public InventorySlot CurrentlySelectedInventorySlot { get; set; }
+		public virtual InventorySlot CurrentlySelectedInventorySlot { get; set; }
 
 		[Header("State")] 
 		/// if this is true, the associated inventory is open, closed otherwise

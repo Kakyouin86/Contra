@@ -146,6 +146,7 @@ namespace MoreMountains.CorgiEngine
 					_countdownActive = true;
 					TimeSinceLastWeaponStopped = 0f;
 
+					Weapons[_currentWeaponIndex].SetCooldownStartAt();
 					Weapons[_currentWeaponIndex].enabled = false;
 					_currentWeaponIndex = newIndex;
 					OwnerCharacterHandleWeapon.CurrentWeapon = Weapons[newIndex];

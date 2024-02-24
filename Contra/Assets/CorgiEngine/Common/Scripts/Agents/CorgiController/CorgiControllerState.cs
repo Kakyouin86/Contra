@@ -18,7 +18,7 @@ namespace MoreMountains.CorgiEngine
 		/// is the character colliding with something above it ?
 		public bool IsCollidingBelow { get; set; }
 		/// is the character colliding with anything ?
-		public bool HasCollisions { get { return IsCollidingRight || IsCollidingLeft || IsCollidingAbove || IsCollidingBelow; }}
+		public virtual bool HasCollisions { get { return IsCollidingRight || IsCollidingLeft || IsCollidingAbove || IsCollidingBelow; }}
 
 		/// returns the distance to the left collider, equals -1 if not colliding left
 		public float DistanceToLeftCollider;
@@ -39,7 +39,7 @@ namespace MoreMountains.CorgiEngine
 		public bool OnAMovingPlatform { get; set; }
 		
 		/// Is the character grounded ? 
-		public bool IsGrounded { get { return IsCollidingBelow; } }
+		public virtual bool IsGrounded { get { return IsCollidingBelow; } }
 		/// is the character falling right now ?
 		public bool IsFalling { get; set; }
 		/// is the character falling right now ?

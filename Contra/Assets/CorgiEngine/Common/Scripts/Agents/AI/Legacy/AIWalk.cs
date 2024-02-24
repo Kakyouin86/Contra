@@ -51,6 +51,9 @@ namespace MoreMountains.CorgiEngine
 		/// the layer mask of the sight obstacles (usually platforms)
 		[Tooltip("the layer mask of the sight obstacles (usually platforms)")]
 		public LayerMask MoveOnSightObstaclesLayer = LayerManager.ObstaclesLayerMask;
+		/// The offset to apply to the raycast origin point (by default the position of the object)
+		[Tooltip("The offset to apply to the raycast origin point (by default the position of the object)")]
+		public Vector3 ObstacleDetectionRayOffset = new Vector3(0,0,0);
 		
 		/// if this is true, the character will automatically return to its initial position on revive
 		[Tooltip("if this is true, the character will automatically return to its initial position on revive")]
@@ -67,6 +70,7 @@ namespace MoreMountains.CorgiEngine
 		protected Vector3 _initialScale;
 		protected float _distanceToTarget;
 		protected Vector2 _raycastOrigin;
+		protected Vector2 _offset;
 
 		/// <summary>
 		/// Initialization
@@ -175,10 +179,15 @@ namespace MoreMountains.CorgiEngine
 
 			_distanceToTarget = 0;
 			// we cast a ray to the left of the agent to check for a Player
-			Vector2 raycastOrigin = transform.position + MoveOnSightRayOffset;
+			_offset = MoveOnSightRayOffset;
+			if (!_character.IsFacingRight)
+			{
+				_offset.x = -_offset.x;
+			}
+			_raycastOrigin = (Vector2)transform.position + _offset;
 
 			// we cast it to the left	
-			RaycastHit2D raycast = MMDebug.RayCast(raycastOrigin,Vector2.left,ViewDistance,MoveOnSightLayer,Color.yellow,true);
+			RaycastHit2D raycast = MMDebug.RayCast(_raycastOrigin,Vector2.left, ViewDistance, MoveOnSightLayer,Color.green,true);
 			// if we see a player
 			if (raycast)
 			{
@@ -189,7 +198,7 @@ namespace MoreMountains.CorgiEngine
 			}
 			
 			// we cast a ray to the right of the agent to check for a Player	
-			raycast = MMDebug.RayCast(raycastOrigin,Vector2.right,ViewDistance,MoveOnSightLayer,Color.yellow,true);
+			raycast = MMDebug.RayCast(_raycastOrigin, Vector2.right, ViewDistance, MoveOnSightLayer, Color.green,true);
 			if (raycast)
 			{
 				hit=true;
@@ -204,8 +213,15 @@ namespace MoreMountains.CorgiEngine
 			} 	            	
 			else
 			{
+				_offset = ObstacleDetectionRayOffset;
+				if (!_character.IsFacingRight)
+				{
+					_offset.x = -_offset.x;
+				}
+				_raycastOrigin = (Vector2)transform.position + _offset;
+				
 				// if we've hit something, we make sure there's no obstacle between us and our target
-				RaycastHit2D raycastObstacle = MMDebug.RayCast(raycastOrigin,_direction,ViewDistance,MoveOnSightObstaclesLayer,Color.gray,true);
+				RaycastHit2D raycastObstacle = MMDebug.RayCast(_raycastOrigin,_direction,ViewDistance,MoveOnSightObstaclesLayer,Color.gray,true);
 				if (raycastObstacle && _distanceToTarget > raycastObstacle.distance)
 				{
 					_direction = Vector2.zero;

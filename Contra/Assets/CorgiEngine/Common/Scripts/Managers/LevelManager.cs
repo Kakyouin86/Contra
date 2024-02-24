@@ -156,12 +156,12 @@ namespace MoreMountains.CorgiEngine
 		public bool SetPlayerAsFeedbackRangeCenter = false;
         
 		/// the elapsed time since the start of the level
-		public TimeSpan RunningTime { get { return DateTime.UtcNow - _started ;}}
-		public CameraController LevelCameraController { get; set; }
+		public virtual TimeSpan RunningTime { get { return DateTime.UtcNow - _started ;}}
+		public virtual CameraController LevelCameraController { get; set; }
 
 		// private stuff
-		public List<Character> Players { get; protected set; }
-		public List<CheckPoint> Checkpoints { get; protected set; }
+		public virtual List<Character> Players { get; protected set; }
+		public virtual List<CheckPoint> Checkpoints { get; protected set; }
 		protected DateTime _started;
 		protected int _savedPoints;
 		protected string _nextLevel = null;
@@ -620,7 +620,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void PlayerDead(Character player)
 		{
-			Health characterHealth = player.GetComponent<Health>();
+			Health characterHealth = player.CharacterHealth;
 			if (characterHealth == null)
 			{
 				return;

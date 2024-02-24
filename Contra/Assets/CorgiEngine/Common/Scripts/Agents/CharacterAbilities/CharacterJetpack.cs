@@ -55,7 +55,7 @@ namespace MoreMountains.CorgiEngine
 		public float JetpackFuelDurationLeft = 0f;
 		
 		/// returns true if this jetpack still has fuel left, false otherwise
-		public bool FuelLeft { get { return (JetpackUnlimited || (JetpackFuelDurationLeft > 0f)) ; } }
+		public virtual bool FuelLeft { get { return (JetpackUnlimited || (JetpackFuelDurationLeft > 0f)) ; } }
 
 		protected bool _refueling = false;
 		protected bool _jetpacking = true;

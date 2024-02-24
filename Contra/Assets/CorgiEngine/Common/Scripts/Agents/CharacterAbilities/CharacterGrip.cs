@@ -20,7 +20,7 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("whether or not grip input has to be pressed to enter grip")]
 		public bool InputBasedGrip = false;
 		/// Returns true if the character can grip right now, false otherwise
-		public bool CanGrip { get { return (Time.time - _lastGripTimestamp > BufferDurationAfterGrip); }}
+		public virtual bool CanGrip { get { return (Time.time - _lastGripTimestamp > BufferDurationAfterGrip); }}
 
 		protected CharacterJump _characterJump;
 		protected float _gripStartedTimestamp = 0f;

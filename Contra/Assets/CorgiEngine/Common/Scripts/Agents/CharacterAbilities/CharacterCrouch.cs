@@ -22,11 +22,12 @@ namespace MoreMountains.CorgiEngine
 		/// the speed of the character when it's crouching
 		[Tooltip("the speed of the character when it's crouching")]
 		public float CrawlSpeed = 4f;
+		/// if this is true, this ability will be input driven. set this to false to use it on an AI, or any other script driven agent
+		[Tooltip("if this is true, this ability will be input driven. set this to false to use it on an AI, or any other script driven agent")]
+		public bool InputDriven = true;
 				
-		[Space(10)]	
-
+		[Space(10)]
 		[Header("Crouching")]
-
 		/// if this is true, the collider will be resized when crouched
 		[Tooltip("if this is true, the collider will be resized when crouched")]
 		public bool ResizeColliderWhenCrouched = false;
@@ -99,7 +100,7 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// If we're pressing down, we check if we can crouch or crawl, and change states accordingly
 		/// </summary>
-		protected virtual void Crouch()
+		public virtual void Crouch()
 		{
 			if ( !AbilityAuthorized // if the ability is not permitted
 			     || (_condition.CurrentState != CharacterStates.CharacterConditions.Normal) // or if we're not in our normal stance
@@ -111,7 +112,7 @@ namespace MoreMountains.CorgiEngine
 				return;
 			}
 
-			if (!CanCrouchWhileMoving && (Mathf.Abs(_horizontalInput) > _inputManager.Threshold.x))
+			if (!CanCrouchWhileMoving && InputDriven && (Mathf.Abs(_horizontalInput) > _inputManager.Threshold.x))
 			{
 				return;
 			}
@@ -128,7 +129,7 @@ namespace MoreMountains.CorgiEngine
 			_movement.ChangeState(CharacterStates.MovementStates.Crouching);
 			_crouching = true;
 			
-			if ( (Mathf.Abs(_horizontalInput) > 0) && (CrawlAuthorized) )
+			if (InputDriven && (Mathf.Abs(_horizontalInput) > 0) && (CrawlAuthorized) )
 			{
 				_movement.ChangeState(CharacterStates.MovementStates.Crawling);
 			}
@@ -235,7 +236,7 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// Exits the crouched state
 		/// </summary>
-		protected virtual void ExitCrouch()
+		public virtual void ExitCrouch()
 		{
 			// we cast a raycast above to see if we have room enough to go back to normal size
 			InATunnel = !_controller.CanGoBackToOriginalSize();

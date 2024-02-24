@@ -339,7 +339,7 @@ namespace MoreMountains.CorgiEngine
 			if (health.CanTakeDamageThisFrame())
 			{			
 				// if what we're colliding with is a CorgiController, we apply a knockback force
-				_colliderCorgiController = health.gameObject.MMGetComponentNoAlloc<CorgiController>();
+				_colliderCorgiController = health.AssociatedController;
 	
 				float randomDamage = UnityEngine.Random.Range(MinDamageCaused, Mathf.Max(MaxDamageCaused, MinDamageCaused));
 				

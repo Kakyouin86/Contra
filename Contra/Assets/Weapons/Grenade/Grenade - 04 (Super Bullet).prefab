@@ -285,6 +285,7 @@ MonoBehaviour:
         CreateObjectPool: 0
         ObjectPoolSize: 5
         MutualizePools: 0
+        PoolParentTransform: {fileID: 0}
 --- !u!1 &3444670343643251266
 GameObject:
   m_ObjectHideFlags: 0

@@ -77,7 +77,7 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("the type of interaction to apply to all renderers")]
 		public SpriteMaskInteraction MaskInteraction = SpriteMaskInteraction.VisibleInsideMask;
 
-		public float MaskTime { get { float time = (Timescale == Timescales.Unscaled) ? Time.unscaledTime : Time.time; return time; } }
+		public virtual float MaskTime { get { float time = (Timescale == Timescales.Unscaled) ? Time.unscaledTime : Time.time; return time; } }
 
 		/// <summary>
 		/// On Awake we setup our objects

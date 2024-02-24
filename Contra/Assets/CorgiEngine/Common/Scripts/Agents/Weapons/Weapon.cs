@@ -51,9 +51,9 @@ namespace MoreMountains.CorgiEngine
 
 		[MMInspectorGroup("General Settings", true, 12)]
         public Animator theAnimator; //Leo Monge: Need to ALWAYS bring it after update. This adds the Animator.
-        public float customIntervalLeo = 0.5f; //Leo Monge
-        public float intervalWaitFor; //Leo Monge
-        public float counterIsShootingCounter = 0.0f; //Leo Monge
+        public float customIntervalLeo = 0.5f; //Leo Monge: Need to ALWAYS bring it after update. 
+        public float intervalWaitFor; //Leo Monge: Need to ALWAYS bring it after update. 
+        public float counterIsShootingCounter = 0.0f; //Leo Monge: Need to ALWAYS bring it after update. 
         /// is this weapon on semi or full auto ?
         [Tooltip("is this weapon on semi or full auto ?")]
 		public TriggerModes TriggerMode = TriggerModes.Auto;
@@ -341,7 +341,7 @@ namespace MoreMountains.CorgiEngine
 
 		protected float _delayBeforeUseCounter = 0f;
 		protected float _delayBetweenUsesCounter = 0f;
-		protected float _delayCooldownCounter = 0f;
+		protected float _cooldownStartAt = float.NegativeInfinity;
 		protected float _reloadingCounter = 0f;
 		protected bool _triggerReleased = false;
 		protected bool _reloading = false;
@@ -554,6 +554,11 @@ namespace MoreMountains.CorgiEngine
 		public virtual void TurnWeaponOn()
 		{
 			if (Time.time - _lastTurnWeaponOnAt < TimeBetweenUses)
+			{
+				return;
+			}
+
+			if (WeaponInCooldown())
 			{
 				return;
 			}
@@ -816,17 +821,26 @@ namespace MoreMountains.CorgiEngine
 
 		protected virtual void CaseWeaponStop()
 		{
-			_delayCooldownCounter = CooldownDuration;
+			SetCooldownStartAt();
 			WeaponState.ChangeState(WeaponStates.WeaponInCooldown);
 		}
 
 		protected virtual void CaseWeaponInCooldown()
 		{
-			_delayCooldownCounter -= Time.deltaTime;
-			if (_delayCooldownCounter <= 0)
+			if (!WeaponInCooldown())
 			{
 				WeaponState.ChangeState(WeaponStates.WeaponIdle);
 			}
+		}
+
+		public virtual bool WeaponInCooldown()
+		{
+			return (Time.time - _cooldownStartAt <= CooldownDuration);
+		}
+		
+		public virtual void SetCooldownStartAt()
+		{
+			_cooldownStartAt = Time.time;
 		}
 
 		protected virtual void CaseWeaponReloadNeeded()
@@ -948,15 +962,6 @@ namespace MoreMountains.CorgiEngine
                theAnimator.SetFloat("isShootingCounter", counter); 
                yield return null;
             }*/
-        }
-
-        public void OnDestroy() //Leo Monge: Need to ALWAYS bring it after update. This avoids that if you switch from Machine gun to any other gun and there are remaining shots, the bools don't stay as True forever.
-        {
-            if (theAnimator != null)
-            {
-                theAnimator.SetBool("isShooting", false);
-                theAnimator.SetBool("IdleShootingStraight", false);
-            }
         }
 
         /// <summary>

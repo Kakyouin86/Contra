@@ -69,13 +69,13 @@ namespace MoreMountains.CorgiEngine
 		protected int _ladderClimbingSpeedYAnimationParameter;
 		protected float _lastJumpFromLadderAt = -float.MaxValue;
 
-        /// <summary>
-        /// On Start(), we initialize our various flags
-        /// </summary>
-        protected override void Initialization()
-        {
-            base.Initialization();
-            CurrentLadderClimbingSpeed = Vector2.zero;
+		/// <summary>
+		/// On Start(), we initialize our various flags
+		/// </summary>
+		protected override void Initialization()
+		{
+			base.Initialization();
+			CurrentLadderClimbingSpeed = Vector2.zero;
             //_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>(); //Leo Monge: Need to ALWAYS bring it after update.
             GameObject ladderColliderObject = GameObject.FindGameObjectWithTag("LadderCollider"); //Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only.
             if (ladderColliderObject != null) //Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only
@@ -83,13 +83,13 @@ namespace MoreMountains.CorgiEngine
                 _boxCollider = ladderColliderObject.GetComponent<BoxCollider2D>(); //Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only.
             }
             _colliders = new List<Collider2D>();
-            _characterHandleWeapon = this.gameObject.GetComponentInParent<Character>()?.FindAbility<CharacterHandleWeapon>();
-        }
+			_characterHandleWeapon = this.gameObject.GetComponentInParent<Character>()?.FindAbility<CharacterHandleWeapon>();
+		}
 
-        /// <summary>
-        /// Every frame, we check if we need to do something about ladders
-        /// </summary>
-        public override void ProcessAbility()
+		/// <summary>
+		/// Every frame, we check if we need to do something about ladders
+		/// </summary>
+		public override void ProcessAbility()
 		{
 			base.ProcessAbility();
 			ComputeClosestLadder();

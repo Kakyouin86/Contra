@@ -282,7 +282,7 @@ namespace MoreMountains.CorgiEngine
 			}
 			else
 			{
-				_spawnedObject = Instantiate(_objectToSpawn);    
+				_spawnedObject = Instantiate(gameObjectToSpawn);    
 			}
 		}
 

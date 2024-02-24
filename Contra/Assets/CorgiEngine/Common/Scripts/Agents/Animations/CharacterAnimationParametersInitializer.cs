@@ -80,6 +80,7 @@ namespace MoreMountains.CorgiEngine
 			new CorgiEngineCharacterAnimationParameter("Speed", AnimatorControllerParameterType.Float),
 			new CorgiEngineCharacterAnimationParameter("xSpeed", AnimatorControllerParameterType.Float),
 			new CorgiEngineCharacterAnimationParameter("ySpeed", AnimatorControllerParameterType.Float),
+			new CorgiEngineCharacterAnimationParameter("xSpeedFacing", AnimatorControllerParameterType.Float),
 			new CorgiEngineCharacterAnimationParameter("xSpeedAbsolute", AnimatorControllerParameterType.Float),
 			new CorgiEngineCharacterAnimationParameter("ySpeedAbsolute", AnimatorControllerParameterType.Float),
 			new CorgiEngineCharacterAnimationParameter("Swimming", AnimatorControllerParameterType.Bool),

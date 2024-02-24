@@ -8,6 +8,8 @@ using InputManager = MoreMountains.CorgiEngine.InputManager;
 
 public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
+    public bool Cole;
+    public bool Regina;
     public Player player;
     public Character character;
     public CharacterHorizontalMovement horizontalMovementCorgi;
@@ -97,6 +99,8 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
             Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Player"), true);
             //theAnimator.SetBool("Death",true);
             //theTorso.GetComponent<SpriteRenderer>().enabled = false;
+            Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), true);
+            Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), true);
         }
         else
         {
@@ -167,8 +171,8 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
     IEnumerator DeathColliders()
     {
         imRespawning = true;
-        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), true);
-        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), true);
+        //Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), true);
+        //Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), true);
 
         // Flash effect for 3 seconds
         float flashDuration = 0.1f; // Duration for each flash
@@ -194,8 +198,8 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
         ResetSpriteRendererColor(theTorso.GetComponent<SpriteRenderer>());
         ResetSpriteRendererColor(theLegs.GetComponent<SpriteRenderer>());
 
-        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), false);
-        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), false);
+        //Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), false);
+        //Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), false);
         imRespawning = false;
     }
 
@@ -215,6 +219,8 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
 
     void Update()
     {
+        //bool isCollisionIgnored = Physics2D.GetIgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"));
+        //Debug.Log("Layer Collision Ignored: " + isCollisionIgnored);
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //Just the "Hold".
         if (player.GetButton(("HoldPosition")))
@@ -413,7 +419,8 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
         //This will detect horizontal ladders and assign the bool "HorizontalLadder" to the animator.
         if (horizontalLadder)
         {
-            theAnimator.SetBool("HorizontalLadder", true);
+            theAnimator.SetBool("HorizontalLadder", true); 
+            GetComponent<CharacterJump>().NumberOfJumpsLeft = 0; //We do this, so we can't jump twice when in the ladder before touching the floor.
         }
         else
         {
@@ -469,6 +476,18 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
                 Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), false);
                 Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), false);
             }
+        }
+
+        if (imRespawning)
+        {
+            Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), true);
+            Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), true);
+        }
+
+        if (!imRespawning && character.MovementState.CurrentState != CharacterStates.MovementStates.Rolling)
+        {
+            Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), false);
+            Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), false);
         }
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //This finishes the Death animation when hitting the ground.

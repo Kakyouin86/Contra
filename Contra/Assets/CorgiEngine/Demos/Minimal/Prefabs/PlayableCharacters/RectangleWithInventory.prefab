@@ -279,6 +279,7 @@ MonoBehaviour:
   BlockingConditionStates: 
   BlockingWeaponStates: 
   WalkSpeed: 6
+  ResetHorizontalSpeedBtn: 0
   MovementSpeedMultiplier: 1
   AbilityMovementSpeedMultiplier: 1
   PushSpeedMultiplier: 1
@@ -313,6 +314,7 @@ MonoBehaviour:
   BlockingWeaponStates: 
   CrawlAuthorized: 1
   CrawlSpeed: 4
+  InputDriven: 1
   ResizeColliderWhenCrouched: 1
   CrouchedBoxColliderSize: {x: 0.35, y: 0.3}
   CanCrouchWhileMoving: 1
@@ -423,6 +425,7 @@ MonoBehaviour:
   JumpRestrictions: 2
   ResetCameraOffsetOnJump: 0
   CanJumpDownOneWayPlatforms: 1
+  FixedAerialJumpCount: 0
   JumpIsProportionalToThePressTime: 1
   JumpMinimumAirTime: 0.2
   JumpReleaseForceFactor: 2
@@ -545,7 +548,7 @@ MonoBehaviour:
   BlockingConditionStates: 
   BlockingWeaponStates: 
   WallClingingSlowFactor: 0.2
-  RaycastVerticalOffset: 0
+  RaycastVerticalOffset: 0.5
   WallClingingTolerance: 0.3
   ResetVerticalForceOnEntry: 1
   InputIndependent: 0
@@ -745,6 +748,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -799,6 +803,7 @@ MonoBehaviour:
   InWater: 0
   SwimHeight: 3.025
   SwimAnimationDuration: 0.8
+  OnSwimFeedback: {fileID: 0}
   WaterEntryEffect: {fileID: 143758, guid: 14f27396ac5b4d84cb17d403de44b8a1, type: 3}
   WaterExitEffect: {fileID: 143758, guid: 14f27396ac5b4d84cb17d403de44b8a1, type: 3}
   WaterExitForce: {x: 0, y: 12}
@@ -987,6 +992,10 @@ MonoBehaviour:
   DisplayDurationOnHit: 1
   HideBarAtZero: 1
   HideBarAtZeroDelay: 1
+  TestMinHealth: 0
+  TestMaxHealth: 100
+  TestCurrentHealth: 25
+  TestUpdateHealthButton: 0
 --- !u!114 &1583276893178277904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6191,6 +6200,7 @@ MonoBehaviour:
           ButtonText: Debug Stop Sound
         PlayMethod: 0
         PoolSize: 10
+        UseLegacyEventsMode: 0
         StopSoundOnFeedbackStop: 1
         MinVolume: 1
         MaxVolume: 1

@@ -79,11 +79,11 @@ namespace MoreMountains.CorgiEngine
 		/// the current speed of the character
 		public Vector2 Speed { get{ return _speed; } }
 		/// the world speed of the character
-		public Vector2 WorldSpeed { get { return _worldSpeed; } }
+		public virtual Vector2 WorldSpeed { get { return _worldSpeed; } }
 		/// the value of the forces applied at one point in time 
-		public Vector2 ForcesApplied { get; protected set; }
+		public virtual Vector2 ForcesApplied { get; protected set; }
 		/// the wall we're currently colliding with
-		public GameObject CurrentWallCollider { get; protected set; }
+		public virtual GameObject CurrentWallCollider { get; protected set; }
 
 		[Header("Raycasting")]
 		[MMInformation(

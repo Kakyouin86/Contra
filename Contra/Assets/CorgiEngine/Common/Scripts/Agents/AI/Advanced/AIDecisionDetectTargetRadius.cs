@@ -78,6 +78,11 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void OnDrawGizmosSelected()
 		{
+			if (_facingDirection.x == 0)
+			{
+				_facingDirection.x = 1;
+			}
+			
 			_raycastOrigin.x = transform.position.x + _facingDirection.x * DetectionOriginOffset.x / 2;
 			_raycastOrigin.y = transform.position.y + DetectionOriginOffset.y;
 

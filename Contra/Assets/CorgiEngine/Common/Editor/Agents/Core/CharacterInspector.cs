@@ -36,6 +36,7 @@ namespace MoreMountains.CorgiEngine
 			{
 				EditorGUILayout.LabelField("Movement State",character.MovementState.CurrentState.ToString());
 				EditorGUILayout.LabelField("Condition State",character.ConditionState.CurrentState.ToString());
+				EditorGUILayout.LabelField("Facing Direction",character.IsFacingRight ? "Right" : "Left");
 			}
 
 			// auto completes the animator

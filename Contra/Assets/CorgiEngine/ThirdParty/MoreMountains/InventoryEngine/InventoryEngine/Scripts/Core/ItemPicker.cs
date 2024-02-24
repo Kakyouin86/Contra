@@ -190,12 +190,17 @@ namespace MoreMountains.InventoryEngine
 		/// </summary>
 		protected virtual void DetermineMaxQuantity()
 		{
-			_pickedQuantity = _targetInventory.NumberOfStackableSlots (Item.ItemID, Item.MaximumStack);
+			int maxQuantity = _targetInventory.CapMaxQuantity(Item, Quantity);
+			int stackQuantity = _targetInventory.NumberOfStackableSlots (Item.ItemID, Item.MaximumStack);
+
+			_pickedQuantity = Mathf.Min(maxQuantity, stackQuantity);
+			
 			if (RemainingQuantity < _pickedQuantity)
 			{
 				_pickedQuantity = RemainingQuantity;
 			}
 		}
+		
 
 		/// <summary>
 		/// Returns true if this item can be picked, false otherwise

@@ -73,11 +73,11 @@ namespace MoreMountains.CorgiEngine
 		public bool DrawDebugGravityArrow = true;
 
 		/// the current target gravity angle
-		public float GravityAngle { get{ return _gravityOverridden ? _overrideGravityAngle : _defaultGravityAngle; } }
+		public virtual float GravityAngle { get{ return _gravityOverridden ? _overrideGravityAngle : _defaultGravityAngle; } }
 		/// the current target gravity vector
-		public Vector2 GravityDirectionVector { get { return MMMaths.RotateVector2 (Vector2.down, GravityAngle);	}}
+		public virtual Vector2 GravityDirectionVector { get { return MMMaths.RotateVector2 (Vector2.down, GravityAngle);	}}
 		/// true while the Character is affected by a gravity point
-		public bool InGravityPointRange { get; set; }
+		public virtual bool InGravityPointRange { get; set; }
 
 		protected List<GravityPoint> _gravityPoints;
 		protected GravityPoint _closestGravityPoint = null;

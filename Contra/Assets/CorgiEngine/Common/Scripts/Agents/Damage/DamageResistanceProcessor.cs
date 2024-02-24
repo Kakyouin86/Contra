@@ -223,6 +223,8 @@ namespace MoreMountains.CorgiEngine
 						return true;	
 					}
 				}
+
+				return false;
 			}
 
 			foreach (TypedDamage typedDamage in typedDamages)

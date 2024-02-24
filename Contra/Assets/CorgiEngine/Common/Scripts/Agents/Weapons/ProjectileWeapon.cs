@@ -39,10 +39,14 @@ namespace MoreMountains.CorgiEngine
 		[MMReadOnly]
 		[Tooltip("the local position at which this projectile weapon should spawn projectiles")]
 		public Vector3 SpawnPosition = Vector3.zero;
+		
+		public bool WallClinging { get; set; }
+		
 		protected Vector3 _flippedProjectileSpawnOffset;
 		protected Vector3 _randomSpreadDirection;
 		protected Vector3 _spawnPositionCenter;
 		protected bool _poolInitialized = false;
+		protected Vector2 _offset;
 
 		/// <summary>
 		/// Initialize this weapon
@@ -68,6 +72,12 @@ namespace MoreMountains.CorgiEngine
 				_flippedProjectileSpawnOffset.y = -_flippedProjectileSpawnOffset.y;
 				_poolInitialized = true;
 			}            
+		}
+
+		protected override void LateUpdate()
+		{
+			base.LateUpdate();
+			WallClinging = false;
 		}
 
 		/// <summary>
@@ -157,7 +167,7 @@ namespace MoreMountains.CorgiEngine
 
 			return (nextGameObject);
 		}
-
+		
 		/// <summary>
 		/// Determines the spawn position based on the spawn offset and whether or not the weapon is flipped
 		/// </summary>
@@ -165,13 +175,19 @@ namespace MoreMountains.CorgiEngine
 		{
 			_spawnPositionCenter = (ProjectileSpawnTransform == null) ? this.transform.position : ProjectileSpawnTransform.transform.position;
 
+			_offset = Flipped ? _flippedProjectileSpawnOffset : ProjectileSpawnOffset;
+
+			if (WallClinging)
+			{
+				_offset.y = -_offset.y;
+			}
 			if (Flipped && FlipWeaponOnCharacterFlip)
 			{
-				SpawnPosition = _spawnPositionCenter - this.transform.rotation * _flippedProjectileSpawnOffset;
+				SpawnPosition = _spawnPositionCenter - this.transform.rotation * _offset;
 			}
 			else
 			{
-				SpawnPosition = _spawnPositionCenter + this.transform.rotation * ProjectileSpawnOffset;
+				SpawnPosition = _spawnPositionCenter + this.transform.rotation * _offset;
 			}
 		}
 

@@ -74,7 +74,7 @@ namespace MoreMountains.InventoryEngine
 		public int NumberOfColumns = 2;
 
 		/// the total number of slots in this inventory
-		public int InventorySize { get { return NumberOfRows * NumberOfColumns; } set {} }		
+		public virtual int InventorySize { get { return NumberOfRows * NumberOfColumns; } set {} }		
 
 		[Header("Equipment")]
 		[MMInformation("If this displays the contents of an Equipment Inventory, you should bind here a Choice Inventory. A Choice Inventory is the inventory in which you'll pick items for your equipment. Usually the Choice Inventory is the Main Inventory. Again, if this is an equipment inventory, you can specify what class of items you want to authorize.",MMInformationAttribute.InformationType.Info,false)]
@@ -170,19 +170,19 @@ namespace MoreMountains.InventoryEngine
 		public InventoryDisplay NextInventory;
 
 		/// the grid layout used to display the inventory in rows and columns
-		public GridLayoutGroup InventoryGrid { get; protected set; }
+		public virtual GridLayoutGroup InventoryGrid { get; protected set; }
 		/// the gameobject used to display the inventory's name
-		public InventoryDisplayTitle InventoryTitle { get; protected set; }
+		public virtual InventoryDisplayTitle InventoryTitle { get; protected set; }
 		/// the main panel
-		public RectTransform InventoryRectTransform { get { return GetComponent<RectTransform>(); }}
+		public virtual RectTransform InventoryRectTransform { get { return GetComponent<RectTransform>(); }}
 		/// an internal list of slots
-		public List<InventorySlot> SlotContainer { get; protected set; }	
+		public virtual List<InventorySlot> SlotContainer { get; protected set; }	
 		/// the inventory the focus should return to after an action
-		public InventoryDisplay ReturnInventory { get; protected set; }	
+		public virtual InventoryDisplay ReturnInventory { get; protected set; }	
 		/// whether this inventory display is open or not
-		public bool IsOpen { get; protected set; }
+		public virtual bool IsOpen { get; protected set; }
 		
-		public bool InEquipSelection { get; set; }
+		public virtual bool InEquipSelection { get; set; }
 
 		/// the item currently being moved
 

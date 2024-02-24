@@ -120,6 +120,9 @@ namespace MoreMountains.InventoryEngine
 		/// If this object can be stacked (multiple instances in a single inventory slot), you can specify here the maximum size of that stack.
 		[Tooltip("If this object can be stacked (multiple instances in a single inventory slot), you can specify here the maximum size of that stack.")]
 		public int MaximumStack = 1;
+		/// the maximum quantity allowed of this item in the target inventory
+		[Tooltip("the maximum quantity allowed of this item in the target inventory")]
+		public int MaximumQuantity = 999999999;
 		/// the class of the item
 		[Tooltip("the class of the item")]
 		public ItemClasses ItemClass;

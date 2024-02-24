@@ -103,7 +103,9 @@ namespace MoreMountains.CorgiEngine
 		public bool ResetMovementStateOnTeleport = false;
 
 		[MMInspectorGroup("Teleport Sequence", true, 28)]
-        
+		/// whether to operate the teleport sequence on scaled or unscaled time
+		[Tooltip("whether to operate the teleport sequence on scaled or unscaled time")]
+		public TimescaleModes TimescaleMode = TimescaleModes.Scaled;
 		/// the delay (in seconds) to apply before running the sequence
 		[Tooltip("the delay (in seconds) to apply before running the sequence")]
 		public float InitialDelay = 0.1f;
@@ -148,6 +150,13 @@ namespace MoreMountains.CorgiEngine
 		protected WaitForSecondsRealtime _halfDelayBetweenFadesWaitForSeconds;
 		protected WaitForSecondsRealtime _fadeInDurationWaitForSeconds;
 		protected WaitForSecondsRealtime _finalDelayyWaitForSeconds;
+
+		protected WaitForSeconds _initialDelayWaitForSecondsScaled;
+		protected WaitForSeconds _fadeOutDurationWaitForSecondsScaled;
+		protected WaitForSeconds _halfDelayBetweenFadesWaitForSecondsScaled;
+		protected WaitForSeconds _fadeInDurationWaitForSecondsScaled;
+		protected WaitForSeconds _finalDelayyWaitForSecondsScaled;
+		
 		protected Vector3 _entryPosition;
 		protected Vector3 _newPosition;
 
@@ -169,11 +178,29 @@ namespace MoreMountains.CorgiEngine
 			{
 				CurrentRoom = this.gameObject.GetComponentInParent<Room>();
 			}
-			_initialDelayWaitForSeconds = new WaitForSecondsRealtime(InitialDelay);
-			_fadeOutDurationWaitForSeconds = new WaitForSecondsRealtime(FadeOutDuration);
-			_halfDelayBetweenFadesWaitForSeconds = new WaitForSecondsRealtime(DelayBetweenFades/2f);
-			_fadeInDurationWaitForSeconds = new WaitForSecondsRealtime(FadeInDuration);
-			_finalDelayyWaitForSeconds = new WaitForSecondsRealtime(FinalDelay);
+
+			if (TimescaleMode == TimescaleModes.Unscaled)
+			{
+				_initialDelayWaitForSeconds = new WaitForSecondsRealtime(InitialDelay);
+				_fadeOutDurationWaitForSeconds = new WaitForSecondsRealtime(FadeOutDuration);
+				_halfDelayBetweenFadesWaitForSeconds = new WaitForSecondsRealtime(DelayBetweenFades/2f);
+				_fadeInDurationWaitForSeconds = new WaitForSecondsRealtime(FadeInDuration);
+				_finalDelayyWaitForSeconds = new WaitForSecondsRealtime(FinalDelay);	
+			}
+			else
+			{
+				_initialDelayWaitForSecondsScaled = new WaitForSeconds(InitialDelay);
+				_fadeOutDurationWaitForSecondsScaled = new WaitForSeconds(FadeOutDuration);
+				_halfDelayBetweenFadesWaitForSecondsScaled = new WaitForSeconds(DelayBetweenFades/2f);
+				_fadeInDurationWaitForSecondsScaled = new WaitForSeconds(FadeInDuration);
+				_finalDelayyWaitForSecondsScaled = new WaitForSeconds(FinalDelay);	
+			}
+
+			// if we want the teleporter to freeze time, we need to work in unscaled timescale
+			if (FreezeTime)
+			{
+				TimescaleMode = TimescaleModes.Unscaled;
+			}
 		}
 
 		/// <summary>
@@ -250,27 +277,27 @@ namespace MoreMountains.CorgiEngine
 		{
 			SequenceStart(collider);
 
-			yield return _initialDelayWaitForSeconds;
+			if (TimescaleMode == TimescaleModes.Unscaled) yield return _initialDelayWaitForSeconds; else yield return _initialDelayWaitForSecondsScaled;
 
 			AfterInitialDelay(collider);
 
-			yield return _fadeOutDurationWaitForSeconds;
+			if (TimescaleMode == TimescaleModes.Unscaled) yield return _fadeOutDurationWaitForSeconds; else yield return _fadeOutDurationWaitForSecondsScaled;
 
 			AfterFadeOut(collider);
             
-			yield return _halfDelayBetweenFadesWaitForSeconds;
+			if (TimescaleMode == TimescaleModes.Unscaled) yield return _halfDelayBetweenFadesWaitForSeconds; else yield return _halfDelayBetweenFadesWaitForSecondsScaled;
 
 			BetweenFades(collider);
 
-			yield return _halfDelayBetweenFadesWaitForSeconds;
+			if (TimescaleMode == TimescaleModes.Unscaled) yield return _halfDelayBetweenFadesWaitForSeconds; else yield return _halfDelayBetweenFadesWaitForSecondsScaled;
 
 			AfterDelayBetweenFades(collider);
 
-			yield return _fadeInDurationWaitForSeconds;
+			if (TimescaleMode == TimescaleModes.Unscaled) yield return _fadeInDurationWaitForSeconds; else yield return _fadeInDurationWaitForSecondsScaled;
 
 			AfterFadeIn(collider);
 
-			yield return _finalDelayyWaitForSeconds;
+			if (TimescaleMode == TimescaleModes.Unscaled) yield return _finalDelayyWaitForSeconds; else yield return _finalDelayyWaitForSecondsScaled;
 
 			SequenceEnd(collider);
 		}

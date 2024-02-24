@@ -6004,6 +6004,7 @@ MonoBehaviour:
   BlockingConditionStates: 
   BlockingWeaponStates: 
   WalkSpeed: 6
+  ResetHorizontalSpeedBtn: 0
   MovementSpeedMultiplier: 1
   AbilityMovementSpeedMultiplier: 1
   PushSpeedMultiplier: 1
@@ -6041,6 +6042,7 @@ MonoBehaviour:
   JumpRestrictions: 1
   ResetCameraOffsetOnJump: 0
   CanJumpDownOneWayPlatforms: 1
+  FixedAerialJumpCount: 0
   JumpIsProportionalToThePressTime: 1
   JumpMinimumAirTime: 0.1
   JumpReleaseForceFactor: 2
@@ -6094,7 +6096,7 @@ MonoBehaviour:
   BlockingConditionStates: 
   BlockingWeaponStates: 
   WallClingingSlowFactor: 0.2
-  RaycastVerticalOffset: 0
+  RaycastVerticalOffset: 0.5
   WallClingingTolerance: 0.3
   ResetVerticalForceOnEntry: 1
   InputIndependent: 0
@@ -6145,6 +6147,7 @@ MonoBehaviour:
   BlockingWeaponStates: 
   CrawlAuthorized: 1
   CrawlSpeed: 4
+  InputDriven: 1
   ResizeColliderWhenCrouched: 0
   CrouchedBoxColliderSize: {x: 1, y: 1}
   CanCrouchWhileMoving: 1
@@ -6254,6 +6257,7 @@ MonoBehaviour:
   ResetColorOnRevive: 1
   ColorMaterialPropertyName: _Color
   UseMaterialPropertyBlocks: 0
+  AssociatedCharacter: {fileID: 0}
   MasterHealth: {fileID: 0}
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
@@ -6681,6 +6685,7 @@ MonoBehaviour:
           ButtonText: Debug Stop Sound
         PlayMethod: 0
         PoolSize: 10
+        UseLegacyEventsMode: 0
         StopSoundOnFeedbackStop: 1
         MinVolume: 1
         MaxVolume: 1
@@ -7017,6 +7022,7 @@ MonoBehaviour:
           ButtonText: Debug Stop Sound
         PlayMethod: 0
         PoolSize: 10
+        UseLegacyEventsMode: 0
         StopSoundOnFeedbackStop: 1
         MinVolume: 1
         MaxVolume: 1

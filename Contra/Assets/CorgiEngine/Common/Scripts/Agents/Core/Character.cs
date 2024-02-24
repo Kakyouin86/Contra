@@ -131,7 +131,7 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("The time (in seconds) to consider the character airborne, used to reset Jumping state")]
 		public float AirborneMinimumTime = 0.1f;
 		/// Whether or not the character is airborne this frame
-		public bool Airborne { get { return ((_controller.DistanceToTheGround > AirborneDistance) || (_controller.DistanceToTheGround == -1)); } }
+		public virtual bool Airborne { get { return ((_controller.DistanceToTheGround > AirborneDistance) || (_controller.DistanceToTheGround == -1)); } }
 
 		[Header("AI")]
 		/// The brain currently associated with this character, if it's an Advanced AI. By default the engine will pick the one on this object, but you can attach another one if you'd like

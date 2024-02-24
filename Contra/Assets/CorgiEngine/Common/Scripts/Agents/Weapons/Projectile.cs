@@ -51,7 +51,7 @@ namespace MoreMountains.CorgiEngine
 		public LayerMask SpawnSecurityCheckLayerMask;
 
 		/// Returns the associated damage on touch zone
-		public DamageOnTouch TargetDamageOnTouch { get { return _damageOnTouch; } }
+		public virtual DamageOnTouch TargetDamageOnTouch { get { return _damageOnTouch; } }
 
 		protected Weapon _weapon;
 		protected GameObject _owner;
@@ -159,14 +159,14 @@ namespace MoreMountains.CorgiEngine
 			Speed += Acceleration * Time.deltaTime;
 		}
 
-        /// <summary>
-        /// Sets the projectile's direction.
-        /// </summary>
-        /// <param name="newDirection">New direction.</param>
-        /// <param name="newRotation">New rotation.</param>
-        /// <param name="spawnerIsFacingRight">If set to <c>true</c> spawner is facing right.</param>
-        public virtual void SetDirection(Vector3 newDirection, Quaternion newRotation, bool spawnerIsFacingRight = true)
-        {
+		/// <summary>
+		/// Sets the projectile's direction.
+		/// </summary>
+		/// <param name="newDirection">New direction.</param>
+		/// <param name="newRotation">New rotation.</param>
+		/// <param name="spawnerIsFacingRight">If set to <c>true</c> spawner is facing right.</param>
+		public virtual void SetDirection(Vector3 newDirection, Quaternion newRotation, bool spawnerIsFacingRight=true)
+		{
             _spawnerIsFacingRight = spawnerIsFacingRight;
             if (DirectionCanBeChangedBySpawner)
             {
@@ -187,10 +187,10 @@ namespace MoreMountains.CorgiEngine
             }
         }
 
-        /// <summary>
-        /// Flip the projectile
-        /// </summary>
-        public virtual void Flip()
+		/// <summary>
+		/// Flip the projectile
+		/// </summary>
+		public virtual void Flip()
 		{
 			if (_spriteRenderer != null)
 			{
