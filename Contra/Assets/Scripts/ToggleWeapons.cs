@@ -37,9 +37,9 @@ public class ToggleWeapons : MonoBehaviour, MMEventListener<CorgiEngineEvent>
         torsoObject = GameObject.FindGameObjectWithTag(torsoTag);
         machineGunLights = GameObject.FindGameObjectWithTag(machineGunLightsTag);
         flameGunLights = GameObject.FindGameObjectWithTag(flameGunLightsTag);
-        theUIAndUpgradesController = GameObject.FindGameObjectWithTag("UI").GetComponent<UIAndUpgradesController>();
+        theUIAndUpgradesController = GameObject.FindGameObjectWithTag("UIPlayer1").GetComponent<UIAndUpgradesController>();
         theSpecialShootAndRaycastVisualization = GetComponent<SpecialShootAndRaycastVisualization>();
-        weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventory").GetComponent<Inventory>();
+        weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventoryPlayer1").GetComponent<Inventory>();
         theCharacterInventory = GetComponent<CharacterInventory>();
         theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
         //theCharacterHandleWeapon = FindObjectOfType<CharacterHandleWeapon>();
@@ -77,7 +77,7 @@ public class ToggleWeapons : MonoBehaviour, MMEventListener<CorgiEngineEvent>
     {
         if (corgiEngineEvent.EventType == CorgiEngineEventTypes.PlayerDeath)
         {
-            GameObject theMainInventory = GameObject.FindWithTag("Inventory");
+            GameObject theMainInventory = GameObject.FindWithTag("InventoryPlayer1");
             string weaponName = weaponInventory.Content[0].ItemName;
 
             if ((weaponName != "Machine Gun" && weaponName != "Super Machine Gun") && weaponInventory.Content[0].ItemName != null)

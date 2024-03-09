@@ -6371,7 +6371,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 12800
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -6605,7 +6605,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1628607475
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300004, guid: 9e09c275635a1704f8c95be03fc36589, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10918,7 +10918,7 @@ GameObject:
   - component: {fileID: 801302916}
   m_Layer: 0
   m_Name: Main Inventory
-  m_TagString: Inventory
+  m_TagString: InventoryPlayer1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11988,7 +11988,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1628607475
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300004, guid: 9e09c275635a1704f8c95be03fc36589, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12427,7 +12427,7 @@ GameObject:
   - component: {fileID: 841542541}
   m_Layer: 0
   m_Name: Weapon Inventory
-  m_TagString: WeaponInventory
+  m_TagString: WeaponInventoryPlayer1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16335,11 +16335,10 @@ MonoBehaviour:
   character: {fileID: 0}
   horizontalMovementCorgi: {fileID: 0}
   theController: {fileID: 1038294698}
-  theInputManager: {fileID: 0}
   theCharacterHandleWeapon: {fileID: 0}
   theSpecialShootAndRaycastVisualization: {fileID: 0}
   theAnimator: {fileID: 1448508891}
-  theFirepoint: {fileID: 0}
+  theFirepoint: {fileID: 1724734280}
   weaponAim: {fileID: 0}
   theOverridesInAnimator: {fileID: 0}
   horizontalLadder: 0
@@ -16354,12 +16353,12 @@ MonoBehaviour:
   jumpingSizeY: 1.45
   isNotCharacterV3: 0
   theRippleEffect: {fileID: 1392239207}
-  theTorso: {fileID: 0}
-  theLegs: {fileID: 0}
-  theTorsoMachineGunLights: {fileID: 0}
-  theTorsoFlameGunLights: {fileID: 0}
+  theTorso: {fileID: 1973805546}
+  theLegs: {fileID: 392121773}
+  theTorsoMachineGunLights: {fileID: 316355512}
+  theTorsoFlameGunLights: {fileID: 928366993}
   theBCLadder: {fileID: 1985355087}
-  slopesDetector: {fileID: 0}
+  slopesDetector: {fileID: 458236777}
   originalMaterial: {fileID: 0}
   flashMaterial: {fileID: 2100000, guid: 1a55358fc5a5c844da85a515c70abf1a, type: 2}
   characterDead: 0
@@ -16515,9 +16514,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1254fbe2aa1ca9847a2df8249cdd5df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
-  theFirepoint: {fileID: 0}
-  theAnimator: {fileID: 0}
+  character: {fileID: 1038294701}
+  theFirepoint: {fileID: 1724734280}
+  theAnimator: {fileID: 1448508891}
   animationNames: []
   animationNamesForInstantRotation:
   - {fileID: 7400000, guid: 753b673071bd1c04b92dca9c69a18c4e, type: 2}
@@ -16530,7 +16529,7 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   weaponAim: {fileID: 0}
   weaponInventory: {fileID: 0}
-  theSpecialShootAndRaycastVisualization: {fileID: 0}
+  theSpecialShootAndRaycastVisualization: {fileID: 1038294714}
   theFireIndicator: {fileID: 0}
   theSmokeIndicator: {fileID: 0}
   theRayIndicator: []
@@ -16702,6 +16701,9 @@ MonoBehaviour:
   theSpecialShot: {fileID: 4211420323295667025, guid: 179abb41300adad4cb0fcbbe8b83284a,
     type: 3}
   theSpecialShotInstantiated: {fileID: 0}
+  _weapon: {fileID: 0}
+  theFirepoint: {fileID: 0}
+  theAnimator: {fileID: 0}
 --- !u!120 &1038294715
 LineRenderer:
   serializedVersion: 2
@@ -20791,7 +20793,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1628607475
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300004, guid: 9e09c275635a1704f8c95be03fc36589, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -27779,7 +27781,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1628607475
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300004, guid: 9e09c275635a1704f8c95be03fc36589, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -31733,7 +31735,7 @@ GameObject:
   - component: {fileID: 1966031597}
   m_Layer: 0
   m_Name: Power Ups Manager & UI Camera
-  m_TagString: UI
+  m_TagString: UIPlayer1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32102,7 +32104,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 12800
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

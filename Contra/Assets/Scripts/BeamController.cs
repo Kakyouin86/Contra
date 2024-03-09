@@ -5,7 +5,9 @@ using static UnityEngine.Rendering.HableCurve;
 
 public class BeamController : MonoBehaviour
 {
+    public bool canInstantiateThePrefabs = false;
     public GameObject middlePrefabToInstantiate;
+    public GameObject prefabToInstantiate;
     public bool canInstantiate = false;
     public float stopInstantiating = 0.7f;
     public float timerToStopInstantiating = 0f;
@@ -18,7 +20,6 @@ public class BeamController : MonoBehaviour
     public bool[] isBottomCollidingArray;
     public bool reEnableInProgress;
     public float maxRaycastLength = 10f;
-    public GameObject prefabToInstantiate;
     public bool topPrefabInstantiated = false;
     public bool bottomPrefabInstantiated = false;
 
@@ -40,6 +41,11 @@ public class BeamController : MonoBehaviour
         {
             canInstantiate = false;
         }
+    }
+
+    public void CanInstantiate()
+    {
+        canInstantiateThePrefabs = true;
     }
 
     IEnumerator EnableSegmentsSequentially(GameObject[] beamSegments, bool isTop, bool[] isCollidingArray)
@@ -166,8 +172,10 @@ public class BeamController : MonoBehaviour
     void InstantiatePrefab(Vector3 position, Vector2 beamDirection)
     {
         float angle = Mathf.Atan2(beamDirection.y, beamDirection.x) * Mathf.Rad2Deg;
-
-        Instantiate(prefabToInstantiate, position, Quaternion.Euler(0f, 0f, angle));
+        if (canInstantiateThePrefabs)
+        {
+            Instantiate(prefabToInstantiate, position, Quaternion.Euler(0f, 0f, angle));
+        }
     }
 
     void InstantiateMiddlePrefab(Vector3 position, Vector3 topPosition, Vector3 bottomPosition)
@@ -175,7 +183,10 @@ public class BeamController : MonoBehaviour
         Vector3 middlePoint = (topPosition + bottomPosition) / 2f;
         float angle = Mathf.Atan2((topPosition - bottomPosition).y, (topPosition - bottomPosition).x) * Mathf.Rad2Deg;
 
-        Instantiate(middlePrefabToInstantiate, middlePoint, Quaternion.Euler(0f, 0f, angle));
+        if (canInstantiateThePrefabs)
+        {
+            Instantiate(middlePrefabToInstantiate, middlePoint, Quaternion.Euler(0f, 0f, angle));
+        }
     }
 
     void EnableSegmentsAgainSequentially(GameObject[] beamSegments, bool isTop, bool[] isCollidingArray)

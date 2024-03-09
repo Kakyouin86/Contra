@@ -3,7 +3,6 @@ using MoreMountains.CorgiEngine;
 using UnityEngine;
 using static MoreMountains.CorgiEngine.Character;
 
-
 public class BulletsDirection : MonoBehaviour
 {
     public Vector3 lastPosition;
@@ -31,6 +30,10 @@ public class BulletsDirection : MonoBehaviour
     public bool bottomWall = false;
     public bool closeToTwoWalls = false;
     public bool hangingShoot = false;
+    public bool hasExecutedTheDirectionCheck = false;
+    public float lastCheckTime = 0f;
+    public float directionCheckInterval = 0.075f;
+    public float directionCheckThreshold = 0.80f;
 
     public void Start()
     {
@@ -51,6 +54,26 @@ public class BulletsDirection : MonoBehaviour
         //Debug.Log(hitRight + " hit Right");
         //Debug.Log(hitUp + " hit Up");
         //Debug.Log(hitDown + " hit Down");
+        lastCheckTime += Time.deltaTime;
+
+        // Check if the time since the last check is greater than the interval
+        if (lastCheckTime <= directionCheckInterval)
+        {
+            // Check the direction condition
+            if (GetComponent<Projectile>().Direction.x < 0 && facingRight && !hasExecutedTheDirectionCheck && hangingShoot && Mathf.Abs(GetComponent<Projectile>().Direction.y) < directionCheckThreshold)
+            {
+                GetComponent<SpriteRenderer>().flipY = true;
+                hasExecutedTheDirectionCheck = true;
+                Debug.Log("here1");
+            }
+
+            if (GetComponent<Projectile>().Direction.x > 0 && !facingRight && !hasExecutedTheDirectionCheck && hangingShoot && Mathf.Abs(GetComponent<Projectile>().Direction.y) < directionCheckThreshold)
+            {
+                GetComponent<SpriteRenderer>().flipY = true;
+                hasExecutedTheDirectionCheck = true;
+                Debug.Log("here2");
+            }
+        }
     }
 
     public void OnEnable()
@@ -62,6 +85,8 @@ public class BulletsDirection : MonoBehaviour
         bottomWall = false;
         closeToTwoWalls = false;
         hangingShoot = false;
+        hasExecutedTheDirectionCheck = false;
+        lastCheckTime = 0f;
 
         if (thePlayer != null)
         {
@@ -118,7 +143,9 @@ public class BulletsDirection : MonoBehaviour
 
     public void OnDisable()
     {
+        GetComponent<SpriteRenderer>().flipY = false;
         hasCheckedDirection = true;
+        lastCheckTime = 0f;
         if (!isMovingDown && !isMovingUp && !isMovingLeft && !isMovingRight)
         {
             cantCalculate = true;

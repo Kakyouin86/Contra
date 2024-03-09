@@ -396,3 +396,7 @@ MonoBehaviour:
   bottomWall: 0
   closeToTwoWalls: 0
   hangingShoot: 0
+  hasExecutedTheDirectionCheck: 0
+  lastCheckTime: 0
+  directionCheckInterval: 0.01
+  directionCheckThreshold: 0.8

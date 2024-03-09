@@ -16,14 +16,14 @@ TagManager:
   - UpgradedWeapon
   - NormalWeapon
   - Arista
-  - Inventory
+  - InventoryPlayer1
   - Water
-  - WeaponInventory
+  - WeaponInventoryPlayer1
   - FlameGunLights
   - PlayerSprites
   - Firepoint
   - HorizontalLadder
-  - UI
+  - UIPlayer1
   - Torso
   - LadderCollider
   - WeaponAim

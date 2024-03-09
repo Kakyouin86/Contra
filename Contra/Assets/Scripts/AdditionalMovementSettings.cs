@@ -14,7 +14,7 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
     public Character character;
     public CharacterHorizontalMovement horizontalMovementCorgi;
     public CorgiController theController;
-    public InputManager theInputManager;
+    // public InputManager theInputManager;
     public CharacterHandleWeapon theCharacterHandleWeapon;
     public SpecialShootAndRaycastVisualization theSpecialShootAndRaycastVisualization;
     public Animator theAnimator;
@@ -56,26 +56,23 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
     void Start()
     {
         horizontalMovementCorgi = GetComponent<CharacterHorizontalMovement>();
-        theInputManager = FindObjectOfType<InputManager>();
+        // theInputManager = FindObjectOfType<InputManager>();
         theCharacterHandleWeapon = GetComponent<CharacterHandleWeapon>();
         theSpecialShootAndRaycastVisualization = GetComponent<SpecialShootAndRaycastVisualization>();
         character = GetComponent<Character>();
-        theFirepoint = GameObject.FindWithTag("Firepoint");
-        slopesDetector = GameObject.FindWithTag("SlopesDetector");
-        theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>();
+        // theFirepoint = GameObject.FindWithTag("Firepoint"); This is the 1 player version. The next line is the 2 players version.
+        // slopesDetector = GameObject.FindWithTag("SlopesDetector"); This is the 1 player version. The next line is the 2 players version.
+        // theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>(); This is the 1 player version. The next line is the 2 players version.
         theOverridesInAnimator = GetComponent<OverridesInAnimator>();
         theBCTrigger = GetComponent<BoxCollider2D>();
         theController.State.JustGotGrounded = true;
         //weaponAim = GameObject.FindWithTag("WeaponAim").GetComponent<WeaponAim>();
         theOriginalBoxCollider2DSize = new Vector3(theBCTrigger.size.x, theBCTrigger.size.y);
         theOriginalBoxCollider2DOffset = new Vector3(theBCTrigger.offset.x, theBCTrigger.offset.y);
-        //originalRollDuration = GetComponent<CharacterRoll>().RollDuration;
-        //theTorso.GetComponent<FlashSprites>().totalFlickerDuration = originalRollDuration;
-        //theLegs.GetComponent<FlashSprites>().totalFlickerDuration = originalRollDuration;
-        theTorso = GameObject.FindWithTag("Torso");
-        theLegs = GameObject.FindWithTag("Legs");
-        theTorsoMachineGunLights = GameObject.FindWithTag("MachineGunLights");
-        theTorsoFlameGunLights = GameObject.FindWithTag("FlameGunLights");
+        // theTorso = GameObject.FindWithTag("Torso"); This is the 1 player version. The next line is the 2 players version.
+        // theLegs = GameObject.FindWithTag("Legs"); This is the 1 player version. The next line is the 2 players version.
+        // theTorsoMachineGunLights = GameObject.FindWithTag("MachineGunLights"); This is the 1 player version. The next line is the 2 players version.
+        // theTorsoFlameGunLights = GameObject.FindWithTag("FlameGunLights"); This is the 1 player version. The next line is the 2 players version.
         originalMaterial = theTorso.GetComponent<SpriteRenderer>().material;
     }
 
@@ -101,6 +98,7 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
             //theTorso.GetComponent<SpriteRenderer>().enabled = false;
             Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Projectiles"), true);
             Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemies"), true);
+            theSpecialShootAndRaycastVisualization.canShoot = false;
         }
         else
         {
@@ -120,11 +118,24 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
             characterDead = false;
 
             StartCoroutine(DeathColliders());
-            GameObject grenades = GameObject.FindGameObjectWithTag("Grenade");
+            // GameObject grenades = GameObject.FindGameObjectWithTag("Grenade"); This is the 1 player version. The next line is the 2 players version.
+
+            // Find the GameObject with the "Grenade" tag among the children of theFirepoint
+            GameObject grenades = null;
+            foreach (Transform child in theFirepoint.transform)
+            {
+                if (child.CompareTag("Grenade"))
+                {
+                    // Assign the GameObject with the "Grenade" tag to the variable grenade
+                    grenades = child.gameObject;
+                    // Exit the loop once found
+                    break;
+                }
+            }
 
             if (grenades != null)
             {
-                Inventory theInventory = GameObject.FindWithTag("Inventory").GetComponent<Inventory>();
+                Inventory theInventory = GameObject.FindWithTag("InventoryPlayer1").GetComponent<Inventory>();
                 int grenadeCount = 0;
                 int occupiedSlotsCount = 0;
 
@@ -154,7 +165,7 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
                         }
                     }
                     // Instantiate appropriate filler based on UI state
-                    UIAndUpgradesController theUIAndUpgradesController = GameObject.FindGameObjectWithTag("UI").GetComponent<UIAndUpgradesController>();
+                    UIAndUpgradesController theUIAndUpgradesController = GameObject.FindGameObjectWithTag("UIPlayer1").GetComponent<UIAndUpgradesController>();
                     if (theUIAndUpgradesController != null && !theUIAndUpgradesController.grenadePlus)
                     {
                         Instantiate(grenadesFillerRegular, transform.position, transform.rotation);

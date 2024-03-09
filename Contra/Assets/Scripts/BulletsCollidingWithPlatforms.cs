@@ -1,5 +1,6 @@
 using System.Linq.Expressions;
 using MoreMountains.CorgiEngine;
+using Rewired;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -44,20 +45,23 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = true;
     }
 
+
     public void OnDisable()
     {
         GetComponent<SpriteRenderer>().sprite = null;
     }
 
+    public void Start()
+    {
+        //weaponAim = GameObject.FindWithTag("Firepoint").GetComponentInChildren<WeaponAim>(); This is the 1 player version. The next line is the 2 players version.
+        //thePlayer = GameObject.FindWithTag("Player"); This is the 1 player version. The next line is the 2 players version.
+        weaponAim = GetComponent<Projectile>().GetOwner().GetComponentInChildren<WeaponAim>(); // Since we calculate here the distance to the player, it's the same if it detects the Grenades or the gun.
+        thePlayer = GetComponent<Projectile>().GetOwner().gameObject;
+    }
+
     public void Update()
     {
 
-    }
-
-    public void Start()
-    {
-        weaponAim = GameObject.FindWithTag("Firepoint").GetComponentInChildren<WeaponAim>();
-        thePlayer = GameObject.FindWithTag("Player");
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -269,10 +273,10 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                 }
             }
 
-            if (weaponAim == null)
+            /*if (weaponAim == null) This is the 1 player version. The next line is the 2 players version.
             {
                 weaponAim = GameObject.FindWithTag("Firepoint").GetComponentInChildren<WeaponAim>();
-            }
+            }*/
 
             distanceToPlayer = Vector3.Distance(transform.position, weaponAim.transform.position);
             if (distanceToPlayer > thresholdNotToShowBurstWater)
@@ -316,7 +320,8 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
 
                     if (weaponAim == null)
                     {
-                        weaponAim = GameObject.FindWithTag("Firepoint").GetComponentInChildren<WeaponAim>();
+                        //weaponAim = GameObject.FindWithTag("Firepoint").GetComponentInChildren<WeaponAim>(); This is the 1 player version. The next line is the 2 players version.
+                        weaponAim = GetComponent<Projectile>().GetOwner().GetComponentInChildren<WeaponAim>(); // Since we calculate here the distance to the player, it's the same if it detects the Grenades or the gun.
                     }
 
                     distanceToPlayer = Vector3.Distance(transform.position, weaponAim.transform.position);
@@ -541,9 +546,10 @@ public class BulletsCollidingWithPlatforms : MonoBehaviour
                 }
             }
 
-            if (weaponAim == null)
+            if (weaponAim == null) 
             {
-                weaponAim = GameObject.FindWithTag("Firepoint").GetComponentInChildren<WeaponAim>();
+                //weaponAim = GameObject.FindWithTag("Firepoint").GetComponentInChildren<WeaponAim>(); This is the 1 player version. The next line is the 2 players version.
+                weaponAim = GetComponent<Projectile>().GetOwner().GetComponentInChildren<WeaponAim>(); // Since we calculate here the distance to the player, it's the same if it detects the Grenades or the gun.
             }
 
             distanceToPlayer = Vector3.Distance(transform.position, weaponAim.transform.position);

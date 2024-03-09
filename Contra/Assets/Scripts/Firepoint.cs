@@ -3,6 +3,8 @@ using MoreMountains.InventoryEngine;
 using UnityEngine;
 using Rewired;
 using Rewired.ComponentControls.Data;
+using Unity.VisualScripting;
+using System.Collections.Generic;
 
 
 public class Firepoint : MonoBehaviour
@@ -42,7 +44,7 @@ public class Firepoint : MonoBehaviour
     }
     void Start()
     {
-        character = GameObject.FindWithTag("Player").GetComponent<Character>();
+        /*character = GameObject.FindWithTag("Player").GetComponent<Character>(); This is the 1 player version. The next line is the 2 players version.
         theFirepoint = GameObject.FindWithTag("Firepoint");
         theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>();
         weaponAim = GameObject.FindWithTag("WeaponAim").GetComponent<WeaponAim>();
@@ -50,7 +52,11 @@ public class Firepoint : MonoBehaviour
         originalWeaponAimRotSpeed = weaponAim.WeaponRotationSpeed;
         animationNames = Resources.LoadAll<AnimationClip>("Player Animations");
         weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventory").GetComponent<Inventory>();
-        theSpecialShootAndRaycastVisualization = GetComponent<SpecialShootAndRaycastVisualization>();
+        theSpecialShootAndRaycastVisualization = GetComponent<SpecialShootAndRaycastVisualization>();*/
+
+        animationNames = Resources.LoadAll<AnimationClip>("Player Animations");
+        weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventoryPlayer1").GetComponent<Inventory>();
+        
     }
 
     void Update()
@@ -898,7 +904,23 @@ public class Firepoint : MonoBehaviour
                 //This moves the Fire Burst or Smoke Particle Effect when playing some animations, so that it doesn't create the effect that the shot is way away from the burst.
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && (weaponInventory.Content[0].ItemName == "Machine Gun" || weaponInventory.Content[0].ItemName == "Super Machine Gun" || theSpecialShootAndRaycastVisualization.isShooting))
                 {
-                    theFireIndicator = GameObject.FindWithTag("FireIndicator");
+                    //theFireIndicator = GameObject.FindWithTag("FireIndicator"); This is the 1 player version. The next line is the 2 players version.
+                    // Initialize theFireIndicator
+                    GameObject theFireIndicator = null;
+
+                    // Get all children of weaponAim
+                    Transform weaponAimTransform = weaponAim.transform;
+                    foreach (Transform child in weaponAimTransform)
+                    {
+                        // Check if the child has the tag "FireIndicator"
+                        if (child.CompareTag("FireIndicator"))
+                        {
+                            // If found, assign it to theFireIndicator and break the loop
+                            theFireIndicator = child.gameObject;
+                            break;
+                        }
+                    }
+
                     if ((animationNames.name == "Shoot Diagonal Up Walking") || (animationNames.name == "Torso Walking Diagonal Up"))
                     {
                         theFireIndicator.transform.localPosition = new Vector3(0.29f, 0.08f, 0.0f);
@@ -918,7 +940,23 @@ public class Firepoint : MonoBehaviour
                 // Edits in the Fire Indicator
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Flame Gun") || (weaponInventory.Content[0].ItemName == "Super Flame Gun")))
                 {
-                    theSmokeIndicator = GameObject.FindWithTag("SmokeIndicator");
+                    //theSmokeIndicator = GameObject.FindWithTag("SmokeIndicator"); This is the 1 player version. The next line is the 2 players version.
+                    // Initialize theSmokeIndicator
+                    GameObject theSmokeIndicator = null;
+
+                    // Get all children of weaponAim
+                    Transform weaponAimTransform = weaponAim.transform;
+                    foreach (Transform child in weaponAimTransform)
+                    {
+                        // Check if the child has the tag "theSmokeIndicator"
+                        if (child.CompareTag("SmokeIndicator"))
+                        {
+                            // If found, assign it to theSmokeIndicator and break the loop
+                            theSmokeIndicator = child.gameObject;
+                            break;
+                        }
+                    }
+
                     if (theSmokeIndicator != null)
                     {
                         if (((animationNames.name == "Hold Up") || (animationNames.name == "Shoot Up")))
@@ -1025,7 +1063,26 @@ public class Firepoint : MonoBehaviour
                 // Edits in the Ray Indicator
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Ray Gun") || (weaponInventory.Content[0].ItemName == "Super Ray Gun")))
                 {
-                    theRayIndicator = GameObject.FindGameObjectsWithTag("RayIndicator");
+                    //theRayIndicator = GameObject.FindGameObjectsWithTag("RayIndicator"); This is the 1 player version. The next line is the 2 players version.
+                    // Get all children of weaponAim
+                    Transform weaponAimTransformRayIndicator = weaponAim.transform;
+
+                    // List to store found GameObjects with the tag "RayIndicator"
+                    List<GameObject> rayIndicatorList = new List<GameObject>();
+
+                    foreach (Transform child in weaponAimTransformRayIndicator)
+                    {
+                        // Check if the child has the tag "RayIndicator"
+                        if (child.CompareTag("RayIndicator"))
+                        {
+                            // If found, add it to the list
+                            rayIndicatorList.Add(child.gameObject);
+                        }
+                    }
+
+                    // Convert the list to an array
+                    theRayIndicator = rayIndicatorList.ToArray();
+
                     foreach (var rayIndicator in theRayIndicator)
                     {
                         foreach (var weapon in weaponInventory.Content)
@@ -1058,7 +1115,26 @@ public class Firepoint : MonoBehaviour
                         }
                     }
 
-                    sparks = GameObject.FindGameObjectsWithTag("Spark");
+                    //sparks = GameObject.FindGameObjectsWithTag("Spark"); This is the 1 player version. The next line is the 2 players version.
+                    // Get all children of weaponAim
+                    Transform weaponAimTransformSpark = weaponAim.transform;
+
+                    // List to store found GameObjects with the tag "Spark"
+                    List<GameObject> sparkList = new List<GameObject>();
+
+                    foreach (Transform child in weaponAimTransformSpark)
+                    {
+                        // Check if the child has the tag "Spark"
+                        if (child.CompareTag("Spark"))
+                        {
+                            // If found, add it to the list
+                            sparkList.Add(child.gameObject);
+                        }
+                    }
+
+                    // Convert the list to an array
+                    sparks = sparkList.ToArray();
+
                     if (animationNames.name == "Horizontal Ladder")
                     {
                         foreach (var spark in sparks)

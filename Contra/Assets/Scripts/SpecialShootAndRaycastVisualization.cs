@@ -28,7 +28,7 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
     public Player player;
     public GameObject theSpecialShot;
     public GameObject theSpecialShotInstantiated;
-    private Weapon _weapon;
+    public Weapon _weapon;
     private Vector3 _direction;
     private LineRenderer _line;
     private RaycastHit2D _hit;
@@ -37,6 +37,8 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
     private Vector3 _laserOffset;
     private Vector3 _weaponPosition;
     private Quaternion _weaponRotation;
+    public GameObject theFirepoint;
+    public Animator theAnimator;
 
     public void Awake()
     {
@@ -55,7 +57,24 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
     
     public void Update()
     {
-        _weapon = GameObject.FindGameObjectWithTag("WeaponAim").GetComponent<Weapon>();
+        theFirepoint = transform.Find("Firepoint").gameObject;
+        //_weapon = GameObject.FindGameObjectWithTag("WeaponAim").GetComponent<Weapon>(); This is the 1 player version. The next line is the 2 players version.
+        // Get the transform of theFirepoint's GameObject
+        Transform firepointTransform = theFirepoint.transform;
+
+        // Iterate through each child of theFirepoint
+        foreach (Transform child in firepointTransform)
+        {
+            // Check if the child has the "WeaponAim" tag
+            if (child.CompareTag("WeaponAim"))
+            {
+                // Get the Weapon component from the child
+                _weapon = child.GetComponentInChildren<Weapon>();
+                // Exit the loop once found
+                break;
+            }
+        }
+
         ShootLaser();
 
         if (isShooting)
@@ -74,12 +93,37 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
         {
             // Set isShooting to true
             isShooting = true;
-            Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
+            //Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>(); This is the 1 player version. The next line is the 2 players version.
+            // Get the transform of the current GameObject
+            Transform currentTransform = transform;
+
+            // Iterate through each child of the current GameObject
+            foreach (Transform child in currentTransform)
+            {
+                // Check if the child has the "PlayerSprites" tag
+                if (child.CompareTag("PlayerSprites"))
+                {
+                    // Get the Animator component from the child
+                    theAnimator = child.GetComponent<Animator>();
+                    // Exit the loop once found
+                    break;
+                }
+            }
+
             theAnimator.SetBool("isShootingSpecialShot", true);
             AdditionalCharacterHandleWeaponOverride theAdditionalCharacterHandleWeaponOverride = GetComponent<AdditionalCharacterHandleWeaponOverride>();
             theAdditionalCharacterHandleWeaponOverride.AbilityPermitted = false;
-            SpecialShootController theSpecialShootController = GameObject.FindGameObjectWithTag("UI").GetComponent<SpecialShootController>();
-            theSpecialShootController.ShootSpecialShot();
+            //SpecialShootController theSpecialShootController = GameObject.FindGameObjectWithTag("UI").GetComponent<SpecialShootController>(); This is the 1 player version. The next line is the 2 players version.
+            if (GetComponent<Character>().PlayerID == "Player1")
+            { 
+                SpecialShootController theSpecialShootController = GameObject.FindGameObjectWithTag("UIPlayer1").GetComponent<SpecialShootController>();
+                theSpecialShootController.ShootSpecialShot();
+            }
+            if (GetComponent<Character>().PlayerID == "Player2")
+            {
+                SpecialShootController theSpecialShootController = GameObject.FindGameObjectWithTag("UIPlayer2").GetComponent<SpecialShootController>();
+                theSpecialShootController.ShootSpecialShot();
+            }
 
             _weapon.WeaponInputStop();
             _weapon.TurnWeaponOff();
@@ -119,7 +163,23 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
         // Animation is done, reset the timer and set isShooting to false
         currentTimer = 0.0f;
         isShooting = false;
-        Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
+        //Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>(); This is the 1 player version. The next line is the 2 players version.
+        // Get the transform of the current GameObject
+        Transform currentTransform = transform;
+
+        // Iterate through each child of the current GameObject
+        foreach (Transform child in currentTransform)
+        {
+            // Check if the child has the "PlayerSprites" tag
+            if (child.CompareTag("PlayerSprites"))
+            {
+                // Get the Animator component from the child
+                theAnimator = child.GetComponent<Animator>();
+                // Exit the loop once found
+                break;
+            }
+        }
+
         theAnimator.SetBool("isShootingSpecialShot", false);
         AdditionalCharacterHandleWeaponOverride theAdditionalCharacterHandleWeaponOverride = GetComponent<AdditionalCharacterHandleWeaponOverride>();
         theAdditionalCharacterHandleWeaponOverride.AbilityPermitted = true;

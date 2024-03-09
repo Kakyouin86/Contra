@@ -38,7 +38,7 @@ public class ItemMessageToUI : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 
     void Start()
     {
-        theUIController = GameObject.FindWithTag("UI").GetComponent<UIAndUpgradesController>();
+        theUIController = GameObject.FindWithTag("UIPlayer1").GetComponent<UIAndUpgradesController>();
     }
 
     public void OnTriggerEnter2D(Collider2D collider)

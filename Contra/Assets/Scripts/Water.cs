@@ -61,7 +61,7 @@ public class Water : MonoBehaviour, MMEventListener<CorgiEngineEvent>
         characterHorizontalMovement = GetComponentInParent<CharacterHorizontalMovement>();
         characterCrouch = GetComponentInParent<CharacterCrouch>();
         characterRoll = GetComponentInParent<CharacterRoll>();
-        theUIController = GameObject.FindWithTag("UI").GetComponent<UIAndUpgradesController>();
+        theUIController = GameObject.FindWithTag("UIPlayer1").GetComponent<UIAndUpgradesController>();
         character = GameObject.FindWithTag("Player").GetComponent<Character>();
     }
 
@@ -98,9 +98,8 @@ public class Water : MonoBehaviour, MMEventListener<CorgiEngineEvent>
         GetComponent<BoxCollider2D>().enabled = true;
         runFirstBoxColliderOff = true;
     }
-
-
-    void OnTriggerEnter2D(Collider2D other)
+    
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Water"))
         {
@@ -110,7 +109,7 @@ public class Water : MonoBehaviour, MMEventListener<CorgiEngineEvent>
             characterCrouch.AbilityPermitted = false;
             characterRoll.AbilityPermitted = false;
             theLegs.SetActive(false);
-            // theRippleEffect.SetActive(true);
+            theRippleEffect.SetActive(true);
             thePosition = new Vector3(transform.position.x, transform.position.y, other.transform.position.z);
             Instantiate(theSplashIntoTheWater, new Vector3(thePosition.x, other.transform.position.y + yOffsetIntoTheWater.y), transform.rotation);
         }
@@ -123,7 +122,7 @@ public class Water : MonoBehaviour, MMEventListener<CorgiEngineEvent>
         characterHorizontalMovement.AbilityMovementSpeedMultiplier = 1f;
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    public void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Water"))
         {
@@ -142,5 +141,16 @@ public class Water : MonoBehaviour, MMEventListener<CorgiEngineEvent>
                 Instantiate(theSplashOutOfTheWater, new Vector3(thePosition.x, other.transform.position.y + yOffsetOutOfTheWater.y), transform.rotation);
             }
         }
+    }
+
+    public void ActivateRippleEffect()
+    {
+        theRippleEffect.SetActive(true);
+    }
+
+    public void DeactivateRippleEffect()
+    {
+        theRippleEffect.SetActive(false);
+        theLegs.SetActive(true);
     }
 }

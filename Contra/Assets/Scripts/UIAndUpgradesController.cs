@@ -74,9 +74,25 @@ public class UIAndUpgradesController : MonoBehaviour, MMEventListener<CorgiEngin
     
     void Start()
     {
-        theInventory = GameObject.FindWithTag("Inventory").GetComponent<Inventory>();
-        theWeaponInventory = GameObject.FindWithTag("WeaponInventory").GetComponent<Inventory>();
-        thePlayer = GameObject.FindWithTag("Player").GetComponent<ToggleWeapons>();
+        theInventory = GameObject.FindWithTag("InventoryPlayer1").GetComponent<Inventory>();
+        theWeaponInventory = GameObject.FindWithTag("WeaponInventoryPlayer1").GetComponent<Inventory>();
+        // thePlayer = GameObject.FindWithTag("Player").GetComponent<ToggleWeapons>(); This is the 1 player version. The next line is the 2 players version.
+        // Find all GameObjects with the Character component
+        Character[] characters = FindObjectsOfType<Character>();
+
+        // Iterate through each Character
+        foreach (Character character in characters)
+        {
+            // Check if the PlayerID is 1
+            if (character.PlayerID == "Player1")
+            {
+                // Assign the GameObject to thePlayer
+                thePlayer = character.gameObject.GetComponent<ToggleWeapons>();
+                // Exit the loop once found
+                break;
+            }
+        }
+
         avatarPlayer1.enabled = true;
         originalColorAvatar = avatarPlayer1.color;
         theUIImagePlayer1.enabled = true;
