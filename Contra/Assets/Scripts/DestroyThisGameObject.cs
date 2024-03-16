@@ -1,7 +1,4 @@
 using UnityEngine;
-using System.Collections;
-using System.Security.Cryptography;
-using MoreMountains.Tools;
 
 public class DestroyThisGameObject : MonoBehaviour
 {

@@ -1035,6 +1035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -1765,6 +1766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -6322,6 +6324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a43a75079a276c2488621adb3d614f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer1: 0
   theSplashIntoTheWater: {fileID: 8782833224382486425, guid: 6fb05ac085f56fd41acb6432f09aee63,
     type: 3}
   theSplashOutOfTheWater: {fileID: 1454880666250781191, guid: a54d51495ea486f458a13eea069b73af,
@@ -7593,6 +7596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -8114,6 +8118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -8293,6 +8298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -9481,6 +9487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -10370,6 +10377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -11304,6 +11312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -11783,6 +11792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -11988,7 +11998,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1628607475
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300004, guid: 9e09c275635a1704f8c95be03fc36589, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12560,6 +12570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -14649,6 +14660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -14828,6 +14840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -15996,6 +16009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 0
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -16332,6 +16346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cole: 1
   Regina: 0
+  isPlayer1: 0
   character: {fileID: 0}
   horizontalMovementCorgi: {fileID: 0}
   theController: {fileID: 1038294698}
@@ -16341,6 +16356,8 @@ MonoBehaviour:
   theFirepoint: {fileID: 1724734280}
   weaponAim: {fileID: 0}
   theOverridesInAnimator: {fileID: 0}
+  theInventory: {fileID: 0}
+  theUIAndUpgradesController: {fileID: 0}
   horizontalLadder: 0
   verticalLadder: 0
   canNotDettach: 0
@@ -16514,6 +16531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1254fbe2aa1ca9847a2df8249cdd5df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer1: 0
   character: {fileID: 1038294701}
   theFirepoint: {fileID: 1724734280}
   theAnimator: {fileID: 1448508891}
@@ -16660,6 +16678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e189f28ca335d148ad757d32d0ac8a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer1: 0
   machineGun: 0
   flameGun: 0
   rayGun: 0
@@ -21235,6 +21254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -24199,7 +24219,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1628607475
   m_SortingLayer: 2
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1041813112, guid: 862e8412687267f4f9872527305bfa28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -24953,6 +24973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -26473,6 +26494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -26844,6 +26866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -28261,6 +28284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -28471,6 +28495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -28820,6 +28845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -30189,6 +30215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -30842,6 +30869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -32549,6 +32577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -32728,6 +32757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0
@@ -33152,6 +33182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 1
   CurrentHealth: 0
   TemporarilyInvulnerable: 0

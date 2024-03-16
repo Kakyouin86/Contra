@@ -10,6 +10,7 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
 {
     public bool Cole;
     public bool Regina;
+    public bool isPlayer1;
     public Player player;
     public Character character;
     public CharacterHorizontalMovement horizontalMovementCorgi;
@@ -21,6 +22,8 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
     public GameObject theFirepoint;
     public WeaponAim weaponAim;
     public OverridesInAnimator theOverridesInAnimator;
+    public Inventory theInventory;
+    public UIAndUpgradesController theUIAndUpgradesController;
     public bool horizontalLadder = false;
     public bool verticalLadder = false;
     public bool canNotDettach = false;
@@ -74,6 +77,18 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
         // theTorsoMachineGunLights = GameObject.FindWithTag("MachineGunLights"); This is the 1 player version. The next line is the 2 players version.
         // theTorsoFlameGunLights = GameObject.FindWithTag("FlameGunLights"); This is the 1 player version. The next line is the 2 players version.
         originalMaterial = theTorso.GetComponent<SpriteRenderer>().material;
+        if (character != null && character.PlayerID == "Player1")
+        {
+            isPlayer1 = true;
+            theInventory = GameObject.FindWithTag("InventoryPlayer1").GetComponent<Inventory>();
+            theUIAndUpgradesController = GameObject.FindGameObjectWithTag("UIPlayer1").GetComponent<UIAndUpgradesController>();
+        }
+        else
+        {
+            isPlayer1 = false;
+            theInventory = GameObject.FindWithTag("InventoryPlayer2").GetComponent<Inventory>();
+            theUIAndUpgradesController = GameObject.FindGameObjectWithTag("UIPlayer2").GetComponent<UIAndUpgradesController>();
+        }
     }
 
     protected virtual void OnEnable()
@@ -135,7 +150,6 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
 
             if (grenades != null)
             {
-                Inventory theInventory = GameObject.FindWithTag("InventoryPlayer1").GetComponent<Inventory>();
                 int grenadeCount = 0;
                 int occupiedSlotsCount = 0;
 
@@ -165,7 +179,6 @@ public class AdditionalMovementSettings : MonoBehaviour, MMEventListener<CorgiEn
                         }
                     }
                     // Instantiate appropriate filler based on UI state
-                    UIAndUpgradesController theUIAndUpgradesController = GameObject.FindGameObjectWithTag("UIPlayer1").GetComponent<UIAndUpgradesController>();
                     if (theUIAndUpgradesController != null && !theUIAndUpgradesController.grenadePlus)
                     {
                         Instantiate(grenadesFillerRegular, transform.position, transform.rotation);

@@ -18,6 +18,7 @@ public class Firepoint : MonoBehaviour
     // After changing all Firepoints:
     // x offset 0f / y offset = 1.634014f
     // x size: 1f / y size: 2.53229f
+    public bool isPlayer1;
     public Player player;
     public Character character;
     public GameObject theFirepoint;
@@ -53,10 +54,18 @@ public class Firepoint : MonoBehaviour
         animationNames = Resources.LoadAll<AnimationClip>("Player Animations");
         weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventory").GetComponent<Inventory>();
         theSpecialShootAndRaycastVisualization = GetComponent<SpecialShootAndRaycastVisualization>();*/
-
-        animationNames = Resources.LoadAll<AnimationClip>("Player Animations");
-        weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventoryPlayer1").GetComponent<Inventory>();
-        
+        if (character != null && character.PlayerID == "Player1")
+        {
+            isPlayer1 = true;
+            animationNames = Resources.LoadAll<AnimationClip>("Player Animations");
+            weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventoryPlayer1").GetComponent<Inventory>();
+        }
+        else
+        {
+            isPlayer1 = false;
+            animationNames = Resources.LoadAll<AnimationClip>("Player Animations");
+            weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventoryPlayer2").GetComponent<Inventory>();
+        }
     }
 
     void Update()
@@ -940,7 +949,8 @@ public class Firepoint : MonoBehaviour
                 // Edits in the Fire Indicator
                 if (weaponInventory.Content.Length > 0 && weaponInventory.Content[0] != null && ((weaponInventory.Content[0].ItemName == "Flame Gun") || (weaponInventory.Content[0].ItemName == "Super Flame Gun")))
                 {
-                    //theSmokeIndicator = GameObject.FindWithTag("SmokeIndicator"); This is the 1 player version. The next line is the 2 players version.
+                    //theSmokeIndicator = GameObject.FindWith
+                    //SmokeIndicator"); This is the 1 player version. The next line is the 2 players version.
                     // Initialize theSmokeIndicator
                     GameObject theSmokeIndicator = null;
 

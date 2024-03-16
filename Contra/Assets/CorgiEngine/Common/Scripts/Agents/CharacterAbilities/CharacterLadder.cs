@@ -77,7 +77,18 @@ namespace MoreMountains.CorgiEngine
 			base.Initialization();
 			CurrentLadderClimbingSpeed = Vector2.zero;
             //_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>(); //Leo Monge: Need to ALWAYS bring it after update.
-            GameObject ladderColliderObject = GameObject.FindGameObjectWithTag("LadderCollider"); //Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only.
+            // GameObject ladderColliderObject = GameObject.FindGameObjectWithTag("LadderCollider"); This is the 1 player version. The next line is the 2 players version. //Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only.
+
+            GameObject ladderColliderObject = null;
+            foreach (Transform child in transform)
+            {
+                if (child.CompareTag("LadderCollider"))
+                {
+                    ladderColliderObject = child.gameObject;
+                    break;
+                }
+            }
+
             if (ladderColliderObject != null) //Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only
             {
                 _boxCollider = ladderColliderObject.GetComponent<BoxCollider2D>(); //Leo Monge: Need to ALWAYS bring it after update. This adds the collider of the Ladder Collider only.

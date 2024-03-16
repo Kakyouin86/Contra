@@ -4,6 +4,8 @@ using MoreMountains.Tools;
 using MoreMountains.InventoryEngine;
 using System.Collections.Generic;
 using Rewired;
+using static PlasticGui.LaunchDiffParameters;
+using System;
 
 namespace MoreMountains.CorgiEngine
 {
@@ -201,7 +203,8 @@ namespace MoreMountains.CorgiEngine
                     }
                 }
 
-                Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
+                //Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>(); This is the 1 player version. The next line is the 2 players version.
+                Animator theAnimator = transform.GetChild(0).GetComponent<Animator>();
                 theAnimator.SetBool("DelayForSwitchingGuns", true);
                 SwitchWeapon();
                 StartCoroutine(DelayAnimations());
@@ -220,7 +223,8 @@ namespace MoreMountains.CorgiEngine
                     }
                 }
 
-                Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
+                //Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>(); This is the 1 player version. The next line is the 2 players version.
+                Animator theAnimator = transform.GetChild(0).GetComponent<Animator>();
                 theAnimator.SetBool("DelayForSwitchingGuns", true);
                 SwitchWeaponForward();
                 StartCoroutine(DelayAnimations());
@@ -229,7 +233,8 @@ namespace MoreMountains.CorgiEngine
         IEnumerator DelayAnimations() //Leo Monge: Need to ALWAYS bring it after update. This will make a short delay when switching weapons. It's for the animator.
         {
             yield return new WaitForSeconds(0.09f);
-            Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
+            //Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>(); This is the 1 player version. The next line is the 2 players version.
+            Animator theAnimator = transform.GetChild(0).GetComponent<Animator>();
             theAnimator.SetBool("DelayForSwitchingGuns", false);
         }
 

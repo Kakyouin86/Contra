@@ -2,9 +2,14 @@ using System.Buffers;
 using MoreMountains.CorgiEngine;
 using MoreMountains.InventoryEngine;
 using Rewired;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
+using Character = MoreMountains.CorgiEngine.Character;
+
 public class OverridesInAnimator : MonoBehaviour
 {
+    public bool isPlayer1;
     public bool machineGun;
     public bool flameGun;
     public bool rayGun;
@@ -28,10 +33,36 @@ public class OverridesInAnimator : MonoBehaviour
 
     void Start()
     {
-        theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
+        // theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>(); This is the 1 player version. The next line is the 2 players version.
+        // animationNames = Resources.LoadAll<AnimationClip>("Player Animations"); This is the 1 player version. The next line is the 2 players version.
+        // weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventoryPlayer1").GetComponent<Inventory>(); This is the 1 player version. The next line is the 2 players version.
+        // theCharacterHandleWeapon = GameObject.FindGameObjectWithTag("Player")?.GetComponent<CharacterHandleWeapon>(); This is the 1 player version. The next line is the 2 players version.
+
+        foreach (Transform child in transform)
+        {
+            if (child.CompareTag("PlayerSprites"))
+            {
+                theAnimator = child.gameObject.GetComponent<Animator>();
+                break;
+            }
+        }
+
         animationNames = Resources.LoadAll<AnimationClip>("Player Animations");
-        weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventoryPlayer1").GetComponent<Inventory>();
-        theCharacterHandleWeapon = GameObject.FindGameObjectWithTag("Player")?.GetComponent<CharacterHandleWeapon>();
+
+        if (GetComponent<Character>() != null && GetComponent<Character>().PlayerID == "Player1")
+        {
+            isPlayer1 = true;
+            animationNames = Resources.LoadAll<AnimationClip>("Player Animations");
+            weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventoryPlayer1").GetComponent<Inventory>();
+        }
+        else
+        {
+            isPlayer1 = false;
+            animationNames = Resources.LoadAll<AnimationClip>("Player Animations");
+            weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventoryPlayer2").GetComponent<Inventory>();
+        }
+
+        theCharacterHandleWeapon = GetComponent<CharacterHandleWeapon>();
     }
 
     void Update()
@@ -98,7 +129,19 @@ public class OverridesInAnimator : MonoBehaviour
                     ////timerBeforeNextAnim = theAnimator.GetBool("TimerBeforeNextAnim");
                     //theAnimator.SetBool("Mirror", timerBeforeNextAnim);
                 }
-                theChargeWeapon = GameObject.FindWithTag("WeaponAim").GetComponent<ChargeWeapon>();
+                //theChargeWeapon = GameObject.FindWithTag("WeaponAim").GetComponent<ChargeWeapon>(); This is the 1 player version. The next line is the 2 players version.
+
+                foreach (Transform child in transform)
+                {
+                    if (child.CompareTag("WeaponAim"))
+                    {
+                        // Assign the GameObject with the "Grenade" tag to the variable grenade
+                        theChargeWeapon = child.gameObject.GetComponent<ChargeWeapon>();
+                        // Exit the loop once found
+                        break;
+                    }
+                }
+
                 if (theChargeWeapon != null && theChargeWeapon.Charging)
                 {
                     theAnimator.SetBool("Charging", true);

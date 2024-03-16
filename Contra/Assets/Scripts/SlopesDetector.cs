@@ -9,8 +9,6 @@ public class SlopesDetector : MonoBehaviour
     void Start()
     {
         character = GetComponentInParent<Character>();
-        //theAnimator = GetComponentInParent<Animator>();
-        //theController = FindObjectOfType<MoreMountains.CorgiEngine.CorgiController>();
         theController = GetComponentInParent<CorgiController>();
     }
 

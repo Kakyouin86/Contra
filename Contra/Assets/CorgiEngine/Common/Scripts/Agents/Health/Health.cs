@@ -54,6 +54,7 @@ namespace MoreMountains.CorgiEngine
     public class Health : MMMonoBehaviour, MMEventListener<HealthDeathEvent>
     {
         [MMInspectorGroup("Status", true, 1)]
+        public Color initialColor; //Leo Monge: Need to ALWAYS bring it after update. 
         public bool
             shouldHaveRedFlicker =
                 true; //Leo Monge: Need to ALWAYS bring it after update. This avoids unusual flickering of things that should not flicker by any mean. Need to remember to disable this in characters and bullets.
@@ -266,6 +267,10 @@ namespace MoreMountains.CorgiEngine
             Initialization();
             InitializeSpriteColor();
             InitializeCurrentHealth();
+            if (_renderer != null && _renderer.material != null && initialColor != null) //Leo Monge: Need to ALWAYS bring it after update. 
+            {
+                initialColor = _renderer.material.color;
+            }
         }
 
         /// <summary>
@@ -514,6 +519,11 @@ namespace MoreMountains.CorgiEngine
             if (CurrentHealth < 0)
             {
                 CurrentHealth = 0;
+
+                if (_renderer != null && _renderer.material != null && initialColor != null) //Leo Monge: Need to ALWAYS bring it after update.
+                {
+                    _renderer.material.color = initialColor; //Leo Monge: Need to ALWAYS bring it after update.
+                }
             }
 
             // we prevent the character from colliding with Projectiles, Player and Enemies
@@ -1211,7 +1221,7 @@ namespace MoreMountains.CorgiEngine
             if (_renderer != null)
             {
                 // Store the initial color if _renderer.material is not null
-                Color initialColor = _renderer.material != null ? _renderer.material.color : Color.white;
+                //Color initialColor = _renderer.material != null ? _renderer.material.color : Color.white;
 
                 for (int i = 0; i < numberOfFlickers; i++)
                 {

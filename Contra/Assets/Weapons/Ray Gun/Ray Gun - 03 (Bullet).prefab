@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
   shouldHaveRedFlicker: 0
   CurrentHealth: 10
   TemporarilyInvulnerable: 0

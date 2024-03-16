@@ -6,6 +6,7 @@ using Character = MoreMountains.CorgiEngine.Character;
 
 public class Water : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
+    public bool isPlayer1;
     public GameObject theSplashIntoTheWater;
     public GameObject theSplashOutOfTheWater;
     public Vector3 thePosition;
@@ -56,16 +57,25 @@ public class Water : MonoBehaviour, MMEventListener<CorgiEngineEvent>
         }
     }
 
-    void Start()
+    public void Start()
     {
         characterHorizontalMovement = GetComponentInParent<CharacterHorizontalMovement>();
         characterCrouch = GetComponentInParent<CharacterCrouch>();
         characterRoll = GetComponentInParent<CharacterRoll>();
-        theUIController = GameObject.FindWithTag("UIPlayer1").GetComponent<UIAndUpgradesController>();
-        character = GameObject.FindWithTag("Player").GetComponent<Character>();
+        character = GetComponentInParent<Character>();
+        if (character != null && character.PlayerID == "Player1")
+        {
+            isPlayer1 = true;
+            theUIController = GameObject.FindWithTag("UIPlayer1").GetComponent<UIAndUpgradesController>();
+        }
+        else
+        {
+            isPlayer1 = false;
+            theUIController = GameObject.FindWithTag("UIPlayer2").GetComponent<UIAndUpgradesController>();
+        }
     }
 
-    void Update()
+    public void Update()
     {
         if (!isPlayerInWater && character.ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead)
         {
@@ -111,6 +121,14 @@ public class Water : MonoBehaviour, MMEventListener<CorgiEngineEvent>
             theLegs.SetActive(false);
             theRippleEffect.SetActive(true);
             thePosition = new Vector3(transform.position.x, transform.position.y, other.transform.position.z);
+            if (isPlayer1)
+            {
+                theSplashIntoTheWater.GetComponent<ActivateDeactivateRippleEffect>().isPlayer1 = true;
+            }
+            else
+            {
+                theSplashIntoTheWater.GetComponent<ActivateDeactivateRippleEffect>().isPlayer1 = false;
+            }
             Instantiate(theSplashIntoTheWater, new Vector3(thePosition.x, other.transform.position.y + yOffsetIntoTheWater.y), transform.rotation);
         }
     }
@@ -136,6 +154,14 @@ public class Water : MonoBehaviour, MMEventListener<CorgiEngineEvent>
             theLegs.SetActive(true);
             theRippleEffect.SetActive(false);
             thePosition = new Vector3(transform.position.x, transform.position.y, other.transform.position.z);
+            if (isPlayer1)
+            {
+                theSplashIntoTheWater.GetComponent<ActivateDeactivateRippleEffect>().isPlayer1 = true;
+            }
+            else
+            {
+                theSplashIntoTheWater.GetComponent<ActivateDeactivateRippleEffect>().isPlayer1 = false;
+            }
             if (distance < exitThreshold)
             {
                 Instantiate(theSplashOutOfTheWater, new Vector3(thePosition.x, other.transform.position.y + yOffsetOutOfTheWater.y), transform.rotation);
