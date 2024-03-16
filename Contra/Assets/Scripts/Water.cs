@@ -2,7 +2,6 @@ using System.Collections;
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
-using Character = MoreMountains.CorgiEngine.Character;
 
 public class Water : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {

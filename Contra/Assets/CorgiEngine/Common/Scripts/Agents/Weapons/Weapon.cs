@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
+using Rewired.ComponentControls.Data;
 using UnityEngine.Serialization;
 
 namespace MoreMountains.CorgiEngine
@@ -49,7 +50,8 @@ namespace MoreMountains.CorgiEngine
 		/// the possible states the weapon can be in
 		public enum WeaponStates { WeaponIdle, WeaponStart, WeaponDelayBeforeUse, WeaponUse, WeaponDelayBetweenUses, WeaponStop, WeaponReloadNeeded, WeaponReloadStart, WeaponReload, WeaponReloadStop, WeaponInterrupted, WeaponInCooldown }
 
-		[MMInspectorGroup("General Settings", true, 12)]
+        [MMInspectorGroup("General Settings", true, 12)]
+        public bool isPlayer1; //Leo Monge: Need to ALWAYS bring it after update. This adds the Animator.
         public Animator theAnimator; //Leo Monge: Need to ALWAYS bring it after update. This adds the Animator.
         public float customIntervalLeo = 0.5f; //Leo Monge: Need to ALWAYS bring it after update. 
         public float intervalWaitFor; //Leo Monge: Need to ALWAYS bring it after update. 
@@ -386,7 +388,19 @@ namespace MoreMountains.CorgiEngine
 
         protected virtual void Start()
         {
-            theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>(); //Leo Monge: Need to ALWAYS bring it after update. This adds the Animator.
+            //theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>(); This is the 1 player version. The next line is the 2 players version. //Leo Monge: Need to ALWAYS bring it after update. This adds the Animator. 
+            Character theCharacter = transform.root.GetComponent<Character>();
+			if (theCharacter != null && theCharacter.PlayerID == "Player1")
+            {
+                isPlayer1 = true;
+            }
+			else
+            {
+                isPlayer1 = false;
+            }
+
+            theAnimator = transform.root.GetChild(0).GetComponent<Animator>();
+			
             if (InitializeOnStart)
             {
                 Initialization();

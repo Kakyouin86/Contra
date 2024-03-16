@@ -1,15 +1,17 @@
 using MoreMountains.CorgiEngine;
+using MoreMountains.InventoryEngine;
 using MoreMountains.Tools;
 using UnityEngine;
 
 public class ItemMessageToUI : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
+    public bool isPlayer1;
     public bool flameGun;
     public bool rayGun;
     public bool shotGun;
     public bool spreadGun;
     public bool grenade;
-    public UIAndUpgradesController theUIController;
+    public UIAndUpgradesController theUIAndUpgradesController;
 
     protected virtual void OnEnable()
     {
@@ -38,36 +40,46 @@ public class ItemMessageToUI : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 
     void Start()
     {
-        theUIController = GameObject.FindWithTag("UIPlayer1").GetComponent<UIAndUpgradesController>();
+        // theUIController = GameObject.FindWithTag("UIPlayer1").GetComponent<UIAndUpgradesController>(); This is the 1 player version. The next line is the 2 players version.
     }
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Player"))
         {
+            if (collider.gameObject.GetComponent<Character>() != null && collider.gameObject.GetComponent<Character>().PlayerID == "Player1")
+            {
+                isPlayer1 = true;
+                theUIAndUpgradesController = GameObject.FindGameObjectWithTag("UIPlayer1").GetComponent<UIAndUpgradesController>();
+            }
+            else
+            {
+                isPlayer1 = false;
+                theUIAndUpgradesController = GameObject.FindGameObjectWithTag("UIPlayer2").GetComponent<UIAndUpgradesController>();
+            }
             if (flameGun)
             {
-                theUIController.FlameGun();
+                theUIAndUpgradesController.FlameGun();
             }
 
             if (rayGun)
             {
-                theUIController.RayGun();
+                theUIAndUpgradesController.RayGun();
             }
 
             if (shotGun)
             {
-                theUIController.ShotGun();
+                theUIAndUpgradesController.ShotGun();
             }
 
             if (spreadGun)
             {
-                theUIController.SpreadGun();
+                theUIAndUpgradesController.SpreadGun();
             }
 
             /*if (grenade)
             {
-                theUIController.Grenade();
+                theUIAndUpgradesController.Grenade();
             }*/
         }
     }

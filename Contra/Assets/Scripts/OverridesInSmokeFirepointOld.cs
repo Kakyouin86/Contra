@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class OverridesInSmokeFirepointOld : MonoBehaviour
+
+public class OverridesInSmokeFirepoint : MonoBehaviour
 {
     public Animator theAnimator;
     public Vector3 originalVector3;
@@ -11,7 +12,7 @@ public class OverridesInSmokeFirepointOld : MonoBehaviour
         originalVector3 = transform.localPosition;
     }
 
-
+    // Update is called once per frame
     void Update()
     {
         if (theAnimator.GetCurrentAnimatorStateInfo(1).IsName("Shoot Diagonal Up") || theAnimator.GetCurrentAnimatorStateInfo(1).IsName("Shoot Diagonal Up Walking Flame Gun"))

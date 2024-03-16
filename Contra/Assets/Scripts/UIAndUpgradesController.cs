@@ -8,6 +8,7 @@ using Character = MoreMountains.CorgiEngine.Character;
 
 public class UIAndUpgradesController : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
+    public bool isPlayer1;
     [Header("Acquired Power Ups")]
     public bool grenadePlus = false;
     public bool machineGunUpgrade = false;
@@ -74,25 +75,41 @@ public class UIAndUpgradesController : MonoBehaviour, MMEventListener<CorgiEngin
     
     void Start()
     {
-        theInventory = GameObject.FindWithTag("InventoryPlayer1").GetComponent<Inventory>();
-        theWeaponInventory = GameObject.FindWithTag("WeaponInventoryPlayer1").GetComponent<Inventory>();
-        // thePlayer = GameObject.FindWithTag("Player").GetComponent<ToggleWeapons>(); This is the 1 player version. The next line is the 2 players version.
-        // Find all GameObjects with the Character component
-        Character[] characters = FindObjectsOfType<Character>();
+        //theInventory = GameObject.FindWithTag("InventoryPlayer1").GetComponent<Inventory>(); This is the 1 player version. The next line is the 2 players version.
+        //theWeaponInventory = GameObject.FindWithTag("WeaponInventoryPlayer1").GetComponent<Inventory>(); This is the 1 player version. The next line is the 2 players version.
+        //thePlayer = GameObject.FindWithTag("Player").GetComponent<ToggleWeapons>(); This is the 1 player version. The next line is the 2 players version.
 
-        // Iterate through each Character
-        foreach (Character character in characters)
+        if (gameObject.tag == "UIPlayer1")
         {
-            // Check if the PlayerID is 1
-            if (character.PlayerID == "Player1")
+            theInventory = GameObject.FindWithTag("InventoryPlayer1").GetComponent<Inventory>();
+            theWeaponInventory = GameObject.FindWithTag("WeaponInventoryPlayer1").GetComponent<Inventory>();
+            isPlayer1 = true;
+            Character[] characters = FindObjectsOfType<Character>();
+            foreach (Character character in characters)
             {
-                // Assign the GameObject to thePlayer
-                thePlayer = character.gameObject.GetComponent<ToggleWeapons>();
-                // Exit the loop once found
-                break;
+                if (character.PlayerID == "Player1")
+                {
+                    thePlayer = character.gameObject.GetComponent<ToggleWeapons>();
+                    break;
+                }
             }
         }
-
+        else
+        {
+            theInventory = GameObject.FindWithTag("InventoryPlayer1").GetComponent<Inventory>();
+            theWeaponInventory = GameObject.FindWithTag("WeaponInventoryPlayer1").GetComponent<Inventory>();
+            isPlayer1 = true;
+            Character[] characters = FindObjectsOfType<Character>();
+            foreach (Character character in characters)
+            {
+                if (character.PlayerID == "Player2")
+                {
+                    thePlayer = character.gameObject.GetComponent<ToggleWeapons>();
+                    break;
+                }
+            }
+        }
+        
         avatarPlayer1.enabled = true;
         originalColorAvatar = avatarPlayer1.color;
         theUIImagePlayer1.enabled = true;

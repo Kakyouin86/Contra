@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Rewired;
 using MoreMountains.CorgiEngine;
@@ -5,6 +6,7 @@ using MoreMountains.Tools;
 
 public class SpecialShootAndRaycastVisualization : MonoBehaviour
 {
+    public bool isPlayer1;
     public bool hasSpecialShoot = false;
     public bool canShoot = false;
     public bool enableLaser = false;
@@ -53,6 +55,10 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
         _line.startWidth = LaserWidth.x;
         _line.endWidth = LaserWidth.y;
         _line.material = LaserMaterial;
+        if (GetComponent<Character>().PlayerID == "Player1")
+        {
+            isPlayer1 = true;
+        }
     }
     
     public void Update()
@@ -79,6 +85,12 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
 
         if (isShooting)
         {
+            if (GetComponent<Firepoint>().weaponAim.GetComponent<ChargeWeapon>() != null) //CAREFUL HERE! It's because if you are shooting the Special Shot, it will continue charging.
+            {
+                ChargeWeapon theChargeWeapon = GetComponent<Firepoint>().weaponAim.GetComponent<ChargeWeapon>();
+                theChargeWeapon.enabled = false;
+            }
+            
             // Update the timer while shooting
             currentTimer += Time.deltaTime;
 
@@ -86,6 +98,11 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
             if (currentTimer >= animationTimer)
             {
                 ResetEverything();
+                if (GetComponent<Firepoint>().weaponAim.GetComponent<ChargeWeapon>() != null) //CAREFUL HERE! It's because if you are shooting the Special Shot, it will continue charging.
+                {
+                    ChargeWeapon theChargeWeapon = GetComponent<Firepoint>().weaponAim.GetComponent<ChargeWeapon>();
+                    theChargeWeapon.enabled = true;
+                }
             }
         }
 

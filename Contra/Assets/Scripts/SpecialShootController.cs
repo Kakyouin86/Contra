@@ -6,21 +6,22 @@ using MoreMountains.Tools;
 
 public class SpecialShootController : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
+    public bool isPlayer1;
     public bool isAlive = true;
     public bool canShootSpecialShoot = false;
     public bool isShooting = false;
     public bool hasReachedTarget = false;
-    public bool enableAnimation = true;
-    public float specialShootCooldown = 3f;
+    public bool enableAnimation = false;
+    public float specialShootCooldown = 1f;
     public float timer = 0f;
-    public float originalSpecialShootDuration = 1.167f;
+    public float originalSpecialShootDuration = 1f;
     public Image[] counterImages;
     public Image completeBar;
     public Image maxCompleteBar;
     public Image theAnimationThatTranslates;
     public Image electricAnimation;
     public Vector3 initialFlameShootPosition;
-    public Vector3 finalFlameShootPosition;
+    public Vector3 finalFlameShootPosition = new Vector3(400,0,0);
     public float currentFlameShootDuration;
     public float theAnimationThatTranslatesSpeed;
     public Player player;
@@ -85,7 +86,33 @@ public class SpecialShootController : MonoBehaviour, MMEventListener<CorgiEngine
 
         finalFlameShootPosition = new Vector3(finalFlameShootPosition.x, initialFlameShootPosition.y, initialFlameShootPosition.z);
         currentFlameShootDuration = originalSpecialShootDuration;
-        theSpecialShootAndRaycastVisualization = GameObject.FindGameObjectWithTag("Player").GetComponent<SpecialShootAndRaycastVisualization>();
+        // theSpecialShootAndRaycastVisualization = GameObject.FindGameObjectWithTag("Player").GetComponent<SpecialShootAndRaycastVisualization>(); This is the 1 player version. The next line is the 2 players version.
+        if (gameObject.tag == "UIPlayer1")
+        {
+            Character[] characters = FindObjectsOfType<Character>();
+            foreach (Character character in characters)
+            {
+                if (character.PlayerID == "Player1")
+                {
+                    theSpecialShootAndRaycastVisualization = character.GetComponent<SpecialShootAndRaycastVisualization>();
+                    isPlayer1 = true;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            Character[] characters = FindObjectsOfType<Character>();
+            foreach (Character character in characters)
+            {
+                if (character.PlayerID == "Player2")
+                {
+                    theSpecialShootAndRaycastVisualization = character.GetComponent<SpecialShootAndRaycastVisualization>();
+                    isPlayer1 = false;
+                    break;
+                }
+            }
+        }
     }
 
     public void Update()

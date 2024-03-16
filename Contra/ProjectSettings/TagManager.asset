@@ -34,6 +34,9 @@ TagManager:
   - RayIndicator
   - SmokeIndicator
   - Bullet
+  - UIPlayer2
+  - InventoryPlayer2
+  - WeaponInventoryPlayer2
   layers:
   - Default
   - TransparentFX

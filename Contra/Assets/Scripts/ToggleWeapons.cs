@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class ToggleWeapons : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 {
+    public bool isPlayer1;
     public string torsoTag = "Torso";
     public string machineGunLightsTag = "MachineGunLights";
     public string flameGunLightsTag = "FlameGunLights";
@@ -34,19 +35,30 @@ public class ToggleWeapons : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 
     void Start()
     {
-        torsoObject = GameObject.FindGameObjectWithTag(torsoTag);
-        machineGunLights = GameObject.FindGameObjectWithTag(machineGunLightsTag);
-        flameGunLights = GameObject.FindGameObjectWithTag(flameGunLightsTag);
-        theUIAndUpgradesController = GameObject.FindGameObjectWithTag("UIPlayer1").GetComponent<UIAndUpgradesController>();
-        theSpecialShootAndRaycastVisualization = GetComponent<SpecialShootAndRaycastVisualization>();
-        weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventoryPlayer1").GetComponent<Inventory>();
+        //torsoObject = GameObject.FindGameObjectWithTag(torsoTag); This is the 1 player version. The next line is the 2 players version.
+        //machineGunLights = GameObject.FindGameObjectWithTag(machineGunLightsTag); This is the 1 player version. The next line is the 2 players version.
+        //flameGunLights = GameObject.FindGameObjectWithTag(flameGunLightsTag); This is the 1 player version. The next line is the 2 players version.
+        //theUIAndUpgradesController = GameObject.FindGameObjectWithTag("UIPlayer1").GetComponent<UIAndUpgradesController>(); This is the 1 player version. The next line is the 2 players version.
+        //weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventoryPlayer1").GetComponent<Inventory>(); This is the 1 player version. The next line is the 2 players version.
+        //theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>(); This is the 1 player version. The next line is the 2 players version.
+        //torsoSpriteRenderer = GameObject.FindGameObjectWithTag("Torso").GetComponent<SpriteRenderer>(); This is the 1 player version. The next line is the 2 players version.
+        //legsSpriteRenderer = GameObject.FindGameObjectWithTag("Legs").GetComponent<SpriteRenderer>(); This is the 1 player version. The next line is the 2 players version.
         theCharacterInventory = GetComponent<CharacterInventory>();
-        theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>();
-        //theCharacterHandleWeapon = FindObjectOfType<CharacterHandleWeapon>();
-        //theAnimator = GameObject.FindWithTag("PlayerSprites").GetComponent<Animator>();
-        torsoSpriteRenderer = GameObject.FindGameObjectWithTag("Torso").GetComponent<SpriteRenderer>();
-        legsSpriteRenderer = GameObject.FindGameObjectWithTag("Legs").GetComponent<SpriteRenderer>();
+        theSpecialShootAndRaycastVisualization = GetComponent<SpecialShootAndRaycastVisualization>();
         originalMaterial = torsoSpriteRenderer.material;
+
+        if (GetComponent<Character>() != null && GetComponent<Character>().PlayerID == "Player1")
+        {
+            isPlayer1 = true;
+            theUIAndUpgradesController = GameObject.FindGameObjectWithTag("UIPlayer1").GetComponent<UIAndUpgradesController>();
+            weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventoryPlayer1").GetComponent<Inventory>();
+        }
+        else
+        {
+            isPlayer1 = false;
+            theUIAndUpgradesController = GameObject.FindGameObjectWithTag("UIPlayer2").GetComponent<UIAndUpgradesController>();
+            weaponInventory = GameObject.FindGameObjectWithTag("WeaponInventoryPlayer2").GetComponent<Inventory>();
+        }
 
         if (torsoObject != null)
         {
