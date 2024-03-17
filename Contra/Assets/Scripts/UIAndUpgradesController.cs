@@ -93,11 +93,48 @@ public class UIAndUpgradesController : MonoBehaviour, MMEventListener<CorgiEngin
                     break;
                 }
             }
-        }
+
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().grenadePlus = true;
+            }
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().machineGunUpgrade = true;
+            }
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().flameGunUpgrade = true;
+            }
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().rayGunUpgrade = true;
+            }
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().shotGunUpgrade = true;
+            }
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().spreadGunUpgrade = true;
+            }
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().doubleJump = true;
+            }
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().dash = true;
+            }
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().specialShot = true;
+            }
+        }   
         else
         {
-            theInventory = GameObject.FindWithTag("InventoryPlayer1").GetComponent<Inventory>();
-            theWeaponInventory = GameObject.FindWithTag("WeaponInventoryPlayer1").GetComponent<Inventory>();
+            theInventory = GameObject.FindWithTag("InventoryPlayer2").GetComponent<Inventory>();
+            theWeaponInventory = GameObject.FindWithTag("WeaponInventoryPlayer2").GetComponent<Inventory>();
             isPlayer1 = true;
             Character[] characters = FindObjectsOfType<Character>();
             foreach (Character character in characters)
@@ -107,6 +144,43 @@ public class UIAndUpgradesController : MonoBehaviour, MMEventListener<CorgiEngin
                     thePlayer = character.gameObject.GetComponent<ToggleWeapons>();
                     break;
                 }
+            }
+
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().grenadePlus = true;
+            }
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().machineGunUpgrade = true;
+            }
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().flameGunUpgrade = true;
+            }
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().rayGunUpgrade = true;
+            }
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().shotGunUpgrade = true;
+            }
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().spreadGunUpgrade = true;
+            }
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().doubleJump = true;
+            }
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().dash = true;
+            }
+            if (grenadePlus == true)
+            {
+                theWeaponInventory.GetComponent<CopyOfUpgrades>().specialShot = true;
             }
         }
         

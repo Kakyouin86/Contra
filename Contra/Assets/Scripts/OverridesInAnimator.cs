@@ -131,17 +131,39 @@ public class OverridesInAnimator : MonoBehaviour
                 }
                 //theChargeWeapon = GameObject.FindWithTag("WeaponAim").GetComponent<ChargeWeapon>(); This is the 1 player version. The next line is the 2 players version.
 
+
+                GameObject firepoint = null; // Variable to store the GameObject with "Firepoint" tag
+                GameObject weaponAimChild = null; // Variable to store the child with "WeaponAim" tag
+
+                // Iterate through all children of the parent object
                 foreach (Transform child in transform)
                 {
-                    if (child.CompareTag("WeaponAim"))
+                    if (child.CompareTag("Firepoint"))
                     {
-                        // Assign the GameObject with the "Grenade" tag to the variable grenade
-                        theChargeWeapon = child.gameObject.GetComponent<ChargeWeapon>();
-                        // Exit the loop once found
-                        break;
+                        // Assign the GameObject with the "Firepoint" tag to the variable firepoint
+                        firepoint = child.gameObject;
+
+                        // Iterate through all children of the firepoint GameObject
+                        foreach (Transform firepointChild in firepoint.transform)
+                        {
+                            if (firepointChild.CompareTag("WeaponAim"))
+                            {
+                                // Assign the GameObject with the "WeaponAim" tag to the variable weaponAimChild
+                                weaponAimChild = firepointChild.gameObject;
+                                theChargeWeapon = weaponAimChild.GetComponent<ChargeWeapon>();
+                                // Exit the loop once found
+                                break;
+                            }
+                        }
+
+                        // Exit the loop once the Firepoint with WeaponAim child is found
+                        if (weaponAimChild != null)
+                        {
+                            break;
+                        }
                     }
                 }
-
+                
                 if (theChargeWeapon != null && theChargeWeapon.Charging)
                 {
                     theAnimator.SetBool("Charging", true);

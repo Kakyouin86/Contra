@@ -14502,6 +14502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 841542542}
   - component: {fileID: 841542541}
+  - component: {fileID: 841542543}
   m_Layer: 0
   m_Name: Weapon Inventory
   m_TagString: WeaponInventoryPlayer1
@@ -14544,6 +14545,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1487085693}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &841542543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841542540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50708c554046c34ba2f470ec51d65be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer1: 0
+  grenadePlus: 0
+  machineGunUpgrade: 0
+  flameGunUpgrade: 0
+  rayGunUpgrade: 0
+  shotGunUpgrade: 0
+  spreadGunUpgrade: 0
+  doubleJump: 0
+  dash: 0
+  specialShot: 0
 --- !u!1 &848785788
 GameObject:
   m_ObjectHideFlags: 0
@@ -33159,7 +33182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1818179107
 Transform:
   m_ObjectHideFlags: 0

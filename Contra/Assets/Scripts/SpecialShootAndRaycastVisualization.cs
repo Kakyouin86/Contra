@@ -1,7 +1,9 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using Rewired;
 using MoreMountains.CorgiEngine;
+using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
 
 public class SpecialShootAndRaycastVisualization : MonoBehaviour
@@ -89,6 +91,23 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
             {
                 ChargeWeapon theChargeWeapon = GetComponent<Firepoint>().weaponAim.GetComponent<ChargeWeapon>();
                 theChargeWeapon.enabled = false;
+                Transform chargeWeaponTransform = theChargeWeapon.transform;
+                if (chargeWeaponTransform != null)
+                {
+                    foreach (Transform child in chargeWeaponTransform)
+                    {
+                        if (child.GetComponent<MMF_Player>())
+                        {
+                            child.GetComponent<MMF_Player>().CanPlay = false;
+                        }
+                        if (child.CompareTag("Spark"))
+                        {
+                            child.gameObject.SetActive(false);
+                        }
+                    }
+                }
+                theChargeWeapon.enabled = false;
+                theChargeWeapon.Charging = false;
             }
             
             // Update the timer while shooting
@@ -98,11 +117,6 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
             if (currentTimer >= animationTimer)
             {
                 ResetEverything();
-                if (GetComponent<Firepoint>().weaponAim.GetComponent<ChargeWeapon>() != null) //CAREFUL HERE! It's because if you are shooting the Special Shot, it will continue charging.
-                {
-                    ChargeWeapon theChargeWeapon = GetComponent<Firepoint>().weaponAim.GetComponent<ChargeWeapon>();
-                    theChargeWeapon.enabled = true;
-                }
             }
         }
 
@@ -181,18 +195,13 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
         currentTimer = 0.0f;
         isShooting = false;
         //Animator theAnimator = GameObject.FindGameObjectWithTag("PlayerSprites").GetComponent<Animator>(); This is the 1 player version. The next line is the 2 players version.
-        // Get the transform of the current GameObject
-        Transform currentTransform = transform;
 
-        // Iterate through each child of the current GameObject
+        Transform currentTransform = transform;
         foreach (Transform child in currentTransform)
         {
-            // Check if the child has the "PlayerSprites" tag
             if (child.CompareTag("PlayerSprites"))
             {
-                // Get the Animator component from the child
                 theAnimator = child.GetComponent<Animator>();
-                // Exit the loop once found
                 break;
             }
         }
@@ -200,6 +209,34 @@ public class SpecialShootAndRaycastVisualization : MonoBehaviour
         theAnimator.SetBool("isShootingSpecialShot", false);
         AdditionalCharacterHandleWeaponOverride theAdditionalCharacterHandleWeaponOverride = GetComponent<AdditionalCharacterHandleWeaponOverride>();
         theAdditionalCharacterHandleWeaponOverride.AbilityPermitted = true;
+
+        if (GetComponent<Firepoint>().weaponAim.GetComponent<ChargeWeapon>() != null) //CAREFUL HERE! It's because if you are shooting the Special Shot, it will continue charging.
+        {
+            ChargeWeapon theChargeWeapon = GetComponent<Firepoint>().weaponAim.GetComponent<ChargeWeapon>();
+            theChargeWeapon.enabled = true;
+            StartCoroutine(KillTheSparks());
+        }
+    }
+
+    public IEnumerator KillTheSparks()
+    {
+        yield return new WaitForSeconds(0.1f);
+        ChargeWeapon theChargeWeapon = GetComponent<Firepoint>().weaponAim.GetComponent<ChargeWeapon>();
+        Transform chargeWeaponTransform = theChargeWeapon.transform;
+        if (chargeWeaponTransform != null)
+        {
+            foreach (Transform child in chargeWeaponTransform)
+            {
+                if (child.GetComponent<MMF_Player>())
+                {
+                    child.GetComponent<MMF_Player>().CanPlay = true;
+                }
+                if (child.CompareTag("Spark"))
+                {
+                    child.gameObject.SetActive(false);
+                }
+            }
+        }
     }
 
     public void ShootLaser()
